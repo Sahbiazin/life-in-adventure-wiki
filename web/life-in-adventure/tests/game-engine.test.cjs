@@ -123,7 +123,7 @@ test('commit, undo, redo, and alternative observed results preserve exact before
   const saved=E.commit(r,p.state,index,{type:'result',eventKey:'EventTreasure:346',choice:1,result:0,note:'Conferido no celular'});
   assert.equal(saved.state.stats[4],95);assert.equal(saved.cursor,1);assert.equal(r.cursor,0);
   const undone=E.undo(saved);assert.deepEqual(undone.state,r.state);assert.equal(undone.selectedEvent,'EventTreasure:346');
-  assert.deepEqual(E.redo(undone).state,saved.state);
+  assert.deepEqual(E.redo(undone,index).state,saved.state);
   const correction=E.clone(undone.state);correction.stats[4]=98;
   const alternative=E.commit(undone,correction,index,{type:'correction'});
   assert.equal(alternative.history.length,1);assert.equal(alternative.state.stats[4],98);
@@ -177,4 +177,49 @@ test('journal captures decision goals, risk profile and availability separately 
   assert.equal(saved.history[0].context.goals[0].type,'gold');assert.equal(saved.history[0].context.profile,'cautious');
   assert.deepEqual(saved.history[0].context.availability,{1:true});
   assert.equal(E.validateRun(saved,index).history[0].context.goals[0].amount,200);
+});
+
+test('the students encounter includes later choices, convergence and a self return',()=>{
+  const g=E.sequenceGraph(event('EventNormal:552'),index);
+  assert.deepEqual(g.nodes.map(n=>n.key),['EventNormal:552','EventNormal:553','EventNormal:554','EventNormal:555','EventNormal:556']);
+  assert.equal(g.truncated,false);
+  assert.equal(g.edges.filter(edge=>edge.from==='EventNormal:553'&&edge.target==='EventNormal:554').length,2);
+  assert.equal(g.edges.filter(edge=>edge.from==='EventNormal:552'&&edge.target==='EventNormal:552').length,2);
+  assert.ok(g.nodes.find(n=>n.key==='EventNormal:555').event.data.choice.some(c=>c.text==='Distrái-os'));
+  const limited=E.sequenceGraph(event('EventNormal:552'),index,{maxDepth:1,maxEvents:2});
+  assert.equal(limited.truncated,true);assert.equal(limited.nodes.length,2);
+  assert.ok(limited.edges.some(edge=>edge.target==='EventNormal:554'));
+});
+test('observed results advance through the same encounter and restore the step on undo/redo/import',()=>{
+  let r=run();r.selectedEvent='EventNormal:552';
+  for(const key of ['EventNormal:552','EventNormal:553','EventNormal:554']) {
+    const e=event(key);
+    r=E.commit(r,E.previewResult(e,0,0,r.state,index).state,index,{type:'result',eventKey:key,choice:0,result:0});
+  }
+  assert.equal(r.selectedEvent,'EventNormal:555');
+  const context=E.continuationContext(r,index);
+  assert.deepEqual(context.path,['EventNormal:552','EventNormal:553','EventNormal:554','EventNormal:555']);
+  assert.equal(context.text,event('EventNormal:554').data.choice[0].result[0].text);
+  assert.equal(E.undo(r).selectedEvent,'EventNormal:554');
+  assert.equal(E.redo(E.undo(r),index).selectedEvent,'EventNormal:555');
+  assert.equal(E.validateRun(JSON.parse(JSON.stringify(r)),index).selectedEvent,'EventNormal:555');
+  r=E.commit(r,r.state,index,{type:'observation',eventKey:'EventNormal:555',note:'Different screen'});
+  assert.equal(r.selectedEvent,null);
+});
+test('returning to the same node rechecks updated flags without automatically choosing a branch',()=>{
+  let r=run();r.selectedEvent='EventNormal:552';r.state.states.chainEventList[628]=0;
+  assert.equal(E.analyze(event(r.selectedEvent),r,index).rows[2].available,true);
+  r=E.commit(r,E.previewResult(event(r.selectedEvent),2,0,r.state,index).state,index,{type:'result',eventKey:r.selectedEvent,choice:2,result:0});
+  assert.equal(r.selectedEvent,'EventNormal:552');
+  assert.equal(E.analyze(event(r.selectedEvent),r,index).rows[2].available,false);
+  assert.equal(r.history.length,1);
+  assert.equal(E.continuationKey(event('EventTreasure:346'),1,0,index),null);
+  r.goals=[goal('gold','',200)];
+  assert.equal(E.analyze(event('EventBattle:11'),r,index).recommendation,null);
+});
+test('every direct continuation keeps the table and special destinations do not become nodes',()=>{
+  for(const e of source.events) for(const [ci,c] of (e.data.choice||[]).entries()) for(const [ri,r] of (c.result||[]).entries()) {
+    const key=E.continuationKey(e,ci,ri,index);
+    assert.equal(key,r.nextEvent>=0?`${e.group}:${r.nextEvent}`:null);
+  }
 });

@@ -8,7 +8,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from decode_rules import STAT, decode_required, decode_reward, exact_neutral_probabilities
+from decode_rules import STAT, base_weight, decode_required, decode_reward, exact_neutral_probabilities
 from audit_rules import audit
 
 CATALOGS = {'item': 'itemJson', 'monster': 'monsterJson', 'ability': 'abilityJson', 'trait': 'traitJson'}
@@ -126,11 +126,20 @@ def annotate(event, by_key, mentions):
     rules = {'required': track(rule_view(raw.get('required', '')), 'Entrada'), 'choices': []}
     for ci, choice in enumerate(raw.get('choice', [])):
         view = {'required': track(rule_view(choice.get('required', '')), f'Escolha {ci+1}'), 'results': []}
+        # A chance modifier is a test, not a threshold for enabling the choice.
+        attributes = sorted({term['effective_user_data_index']
+                             for result in choice.get('result', [])
+                             for term in base_weight(result.get('chance', ''))['dynamic_terms']
+                             if term['multiplier'] != 0 and term['effective_user_data_index'] in (5, 6, 7, 12, 13, 14)})
+        view['test'] = {'attributes': [{'index': idx, 'name': STAT[idx]} for idx in attributes],
+                        'label': 'Teste de ' + ' + '.join(STAT[idx] for idx in attributes),
+                        'evidence': 'chance: effective attribute terms; final probability not calculated'} if attributes else None
         probabilities = exact_neutral_probabilities(choice.get('result', []))
         for ri, result in enumerate(choice.get('result', [])):
             scope = f'Escolha {ci+1} · resultado {ri+1}'
             view['results'].append({'required': track(rule_view(result.get('required', '')), scope),
                                     'reward': track(rule_view(result.get('reward', ''), True), scope),
+                                    'testOutcome': {0: 'Sucesso', 1: 'Falha'}.get(result.get('type')) if attributes else None,
                                     'probability': probabilities[ri] if probabilities else None})
         rules['choices'].append(view)
     for token in str(raw.get('monster', '')).split('|'):

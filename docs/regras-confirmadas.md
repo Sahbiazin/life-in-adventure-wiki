@@ -83,6 +83,8 @@ Os índices adicionais confirmados estão no complemento de auditoria abaixo; os
 
 O decodificador só informa probabilidades estáticas quando todos os resultados da escolha têm requisitos vazios, `type == 2` e pesos constantes. Outros casos recebem `null`, não probabilidades inventadas. Uma única alternativa com peso positivo nesse subconjunto é determinística.
 
+O Atlas identifica testes de atributos quando `chance` contém termos `0_indice_fator` com fator não nulo e índice confirmado de FOR, DES, INT, CAR, CON ou SAB. A etiqueta lista esses atributos, inclusive combinações; não deriva um limite mínimo do peso de falha. Nessas escolhas, os resultados `type == 0` e `type == 1` são apresentados como sucesso e falha, respectivamente, preservando o código original. Exemplos verificáveis nos textos do build 366: `EventNormal:222` (ajuda na fazenda, Força), `EventNormal:552`, escolha 3 (observar os estudantes, Inteligência), e `EventNormal:555`, escolha 4 (distraí-los, Carisma). As fórmulas finais e modificadores continuam sem simulação.
+
 ## Conexões
 
 `nextEvent` é usado como índice da lista de eventos atual no caminho comum de `ClickEventButton`, `0x1A8EE68–0x1A8EED8`. O `type` do resultado não é o enum `eEvent` que identifica tabelas.
@@ -90,6 +92,8 @@ O decodificador só informa probabilidades estáticas quando todos os resultados
 O valor `-2` gera o botão que encerra a apresentação do encontro atual e permite continuar a aventura, em vez de indicar o nó de ID negativo de uma tabela. Não significa que toda a cadeia de história terminou: flags podem habilitar futuros encontros. Outros sentinelas continuam pendentes de documentação completa.
 
 As seis tabelas em português foram verificadas: em todas, o `id` de cada registro coincide com sua posição na lista.
+
+Um encontro pode atravessar vários desses nós: `EventNormal:552 → 553 → 554 → 555`, por exemplo, contém as respostas intermediárias aos estudantes de Ravada Solar. O nó 552 também retorna a si mesmo após o teste de observação, mudando `chainEventList[628]`. O mapa segue essas referências na mesma tabela, compartilhando destinos convergentes e mantendo retornos explícitos. O Modo de Jogo só avança ao salvar o resultado observado; sentinelas negativas não são convertidas em um encontro nem encerram automaticamente a run.
 
 ## Limites atuais
 

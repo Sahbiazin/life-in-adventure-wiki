@@ -31,6 +31,41 @@
     }
     return {data,events,records,incoming};
   }
+  // A positive nextEvent points to the next node of this encounter in the same table.
+  function continuationKey(event,ci,ri,index) {
+    const target=event?.data.choice?.[ci]?.result?.[ri]?.nextEvent;
+    const key=`${event?.group}:${target}`;
+    return Number.isInteger(target)&&target>=0&&index.events.has(key)?key:null;
+  }
+  function sequenceGraph(event,index,{maxDepth=4,maxEvents=32}={}) {
+    const root=`${event.group}:${event.id}`,nodes=[{key:root,event,depth:0}],seen=new Map([[root,0]]),edges=[];
+    let truncated=false;
+    for(let i=0;i<nodes.length;i++) {
+      const node=nodes[i];
+      for(const [ci,c] of (node.event.data.choice||[]).entries()) for(const [ri,r] of (c.result||[]).entries()) {
+        const target=continuationKey(node.event,ci,ri,index);
+        if(target&&!seen.has(target)) {
+          if(node.depth<maxDepth&&nodes.length<maxEvents){seen.set(target,node.depth+1);nodes.push({key:target,event:index.events.get(target),depth:node.depth+1});}
+          else truncated=true;
+        }
+        edges.push({from:node.key,choice:ci,result:ri,target,value:r.nextEvent});
+      }
+    }
+    return {nodes,edges,truncated};
+  }
+  function continuationContext(run,index) {
+    let expected=run.selectedEvent,previous=null;const path=expected?[expected]:[];
+    if(!expected)return null;
+    for(let i=run.cursor-1;i>=0;i--) {
+      const entry=run.history[i];
+      if(!['result','observation'].includes(entry.type))continue;
+      const event=index.events.get(entry.eventKey);
+      if(entry.type!=='result'||continuationKey(event,entry.choice,entry.result,index)!==expected)break;
+      if(!previous)previous={entry,text:event.data.choice[entry.choice].result[entry.result].text};
+      path.unshift(entry.eventKey);expected=entry.eventKey;
+    }
+    return previous?{...previous,path}:null;
+  }
   function blankState() {
     return {stats:Object.fromEntries(Object.keys(STATS).map(k=>[k,null])),items:{},inventoryComplete:false,
       traits:[],traitsComplete:false,abilities:{},states:Object.fromEntries(FAMILIES.map(f=>[f,{}])),
@@ -245,13 +280,14 @@
       return {ci,available,uncertain,lethal,outcomes,score,min:benefits.length?Math.min(...benefits):null,max:benefits.length?Math.max(...benefits):null,
         expected,reasons:[...new Set(possibilities.flatMap(p=>p.reasons))],profile:run.profile};
     });
+    const outcomeOnly=!plain(event.data.text)&&(event.data.choice||[]).every(c=>!plain(c.text));
     const primary=active[0];
     const supported=primary && (['item','ending','gold','catalog_item','catalog_monster'].includes(primary.type)||primary.endingTarget);
     const candidates=rows.filter(r=>r.available!==false&&r.outcomes.some(o=>o.eligible!==false)).sort((a,b)=>b.score-a.score);
     let recommendation=null;
-    if(active.length && supported && candidates.length && finite(candidates[0].score) && (candidates.length===1||candidates[0].score-candidates[1].score>1e-6))recommendation=candidates[0].ci;
+    if(!outcomeOnly && active.length && supported && candidates.length && finite(candidates[0].score) && (candidates.length===1||candidates[0].score-candidates[1].score>1e-6))recommendation=candidates[0].ci;
     return {rows,recommendation,provisional:recommendation!==null && rows.some(r=>r.available!==false&&r.uncertain),
-      message:!active.length?'Adicione um objetivo ou escolha uma nova meta para orientar a comparação.':!supported?'Este objetivo precisa de confirmação manual. Ainda não há modelo para calcular a melhor escolha para ele.':recommendation===null?'Não há uma opção claramente melhor com os dados atuais. Compare os resultados e requisitos abaixo.':'Indicação baseada nas consequências conhecidas e nas prioridades desta run. Não garante o melhor resultado no jogo.'};
+      message:outcomeOnly?'Este nó registra desfechos, sem escolhas com texto na fonte. Informe o resultado observado no jogo; o Atlas não escolhe vitória ou derrota.':!active.length?'Adicione um objetivo ou escolha uma nova meta para orientar a comparação.':!supported?'Este objetivo precisa de confirmação manual. Ainda não há modelo para calcular a melhor escolha para ele.':recommendation===null?'Não há uma opção claramente melhor com os dados atuais. Compare os resultados e requisitos abaixo.':'Indicação baseada nas consequências conhecidas e nas prioridades desta run. Não garante o melhor resultado no jogo.'};
   }
   function commit(run,after,index,meta={}) {
     if(run.status!=='active' && meta.type!=='resume')fail('Reabra a run para registrar alterações.');
@@ -266,7 +302,8 @@
     }
     next.history=next.history.slice(0,next.cursor);next.history.push(entry);next.cursor=next.history.length;
     next.state=state;next.updatedAt=new Date().toISOString();
-    if(entry.eventKey)next.selectedEvent=entry.eventKey;
+    if(entry.type==='result')next.selectedEvent=continuationKey(index.events.get(entry.eventKey),entry.choice,entry.result,index);
+    else if(entry.type==='observation')next.selectedEvent=null;
     next.availability={};return next;
   }
   function undo(run) {
@@ -274,9 +311,12 @@
     const entry=next.history[--next.cursor];next.state=clone(entry.before);next.status='active';
     if(entry.eventKey)next.selectedEvent=entry.eventKey;next.availability={};next.updatedAt=new Date().toISOString();return next;
   }
-  function redo(run) {
+  function redo(run,index) {
     const next=clone(run);if(next.cursor>=next.history.length)return next;
-    const entry=next.history[next.cursor++];next.state=clone(entry.after);next.availability={};next.updatedAt=new Date().toISOString();return next;
+    const entry=next.history[next.cursor++];next.state=clone(entry.after);
+    if(entry.type==='result')next.selectedEvent=continuationKey(index.events.get(entry.eventKey),entry.choice,entry.result,index);
+    else if(entry.type==='observation')next.selectedEvent=null;
+    next.availability={};next.updatedAt=new Date().toISOString();return next;
   }
   function validateRun(raw,index) {
     if(!raw||raw.version!==VERSION||raw.gameVersion!==index.data.version||raw.build!==366)fail('Arquivo de run incompatível com esta versão do Atlas.');
@@ -299,5 +339,5 @@
     result.availability={};
     return result;
   }
-  return {VERSION,STATS,TYPES,FAMILIES,clone,id,normalize,plain,finite,blankState,createIndex,newRun,cleanState,cleanGoals,requirement,previewResult,goalProgress,analyze,commit,undo,redo,validateRun};
+  return {VERSION,STATS,TYPES,FAMILIES,clone,id,normalize,plain,finite,blankState,createIndex,continuationKey,sequenceGraph,continuationContext,newRun,cleanState,cleanGoals,requirement,previewResult,goalProgress,analyze,commit,undo,redo,validateRun};
 });

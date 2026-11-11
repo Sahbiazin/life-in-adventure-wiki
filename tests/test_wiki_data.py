@@ -88,6 +88,25 @@ class WikiDataTests(unittest.TestCase):
         self.assertFalse(any(r['probability'] for e in self.events.values() for cv, c in zip(e['rules']['choices'], e['data'].get('choice', []))
                              for r in cv['results'] if any(original.get('required') or original.get('type') != 2 for original in c.get('result', []))))
 
+    def test_attribute_tests_are_separate_from_unlock_requirements_and_probabilities(self):
+        farmer = self.events['EventNormal:222']['rules']['choices'][0]
+        self.assertEqual(farmer['test']['label'], 'Teste de Força')
+        self.assertIsNone(farmer['required'])
+        self.assertEqual([r['testOutcome'] for r in farmer['results']], ['Sucesso', 'Falha'])
+        self.assertTrue(all(r['probability'] is None for r in farmer['results']))
+        students = self.events['EventNormal:552']['rules']['choices'][2]
+        self.assertEqual(students['test']['label'], 'Teste de Inteligência')
+        self.assertEqual(students['required']['tokens'][0]['state'], 'chainEventList:628')
+        self.assertIsNone(self.events['EventTreasure:346']['rules']['choices'][0]['test'])
+
+    def test_combined_tests_use_only_named_attribute_terms_with_nonzero_weights(self):
+        raw = {'choice': [{'required': '1_6_9', 'result': [
+            {'type': 0, 'chance': '1|0_5_1|0_12_1|0_6_0|0_55_1', 'reward': ''},
+            {'type': 1, 'chance': '10', 'reward': ''}]}]}
+        rules, _ = wiki.annotate({'raw': raw}, {}, (wiki.re.compile(r'(?!)'), {}))
+        self.assertEqual(rules['choices'][0]['test']['label'], 'Teste de Força + Carisma')
+        self.assertEqual(rules['choices'][0]['required']['tokens'][0]['text'], 'Destreza: pelo menos 9')
+
     def test_annotation_does_not_mutate_source_and_text_mentions_are_not_rewards(self):
         raw = {'id': 1, 'text': 'Veja esta adaga.', 'choice': [{'text': '', 'result': [
             {'required': '', 'chance': '1', 'type': 2, 'reward': '31_42_1', 'nextEvent': -2}]}]}

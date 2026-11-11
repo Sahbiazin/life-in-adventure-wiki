@@ -285,9 +285,9 @@
     const raw=e.data;
     $('overviewPanel').innerHTML=`<div class="event-meta">${badge(e)}${e.tags.map(tagBadge).join('')}</div><p class="evidence-note">Versão ${esc(source.version)} · ${esc(source.rulesStatus)} Regras desconhecidas continuam identificadas pelo código. Alterações de atributos podem ter limites e efeitos adicionais.</p><div class="section-label">O ENCONTRO</div><div class="narrative">${esc(plainNarrative(raw.text)) || 'Este nó não possui texto inicial no arquivo. Consulte os resultados do evento anterior e as escolhas abaixo.'}</div>${ruleBlock('Para entrar no evento',e.rules?.required)}${rawBlock(raw,'Ver registro original completo')}${referenceSection(e)}${stateSection(e)}<div class="choices-heading"><h3>${e.choices} ${e.choices===1?'escolha registrada':'escolhas registradas'}</h3><button id="expandChoices" class="text-button">Expandir tudo</button></div>${(raw.choice||[]).map((choice,ci)=>{
       const cv=e.rules?.choices[ci];
-      return `<details class="choice-card" ${ci===0?'open':''}><summary><span class="choice-number">${String(ci+1).padStart(2,'0')}</span>${esc(plain(choice.text)) || 'Escolha sem texto no arquivo'}</summary><div class="choice-content">${ruleBlock('Para escolher',cv?.required)}${rawBlock(choice.required||'','Ver requisito original da escolha')}${(choice.result||[]).map((r,ri)=>{
+      return `<details class="choice-card" ${ci===0?'open':''}><summary><span class="choice-number">${String(ci+1).padStart(2,'0')}</span>${esc(plain(choice.text)) || 'Desfecho / ramo '+(ci+1)}${cv?.test?`<span class="attribute-test">${esc(cv.test.label)}</span>`:''}</summary><div class="choice-content">${cv?.test?`<p class="test-explanation">${esc(cv.test.label)}: estes atributos influenciam o sorteio do resultado. Não é um requisito mínimo para escolher; probabilidade final não calculada.</p>`:''}${ruleBlock('Para escolher',cv?.required)}${rawBlock(choice.required||'','Ver requisito original da escolha')}${(choice.result||[]).map((r,ri)=>{
         const rv=cv?.results[ri];
-        return `<article class="result-card"><div class="result-heading"><span>RESULTADO ${ci+1}.${ri+1}</span>${targetControl(e,r)}</div><p class="result-text">${esc(plainNarrative(r.text)) || 'Sem texto de resultado no arquivo.'}</p><div class="rule-columns">${ruleBlock('Para este resultado',rv?.required)}${ruleBlock('Consequências registradas',rv?.reward,'Nenhuma recompensa registrada neste campo.')}</div><div class="result-fields">${probabilityBlock(r,rv)}${field('Tipo de resultado (código)',r.type)}${r.place!==undefined?field('Cenário',Number.isInteger(r.place)&&places[r.place]?`${places[r.place]} · ${r.place}`:r.place):''}</div>${rawBlock(r)}</article>`;
+        return `<article class="result-card"><div class="result-heading"><span>RESULTADO ${ci+1}.${ri+1}${rv?.testOutcome?' · '+esc(rv.testOutcome):''}</span>${targetControl(e,r)}</div><p class="result-text">${esc(plainNarrative(r.text)) || 'Sem texto de resultado no arquivo.'}</p><div class="rule-columns">${ruleBlock('Para este resultado',rv?.required)}${ruleBlock('Consequências registradas',rv?.reward,'Nenhuma recompensa registrada neste campo.')}</div><div class="result-fields">${probabilityBlock(r,rv)}${field('Tipo de resultado (código)',r.type)}${r.place!==undefined?field('Cenário',Number.isInteger(r.place)&&places[r.place]?`${places[r.place]} · ${r.place}`:r.place):''}</div>${rawBlock(r)}</article>`;
       }).join('')}</div></details>`;
     }).join('')}<p class="map-note">Pesos não são porcentagens. Só calculamos probabilidades estáticas para escolhas neutras, sem requisitos nos resultados e sem pesos variáveis.</p>`;
     $('expandChoices').onclick=()=>{
@@ -323,22 +323,61 @@
     for (const word of words) {if((line+' '+word).trim().length>max && line){out.push(line);line=word;}else line=(line+' '+word).trim();}
     if(line)out.push(line); if(out.length>lines){out.length=lines;out[lines-1]=short(out[lines-1],max-1)+'…';}return out;
   }
-  function renderMap(e) {
-    let y=30; const layouts=(e.data.choice || []).map((c,ci) => {const results=(c.result || []).map((r,ri) => ({r,ri,y:y+ri*114})); const height=Math.max(90,results.length*114-16); const obj={c,ci,results,center:y+height/2};y+=height+36;return obj;});
-    const height=Math.max(210,y), rootY=height/2-38;
-    let svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 ${height}" width="1080" height="${height}" role="img" aria-label="Mapa das ${e.choices} escolhas e ${e.results} resultados do evento"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a4b994"/></marker></defs>`;
-    for(const l of layouts){svg+=`<path class="map-edge" marker-end="url(#arrow)" d="M220 ${rootY+38} H255 V${l.center} H290"/>`;for(const item of l.results){svg+=`<path class="map-edge" marker-end="url(#arrow)" d="M535 ${l.center} H575 V${item.y+47} H615"/>`;}}
-    svg+=`<g class="map-node root"><rect x="20" y="${rootY}" width="200" height="76" rx="7"/><text x="38" y="${rootY+29}">${esc(types[e.group].title)}</text><text x="38" y="${rootY+52}" class="small">Evento #${e.id} · ${e.choices} escolhas</text></g>`;
-    for(const l of layouts){svg+=`<g class="map-node choice"><rect x="290" y="${l.center-36}" width="245" height="72" rx="6"/><text x="305" y="${l.center-16}" class="small">ESCOLHA ${l.ci+1}</text>${wrap(l.c.text || 'Sem texto no arquivo',32).map((line,i)=>`<text x="305" y="${l.center+5+i*17}">${esc(line)}</text>`).join('')}</g>`;
-      for(const {r,ri,y:ry} of l.results){const key=`${e.group}:${r.nextEvent}`,click=r.nextEvent>=0 && byKey.has(key);svg+=`<g class="map-node ${click?'clickable':''}" ${click?`data-event="${key}" role="link" tabindex="0" aria-label="Ir para ${esc(targetName(e,r))}"`:''}><rect x="615" y="${ry}" width="430" height="96" rx="6"/><text x="630" y="${ry+20}" class="small">RESULTADO ${l.ci+1}.${ri+1} · ${esc(targetName(e,r))}${click?' ↗':''}</text>${wrap(r.text || 'Sem texto no arquivo',55).map((line,i)=>`<text x="630" y="${ry+41+i*17}">${esc(line)}</text>`).join('')}<text x="630" y="${ry+82}" class="small">${esc(short(`chance: ${r.chance ?? '—'} · requisito: ${r.required || 'nenhum'}`,65))}</text></g>`;}
+  let mapDepth=4,mapLimit=32;
+  function renderMap(e,more=false) {
+    if(!more){mapDepth=4;mapLimit=32;}
+    const graph=window.AtlasRun.sequenceGraph(e,{events:byKey},{maxDepth:mapDepth,maxEvents:mapLimit});
+    const positions=new Map(),choices=[],results=[],paths=[];
+    const levels=Math.max(...graph.nodes.map(n=>n.depth))+1;
+    let height=220;
+    const line=(x,y,x2,y2,kind='')=>`<path class="map-edge ${kind}" marker-end="url(#arrow)" d="M${x} ${y} C${x+40} ${y},${x2-40} ${y2},${x2} ${y2}"/>`;
+    for(let depth=0;depth<levels;depth++) {
+      let y=48;
+      for(const n of graph.nodes.filter(n=>n.depth===depth)) {
+        const x=20+depth*1000,start=y;
+        for(const [ci,c] of (n.event.data.choice||[]).entries()) {
+          const top=y,items=[];
+          for(const [ri,r] of (c.result||[]).entries()){
+            const item={key:n.key,event:n.event,c,ci,r,ri,x:x+515,y};items.push(item);results.push(item);y+=142;
+          }
+          y=Math.max(y,top+115);
+          const choice={key:n.key,event:n.event,c,ci,x:x+245,y:(top+y)/2-52};choices.push(choice);
+          for(const item of items)paths.push(line(x+475,choice.y+52,item.x,item.y+59));
+          y+=22;
+        }
+        y=Math.max(y,start+128);
+        const pos={x,y:(start+y)/2-52,node:n};positions.set(n.key,pos);
+        for(const ch of choices.filter(c=>c.key===n.key))paths.push(line(x+200,pos.y+52,ch.x,ch.y+52));
+        y+=46;
+      }
+      height=Math.max(height,y);
+    }
+    for(const item of results) {
+      const key=window.AtlasRun.continuationKey(item.event,item.ci,item.ri,{events:byKey}),dest=positions.get(key);
+      if(dest)paths.push(line(item.x+380,item.y+59,dest.x,dest.y+52,dest.x<=item.x?'map-return':''));
+    }
+    const width=levels*1000-55;
+    let svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-label="Sequência do encontro: ${graph.nodes.length} nós, escolhas e resultados"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#91aa7b"/></marker></defs>${paths.join('')}`;
+    const texts=(text,x,y,max,lines=2)=>wrap(text,max,lines).map((line,i)=>`<text x="${x}" y="${y+i*17}">${esc(line)}</text>`).join('');
+    for(const [key,{x,y,node:n}] of positions) {
+      svg+=`<g class="map-node root clickable" data-event="${key}" role="link" tabindex="0" aria-label="Abrir ${esc(recordLabel(n.event))}"><title>${esc(n.event.title)}</title><rect x="${x}" y="${y}" width="200" height="104" rx="7"/><text x="${x+12}" y="${y+22}">NÓ #${n.event.id} · ${esc(types[n.event.group].label)}</text><text class="small" x="${x+12}" y="${y+42}">${n.depth===0?'Início do mapa':'Etapa seguinte'} · ${n.event.choices} escolhas</text>${texts(n.event.data.text||'Continuação após o resultado anterior',x+12,y+65,25)}</g>`;
+    }
+    for(const {x,y,event,c,ci} of choices) {
+      const test=event.rules?.choices[ci]?.test;
+      svg+=`<g class="map-node choice"><title>${esc(c.text)}${test?' · '+esc(test.label):''}</title><rect x="${x}" y="${y}" width="230" height="104" rx="6"/><text class="small" x="${x+12}" y="${y+19}">ESCOLHA ${ci+1} · NÓ #${event.id}</text>${texts(c.text||'Desfecho / ramo '+(ci+1),x+12,y+42,30)}${test?`<text class="map-test" x="${x+12}" y="${y+88}">${esc(short(test.label,31))}</text>`:''}</g>`;
+    }
+    for(const {x,y,event,ci,r,ri} of results) {
+      const key=window.AtlasRun.continuationKey(event,ci,ri,{events:byKey}),rv=event.rules?.choices[ci]?.results[ri];
+      const destination=key?`${positions.has(key)?'→':'Expandir →'} Nó #${r.nextEvent}${positions.get(key)?.x<=x?' · retorno / convergência':''}`:targetName(event,r);
+      svg+=`<g class="map-node ${key?'clickable':''}" ${key?`data-event="${key}" role="link" tabindex="0" aria-label="Abrir continuação #${r.nextEvent}"`:''}><title>${esc(r.text)} · ${esc(destination)}</title><rect x="${x}" y="${y}" width="380" height="122" rx="6"/><text class="small" x="${x+12}" y="${y+20}">RESULTADO ${ci+1}.${ri+1}${rv?.testOutcome?' · '+esc(rv.testOutcome):''}</text>${texts(r.text||'Sem texto na fonte',x+12,y+41,48)}<text class="small" x="${x+12}" y="${y+88}">${esc(short(destination,57))}</text><text class="small" x="${x+12}" y="${y+107}">${esc(short(`Requisito: ${r.required||'nenhum'}`,57))}</text></g>`;
     }
     $('choiceMap').innerHTML=svg+'</svg>';zoom=1;mapNeedsFit=true;applyZoom();
-    const targets=[...new Set((e.data.choice||[]).flatMap(c=>c.result||[]).filter(r=>r.nextEvent>=0).map(r=>`${e.group}:${r.nextEvent}`))];
-    $('mapTargets').innerHTML=targets.filter(key=>byKey.has(key)).map(key=>`<button data-event="${key}">Abrir ${esc(types[e.group].label)} #${byKey.get(key).id} ↗</button>`).join('');
-    $('choiceMap').querySelectorAll('[data-event]').forEach(node => node.addEventListener('keydown', event => {if(event.key==='Enter' || event.key===' '){event.preventDefault();openEvent(node.dataset.event);}}));
+    $('mapTargets').innerHTML=`<p class="map-sequence-info">${graph.nodes.length} nós conectados. Leia da esquerda para a direita; linhas tracejadas indicam retornos. As condições de cada ramo continuam valendo.</p>${graph.truncated?'<button id="moreMapSteps">Mostrar mais etapas e ramificações</button>':''}<details class="map-node-list"><summary>Etapas do encontro em lista</summary>${graph.nodes.map(n=>`<div>${recordLink(n.key,`${recordLabel(n.event)} — ${short(n.event.title,95)}`)}<ul>${(n.event.data.choice||[]).map((c,ci)=>`<li>${esc(plain(c.text)||'Desfecho / ramo '+(ci+1))}${n.event.rules?.choices[ci]?.test?' · '+esc(n.event.rules.choices[ci].test.label):''}<ul>${(c.result||[]).map((r,ri)=>`<li>${esc(n.event.rules?.choices[ci]?.results[ri]?.testOutcome||'Resultado '+(ri+1))}: ${esc(short(plain(r.text),170))} — ${targetControl(n.event,r)}</li>`).join('')}</ul></li>`).join('')}</ul></div>`).join('')}</details>`;
+    $('moreMapSteps')?.addEventListener('click',()=>{mapDepth+=3;mapLimit+=32;renderMap(e,true);fitMap();});
+    $('choiceMap').querySelectorAll('[data-event]').forEach(node=>node.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openEvent(node.dataset.event);}}));
   }
   function applyZoom(){const svg=$('choiceMap').querySelector('svg');if(!svg)return;const [, ,w,h]=svg.getAttribute('viewBox').split(' ').map(Number);svg.style.width=`${w*zoom}px`;svg.style.height=`${h*zoom}px`;$('zoomReset').textContent=`${Math.round(zoom*100)}%`;}
-  function fitMap(){const svg=$('choiceMap').querySelector('svg');if(!svg)return;const h=Number(svg.getAttribute('viewBox').split(' ')[3]);zoom=Math.min(1,Math.max(.1,($('mapViewport').clientWidth-42)/1080),Math.max(.1,460/h));applyZoom();mapNeedsFit=false;}
+  function fitMap(){const svg=$('choiceMap').querySelector('svg');if(!svg)return;zoom=Math.min(1,Math.max(.45,($('mapViewport').clientWidth-42)/1080));applyZoom();mapNeedsFit=false;}
   $('zoomOut').onclick=()=>{zoom=Math.max(.1,zoom-.15);applyZoom();};$('zoomIn').onclick=()=>{zoom=Math.min(2,zoom+.15);applyZoom();};$('zoomReset').onclick=fitMap;
   function setTab(tab) {
     for(const name of ['overview','map','incoming']){

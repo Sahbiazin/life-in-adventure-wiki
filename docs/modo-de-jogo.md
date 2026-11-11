@@ -16,12 +16,14 @@ Uma nova run preserva as anteriores. É possível copiar as confirmações do ca
 ## Durante o jogo
 
 1. Busque palavras do encontro ou o ID exato, como `#346`. Use a tabela para diferenciar IDs iguais. Também há **Usar encontro na run** nos detalhes de eventos do Atlas.
-2. Confira as escolhas e todos os resultados registrados. Os requisitos aparecem como atendidos, não atendidos ou desconhecidos. Se o próprio jogo mostrar uma opção diferente, informe sua disponibilidade.
+2. Confira as escolhas e todos os resultados registrados. As etiquetas **Teste de Força**, **Teste de Inteligência** etc. identificam atributos que influenciam o sorteio e os ramos de sucesso/falha. São diferentes dos requisitos para liberar a opção, que aparecem como atendidos, não atendidos ou desconhecidos. A etiqueta não informa uma dificuldade mínima nem uma porcentagem de sucesso. Se o próprio jogo mostrar uma opção diferente, informe sua disponibilidade.
 3. Uma **sugestão provisória** mostra os efeitos conhecidos que favorecem os objetivos. Ela pode faltar quando os dados não sustentam uma preferência ou quando há empate. Os dados originais continuam acessíveis.
 4. Depois de jogar, selecione **Foi este resultado**. Revise os valores estimados e substitua-os pelos que realmente apareceram no jogo. Confirme a conferência antes de salvar. Se o resultado não corresponder às opções, registre o ocorrido manualmente, com uma observação.
-5. O próximo encontro só é selecionado quando você confirma que ele apareceu. Um salto nos dados não comprova que aquele encontro será sorteado.
+5. Ao salvar um resultado com continuação direta, o Atlas abre as **próximas escolhas do mesmo encontro**, preservando o texto de ligação e mostrando o percurso. Retornos ao mesmo nó atualizam os requisitos com o estado registrado. Só o resultado confirmado aplica efeitos; abrir a continuação não escolhe nem salva outra resposta. Sem continuação direta, volte à busca quando surgir outro encontro. Se a tela divergir, use **Escolher outro encontro** ou registre um resultado diferente.
 
-O diário guarda o antes/depois, evento, escolha, resultado, observações e os objetivos usados para aquela decisão. **Conferir / corrigir ficha** registra ajustes manuais. Desfazer e refazer restauram o estado; salvar uma nova ação depois de desfazer substitui o ramo desfeito. Runs encerradas podem ser reabertas.
+O diário guarda o antes/depois, evento, escolha, resultado, observações e os objetivos usados para aquela decisão. **Conferir / corrigir ficha** registra ajustes manuais. Desfazer e refazer restauram o estado e a etapa da sequência; salvar uma nova ação depois de desfazer substitui o ramo desfeito. Runs encerradas podem ser reabertas. Os backups da primeira versão continuam compatíveis.
+
+No Atlas, **Mapa de escolhas** conecta os nós das etapas seguintes aos resultados de origem, incluindo ramificações, convergências e retornos. Use a rolagem e o zoom para percorrer o diagrama. Mapas grandes começam com até quatro transições e 32 nós; **Mostrar mais etapas e ramificações** amplia esses limites, e cada destino também pode ser aberto diretamente. A lista abaixo do mapa oferece os textos das escolhas e resultados para leitura sem zoom. Isso descreve as conexões registradas, sem prever encontros aleatórios ou ignorar requisitos futuros.
 
 ## Como as sugestões funcionam
 
@@ -33,7 +35,7 @@ O diário guarda o antes/depois, evento, escolha, resultado, observações e os 
 
 ## O que ainda é manual
 
-**Combate e pontuação:** o modo não prevê vitória, dano completo nem pontuação final. A pontuação pode ser anotada. Quando maximizá-la é o objetivo principal, não aparece uma escolha apresentada como ótima para pontuação.
+**Combate e pontuação:** o modo não prevê vitória, dano completo nem pontuação final. Nós que guardam desfechos de combate sem texto de escolha são apresentados como ramos para registrar o observado, sem sugerir vitória ou derrota. A pontuação pode ser anotada. Quando maximizá-la é o objetivo principal, não aparece uma escolha apresentada como ótima para pontuação.
 
 **Histórias e contos:** o texto da história não identifica automaticamente todas as etapas. Um epílogo alvo opcional permite orientar a busca, mas a conclusão da história continua sendo confirmada pelo jogador. Sem esse alvo, um objetivo principal de história não produz uma recomendação automática.
 

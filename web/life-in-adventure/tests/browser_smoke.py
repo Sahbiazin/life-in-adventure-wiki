@@ -54,6 +54,36 @@ class WikiBrowserTests(unittest.TestCase):
     def goto(self, fragment=''):
         self.page.goto(self.base + fragment, wait_until='networkidle')
 
+    def test_map_contains_followup_choices_tests_returns_and_converging_paths(self):
+        self.goto('#evento=EventNormal%3A552')
+        expect(self.page.locator('#overviewPanel .attribute-test')).to_contain_text('Teste de Inteligência')
+        self.page.locator('#mapTab').click()
+        graph = self.page.locator('#choiceMap svg')
+        for label in ['Eu sou', 'Eu vou te ajudar', 'Distrái-os', 'Teste de Carisma', 'Sucesso', 'Falha']:
+            expect(graph).to_contain_text(label)
+        self.assertEqual(self.page.locator('#choiceMap .root').count(), 5)
+        self.assertGreater(self.page.locator('#choiceMap .map-return').count(), 0)
+        self.page.locator('#mapTargets > details > summary').click()
+        expect(self.page.locator('#mapTargets')).to_contain_text('Eu não sou')
+        self.page.locator('#mapTargets a[data-record="EventNormal:554"]').first.click()
+        expect(self.page.locator('#detailId')).to_contain_text('0554')
+        expect(self.page.locator('#overviewPanel')).to_contain_text('Eu vou te ajudar')
+        self.goto('#evento=EventNormal%3A557')
+        self.page.locator('#mapTab').click()
+        before = self.page.locator('#choiceMap .root').count()
+        self.page.locator('#moreMapSteps').click()
+        self.assertGreater(self.page.locator('#choiceMap .root').count(), before)
+
+    def test_attribute_test_is_visible_without_fabricating_a_success_percentage(self):
+        self.goto('#evento=EventNormal%3A222')
+        expect(self.page.locator('.choice-card > summary').first).to_contain_text('Teste de Força')
+        expect(self.page.locator('.result-heading').first).to_contain_text('Sucesso')
+        expect(self.page.locator('.result-heading').nth(1)).to_contain_text('Falha')
+        expect(self.page.locator('.test-explanation')).to_contain_text('Não é um requisito mínimo')
+        self.assertEqual(self.page.locator('.choice-card').first.get_by_text('Probabilidade estática', exact=True).count(), 0)
+        self.page.locator('#mapTab').click()
+        expect(self.page.locator('#choiceMap')).to_contain_text('Teste de Força')
+
     def test_readable_rules_raw_data_and_probability(self):
         self.goto('#evento=EventTreasure%3A346')
         expect(self.page.locator('#eventDialog')).to_be_visible()
