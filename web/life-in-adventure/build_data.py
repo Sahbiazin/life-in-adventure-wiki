@@ -104,6 +104,8 @@ def rule_view(raw, reward=False):
                 state = f'Estado de {label} #{idx}'
                 token['state'] = f'{domain}:{idx}'
                 token['text'] = f'Definir {state.lower()} como {qty}' if reward else f'{state} {"deve ser diferente de" if part["comparison"] == "!=" else "deve ser"} {qty}'
+        if part['decoded']:
+            token['model'] = {key: part[key] for key in ('domain', 'operation', 'index', 'quantity', 'comparison', 'context_requirements', 'ending_id') if key in part}
         if part.get('context_requirements'):
             token['text'] += '; exige conto habilitado e compatibilidade com o conto atual quando informado pelo jogo'
         tokens.append(token)
@@ -183,7 +185,7 @@ def build(database, output):
                     links.append({'key': key, 'relation': f'Habilidade no campo {field}', 'raw': token})
         c['references'] = links
     report, states = audit(originals)
-    payload = {'audit': report, 'stateIndex': states, 'version': '1.2.47', 'events': data, 'catalogs': catalogs,
+    payload = {'runModelVersion': 1, 'audit': report, 'stateIndex': states, 'version': '1.2.47', 'events': data, 'catalogs': catalogs,
                'rulesStatus': 'Análise estática parcial do build 366; sem validação em jogo.'}
     temporary = output.with_suffix('.js.tmp')
     temporary.write_text('window.ATLAS_DATA=' + json.dumps(payload, ensure_ascii=False, separators=(',', ':')) + ';\n', encoding='utf-8')

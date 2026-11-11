@@ -11,6 +11,7 @@ Abra `dist/index.html` no navegador ou sirva a pasta `dist`. O aplicativo usa ap
 - **Caminhos de chegada:** o terceiro separador do evento mostra os resultados que apontam para ele, com requisitos de entrada, escolha e resultado na origem. As referências ficam na mesma tabela; IDs iguais em tabelas diferentes não são unidos. Isso não representa todas as regras que iniciam encontros.
 - **Links diretos:** “Copiar link” abre exatamente o registro selecionado, preservando o ID e a tabela. Exemplo de fragmento de evento: `#evento=EventTreasure%3A346`; de item: `#catalogo=item&registro=item%3A181`. Links antigos de eventos continuam funcionando. Os botões Voltar/Avançar do navegador acompanham as consultas. Se o navegador impedir a cópia automática, o endereço aparece em um campo selecionável.
 - **Caderno local:** estrelas guardam eventos e registros nos favoritos. O histórico mantém as últimas 100 consultas, sem repetições, da mais recente à mais antiga; pode ser limpo na própria seção. Ambos usam `localStorage`, na chave `life-in-adventure:notebook:v1`, apenas neste navegador e origem. Se o armazenamento estiver bloqueado, continuam funcionando na memória durante a visita, com aviso. Não há sincronização entre dispositivos.
+- **Modo de Jogo:** ficha inicial com valores efetivos, inventário, traços e habilidades, objetivos ordenados, busca do encontro observado e comparação provisória das escolhas. O jogador seleciona e confere o resultado real antes de atualizar a ficha. Inclui correções, diário, desfazer/refazer, várias runs e backup JSON. Os saves usam a chave separada `life-in-adventure:runs:v1`. Veja o [guia e os limites](../../docs/modo-de-jogo.md).
 
 A busca ignora acentos. Nos eventos, consulta o texto, as escolhas, os resultados, os códigos e as regras legíveis; nos catálogos, nome, descrição e campos originais. `#346` procura o ID exato. As tags de eventos são combinadas com E, junto à categoria e à busca. Ordenação e paginação também estão disponíveis nos catálogos e no caderno.
 
@@ -34,21 +35,27 @@ Na raiz:
 ```sh
 .venv/bin/python -X utf8 -m unittest discover -s tests -v
 node --check web/life-in-adventure/dist/app.js
+node --check web/life-in-adventure/dist/game-engine.js
+node --check web/life-in-adventure/dist/game-mode.js
+node --test web/life-in-adventure/tests/game-engine.test.cjs
 ```
 
 Para o teste funcional de navegador, use um Python com Playwright e um Chromium instalado (não é uma dependência da aplicação):
 
 ```sh
 python web/life-in-adventure/tests/browser_smoke.py
+python web/life-in-adventure/tests/game_mode_smoke.py
 ```
 
 O teste abre seu próprio servidor em uma porta disponível e o encerra ao terminar. `CHROMIUM_PATH` permite indicar outro executável (padrão `/usr/bin/chromium`). A suíte verifica catálogos e variantes, regras e dados originais, conexões nos dois sentidos, caminhos de chegada, links diretos e navegação, favoritos e histórico persistentes, armazenamento bloqueado, tela móvel e os arquivos locais servidos por interceptação com rede desativada. Esta última estratégia permite testar o aplicativo offline mesmo quando uma política do Chromium bloqueia URLs `file://`.
+
+Os testes do motor verificam requisitos com dados desconhecidos, objetivos e prioridades, regras de sugestão, efeitos parciais, todos os 12.196 resultados, importação e reversibilidade. A suíte do Modo de Jogo verifica a ficha, sugestões que mudam conforme o objetivo, confirmação do observado, correções, diário, persistência, backups, runs independentes, tela móvel e proteção contra sobrescrita por outra aba ou por um save inválido.
 
 ## Publicação no GitHub Pages
 
 Site publicado: [Life in Adventure · Atlas de eventos](https://sahbiazin.github.io/life-in-adventure-wiki/).
 
-O workflow `.github/workflows/pages.yml` publica somente os quatro arquivos da pasta `dist`, sem incluir o APK ou os arquivos de extração no site. Ele usa o bundle já versionado; depois de alterar a geração dos dados, atualize o bundle antes do envio.
+O workflow `.github/workflows/pages.yml` publica somente os seis arquivos da pasta `dist`, sem incluir o APK ou os arquivos de extração no site. Ele verifica a estrutura do bundle, a sintaxe dos scripts e os testes do motor. Usa o bundle já versionado; depois de alterar a geração dos dados, atualize o bundle antes do envio.
 
 Para a primeira publicação, o repositório precisa ter o GitHub Pages ativado com **Settings → Pages → Build and deployment → Source → GitHub Actions**. Em uma conta gratuita, mantenha o repositório público. A publicação é executada nos envios para `master` que alteram o aplicativo ou o workflow; também pode ser iniciada em **Actions → Publicar atlas no GitHub Pages → Run workflow**.
 
@@ -58,4 +65,4 @@ Tornar o repositório público permite visualizar e copiar seu conteúdo, mas n�
 
 O painel “Cobertura das regras” informa a cobertura estática dos campos não vazios e os limites atuais. Nos eventos, “Estados e dependências” permite consultar leituras e alterações do mesmo estado, separadas das transições diretas e sem garantir desbloqueio. Os epílogos são navegáveis por suas referências nos eventos, com identificação separada entre histórias principais e contos. O registro de um epílogo na aventura não comprova seu desbloqueio permanente no catálogo.
 
-Execute `.venv/bin/python scripts/audit_rules.py` antes de gerar os dados quando atualizar regras; isso mantém `docs/atlas-readiness.json` sincronizado com o bundle. A geração do bundle calcula a mesma auditoria automaticamente. Consulte `docs/preparacao-modo-jogo.md` e `docs/regras-confirmadas.md` para o que ainda impede uma simulação completa. Nenhuma recomendação automática ou funcionalidade de run foi incluída nesta etapa.
+Execute `.venv/bin/python scripts/audit_rules.py` antes de gerar os dados quando atualizar regras; isso mantém `docs/atlas-readiness.json` sincronizado com o bundle. A geração do bundle calcula a mesma auditoria automaticamente. Consulte `docs/preparacao-modo-jogo.md` e `docs/regras-confirmadas.md` para o que ainda impede uma simulação completa. O Modo de Jogo é um acompanhamento manual com sugestões provisórias, não um simulador completo.

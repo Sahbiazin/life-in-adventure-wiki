@@ -15,6 +15,7 @@
     EventMainStart: {label:'Início', title:'Inícios de aventura', icon:'☀', code:'INI'}
   };
   const sections = {
+    game:{title:'Modo de Jogo', label:'Modo de Jogo', icon:'▷', description:'Acompanhe sua run, compare escolhas e registre o que aconteceu no celular.'},
     events:{title:'Atlas de eventos', label:'Eventos', icon:'◇', description:'Explore os encontros e todas as possibilidades da sua aventura.'},
     item:{title:'Itens', label:'Itens', icon:'✧', description:'Equipamentos e objetos, seus dados e os eventos relacionados.'},
     monster:{title:'Monstros', label:'Monstros', icon:'⚔', description:'Conheça as criaturas e encontre os encontros em que são listadas.'},
@@ -148,6 +149,9 @@
   }
   function render() {
     const eventView = state.view === 'events', section = sections[state.view];
+    const gameView=state.view==='game';
+    $('gameRoot').hidden=!gameView;$('atlasCatalog').hidden=gameView;$('ruleCoverage').hidden=gameView;
+    if(!gameView)window.AtlasGame?.hide();
     $('eventFilters').hidden = !eventView; $('eventStats').hidden = !eventView;
     $('eventsTable').hidden = !eventView; $('recordGrid').hidden = eventView;
     $('clearHistory').hidden = state.view !== 'history' || !visits.length;
@@ -161,6 +165,7 @@
       button.classList.toggle('nav-active',selected);
       if(selected) button.setAttribute('aria-current','page'); else button.removeAttribute('aria-current');
     }
+    if(gameView){if(window.AtlasGame)window.AtlasGame.render();else $('gameRoot').textContent='Não foi possível carregar o Modo de Jogo. Recarregue a página.';renderNotebookCounts();return;}
     $('sort').querySelector('[value=choices]').hidden=!eventView;
     $('sort').querySelector('[value=results]').hidden=!eventView;
     $('sort').querySelector('[value=default]').textContent=state.view === 'history'?'Mais recentes':'Tipo e número';
@@ -227,7 +232,7 @@
   const changePage=delta=>{state.page+=delta;render();$('catalogTitle').scrollIntoView({block:'start',behavior:'smooth'});};
   $('prevPage').onclick=()=>changePage(-1);$('nextPage').onclick=()=>changePage(1);
   document.addEventListener('keydown',event=>{
-    if(event.key==='/' && !dialog.open && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)){event.preventDefault();$('search').focus();}
+    if(event.key==='/' && !dialog.open && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)){event.preventDefault();(state.view==='game'?$('gameEventQuery'):$('search'))?.focus();}
   });
 
   function targetName(e,r) {
@@ -367,6 +372,7 @@
     $('detailCategory').textContent=(e.kind==='event'?types[e.group].title:sections[e.kind].title).toUpperCase();
     $('detailTitle').textContent=e.kind==='event'?short(e.title.split(/(?<=[.!?])\s/)[0],110):e.title;
     $('detailId').textContent=e.kind==='event'?`${types[e.group].code} · ${String(e.id).padStart(4,'0')} / ${e.source}`:recordLabel(e);
+    $('useInRun').hidden=e.kind!=='event';
     $('mapTab').hidden=e.kind!=='event';$('incomingTab').hidden=e.kind!=='event';
     $('overviewTab').textContent=e.kind==='event'?'Detalhes do evento':'Detalhes do registro';
     if(e.kind==='event'){renderOverview(e);renderMap(e);renderIncoming(e);}
@@ -415,6 +421,8 @@
   $('statEvents').textContent=fmt(events.length);
   $('statChoices').textContent=fmt(events.reduce((n,e)=>n+e.choices,0));
   $('statResults').textContent=fmt(events.reduce((n,e)=>n+e.results,0));
+  $('useInRun').onclick=()=>{if(current?.kind==='event')window.AtlasGame?.chooseEvent(current.key);};
+  window.AtlasGame?.init(navigateView);
   renderAudit();
   syncRoute();
 })();

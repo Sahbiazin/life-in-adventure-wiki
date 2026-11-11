@@ -1,0 +1,327 @@
+'use strict';
+(() => {
+  const E=window.AtlasRun, $=id=>document.getElementById(id);
+  const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const fmt=value=>E.finite(value)?value.toLocaleString('pt-BR',{maximumFractionDigits:3}):'Não informado';
+  const short=(value,n=160)=>value.length>n?value.slice(0,n).trim()+'…':value;
+  const GROUPS={EventMain:'Principal',EventSub:'Secundário',EventBattle:'Combate',EventTreasure:'Tesouro',EventNormal:'Normal',EventMainStart:'Início'};
+  const KINDS={item:'Item',monster:'Monstro',ability:'Habilidade',trait:'Traço',ending:'Epílogo'};
+  const GOALS={item:'Ter um item',ending:'Alcançar um epílogo',catalog_item:'Registrar item no catálogo',catalog_monster:'Registrar monstro no catálogo',story:'Concluir história ou conto',score:'Maximizar a pontuação',gold:'Acumular ouro'};
+  const KEY='life-in-adventure:runs:v1';
+  let index,host,session={version:1,runs:[],activeId:null},cachedRaw=null,recoveryRaw=null,loaded=false;
+  let navigate=()=>{},isVisible=false,editor=null,review=null,newForm=false,query='',category='all',message='',warning='',conflict=false;
+  let currentAnalysis=null;
+  const active=()=>session.runs.find(r=>r.id===session.activeId)||null;
+  const recordName=key=>index.records.get(key)?.title||key;
+  const pickerValue=c=>`${c.title} · ${c.kind==='ending'?(c.ending_group==='main'?'principal':'conto')+' / ':''}#${c.id}${c.variant!==null&&c.variant!==undefined?' / '+c.variant:''}`;
+  const labelEvent=e=>`${GROUPS[e.group]} #${e.id} — ${short(E.plain(e.data.text)||'Continuação sem texto inicial',150)}`;
+  function ensure() {
+    if(loaded)return;loaded=true;index=E.createIndex(window.ATLAS_DATA);host=$('gameRoot');
+    try {
+      cachedRaw=localStorage.getItem(KEY);
+      if(cachedRaw)session=validateSession(JSON.parse(cachedRaw));
+    } catch(error) {recoveryRaw=cachedRaw;warning='Não foi possível recuperar as runs salvas. Nenhum dado antigo foi apagado. Você pode importar um backup ou iniciar uma run nesta visita.';}
+    host.addEventListener('click',onClick);host.addEventListener('submit',onSubmit);host.addEventListener('input',onInput);host.addEventListener('change',onChange);
+    window.addEventListener('storage',event=>{if(event.key===KEY||event.key===null){conflict=true;if(isVisible)render();}});
+  }
+  function validateSession(raw) {
+    if(!raw || raw.version!==1 || !Array.isArray(raw.runs)||raw.runs.length>100)throw new Error('Arquivo de runs incompatível.');
+    const runs=raw.runs.map(r=>E.validateRun(r,index));
+    if(new Set(runs.map(r=>r.id)).size!==runs.length)throw new Error('Runs duplicadas.');
+    return {version:1,runs,activeId:runs.some(r=>r.id===raw.activeId)?raw.activeId:runs[0]?.id||null};
+  }
+  function persist(candidate) {
+    if(conflict)throw new Error('Há alterações em outra aba. Use “Carregar dados da outra aba” antes de salvar.');
+    if(candidate.runs.length>100)throw new Error('O limite desta versão é de 100 runs. Exporte suas runs para preservá-las.');
+    if(recoveryRaw){session=candidate;warning='Os dados antigos parecem danificados e foram preservados. Esta nova run está apenas na memória desta visita: exporte uma cópia para guardá-la.';return;}
+    const encoded=JSON.stringify(candidate);
+    let before;
+    try{before=localStorage.getItem(KEY);}catch{session=candidate;warning='Armazenamento indisponível: a run está apenas na memória desta visita. Exporte uma cópia para guardá-la.';return;}
+    if(before!==cachedRaw){conflict=true;throw new Error('A run foi alterada em outra aba. Carregue a versão salva antes de continuar.');}
+    try{localStorage.setItem(KEY,encoded);cachedRaw=encoded;}
+    catch{warning='Não foi possível salvar neste navegador. A run está na memória desta visita; exporte uma cópia antes de fechar a página.';}
+    session=candidate;
+  }
+  function saveRun(run) {
+    const candidate=E.clone(session),pos=candidate.runs.findIndex(r=>r.id===run.id);
+    if(pos<0)candidate.runs.push(run);else candidate.runs[pos]=run;
+    candidate.activeId=run.id;persist(candidate);
+  }
+  function error(error){message=error.message||String(error);renderMessages();}
+  function renderMessages() {
+    $('gameMessage').textContent=message;$('gameWarning').textContent=warning;
+    $('gameConflict').hidden=!conflict;
+  }
+  function field(id,label,value='',options='') {
+    return `<label>${esc(label)}<input id="${id}" name="${id}" value="${esc(value??'')}" ${options}></label>`;
+  }
+  function stateEditor(s,mode) {
+    const groups=[['0','1','8','9','4','2'],['5','6','7','12','13','14']];
+    return `<fieldset><legend>Ficha atual no celular</legend><p class="game-help">Use os valores finais exibidos pelo jogo, já com os bônus. Deixe em branco o que ainda não souber.</p>${groups.map((group,i)=>`${i===1&&mode==='review'?'<details class="game-details"><summary>Atributos principais</summary>':''}<div class="game-fields">${group.map(k=>field('gs'+k,E.STATS[k],s.stats[k],'type="number" min="0" max="1000000000" step="any" inputmode="decimal"')).join('')}</div>${i===1&&mode==='review'?'</details>':''}`).join('')}${field('gsScore','Pontuação observada (opcional)',s.score,'type="number" min="0" max="1000000000000" step="any" inputmode="decimal"')}</fieldset>
+      ${mode==='review'?'<details class="game-details"><summary>Conferir itens e quantidades</summary>':''}<fieldset><legend>Itens na mochila e equipados</legend><div class="game-pick-row"><label>Item<input id="gameItemPick" list="game-item-options" placeholder="Digite o nome do item" autocomplete="off"></label>${field('gameItemAmount','Quantidade',1,'type="number" min="0" step="1" inputmode="numeric"')}<button type="button" data-game-action="add-item">Adicionar / atualizar</button></div><div id="gameItemList" class="game-chips"></div><label class="game-check"><input id="gameInventoryComplete" type="checkbox" ${s.inventoryComplete?'checked':''}>Esta lista contém todos os meus itens, incluindo os equipados</label><p class="game-help">Se a lista estiver incompleta, os itens que não foram informados ficam desconhecidos.</p></fieldset>${mode==='review'?'</details>':''}
+      <details class="game-details" ${mode==='setup'?'open':''}><summary>Traços e habilidades atuais</summary><div class="game-pick-row"><label>Traço<input id="gameTraitPick" list="game-trait-options" placeholder="Digite o nome do traço" autocomplete="off"></label><button type="button" data-game-action="add-trait">Adicionar traço</button></div><div id="gameTraitList" class="game-chips"></div><label class="game-check"><input id="gameTraitsComplete" type="checkbox" ${s.traitsComplete?'checked':''}>Informei todos os meus traços</label><div class="game-pick-row"><label>Habilidade<input id="gameAbilityPick" list="game-ability-options" placeholder="Digite a habilidade" autocomplete="off"></label>${field('gameAbilityValue','Valor efetivo',0,'type="number" step="any" inputmode="decimal"')}<button type="button" data-game-action="add-ability">Adicionar / atualizar</button></div><div id="gameAbilityList" class="game-chips"></div><p class="game-help">Os bônus de equipamentos e traços não são calculados automaticamente. Confira os atributos e habilidades depois de trocar equipamentos.</p></details>
+      <details class="game-details"><summary>Avançado: estados de história conhecidos</summary><p class="game-help">Preenchidos pelos resultados modelados. Não é necessário informar os estados para começar; valores ausentes continuam desconhecidos.</p><label>Estados conhecidos (JSON)<textarea id="gameFlags" rows="5" spellcheck="false">${esc(editor?.flagsText??JSON.stringify(s.states,null,2))}</textarea></label>${s.flagsUncertain?'<p class="game-help">Houve efeitos não modelados nesta run. Os requisitos de estados continuam inconclusivos; confirme a disponibilidade das opções no celular.</p>':''}</details>`;
+  }
+  function renderEditorLists() {
+    const s=editor?.state;if(!s)return;
+    const chip=(label,action,key)=>`<span class="game-chip">${esc(label)} <button type="button" data-game-action="${action}" data-key="${esc(key)}" aria-label="Remover ${esc(label)}">×</button></span>`;
+    $('gameItemList').innerHTML=Object.entries(s.items).map(([key,value])=>chip(`${recordName('item:'+key)} × ${value===null?'?':fmt(value)}`,'remove-item',key)).join('')||'<p class="game-help">Nenhum item informado.</p>';
+    $('gameTraitList').innerHTML=s.traits.map(key=>chip(recordName('trait:'+key),'remove-trait',key)).join('')||'<p class="game-help">Nenhum traço informado.</p>';
+    $('gameAbilityList').innerHTML=Object.entries(s.abilities).map(([key,value])=>chip(`${recordName('ability:'+key+':0')}: ${fmt(value)}`,'remove-ability',key)).join('')||'<p class="game-help">Nenhuma habilidade informada.</p>';
+  }
+  function readState() {
+    const s=E.clone(editor.state);
+    for(const k of Object.keys(E.STATS)){const value=$('gs'+k).value;s.stats[k]=value.trim()===''?null:Number(value);}
+    s.score=$('gsScore').value.trim()===''?null:Number($('gsScore').value);
+    s.inventoryComplete=$('gameInventoryComplete').checked;s.traitsComplete=$('gameTraitsComplete').checked;
+    try{s.states=JSON.parse($('gameFlags').value);}catch{throw new Error('O JSON dos estados de história não é válido.');}
+    return E.cleanState(s,index);
+  }
+  function pick(input,kind) {
+    const value=$(input).value.trim();
+    const record=[...index.records.values()].find(c=>c.kind===kind&&(kind!=='ability'||c.variant==='0')&&pickerValue(c)===value);
+    if(!record)throw new Error(`Escolha um ${KINDS[kind].toLowerCase()} da lista de sugestões.`);
+    return record;
+  }
+  function options() {
+    return ['item','monster','ending','trait','ability'].map(kind=>`<datalist id="game-${kind}-options">${[...index.records.values()].filter(c=>c.kind===kind&&(kind!=='ability'||c.variant==='0')).map(c=>`<option value="${esc(pickerValue(c))}"></option>`).join('')}</datalist>`).join('');
+  }
+  function renderSetup() {
+    if(!editor||editor.mode!=='setup')editor={mode:'setup',state:E.blankState()};
+    return `<section class="game-card"><span class="eyebrow green">UMA AVENTURA, SEUS OBJETIVOS</span><h2>Prepare sua run</h2><p>Você joga no celular e mantém o Atlas atualizado com o que realmente aconteceu. Primeiro informe a ficha; depois escolha seus objetivos.</p><form id="gameSetup"><div class="game-fields">${field('gameRunName','Nome da run',editor.config?.name??'Minha aventura','maxlength="80"')}<label>Dificuldade<select id="gameDifficulty"><option value="normal">Normal</option><option value="hard" ${editor.config?.difficulty==='hard'?'selected':''}>Difícil</option></select></label><label>Comparação das escolhas<select id="gameProfile"><option value="cautious">Preferir o pior resultado conhecido menos arriscado</option><option value="expected" ${editor.config?.profile==='expected'?'selected':''}>Preferir a média quando a probabilidade for conhecida</option></select></label></div><div class="game-fields">${field('gameMainStory','História principal (nome no seu jogo)',editor.config?.mainStory??'','maxlength="150" placeholder="Opcional"')}${field('gameTales','Contos ativos',editor.config?.tales??'','maxlength="400" placeholder="Opcional; separados por vírgula"')}</div>${stateEditor(editor.state,'setup')}${active()?'<label class="game-check"><input id="gameCopyCatalog" type="checkbox" checked>Copiar o catálogo confirmado da run selecionada</label>':''}<div class="game-actions"><button class="game-primary" type="submit">Criar run e definir objetivos</button>${session.runs.length?'<button type="button" data-game-action="cancel-editor">Cancelar</button>':''}</div></form></section>`;
+  }
+  function goalLabel(g) {
+    return g.label || (g.type==='gold'?`Acumular ${fmt(g.amount)} de ouro`:g.type==='score'?'Maximizar a pontuação':`${GOALS[g.type]}: ${recordName(g.target)}`);
+  }
+  function goalCards(run) {
+    return `<section class="game-card" id="gameGoals"><div class="game-section-heading"><div><span class="eyebrow green">SEU NORTE</span><h2>Objetivos desta run</h2></div><span class="game-help">O primeiro objetivo em aberto orienta a indicação.</span></div>${run.goals.length?`<ol class="game-goals">${run.goals.map((g,i)=>{
+      const p=E.goalProgress(g,run.state);
+      const manual=['story','ending','catalog_item','catalog_monster'].includes(g.type);
+      const progress=g.type==='score'?`Pontuação anotada: ${fmt(p.value)} · cálculo automático indisponível`:p.complete?'Meta registrada':p.value===null?'Progresso a conferir':g.type==='item'||g.type==='gold'?`${fmt(p.value)} / ${fmt(g.amount)}`:'Ainda não confirmado';
+      return `<li class="${p.complete?'game-goal-done':''}"><div><span class="badge">${i===0?'Principal':'Secundário'}</span><strong>${esc(goalLabel(g))}</strong><small>${esc(progress)}</small>${g.type==='story'?'<small>Conclusão informada por você; um epílogo não garante vitória.</small>':''}${g.type.startsWith('catalog_')?'<small>Confirme apenas se o registro apareceu no catálogo do jogo.</small>':''}</div><div class="game-actions">${manual?`<button type="button" data-game-action="confirm-goal" data-key="${g.id}" ${run.status!=='active'?'disabled':''}>${p.complete?'Desmarcar confirmação':'Confirmar no jogo'}</button>`:''}${i?`<button type="button" data-game-action="promote-goal" data-key="${g.id}" ${run.status!=='active'?'disabled':''}>Tornar principal</button>`:''}<button type="button" data-game-action="remove-goal" data-key="${g.id}" aria-label="Remover objetivo ${esc(goalLabel(g))}" ${run.status!=='active'?'disabled':''}>Remover</button></div></li>`;
+    }).join('')}</ol>`:'<p>Adicione o que quer alcançar para receber uma comparação orientada aos seus objetivos.</p>'}
+      ${run.status==='active'?`<details class="game-details" ${!run.goals.length?'open':''}><summary>Adicionar objetivo</summary><form id="gameGoalForm"><div class="game-fields"><label>Objetivo<select id="gameGoalType">${Object.entries(GOALS).map(([key,value])=>`<option value="${key}">${esc(value)}</option>`).join('')}</select></label><div id="gameGoalTargetFields"></div></div><button type="submit" class="game-secondary">Adicionar objetivo</button></form></details>`:''}</section>`;
+  }
+  function renderGoalFields() {
+    const type=$('gameGoalType')?.value;if(!type)return;
+    const kind={item:'item',ending:'ending',catalog_item:'item',catalog_monster:'monster'}[type];
+    $('gameGoalTargetFields').innerHTML=kind?`<label>${esc(KINDS[kind])} alvo<input id="gameGoalTarget" list="game-${kind}-options" required placeholder="Digite o nome e escolha na lista" autocomplete="off"></label>${type==='item'?field('gameGoalAmount','Quantidade desejada',1,'type="number" min="1" max="1000000" step="1" required'):''}`:type==='gold'?field('gameGoalAmount','Quantidade de ouro desejada',100,'type="number" min="1" max="1000000000" step="1" required'):type==='story'?`${field('gameGoalLabel','História ou conto que deseja concluir','','maxlength="180" required')}<label>Epílogo específico para orientar a busca (opcional)<input id="gameGoalEnding" list="game-ending-options" autocomplete="off"></label>`:'<p class="game-help">Vamos guardar sua pontuação observada e mostrar as consequências das escolhas. A fórmula de pontuação ainda não está modelada; não indicaremos uma melhor escolha para maximizar pontos.</p>';
+  }
+  function dashboard(run) {
+    const known=k=>`${E.STATS[k]}: ${fmt(run.state.stats[k])}`;
+    return `<section class="game-card game-dashboard"><div><span class="badge">${run.status==='active'?'Em andamento':'Encerrada'} · ${run.difficulty==='hard'?'Difícil':'Normal'}</span><h2>${esc(run.name)}</h2><p>${esc([run.mainStory,run.tales].filter(Boolean).join(' · ')||'História e contos não informados')}</p></div><div class="game-stat-row">${['0','1','4','2'].map(k=>`<span>${esc(known(k))}</span>`).join('')}</div><div class="game-actions"><button type="button" data-game-action="edit-state" ${run.status==='ended'?'disabled':''}>Conferir / corrigir ficha</button><button type="button" data-game-action="undo" ${run.cursor===0||run.status!=='active'?'disabled':''}>Desfazer último registro</button><button type="button" data-game-action="redo" ${run.cursor>=run.history.length||run.status!=='active'?'disabled':''}>Refazer</button><button type="button" data-game-action="toggle-status">${run.status==='active'?'Encerrar run':'Reabrir run'}</button></div>${run.state.pending.length?`<details class="game-pending" open><summary>${run.state.pending.length} ${run.state.pending.length===1?'pendência para conferir':'pendências para conferir'}</summary><ul>${run.state.pending.map(issue=>`<li>${esc(issue)}</li>`).join('')}</ul><p>Use “Conferir / corrigir ficha” para registrar os valores reais e confirmar os efeitos já conferidos.</p></details>`:''}</section>`;
+  }
+  function searchPanel(run) {
+    const last=run.history[run.cursor-1];let nextKey=null;
+    if(last?.type==='result'){
+      const e=index.events.get(last.eventKey),r=e?.data.choice?.[last.choice]?.result?.[last.result];
+      if(Number.isInteger(r?.nextEvent)&&r.nextEvent>=0&&index.events.has(`${e.group}:${r.nextEvent}`))nextKey=`${e.group}:${r.nextEvent}`;
+    }
+    return `<section class="game-card"><div class="game-section-heading"><div><span class="eyebrow green">ACOMPANHE O CELULAR</span><h2>Qual encontro apareceu?</h2></div></div><p>Pesquise algumas palavras do texto ou o #ID. Confira a tabela e as escolhas quando houver eventos parecidos.</p><div class="game-event-search"><label>Buscar encontro<input id="gameEventQuery" value="${esc(query)}" type="search" placeholder="Texto, escolha ou #346…" autocomplete="off"></label><label>Tipo<select id="gameEventCategory"><option value="all">Todos</option>${Object.entries(GROUPS).map(([key,label])=>`<option value="${key}" ${category===key?'selected':''}>${esc(label)}</option>`).join('')}</select></label></div><div id="gameEventResults" role="region" aria-label="Encontros encontrados" aria-live="polite"></div>${nextKey?`<p class="game-help">O último resultado aponta para ${esc(labelEvent(index.events.get(nextKey)))}.</p><button type="button" data-game-action="select-event" data-key="${nextKey}">Foi esse encontro que apareceu</button>`:''}</section>`;
+  }
+  function renderSearchResults() {
+    const q=E.normalize(query.trim()),keys=q.split(/\s+/);
+    const matches=q?[...index.events.entries()].filter(([key,e])=>{
+      if(category!=='all'&&e.group!==category)return false;
+      if(/^#\d+$/.test(q))return e.id===Number(q.slice(1));
+      return keys.every(term=>eventSearch.get(key).includes(term));
+    }):[];
+    $('gameEventResults').innerHTML=!q?'<p class="game-help">Nenhum encontro selecionado automaticamente: informe o que apareceu no seu jogo.</p>':!matches.length?'<p>Nenhum encontro encontrado. Tente um trecho menor ou outra categoria.</p>':`<p class="game-help">${matches.length} encontros encontrados. ${matches.length>12?'Mostrando os primeiros 12; refine a busca para ver os demais.':''}</p><div class="game-event-results">${matches.slice(0,12).map(([key,e])=>`<button type="button" data-game-action="select-event" data-key="${key}"><strong>${esc(labelEvent(e))}</strong><small>${esc(short((e.data.choice||[]).map(c=>E.plain(c.text)).filter(Boolean).join(' · '),200))}</small></button>`).join('')}</div>`;
+  }
+  const eventSearch=new Map();
+  function ruleList(view,empty) {
+    if(!view?.tokens?.length)return `<p class="game-help">${esc(empty)}</p>`;
+    return `${view.operator==='OR'?'<p class="game-help">Basta uma destas condições:</p>':''}<ul class="game-rule-list">${view.tokens.map(t=>`<li class="${t.known?'':'game-unknown'}">${esc(t.text)}${t.ref&&index.records.has(t.ref)?` — ${esc(recordName(t.ref))}`:''}${!t.known?` <code>${esc(t.raw)}</code>`:''}</li>`).join('')}</ul>`;
+  }
+  function encounterPanel(run) {
+    const event=index.events.get(run.selectedEvent);if(!event)return '';
+    const analysis=E.analyze(event,run,index,run.availability);currentAnalysis=analysis;
+    return `<section class="game-card game-encounter" id="gameEncounter"><div class="game-section-heading"><div><span class="badge">${esc(GROUPS[event.group])} #${event.id}</span><h2>Encontro selecionado</h2></div><button type="button" data-event="${run.selectedEvent}">Ver no Atlas</button></div><p class="game-narrative">${esc(E.plain(event.data.text)||'Este nó não possui texto inicial. Confira as escolhas e o encontro anterior.')}</p><p class="game-notice">${analysis.recommendation!==null?`<strong>Indicação provisória: ${esc(E.plain(event.data.choice[analysis.recommendation].text))}</strong><br>`:''}${esc(analysis.message)}</p><p class="game-help">Critério da run: ${run.profile==='expected'?'média dos pesos estáticos quando disponíveis; nos demais casos, pior resultado conhecido':'pior resultado conhecido'}. Atributos e inventário precisam estar conferidos. O evento foi informado por você; não estamos simulando o sorteio de encontros.</p>
+      ${(event.data.choice||[]).map((choice,ci)=>{
+        const row=analysis.rows[ci],cv=event.rules?.choices?.[ci],recommended=analysis.recommendation===ci;
+        return `<details class="game-choice ${recommended?'game-recommended':''}" ${(analysis.recommendation===null?ci===0:recommended)?'open':''}><summary><span class="game-choice-number">${ci+1}</span><span>${esc(E.plain(choice.text)||'Escolha sem texto na fonte')}</span>${recommended?'<span class="game-recommend-badge">Indicação provisória</span>':''}</summary><div class="game-choice-content"><p class="game-availability">${row.available===true?'✓ Requisito da escolha atendido ou disponibilidade confirmada por você':row.available===false?'Requisito não atendido pela ficha informada':'Disponibilidade a conferir no celular'}</p>${ruleList(cv?.required,'Sem requisito de escolha registrado.')}<label class="game-check"><input type="checkbox" data-game-available="${ci}" ${run.availability[ci]===true?'checked':''}>Esta opção está disponível no meu jogo</label>${row.lethal?'<p class="game-pending">Um resultado conhecido pode levar a saúde a zero. Confira sobrevivência e ressurreição no jogo.</p>':''}${row.reasons.length?`<ul class="game-reasons">${row.reasons.map(reason=>`<li>${esc(reason)}</li>`).join('')}</ul>`:'<p class="game-help">Nenhum avanço direto ou caminho curto para o objetivo foi identificado. Compare os custos e consequências.</p>'}${row.uncertain?'<p class="game-help">Há requisitos ou consequências sem confirmação; esta comparação pode mudar.</p>':''}<div class="game-outcomes">${row.outcomes.map(outcome=>`<article class="game-outcome"><div><span class="eyebrow">RESULTADO ${ci+1}.${outcome.ri+1}</span><p class="game-narrative">${esc(E.plain(outcome.raw.text)||'Sem texto de resultado na fonte.')}</p>${outcome.view?.probability?`<span class="badge">Probabilidade estática: ${fmt(100*outcome.view.probability.split('/').reduce((a,b)=>Number(a)/Number(b)))}% (${esc(outcome.view.probability)})</span>`:'<span class="game-help">Probabilidade final não calculada.</span>'}${outcome.eligible===false?'<p class="game-help">Este resultado não atende aos requisitos da ficha informada. Se aconteceu, registre e corrija a ficha.</p>':''}${ruleList(outcome.view?.reward,'Sem recompensa registrada neste campo.')}<details class="raw-details"><summary>Requisitos e dados originais do resultado</summary>${ruleList(outcome.view?.required,'Sem requisito adicional registrado.')}<pre>${esc(JSON.stringify(outcome.raw,null,2))}</pre></details></div><button type="button" class="game-secondary" data-game-action="review-result" data-choice="${ci}" data-result="${outcome.ri}">Foi este resultado</button></article>`).join('')}</div></div></details>`;
+      }).join('')}<div class="game-actions"><button type="button" data-game-action="manual-result">O resultado foi diferente / não está no Atlas</button><button type="button" data-game-action="clear-event">Escolher outro encontro</button></div></section>`;
+  }
+  function renderReview(run) {
+    const event=index.events.get(review.eventKey),matched=review.choice!==null;
+    const suggestions=review.preview;
+    const candidates=new Set((event.references||[]).map(r=>r.key).filter(key=>['item','monster','ending'].includes(index.records.get(key)?.kind)));
+    if(matched)for(const t of event.rules?.choices?.[review.choice]?.results?.[review.result]?.reward?.tokens||[])if(t.ref&&index.records.has(t.ref))candidates.add(t.ref);
+    return `<section class="game-card" id="gameReview"><span class="eyebrow green">CONFIRA COM O JOGO</span><h2>${matched?'Registrar o resultado observado':'Registrar uma diferença encontrada'}</h2><p>${esc(labelEvent(event))}${matched?` · escolha ${review.choice+1}, resultado ${review.result+1}`:''}</p>${matched?`<p class="game-narrative">${esc(E.plain(suggestions.raw.text)||'Resultado sem texto na fonte.')}</p><div class="game-notice"><strong>Sugestões para conferir</strong>${suggestions.changes.length?`<ul>${suggestions.changes.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`:'<p>Nenhuma alteração modelada para sugerir.</p>'}<p>Os valores abaixo são estimativas a partir da ficha informada. Corrija-os conforme o celular antes de salvar; podem faltar limites, bônus e efeitos indiretos.</p></div>`:'<p class="game-notice">Nenhum efeito será inferido. Informe o que aconteceu e ajuste a ficha de acordo com o jogo.</p>'}${suggestions.issues.length?`<div class="game-pending"><strong>Efeitos a conferir</strong><ul>${suggestions.issues.map(issue=>`<li>${esc(issue)}</li>`).join('')}</ul></div>`:''}<form id="gameObservationForm">${stateEditor(editor.state,'review')}
+      ${candidates.size?`<fieldset><legend>O jogo registrou algo novo no catálogo?</legend><p class="game-help">Marque apenas o que você conferiu no catálogo do jogo. Obter um item ou encontrar um monstro não confirma o registro permanente.</p>${[...candidates].map(key=>`<label class="game-check"><input type="checkbox" name="gameCatalogConfirm" value="${esc(key)}" ${run.state.catalog[index.records.get(key).kind].includes(key)?'checked':''}>${esc(recordName(key))} · ${esc(KINDS[index.records.get(key).kind])}</label>`).join('')}</fieldset>`:''}
+      <label>Anotações da partida<textarea id="gameObservationNote" maxlength="3000" rows="3" placeholder="Diferenças, combate, equipamento trocado, resultado inesperado…" ${matched?'':'required'}>${esc(editor.note||'')}</textarea></label>${suggestions.issues.length?'<label class="game-check"><input id="gameResolveEffects" type="checkbox">Conferi também os efeitos ainda não modelados deste resultado</label>':''}<label class="game-check"><input id="gameConfirmObservation" type="checkbox" required>Conferi os valores e este foi o resultado que aconteceu no meu jogo</label><div class="game-actions"><button type="submit" class="game-primary">Salvar resultado observado</button><button type="button" data-game-action="cancel-editor">Cancelar</button></div></form></section>`;
+  }
+  function renderCorrection(run) {
+    return `<section class="game-card"><h2>Conferir / corrigir ficha</h2><p>Informe os valores atuais do celular. A correção entra no histórico e pode ser desfeita.</p><form id="gameCorrectionForm">${stateEditor(editor.state,'correction')}<label>Notas da correção<textarea id="gameCorrectionNote" rows="3" maxlength="3000" placeholder="Ex.: equipei uma arma; o combate mudou a saúde…">${esc(editor.note||'')}</textarea></label>${run.state.pending.length?'<label class="game-check"><input id="gameClearPending" type="checkbox">Conferi todas as pendências listadas e ajustei os valores reais</label>':''}<label class="game-check"><input type="checkbox" required>Estes são os valores que conferi no jogo</label><div class="game-actions"><button type="submit" class="game-primary">Salvar correção</button><button type="button" data-game-action="cancel-editor">Cancelar</button></div></form></section>`;
+  }
+  function collectionPanel(run) {
+    const rows=Object.values(run.state.catalog).flat();
+    return `<details class="game-card game-details"><summary>Catálogo confirmado no jogo · ${rows.length} registros</summary><p class="game-help">Esta lista pertence à run. Ao criar outra run, você pode copiar o catálogo já conferido.</p><div class="game-chips">${rows.map(key=>`<span class="game-chip">${esc(recordName(key))}<button type="button" data-game-action="unmark-catalog" data-key="${key}" ${run.status!=='active'?'disabled':''} aria-label="Remover confirmação de ${esc(recordName(key))}">×</button></span>`).join('')||'<span>Nenhum registro confirmado.</span>'}</div>${run.status==='active'?`<form id="gameCatalogForm"><div class="game-pick-row"><label>Tipo<select id="gameCatalogKind"><option value="item">Item</option><option value="monster">Monstro</option><option value="ending">Epílogo</option></select></label><label>Registro<input id="gameCatalogTarget" list="game-item-options" required autocomplete="off"></label><button type="submit">Confirmar no catálogo</button></div></form>`:''}</details>`;
+  }
+  function historyPanel(run) {
+    return `<details class="game-card game-details" id="gameRunHistory"><summary>Diário da run · ${run.cursor} registros${run.cursor<run.history.length?` · ${run.history.length-run.cursor} desfeitos`:''}</summary><p class="game-help">Guarde uma cópia com “Exportar run”. As anotações incluem os valores antes e depois de cada registro para investigar diferenças.</p><ol class="game-history">${run.history.slice(0,run.cursor).map((entry,i)=>`<li><details><summary>${i+1}. ${esc(entry.type==='result'?`Resultado ${entry.choice+1}.${entry.result+1}`:entry.type==='observation'?'Resultado diferente do Atlas':entry.type==='goal'?'Confirmação de objetivo':entry.type==='catalog'?'Catálogo conferido':'Correção da ficha')}${entry.eventKey?' — '+esc(labelEvent(index.events.get(entry.eventKey))):''}</summary><p>${esc(entry.note||'Sem anotação adicional.')}</p>${entry.context?`<p class="game-help">Objetivos no momento: ${esc(entry.context.goals.map(goalLabel).join(' · ')||'nenhum informado')}. Perfil: ${entry.context.profile==='expected'?'média conhecida':'prudente'}.</p>`:''}${entry.issues.length?`<p class="game-help">Lacunas identificadas no momento: ${esc(entry.issues.join('; '))}</p>`:''}<pre>${esc(JSON.stringify({antes:entry.before,depois:entry.after},null,2))}</pre></details></li>`).join('')||'<li>Nenhum resultado registrado ainda.</li>'}</ol></details>`;
+  }
+  function render() {
+    ensure();isVisible=true;
+    if(window.ATLAS_DATA.runModelVersion!==1){host.innerHTML='<p>O pacote de dados do Modo de Jogo não está atualizado. Recarregue a página.</p>';return;}
+    if(!eventSearch.size)for(const [key,e] of index.events)eventSearch.set(key,E.normalize(`${e.id} ${e.group} ${JSON.stringify(e.data)}`));
+    const run=active(),editing=!!editor&&editor.mode!=='setup';
+    host.innerHTML=`<div class="game-toolbar"><span class="badge">Versão de teste · acompanhamento manual</span><div class="game-actions">${session.runs.length?`<label>Run salva<select id="gameRunSwitcher" ${editing||newForm?'disabled':''}>${session.runs.map(r=>`<option value="${r.id}" ${run?.id===r.id?'selected':''}>${esc(r.name)}${r.status==='ended'?' · encerrada':''}</option>`).join('')}</select></label>`:''}<button type="button" data-game-action="new-run" ${editing?'disabled':''}>Nova run</button><button type="button" data-game-action="export-run" ${!run?'disabled':''}>Exportar run</button><label class="game-file-button">Importar run<input id="gameImport" type="file" accept=".json,application/json" ${editing?'disabled':''}></label></div></div><p class="game-help">A run fica neste navegador e não lê seu celular. Exporte uma cópia antes de trocar de aparelho ou limpar os dados do navegador.</p><p id="gameMessage" class="game-message" role="status" aria-live="polite"></p><p id="gameWarning" class="game-warning" role="status"></p>${recoveryRaw?'<button type="button" data-game-action="export-recovery">Exportar os dados antigos para recuperação</button>':''}<div id="gameConflict" class="game-pending" hidden>Há alterações em outra aba. <button type="button" data-game-action="reload-storage">Carregar dados da outra aba</button></div>${!run||newForm?renderSetup():review?renderReview(run):editing?renderCorrection(run):`${dashboard(run)}${goalCards(run)}${run.status==='active'?searchPanel(run)+encounterPanel(run):'<p class="game-notice">Run encerrada. O diário e a exportação continuam disponíveis; reabra para registrar novos encontros.</p>'}${collectionPanel(run)}${historyPanel(run)}`}${options()}`;
+    renderMessages();
+    if(editor)renderEditorLists();
+    if(run&&!newForm&&!editing&&!review){renderGoalFields();if(run.status==='active')renderSearchResults();}
+  }
+  function selectEvent(key) {
+    ensure();const run=active();
+    if(!run){message='Crie uma run antes de selecionar o encontro.';navigate('game');render();return;}
+    if(run.status!=='active')throw new Error('Reabra a run antes de selecionar um encontro.');
+    if(!index.events.has(key))throw new Error('Encontro não encontrado.');
+    const next=E.clone(run);next.selectedEvent=key;next.availability={};saveRun(next);review=null;editor=null;newForm=false;
+    message='Encontro selecionado. Compare as opções e registre o resultado que aconteceu no celular.';
+    navigate('game');render();$('gameEncounter')?.scrollIntoView({block:'start'});
+  }
+  function onClick(event) {
+    const button=event.target.closest('[data-game-action]');if(!button)return;
+    event.preventDefault();const action=button.dataset.gameAction,run=active(),key=button.dataset.key;
+    message='';
+    try {
+      if(action==='new-run'){newForm=true;editor={mode:'setup',state:E.blankState()};review=null;render();return;}
+      if(action==='cancel-editor'){newForm=false;editor=null;review=null;render();return;}
+      if(action==='reload-storage'){
+        const raw=localStorage.getItem(KEY);session=raw?validateSession(JSON.parse(raw)):{version:1,runs:[],activeId:null};cachedRaw=raw;recoveryRaw=null;conflict=false;editor=null;review=null;newForm=false;message='Dados salvos carregados.';render();return;
+      }
+      if(action==='select-event'){selectEvent(key);return;}
+      if(action==='export-run'){exportRun(run);return;}
+      if(action==='export-recovery'){download(recoveryRaw,'atlas-runs-recuperacao.txt','text/plain');return;}
+      if(action.startsWith('add-')||action.startsWith('remove-item')||action.startsWith('remove-trait')||action.startsWith('remove-ability')){
+        if(!editor)throw new Error('Abra a edição da ficha primeiro.');
+        const s=editor.state;
+        if(action==='add-item'){const r=pick('gameItemPick','item'),amount=Number($('gameItemAmount').value);if(!$('gameItemAmount').value||!Number.isInteger(amount)||amount<0)throw new Error('Informe uma quantidade inteira, a partir de zero.');s.items[r.id]=amount;$('gameItemPick').value='';}
+        if(action==='add-trait'){const r=pick('gameTraitPick','trait');if(!s.traits.includes(r.id))s.traits.push(r.id);$('gameTraitPick').value='';}
+        if(action==='add-ability'){const r=pick('gameAbilityPick','ability'),value=Number($('gameAbilityValue').value);if(!$('gameAbilityValue').value||!E.finite(value))throw new Error('Informe o valor efetivo da habilidade.');s.abilities[r.id]=value;$('gameAbilityPick').value='';}
+        if(action==='remove-item')delete s.items[key];if(action==='remove-trait')s.traits=s.traits.filter(v=>v!==key);if(action==='remove-ability')delete s.abilities[key];
+        renderEditorLists();return;
+      }
+      if(!run)throw new Error('Selecione uma run.');
+      if(action==='edit-state'){editor={mode:'correction',state:E.clone(run.state)};review=null;render();return;}
+      if(action==='undo'||action==='redo'){saveRun(action==='undo'?E.undo(run):E.redo(run));message=action==='undo'?'Último registro desfeito. Você pode refazê-lo ou registrar outro resultado.':'Registro refeito.';render();return;}
+      if(action==='toggle-status'){const next=E.clone(run);next.status=run.status==='active'?'ended':'active';saveRun(next);message=next.status==='ended'?'Run encerrada. O histórico foi preservado.':'Run reaberta.';render();return;}
+      if(action==='clear-event'){const next=E.clone(run);next.selectedEvent=null;next.availability={};saveRun(next);render();return;}
+      if(action==='review-result'||action==='manual-result'){
+        if(run.status!=='active')throw new Error('Reabra a run para registrar o resultado.');
+        const event=index.events.get(run.selectedEvent);if(!event)throw new Error('Selecione o encontro primeiro.');
+        const choice=action==='manual-result'?null:Number(button.dataset.choice),result=action==='manual-result'?null:Number(button.dataset.result);
+        const preview=choice===null?{state:E.clone(run.state),changes:[],issues:['Resultado diferente do conjunto extraído; conferir efeitos manualmente.']}:E.previewResult(event,choice,result,run.state,index);
+        if(choice!==null && (currentAnalysis?.rows[choice]?.available===false || currentAnalysis?.rows[choice]?.outcomes[result]?.eligible===false))preview.issues.push('O requisito não correspondia à ficha informada; conferir as condições da escolha/resultado.');
+        review={eventKey:run.selectedEvent,choice,result,preview};editor={mode:'review',state:E.clone(preview.state)};render();host.scrollIntoView({block:'start'});return;
+      }
+      if(action==='remove-goal'||action==='promote-goal'){
+        if(run.status!=='active')throw new Error('Reabra a run para alterar objetivos.');
+        const next=E.clone(run),goal=next.goals.find(g=>g.id===key);
+        next.goals=next.goals.filter(g=>g.id!==key);if(action==='promote-goal'&&goal)next.goals.unshift(goal);
+        saveRun(next);render();return;
+      }
+      if(action==='confirm-goal'){
+        const g=run.goals.find(g=>g.id===key),s=E.clone(run.state),p=E.goalProgress(g,s);
+        if(g.type==='story')s.completedGoals=p.complete?s.completedGoals.filter(id=>id!==g.id):[...s.completedGoals,g.id];
+        else if(g.type==='ending'){const [,group,ident]=g.target.split(':');s.endings[group]=p.complete?s.endings[group].filter(id=>id!==Number(ident)):[...s.endings[group],Number(ident)];}
+        else {const kind=g.type==='catalog_item'?'item':'monster';s.catalog[kind]=p.complete?s.catalog[kind].filter(k=>k!==g.target):[...s.catalog[kind],g.target];}
+        saveRun(E.commit(run,s,index,{type:'goal',note:`${p.complete?'Removi a confirmação':'Confirmei no jogo'}: ${goalLabel(g)}`}));message='Confirmação registrada no diário.';render();return;
+      }
+      if(action==='unmark-catalog'){
+        const s=E.clone(run.state),kind=index.records.get(key).kind;s.catalog[kind]=s.catalog[kind].filter(k=>k!==key);
+        saveRun(E.commit(run,s,index,{type:'catalog',note:`Removi a confirmação de ${recordName(key)}.`}));render();return;
+      }
+    } catch(err){error(err);}
+  }
+  function onSubmit(event) {
+    event.preventDefault();const run=active();message='';
+    try {
+      if(event.target.id==='gameSetup') {
+        const state=readState();if($('gameCopyCatalog')?.checked&&run)state.catalog=E.clone(run.state.catalog);
+        const next=E.newRun({name:$('gameRunName').value,difficulty:$('gameDifficulty').value,profile:$('gameProfile').value,
+          mainStory:$('gameMainStory').value,tales:$('gameTales').value,state},index);
+        saveRun(next);newForm=false;editor=null;review=null;query='';message='Run criada. Defina os objetivos e depois selecione o encontro que apareceu.';render();$('gameGoalType')?.focus();return;
+      }
+      if(!run)throw new Error('Selecione uma run.');
+      if(event.target.id==='gameGoalForm') {
+        const type=$('gameGoalType').value,kind={item:'item',ending:'ending',catalog_item:'item',catalog_monster:'monster'}[type];
+        const g={id:E.id(),type,amount:$('gameGoalAmount')?Number($('gameGoalAmount').value):1,target:'',label:''};
+        if(kind)g.target=pick('gameGoalTarget',kind).key;
+        if(type==='story'){g.label=$('gameGoalLabel').value.trim();if($('gameGoalEnding').value.trim())g.endingTarget=pick('gameGoalEnding','ending').key;}
+        const next=E.clone(run);next.goals=E.cleanGoals([...run.goals,g],index);saveRun(next);message='Objetivo adicionado.';render();return;
+      }
+      if(event.target.id==='gameObservationForm') {
+        if(!$('gameConfirmObservation').checked)throw new Error('Confira o resultado com o jogo antes de salvar.');
+        const s=readState(),note=$('gameObservationNote').value.trim();
+        if(review.choice===null&&!note)throw new Error('Descreva o resultado diferente que aconteceu.');
+        if(!$('gameResolveEffects')?.checked)s.pending=[...new Set([...s.pending,...review.preview.issues])];
+        for(const input of event.target.querySelectorAll('input[name="gameCatalogConfirm"]')){
+          const kind=index.records.get(input.value).kind;if(input.checked){if(!s.catalog[kind].includes(input.value))s.catalog[kind].push(input.value);}else s.catalog[kind]=s.catalog[kind].filter(k=>k!==input.value);
+        }
+        const next=E.commit(run,s,index,{type:review.choice===null?'observation':'result',eventKey:review.eventKey,choice:review.choice,result:review.result,note,issues:review.preview.issues});
+        next.selectedEvent=null;saveRun(next);editor=null;review=null;query='';message='Resultado observado salvo. Selecione o próximo encontro quando ele aparecer no jogo.';render();return;
+      }
+      if(event.target.id==='gameCorrectionForm'){
+        const s=readState();if($('gameClearPending')?.checked)s.pending=[];
+        saveRun(E.commit(run,s,index,{type:'correction',note:$('gameCorrectionNote').value.trim()}));editor=null;message='Correção salva. Você pode desfazê-la pelo histórico.';render();return;
+      }
+      if(event.target.id==='gameCatalogForm'){
+        const kind=$('gameCatalogKind').value,record=pick('gameCatalogTarget',kind),s=E.clone(run.state);
+        if(!s.catalog[kind].includes(record.key))s.catalog[kind].push(record.key);
+        saveRun(E.commit(run,s,index,{type:'catalog',note:`Conferi ${record.title} no catálogo do jogo.`}));message='Registro confirmado no catálogo desta run.';render();return;
+      }
+    }catch(err){error(err);}
+  }
+  let searchTimer;
+  function onInput(event) {
+    if(editor){
+      const key=event.target.id;
+      if(/^gs\d+$/.test(key))editor.state.stats[key.slice(2)]=event.target.value.trim()===''?null:Number(event.target.value);
+      if(key==='gsScore')editor.state.score=event.target.value.trim()===''?null:Number(event.target.value);
+      if(key==='gameFlags')editor.flagsText=event.target.value;
+      if(['gameObservationNote','gameCorrectionNote'].includes(key))editor.note=event.target.value;
+      const fields={gameRunName:'name',gameMainStory:'mainStory',gameTales:'tales'};
+      if(fields[key]){editor.config||={};editor.config[fields[key]]=event.target.value;}
+    }
+    if(event.target.id==='gameEventQuery'){
+      query=event.target.value;clearTimeout(searchTimer);searchTimer=setTimeout(()=>{if($('gameEventResults'))renderSearchResults();},120);
+    }
+  }
+  async function onChange(event) {
+    try {
+      if(editor){
+        if(event.target.id==='gameInventoryComplete')editor.state.inventoryComplete=event.target.checked;
+        if(event.target.id==='gameTraitsComplete')editor.state.traitsComplete=event.target.checked;
+        if(event.target.id==='gameDifficulty'||event.target.id==='gameProfile'){editor.config||={};editor.config[event.target.id==='gameDifficulty'?'difficulty':'profile']=event.target.value;}
+      }
+      if(event.target.id==='gameGoalType'){renderGoalFields();return;}
+      if(event.target.id==='gameEventCategory'){category=event.target.value;renderSearchResults();return;}
+      if(event.target.id==='gameRunSwitcher'){
+        const next=E.clone(session);next.activeId=event.target.value;persist(next);editor=null;review=null;query='';newForm=false;message='Run carregada.';render();return;
+      }
+      if(event.target.id==='gameCatalogKind'){$('gameCatalogTarget').value='';$('gameCatalogTarget').setAttribute('list',`game-${event.target.value}-options`);return;}
+      if(event.target.matches('[data-game-available]')){
+        const next=E.clone(active()),key=event.target.dataset.gameAvailable;
+        if(event.target.checked)next.availability[key]=true;else delete next.availability[key];
+        saveRun(next);render();return;
+      }
+      if(event.target.id==='gameImport') {
+        const file=event.target.files[0];if(!file)return;
+        if(file.size>8*1024*1024)throw new Error('Arquivo muito grande. Use um backup de até 8 MB.');
+        const payload=JSON.parse(await file.text());
+        if(payload.format!=='life-in-adventure-run'||payload.version!==1)throw new Error('Este arquivo não é um backup de run do Atlas.');
+        const imported=E.validateRun(payload.run,index);imported.id=E.id();imported.name=short(imported.name+' (importada)',80);
+        saveRun(imported);editor=null;review=null;newForm=false;query='';message='Backup importado como uma nova run. As runs anteriores foram preservadas.';render();return;
+      }
+    }catch(err){error(err);}
+  }
+  function exportRun(run) {
+    if(!run)return;
+    const data={format:'life-in-adventure-run',version:1,exportedAt:new Date().toISOString(),run};
+    download(JSON.stringify(data,null,2),'atlas-run-'+run.id+'.json','application/json');
+    message='Backup exportado. Guarde o arquivo para restaurar a run ou compartilhar as diferenças encontradas.';renderMessages();
+  }
+  function download(data,name,type){const url=URL.createObjectURL(new Blob([data],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+  window.AtlasGame={init:callback=>{navigate=callback;},render,hide:()=>{isVisible=false;},chooseEvent:key=>{try{selectEvent(key);}catch(err){navigate('game');render();error(err);}}};
+})();

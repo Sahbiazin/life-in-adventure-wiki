@@ -6,7 +6,7 @@ Extração local da versão **1.2.47 (build 366)**, a partir do APKM fornecido p
 
 Site público no GitHub Pages: [Life in Adventure · Atlas de eventos](https://sahbiazin.github.io/life-in-adventure-wiki/).
 
-Abra [o aplicativo HTML](web/life-in-adventure/dist/index.html) no navegador. Ele inclui regras legíveis com dados originais disponíveis, catálogos de itens, monstros, habilidades e traços conectados aos eventos, caminhos de chegada, links diretos, favoritos e histórico local. A tabela pesquisável, os filtros, a paginação e o mapa SVG continuam disponíveis. Funciona também localmente, sem servidor. [Instruções do aplicativo](web/life-in-adventure/README.md).
+Abra [o aplicativo HTML](web/life-in-adventure/dist/index.html) no navegador. Ele inclui regras legíveis com dados originais disponíveis, catálogos de itens, monstros, habilidades e traços conectados aos eventos, caminhos de chegada, links diretos, favoritos e histórico local. O [Modo de Jogo](https://sahbiazin.github.io/life-in-adventure-wiki/#catalogo=game) acompanha manualmente uma run e sugere escolhas conforme seus objetivos. A tabela pesquisável, os filtros, a paginação e o mapa SVG continuam disponíveis. Funciona também localmente, sem servidor. [Instruções do aplicativo](web/life-in-adventure/README.md).
 
 A publicação pelo GitHub Pages está preparada em [`.github/workflows/pages.yml`](.github/workflows/pages.yml), com [instruções de ativação](web/life-in-adventure/README.md#publicação-no-github-pages). O workflow envia somente o aplicativo estático.
 
@@ -97,6 +97,8 @@ O inventário registra 20.993 erros de leitura de objetos `MonoBehaviour`, princ
 
 O pacote fornecido contém bibliotecas `arm64-v8a` e `armeabi-v7a`. A instalação na imagem AOSP x86_64 usada inicialmente falhou com `INSTALL_FAILED_NO_MATCHING_ABIS`. A extração estática acima independe da instalação. A compatibilidade de um novo ambiente para executar o jogo ainda precisa ser validada.
 
-## Preparação para o Modo de Jogo
+## Modo de Jogo — primeira versão
 
-O Atlas inclui uma [auditoria das regras e pendências](docs/preparacao-modo-jogo.md), com novos requisitos interpretados, epílogos e dependências de estado. O Modo de Jogo ainda não foi implementado. A cobertura mede interpretação estática, não prontidão de um simulador.
+O [guia do Modo de Jogo](docs/modo-de-jogo.md) descreve a criação da ficha, os objetivos, a seleção do encontro observado, as sugestões provisórias e a confirmação do resultado. As runs ficam neste navegador e podem ser exportadas, importadas, corrigidas e desfeitas. Combate, pontuação e desbloqueios permanentes continuam dependendo de observação manual.
+
+O Atlas mantém uma [auditoria das regras e pendências](docs/preparacao-modo-jogo.md), com requisitos interpretados, epílogos e dependências de estado. A cobertura mede interpretação estática; o acompanhamento manual não torna a base pronta para simulação completa.

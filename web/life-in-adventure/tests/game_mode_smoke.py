@@ -1,0 +1,290 @@
+"""Functional tests for the manual run companion, served under a Pages prefix."""
+import json
+import tempfile
+import unittest
+from pathlib import Path
+
+from playwright.sync_api import expect
+import browser_smoke as atlas_smoke
+
+STORAGE = 'life-in-adventure:runs:v1'
+
+
+class GameModeBrowserTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        atlas_smoke.WikiBrowserTests.setUpClass()
+        cls.browser = atlas_smoke.WikiBrowserTests.browser
+        cls.base = atlas_smoke.WikiBrowserTests.base
+
+    @classmethod
+    def tearDownClass(cls):
+        atlas_smoke.WikiBrowserTests.tearDownClass()
+
+    def setUp(self):
+        self.context = self.browser.new_context(viewport={'width': 1440, 'height': 1000}, accept_downloads=True)
+        self.page = self.context.new_page()
+        self.errors = []
+        self.page.on('pageerror', lambda e: self.errors.append(str(e)))
+
+    def tearDown(self):
+        self.assertEqual(self.errors, [])
+        self.context.close()
+
+    def start(self, extra=None):
+        self.page.goto(self.base + '#catalogo=game', wait_until='networkidle')
+        self.page.locator('#gameRunName').fill('Run de teste')
+        for key, value in {'0': 10, '8': 10, '1': 5, '9': 5, '4': 100, '5': 10, '6': 10}.items():
+            self.page.locator('#gs' + key).fill(str(value))
+        if extra:
+            extra()
+        self.page.get_by_role('button', name='Criar run e definir objetivos').click()
+        expect(self.page.locator('#gameMessage')).to_contain_text('Run criada')
+
+    def saved(self):
+        return json.loads(self.page.evaluate('(key) => localStorage.getItem(key)', STORAGE))
+
+    def active(self):
+        saved = self.saved()
+        return next(r for r in saved['runs'] if r['id'] == saved['activeId'])
+
+    def gold_goal(self, page=None):
+        page = page or self.page
+        page.locator('#gameGoalType').select_option('gold')
+        page.locator('#gameGoalAmount').fill('200')
+        page.get_by_role('button', name='Adicionar objetivo', exact=True).click()
+
+    def encounter(self, ident=346, category='EventTreasure'):
+        self.page.locator('#gameEventQuery').fill('#' + str(ident))
+        self.page.locator('#gameEventCategory').select_option(category)
+        self.page.locator('#gameEventResults [data-game-action="select-event"]').first.click()
+        expect(self.page.locator('#gameEncounter')).to_be_visible()
+
+    def result(self, choice, result=0):
+        self.page.locator(f'[data-game-action="review-result"][data-choice="{choice}"][data-result="{result}"]').click()
+        expect(self.page.locator('#gameReview')).to_be_visible()
+
+    def save_result(self):
+        self.page.locator('#gameConfirmObservation').check()
+        self.page.get_by_role('button', name='Salvar resultado observado').click()
+        expect(self.page.locator('#gameMessage')).to_contain_text('Resultado observado salvo')
+
+    def test_setup_captures_real_inventory_traits_abilities_and_unknown_fields(self):
+        def extra():
+            self.page.locator('#gameItemPick').fill('Adaga · #0')
+            self.page.locator('#gameItemAmount').fill('2')
+            self.page.get_by_role('button', name='Adicionar / atualizar', exact=True).first.click()
+            self.page.locator('#gameInventoryComplete').check()
+            self.page.locator('#gameTraitPick').fill('Normal · #0')
+            self.page.get_by_role('button', name='Adicionar traço', exact=True).click()
+            self.page.locator('#gameTraitsComplete').check()
+            self.page.locator('#gameAbilityPick').fill('Furtividade · #5 / 0')
+            self.page.locator('#gameAbilityValue').fill('2')
+            self.page.get_by_role('button', name='Adicionar / atualizar', exact=True).last.click()
+        self.start(extra)
+        state = self.active()['state']
+        self.assertEqual(state['items'], {'0': 2})
+        self.assertEqual(state['traits'], ['0'])
+        self.assertEqual(state['abilities'], {'5': 2})
+        self.assertIsNone(state['stats']['2'])
+        self.assertTrue(state['inventoryComplete'])
+        self.assertTrue(state['traitsComplete'])
+        self.page.reload(wait_until='networkidle')
+        expect(self.page.locator('.game-dashboard h2')).to_have_text('Run de teste')
+
+    def test_goal_recommendation_review_actual_values_reload_undo_redo(self):
+        self.start()
+        self.gold_goal()
+        self.encounter()
+        expect(self.page.locator('.game-recommended > summary')).to_contain_text('Pagar apenas o meu')
+        self.result(1)
+        expect(self.page.locator('#gs4')).to_have_value('95')
+        self.assertEqual(self.active()['state']['stats']['4'], 100)  # A preview must not mutate saved state.
+        self.page.locator('#gs4').fill('94')
+        self.page.locator('#gameObservationNote').fill('O jogo mostrou 94; registrei o valor observado.')
+        self.save_result()
+        self.assertEqual(self.active()['state']['stats']['4'], 94)
+        self.page.reload(wait_until='networkidle')
+        self.assertEqual(self.active()['state']['stats']['4'], 94)
+        self.page.get_by_role('button', name='Desfazer último registro').click()
+        self.assertEqual(self.active()['state']['stats']['4'], 100)
+        self.page.get_by_role('button', name='Refazer', exact=True).click()
+        self.assertEqual(self.active()['state']['stats']['4'], 94)
+        self.assertEqual(self.active()['cursor'], 1)
+
+    def test_primary_score_objective_blocks_false_best_choice_even_with_gold_secondary(self):
+        self.start()
+        self.page.locator('#gameGoalType').select_option('score')
+        self.page.get_by_role('button', name='Adicionar objetivo', exact=True).click()
+        self.page.locator('#gameGoals > details > summary').click()
+        self.gold_goal()
+        self.encounter()
+        expect(self.page.locator('#gameEncounter > .game-notice')).to_contain_text('precisa de confirmação manual')
+        self.assertEqual(self.page.locator('.game-recommended').count(), 0)
+        self.page.locator('[data-game-action="promote-goal"]').click()
+        expect(self.page.locator('.game-recommended > summary')).to_contain_text('Pagar apenas o meu')
+
+    def test_unknown_combat_effects_stay_pending_and_catalog_is_manual(self):
+        self.start()
+        self.encounter(10, 'EventBattle')
+        self.result(0)
+        expect(self.page.locator('#gameReview')).to_contain_text('Efeito não modelado: 6_1_0')
+        self.page.locator('#gs0').fill('7')
+        self.page.locator('input[name="gameCatalogConfirm"][value="monster:0"]').check()
+        self.save_result()
+        state = self.active()['state']
+        self.assertEqual(state['stats']['0'], 7)
+        self.assertGreater(len(state['pending']), 0)
+        self.assertTrue(state['flagsUncertain'])
+        self.assertIn('monster:0', state['catalog']['monster'])
+        self.page.get_by_role('button', name='Conferir / corrigir ficha').click()
+        self.page.locator('#gameClearPending').check()
+        self.page.locator('#gameCorrectionNote').fill('Conferi os valores no celular.')
+        self.page.get_by_label('Estes são os valores que conferi no jogo', exact=True).check()
+        self.page.get_by_role('button', name='Salvar correção', exact=True).click()
+        self.assertEqual(self.active()['state']['pending'], [])
+        self.assertTrue(self.active()['state']['flagsUncertain'])
+        self.page.get_by_role('button', name='Desfazer último registro').click()
+        self.assertGreater(len(self.active()['state']['pending']), 0)
+
+    def test_different_result_is_saved_without_guessed_effects_and_notes_are_escaped(self):
+        self.start()
+        self.encounter()
+        self.page.get_by_role('button', name='O resultado foi diferente / não está no Atlas').click()
+        self.page.locator('#gs0').fill('8')
+        note = '<img src=x onerror="window.badNote=true"> Resultado diferente no celular.'
+        self.page.locator('#gameObservationNote').fill(note)
+        self.save_result()
+        run = self.active()
+        self.assertEqual(run['history'][0]['type'], 'observation')
+        self.assertIsNone(run['history'][0]['result'])
+        self.assertEqual(run['state']['stats']['4'], 100)
+        self.assertEqual(run['state']['stats']['0'], 8)
+        self.page.locator('#gameRunHistory > summary').click()
+        self.page.locator('.game-history summary').first.click()
+        expect(self.page.locator('.game-history')).to_contain_text(note)
+        self.assertEqual(self.page.locator('.game-history img').count(), 0)
+        self.assertIsNone(self.page.evaluate('window.badNote'))
+
+    def test_export_restore_and_incompatible_import_preserve_existing_runs(self):
+        self.start()
+        self.gold_goal()
+        self.encounter()
+        self.result(1)
+        self.save_result()
+        original = self.active()
+        with self.page.expect_download() as download_info:
+            self.page.get_by_role('button', name='Exportar run', exact=True).click()
+        with tempfile.TemporaryDirectory(prefix='lia-run-export-') as folder:
+            file = Path(folder) / 'run.json'
+            download_info.value.save_as(file)
+            payload = json.loads(file.read_text())
+        self.assertEqual(payload['run']['history'][0]['eventKey'], 'EventTreasure:346')
+        bad = json.loads(json.dumps(payload));bad['run']['gameVersion'] = 'other'
+        self.page.locator('#gameImport').set_input_files({'name': 'bad.json', 'mimeType': 'application/json', 'buffer': json.dumps(bad).encode()})
+        expect(self.page.locator('#gameMessage')).to_contain_text('incompatível')
+        self.assertEqual(len(self.saved()['runs']), 1)
+        self.assertEqual(self.active()['id'], original['id'])
+        self.page.locator('#gameImport').set_input_files({'name': 'run.json', 'mimeType': 'application/json', 'buffer': json.dumps(payload).encode()})
+        expect(self.page.locator('#gameMessage')).to_contain_text('Backup importado')
+        self.assertEqual(len(self.saved()['runs']), 2)
+        self.assertNotEqual(self.active()['id'], original['id'])
+        self.assertEqual(self.active()['state'], original['state'])
+        self.assertEqual(self.active()['history'], original['history'])
+
+    def test_multiple_runs_can_copy_confirmed_catalog_without_overwriting_old_progress(self):
+        self.start()
+        self.page.locator('details').filter(has=self.page.locator('#gameCatalogForm')).locator('summary').first.click()
+        self.page.locator('#gameCatalogTarget').fill('Adaga · #0')
+        self.page.get_by_role('button', name='Confirmar no catálogo', exact=True).click()
+        original_id = self.active()['id']
+        self.page.get_by_role('button', name='Nova run', exact=True).click()
+        self.page.locator('#gameRunName').fill('Segunda run')
+        self.page.get_by_role('button', name='Criar run e definir objetivos').click()
+        self.assertEqual(len(self.saved()['runs']), 2)
+        self.assertIn('item:0', self.active()['state']['catalog']['item'])
+        self.page.locator('#gameRunSwitcher').select_option(original_id)
+        self.assertEqual(self.active()['cursor'], 1)
+        self.assertEqual(self.active()['name'], 'Run de teste')
+
+    def test_mobile_layout_and_atlas_shortcut(self):
+        self.page.set_viewport_size({'width': 390, 'height': 844})
+        self.start()
+        self.assertLessEqual(self.page.evaluate('document.documentElement.scrollWidth'), 390)
+        self.page.goto(self.base + '#evento=EventTreasure%3A346', wait_until='networkidle')
+        self.page.locator('#useInRun').click()
+        expect(self.page.locator('#gameEncounter')).to_be_visible()
+        self.assertEqual(self.active()['selectedEvent'], 'EventTreasure:346')
+        self.assertIn('catalogo=game', self.page.url)
+        self.assertLessEqual(self.page.evaluate('document.documentElement.scrollWidth'), 390)
+        self.gold_goal()
+        self.result(1)
+        self.assertLessEqual(self.page.locator('#gameReview').evaluate('(el) => el.scrollWidth'), 358)
+        self.page.locator('#gs4').fill('93')
+        self.page.get_by_role('navigation').get_by_role('button', name='Itens', exact=True).click()
+        self.page.get_by_role('navigation').get_by_role('button', name='Modo de Jogo', exact=True).click()
+        expect(self.page.locator('#gs4')).to_have_value('93')
+        self.save_result()
+        self.assertEqual(self.active()['state']['stats']['4'], 93)
+
+    def test_storage_denied_keeps_run_usable_and_explicitly_requests_backup(self):
+        self.context.add_init_script("Storage.prototype.getItem = () => {throw new Error('denied')}; Storage.prototype.setItem = () => {throw new Error('denied')}")
+        self.start()
+        expect(self.page.locator('#gameWarning')).to_contain_text('memória desta visita')
+        self.gold_goal()
+        self.encounter()
+        self.result(1)
+        self.save_result()
+        expect(self.page.locator('.game-stat-row')).to_contain_text('Ouro: 95')
+        expect(self.page.get_by_role('button', name='Exportar run', exact=True)).to_be_enabled()
+
+    def test_corrupted_saved_data_is_preserved_while_new_run_remains_exportable(self):
+        self.page.goto(self.base, wait_until='networkidle')
+        self.page.evaluate('(key) => localStorage.setItem(key, "{broken-run")', STORAGE)
+        self.start()
+        expect(self.page.locator('#gameWarning')).to_contain_text('dados antigos')
+        self.assertEqual(self.page.evaluate('(key) => localStorage.getItem(key)', STORAGE), '{broken-run')
+        expect(self.page.get_by_role('button', name='Exportar os dados antigos para recuperação')).to_be_visible()
+        self.gold_goal()
+        self.encounter()
+        self.result(1)
+        self.save_result()
+        expect(self.page.locator('.game-stat-row')).to_contain_text('Ouro: 95')
+        self.assertEqual(self.page.evaluate('(key) => localStorage.getItem(key)', STORAGE), '{broken-run')
+
+    def test_other_tab_changes_cannot_be_overwritten_by_stale_state(self):
+        self.start()
+        other = self.context.new_page()
+        other.on('pageerror', lambda e: self.errors.append(str(e)))
+        other.goto(self.base + '#catalogo=game', wait_until='networkidle')
+        self.page.get_by_role('button', name='Conferir / corrigir ficha').click()
+        self.page.locator('#gs4').fill('88')
+        self.page.get_by_label('Estes são os valores que conferi no jogo', exact=True).check()
+        self.page.get_by_role('button', name='Salvar correção', exact=True).click()
+        expect(other.locator('#gameConflict')).to_be_visible()
+        other.get_by_role('button', name='Nova run', exact=True).click()
+        other.get_by_role('button', name='Criar run e definir objetivos').click()
+        expect(other.locator('#gameMessage')).to_contain_text('outra aba')
+        self.assertEqual(len(self.saved()['runs']), 1)
+        other.get_by_role('button', name='Carregar dados da outra aba').click()
+        expect(other.locator('.game-stat-row')).to_contain_text('Ouro: 88')
+        expect(other.locator('#gameConflict')).not_to_be_visible()
+
+    def test_ended_run_can_resume_and_notebook_favorites_are_not_erased(self):
+        self.start()
+        self.page.goto(self.base + '#evento=EventTreasure%3A346', wait_until='networkidle')
+        self.page.locator('#favoriteToggle').click()
+        self.page.locator('#closeDialog').click()
+        self.page.get_by_role('navigation').get_by_role('button', name='Modo de Jogo', exact=True).click()
+        self.page.get_by_role('button', name='Encerrar run', exact=True).click()
+        self.assertEqual(self.active()['status'], 'ended')
+        expect(self.page.locator('#gameEventQuery')).not_to_be_visible()
+        self.page.get_by_role('button', name='Reabrir run', exact=True).click()
+        self.assertEqual(self.active()['status'], 'active')
+        expect(self.page.locator('#gameEventQuery')).to_be_visible()
+        notebook = json.loads(self.page.evaluate("localStorage.getItem('life-in-adventure:notebook:v1')"))
+        self.assertIn('EventTreasure:346', notebook['favorites'])
+
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

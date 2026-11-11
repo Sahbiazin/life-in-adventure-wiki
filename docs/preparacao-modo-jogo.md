@@ -1,6 +1,6 @@
 # Base necessária para o Modo de Jogo
 
-Estado do Atlas: **ainda não pronto para simulação completa**. Não há Modo de Jogo nem recomendação automática de melhor escolha.
+Estado do Atlas: **ainda não pronto para simulação completa**. Existe uma [primeira versão manual do Modo de Jogo](modo-de-jogo.md), com sugestões provisórias e confirmação do resultado pelo jogador. As pendências abaixo continuam valendo para uma simulação fiel do jogo.
 
 ## Resolvido nesta etapa
 
@@ -13,7 +13,7 @@ Estado do Atlas: **ainda não pronto para simulação completa**. Não há Modo 
 - Auditoria de cobertura visível no Atlas e relatório reproduzível com comandos pendentes e exemplos reais.
 - Entradas inválidas mantidas como desconhecidas, sem quebrar a geração nem gerar probabilidades inventadas.
 
-## Pendências antes de recomendar decisões automaticamente
+## Pendências para uma simulação completa
 
 | Área | Falta confirmar/modelar | Critério de conclusão |
 |---|---|---|
@@ -25,11 +25,11 @@ Estado do Atlas: **ainda não pronto para simulação completa**. Não há Modo 
 | Catálogo permanente | Quando itens, monstros e epílogos contam como registrados; conquistas fora de `reward` | Confirmar desbloqueio no jogo, além da mera obtenção/menção |
 | Validação dinâmica | Execução compatível da versão ARM e cenários observados | Confrontar estado antes/depois no mesmo build 366 |
 
-## Contrato para o futuro estado da run
+## Estado da run e limites da primeira versão
 
-O futuro modelo precisa separar atributos base e efetivos, modificadores de equipamentos/traços/habilidades, inventário e equipamento, estados das três famílias de eventos, epílogos desta aventura e catálogo permanente. Cada registro deve identificar versão/dificuldade, evento+tabela, escolha e resultado observado. Alterações e correções deverão ser reversíveis.
+Uma simulação completa precisa separar atributos base e efetivos, modificadores de equipamentos/traços/habilidades, inventário e equipamento, estados das três famílias de eventos, epílogos desta aventura e catálogo permanente. A primeira versão usa os atributos e habilidades efetivos informados pelo jogador e o inventário total, incluindo equipamentos; não recalcula bônus. Separa os estados das três famílias, epílogos da aventura e confirmações do catálogo permanente. Cada registro identifica versão/dificuldade, evento+tabela, escolha, resultado observado e os objetivos naquele momento. Alterações e correções podem ser desfeitas e refeitas.
 
-Objetivos de completar histórias, obter itens, preencher catálogo e maximizar pontuação precisam de critérios independentes. Enquanto um caminho depender de comandos desconhecidos, o Atlas deverá apresentar a limitação em vez de selecionar uma melhor escolha sem fundamento. A interface desta etapa apenas consulta regras e conexões; não inicia nem modifica uma run.
+Os objetivos de obter itens, atingir ouro e registrar epílogos usam o modelo parcial. Histórias/contos e catálogo permanente exigem confirmação manual. Um epílogo alvo pode orientar um objetivo de história, mas não comprova sua conclusão. A pontuação pode ser anotada, sem estimativa de melhor escolha para maximizá-la. Quando há comandos desconhecidos, a interface apresenta as pendências e exige conferir o estado observado antes de salvar. Sugestões provisórias não substituem a validação dinâmica descrita acima.
 
 ## Reproduzir
 
@@ -41,6 +41,8 @@ Na raiz do projeto:
 .venv/bin/python web/life-in-adventure/build_data.py
 .venv/bin/python -X utf8 -m unittest discover -s tests -v
 python web/life-in-adventure/tests/browser_smoke.py
+node --test web/life-in-adventure/tests/game-engine.test.cjs
+python web/life-in-adventure/tests/game_mode_smoke.py
 ```
 
 A verificação nativa requer o ELF ARM64 materializado via Git LFS; não aceita um ponteiro LFS ou outro binário. Os dados originais do jogo não são reescritos. As contagens em `atlas-readiness.json` e no bundle são geradas das mesmas fontes; o catálogo passou de 834 para 1.188 registros com os epílogos. Ver `regras-confirmadas.md` para os endereços e `native-rules-evidence.json` para a identidade do binário e a verificação das tabelas de saltos.

@@ -27,26 +27,32 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Obter apenas o aplicativo estático
+      - name: Obter o aplicativo e os testes do motor
         uses: actions/checkout@v4
         with:
           persist-credentials: false
-          sparse-checkout: web/life-in-adventure/dist
+          sparse-checkout: |
+            web/life-in-adventure/dist
+            web/life-in-adventure/tests
       - name: Verificar o pacote publicado
         run: |
           python3 - <<'PY'
           import json
           from pathlib import Path
           root = Path('web/life-in-adventure/dist')
-          expected = {'index.html', 'app.js', 'styles.css', 'events-data.js'}
+          expected = {'index.html', 'app.js', 'styles.css', 'events-data.js', 'game-engine.js', 'game-mode.js'}
           assert {p.name for p in root.iterdir() if p.is_file()} == expected
           data = (root / 'events-data.js').read_text(encoding='utf-8')
           payload = json.loads(data.removeprefix('window.ATLAS_DATA=').strip().removesuffix(';'))
           assert len(payload['events']) == 3683
           assert len(payload['catalogs']) == 1188
+          assert payload['runModelVersion'] == 1
           print('Pacote verificado: 3683 eventos e 1188 registros de catálogo.')
           PY
           node --check web/life-in-adventure/dist/app.js
+          node --check web/life-in-adventure/dist/game-engine.js
+          node --check web/life-in-adventure/dist/game-mode.js
+          node --test web/life-in-adventure/tests/game-engine.test.cjs
       - name: Configurar Pages
         uses: actions/configure-pages@v5
       - name: Enviar os arquivos do site
