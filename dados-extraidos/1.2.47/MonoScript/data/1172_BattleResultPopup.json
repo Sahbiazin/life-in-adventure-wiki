@@ -1,0 +1,25 @@
+{
+  "m_Name": "BattleResultPopup",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 65,
+    "bytes[1]": 102,
+    "bytes[2]": 248,
+    "bytes[3]": 232,
+    "bytes[4]": 220,
+    "bytes[5]": 54,
+    "bytes[6]": 72,
+    "bytes[7]": 173,
+    "bytes[8]": 42,
+    "bytes[9]": 205,
+    "bytes[10]": 209,
+    "bytes[11]": 43,
+    "bytes[12]": 183,
+    "bytes[13]": 15,
+    "bytes[14]": 1,
+    "bytes[15]": 64
+  },
+  "m_ClassName": "BattleResultPopup",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

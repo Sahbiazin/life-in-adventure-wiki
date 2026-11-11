@@ -1,0 +1,25 @@
+{
+  "m_Name": "ScreenFader",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 240,
+    "bytes[1]": 69,
+    "bytes[2]": 156,
+    "bytes[3]": 193,
+    "bytes[4]": 112,
+    "bytes[5]": 234,
+    "bytes[6]": 88,
+    "bytes[7]": 28,
+    "bytes[8]": 114,
+    "bytes[9]": 63,
+    "bytes[10]": 21,
+    "bytes[11]": 16,
+    "bytes[12]": 150,
+    "bytes[13]": 85,
+    "bytes[14]": 81,
+    "bytes[15]": 209
+  },
+  "m_ClassName": "ScreenFader",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

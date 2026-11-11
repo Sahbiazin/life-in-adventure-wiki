@@ -1,0 +1,25 @@
+{
+  "m_Name": "UnitCtrl",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 190,
+    "bytes[1]": 200,
+    "bytes[2]": 11,
+    "bytes[3]": 230,
+    "bytes[4]": 225,
+    "bytes[5]": 41,
+    "bytes[6]": 187,
+    "bytes[7]": 249,
+    "bytes[8]": 146,
+    "bytes[9]": 129,
+    "bytes[10]": 177,
+    "bytes[11]": 200,
+    "bytes[12]": 10,
+    "bytes[13]": 61,
+    "bytes[14]": 196,
+    "bytes[15]": 20
+  },
+  "m_ClassName": "UnitCtrl",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

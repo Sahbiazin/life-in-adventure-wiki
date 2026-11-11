@@ -1,0 +1,25 @@
+{
+  "m_Name": "CharacterDataBase",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 148,
+    "bytes[1]": 237,
+    "bytes[2]": 144,
+    "bytes[3]": 246,
+    "bytes[4]": 201,
+    "bytes[5]": 136,
+    "bytes[6]": 189,
+    "bytes[7]": 40,
+    "bytes[8]": 65,
+    "bytes[9]": 87,
+    "bytes[10]": 114,
+    "bytes[11]": 36,
+    "bytes[12]": 191,
+    "bytes[13]": 202,
+    "bytes[14]": 165,
+    "bytes[15]": 179
+  },
+  "m_ClassName": "CharacterDataBase",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "UITooltipFlipBackground",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 166,
+    "bytes[1]": 166,
+    "bytes[2]": 3,
+    "bytes[3]": 53,
+    "bytes[4]": 52,
+    "bytes[5]": 251,
+    "bytes[6]": 45,
+    "bytes[7]": 132,
+    "bytes[8]": 108,
+    "bytes[9]": 214,
+    "bytes[10]": 227,
+    "bytes[11]": 144,
+    "bytes[12]": 227,
+    "bytes[13]": 142,
+    "bytes[14]": 22,
+    "bytes[15]": 205
+  },
+  "m_ClassName": "UITooltipFlipBackground",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

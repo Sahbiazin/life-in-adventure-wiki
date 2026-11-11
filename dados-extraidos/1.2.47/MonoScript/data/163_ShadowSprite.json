@@ -1,0 +1,25 @@
+{
+  "m_Name": "ShadowSprite",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 19,
+    "bytes[1]": 94,
+    "bytes[2]": 74,
+    "bytes[3]": 11,
+    "bytes[4]": 72,
+    "bytes[5]": 183,
+    "bytes[6]": 141,
+    "bytes[7]": 170,
+    "bytes[8]": 134,
+    "bytes[9]": 120,
+    "bytes[10]": 156,
+    "bytes[11]": 49,
+    "bytes[12]": 106,
+    "bytes[13]": 20,
+    "bytes[14]": 57,
+    "bytes[15]": 6
+  },
+  "m_ClassName": "ShadowSprite",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

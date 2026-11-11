@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIAlwaysOnTop",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 178,
+    "bytes[1]": 138,
+    "bytes[2]": 233,
+    "bytes[3]": 46,
+    "bytes[4]": 217,
+    "bytes[5]": 120,
+    "bytes[6]": 242,
+    "bytes[7]": 89,
+    "bytes[8]": 249,
+    "bytes[9]": 51,
+    "bytes[10]": 112,
+    "bytes[11]": 243,
+    "bytes[12]": 27,
+    "bytes[13]": 153,
+    "bytes[14]": 57,
+    "bytes[15]": 205
+  },
+  "m_ClassName": "UIAlwaysOnTop",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "Demo_AddChatMessage",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 121,
+    "bytes[1]": 197,
+    "bytes[2]": 6,
+    "bytes[3]": 3,
+    "bytes[4]": 89,
+    "bytes[5]": 117,
+    "bytes[6]": 155,
+    "bytes[7]": 162,
+    "bytes[8]": 213,
+    "bytes[9]": 235,
+    "bytes[10]": 54,
+    "bytes[11]": 154,
+    "bytes[12]": 215,
+    "bytes[13]": 222,
+    "bytes[14]": 240,
+    "bytes[15]": 187
+  },
+  "m_ClassName": "Demo_AddChatMessage",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

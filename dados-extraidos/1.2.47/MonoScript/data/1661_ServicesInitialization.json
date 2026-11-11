@@ -1,0 +1,25 @@
+{
+  "m_Name": "ServicesInitialization",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 193,
+    "bytes[1]": 150,
+    "bytes[2]": 60,
+    "bytes[3]": 218,
+    "bytes[4]": 74,
+    "bytes[5]": 155,
+    "bytes[6]": 141,
+    "bytes[7]": 73,
+    "bytes[8]": 0,
+    "bytes[9]": 153,
+    "bytes[10]": 159,
+    "bytes[11]": 229,
+    "bytes[12]": 203,
+    "bytes[13]": 24,
+    "bytes[14]": 132,
+    "bytes[15]": 128
+  },
+  "m_ClassName": "ServicesInitialization",
+  "m_Namespace": "Unity.Services.Core.Components",
+  "m_AssemblyName": "Unity.Services.Core.Components"
+}

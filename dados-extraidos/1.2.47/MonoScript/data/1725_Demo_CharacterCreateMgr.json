@@ -1,0 +1,25 @@
+{
+  "m_Name": "Demo_CharacterCreateMgr",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 33,
+    "bytes[1]": 220,
+    "bytes[2]": 111,
+    "bytes[3]": 150,
+    "bytes[4]": 49,
+    "bytes[5]": 187,
+    "bytes[6]": 54,
+    "bytes[7]": 10,
+    "bytes[8]": 19,
+    "bytes[9]": 156,
+    "bytes[10]": 218,
+    "bytes[11]": 41,
+    "bytes[12]": 42,
+    "bytes[13]": 52,
+    "bytes[14]": 158,
+    "bytes[15]": 69
+  },
+  "m_ClassName": "Demo_CharacterCreateMgr",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

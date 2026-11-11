@@ -1,0 +1,25 @@
+{
+  "m_Name": "CameraSetting",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 87,
+    "bytes[1]": 200,
+    "bytes[2]": 6,
+    "bytes[3]": 212,
+    "bytes[4]": 105,
+    "bytes[5]": 116,
+    "bytes[6]": 29,
+    "bytes[7]": 25,
+    "bytes[8]": 205,
+    "bytes[9]": 19,
+    "bytes[10]": 107,
+    "bytes[11]": 16,
+    "bytes[12]": 222,
+    "bytes[13]": 232,
+    "bytes[14]": 190,
+    "bytes[15]": 139
+  },
+  "m_ClassName": "CameraSetting",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

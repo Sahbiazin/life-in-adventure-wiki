@@ -1,0 +1,25 @@
+{
+  "m_Name": "Test_UIBulletBar",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 202,
+    "bytes[1]": 211,
+    "bytes[2]": 42,
+    "bytes[3]": 63,
+    "bytes[4]": 236,
+    "bytes[5]": 215,
+    "bytes[6]": 23,
+    "bytes[7]": 114,
+    "bytes[8]": 172,
+    "bytes[9]": 35,
+    "bytes[10]": 212,
+    "bytes[11]": 242,
+    "bytes[12]": 183,
+    "bytes[13]": 222,
+    "bytes[14]": 83,
+    "bytes[15]": 21
+  },
+  "m_ClassName": "Test_UIBulletBar",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

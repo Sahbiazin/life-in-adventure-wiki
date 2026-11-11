@@ -1,0 +1,25 @@
+{
+  "m_Name": "UITextSetValue",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 253,
+    "bytes[1]": 168,
+    "bytes[2]": 92,
+    "bytes[3]": 13,
+    "bytes[4]": 215,
+    "bytes[5]": 108,
+    "bytes[6]": 219,
+    "bytes[7]": 214,
+    "bytes[8]": 116,
+    "bytes[9]": 34,
+    "bytes[10]": 57,
+    "bytes[11]": 16,
+    "bytes[12]": 231,
+    "bytes[13]": 90,
+    "bytes[14]": 109,
+    "bytes[15]": 33
+  },
+  "m_ClassName": "UITextSetValue",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

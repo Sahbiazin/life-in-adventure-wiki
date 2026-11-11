@@ -1,0 +1,25 @@
+{
+  "m_Name": "WallHackDetector",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 75,
+    "bytes[1]": 182,
+    "bytes[2]": 115,
+    "bytes[3]": 170,
+    "bytes[4]": 40,
+    "bytes[5]": 42,
+    "bytes[6]": 244,
+    "bytes[7]": 64,
+    "bytes[8]": 12,
+    "bytes[9]": 154,
+    "bytes[10]": 158,
+    "bytes[11]": 167,
+    "bytes[12]": 164,
+    "bytes[13]": 144,
+    "bytes[14]": 73,
+    "bytes[15]": 132
+  },
+  "m_ClassName": "WallHackDetector",
+  "m_Namespace": "CodeStage.AntiCheat.Detectors",
+  "m_AssemblyName": "ACTk.Runtime"
+}

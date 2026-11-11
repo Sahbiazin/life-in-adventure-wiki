@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIEquipSlot",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 28,
+    "bytes[1]": 233,
+    "bytes[2]": 221,
+    "bytes[3]": 175,
+    "bytes[4]": 234,
+    "bytes[5]": 97,
+    "bytes[6]": 211,
+    "bytes[7]": 138,
+    "bytes[8]": 66,
+    "bytes[9]": 19,
+    "bytes[10]": 254,
+    "bytes[11]": 170,
+    "bytes[12]": 175,
+    "bytes[13]": 175,
+    "bytes[14]": 194,
+    "bytes[15]": 50
+  },
+  "m_ClassName": "UIEquipSlot",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

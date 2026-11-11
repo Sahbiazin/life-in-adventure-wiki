@@ -1,0 +1,25 @@
+{
+  "m_Name": "ScorePopup",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 70,
+    "bytes[1]": 69,
+    "bytes[2]": 215,
+    "bytes[3]": 70,
+    "bytes[4]": 0,
+    "bytes[5]": 142,
+    "bytes[6]": 115,
+    "bytes[7]": 78,
+    "bytes[8]": 175,
+    "bytes[9]": 222,
+    "bytes[10]": 226,
+    "bytes[11]": 127,
+    "bytes[12]": 75,
+    "bytes[13]": 191,
+    "bytes[14]": 143,
+    "bytes[15]": 115
+  },
+  "m_ClassName": "ScorePopup",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "CutoutMaskUI",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 130,
+    "bytes[1]": 117,
+    "bytes[2]": 93,
+    "bytes[3]": 158,
+    "bytes[4]": 186,
+    "bytes[5]": 219,
+    "bytes[6]": 31,
+    "bytes[7]": 237,
+    "bytes[8]": 114,
+    "bytes[9]": 80,
+    "bytes[10]": 92,
+    "bytes[11]": 26,
+    "bytes[12]": 21,
+    "bytes[13]": 99,
+    "bytes[14]": 46,
+    "bytes[15]": 200
+  },
+  "m_ClassName": "CutoutMaskUI",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

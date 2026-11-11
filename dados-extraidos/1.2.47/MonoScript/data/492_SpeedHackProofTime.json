@@ -1,0 +1,25 @@
+{
+  "m_Name": "SpeedHackProofTime",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 168,
+    "bytes[1]": 168,
+    "bytes[2]": 37,
+    "bytes[3]": 164,
+    "bytes[4]": 102,
+    "bytes[5]": 199,
+    "bytes[6]": 246,
+    "bytes[7]": 225,
+    "bytes[8]": 49,
+    "bytes[9]": 99,
+    "bytes[10]": 204,
+    "bytes[11]": 39,
+    "bytes[12]": 102,
+    "bytes[13]": 238,
+    "bytes[14]": 145,
+    "bytes[15]": 181
+  },
+  "m_ClassName": "SpeedHackProofTime",
+  "m_Namespace": "CodeStage.AntiCheat.Time",
+  "m_AssemblyName": "ACTk.Runtime"
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "LetterSpacing",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 182,
+    "bytes[1]": 130,
+    "bytes[2]": 103,
+    "bytes[3]": 17,
+    "bytes[4]": 241,
+    "bytes[5]": 181,
+    "bytes[6]": 43,
+    "bytes[7]": 187,
+    "bytes[8]": 252,
+    "bytes[9]": 114,
+    "bytes[10]": 20,
+    "bytes[11]": 198,
+    "bytes[12]": 251,
+    "bytes[13]": 243,
+    "bytes[14]": 133,
+    "bytes[15]": 63
+  },
+  "m_ClassName": "LetterSpacing",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

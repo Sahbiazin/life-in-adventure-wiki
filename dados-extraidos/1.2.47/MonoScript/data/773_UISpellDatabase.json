@@ -1,0 +1,25 @@
+{
+  "m_Name": "UISpellDatabase",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 83,
+    "bytes[1]": 71,
+    "bytes[2]": 99,
+    "bytes[3]": 201,
+    "bytes[4]": 68,
+    "bytes[5]": 75,
+    "bytes[6]": 44,
+    "bytes[7]": 102,
+    "bytes[8]": 41,
+    "bytes[9]": 40,
+    "bytes[10]": 43,
+    "bytes[11]": 26,
+    "bytes[12]": 31,
+    "bytes[13]": 165,
+    "bytes[14]": 102,
+    "bytes[15]": 144
+  },
+  "m_ClassName": "UISpellDatabase",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

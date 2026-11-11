@@ -1,0 +1,25 @@
+{
+  "m_Name": "RankingMgr",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 184,
+    "bytes[1]": 77,
+    "bytes[2]": 131,
+    "bytes[3]": 4,
+    "bytes[4]": 241,
+    "bytes[5]": 41,
+    "bytes[6]": 117,
+    "bytes[7]": 185,
+    "bytes[8]": 58,
+    "bytes[9]": 78,
+    "bytes[10]": 156,
+    "bytes[11]": 193,
+    "bytes[12]": 113,
+    "bytes[13]": 19,
+    "bytes[14]": 48,
+    "bytes[15]": 126
+  },
+  "m_ClassName": "RankingMgr",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

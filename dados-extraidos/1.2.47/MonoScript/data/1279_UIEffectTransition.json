@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIEffectTransition",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 249,
+    "bytes[1]": 193,
+    "bytes[2]": 249,
+    "bytes[3]": 253,
+    "bytes[4]": 87,
+    "bytes[5]": 78,
+    "bytes[6]": 60,
+    "bytes[7]": 234,
+    "bytes[8]": 76,
+    "bytes[9]": 100,
+    "bytes[10]": 193,
+    "bytes[11]": 114,
+    "bytes[12]": 142,
+    "bytes[13]": 189,
+    "bytes[14]": 116,
+    "bytes[15]": 25
+  },
+  "m_ClassName": "UIEffectTransition",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "ImageScaleAnimation",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 136,
+    "bytes[1]": 161,
+    "bytes[2]": 197,
+    "bytes[3]": 182,
+    "bytes[4]": 106,
+    "bytes[5]": 104,
+    "bytes[6]": 20,
+    "bytes[7]": 54,
+    "bytes[8]": 176,
+    "bytes[9]": 239,
+    "bytes[10]": 243,
+    "bytes[11]": 43,
+    "bytes[12]": 212,
+    "bytes[13]": 33,
+    "bytes[14]": 215,
+    "bytes[15]": 185
+  },
+  "m_ClassName": "ImageScaleAnimation",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

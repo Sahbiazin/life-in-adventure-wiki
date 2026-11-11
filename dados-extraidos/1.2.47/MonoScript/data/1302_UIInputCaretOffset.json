@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIInputCaretOffset",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 111,
+    "bytes[1]": 138,
+    "bytes[2]": 58,
+    "bytes[3]": 53,
+    "bytes[4]": 42,
+    "bytes[5]": 22,
+    "bytes[6]": 37,
+    "bytes[7]": 145,
+    "bytes[8]": 84,
+    "bytes[9]": 173,
+    "bytes[10]": 190,
+    "bytes[11]": 13,
+    "bytes[12]": 21,
+    "bytes[13]": 181,
+    "bytes[14]": 247,
+    "bytes[15]": 1
+  },
+  "m_ClassName": "UIInputCaretOffset",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

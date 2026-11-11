@@ -1,0 +1,4510 @@
+{
+ "list" : [
+  {
+    "id" : 0,
+     "grade" : 1,
+    "monster" : "1|3",
+    "required" : "2_2_30",
+    "text" : "Seekor binatang buas melolong di hutan, merusak kesunyian malam. Dengan hati-hati, kamu menuju ke arah suara itu berasal. Di kejauhan, kamu melihat para {0} memakan daging dengan buas. Mereka terlalu sibuk dengan santapan mereka untuk melihatmu. ",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Serang!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "7", 
+          "nextEvent" : 1, 
+          "type" : 1, 
+          "text" : "Kamu diam-diam mendekati salah satu dari mereka dan menyerang. Sayangnya seranganmu gagal menjatuhkannya.  Kawan-kawannya mendekat dan menyerbumu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu diam-diam mendekati salah satu dari mereka dan menyerang. Ia langsung tewas; darahnya menciprat kemana-mana. Kawan-kawannya terkejut lalu kabur.", 
+          "reward" : "0_2_1|0_4_4"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Lewati mereka",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu membiarkan mereka dan bergegas pergi.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 1,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengalahkan para {0}.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu berhasil kabur dari para {0}. Beruntung mereka sudah kenyang sehingga tidak mengejarmu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu menjadi santapan para {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu menjadi santapan para {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 2,
+     "grade" : 1,
+    "monster" : "0_1_10|1_1_10|3_1_10|7_1_10|8_0_10|22_0_10",
+    "required" : "",
+    "text" : "Kamu susah payah berjalan melalui hutan lebat. Semua indramu langsung gelisah ketika kamu samar-samar mendengar suara gemerisik. Segera setelah kamu mengambil senjatamu, {0} melompat keluar dari semak-semak.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Bersiap untuk menyerang",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 3, 
+          "type" : 2, 
+          "text" : "Kamu mengeluarkan senjatamu dan memasang kuda-kuda. Sesuai dugaan, {0} itu menerjangmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 3, 
+          "type" : 1, 
+          "text" : "Kamu berhasil menghindari sergapannya dan mulai berlari. Namun tak lama kemudian kamu tersusul.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu berhasil menghindari sergapannya dan mulai berlari.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_6_9", 
+          "text" : "Serangan balik!",
+       "result" : [
+       {
+          "required" : "1_0_2", 
+          "chance" : "7", 
+          "nextEvent" : 3, 
+          "type" : 1, 
+          "text" : "Kamu memprediksi serangan {0} dan menyiapkan serangan balik. Sayangnya kamu melesat dan membuka celah baru baginya. Ia memanfaatkannya dan menyerangmu lagi.", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 1
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "7", 
+          "nextEvent" : -3, 
+          "type" : 1, 
+          "text" : "Kamu memprediksi serangan {0} dan menyiapkan serangan balik. Sayangnya kamu melesat dan membuka celah baru baginya. Ia memanfaatkannya dan menyerangmu lagi. Kamu terluka parah.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu memprediksi serangan {0} dan menyiapkan serangan balik. Seranganmu berjalan sesuai rencana. {0} langsung tewas akibat lukanya.", 
+          "reward" : "0_2_1|0_4_4"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 3,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengalahkan {0}.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu berhasil kabur dari {0}, dengan badan penuh luka.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu terluka parah dari serangan {0}; kamu jatuh pingsan.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu terluka parah dari serangan {0}; kamu jatuh pingsan.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 4,
+     "grade" : 1,
+    "monster" : "11",
+    "required" : "2_2_30",
+    "text" : "Langit berubah warna kelabu dalam hitungan detik, dan hujan mulai turun. Kamu menemukan gua dan memasukinya. \n\n \"Kieeeek!\"\n\n Suara gema yang melengking menusuk telingamu. Rupanya, kamu tidak sendirian. Kamu mengeluarkan senjatamu dan bersiap untuk bertarung. \n\n \"KIEEEEEEEEK!\"\n\n Suara itu datang tepat dari atas. Kamu melihat ke atas dan menemukan seekor {0} menukik ke bawah, dengan taring terjulur keluar. ",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Bersiap untuk menyerang",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "7", 
+          "nextEvent" : 5, 
+          "type" : 1, 
+          "text" : "Kamu melacak {0} dengan matamu,  Ia mengitarimu, berbelok-belok ke kiri dan ke kanan, kemudian terbang lurus ke arahmu.", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu melacak {0} dengan matamu,  Ia mengitarimu, berbelok-belok ke kiri dan ke kanan, kemudian terbang ke tempat lain.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 5, 
+          "type" : 1, 
+          "text" : "Kamu mengayunkan senjatamu kuat-kuat. {0} tersentak dan mundur sedikit. Kamu mengambil kesempatan tersebut untuk lari sekencang mungkin. Namun, kamu tidak dapat lepas dari kejarannya.", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu mengayunkan senjatamu kuat-kuat. {0} tersentak dan mundur sedikit. Kamu mengambil kesempatan tersebut untuk lari sekencang mungkin.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_1", 
+          "text" : "Sihir: Cahaya",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "18", 
+          "nextEvent" : 5, 
+          "type" : 1, 
+          "text" : "Kamu mencoba merapal mantra cahaya, namun lidahmu tersandung saking buru-burunya. {0} memanfaatkan kesalahanmu dan terbang menyerang.", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu merapal mantra pencahayaan; {0} terbang kabur.", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu merapal mantra pencahayaan; {0} terbang kabur.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 5,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} jatuh ke tanah dan meringkuk. Setelah bergetar beberapa saat, akhirnya {0} mati.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} menggigit sekujur tubuhmu. Untungnya kamu masih sempat kabur, namun berdarah.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} menggigit sekujur tubuhmu. Kamu tewas akibat syok dari pendarahan dan infeksi.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} menggigit sekujur tubuhmu. Kamu tewas akibat syok dari pendarahan dan infeksi.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 6,
+     "grade" : 1,
+    "monster" : "4",
+    "required" : "2_2_30",
+    "text" : "|drawing_desert| Kamu bersusah-payah berjalan melewati gurun selama berjam-jam. Tanahnya berkilau karena panas dan matahari bersinar terik. Persediaan airmu hampir habis. Kemudian kamu melihat sesuatu bergerak di kejauhan. ",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Dekati",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 7, 
+          "type" : 2, 
+          "text" : "Gundukan pasir tersebut bergerak begitu cepatnya kearahmu. Kemudian muncullah {0} dari pasir.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 7, 
+          "type" : 1, 
+          "text" : "Kamu mencoba kabur. Namun kakimu tersungkur dalam pasir. Makhluk tersebut mendekat lebih cepat dari yang kamu duga. Kemudian muncullah {0} dari pasir.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Dengan refleksmu yang cepat, kamu berhasil kabur dari makhluk dalam pasir.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_6_9", 
+          "text" : "Tunggu waktu yang pas",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "11", 
+          "nextEvent" : 7, 
+          "type" : 1, 
+          "text" : "Kamu menunggu makhluk tersebut keluar dari pasir. Kamu pun menyerang, namun sayangnya kamu meleset. {0} pun muncul dari pasir.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu menunggu makhluk tersebut keluar dari pasir. Kamu pun menyerang. {0} pun muncul dan seketika terkena seranganmu. {0} langsung tewas.", 
+          "reward" : "0_2_2|0_4_9"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 7,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} menemui ajalnya di atas pasir panas; badannya terbalik.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu dikalahkan oleh {0} dan bergegas kabur. {0} hanya memandangimu yang tengah kabur.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu tewas digigit {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu tewas digigit {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 8,
+     "grade" : 1,
+    "monster" : "12_1_30|14_0_20",
+    "required" : "",
+    "text" : "|drawing_destroyedGrave| Kamu menemukan sebuah kuburan di dalam hutan. Seseorang telah menggalinya. Kamu mulai memeriksanya ketika tiba-tiba kamu merasakan hawa dingin menjalar ke dalam tulang belakangmu. Tak lama kemudian, {0} muncul begitu saja di depanmu.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Bertarung",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 9, 
+          "type" : 2, 
+          "text" : "Kamu terkejut, namun kamu bergegas tenang dan menghunus senjatamu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Lari",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 9, 
+          "type" : 1, 
+          "text" : "Kamu kabur secepat kilat. Namun {0} begitu mudahnya muncul kembali di depanmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu kabur secepat kilat.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_1|20_3_1", 
+          "text" : "Sihir : Turn Undead",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "8", 
+          "nextEvent" : 9, 
+          "type" : 1, 
+          "text" : "Kamu mencoba merapal Turn Undead namun kamu gagal akibat terlalu gugup.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_14_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu merapal Turn Undead dan mengembalikan {0} ke alam baka.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 9,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} menghilang begitu saja di depan matamu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu bukan tandingan {0}. Kamu kabur memegangi luka-lukamu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Sayangnya, kamu terbunuh oleh {0}", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Sayangnya, kamu terbunuh oleh {0}", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 10,
+     "grade" : 1,
+    "monster" : "0_1_20|20_0_20",
+    "required" : "5_235_0",
+    "text" : "Kamu mendengar seseorang berteriak di dekatmu. Kamu menerobos semak-semak menuju sumber suara itu. Sesampainya di sana, kamu melihat seekor {0} sedang menelan seorang herbalis. Sang herbalis segera menyadari kehadiranmu dengan wajah penuh kepanikan. \n\n \"Tolong! Petualang! Tolong, selamatkan aku!\"\n\n",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Selamatkan dia",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 11, 
+          "type" : 2, 
+          "text" : "Kamu mengguncang {0}. {0} bergetar dan memuntahkan si herbalis. Kemudian {0} menerjangmu. Si herbalis buru-buru mengucapkan terima kasih dan kabur.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Tinggalkan dia",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu berjalan pergi dan membiarkan si herbalis dilahap. Jeritannya mengecil seiring berjalannya waktu.", 
+          "reward" : "0_3_-1|5_235_9"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 11,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengalahkan {0}, yang kemudian hancur tak bersisa.", 
+          "reward" : "5_235_1|0_3_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu gagal mengalahkan {0}. Kamu berlari kabur dan meninggalkan si herbalis.", 
+          "reward" : "0_0_-1|0_1_-1|5_235_9"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu dan si herbalis tewas dibunuh {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu dan si herbalis tewas dibunuh {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 12,
+     "grade" : 1,
+    "monster" : "14",
+    "required" : "1_2_20",
+    "text" : "|drawing_deadmanCage|Kamu menemukan kerangkeng besi yang terbenam separuhnya di lumpur. Di dalamnya terdapat mayat yang telah mengering. Baunya yang membusuk membuatmu merasa mual.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Lewati",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "8", 
+          "nextEvent" : 13, 
+          "type" : 1, 
+          "text" : "Kamu mencoba mengabaikannya namun terlambat. {0} muncul di hadapanmu.", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu lari secepat mungkin dari sana. Baunya masih tersisa di hidungmu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Kubur mayat",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 13, 
+          "type" : 2, 
+          "text" : "Kamu mendekat untuk mengubur mayat tersebut. Namun sepertinya hantu pemilik mayat tersebut menganggapmu sebagai musuh. {0} menerjangmu sambil menjerit mengerikan.", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }
+       ]
+     }, 
+     {
+       "required" : "8_42_1", 
+          "text" : "Bakar mayat",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "7", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu menyalakan lentera dan melemparnya ke arah mayat tersebut. Mayat itu menjerit seiring ia terbakar. Kamu terkejut karena ia masih hidup.", 
+          "reward" : "0_1_-1|4_42_1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_14_1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu menyalakan lentera dan melemparnya ke arah mayat tersebut. Mayat itu menjerit seiring ia terbakar. Kamu buru-buru kabur.", 
+          "reward" : "4_42_1|0_2_1|0_3_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_1", 
+          "text" : "Sihir: Panah Api",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu memikirkan mantra sederhana untuk mengkremasi tubuh itu. Kamu mengeluarkan panah api dari ujung tanganmu dan melemparkannya ke arah mayat. Mayat itu menjerit saat terbakar dan kamu segera meninggalkan tempat itu.", 
+          "reward" : "0_2_1|0_3_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 13,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengembalikan {0} ke alam baka.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu lari terbirit-birit. Setelah beberapa saat kamu baru sadar bahwa kamu sudah tidak dikejar lagi.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu kehilangan nyawamu akibat serangan {0}, dan kamu berujung senasib dengannya.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu kehilangan nyawamu akibat serangan {0}, dan kamu berujung senasib dengannya.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 14,
+     "grade" : 1,
+    "monster" : "5|63",
+    "required" : "1_2_10|2_2_50",
+    "text" : "|drawing_pond|Kamu menemukan kolam kecil di tengah hutan. Seekor rusa sedang minum dari kolam tersebut. Ketika kamu berjalan mendekat, ia menoleh kemudian berlari kabur. Namun tiba-tiba seekor {0} muncul dari tanah dan menyergapnya. {0} menancapkan giginya ke leher rusa dan memandangmu.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Serang",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 15, 
+          "type" : 2, 
+          "text" : "Kamu berteriak dan berlari menyerang {0}. Ia melepaskan si rusa, kemudian ia menerjangmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Mundur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Pelan-pelan kamu melangkah mundur agar tidak mengganggu makannya.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Ancam",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "9", 
+          "nextEvent" : 15, 
+          "type" : 1, 
+          "text" : "Kamu berteriak dan berlari menyerang {0}. Sepertinya dampaknya tidak sesuai dengan yang kamu harapkan. Ia melepaskan si rusa, kemudian ia menerjangmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu menakut-nakuti {0} dengan menatapnya garang. Ia sembarang melempar si rusa lalu kabur.", 
+          "reward" : "0_2_1|0_4_10"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 15,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu membunuh {0}. Si rusa yang sekarang kembali sadar menatapmu beberapa saat, kemudian berlari kabur. Kamu melewati bangkai {0} dan bergerak menuju tempat lain.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu kabur dan membiarkan {0} melahap si rusa.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu merasakan racun menyebar ke seluruh tubuhmu; napasmu terhenti.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu merasakan racun menyebar ke seluruh tubuhmu; napasmu terhenti.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 16,
+     "grade" : 1,
+    "monster" : "3|88_0_20",
+    "required" : "2_2_50",
+    "text" : "Bulan purnama menerangi langit malam. Kamu baru saja menyalakan api unggun dan hendak beranjak tidur,|drawing_wolf|ketika seekor {0} turun dari bukit. Ia melolong, dan tak lama kemudian, bermunculan yang lain.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "14", 
+          "nextEvent" : 17, 
+          "type" : 1, 
+          "text" : "Kamu berlari meninggalkan kemahmu namun mereka berhasil menyusulmu.", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu berlari meninggalkan kemahmu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Panjat pohon",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 17, 
+          "type" : 1, 
+          "text" : "Kamu mencoba memanjat pohon di belakang tendamu, namun peganganmu tergelincir dan kamu jatuh ke tanah. Para {0} dengan cepat mengelilingimu.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 14
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu buru-buru memanjat pohon di belakang tendamu. Dengan enggan, para {0} menyerah kemudian pergi.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Bertarung",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 17, 
+          "type" : 2, 
+          "text" : "Kamu menghunus senjatamu dan menghadapi mereka semua.", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Beri makan",
+       "result" : [
+       {
+          "required" : "8_124_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengambil ikan dan melemparnya ke arah para {0}. Perhatian mereka teralihkan dan kamu berlari kabur.", 
+          "reward" : "4_124_1|0_2_1"
+       }, 
+       {
+          "required" : "8_125_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengambil ikan dan melemparnya ke arah para {0}. Perhatian mereka teralihkan dan kamu berlari kabur.", 
+          "reward" : "4_125_1|0_2_1"
+       }, 
+       {
+          "required" : "8_143_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengambil ikan dan melemparnya ke arah para {0}. Perhatian mereka teralihkan dan kamu berlari kabur.", 
+          "reward" : "4_143_1|0_2_1"
+       }, 
+       {
+          "required" : "8_144_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengambil ikan dan melemparnya ke arah para {0}. Perhatian mereka teralihkan dan kamu berlari kabur.", 
+          "reward" : "4_144_1|0_2_1"
+       }, 
+       {
+          "required" : "10_124_1|10_125_1|10_143_1|10_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 17, 
+          "type" : 2, 
+          "text" : "Kamu meraba-raba tas mu namun kamu tidak menemukan apapun yang bisa kamu tawarkan. Mereka menampakkan gigi mereka dan melompat menerjangmu.", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 17,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu menghajar para {0}. Mereka yang masih hidup berlari sambil merengek.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu berhasil kabur dengan bekas gigitan di sekujur tubuhmu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu menjadi santapan {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu menjadi santapan {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 18,
+     "grade" : 1,
+    "monster" : "2",
+    "required" : "2_2_40",
+    "text" : "Sekelompok {0} datang menghampirimu dengan menunggang kuda. Mereka menghalangi jalanmu saat salah satu dari mereka melangkah maju. \n\n \"Begini urusannya, entah kamu membayar dan mendapat jalan aman, atau bakal ada masalah.\"\n\n",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Tolak",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 19, 
+          "type" : 2, 
+          "text" : "Kamu dengan tegas meminta mereka untuk menyingkir. \n\n \"Jawaban yang salah!\"\n\n Mereka turun dari kuda-kuda mereka dan mencabut pedang.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Serang!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu memukul leher salah satu kuda sekuat mungkin. Kuda itu terkaget dan menjatuhkan {0} penunggangnya yang kemudian terinjak. Teman-temannya kabur ketakutan.", 
+          "reward" : "0_2_1|0_4_3"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "7", 
+          "nextEvent" : 19, 
+          "type" : 1, 
+          "text" : "Kamu memukul leher salah satu kuda sekuat mungkin. Kuda itu terkaget namun sebegitu saja pengaruhnya. Para {0} turun dari kuda masing-masing dan menghunus senjata mereka.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "1_7_10", 
+          "text" : "Berunding dengan mereka",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 19, 
+          "type" : 1, 
+          "text" : "Kamu meminta mereka bergeser. Namun mereka tidak menghiraukanmu. \n\n \"Dasar kau... baiklah, biar kami yang mengambilnya darimu!\"\n\n Para {0} turun dari kuda masing-masing dan menghunus senjata mereka.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu dengan tegas meminta mereka untuk menyingkir. \n\n \"…Baiklah. Kamu toh tidak sepadan dengan masalahnya.\"\n\n Terbujuk, mereka pun membiarkanmu pergi.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "17", 
+          "nextEvent" : 19, 
+          "type" : 1, 
+          "text" : "Kamu mencoba kabur, namun gerakan mereka yang berkuda terlalu cepat. Mereka menyerangmu sambil mengutuk.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu berhasil kabur berkat refleksmu yang luar biasa.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_4_10", 
+          "text" : "Bayar mereka",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu membayar para {0}, kemudian kamu lewat tanpa adanya bentrokan.", 
+          "reward" : "0_4_-10|0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 19,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu menghajar para {0} habis-habisan. Mereka yang masih hidup tertatih-tatih kabur.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu berhasil kabur setelah dihajar para {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Para {0} menggeledah tasmu. Badanmu mendingin dan kamu merasakan kesadaranmu menipis.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Para {0} menggeledah tasmu. Badanmu mendingin dan kamu merasakan kesadaranmu menipis.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 20,
+     "grade" : 1,
+    "monster" : "1|2|7",
+    "required" : "2_2_20",
+    "text" : "Kamu menjumpai gerobak rusak di tepi jalan. Gerobaknya rusak, namun muatannya terkemas baik dan masih utuh.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Periksa",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 21, 
+          "type" : 1, 
+          "text" : "Kamu memutuskan untuk menggeledah gerobak rusak tersebut untuk mencari barang-barang yang mungkin berguna. Ketika kamu hendak memeriksa muatan tersebut, sebuah anak panah melesat ke arahmu. Karena begitu mendadak, anak panah tersebut akhirnya mengenaimu. \n\n \"Kikikikikik!\"\n\n Segerombolan {0} tertawa cekikikan dan melompat keluar dari semak-semak.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 14
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : 21, 
+          "type" : 0, 
+          "text" : "Kamu memutuskan untuk menggeledah gerobak rusak tersebut untuk mencari barang-barang yang mungkin berguna.", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }
+       ]
+     }, 
+     {
+       "required" : "1_14_12", 
+          "text" : "Dekati dengan hati-hati",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 21, 
+          "type" : 2, 
+          "text" : "Kamu menganggap ini adalah jebakan, jadi kamu mendekati gerobak tersebut dengan perlahan dan waspada. Kamu melihat sesuatu bergerak di balik semak-semak di dekat gerobak. Apapun itu, ia menyadari kecurigaanmu. Sesaat suasana menjadi tegang, kemudian ketegangan tersebut terpecahkan oleh sebuah anak panah yang melesat ke arahmu. Kamu berhasil menghindarinya berkat refleksmu yang gesit. Tak lama kemudian, segerombolan {0} melompat keluar dari semak-semak.", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Tinggalkan",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu berjalan pergi.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 21,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu membunuh seluruh {0} dan membersihkan darah dari senjatamu dengan kasar. Di dalam gerobak tersebut terdapat barang-barang sembarang dan sedikit emas. Kamu menyimpan emas tersebut dan membuang sisanya.", 
+          "reward" : "0_4_50"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu kabur dari para {0} dengan terluka.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu tewas dibunuh para {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu tewas dibunuh para {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 22,
+     "grade" : 1,
+    "monster" : "10",
+    "required" : "2_2_50",
+    "text" : "|drawing_plain| Kamu berjalan melalui tanah kering dan kerikil sambil memandangi awan mendung di langit. Sepertinya musim kemarau akan segera berakhir. Seketika, kamu melihat seekor elang mengitar di atas kepalamu. Kamu merasa terganggu, namun ia lekas pergi dan kamu melanjutkan perjalananmu. Tak lama kemudian kamu menyadari bahwa ia adalah elang pemburu. Kamu berhadapan dengan segerombolan {0} yang membuntutimu.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Bertarung",
+       "result" : [
+       {
+          "required" : "8_69_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengeluarkan Pedang Besar dalam Pohon. Mereka langsung kabur sesaat setelah melihat senjata tersebut.", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "8_98_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengeluarkan Bola Mata Fafnir. Benda itu mengeluarkan aura mengerikan; para {0} lari ketakutan.", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "8_113_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengeluarkan Jantung Beku. Mereka langsung kabur sesaat setelah melihat benda tersebut.", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "10_98_1|10_69_1|10_113_1", 
+          "chance" : "1", 
+          "nextEvent" : 23, 
+          "type" : 2, 
+          "text" : "Kamu ingin menunjukkan bahwa kamu bukan sembarang mangsa lemah.", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 23, 
+          "type" : 1, 
+          "text" : "Kamu berbalik dan berlari. Namun mereka menyusulmu dan mengelilingimu.", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu berbalik dan berlari. Mereka tidak dapat menyusulmu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_7_10", 
+          "text" : "Berunding",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "17", 
+          "nextEvent" : 23, 
+          "type" : 1, 
+          "text" : "Kamu mencoba berunding dengan mereka, namun mereka lebih memilih bertarung.", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu teringat sesuatu yang kamu baca dalam buku 'Memahami Bahasa Naga'. Para {0} mampu berbahasa Naga, jadi kamu beranggapan mereka akan paham. Kamu berbicara dengan para {0} dalam bahasa Naga. Mereka langsung berlutut dan membungkuk di hadapanmu. \n\n \"Mohon ampuni kami! Kami kira Anda manusia!\"\n\n Mereka sepertinya mengira bahwa kamu adalah naga yang sedang berubah menjadi manusia. Mereka pun kabur dan meninggalkan sejumlah emas.", 
+          "reward" : "0_2_1|0_4_15"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 23,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengalahkan {0}. Mereka jatuh ke tanah sambil berdarah dan kamu berjalan melewati mayat mereka, melanjutkan petualanganmu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} mengalahkanmu dan kamu hampir saja tidak bisa lolos.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} mendekatimu yang terjatuh dan melancarkan serangan penghabisan. Kesadaranmu terputus.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} mendekatimu yang terjatuh dan melancarkan serangan penghabisan. Kesadaranmu terputus.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 24,
+     "grade" : 1,
+    "monster" : "15",
+    "required" : "1_2_35|2_2_80",
+    "text" : "Saat tengah melintasi hutan, kamu menemukan air terjun. Kaki dan lututmu terasa pegal, jadi kamu duduk di atas batu besar untuk beristirahat. Namun batu yang kamu duduki mulai bergetar dan bangkit berdiri.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Bertarung",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 25, 
+          "type" : 2, 
+          "text" : "Kamu menghunus senjatamu dan bersiap untuk bertarung. {0} melayangkan tinjunya ke arahmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu kabur dari {0}. Ia memandangimu namun ia tidak mengejarmu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_7_10", 
+          "text" : "Berunding",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "9", 
+          "nextEvent" : 25, 
+          "type" : 1, 
+          "text" : "Kamu gagal berunding dengan {0}. Ia melayangkan tinjunya ke arahmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu membujuk {0} dengan karismamu. Ia kembali tidur dan kamu beristirahat di atas punggungnya.", 
+          "reward" : "0_0_1|0_1_1|0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "1_7_10|20_0_1", 
+          "text" : "Hilangkan sihirnya",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 25, 
+          "type" : 1, 
+          "text" : "Kamu mencoba menghilangkan mantra yang menghidupkan {0} namun kamu gagal. Ia melayangkan tinjunya ke arahmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu mencoba menghilangkan mantra yang menghidupkan {0}. Ia berhenti bergerak kemudian ambruk. Kamu duduk di atas gundukan {0} untuk beristirahat.", 
+          "reward" : "0_0_1|0_1_1|0_2_1|0_4_60"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 25,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu menghancurkan inti {0}. {0} berhenti bergerak kemudian ambruk. Kamu duduk di atas gundukan {0} untuk beristirahat.", 
+          "reward" : "0_0_1|0_1_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Jangankan beristirahat, kamu terpaksa kabur dari {0} setelah dihajar habis-habisan.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Badanmu hancur tertimpa badan {0} yang besar.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Badanmu hancur tertimpa badan {0} yang besar.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 26,
+     "grade" : 1,
+    "monster" : "15|16",
+    "required" : "1_2_80",
+    "text" : "Kamu melintasi daerah penuh dengan mata air panas. Tanah di bawahmu bersinar merah dan sesekali bergemuruh. Saat kamu berpikir sesuatu mungkin terjadi, seketika tanah di depanmu roboh. Muncul {0} dari retakan di tanah. Ia menyadari keberadaanmu dan menyuruhmu enyah dari sana.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Bertarung",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 27, 
+          "type" : 2, 
+          "text" : "Kamu bersiap bertarung. {0} menatapmu dengan ekspresi menghina.", 
+          "reward" : "6_1_0", 
+          "place" : 2
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu kabur dari {0}. Nampaknya ia mengolokmu dari belakang.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_7_10", 
+          "text" : "Berunding",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "20", 
+          "nextEvent" : 27, 
+          "type" : 1, 
+          "text" : "Kamu meminta {0} membiarkanmu lewat, namun ia mencemooh dan menyerangmu.", 
+          "reward" : "6_1_0", 
+          "place" : 2
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu berhasil meyakinkan {0} bahwa kamu hanya lewat. {0} mendengarkan dan mengangguk. \n\n \"Lewatlah dengan diam, tanpa bersuara sedikit pun.\"\n\n", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 27,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} tidak berkata-kata lagi. Dengan teratasinya penghalang tersebut, kamu melanjutkan perjalananmu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu terpaksa menuruti perintah {0}. Kamu terusir keluar dalam kondisi babak belur.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu diinjak-injak {0}. Kamu mati gepeng.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu diinjak-injak {0}. Kamu mati gepeng.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 28,
+     "grade" : 1,
+    "monster" : "18|42_0_55|70",
+    "required" : "1_2_35",
+    "text" : "|drawing_blizzard|Langit berubah gelap dalam sekejap, dan datanglah badai salju yang sangat tebal. Kamu berhenti mendaki dan menoleh ke sekeliling gunung bersalju, tubuhmu menggigil kedinginan. Untungnya kamu menemukan gua kecil dan memasukinya. Dari strukturnya, kamu merasakan adanya pintu masuk lain. Tak lama kemudian, kamu menemukan {0} yang tengah tertidur di dalam gua, seorang diri.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Istirahat dengan tenang dan bersembunyi",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "5", 
+          "nextEvent" : 29, 
+          "type" : 1, 
+          "text" : "Kamu memutuskan untuk menunggu badai salju berakhir di dalam gua. Kamu berjalan dengan hati-hati agar tidak membangunkan {0}, namun kamu tidak sengaja menginjak lapisan es tipis. Retakannya bergema di seluruh gua; {0} pun terbangun dan melihatmu. {0} menerjangmu dan melayangkan tinjunya.", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu memutuskan untuk menunggu badai salju berakhir di dalam gua. Kamu berjalan dengan hati-hati agar tidak membangunkan {0}, dan akhirnya kamu bersembunyi dalam tumpukan jerami di pojok gua. Setelah badai berakhir kamu keluar dari gua dengan aman sentosa.", 
+          "reward" : "0_1_0|0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Sergap",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 29, 
+          "type" : 1, 
+          "text" : "Kamu memutuskan untuk membunuh penghuni gua tersebut. Kamu berjalan dengan hati-hati agar tidak membangunkan {0}, namun kamu tidak sengaja menginjak lapisan es tipis. Retakannya bergema di seluruh gua; {0} pun terbangun dan melihatmu. {0} menerjangmu dan melayangkan tinjunya.", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu memutuskan untuk membunuh penghuni gua tersebut. Ia tertidur pulas dan tidak menyadarimu yang mendekat. Kamu menyerang leher {0} sekuat mungkin dengan senjatamu. Kamu bisa merasakan tulang lehernya patah. Ia terbangun dengan menjerit dan berusaha bangkit, kemudian ia roboh lalu mati. Setelah badai berakhir kamu keluar dari gua dengan aman sentosa.", 
+          "reward" : "0_2_2|0_1_0|0_4_100"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Keluar dari gua",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "16", 
+          "nextEvent" : -2, 
+          "type" : 1, 
+          "text" : "Kamu diam-diam keluar dari gua. Dinginnya menembus pakaianmu dan menusuk tubuhmu. Kamu terkena radang dingin akibat berjalan menembus badai.", 
+          "reward" : "0_0_-1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_13_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu diam-diam keluar dari gua. Dinginnya menembus pakaianmu dan menusuk tubuhmu. Namun badai salju tidak mampu melukaimu. Kamu menahan dinginnya badai dan terus berjalan.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Bangunkan",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 29, 
+          "type" : 2, 
+          "text" : "Kamu berteriak lantang untuk membangunkan {0}. Ia pun melompat kaget. Kemudian ia meraung dan menyerangmu.", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 29,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu membunuh {0} dan mengambil alih gua. Kamu menunggu badai salju berakhir lalu kamu melanjutkan petualanganmu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} mengalahkanmu dan kamu nyaris saja tidak lolos. Untungnya badai salju di luar sudah berhenti di tengah pertarunganmu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu jatuh pingsan. {0} menelanmu bulat-bulat.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu jatuh pingsan. {0} menelanmu bulat-bulat.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 30,
+     "grade" : 1,
+    "monster" : "77|27",
+    "required" : "2_2_50",
+    "text" : "Kamu berjalan melintasi rerimbunan pohon cemara yang tinggi. Kamu berhenti untuk meregangkan tubuh dan menatap langit yang bersih tanpa awan. Saat kamu menurunkan pandangan, kamu berhadapan dengan wajah {0} yang keluar dari semak-semak.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Bertarung",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 31, 
+          "type" : 2, 
+          "text" : "Kamu pelan-pelan menghunus senjatamu sambil tetap menatap mata {0}. {0} memamerkan giginya, menggeram, dan melompat menerjangmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Lari",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "16", 
+          "nextEvent" : 31, 
+          "type" : 1, 
+          "text" : "Kamu berbalik dan berlari, namun {0} menggigit pergelangan kakimu.", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu berbalik dan berlari. {0} mengejarmu sebentar, namun tak lama ia menyerah dan berhenti mengejarmu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Beri makan",
+       "result" : [
+       {
+          "required" : "8_124_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengambil ikan dan melemparkannya pada {0}. Perhatiannya teralihkan dan kamu berlari kabur.", 
+          "reward" : "4_124_1|0_2_1"
+       }, 
+       {
+          "required" : "8_125_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengambil ikan dan melemparkannya pada {0}. Perhatiannya teralihkan dan kamu berlari kabur.", 
+          "reward" : "4_125_1|0_2_1"
+       }, 
+       {
+          "required" : "8_143_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengambil ikan dan melemparkannya pada {0}. Perhatiannya teralihkan dan kamu berlari kabur.", 
+          "reward" : "4_143_1|0_2_1"
+       }, 
+       {
+          "required" : "8_144_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengambil ikan dan melemparkannya pada {0}. Perhatiannya teralihkan dan kamu berlari kabur.", 
+          "reward" : "4_144_1|0_2_1"
+       }, 
+       {
+          "required" : "10_124_1|10_125_1|10_143_1|10_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 31, 
+          "type" : 2, 
+          "text" : "Kamu meraba-raba tas mu namun kamu tidak menemukan apapun yang bisa kamu tawarkan. {0} menampakkan giginya dan melompat menerjangmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Berinteraksi dengannya",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "13", 
+          "nextEvent" : 31, 
+          "type" : 1, 
+          "text" : "Kamu menatap mata {0} dan perlahan-lahan mengulurkan tanganmu. {0} menggigitnya.", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu menatap mata {0} dan perlahan-lahan mengulurkan tanganmu untuk membelainya. {0} terlihat senang dan napasnya menjadi stabil. Kemudian ia berbalik dan berjalan pergi.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 31,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} yang berdarah jatuh ke tanah. Kamu membersihkan darah dari pakaianmu dan meneruskan perjalananmu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu terluka parah oleh cakar dan taring {0}, dan kamu nyaris saja tidak lolos.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} menggigit lehermu dan memutarnya. Kamu merasakan lehermu patah. Kemudian dunia berubah gelap.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} menggigit lehermu dan memutarnya. Kamu merasakan lehermu patah. Kemudian dunia berubah gelap.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 32,
+     "grade" : 1,
+    "monster" : "40|53_0_55",
+    "required" : "1_2_25",
+    "text" : "Saat sedang berjalan melintasi dataran luas, muncul bayangan raksasa menaungimu. Awalnya kamu mengira itu naga, namun setelah mendongak, ternyata itu {0}. Ia berputar di atasmu, lalu menukik ke bawah dengan cakarnya yang terjulur.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Banting",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "18", 
+          "nextEvent" : 33, 
+          "type" : 1, 
+          "text" : "Kamu menangkap kaki {0} itu, namun karena kekuatan dan kecepatan gerakannya yang begitu besar, kamu terbanting jatuh ke tanah.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu menangkap kaki {0} itu dan membantingnya ke tanah. {0} itu bergetar sebentar, lalu mati.", 
+          "reward" : "0_2_1|0_4_30"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Menghindar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 33, 
+          "type" : 1, 
+          "text" : "Gerakan {0} itu terlalu cepat sehingga kamu gagal menghindar. Cakarnya menggores tubuhmu.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : 33, 
+          "type" : 0, 
+          "text" : "Kamu menghindar dari cakarnya yang membelah udara. \n\n \"Grrrr...\"\n\n {0} itu mendarat dengan kasar, lalu menerjangmu sambil memekik.", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_2|1_1_2", 
+          "text" : "Sihir: Penghalang",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "14", 
+          "nextEvent" : 33, 
+          "type" : 1, 
+          "text" : "Kamu mencoba membentuk penghalang dengan sihir, namun kamu gagal berkonsentrasi. Kamu terbanting jatuh ke tanah karena kekuatan dan kecepatan gerakannya yang begitu besar.", 
+          "reward" : "0_0_-1|6_1_0|0_1_-1", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu membentuk penghalang sihir untuk memblokir serangan {0}. Muncul percikan dari tabrakan {0}, dan ia kabur ketakutan.", 
+          "reward" : "0_2_2|0_1_-1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu membentuk penghalang sihir untuk memblokir serangan {0}. Muncul percikan dari tabrakan {0}, dan ia kabur ketakutan.", 
+          "reward" : "0_2_2|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 33,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengalahkan {0}. Tanah dan rumput berlumur darah. Para elang yang mencium bau darah mulai terbang mengitar di langit. Kamu melakukan peregangan sedikit, kemudian kamu melanjutkan perjalananmu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} nyaris membunuhmu, namun kamu berhasil lolos.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu tertusuk duri di ekor {0}. Racun {0} dengan cepat menyebar ke seluruh tubuhmu dan melumpuhkan pernapasanmu. Kamu mati kehabisan napas.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu tertusuk duri di ekor {0}. Racun {0} dengan cepat menyebar ke seluruh tubuhmu dan melumpuhkan pernapasanmu. Kamu mati kehabisan napas.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 34,
+     "grade" : 1,
+    "monster" : "51",
+    "required" : "1_2_80",
+    "text" : "Saat berjalan melintasi dataran berbatu, mendadak kamu mendengar tanah bergemuruh. Kamu melihat makhluk logam mengkilap di cakrawala. Makhluk itu terlihat seperti banteng yang terbuat dari baja, dan ia menerjang ke arahmu lebih cepat dari kuda balap. |drawing_rushGorgon|",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Pegang tanduknya dan hentikan dia",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "25", 
+          "nextEvent" : 35, 
+          "type" : 1, 
+          "text" : "Mustahil bagimu menghentikan seekor makhluk raksasa dari logam yang melesat ke arahmu hanya dengan tangan kosong. {0} itu menabrakmu dan membuatmu terlempar jauh ke belakang. Kemudian ia berbalik dan berlari menerjangmu lagi.", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : 35, 
+          "type" : 0, 
+          "text" : "Kamu menggengam kedua tanduk {0} itu dengan kekuatanmu yang seadanya. Sekujur lenganmu terasa kebas, dan kamu terdorong beberapa meter, namun kamu akhirnya bisa menghentikan gerakan makhluk tersebut. {0} itu awalnya terlihat bingung, namun tak lama kemudian ia membuka mulutnya dan menyemburkan asap hijau. Kamu melepas tanduk {0} itu untuk menghindarinya, kemudian ia menghunjamkannya ke arahmu lagi.", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "1_5_20", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kekuatanmu sangat dahsyat. Bukan hanya menghentikan terjangan seekor {0}, kamu bahkan membuat kedua tanduk {0} bengkok. {0} itu menjadi takut dan bergegas lari.", 
+          "reward" : "0_2_3"
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_4|1_1_2", 
+          "text" : "Sihir: Putar Gravitasi",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "11", 
+          "nextEvent" : 35, 
+          "type" : 1, 
+          "text" : "Kamu teringat suatu mantra yang lebih ampuh dibandingkan mantra penghalang, namun mantra itu terlalu rumit untuk kamu rapalkan dalam waktu yang begitu singkat. {0} itu menabrakmu dan membuatmu terlempar jauh ke belakang. Kemudian ia berbalik dan berlari menerjangmu lagi.", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_14_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu teringat suatu mantra yang lebih ampuh dibandingkan mantra penghalang. Kamu berhasil merapalkan mantra itu, dengan perapalan dan gerakannya yang rumit, dan memunculkan medan anti-gravitasi di depanmu. {0} yang tengah menerjangmu itu terlempar naik dan melintas di atas kepalamu. Kamu bergegas pergi sebelum ia mulai mengejarmu lagi.", 
+          "reward" : "0_2_1|0_0_-1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "2_6_14", 
+          "chance" : "14", 
+          "nextEvent" : 35, 
+          "type" : 1, 
+          "text" : "Kamu berlari secepat mungkin, namun {0} itu menyusulmu. {0} itu menabrak punggungmu dan membuatmu terlempar jauh ke depan. Kemudian ia berbalik dan berlari menerjangmu lagi.", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 0
+       }, 
+       {
+          "required" : "1_6_14", 
+          "chance" : "14", 
+          "nextEvent" : 35, 
+          "type" : 1, 
+          "text" : "Kamu berlari secepat mungkin, namun {0} itu menyusulmu. Saat {0} itu hampir menabrak punggungmu, kamu melompat ke atas dan menghindari tanduknya. Kamu mendarat dengan aman, kemudian {0} itu berbalik dan berlari menerjangmu lagi.", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "{0} itu masih jauh darimu. Kamu berlari keluar dari kawasannya secepat mungkin, dan akhirnya {0} itu berhenti mengejarmu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_2|1_1_2", 
+          "text" : "Sihir: Penghalang",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "26", 
+          "nextEvent" : 35, 
+          "type" : 1, 
+          "text" : "Kamu membentuk penghalang tak kasat mata. Namun {0} itu memecahkannya seperti kaca, dan kamu terlempar jauh ke belakang. Kemudian ia berbalik dan berlari menerjangmu lagi.", 
+          "reward" : "6_1_0|0_0_-1|0_1_-1", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1|0_12_1", 
+          "nextEvent" : 35, 
+          "type" : 0, 
+          "text" : "Kamu membentuk penghalang tak kasat mata. Penghalangmu menahan serangan {0} itu selama beberapa lama. Namun penghalangmu mulai retak dan akhirnya runtuh.", 
+          "reward" : "6_1_0|0_1_-1", 
+          "place" : 0
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 35,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Binatang buas perlu dipukuli habis-habisan. Si {0} ambruk; tubuh logamnya penyok dimana-mana. Kamu melanjutkan perjalananmu dengan perasaan puas.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Si {0} menginjak-injakmu dan kamu pun susah payah kabur.", 
+          "reward" : "0_0_-1|0_1_-1|0_2_1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Si {0} menginjak-injakmu sampai tulangmu patah-patah dan kamu tewas.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Si {0} menginjak-injakmu sampai tulangmu patah-patah dan kamu tewas.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 36,
+     "grade" : 1,
+    "monster" : "4_1_20|5|28_0_20",
+    "required" : "",
+    "text" : "Kamu berhadapan dengan tumpukan tanah yang terbentuk akibat longsor. Kamu hendak mengitarinya, namun muncul seekor {0} dari tanah. Ia menatapmu dengan matanya yang berlapis-lapis.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Pukul kepalanya",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 37, 
+          "type" : 1, 
+          "text" : "Kamu mengeluarkan senjatamu dan menyerang kepala {0}. Namun seranganmu tidak cukup untuk membunuhnya. {0} itu menjadi agresif dan melompat keluar dari tanah.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu mengeluarkan senjatamu dan menyerang kepala {0}. {0} itu langsung tewas, dan cairannya mengotori tanah. Kamu berjalan mengitari tumpukan itu dan mencari jalur lain.", 
+          "reward" : "0_2_1|0_4_20"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu perlahan mundur, kemudian kamu berbalik dan berlari dengan kecepatan penuh. {0} itu masih berusaha keluar sehingga tidak dapat mengejarmu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Beri makan",
+       "result" : [
+       {
+          "required" : "8_124_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengeluarkan ikan dari ranselmu dan melemparkannya ke arah {0}. Kamu bergegas pergi selagi perhatiannya teralihkan.", 
+          "reward" : "4_124_1"
+       }, 
+       {
+          "required" : "8_125_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengeluarkan ikan dari ranselmu dan melemparkannya ke arah {0}. Kamu bergegas pergi selagi perhatiannya teralihkan.", 
+          "reward" : "4_125_1"
+       }, 
+       {
+          "required" : "8_143_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengeluarkan ikan dari ranselmu dan melemparkannya ke arah {0}. Kamu bergegas pergi selagi perhatiannya teralihkan.", 
+          "reward" : "4_143_1"
+       }, 
+       {
+          "required" : "8_144_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengeluarkan ikan dari ranselmu dan melemparkannya ke arah {0}. Kamu bergegas pergi selagi perhatiannya teralihkan.", 
+          "reward" : "4_144_1"
+       }, 
+       {
+          "required" : "10_124_1|10_125_1|10_143_1|10_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 31, 
+          "type" : 2, 
+          "text" : "Kamu memeriksa isi ranselmu namun kamu tidak menemukan makanan yang cocok. {0} memamerkan giginya dan menyerangmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Panjat",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 37, 
+          "type" : 1, 
+          "text" : "Kamu mencoba melewati {0} dan tumpukan tanah itu. Namun {0} tidak ingin membiarkanmu pergi. Ia menggenggam kakimu saat kamu mencoba melompati tumpukan itu.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu melangkahi kepala {0} dan melompati tumpukan itu dengan anggun. Kamu mendarat dengan mudah, kemudian kamu meninggalkan tumpukan itu dan melanjutkan perjalananmu.", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "20_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu merapalkan mantra sederhana untuk menerbangkan diri. {0} itu menatapmu sambil mengeraskan rahangnya. Kamu mendarat dengan mudah, kemudian kamu meninggalkan tumpukan itu dan melanjutkan perjalananmu.", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "20_10_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu melayang di udara. Kamu melewati tumpukan itu dengan mudah.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 37,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengalahkan {0}. Ia tersungkur dan berhenti bergerak. Kamu berjalan mengitari tumpukan itu dan mencari jalur lain.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} itu mengalahkanmu dan kamu nyaris tidak lolos.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu menjadi santapan {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu menjadi santapan {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 38,
+     "grade" : 1,
+    "monster" : "39",
+    "required" : "1_2_55",
+    "text" : "Saat sedang mendaki gunung berbatu yang tertutup kerikil, kamu menemukan beberapa mayat yang tertusuk tombak yang mencuat dari tanah. Selain itu, tulang manusia, kurcaci, dan gnome berserakan di mana-mana. Saat kamu hendak meninggalkan pemandangan tak mengenakkan itu, muncul {0} dari balik bebatuan. Tidak seperti kebanyakan troll lainnya, ia berbalut baju besi dan memegang tongkat yang sangat besar. Ia meneteskan air liur saat menatapmu. \n\n \"Krrgh... Manusia enak. Saya lapar.\"\n\n",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Ancam",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "17", 
+          "nextEvent" : 39, 
+          "type" : 1, 
+          "text" : "{0} bahkan tidak berkedip. Justru napasnya bertambah kencang dan tongkatnya mulai terayun ke arahmu.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu menakuti {0} dengan karismamu yang luar biasa dan membuatnya kabur.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "14", 
+          "nextEvent" : 39, 
+          "type" : 1, 
+          "text" : "Kamu mencoba kabur, namun {0} itu lebih cepat dari yang kamu kira. Tahu-tahu {0} itu sudah menghadangmu dan mulai mengayunkan tongkatnya ke arahmu.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu berhasil lolos dengan kecepatan bak angin topan. {0} itu mencoba mengejarmu, namun lama-lama ia kehabisan napas.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Beri pelajaran",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 39, 
+          "type" : 2, 
+          "text" : "Kamu memutuskan untuk mengajarinya ilmu yang akan dibawanya sampai mati.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 39,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu berhasil mendidik {0} itu. Saking ampuhnya pelajaran yang kamu berikan, ia tewas seketika. Kamu membersihkan darah dari senjatamu dan melanjutkan perjalananmu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Nyaris saja kamu tidak lolos dari {0}. Beruntung nafsu makannya sudah agak hilang.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu menjadi santapan {0}, seperti mayat-mayat di sekitarmu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu menjadi santapan {0}, seperti mayat-mayat di sekitarmu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 40,
+     "grade" : 1,
+    "monster" : "35",
+    "required" : "5_155_0|1_2_30",
+    "text" : "|drawing_tiredDolphin| Saat sedang berjalan di sepanjang pantai, kamu menemukan seekor lumba-lumba tergeletak di pasir. Ia terlihat kelelahan saat melihatmu dengan matanya yang bulat dan berkilau. Tiba-tiba, muncul seekor {0} dari belakang lumba-lumba itu. {0} itu mengangkat tubuhnya yang bersisik seolah ingin memberi peringatan, lalu ia berteriak aneh. <link=shake>\n\n \"SYAAAAAAAAH!\"\n\n</link>",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengabaikan tatapan kasihan lumba-lumba itu dan berbalik. Tak lama, kamu mendengar teriakan sekarat lumba-lumba itu di belakangmu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Serang",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "Kamu mengayunkan senjatamu ke arah makhluk aneh di hadapanmu. Lumba-lumba itu menyemangatimu dengan tatapannya.", 
+          "reward" : "6_1_0", 
+          "place" : 8
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Beri makan",
+       "result" : [
+       {
+          "required" : "8_124_1", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "Kamu mengeluarkan ikan dari ranselmu dan melemparkannya ke arah {0}. Namun satu ikan saja tidak mungkin mengalihkan pandangan {0} dari lumba-lumba di hadapannya. {0} itu menjerit dan menerjangmu.", 
+          "reward" : "4_124_1|6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "8_125_1", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "Kamu mengeluarkan ikan dari ranselmu dan melemparkannya ke arah {0}. Namun satu ikan saja tidak mungkin mengalihkan pandangan {0} dari lumba-lumba di hadapannya. {0} itu menjerit dan menerjangmu.", 
+          "reward" : "4_125_1|6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "8_143_1", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "Kamu mengeluarkan ikan dari ranselmu dan melemparkannya ke arah {0}. Namun satu ikan saja tidak mungkin mengalihkan pandangan {0} dari lumba-lumba di hadapannya. {0} itu menjerit dan menerjangmu.", 
+          "reward" : "4_143_1|6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "8_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "Kamu mengeluarkan ikan dari ranselmu dan melemparkannya ke arah {0}. Namun satu ikan saja tidak mungkin mengalihkan pandangan {0} dari lumba-lumba di hadapannya. {0} itu menjerit dan menerjangmu.", 
+          "reward" : "4_144_1|6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "10_124_1|10_125_1|10_143_1|10_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "Kamu hendak memberi makan {0} untuk mengalihkannya, namun kamu tidak membawa makanan yang cocok. {0} itu menampakkan giginya dan menembakkan sihir ke arahmu,", 
+          "reward" : "6_1_0", 
+          "place" : 8
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 41,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengalahkan {0} itu. Siripnya berkepak seiring ia terjungkal. Kemudian kamu mendorong lumba-lumba itu ke laut. Ia menatapmu beberapa saat, lalu ia berenang ke arah kawanan lumba-lumba di kejauhan.", 
+          "reward" : "5_155_1|0_3_2"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Serangan {0} melukaimu dan kamu terpaksa kabur. Tak lama, kamu mendengar teriakan menyedihkan lumba-lumba di belakangmu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Serangan {0} membuatmu kehilangan kesadaran.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Serangan {0} membuatmu kehilangan kesadaran.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 42,
+     "grade" : 1,
+    "monster" : "3|6|27_0_30",
+    "required" : "",
+    "text" : "|drawing_camp|Kamu sedang bersantai di depan perapian sambil menikmati suara kertakan kayu. Kamu merasa suasana tiba-tiba hening dan menemukan sepasang mata {0}. {0} yang lapar itu memelototimu dan perlahan-lahan mulai mendekat. {0} menggeram seolah-olah meminta makanan; ia siap menerkam kapan saja.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Pelototi",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 43, 
+          "type" : 1, 
+          "text" : "Kamu menatap {0} itu dengan tatapan maut. Namun ia tidak peduli dan tetap menerjangmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu menatap {0} itu dengan tatapan maut. Ia kabur ketakutan.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Serang",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 43, 
+          "type" : 2, 
+          "text" : "Kamu dengan gesit menutup celah dengan {0} dan mulai menyerang.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Beri makan",
+       "result" : [
+       {
+          "required" : "8_124_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} itu dengan cepat menggigit makanan lemparanmu. Ia perlahan-lahan mundur sambil tetap memelototimu, kemudian ia menghilang di balik semak-semak.", 
+          "reward" : "4_124_1|0_2_1"
+       }, 
+       {
+          "required" : "8_125_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} itu dengan cepat menggigit makanan lemparanmu. Ia perlahan-lahan mundur sambil tetap memelototimu, kemudian ia menghilang di balik semak-semak.", 
+          "reward" : "4_125_1|0_2_1"
+       }, 
+       {
+          "required" : "8_143_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} itu dengan cepat menggigit makanan lemparanmu. Ia perlahan-lahan mundur sambil tetap memelototimu, kemudian ia menghilang di balik semak-semak.", 
+          "reward" : "4_143_1|0_2_1"
+       }, 
+       {
+          "required" : "8_144_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} itu dengan cepat menggigit makanan lemparanmu. Ia perlahan-lahan mundur sambil tetap memelototimu, kemudian ia menghilang di balik semak-semak.", 
+          "reward" : "4_144_1|0_2_1"
+       }, 
+       {
+          "required" : "10_124_1|10_125_1|10_143_1|10_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 43, 
+          "type" : 2, 
+          "text" : "Kamu memutuskan untuk memberinya makan, namun kamu tidak membawa makanan yang pas. {0} itu memamerkan giginya dan melompat menerjangmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 43, 
+          "type" : 1, 
+          "text" : "Kamu mencoba lari kabur, namun {0} itu menyusulmu dan mulai menyerang.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu berhasil kabur dari {0} itu.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 43,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengalahkan {0} itu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu kabur dengan bekas gigitan.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu menjadi santapan {0}", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu menjadi santapan {0}", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 44,
+     "grade" : 1,
+    "monster" : "46|96_0_25|121_0_35",
+    "required" : "1_2_10|2_2_80",
+    "text" : "Saat sampai di pinggiran desa, kamu mendengar suara yang tidak terduga. Lebih tepatnya, suara napas berat bercampur dengan suara sesuatu yang hancur. Kamu bergerak menuju sumber suara dan menemukan seekor {0} gila yang tengah menghancurkan pagar. Ia melihatmu, kemudian ia mengembuskan napas panas dan berlari menerjangmu.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Serang",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "30", 
+          "nextEvent" : 45, 
+          "type" : 1, 
+          "text" : "Kamu melemparkan dirimu ke arah {0}.\n <link=shake>'BRAK!'</link>\n Tabrakan kalian menimbulkan suara keras dan kamu pun terguling-guling di tanah.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 4
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_2", 
+          "nextEvent" : 45, 
+          "type" : 0, 
+          "text" : "Kamu melemparkan dirimu ke arah {0}.\n <link=shake>'BRAK!'</link>\n Tabrakan kalian menimbulkan suara keras dan {0} itu berhenti di tempat.", 
+          "reward" : "6_1_0", 
+          "place" : 4
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu melemparkan dirimu ke arah {0}.\n <link=shake>'BRAK!'</link>\n Tabrakan kalian menimbulkan suara keras dan {0} itu tersandung lalu terjatuh. Ia tidak bergerak lagi.", 
+          "reward" : "0_2_1|0_4_20"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Menghindar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "30", 
+          "nextEvent" : 45, 
+          "type" : 1, 
+          "text" : "Kamu tidak dapat menghindar dari serangan {0} yang begitu cepat. Ia menabrakmu dan kamu pun terguling-guling di tanah.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 4
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_2", 
+          "nextEvent" : 45, 
+          "type" : 0, 
+          "text" : "Kamu menghindari serangan {0} dengan lincah.\n HRMPH!\n {0} kembali mengembuskan napas panas sambil menatapmu tajam.", 
+          "reward" : "6_1_0", 
+          "place" : 4
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu berguling ke bawah {0} untuk menghindari serangannya sambil balas menyerang kakinya. Seranganmu mendarat tepat sasaran dan membuat {0} terhempas ke tanah. Ia tidak bergerak lagi.", 
+          "reward" : "0_2_1|0_4_20"
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_2|1_1_2", 
+          "text" : "Sihir: Penghalang",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "20", 
+          "nextEvent" : 45, 
+          "type" : 1, 
+          "text" : "Kamu memunculkan penghalang untuk memblokir {0}.\n <link=shake>'BRAK!'</link>\n Penghalangmu hancur dengan suara keras.", 
+          "reward" : "6_1_0|0_1_-1", 
+          "place" : 4
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu memunculkan penghalang untuk memblokir {0}.\n <link=shake>'BRAK!'</link>\n Tabrakan itu menimbulkan suara keras dan {0} itu tersandung lalu terjatuh. Ia tidak bergerak lagi.", 
+          "reward" : "0_2_1|0_4_20|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 45,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} itu tersandung dan terjatuh. Ia tidak bergerak lagi.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} itu melindasmu, dan kamu susah payah kabur dengan tubuh remuk.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} itu melindasmu berkali-kali, tulangmu patah dimana-mana dan kamu pun tewas.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} itu melindasmu berkali-kali, tulangmu patah dimana-mana dan kamu pun tewas.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 46,
+     "grade" : 1,
+    "monster" : "8_0_10|1_1_20|4_1_20|5_0_10|22_0_10|33_1_20|63_0_10|77_1_20",
+    "required" : "",
+    "text" : "Kamu berjalan melalui gua batu dengan dinding lembab dengan hati-hati. Gua itu terlihat tidak menyenangkan, dengan pecahan perlengkapan petualang berserakan di lantai. Saat kamu sedang memeriksa jejak, {0} muncul dari dalam gua.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Bertarung",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 47, 
+          "type" : 2, 
+          "text" : "Kamu mengawasi pergerakan {0} sambil mengeratkan genggamanmu pada senjatamu.", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 47, 
+          "type" : 1, 
+          "text" : "Kamu mencoba kabur, namun {0} itu lebih cepat darimu.", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu bergegas menuju pintu keluar gua.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 47,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} itu tersandung dan terjatuh. Ia tidak bergerak lagi.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu terluka dan nyaris tidak lolos dari {0} itu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} itu menyeretmu masuk ke gua dan perlengkapanmu yang rusak berserakan di tanah. Pikiranmu memudar.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} itu menyeretmu masuk ke gua dan perlengkapanmu yang rusak berserakan di tanah. Pikiranmu memudar.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 48,
+     "grade" : 1,
+    "monster" : "1_1_15|6_1_15|7_1_15|8_0_15|22_0_15|33_1_15",
+    "required" : "2_2_50",
+    "text" : "Kamu berjalan melalui hutan rimba dengan sedikit sinar matahari. Kamu teringat peringatan seorang pedagang tentang {0} yang berkeliaran di bagian hutan ini, jadi kamu melangkah dengan penuh hati-hati, Saat kamu mengira sudah melewati separuh hutan, {0} melompat keluar dari semak-semak dan menyerangmu. Kamu segera berbalik dan menghindar dari serangannya. {0} itu dengan terampil melanjutkan serangannya secara berantai, seolah-olah ia sudah berkali-kali melakukannya sebelumnya.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Bertarung",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 49, 
+          "type" : 2, 
+          "text" : "Kamu menghunus senjatamu dan menangkis serangan {0}.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 49, 
+          "type" : 1, 
+          "text" : "Kamu melompat mundur dan berlari kabur. Namun, {0} yang sudah akrab dengan daerah ini dengan mudah menyusulmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu melompat mundur dan berlari kabur. Untungnya, kamu lebih cepat dari {0}.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 49,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} roboh sambil menjerit setelah terkena serangan. Setelah memastikan bahwa {0} sudah berhenti bergerak, kamu segera kembali ke jalan agar bisa keluar dari hutan.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu kabur dari {0} dengan terluka. Namun, {0} juga terluka sehingga ia tidak mengejarmu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} melukaimu dan kamu pun jatuh. {0} dengan cepat melumpuhkanmu dan membunuhmu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} melukaimu dan kamu pun jatuh. {0} dengan cepat melumpuhkanmu dan membunuhmu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 50,
+     "grade" : 1,
+    "monster" : "1|2|6|7|22_0_10|33",
+    "required" : "2_2_40",
+    "text" : "Anda melewati ngarai sempit yang terbentuk dari retakan batu raksasa. Di tengah-tengah, kamu melihat segerombolan {0} yang menghadang jalan. Mereka memekik dan berteriak sembari bergerak mendekatimu.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Panjat",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 51, 
+          "type" : 1, 
+          "text" : "Kamu mencengkram dinding ngarai dan mulai memanjat. Namun tak lama tenagamu habis dan kamu jatuh ke arah para {0} yang menungguimu.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu mencengkram dinding ngarai dan mulai memanjat. Para {0} memandangimu sambil ternganga. Saat kamu mencapai puncak ngarai, kamu melirik para {0} yang berteriak, kemudian kamu melanjutkan perjalananmu.", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "20_10_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu meluncur ke udara. Para {0} memandangimu sambil ternganga. Saat kamu mencapai puncak ngarai, kamu melirik para {0} yang berteriak, kemudian kamu melanjutkan perjalananmu.", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "20_0_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu meluncur ke udara. Para {0} memandangimu sambil ternganga. Saat kamu mencapai puncak ngarai, kamu melirik para {0} yang berteriak, kemudian kamu melanjutkan perjalananmu.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Bertarung",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 51, 
+          "type" : 2, 
+          "text" : "Kamu menyerang para {0} yang menghadangmu.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Lompati mereka",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 51, 
+          "type" : 1, 
+          "text" : "Kamu mencoba melompati para {0} dengan cara melangkah pada dinding ngarai. Namun para {0} mencengkram kakimu dan membuatmu jatuh.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu melompati para {0} dengan cara melangkah pada dinding ngarai. Para {0} mencoba menggapaimu, namun kamu memutar badanmu untuk melepaskan diri, sehingga para {0} tersandung dan saling terjerat. Kamu mendarat dengan anggun dan melanjutkan menyusuri ngarai sementara para {0} di belakangmu masih berusaha melepaskan diri.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 51,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} bukan tandinganmu. Kamu melanjutkan menyusuri ngarai dan meninggalkan para {0} yang kamu kalahkan.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Para {0} melukaimu dan kamu nyaris tidak lolos.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu kewalahan menghadapi serangan {0} dan kehilangan nyawamu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu kewalahan menghadapi serangan {0} dan kehilangan nyawamu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 52,
+     "grade" : 1,
+    "monster" : "17_0_70|95_0_35",
+    "required" : "1_2_35",
+    "text" : "Badai pasir bertiup melewatimu. Kamu meludahkan pasir yang tidak sengaja masuk ke mulutmu, lalu berjalan lebih kencang. Namun seketika jari kakimu membentur sesuatu. Saat kamu menengok ke bawah, kamu melihat sesosok yang terkubur dalam pasir.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Gali dengan tangan kosong",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : 53, 
+          "type" : 0, 
+          "text" : "Kamu menggali pasir dengan tangan kosong. Setelah 10 menit menggali, kamu menemukan peti besar. Saat kamu membuka peti tersebut, hawa panas mengalir dari dalam. Ketika kamu tersentak mundur, timbul kobaran api besar dan {0} muncul.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "14", 
+          "nextEvent" : -2, 
+          "type" : 1, 
+          "text" : "Kamu menggali pasir dengan tangan kosong. Setelah 10 menit menggali, kamu menemukan peti besar. Kamu mencoba membukanya namun tidak bisa. Pada akhirnya, kamu meninggalkan peti tersebut dan berjalan pergi.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "8_38_1", 
+          "text" : "Gali dengan sekop",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 53, 
+          "type" : 2, 
+          "text" : "Kamu menggali pasir dengan sekop. Setelah 10 menit menggali, kamu menemukan peti besar. Saat kamu membuka peti tersebut, hawa panas mengalir dari dalam. Ketika kamu tersentak mundur, timbul kobaran api besar dan {0} muncul.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_1", 
+          "text" : "Sihir: Tangan Sihir",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : 53, 
+          "type" : 0, 
+          "text" : "Kamu menggali pasir dengan tangan sihir. Setelah 10 menit menggali, kamu menemukan peti besar. Saat kamu membuka peti tersebut, hawa panas mengalir dari dalam. Ketika kamu tersentak mundur, timbul kobaran api besar dan {0} muncul.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "14", 
+          "nextEvent" : -2, 
+          "type" : 1, 
+          "text" : "Kamu menggali pasir dengan tangan sihir. Setelah 10 menit menggali, kamu menemukan peti besar. Kamu mencoba membukanya namun tidak bisa. Pada akhirnya, kamu meninggalkan peti tersebut dan berjalan pergi.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Abaikan",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengabaikan benda yang mengganjal jari kakimu dan bergegas pergi.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 53,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Setelah mengalahkan {0} itu, kamu hendak melihat isi peti. Namun peti tersebut sudah menjadi abu, dan tidak ada lagi yang tersisa.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Api membumbung tinggi seolah-olah ingin melahapmu. Kamu merasakan tanda bahaya dan bergegas kabur.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu terlalap api panas. Tubuhmu terbakan menjadi abu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu terlalap api panas. Tubuhmu terbakan menjadi abu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 54,
+     "grade" : 1,
+    "monster" : "143_0_35|100_0_20|152_0_35",
+    "required" : "1_2_20",
+    "text" : "Saat sedang melalui lembah, kamu mencium bau busuk dari salah satu retakan di bebatuan. Kamu mempercepat langkahmu agar bisa secepat mungkin pergi dari sana. Namun, muncul {0} di antara lembah dan menyerangmu.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Bertarung",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 55, 
+          "type" : 2, 
+          "text" : "Kamu buru-buru menyerang {0} itu. Ia menghindar, lalu ia mengetawaimu dan menyerangmu lagi.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Jelas bahwa retakan tersebut terhubung dengan dimensi jahat. Kamu berlari kabur dengan sekuat tenaga.", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "", 
+          "chance" : "11", 
+          "nextEvent" : 55, 
+          "type" : 1, 
+          "text" : "Jelas bahwa retakan tersebut terhubung dengan dimensi jahat. Kamu mencoba berlari kabur dengan sekuat tenaga, namun {0} itu tidak membiarkanmu kabur.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 55,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu mengalahkan {0} itu dan mendorong bangkainya ke dalam retakan. Retakan itu terhubung dengan celah menuju dimensi jahat. Retakan itu menelan bangkai {0} lalu menutup.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu berlari sekuat tenaga dan akhirnya lolos dari kejaran {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu terkena serangan fatal. Kakimu kehilangan tenaga dan kamu pun jatuh. Melihat keadaanmu, {0} itu terkekeh dan menampakkan giginya yang tajam. Tanpa ragu, ia memotong napasmu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu terkena serangan fatal. Kakimu kehilangan tenaga dan kamu pun jatuh. Melihat keadaanmu, {0} itu terkekeh dan menampakkan giginya yang tajam. Tanpa ragu, ia memotong napasmu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 56,
+     "grade" : 1,
+    "monster" : "15_0_50|17_0_75|43_0_75",
+    "required" : "1_2_50|5_574_0",
+    "text" : "Di tengah dataran terbuka yang membentang sejauh mata memandang, kamu menjumpai bangunan terbengkalai yang tertimbun pasir. Kelihatannya seperti ada yang membelah ruang dan meletakkan bangunan ini di sini. Rasa penasaranmu mengantarkanmu ke dalam dan kamu mulai menjelajahi bagian dalamnya. Setiap ruangan dan perabotan berlapis debu, seolah lama tidak digunakan. Saat asyik mondar-mandir antarruangan, kamu menemukan lingkaran sihir berwarna merah yang tertera di lantai.",
+    "choice" : [
+     {
+       "required" : "20_0_1", 
+          "text" : "Masukkan mana-mu",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 57, 
+          "type" : 2, 
+          "text" : "Kamu memasukkan mana-mu ke dalam lingkaran sihir dengan hati-hati. Kemudian, cahaya meresahkan muncul dari lingkaran sihir dan muncullah {0}. Ia berteriak, lalu ia mulai menyerangmu.", 
+          "reward" : "6_1_0", 
+          "place" : 10
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu memasukkan mana-mu ke dalam lingkaran sihir dengan hati-hati. Kemudian, muncullah peti tua dan lapuk dari lingkaran sihir. Di dalamnya, terdapat gulungan yang sudah hancur dan sebuah terompet dari tanduk. Kamu mengambilnya kemudian buru-buru keluar.", 
+          "reward" : "3_181_1|5_574_1|0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Pergi",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu buru-buru kabur dari bangunan mencurigakan tersebut.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "5_575_0", 
+          "text" : "Periksa lingkaran sihir",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : 56, 
+          "type" : 0, 
+          "text" : "Kamu memeriksa lingkaran sihir tersebut. Simbol geometris yang tertulis padanya jelas menunjukkan bahwa lingkaran ini bertujuan memanggil sesuatu. Namun, sebagian simbol terhapus, jadi kamu tidak tahu apa tepatnya yang akan terpanggil.", 
+          "reward" : "5_575_1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "13", 
+          "nextEvent" : 56, 
+          "type" : 1, 
+          "text" : "Kamu memeriksa lingkaran sihir tersebut, namun dengan pengetahuanmu yang terbatas, kamu tidak mampu mengartikannya.", 
+          "reward" : "5_575_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 57,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu menghancurkan {0} itu. Seiring ia roboh, seluruh bangunan mulai berguncang. Kamu bergegas keluar. Setelah kamu keluar, bangunan tersebut menghilang tampa menyisakan jejak.", 
+          "reward" : "5_574_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} itu menghajarmu dan kamu bergegas keluar dengan terluka. Ia kelihatannya tidak lagi tertarik denganmu dan kembali masuk.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} itu menghajarmu sampai kamu kehilangan kesadaran dan jatuh pingsan.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} itu menghajarmu sampai kamu kehilangan kesadaran dan jatuh pingsan.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 58,
+     "grade" : 1,
+    "monster" : "13_1_20|35_0_20|44_0_20",
+    "required" : "2_2_60",
+    "text" : "Kamu berjalan di sepanjang garis pantai yang jarang dilalui orang. Pantai yang tenang hanya terisi suara debur ombak. Kemudian, kamu menemukan jaring terbengkalai di sisi pantai. Sesuatu di dalamnya mulai bergerak perlahan.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Mendekat",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 59, 
+          "type" : 2, 
+          "text" : "Kamu mendekat dengan hati-hati agar bisa melihat isi jaring. Seketika, {0} melompat keluar dari jaring dan menyerangmu. Kamu buru-buru mengeluarkan senjatamu dan bertahan.", 
+          "reward" : "6_1_0", 
+          "place" : 8
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Lewati",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu berjalan lewat. Tak lama kemudian jaring itu berhenti bergerak.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 59,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu menghentikan {0} yang menyerangmu tanpa sebab. Pantai kembali tenang dan kamu melanjutkan perjalananmu sambil menikmati aroma laut yang pekat.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Beruntung monster tersebut tersangkut di jaring. Kamu buru-buru kabur dari pantai.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu diseret masuk ke laut setelah kamu kalah. Air laut yang dingin mengalir masuk ke dalam paru-parumu dan kamu kehilangan kesadaran.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu diseret masuk ke laut setelah kamu kalah. Air laut yang dingin mengalir masuk ke dalam paru-parumu dan kamu kehilangan kesadaran.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 60,
+     "grade" : 1,
+    "monster" : "40_0_20|96_0_25",
+    "required" : "1_2_20|2_2_70",
+    "text" : "Jembatan reyot berbahan papan kayu dan tali menggantung dengan berbahaya di antara dua tebing curam. Dilihat sekilas, jembatan tersebut terlihat sangat tidak stabil dan terus-menerus bergoyang terkena terpaan angin kencang.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Seberangi jembatan",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 61, 
+          "type" : 2, 
+          "text" : "Kamu menyeberangi jembatan dengan hati-hati sambil berpegang pada tali. Seketika, seekor {0} terjun dari langit dan terbang ke arahmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "-1|20_10_1|20_0_1", 
+          "text" : "Terbang untuk menyeberangi tebing",
+       "result" : [
+       {
+          "required" : "20_10_1", 
+          "chance" : "1", 
+          "nextEvent" : 61, 
+          "type" : 2, 
+          "text" : "Kamu mencoba terbang untuk menyeberangi tebing. Namun, seekor {0} terjun dari langit dan terbang ke arahmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "20_0_1", 
+          "chance" : "1", 
+          "nextEvent" : 61, 
+          "type" : 2, 
+          "text" : "Kamu mencoba terbang untuk menyeberangi jembatan tersebut. Namun, seekor {0} terjun dari langit dan terbang ke arahmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Mundur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu memutuskan untuk tidak menyeberangi jembatan.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 61,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu melintasi tebing dengan aman, sementara {0} jatuh ke jurang.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu berhasil menyeberang sambil menanggung serangan {0} itu. Karena menganggapmu sudah keluar dari wilayahnya, ia akhirnya berhenti menyerangmu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu terkena serangan {0} dan jatuh ke jurang.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu terkena serangan {0} dan jatuh ke jurang.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 62,
+     "grade" : 1,
+    "monster" : "61_1_20|62_0_20",
+    "required" : "",
+    "text" : "Saat tengah melalui suatu kota, seseorang yang berdiri di tepi jalan berjalan mendekat dan memulai percakapan. Ia terlihat percaya diri dengan kemampuannya. \n\n \"Hei, petualang! Kalau kamu punya waktu, maukah kamu bertarung?\"\n\n",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Baiklah",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 63, 
+          "type" : 2, 
+          "text" : "Kamu menerima tantangannya. Ia mengungkapkan rasa terima kasihnya dan menghunus senjatanya. \n\n \"Mari kita mulai!\"\n\n", 
+          "reward" : "6_1_0", 
+          "place" : 4
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Tolak",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu menolak tantangannya. Ia bergumam tentang betapa malangnya, lalu ia pergi mencari penantang lain.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 63,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu menunjukkan perbedaan kemampuan kalian. Pada akhir pertarungan, dengan terengah-engah ia berkata, \n\n \"Hah... hah... dunia ini begitu luas dan terdapat banyak sekali petarung kuat. Terima kasih sudah bertarung denganku.\"\n\n Kamu mengucapkan selamat tinggal dan berpisah dengannya.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu jatuh berlutut di hadapan {0} itu. Ia mendekatimu yang sedang terengah-engah dan berkata, \n\n \"Lumayan kok, namun kamu masih harus berlatih lagi. Terima kasih sudah menghiburku.\"\n\n Ia mengucapkan selamat tinggal dan berpisah denganmu.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 64,
+     "grade" : 1,
+    "monster" : "39_0_50|132_0_50|140_0_80",
+    "required" : "1_2_50",
+    "text" : "Terdengar raungan bergemuruh yang mengguncang seluruh hutan; tanah yang kamu pijak seolah bergetar karenanya. Dari jauh, kamu melihat tubuh besar {0} yang menakutkan. Seolah merasakan tatapanmu, ia memutar kepalanya ke arahmu. Dalam sekejap, ia berteriak dan berlari ke arahmu.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Lawan",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 65, 
+          "type" : 2, 
+          "text" : "Kamu tidak kabur dari tantangan yang diberikan {0} itu. Sebaliknya, kamu menerjangnya dengan gagah berani.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Sembunyi",
+       "result" : [
+       {
+          "required" : "21_45_1|21_5_2", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu bersembunyi di balik tetumbuhan. {0} tidak bisa menemukanmu. Ia hanya melewatimu sambil mengembuskan napasnya yang busuk.", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "21_45_1|21_5_2", 
+          "chance" : "16", 
+          "nextEvent" : 65, 
+          "type" : 1, 
+          "text" : "Kamu mencoba bersembunyi di balik tetumbuhan. Namun, {0} menemukanmu dan berteriak menyerangmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "21_45_1|20_5_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu bersembunyi di balik tetumbuhan. {0} tidak bisa menemukanmu. Ia hanya melewatimu sambil mengembuskan napasnya yang busuk.", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "20_45_1", 
+          "chance" : "1", 
+          "nextEvent" : 65, 
+          "type" : 2, 
+          "text" : "Kamu mencoba bersembunyi di balik tetumbuhan. Namun, {0} menemukanmu dan berteriak menyerangmu.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_2|1_1_2", 
+          "text" : "Sihir: Plant Growth",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu merapal mantra untuk membuat tanaman tumbuh dengan cepat. Kaki {0} itu tersangkut dalam tetumbuhan, sehingga ia kehilangan keseimbangan dan jatuh berdebum. Kamu mengambil kesempatan tersebut dan kabur dari sana.", 
+          "reward" : "0_1_-1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "16", 
+          "nextEvent" : 65, 
+          "type" : 1, 
+          "text" : "Kamu merapal mantra untuk membuat tanaman tumbuh dengan cepat. Namun {0} itu dengan mudah mengoyak tetumbuhan yang baru saja bertambah besar. Kamu gagal mengulur waktu sehingga kamu akhirnya terpaksa bertarung.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 65,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Ukuran tidak penting dalam pertarungan. Setelah membuktikan hal tersebut, kamu melewati bangkai monster raksasa itu dan berjalan pergi.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kemampuanmu agaknya tidak cukup untuk menghadapi monster besar itu. Kamu merasa bahwa nyawamu dalam bahaya, jadi kamu berbalik dan berlari sekuat tenaga. {0} itu mengejarmu, namun karena ukurannya yang begitu besar, ia pun tertinggal jauh.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu terkena serangan {0} dan langsung mati. Untungnya kematianmu begitu cepat sehingga kamu tidak sempat merasakan sakit.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu terkena serangan {0} dan langsung mati. Untungnya kematianmu begitu cepat sehingga kamu tidak sempat merasakan sakit.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 66,
+     "grade" : 1,
+    "monster" : "12_1_15|14_0_20|89_0_15",
+    "required" : "2_2_50",
+    "text" : "Pada waktu pagi buta, kamu berjalan di sepanjang pesisir. Di sekelilingmu terdapat kabut yang mengaburkan pandanganmu. Dengan setiap langkahmu, terdengar suara gemerisik pelan. Seketika, sesosok samar muncul di balik kabut.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu lari dari makhluk yang mengintai dari kabut.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Dekati",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : 67, 
+          "type" : 0, 
+          "text" : "Kamu mendekati sosok tersebut. {0} muncul dari balik kabut dan menyerangmu. Kamu menghindari serangannya dan menyerang balik.", 
+          "reward" : "6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "1_0_2", 
+          "chance" : "14", 
+          "nextEvent" : 67, 
+          "type" : 1, 
+          "text" : "Kamu mendekati sosok tersebut. {0} muncul dari balik kabut dan menyerangmu. Serangannya yang mendadak berhasil melukaimu. {0} melanjutkan serangannya seolah tidak ingin melewatkan kesempatan membunuhmu.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "14", 
+          "nextEvent" : -3, 
+          "type" : 1, 
+          "text" : "Kamu mendekati sosok tersebut. {0} muncul dari balik kabut dan menyerangmu. Serangannya yang mendadak berhasil melukaimu. {0} melanjutkan serangannya seolah tidak ingin melewatkan kesempatan membunuhmu. Kamu terbunuh oleh serangannya.", 
+          "reward" : "0_0_-1"
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_1|5_576_0", 
+          "text" : "Sihir: Embusan Angin",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : 67, 
+          "type" : 0, 
+          "text" : "Kamu mengembuskan angin untuk mengusir kabut. Akibatnya, terungkaplah {0} yang sedang bersembunyi dan mengintaimu. Kamu bergegas memasang kuda-kuda dan menyerang balik.", 
+          "reward" : "6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "", 
+          "chance" : "11", 
+          "nextEvent" : 66, 
+          "type" : 1, 
+          "text" : "Kamu mencoba mengembuskan angin untuk mengusir kabut, namun kamu gagal merapal mantranya.", 
+          "reward" : "5_576_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 67,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu berhasil membunuh {0} yang menyerangmu. Matahari terbit di tengah pertarunganmu yang sengit dan mengusir kabut. Angin laut yang sejuk mengeringkan keringatmu. Kamu menarik napas dan melanjutkan perjalananmu.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu menghindari serangan {0} yang mendadak dan bergegas kabur. Kamu berhasil lolos dengan selamat berkat kabut yang mengaburkan pandangan.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu tewas akibat serangan mendadak tersebut.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Kamu tewas akibat serangan mendadak tersebut.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 68,
+     "grade" : 1,
+    "monster" : "15_0_55|70_0_35|150_0_20",
+    "required" : "5_577_0",
+    "text" : "Kamu berdiri di depan sebuah dungeon yang kebetulan kamu jumpai. Jalan masuknya terhalang pintu batu. Kamu membuka pintu batu tersebut dengan paksa. Namun, sebelum kamu sempat melihat bagian dalam dungeon, muncul {0} dari dalam dungeon dengan suara bergedebuk.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Kemarilah!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 69, 
+          "type" : 2, 
+          "text" : "Kamu berteriak, 'Kemarilah!' dan bersiap bertarung. {0} menerjang dengan momentum luar biasa.", 
+          "reward" : "6_1_0", 
+          "place" : 7
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Tutup pintunya",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu buru-buru menutup pintu dungeon lagi. {0} yang tadinya menerjangmu dengan buas, menjadi hening setelah pintu tertutup. Kamu perlahan berjalan mundur sambil tetap mengawasi pintu.", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "", 
+          "chance" : "13", 
+          "nextEvent" : 69, 
+          "type" : 1, 
+          "text" : "Serangan {0} lebih cepat dibandingkan gerakanmu menutup pintu. Tinjunya yang ganas menggores pipimu. Kamu menyadari bahwa pertarungan tidak terelakkan dan bergerak membalas serangannya.", 
+          "reward" : "6_1_0", 
+          "place" : 7
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Kabur",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Kamu dengan lincah menghindar dari serangan {0} dan kabur dari dungeon. Entah kenapa {0} itu tidak mengejarmu ke luar. Kamu perlahan berjalan mundur sambil tetap mengawasi pintu.", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "", 
+          "chance" : "13", 
+          "nextEvent" : 69, 
+          "type" : 1, 
+          "text" : "Kamu mencoba kabur namun serangan {0} terlalu cepat. Tinjunya yang ganas menggores pipimu. Kamu menyadari bahwa pertarungan tidak terelakkan dan bergerak membalas serangannya.", 
+          "reward" : "6_1_0", 
+          "place" : 7
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 69,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu menghancurkan {0} yang menyerangmu sekuat tenaga berkeping-keping. Kamu berjalan melewati tubuhnya yang hancur dan terus memasuki dungeon. Sayangnya, tidak ada barang berharga di dalam. Benda-benda yang kamu temukan semuanya sudah usang, rusak, atau sama sekali tidak berguna. Setelah beberapa lama mencari, akhirnya kamu menyerah dan keluar dari dungeon.", 
+          "reward" : "5_577_1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Kamu menghancurkan {0} yang menyerangmu sekuat tenaga berkeping-keping. Kamu berjalan melewati tubuhnya yang hancur dan terus memasuki dungeon. Kamu menemukan peti penuh emas. Kamu mengambil semuanya dan keluar dari dungeon.", 
+          "reward" : "5_577_1|0_4_100"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} itu mengalahkanmu dan kamu bergegas kabur dari dungeon. Entah kenapa {0} itu tidak mengejarmu ke luar. Kamu perlahan berjalan mundur sambil tetap mengawasi pintu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} membunuhmu tanpa ragu-ragu. Kamu menjadi mayat tanpa sempat melihat harta karun di dalam dungeon.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} membunuhmu tanpa ragu-ragu. Kamu menjadi mayat tanpa sempat melihat harta karun di dalam dungeon.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIStatsAdd",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 249,
+    "bytes[1]": 173,
+    "bytes[2]": 138,
+    "bytes[3]": 138,
+    "bytes[4]": 33,
+    "bytes[5]": 109,
+    "bytes[6]": 109,
+    "bytes[7]": 36,
+    "bytes[8]": 254,
+    "bytes[9]": 121,
+    "bytes[10]": 206,
+    "bytes[11]": 39,
+    "bytes[12]": 101,
+    "bytes[13]": 81,
+    "bytes[14]": 78,
+    "bytes[15]": 199
+  },
+  "m_ClassName": "UIStatsAdd",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

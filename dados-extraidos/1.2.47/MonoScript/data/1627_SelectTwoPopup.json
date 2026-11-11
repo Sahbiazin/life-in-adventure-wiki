@@ -1,0 +1,25 @@
+{
+  "m_Name": "SelectTwoPopup",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 73,
+    "bytes[1]": 91,
+    "bytes[2]": 212,
+    "bytes[3]": 21,
+    "bytes[4]": 254,
+    "bytes[5]": 229,
+    "bytes[6]": 123,
+    "bytes[7]": 119,
+    "bytes[8]": 255,
+    "bytes[9]": 122,
+    "bytes[10]": 47,
+    "bytes[11]": 161,
+    "bytes[12]": 231,
+    "bytes[13]": 39,
+    "bytes[14]": 106,
+    "bytes[15]": 141
+  },
+  "m_ClassName": "SelectTwoPopup",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

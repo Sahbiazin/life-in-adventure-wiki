@@ -1,0 +1,4510 @@
+{
+ "list" : [
+  {
+    "id" : 0,
+     "grade" : 1,
+    "monster" : "1|3",
+    "required" : "2_2_30",
+    "text" : "Uma besta uiva na floresta, quebrando o silêncio da noite. Cuidadosamente, você vai em direção à origem do som. De longe, você vê {0}s ferozmente devorando alguma presa. Eles estão muito ocupados com suas refeições para perceber você. ",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Atacar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "7", 
+          "nextEvent" : 1, 
+          "type" : 1, 
+          "text" : "Você se aproxima de um deles lentamente e o golpeia. Mas não foi o suficiente para derrubá-lo. Os outros se juntam a ele e atacam você.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você se aproxima de um deles lentamente e o golpeia na cabeça. Ele cai, jorrando sangue por todo lado. Os outros se assustam e fogem.", 
+          "reward" : "0_2_1|0_4_4"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Passar por ele",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você os deixa em paz e volta para retomar sua caminhada.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 1,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você derrota o {0}.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você escapa por pouco do {0}. Felizmente, eles já estão alimentados e não virão atrás de você.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você se torna uma das refeições do {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você se torna uma das refeições do {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 2,
+     "grade" : 1,
+    "monster" : "0_1_10|1_1_10|3_1_10|7_1_10|8_0_10|22_0_10",
+    "required" : "",
+    "text" : "Você caminha para dentro de uma densa floresta. Todos os seus sentidos estão afiados, quando você escuta um pequeno sussuro. {0} pula dos arbustos assim que você pega a sua arma.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Preparar-se para atacar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 3, 
+          "type" : 2, 
+          "text" : "Você estende sua arma e adota uma postura de combate. Como esperado, o {0} ataca você.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Fugir",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 3, 
+          "type" : 1, 
+          "text" : "Você consegue se esquivar do ataque surpresa dele e começa a correr. Mas a criatura logo alcança você.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você consegue se esquivar do ataque surpresa dele e começa a correr.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_6_9", 
+          "text" : "Contra-atacar",
+       "result" : [
+       {
+          "required" : "1_0_2", 
+          "chance" : "7", 
+          "nextEvent" : 3, 
+          "type" : 1, 
+          "text" : "Você prevê o ataque do {0} e o contra-ataca. Mas você erra o golpe e dá outra oportunidade de ataque para o {0}. O {0} investe de novo e acerta você.", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 1
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "7", 
+          "nextEvent" : -3, 
+          "type" : 1, 
+          "text" : "Você prevê o ataque do {0} e o contra-ataca. Mas você erra o golpe e dá outra oportunidade de ataque para o {0}. O {0} investe de novo e acerta você. Você fica gravemente ferido.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você prevê o ataque do {0} e o contra-ataca. Tudo ocorre exatamente como planejado. {0} morre instantaneamente devido ao golpe fatal.", 
+          "reward" : "0_2_1|0_4_4"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 3,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você derrota o {0}.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você escapou por pouco do {0}, mas ficou ferido.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você está gravemente ferido por {0} e desaba no chão.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você está gravemente ferido por {0} e desaba no chão.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 4,
+     "grade" : 1,
+    "monster" : "11",
+    "required" : "2_2_30",
+    "text" : "O céu se fecha repentinamente e começa a chover. Você encontra uma caverna por perto e resolve adentrá-la. \n\n \"UUAAAARRGH!\"\n\n Um grito ensurdecedor atinge seus ouvidos. Aparentemente, você não está sozinho. Você desembainha sua arma e se prepara para lutar. \n\n \"UUOOOORRGH!\"\n\n O som é ouvido diretamente de cima de você.  Você olha para cima e vê um {0} descendo, com suas presas para fora.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Preparar-se para atacar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "7", 
+          "nextEvent" : 5, 
+          "type" : 1, 
+          "text" : " Você segue o {0} com seus olhos, com sua arma pronta. Ele circunda você, indo para a esquerda e para a direita, antes de voar em sua direção.", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : " Você segue o {0} com seus olhos, com sua arma pronta. Ele circunda você, indo para a esquerda e para a direita, antes de voar em sua direção.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Fugir",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 5, 
+          "type" : 1, 
+          "text" : "  Você balança sua arma com força.  Ele recua, vacilando um pouco.  Você tenta correr.  Mas você não consegue ir muito longe.", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : " Você balança sua arma. Ele recua, vacilando um pouco. Você vê uma chance e foge o mais rápido que pode.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_1", 
+          "text" : "Magia: Luz",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "18", 
+          "nextEvent" : 5, 
+          "type" : 1, 
+          "text" : " Você tenta lançar um feitiço de relâmpago, mas, devido a pressa, você o pronuncia errado. O {0} percebe seu erro e vem voando em sua direção.", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você conjura um feitiço de relâmpago e o {0} foge da claridade.", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você conjura um feitiço de relâmpago e o {0} foge da claridade.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 5,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} cai no chão encolhido. Depois de tremer mais algumas vezes, ele finalmente morre. ", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "  Você foi mordido em todos os lugares por {0} e mal conseguiu escapar, sangrando.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você é mordido em todos os lugares por {0}, finalmente sucumbindo ao choque por sangramento e infecção.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você é mordido em todos os lugares por {0}, finalmente sucumbindo ao choque por sangramento e infecção.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 6,
+     "grade" : 1,
+    "monster" : "4",
+    "required" : "2_2_30",
+    "text" : "|drawing_desert| Você caminha pelo do deserto durante horas a fio. O solo está rachado pelo calor e a luz do sol queima sua pele. Já quase não há água. Então você vê algo longe se movendo.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Chegar mais perto",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 7, 
+          "type" : 2, 
+          "text" : "É uma grande duna de areia em movimento. Ela se aproxima de você rapidamente e um {0} emerge do chão.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Fugir",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 7, 
+          "type" : 1, 
+          "text" : " Você tenta correr. Mas seus pés continuam afundando na areia. A criatura vem até você com uma velocidade alarmante. Ele emerge do chão perto de você.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "  Você escapa da criatura de areia usando seus reflexos rápidos.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_6_9", 
+          "text" : "Esperar pelo momento certo",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "11", 
+          "nextEvent" : 7, 
+          "type" : 1, 
+          "text" : "  Você espera que a criatura emerja da areia.  Você golpeia, mas erra.  {0} vem até você com uma nuvem de areia atrás dela.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você espera que a criatura emerja da areia e então a golpeia. ", 
+          "reward" : "0_2_2|0_4_9"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 7,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "O {0} encontra seu fim na areia quente, virado de cabeça para baixo.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você perde para {0}, mal conseguindo fugir. {0} apenas te encara enquanto você foge.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você é morto após ser mordido por {0}", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você é morto após ser mordido por {0}", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 8,
+     "grade" : 1,
+    "monster" : "12_1_30|14_0_20",
+    "required" : "",
+    "text" : "|drawing_destroyedGrave| Você encontra uma sepultura no meio da floresta. Alguém a desenterrou. Você começa a investigá-la, quando sente um arrepio a descer pela espinha. De repente, um {0} materializa-se do ar rarefeito à sua frente.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Lutar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 9, 
+          "type" : 2, 
+          "text" : "Você se assusta, mas se recompõe e pega sua arma.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Correr",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 9, 
+          "type" : 1, 
+          "text" : "Você corre o mais rápido que consegue, mas a criatura simplesmente reaparece em sua frente.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você foge o mais rápido possível.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_1|20_3_1", 
+          "text" : "Magia: Expulsar Mortos-Vivos",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "8", 
+          "nextEvent" : 9, 
+          "type" : 1, 
+          "text" : "Você tenta expulsar o Morto-Vivo, mas falha na pronúncia do feitiço, provavelmente por estar nervoso.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_14_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você conjura Repelir Mortos-vivos e envia {0} de volta ao submundo.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 9,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} desaparece diante dos seus olhos.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você não é páreo para {0}. Você foge, segurando suas feridas.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Infelizmente, você é morto por {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Infelizmente, você é morto por {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 10,
+     "grade" : 1,
+    "monster" : "0_1_20|20_0_20",
+    "required" : "5_235_0",
+    "text" : "  Você ouve alguém gritar por perto.  Você se dirige por alguns arbustos em direção ao som.  Você chega e vê um {0} engolindo um herbalista.  Ele te vê e grita em pânico \n\n \"AAHHHHH!!! Aventureiro!! Por favor, me ajuda!!!\"\n\n",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Salvá-lo",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 11, 
+          "type" : 2, 
+          "text" : "Você ataca o {0}, que sacode e cospe o herbalista. Então ele avança contra você. O herbalista agradece rapidamente e depois sai correndo.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Deixá-lo",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você se afasta do herbalista enquanto ele se desintegra lentamente. Os gritos somem depois de um tempo.", 
+          "reward" : "0_3_-1|5_235_9"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 11,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você derrota o {0}. Ele perde a forma e se desfaz.", 
+          "reward" : "5_235_1|0_3_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você não conseguiu derrotar {0} e teve que fugir, deixando o herbalista.", 
+          "reward" : "0_0_-1|0_1_-1|5_235_9"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você perde sua vida para {0} ao lado do herbalista.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você perde sua vida para {0} ao lado do herbalista.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 12,
+     "grade" : 1,
+    "monster" : "14",
+    "required" : "1_2_20",
+    "text" : " |drawing_deadmanCage|Você encontra uma cela de metal enterrada pela metade na lama. Dentro está um cadáver seco. Você se sente fraco devido ao fedor podre.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Passar por ele",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "8", 
+          "nextEvent" : 13, 
+          "type" : 1, 
+          "text" : "Você tenta ignorá-lo, mas é tarde demais. Um {0} surge na sua frente", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você corre o máximo possível e sai de lá. O fedor parece impregnar no seu nariz.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Enterrar cadáver",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 13, 
+          "type" : 2, 
+          "text" : "Você se aproxima para enterrar o cadáver. Mas o fantasma de seu dono parece te considerar um inimigo. O {0} vem até você, com um grito aterrorizante.", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }
+       ]
+     }, 
+     {
+       "required" : "8_42_1", 
+          "text" : "Queimar cadáver",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "7", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você acende sua lanterna e joga no cadáver. Ele grita enquanto queima. Você está chocado por ele ainda estar vivo.", 
+          "reward" : "0_1_-1|4_42_1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_14_1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você acende sua lanterna e joga no cadáver. Ele grita enquanto queima. Você sai rapidamente do local.", 
+          "reward" : "4_42_1|0_2_1|0_3_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_1", 
+          "text" : "Magia: Flecha de Fogo",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você pensa em um feitiço simples para cremar o corpo. Você produz uma flecha de fogo da ponta de sua mão e a arremessa na direção do morto. O cadáver grita enquanto queima e você sai rapidamente do local.", 
+          "reward" : "0_2_1|0_3_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 13,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você envia o {0} de volta ao submundo.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você foge com medo. Só depois de correr um pouco você percebe que ele parou de persegui-lo.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você perde sua vida para {0} e acaba como o mesmo {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você perde sua vida para {0} e acaba como o mesmo {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 14,
+     "grade" : 1,
+    "monster" : "5|63",
+    "required" : "1_2_10|2_2_50",
+    "text" : "|drawing_pond|Você encontra um pequeno lago na floresta. Um cervo está bebendo nele. Conforme você se aproxima do lago, o cervo olha para cima e foge. Mas um {0} de repente emerge do solo e o agarra. O {0} enfia os dentes no pescoço do cervo e olha diretamente para você.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Atacar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 15, 
+          "type" : 2, 
+          "text" : "Você avança até {0} e ataca. O monstro joga o cervo e avança em sua direção.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Afastar-se",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você se afasta silenciosamente, para não interromper sua refeição.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Ameaçá-lo",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "9", 
+          "nextEvent" : 15, 
+          "type" : 1, 
+          "text" : "Você ameaça o {0}, olhando para ele ameaçadoramente. A criatura não gosta nem um pouco. Ele joga o cervo no chão e avança.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você ameaça o {0}, olhando para ele ameaçadoramente. A criatura joga fora o cervo e foge.", 
+          "reward" : "0_2_1|0_4_10"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 15,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você mata o {0}. O cervo, agora consciente, foge para a floresta mais profunda depois de encarar você por um momento. Você passa pelo cadáver e vai para outro lugar.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você deixa {0} se banquetear com o cervo e fugir.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Sua respiração para, sentindo o veneno se espalhando pelo seu corpo.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Sua respiração para, sentindo o veneno se espalhando pelo seu corpo.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 16,
+     "grade" : 1,
+    "monster" : "3|88_0_20",
+    "required" : "2_2_50",
+    "text" : " A lua cheia ilumina o céu noturno. Você acabou de acender uma fogueira e está prestes a dormir. |drawing_wolf|Nesse momento, um {0} desce da colina. Ele uiva, e logo, uma alcateia inteira surge.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Fugir",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "14", 
+          "nextEvent" : 17, 
+          "type" : 1, 
+          "text" : "Você abandona o acampamento e corre, mas eles o alcançam eventualmente.", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você abandona o acampamento e corre.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Subir numa árvore",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 17, 
+          "type" : 1, 
+          "text" : "Você tenta subir na árvore atrás da barraca, mas escorrega e cai no chão. Os {0}s cercaram você rapidamente.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 14
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você sobe rapidamente na árvore atrás da barraca. Os {0}s relutantemente desistem e vão embora.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Lutar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 17, 
+          "type" : 2, 
+          "text" : "Você saca sua arma e os enfrenta.", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Alimentá-los",
+       "result" : [
+       {
+          "required" : "8_124_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você pega um peixe e joga no {0}. O {0} fica distraído e você sai correndo.", 
+          "reward" : "4_124_1|0_2_1"
+       }, 
+       {
+          "required" : "8_125_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você pega um peixe e joga no {0}. O {0} fica distraído e você sai correndo.", 
+          "reward" : "4_125_1|0_2_1"
+       }, 
+       {
+          "required" : "8_143_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você pega um peixe e joga no {0}. O {0} fica distraído e você sai correndo.", 
+          "reward" : "4_143_1|0_2_1"
+       }, 
+       {
+          "required" : "8_144_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você pega um peixe e joga no {0}. O {0} fica distraído e você sai correndo.", 
+          "reward" : "4_144_1|0_2_1"
+       }, 
+       {
+          "required" : "10_124_1|10_125_1|10_143_1|10_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 17, 
+          "type" : 2, 
+          "text" : "Você vasculha sua mochila, mas não consegue encontrar nada para oferecer. Eles exibem os dentes e avançam até você.", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 17,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você derrota o {0}. Aqueles que sobreviveram fogem choramingando.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você consegue escapar, com marcas de dente em todo o seu corpo.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você se torna a refeição do {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você se torna a refeição do {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 18,
+     "grade" : 1,
+    "monster" : "2",
+    "required" : "2_2_40",
+    "text" : "  Um grupo de {0}s vêm até você à cavalo.  Eles bloqueiam seu caminho e dizem. \n\n \"Para passar por aqui, tem que pagar um pedágio pra seguir em segurança, se não vai arrumar problema\"\n\n",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Recusar-se a pagar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 19, 
+          "type" : 2, 
+          "text" : "Você pede que eles se afastem. Eles descem de seus cavalos e desembainham suas espadas.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Atacar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você acerta um de seus cavalos no pescoço, o mais forte possível. O cavalo assustado derruba o {0} e o pisoteia. Os outros fogem, amedrontados.", 
+          "reward" : "0_2_1|0_4_3"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "7", 
+          "nextEvent" : 19, 
+          "type" : 1, 
+          "text" : "Você acertou o pescoço de um dos cavalos com toda sua força. O cavalo fica surpreso, mas nada ocorre. Eles descem dos cavalos e se aproximam de você.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "1_7_10", 
+          "text" : "Argumentar ",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 19, 
+          "type" : 1, 
+          "text" : "Você pede que eles se afastem. Nenhum deles ouve. \n\n \"Tudo bem, se você quiser fazer isso da maneira mais difícil... Nós tiraremos isso de você.\"\n\n Eles descem dos cavalos e desembainham as espadas.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você pede que eles se afastem. Eles são persuadidos por sua boa aparência e labia, e deixam você ir.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Fugir",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "17", 
+          "nextEvent" : 19, 
+          "type" : 1, 
+          "text" : "Você tenta correr, mas eles são muito mais rápidos a cavalo. Eles xingam e avançam até você.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você consegue fugir graças aos seus reflexos impressionantes.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_4_10", 
+          "text" : "Pagar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você paga os {0}s para deixá-lo passar. Você avança, sem ter que lutar.", 
+          "reward" : "0_4_-10|0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 19,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você derrotou os {0}. Os sobreviventes se afastam de você", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você é espancado pelos {0} e mal consegue escapar.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Eles levam sua mochila. Seu corpo fica frio e você sente sua consciência desaparecendo.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Eles levam sua mochila. Seu corpo fica frio e você sente sua consciência desaparecendo.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 20,
+     "grade" : 1,
+    "monster" : "1|2|7",
+    "required" : "2_2_20",
+    "text" : "Você encontra uma carruagem quebrada, ligeiramente fora da estrada. Está danificada, mas a carga está bem embalada e intacta.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Examinar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 21, 
+          "type" : 1, 
+          "text" : "Você decide procurar na carruagem quebrada por itens que podem ser úteis. Enquanto você vasculha a carga, uma flecha voa em sua direção. De forma bem rápida, você é atingido. \n\n \"Heee---ha!\"\n\n {0} riem de forma estranha, enquanto pulam dos arbustos.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 14
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : 21, 
+          "type" : 0, 
+          "text" : "Você decide procurar na carruagem quebrada por itens que podem ser úteis.", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }
+       ]
+     }, 
+     {
+       "required" : "1_14_12", 
+          "text" : "Aproximar-se com cuidado",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 21, 
+          "type" : 2, 
+          "text" : "Você acha que pode ser algum tipo de armadilha, e aproxima-se devagar e com cuidado. Você vê algo se mover nos arbustos perto da carruagem. Seja lá o que for, ele percebe sua suspeita. Há um momento de tensão, que logo é quebrado por uma flecha que voa em sua direção. Você é capaz de evitá-la porque foi precavido. Logo depois, um grupo de {0}s surgem dos arbustos.", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Ir para outro lugar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você se afasta da carruagem quebrada.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 21,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você mata todos os {0} e rudemente limpa o sangue de sua arma. Dentro da carruagem estão diversas quinquilharias e um pouco de ouro. Você põe de lado o lixo sem valor e pega o ouro.", 
+          "reward" : "0_4_50"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você escapa do {0}, ferido.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você é enviado para o submundo por {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você é enviado para o submundo por {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 22,
+     "grade" : 1,
+    "monster" : "10",
+    "required" : "2_2_50",
+    "text" : "|drawing_plain| Você está caminhando por terra acidentada e cheia de cascalho, observando as nuvens de chuva pairando sobre você. Parece que o tempo seco está chegando ao fim. Então você vê uma águia circulando, acima de sua cabeça. Isso te incomoda, mas logo a ave voa para longe e você está sozinho em seu caminho novamente. Alguns momentos depois, você percebe que a águia era treinada. Você enfrenta um grupo de {0} s que o perseguiu pelo caminho.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Lutar",
+       "result" : [
+       {
+          "required" : "8_69_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você tira a 'Grande Espada na Madeira'. Assim que eles a veem, fogem.", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "8_98_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você tira o 'Olho de Papnil'. Que emite um brilho medonho, fazendo-os fugirem assustados.", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "8_113_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você tira o 'Coração Congelado'. Assim que eles o veem, fogem.", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "10_98_1|10_69_1|10_113_1", 
+          "chance" : "1", 
+          "nextEvent" : 23, 
+          "type" : 2, 
+          "text" : "Você decide mostrar a eles que não é uma presa fácil.", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Fugir",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 23, 
+          "type" : 1, 
+          "text" : "Você se vira e corre. Mas eles logo o alcançam e cercam você.", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você se vira e corre. Eles não conseguem alcançá-lo.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_7_10", 
+          "text" : "Argumentar ",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "17", 
+          "nextEvent" : 23, 
+          "type" : 1, 
+          "text" : "Você tenta argumentar com eles, mas eles preferem a força bruta.", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você se lembra do que leu em um livro chamado 'Compreendendo a Línguagem do Dragão'. Os {0}s falam essa língua, então você assume que eles vão te entender. Você fala com os {0}s na língua Dracônica. Eles imediatamente caem de joelhos e se curvam. \n\n \"Nos desculpe! Não o reconhecemos, Grande Dragão...!\"\n\n Eles parecem pensar que você é um dragão polimorfo. Eles fogem, deixando seu ouro para trás.", 
+          "reward" : "0_2_1|0_4_15"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 23,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você derrota os {0}. Eles caem no chão sangrando e você passa por seus cadáveres, continuando sua aventura.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Os {0} te derrotam, e você mal consegue escapar.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} se aproxima de você no chão e desfere o golpe final. Isso corta sua consciência.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} se aproxima de você no chão e desfere o golpe final. Isso corta sua consciência.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 24,
+     "grade" : 1,
+    "monster" : "15",
+    "required" : "1_2_35|2_2_80",
+    "text" : "Você está caminhando pela floresta quando tropeça em uma cachoeira. Seus pés e joelhos estão doloridos, então você se senta em uma grande pedra para fazer uma pausa. A rocha em que você se apoia começa a tremer e se levantar.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Lutar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 25, 
+          "type" : 2, 
+          "text" : "Você saca sua arma e se prepara para a batalha. O {0} balança seu punho enorme em sua direção.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Fugir",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você corre do {0}. Ele o encara, mas não te persegue.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_7_10", 
+          "text" : "Argumentar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "9", 
+          "nextEvent" : 25, 
+          "type" : 1, 
+          "text" : "Você não consegue raciocinar com isso. O {0} balança seu punho enorme em sua direção.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você convence os {0} com seu charme carismático. Ele volta a dormir e você descansa nas costas dele.", 
+          "reward" : "0_0_1|0_1_1|0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "1_7_10|20_0_1", 
+          "text" : "Desencantar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 25, 
+          "type" : 1, 
+          "text" : "Você tenta conjurar o feitiço para mover o {0}, mas falha. O {0} balança seu punho enorme em sua direção.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você conjura o feitiço que move o {0}. O {0} para e se desfaz em pedaços. Você senta no topo da pilha de {0} e faz uma pausa.", 
+          "reward" : "0_0_1|0_1_1|0_2_1|0_4_60"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 25,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você destrói o núcleo do {0}. {0} para de funcionar e se esmigalha. Você descansa, sentado em cima do {0} esmigalhado.", 
+          "reward" : "0_0_1|0_1_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você é forçado a fugir do {0} depois de ser espancado e nem poder descansar.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você é esmagado até a morte por um corpo enorme de {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você é esmagado até a morte por um corpo enorme de {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 26,
+     "grade" : 1,
+    "monster" : "15|16",
+    "required" : "1_2_80",
+    "text" : "Você está passando por uma área de gêiseres fumegantes. Você olha para o chão abaixo de seus pés, que brilha em vermelho intenso, e o sente rugir ameaçadoramente de vez em quando. Assim que você pressente que algo ruim possa acontecer, o solo à sua frente desaba. Um {0} emerge das rachaduras. Ele olha para você e ordena que saia já dali.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Lutar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 27, 
+          "type" : 2, 
+          "text" : "Você se prepara para lutar. O {0} olha para você e zomba.", 
+          "reward" : "6_1_0", 
+          "place" : 2
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Correr",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você fugiu do {0}. Ele parecia zombar de você pelas costas.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_7_10", 
+          "text" : "Argumentar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "20", 
+          "nextEvent" : 27, 
+          "type" : 1, 
+          "text" : "Você pede educadamente para passar, Mas o {0} zomba e te ataca.", 
+          "reward" : "6_1_0", 
+          "place" : 2
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você diz de forma persuasiva para o {0} que você está simplesmente passando. O {0} ouve e acena com a cabeça. \n\n \"Passe silenciosamente, eu não quero ouvir mais nem um piu.\"\n\n", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 27,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} agora não consegue falar. Você se livra da distração e segue em frente.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você é forçado a fazer o que {0} diz. O que significa que agora você está espancado e expulso.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você é pisoteado por {0} e encontra uma morte plena.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você é pisoteado por {0} e encontra uma morte plena.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 28,
+     "grade" : 1,
+    "monster" : "18|42_0_55|70",
+    "required" : "1_2_35",
+    "text" : "|drawing_blizzard|O céu escurece em um instante, e uma nevasca mais densa chega. Você para de caminhar e olha ao redor da montanha nevada, tremendo de frio. Felizmente, você encontra uma pequena caverna e entra nela. A sua estrutura parece sugerir que existe outra entrada. Em breve, você encontra um {0} na caverna, dormindo sozinho.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Esconder-se e descansar silenciosamente",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "5", 
+          "nextEvent" : 29, 
+          "type" : 1, 
+          "text" : "Você decide esperar a nevasca passar lá fora. Você anda com cuidado, para não acordar o {0}, mas pisa em um gelo fino. O \n\n \"Crack!\"\n\n envia ecos pela caverna e o {0} acorda e te encontra. Ele vem na sua direção, com os punhos balançando.", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você decide esperar a nevasca passar lá fora. Você anda com cuidado, para não acordar o {0} e, em seguida, chega a um depósito no canto. Você deixa a caverna com segurança depois que a nevasca passa.", 
+          "reward" : "0_1_0|0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Emboscar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 29, 
+          "type" : 1, 
+          "text" : "Você decide matar o dono da caverna. Você anda com cuidado, para não acordar o {0}, mas pisa no gelo fino. O \n\n \"Crack!\"\n\n envia ecos pela caverna, e o {0} acorda e te encontra. Ele vem na sua direção, com os punhos balançando.", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você decide matar o dono da caverna. Ele está dormindo profundamente, sem perceber que você está se aproximando. Você golpeia seu pescoço com sua arma o mais forte que consegue. Você sente o estalo de sua espinha através do aperto. Ele grita ao tentar se levantar, mas desmaia e morre logo depois. Você sai da caverna com segurança após o fim da nevasca.", 
+          "reward" : "0_2_2|0_1_0|0_4_100"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Dar meia-volta",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "16", 
+          "nextEvent" : -2, 
+          "type" : 1, 
+          "text" : "Você silenciosamente volta para fora. A nevasca entra através de suas roupas e cobre seu corpo. Você fica congelado por andar no frio.", 
+          "reward" : "0_0_-1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_13_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você silenciosamente volta. A nevasca entra em suas roupas e cobre seu corpo. Mas uma nevasca não pode machucá-lo. Você suporta o frio e caminha silenciosamente.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Acordá-lo",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 29, 
+          "type" : 2, 
+          "text" : "Você grita com confiança, para acordar o {0}. Ele acorda, assustado. E Então ruge enquanto avança até você.", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 29,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você mata {0} e se apodera da caverna. Depois de se esconder da nevasca, você continua sua aventura.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você é derrotado por {0} e mal escapa. Felizmente, a nevasca cessou enquanto você estava lutando.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Seu corpo inconsciente é engolido inteiro por {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Seu corpo inconsciente é engolido inteiro por {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 30,
+     "grade" : 1,
+    "monster" : "77|27",
+    "required" : "2_2_50",
+    "text" : "Você está caminhando por um bosque de pinheiros altos. Você para para alongar o corpo e olha para o céu límpido e claro. Ao abaixar o olhar, você fica cara a cara com o rosto de um {0}.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Lutar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 31, 
+          "type" : 2, 
+          "text" : "Você cuidadosamente pega sua arma enquanto o olha diretamente nos olhos. O {0} mostra os dentes e rosna antes de atacar você.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Fugir",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "16", 
+          "nextEvent" : 31, 
+          "type" : 1, 
+          "text" : "Você se vira para correr, mas o {0} morde o seu tornozelo.", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você se vira para correr. O {0} o persegue por um tempo antes de desistir e se afastar.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Alimentá-lo",
+       "result" : [
+       {
+          "required" : "8_124_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você pega um peixe e joga no {0}. O {0} fica distraído e você sai correndo.", 
+          "reward" : "4_124_1|0_2_1"
+       }, 
+       {
+          "required" : "8_125_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você pega um peixe e joga no {0}. O {0} fica distraído e você sai correndo.", 
+          "reward" : "4_125_1|0_2_1"
+       }, 
+       {
+          "required" : "8_143_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você pega um peixe e joga no {0}. O {0} fica distraído e você sai correndo.", 
+          "reward" : "4_143_1|0_2_1"
+       }, 
+       {
+          "required" : "8_144_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você pega um peixe e joga no {0}. O {0} fica distraído e você sai correndo.", 
+          "reward" : "4_144_1|0_2_1"
+       }, 
+       {
+          "required" : "10_124_1|10_125_1|10_143_1|10_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 31, 
+          "type" : 2, 
+          "text" : "Você vasculha sua mochila, mas não consegue encontrar nada para oferecer a eles. Eles mostram os dentes e atacam você.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Interagir ",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "13", 
+          "nextEvent" : 31, 
+          "type" : 1, 
+          "text" : "Você olha o {0} nos olhos e estende a mão. O {0} morde seu braço.", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você olha o {0} nos olhos e lentamente estende a mão para acariciá-lo. O {0} parece satisfeito enquanto respira de forma constante. Então ele se vira e se afasta de você.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 31,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "O ensanguentado {0} tropeça e cai no piso frio. Você limpa o sangue das suas roupas e continua pela floresta.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você fica gravemente ferido por suas garras e presas, mal conseguindo escapar.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "O {0} morde seu pescoço e o sacode violentamente. A última coisa que você sente é o seu pescoço estalando. O mundo fica escuro, para sempre.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "O {0} morde seu pescoço e o sacode violentamente. A última coisa que você sente é o seu pescoço estalando. O mundo fica escuro, para sempre.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 32,
+     "grade" : 1,
+    "monster" : "40|53_0_55",
+    "required" : "1_2_25",
+    "text" : "Você está caminhando por uma grande planície quando uma sombra gigante paira sobre você. Inicialmente, você pensa que é um dragão, mas olha para cima e descobre que é um {0}. Ele circula acima de você e, em seguida, desce com as garras bem abertas.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Usar um arremesso de Judô",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "18", 
+          "nextEvent" : 33, 
+          "type" : 1, 
+          "text" : "Você agarra no ar o {0} pelo pé, mas o peso e a velocidade do {0} faz você mergulhar direto no chão.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você agarra no ar o {0} pelo pé e o joga no chão por cima do seu ombro. O {0} treme por um tempo antes de dar seu último suspiro.", 
+          "reward" : "0_2_1|0_4_30"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Esquivar-se",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 33, 
+          "type" : 1, 
+          "text" : "O {0} é muito rápido e você não consegue evitá-lo. Suas garras cravam profundamente em sua carne.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : 33, 
+          "type" : 0, 
+          "text" : "Você se esquiva das garras {0} enquanto elas cortam o ar. \n\n \"Grrrr...\"\n\n O {0} faz um pouso difícil no chão. Então ele grita com você e ataca.", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_2|1_1_2", 
+          "text" : "Magia: Barreira",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "14", 
+          "nextEvent" : 33, 
+          "type" : 1, 
+          "text" : "Você tenta formar uma barreira, mas não consegue ser rápido e calmo o suficiente. O peso e a velocidade do {0} fazem você mergulhar direto no chão.", 
+          "reward" : "0_0_-1|6_1_0|0_1_-1", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você forma uma barreira e bloqueia o ataque do {0}. Faíscas surgem do confronto, e assustam o {0}, que é repelido.", 
+          "reward" : "0_2_2|0_1_-1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você forma uma barreira e bloqueia o ataque do {0}. Faíscas surgem do confronto, e assustam o {0}, que é repelido.", 
+          "reward" : "0_2_2|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 33,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você derrotou o {0}. Seu cadáver pinta o solo de vermelho. Águias carecas sentem o cheiro de sangue e começam a circular acima de você. Você se alonga um pouco antes de continuar sua jornada.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "O {0} quase te mata, e você mal consegue escapar.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você foi perfurado pelos espinhos da cauda. O veneno do {0} se espalha rapidamente pelo seu corpo e paralisa seus pulmões. Você sufoca instantaneamente até a morte.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você foi perfurado pelos espinhos da cauda. O veneno do {0} se espalha rapidamente pelo seu corpo e paralisa seus pulmões. Você sufoca instantaneamente até a morte.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 34,
+     "grade" : 1,
+    "monster" : "51",
+    "required" : "1_2_80",
+    "text" : "Você está atravessando uma planície rochosa quando ouve um estrondo vindo do solo. Você vê uma criatura de metal brilhante no horizonte. Parece um touro feito de aço e está avançando em sua direção mais rápido do que um cavalo de corrida. |drawing_rushGorgon|",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Agarrar seus chifres e pará-lo",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "25", 
+          "nextEvent" : 35, 
+          "type" : 1, 
+          "text" : "Você aprende da maneira mais difícil que não pode parar uma criatura gigante de metal de alta velocidade só com suas próprias mãos. A fera bate em você, fazendo você voar alguns metros para trás. Então o {0} se vira e ataca você novamente.", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : 35, 
+          "type" : 0, 
+          "text" : "Você tem força suficiente para parar o {0} por seus chifres. Seus braços e mãos ficam dormentes com o choque quando você é empurrado alguns metros para trás, mas consegue fazer a fera parar. O {0} parece surpreso, mas logo abre suas mandíbulas e cospe fumaça verde. Você solta seus chifres para evitá-lo, e o {0} balança seus chifres em você mais uma vez.", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "1_5_20", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Sua força prova ser sobre-humana. Você dobra os chifres com as mãos nuas, além de interrompê-lo. O {0} fica aterrorizado e foge.", 
+          "reward" : "0_2_3"
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_4|1_1_2", 
+          "text" : "Magia: Reverter Gravidade",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "11", 
+          "nextEvent" : 35, 
+          "type" : 1, 
+          "text" : "Você se lembra de um feitiço melhor do que aquele que gera barreiras, mas o feitiço é muito complicado para uma janela de tempo tão estreita. O {0} bate em você, fazendo você voar alguns metros para trás. Então o {0} se vira e ataca você novamente.", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_14_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você se lembra de um feitiço melhor do que aquele que gera barreiras. Você executa com sucesso um movimento complexo e um feitiço para gerar um campo de gravidade reversa à sua frente. O {0} corre para ele e é levantado no ar. Você sai correndo da área para o caso da vaca louca de metal começar a persegui-lo novamente.", 
+          "reward" : "0_2_1|0_0_-1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Fugir",
+       "result" : [
+       {
+          "required" : "2_6_14", 
+          "chance" : "14", 
+          "nextEvent" : 35, 
+          "type" : 1, 
+          "text" : "Você corre o mais rápido que pode, mas o {0} o alcança. Ele bate nas suas costas, fazendo você voar alguns metros à frente. Então o {0} se vira e ataca você novamente.", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 0
+       }, 
+       {
+          "required" : "1_6_14", 
+          "chance" : "14", 
+          "nextEvent" : 35, 
+          "type" : 1, 
+          "text" : "Você corre o mais rápido que pode, mas o {0} o alcança. Quando ele está prestes a bater em suas costas, você desvia por pouco de seus chifres pulando para cima. Você pousa com segurança no chão, e o {0} se vira e volta a atacar.", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "O {0} ainda está longe. Você corre o mais rápido que pode para fora do território do {0}, e o {0} para de persegui-lo.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_2|1_1_2", 
+          "text" : "Magia: Barreira",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "26", 
+          "nextEvent" : 35, 
+          "type" : 1, 
+          "text" : "Você gera uma barreira invisível. Mas o {0} o estilhaça com seus chifres como se fosse vidro, arremeçando você alguns metros para trás. Em seguida, o {0} se vira e ataca você novamente.", 
+          "reward" : "6_1_0|0_0_-1|0_1_-1", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1|0_12_1", 
+          "nextEvent" : 35, 
+          "type" : 0, 
+          "text" : "Você gera uma barreira invisível. Ele aguenta um golpe dos poderosos chifres do {0}. Mas então começa a rachar e se desfazer em pedaços.", 
+          "reward" : "6_1_0|0_1_-1", 
+          "place" : 0
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 35,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Bestas malucas exigem métodos malucos. O {0} colapsa, seu corpo de metal amassado e deformado por seus golpes. Você se sente realizado enquanto continua sua jornada.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "O {0} pisa em você, e você mal consegue sair vivo.", 
+          "reward" : "0_0_-1|0_1_-1|0_2_1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "O {0} o pisoteia, e você morre de múltiplas fraturas.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "O {0} o pisoteia, e você morre de múltiplas fraturas.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 36,
+     "grade" : 1,
+    "monster" : "4_1_20|5|28_0_20",
+    "required" : "",
+    "text" : "Você se depara com uma pilha de sujeira formada por um deslizamento de terra. Você está prestes a contornar isso quando um {0} surge da sujeira. Ele olha para você com seus olhos de várias camadas.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Acertá-lo na cabeça",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 37, 
+          "type" : 1, 
+          "text" : "Você saca sua arma e acerta o {0} na cabeça. Mas não é o suficiente para matá-lo. O {0} fica agitado e salta para fora da sujeira.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você pega sua arma e acerta o {0} na cabeça. O {0} morre instantaneamente e seu fluido encharca a sujeira. Você contorna a pilha para encontrar outro caminho.", 
+          "reward" : "0_2_1|0_4_20"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Correr",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você se afasta lentamente antes de correr a toda velocidade. O {0} gasta muito tempo lutando para sair da sujeira e não pode persegui-lo.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Alimentá-lo",
+       "result" : [
+       {
+          "required" : "8_124_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você tira um peixe de sua mochila e o joga no {0}. Você sai correndo da área enquanto o {0} fica preocupado com o peixe.", 
+          "reward" : "4_124_1"
+       }, 
+       {
+          "required" : "8_125_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você tira um peixe de sua mochila e o joga no {0}. Você sai correndo da área enquanto o {0} fica preocupado com o peixe.", 
+          "reward" : "4_125_1"
+       }, 
+       {
+          "required" : "8_143_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você tira um peixe de sua mochila e o joga no {0}. Você sai correndo da área enquanto o {0} fica preocupado com o peixe.", 
+          "reward" : "4_143_1"
+       }, 
+       {
+          "required" : "8_144_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você tira um peixe de sua mochila e o joga no {0}. Você sai correndo da área enquanto o {0} fica preocupado com o peixe.", 
+          "reward" : "4_144_1"
+       }, 
+       {
+          "required" : "10_124_1|10_125_1|10_143_1|10_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 31, 
+          "type" : 2, 
+          "text" : "Você vasculha sua mochila, mas não encontra nada que valha a pena comer. O {0} mostra os dentes e avança em sua direção.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Escalar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 37, 
+          "type" : 1, 
+          "text" : "Você tenta escalar o {0} e a pilha de sujeira. Mas o {0} não pretende deixar você ir. O {0} agarra seu tornozelo enquanto você tenta pular sobre a pilha.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você pisa na cabeça do {0} e salta sobre a pilha com agilidade e graciosidade. Depois de pousar sem esforço do outro lado, você se afasta da área para continuar sua jornada.", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "20_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você lança um feitiço simples para levitar a si mesmo. O {0} range as mandíbulas enquanto olha para você. Você pousa do outro lado sem esforço e se afasta da área para continuar sua jornada.", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "20_10_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você se levita no ar. Então você flutua sobre a pilha com facilidade.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 37,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você derrota o {0}. Ele cai na sujeira e para de se mover. Você anda pela pilha para encontrar outro caminho.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "O {0} o derrota e você mal consegue fugir.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "O {0} te devora.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "O {0} te devora.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 38,
+     "grade" : 1,
+    "monster" : "39",
+    "required" : "1_2_55",
+    "text" : "Você está escalando uma montanha rochosa coberta de cascalho, quando vê vários cadáveres empalados por piques saindo do chão. Ossos de humanos, anões e gnomos estão espalhados pelas terras. Você tenta sair da cena terrível, quando um {0} aparece de trás das rochas. Ao contrário da maioria dos outros trolls, ele está vestido com uma armadura e empunha um porrete enorme. Ele baba ao olhar para você. \n\n \"Krrgh... carne fresca. Mim sentir fome.\"\n\n",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Ameaçá-lo",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "17", 
+          "nextEvent" : 39, 
+          "type" : 1, 
+          "text" : "O {0} não recua. Sua respiração se intensifica enquanto começa a balançar seu porrete.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Oprimido pelo seu carisma, o troll foge.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Correr",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "14", 
+          "nextEvent" : 39, 
+          "type" : 1, 
+          "text" : "Você tenta correr do {0}, mas ele é muito mais ágil do que você pensava. Antes que você perceba, o {0} bloqueia seu caminho e começa a balançar o enorme porrete.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você ultrapassou {0} com sucesso com sua agilidade incomparável. O {0} tenta persegui-lo, mas logo fica sem fôlego.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Ensiná-lo uma lição",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 39, 
+          "type" : 2, 
+          "text" : "Você decide ensinar ao {0} babão uma lição que ele nunca se esquecerá.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 39,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você derrotou com sucesso o {0} babão. Na verdade, sua lição é tão eficaz que ele morre imediatamente. Você limpa o sangue do {0} de sua arma e continua sua jornada.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você mal consegue escapar da baba do {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "O {0} come você como os outros cadáveres na montanha.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "O {0} come você como os outros cadáveres na montanha.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 40,
+     "grade" : 1,
+    "monster" : "35",
+    "required" : "5_155_0|1_2_30",
+    "text" : "|drawing_tiredDolphin|/ Você está caminhando na praia quando vê um golfinho deitado na areia. Ele parece exausto ao olhar para você com seus olhos redondos e brilhantes. De repente, um {0} emerge da água atrás do golfinho. O {0} vê você e seu estranho grito se espalha por seu corpo escamoso. <link=shake>\n\n \"HSSSSSCHAARGH!\"\n\n</link>",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Correr",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você ignora os olhares desesperados do golfinho e sai correndo. Logo, você ouve o grito do golfinho ecoar atrás de você.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Atacar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "Você balança sua arma para a estranha criatura diante de você. O golfinho parece torcer por você com os olhos.", 
+          "reward" : "6_1_0", 
+          "place" : 8
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Alimentá-lo",
+       "result" : [
+       {
+          "required" : "8_124_1", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "Você tira um peixe de sua mochila e o joga no {0}. Mas um único peixe não pode distrair o {0} do golfinho. O {0} grita e ataca você.", 
+          "reward" : "4_124_1|6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "8_125_1", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "Você tira um peixe de sua mochila e o joga no {0}. Mas um único peixe não pode distrair o {0} do golfinho. O {0} grita e ataca você.", 
+          "reward" : "4_125_1|6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "8_143_1", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "Você tira um peixe de sua mochila e o joga no {0}. Mas um único peixe não pode distrair o {0} do golfinho. O {0} grita e ataca você.", 
+          "reward" : "4_143_1|6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "8_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "Você tira um peixe de sua mochila e o joga no {0}. Mas um único peixe não pode distrair o {0} do golfinho. O {0} grita e ataca você.", 
+          "reward" : "4_144_1|6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "10_124_1|10_125_1|10_143_1|10_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "Você decide alimentar o {0} para distraí-lo, mas ele percebe que não tem nada com você. O {0} mostra os dentes e começa a atirar magia em você.", 
+          "reward" : "6_1_0", 
+          "place" : 8
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 41,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você derrota o {0}. Sua barbatana treme enquanto cai. Então você ajuda o golfinho a voltar ao mar. Ele olha para você por um momento antes de retornar a um grupo de outros golfinhos que estão próximos.", 
+          "reward" : "5_155_1|0_3_2"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você fica ferido e mal consegue escapar do {0}. Logo, você ouve o triste guincho do golfinho ecoando atrás de você.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "O {0} deixa você inconsciente.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "O {0} deixa você inconsciente.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 42,
+     "grade" : 1,
+    "monster" : "3|6|27_0_30",
+    "required" : "",
+    "text" : "|drawing_camp| Você está relaxando em frente a uma fogueira num acampamento, desfrutando o crepitar do fogo. Você sente que, repentinamente, tudo está quieto demais, porém avista os olhos de {0}. O {0} faminto encara você conforme se aproxima lentamente. O {0} rosna para você como se estivesse exigindo comida, pronto para atacar a qualquer momento.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Observá-lo",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 43, 
+          "type" : 1, 
+          "text" : "Você olha para {0} com um olhar mortal em seus olhos. Mas o {0} o ignora e avança direto para você.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você olha para {0} com um olhar mortal em seus olhos. O {0} choraminga e foge.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Atacar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 43, 
+          "type" : 2, 
+          "text" : "Você agilmente fecha a lacuna com o {0} e começa a atacá-lo.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Alimentá-lo",
+       "result" : [
+       {
+          "required" : "8_124_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} pega sua comida no ar. Em seguida, se afasta enquanto olha para você antes de desaparecer nos arbustos.", 
+          "reward" : "4_124_1|0_2_1"
+       }, 
+       {
+          "required" : "8_125_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} pega sua comida no ar. Em seguida, se afasta enquanto olha para você antes de desaparecer nos arbustos.", 
+          "reward" : "4_125_1|0_2_1"
+       }, 
+       {
+          "required" : "8_143_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} pega sua comida no ar. Em seguida, se afasta enquanto olha para você antes de desaparecer nos arbustos.", 
+          "reward" : "4_143_1|0_2_1"
+       }, 
+       {
+          "required" : "8_144_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} pega sua comida no ar. Em seguida, se afasta enquanto olha para você antes de desaparecer nos arbustos.", 
+          "reward" : "4_144_1|0_2_1"
+       }, 
+       {
+          "required" : "10_124_1|10_125_1|10_143_1|10_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 43, 
+          "type" : 2, 
+          "text" : "Você decide alimentar {0} como forma de distração, mas ele percebe que não tem nada com você. {0} mostra seus dentes e avança até você.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Correr",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 43, 
+          "type" : 1, 
+          "text" : "Você tenta correr, mas {0} te ultrapassa e começa a te atacar.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você despista o {0} com sucesso e consegue escapar.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 43,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você derrota o {0}.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0} o derrota, e você mal consegue fugir com uma marca de mordida no seu corpo.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} come você.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} come você.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 44,
+     "grade" : 1,
+    "monster" : "46|96_0_25|121_0_35",
+    "required" : "1_2_10|2_2_80",
+    "text" : "Você chega na periferia de uma aldeia e então ouve um barulho inesperado. É o som de uma respiração ofegante misturada com o som de algo quebrando. Você segue o som e encontra um furioso {0} quebrando as cercas desordenadamente. Com um hálito quente saindo de suas narinas, o {0} o percebe, e avança em sua direção.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Investir contra ele",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "30", 
+          "nextEvent" : 45, 
+          "type" : 1, 
+          "text" : "Você se joga na entrada {0}.\n <link=shake>'Thwuck!'</link>\n O impacto produz um som pesado, enviando você rolando pelo chão.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 4
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_2", 
+          "nextEvent" : 45, 
+          "type" : 0, 
+          "text" : "Você se joga na entrada {0}.\n <link=shake>'Thwuck!'</link>\n O impacto produz um som pesado à medida que o {0} diminui.", 
+          "reward" : "6_1_0", 
+          "place" : 4
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você se joga na entrada {0}.\n <link=shake>'Thwuck!'</link>\n O impacto produz um som pesado, e o {0} tropeça no chão. O {0} parou de se mover completamente.", 
+          "reward" : "0_2_1|0_4_20"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Esquivar-se ",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "30", 
+          "nextEvent" : 45, 
+          "type" : 1, 
+          "text" : "O {0} é incrivelmente rápido, e ele bate em você e o faz rolar pelo chão antes que você possa se esquivar.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 4
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_2", 
+          "nextEvent" : 45, 
+          "type" : 0, 
+          "text" : "Você é ágil o suficiente para evitar o ataque {0}.\n 'Hrmph!'\n Outra rajada de vento quente dispara das narinas de {0} enquanto olha para você.", 
+          "reward" : "6_1_0", 
+          "place" : 4
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você desvia do ataque do {0} rolando sob ele, e consegue atacar a perna do {0}. Seu golpe acerta com uma precisão mortal e faz o {0} cair no chão. O {0} parou de se mover completamente.", 
+          "reward" : "0_2_1|0_4_20"
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_2|1_1_2", 
+          "text" : "Magia: Barreira",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "20", 
+          "nextEvent" : 45, 
+          "type" : 1, 
+          "text" : "Você produz uma barreira e a usa contra a entrada {0}.\n <link=shake>'thwump!'</link>\n A barreira quebra com um baque pesado.", 
+          "reward" : "6_1_0|0_1_-1", 
+          "place" : 4
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você se joga na entrada {0}.\n <link=shake>'thwump!' </link>\n O impacto produz um som pesado, e o {0} tropeça no chão. O {0} parou de se mover completamente.", 
+          "reward" : "0_2_1|0_4_20|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 45,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "O {0} tropeça no chão. O {0} parou de se mover completamente.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "O {0} passa por cima de você, e você mal consegue escapar com um corpo quase quebrado.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "O {0} o golpeia repetidamente e você morre de múltiplas fraturas.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "O {0} o golpeia repetidamente e você morre de múltiplas fraturas.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 46,
+     "grade" : 1,
+    "monster" : "8_0_10|1_1_20|4_1_20|5_0_10|22_0_10|33_1_20|63_0_10|77_1_20",
+    "required" : "",
+    "text" : "Você está tateando através de uma caverna de pedra com paredes úmidas. A caverna parece ameaçadora, com incontáveis ​​fragmentos de equipamentos de aventureiros espalhados pelo chão. Você está procurando rastros, quando um {0} surge de dentro da caverna.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Lutar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 47, 
+          "type" : 2, 
+          "text" : "Você observa os movimentos do {0} enquanto segura sua arma.", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Correr",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 47, 
+          "type" : 1, 
+          "text" : "Você tenta correr. Mas o {0} é mais rápido.", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você sai rapidamente da caverna.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 47,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "O {0} tropeça e cai no chão. O {0} para de se mover completamente.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você fica ferido e mal consegue escapar dos famintos {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Seu equipamento quebrado se junta ao restante dos fragmentos no chão conforme o {0} o arrasta para dentro. Sua mente desaparece.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Seu equipamento quebrado se junta ao restante dos fragmentos no chão conforme o {0} o arrasta para dentro. Sua mente desaparece.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 48,
+     "grade" : 1,
+    "monster" : "1_1_15|6_1_15|7_1_15|8_0_15|22_0_15|33_1_15",
+    "required" : "2_2_50",
+    "text" : "Você está caminhando por uma floresta densa, com pouca luz solar. Você se lembra do relato de um comerciante sobre um {0} à solta nessas partes da floresta, então olha com cuidado por onda anda. Você está no meio da floresta quando um {0} salta e te ataca. Você imediatamente se vira e se esquiva do ataque. O {0} segue habilmente com uma sequência de golpes, como se já tivesse feito isso muitas vezes antes.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Lutar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 49, 
+          "type" : 2, 
+          "text" : "Você sacode sua arma e analisa os ataques do {0}.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Correr",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 49, 
+          "type" : 1, 
+          "text" : "Você pula para aumentar a distância e começa a correr. Mas o {0} corre e por ser um habitat familiar ele o alcança.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você pula para aumentar a distância e começa a correr. Felizmente, você é rápido o suficiente para superar o {0}.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 49,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "O {0} entra em colapso com um grito depois de ser atingido. Depois de confirmar que o {0} parou de se mover, você volta rapidamente aos trilhos para sair da floresta.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você fica ferido pelo {0} e mal consegue escapar. O {0} não o persegue, provavelmente por causa dos danos que sofreu.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Ferido pelo {0}, você cai de joelhos. O {0} rapidamente imobiliza você e leva sua vida.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Ferido pelo {0}, você cai de joelhos. O {0} rapidamente imobiliza você e leva sua vida.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 50,
+     "grade" : 1,
+    "monster" : "1|2|6|7|22_0_10|33",
+    "required" : "2_2_40",
+    "text" : "Você está passando por um desfiladeiro estreito formado na fenda de uma rocha gigante. No meio do caminho, você vê um grupo de {0}s bloqueando o caminho. Eles gritam e uivam enquanto se aproximam de você.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Escalar a parede",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 51, 
+          "type" : 1, 
+          "text" : "Você agarra a parede do desfiladeiro e começa a subir para cima. Mas logo você fica sem força e cai em direção aos {0}s esperando abaixo.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você agarra a parede do desfiladeiro e começa a subir. Os {0}s olham para você, com as mandíbulas abertas e vazias. Você chega ao topo e olha para os {0}s gritando antes de continuar sua jornada.", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "20_10_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você decide ir pelo ar. Os {0}s olham para você, mandíbulas abertas e vazias. Você chega ao topo e olha para os {0}s gritando antes de continuar sua jornada.", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "20_0_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você decide ir pelo ar. Os {0}s olham para você, mandíbulas abertas e vazias. Você chega ao topo e olha para os {0}s gritando antes de continuar sua jornada.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Lutar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 51, 
+          "type" : 2, 
+          "text" : "Você avança até {0}s que estão no seu caminho.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Pular sobre eles",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 51, 
+          "type" : 1, 
+          "text" : "Você tenta pular por cima dos {0}s saindo da parede do desfiladeiro. Mas os {0}s agarram sua perna e fazem você cair no chão.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você pula os {0}s saindo da parede do desfiladeiro. Os {0}s tentam agarrá-lo, mas você gira no ar para desfazer os agarrões. Os {0}s tropeçam e tombam uns sobre os outros. Você pousa graciosamente e continua a caminhar pelo vale, enquanto os {0}s atrás de você lutam para se desembaraçar.", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 51,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Os {0}s não são páreos para você. Você continua andando pelo vale, se afastando da pilha de {0}s caídos atrás de você.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você fica ferido pelos {0}s e mal consegue escapar.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Os {0}s o esmagam e tiram sua vida.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Os {0}s o esmagam e tiram sua vida.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 52,
+     "grade" : 1,
+    "monster" : "17_0_70|95_0_35",
+    "required" : "1_2_35",
+    "text" : "Você sente uma rajada de vento forte atingir você. Você cospe a areia que se alojou na sua boca e continua a andar apressadamente. Nesse exato momento, algo prende seu pé. Quando você olha para baixo, vê uma figura enterrada na areia.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Cavar com as mãos",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : 53, 
+          "type" : 0, 
+          "text" : "Você cava o monte de terra com as mãos nuas. Depois de cerca de dez minutos de escavação, um pesado baú fechado foi revelado. Ao abrir o antigo baú, uma onda de calor intenso sai de dentro. E assim que você recua do calor, uma chama imensa se ergue e {0} aparece.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "14", 
+          "nextEvent" : -2, 
+          "type" : 1, 
+          "text" : "Você cava o monte de terra com as mãos nuas. Depois de cerca de dez minutos de escavação, um pesado baú fechado foi revelado.  Você tenta abri-lo, mas o baú permaneceu imóvel, sem se abrir. No final, você decidiu deixá-lo para trás e seguir em frente para outro lugar.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "8_38_1", 
+          "text" : "Cavar com uma pá",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 53, 
+          "type" : 2, 
+          "text" : "Você cava o monte de terra com uma pá. Depois de cerca de dez minutos de escavação, um pesado baú fechado foi revelado. Ao abrir o antigo baú, uma onda de calor intenso sai de dentro. E assim que você recua do calor, uma chama imensa se ergue e {0} apareceu.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_1", 
+          "text" : "Magia: Mão Mágica",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : 53, 
+          "type" : 0, 
+          "text" : "Você usa magia para cavar o monte de terra. Depois de cerca de dez minutos de escavação, um pesado baú fechado foi revelado. Ao abrir o antigo baú, uma onda de calor intenso sai de dentro. E assim que você recua do calor, uma chama imensa se ergue e {0} apareceu.", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "14", 
+          "nextEvent" : -2, 
+          "type" : 1, 
+          "text" : "Você usa magia para cavar o monte de terra. Depois de cerca de dez minutos de escavação, um pesado baú fechado foi revelado. Você tenta abri-lo, mas o baú permaneceu imóvel, sem se abrir. No final, você decidiu deixá-lo para trás e seguir em frente para outro lugar.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Ignorar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você ignora o que estava preso em seus pés e continua caminhando.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 53,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Depois de derrotar o monstro, você tenta saquear o conteúdo do baú. No entanto, o baú já havia sido reduzido a cinzas e não restava nada dentro dele.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "As chamas irrompem com uma intensidade que parece consumir tudo ao seu redor. Sentindo-se ameaçado e em perigo, você rapidamente foge do local.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "As chamas envolvem você intensamente, causando sua completa destruição. Não restou nada além de cinzas, pois você foi completamente consumido pelo fogo.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "As chamas intensas consumiram você. Você queimou completamente, sem deixar nem mesmo cinzas.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 54,
+     "grade" : 1,
+    "monster" : "143_0_35|100_0_20|152_0_35",
+    "required" : "1_2_20",
+    "text" : "Ao atravessar o vale, você percebe um cheiro terrível vindo de uma fenda estreita nas rochas. Você acelera o passo, tentando fugir daquele lugar o mais rápido possível. Porém, dentro do desfiladeiro, {0} aparece te ataca.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Revidar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 55, 
+          "type" : 2, 
+          "text" : "Você ataca rapidamente {0}. Após desviar brevemente do ataque, ele rosna e vem em sua direção novamente.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Fugir",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Sem dúvida, há um caminho conectado a uma dimensão maligna naquela fenda. Você está fugindo de lá com todas as suas forças.", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "", 
+          "chance" : "11", 
+          "nextEvent" : 55, 
+          "type" : 1, 
+          "text" : "Sem dúvida, há uma passagem conectada a uma dimensão maligna naquela fenda. Você tenta escapar de lá com todas as suas forças, mas {0} não vai deixar você fugir.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 55,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você derrota {0} e empurra o corpo para a fenda. A fenda está conectada a uma fenda da dimensão do mal, e à medida que o corpo é engolido, ela se fecha rapidamente.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você corre com toda a sua força e eventualmente consegue escapar da perseguição de {0}.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você sofreu um golpe fatal e desabou, sua força deixando suas pernas. Ao ver seu estado, {0} exibe suas presas afiadas e sorri. Sem hesitação, ele corta sua respiração, encerrando sua vida.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você sofreu um golpe fatal e desabou, sua força deixando suas pernas. Ao ver seu estado, {0} mostra suas presas afiadas e sorri. Sem hesitação, ele corta sua respiração, encerrando sua vida.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 56,
+     "grade" : 1,
+    "monster" : "15_0_50|17_0_75|43_0_75",
+    "required" : "1_2_50|5_574_0",
+    "text" : "Numa planície com vista para o horizonte, você se depara com um prédio abandonado enterrado em um monte de areia. Parecia que uma parte do espaço havia sido recortada e jogada aqui. A curiosidade te leva a entrar no edifício e a explorar lentamente o seu interior. O quarto e os móveis estavam completamente empoeirados, como se estivesse inabitado há muito. Olhando ao redor da sala, você nota um círculo mágico vermelho gravado no chão do corredor.",
+    "choice" : [
+     {
+       "required" : "20_0_1", 
+          "text" : "Infundir sua mana",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 57, 
+          "type" : 2, 
+          "text" : "Você infunde mana cautelosamente no círculo mágico. Então, de repente, uma luz sinistra irrompe do círculo mágico, revelando {0}. Ele solta um grito e começa a te atacar.", 
+          "reward" : "6_1_0", 
+          "place" : 10
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você infunde mana cautelosamente no círculo mágico. Então, um baú antigo e desgastado aparece do círculo mágico. Dentro do baú, há pergaminhos completamente arruinados e uma única flauta de chifre. Você os pega e foge rapidamente do prédio.", 
+          "reward" : "3_181_1|5_574_1|0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Sair",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você foge rapidamente do prédio suspeito.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "5_575_0", 
+          "text" : "Examinar o círculo mágico",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : 56, 
+          "type" : 0, 
+          "text" : "Você examina o círculo mágico vermelho. Os símbolos geométricos inscritos no círculo mágico indicam claramente que ele é destinado a invocar algo. No entanto, algumas partes dos símbolos estão apagadas, então você não consegue determinar exatamente o que é pretendido invocar.", 
+          "reward" : "5_575_1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "13", 
+          "nextEvent" : 56, 
+          "type" : 1, 
+          "text" : "Você examinou o círculo mágico, mas com seu conhecimento limitado, é impossível para você interpretar seu significado.", 
+          "reward" : "5_575_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 57,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você destrói o {0}. Enquanto ele desmorona, todo o prédio começa a tremer instavelmente. Você rapidamente sai do prédio e logo em seguida, a estrutura desaparece como se nunca tivesse existido.", 
+          "reward" : "5_574_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Após receber vários golpes de {0}, você levanta seu corpo ferido e rapidamente corre para fora do prédio. O golem, parecendo perder o interesse em você, retorna para dentro da estrutura.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Após receber vários golpes de {0}, você perde a consciência e desmaia.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Após receber vários golpes de {0}, você perde a consciência e desmaia.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 58,
+     "grade" : 1,
+    "monster" : "13_1_20|35_0_20|44_0_20",
+    "required" : "2_2_60",
+    "text" : "Você está caminhando por uma costa isolada onde poucos se aventuram. O silêncio tranquilo só é interrompido pelo som das ondas se chocando. Só então você percebe o que parece ser uma rede abandonada em um lado da costa. Algo dentro da rede começa a se mexer lentamente.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Aproximar-se",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 59, 
+          "type" : 2, 
+          "text" : "Você se aproxima cautelosamente da coisa presa na rede para ter uma melhor visão. De repente, {0} salta da rede e te ataca. Você rapidamente saca sua arma e se defende da emboscada.", 
+          "reward" : "6_1_0", 
+          "place" : 8
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Passar reto",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você passa pela rede, e o farfalhar da rede se acalma logo em seguida.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 59,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você silenciou o {0} que atacou sem entender a situação, garantindo que ele nunca mais faria barulho. A costa retorna à sua tranquilidade, e você continua sua caminhada, saboreando o aroma salgado do mar.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "É uma sorte que o monstro tenha ficado preso na rede. Você foge rapidamente da costa.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você é arrastado para o mar depois de ser derrotado em batalha. A água do mar gelada flui para os seus pulmões e você perde a consciência.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você é arrastado para o mar depois de ser derrotado em batalha. A água do mar gelada flui para os seus pulmões e você perde a consciência.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 60,
+     "grade" : 1,
+    "monster" : "40_0_20|96_0_25",
+    "required" : "1_2_20|2_2_70",
+    "text" : "Uma ponte frágil feita de tábuas e cordas pende precariamente entre penhascos íngremes. À primeira vista, parece perigosamente instável, balançando incessantemente nos ventos furiosos.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Cruzar a ponte",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 61, 
+          "type" : 2, 
+          "text" : "Você atravessa cautelosamente a ponte, segurando a corda para se apoiar. Nesse exato momento, {0} mergulha do céu, indo direto em sua direção na ponte.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "-1|20_10_1|20_0_1", 
+          "text" : "Atravessar o penhasco voando",
+       "result" : [
+       {
+          "required" : "20_10_1", 
+          "chance" : "1", 
+          "nextEvent" : 61, 
+          "type" : 2, 
+          "text" : "Você tenta voar pelo ar para atravessar o penhasco. No entanto, {0} mergulha do céu, voando em tua direção.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "20_0_1", 
+          "chance" : "1", 
+          "nextEvent" : 61, 
+          "type" : 2, 
+          "text" : "Você tenta voar pelo ar para atravessar o penhasco. No entanto, {0} mergulha do céu, voando em tua direção.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Voltar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você decide não atravessar a ponte.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 61,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você atravessa o penhasco com segurança e, em contraste, {0} cai até o fundo.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você conseguiu atravessar por pouco o penhasco enquanto suportava o ataque de {0}. Parece que ele considera que você saiu de seu território e não te incomoda mais.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você é atingido pelo ataque de {0} e cai no precipício.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você é atingido pelo ataque de {0} e cai no precipício.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 62,
+     "grade" : 1,
+    "monster" : "61_1_20|62_0_20",
+    "required" : "",
+    "text" : "Enquanto você está passando por uma cidade, alguém na estrada se aproxima de você e inicia uma conversa. Ele parece bastante confiante em suas habilidades. \n\n \"Ei, aventureiro. Se estiver com tempo, gostaria de um pequeno desafio?\"\n\n",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Confrontá-lo",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 63, 
+          "type" : 2, 
+          "text" : "Você aceita o pedido dele. Ele expressa gratidão e saca uma arma. \n\n \"Vamos começar!\"\n\n", 
+          "reward" : "6_1_0", 
+          "place" : 4
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Recusar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você rejeita a oferta dele. Ele resmunga algo sobre ser uma pena, mas inevitável, então sai em busca de outras oportunidades.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 63,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você demonstra a diferença de habilidade para ele. No final da luta, ofegante ele te diz. \n\n \"*Arfa*... *Arfa*... O mundo é mesmo vasto e cheio de competidores fortes... Obrigado pelo duelo.\"\n\n Você troca cumprimentos com ele e então seguem caminhos separados.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você acaba de joelhos na frente do {0}. Enquanto você respira pesadamente, ele se aproxima e fala. \n\n \"Obrigado pelo desafio. Adeus.\"\n\n Ele se despede de você e parte.", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 64,
+     "grade" : 1,
+    "monster" : "39_0_50|132_0_50|140_0_80",
+    "required" : "1_2_50",
+    "text" : "Um rugido estrondoso ecoa pela floresta, sacudindo o chão sob seus pés. De longe, você pode ver a figura colossal de {0}, exalando uma presença avassaladora. Como se sentisse seu olhar, ele vira a cabeça e fixa os olhos em você. Num instante, ele solta um grito ensurdecedor e se lança em sua direção.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Revidar",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 65, 
+          "type" : 2, 
+          "text" : "Você não recusa o desafio de {0}. Em vez disso, decide enfrentá-lo corajosamente.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Esconder-se",
+       "result" : [
+       {
+          "required" : "21_45_1|21_5_2", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você oculta sua presença no abraço da floresta. O olhar de {0} falha em te encontrar, e ele simplesmente passa, exalando seu hálito fétido.", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "21_45_1|21_5_2", 
+          "chance" : "16", 
+          "nextEvent" : 65, 
+          "type" : 1, 
+          "text" : "Você tenta esconder a sua presença no abraço da floresta. No entanto, o {0} percebe e avança na sua direção, uivando ameaçadoramente.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "21_45_1|20_5_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você oculta sua presença no abraço da floresta. O olhar de {0} falha em te encontrar, e ele simplesmente passa, exalando seu hálito fétido.", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "20_45_1", 
+          "chance" : "1", 
+          "nextEvent" : 65, 
+          "type" : 2, 
+          "text" : "Você tenta esconder a tua presença no abraço da floresta. No entanto, o {0} percebe e avança na tua direção, uivando ameaçadoramente.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_2|1_1_2", 
+          "text" : "Magia: Crescimento de Plantas",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você lança 'Crescimento de Plantas' para aumentar rapidamente as plantas na floresta. As plantas crescidas enredam os tornozelos do monstro, fazendo-o perder o equilíbrio e cair com um estrondo alto. Você aproveita a oportunidade para escapar apressadamente da floresta.", 
+          "reward" : "0_1_-1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "16", 
+          "nextEvent" : 65, 
+          "type" : 1, 
+          "text" : "Você lança 'Crescimento de Plantas' para aumentar rapidamente as plantas na floresta. Porém, o monstro rasga facilmente as plantas aumentadas. Sua tentativa de ganhar tempo falha e você é obrigado a se preparar para a batalha.", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 65,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Na batalha, o tamanho não era o fator importante. Provando esse fato, você deixa a floresta, passando pelo corpo colossal do monstro derrotado.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Enfrentando o enorme monstro, suas habilidades mostraram-se um tanto ineficientes. Sentindo a ameaça à sua vida, você se vira e foge com todas as suas forças. O tamanho massivo faz com que ele fique muito para trás enquanto tenta te perseguir.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Acertado diretamente pelo ataque do monstro, você encontra seu fim instantaneamente. A única consolação é a morte rápida que veio, não deixando espaço para você sentir qualquer dor.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Acertado diretamente pelo ataque do monstro, você encontra seu fim instantaneamente. A única consolação é a morte rápida que veio, não deixando espaço para você sentir qualquer dor.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 66,
+     "grade" : 1,
+    "monster" : "12_1_15|14_0_20|89_0_15",
+    "required" : "2_2_50",
+    "text" : "De manhã cedo, você está caminhando à beira-mar, cercado por uma espessa neblina que impede sua visão. A cada passo que você dá, um som suave e farfalhante ressoa. De repente, algo vago aparece além da neblina.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Fugir",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você escapa da criatura que espreitava nas sombras.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Aproximar-se",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : 67, 
+          "type" : 0, 
+          "text" : "Você se aproxima da figura espreitando na névoa. Então, o {0} além da névoa ataca. Você rapidamente esquiva de seu ataque e contra-ataca prontamente.", 
+          "reward" : "6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "1_0_2", 
+          "chance" : "14", 
+          "nextEvent" : 67, 
+          "type" : 1, 
+          "text" : "Você se aproxima da figura espreitando na névoa. Então, o {0} além da névoa ataca. Você sangra por conta da emboscada repentina, ele parece ansioso para aproveitar a oportunidade de te matar, atacando imediatamente.", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "14", 
+          "nextEvent" : -3, 
+          "type" : 1, 
+          "text" : "Você se aproxima da figura espreitando na névoa. Então, o {0} além da névoa ataca. Você sangra por conta da emboscada repentina, ele parece ansioso para aproveitar a oportunidade de te matar, atacando imediatamente.", 
+          "reward" : "0_0_-1"
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_1|5_576_0", 
+          "text" : "Magia: Rajada de Vento",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : 67, 
+          "type" : 0, 
+          "text" : "Você sopra uma rajada de vento para dispersar a névoa. Como resultado, o {0}, que estava se escondendo na névoa e te mirando, é revelado. Você rapidamente se prepara para contra-atacar.", 
+          "reward" : "6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "", 
+          "chance" : "11", 
+          "nextEvent" : 66, 
+          "type" : 1, 
+          "text" : "Você tenta soprar uma rajada de vento para dispersar a neblina, mas falha em lançar o feitiço.", 
+          "reward" : "5_576_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 67,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você conseguiu eliminar o agressor. Enquanto a intensa luta acontecia, o sol nasceu e a névoa se dissipou. A brisa fresca do mar seca seu suor enquanto você recupera o fôlego e continua em sua jornada.", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Você conseguiu desviar do agressor repentino e fugir às pressas. Graças a densa névoa do mar que escondeu sua figura, você escapa ileso.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você perde sua vida para o agressor repentino.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "Você perde sua vida para o agressor repentino.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 68,
+     "grade" : 1,
+    "monster" : "15_0_55|70_0_35|150_0_20",
+    "required" : "5_577_0",
+    "text" : "Você está na entrada de uma masmorra que encontrou por acaso. A entrada está bloqueada por uma robusta porta de pedra. Com uma demonstração de força, você abre a porta de pedra, revelando o interior oculto da masmorra. No entanto, antes que você possa explora-la, um {0} do fundo da masmorra se aproxima, fazendo barulhos altos de batidas.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Venha!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 69, 
+          "type" : 2, 
+          "text" : "Você grita 'Venha!' enquanto se prepara para a luta. {0} avança com um tremendo ímpeto para te atacar.", 
+          "reward" : "6_1_0", 
+          "place" : 7
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Fechar a porta",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você fecha rapidamente a porta com força. {0}, que estava avançando com grande força, fica em silêncio quando a porta se fecha. Você recua lentamente enquanto observa a porta e depois sai da masmorra.", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "", 
+          "chance" : "13", 
+          "nextEvent" : 69, 
+          "type" : 1, 
+          "text" : "O ataque de {0} foi mais rápido do que você fechando a porta. Seu punho feroz acerta sua bochecha. Percebendo que não pode evitar a luta, você revida.", 
+          "reward" : "6_1_0", 
+          "place" : 7
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "Fugir",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "Você esquiva-se rapidamente do ataque do {0} e foge. Surpreendentemente, o monstro que avançava com força não persegue você além da porta. Você recua lentamente enquanto o observa e, em seguida, sai da masmorra.", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "", 
+          "chance" : "13", 
+          "nextEvent" : 69, 
+          "type" : 1, 
+          "text" : "O ataque de {0} foi mais rápido que sua tentativa de fuga. Seu punho cruel acerta sua bochecha. Percebendo que não pode evitar a luta, você revida.", 
+          "reward" : "6_1_0", 
+          "place" : 7
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 69,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Com grande força, o {0} que estava se aproximando de você foi esmagado em pedaços. Você passa pelo corpo derrotado dele e adentra mais profundamente na masmorra. Infelizmente, não há nada de valor para ser encontrado aqui dentro. Tudo está velho, quebrado e além do uso. Você procura um pouco mais, mas eventualmente desiste e deixa o calabouço.", 
+          "reward" : "5_577_1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Com grande força, o {0} que estava se aproximando de você foi esmagado em pedaços. Você passa pelo seu corpo derrotado. E adentrando mais fundo na masmorra, você descobre um baú cheio de ouro. Você o saqueia e sai da masmorra.", 
+          "reward" : "5_577_1|0_4_100"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "Após perder a batalha, você rapidamente fugiu para fora da masmorra. Surpreendentemente, o {0} não te perseguiu. Você lentamente se afasta enquanto o observa, e então deixa o calabouço.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} mata você sem sequer hesitar. Você se torna um cadáver sem nem mesmo ver o tesouro dentro da masmorra.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0} mata você sem sequer hesitar. Você se torna um cadáver sem nem mesmo ver o tesouro dentro da masmorra.", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+tools/
+.sites-runtime/
+node_modules/
+web/*-deploy.tar.gz
+.env
+.env.*
+!.env.example

@@ -1,0 +1,25 @@
+{
+  "m_Name": "AppStoreSettings",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 103,
+    "bytes[1]": 31,
+    "bytes[2]": 231,
+    "bytes[3]": 102,
+    "bytes[4]": 74,
+    "bytes[5]": 210,
+    "bytes[6]": 17,
+    "bytes[7]": 193,
+    "bytes[8]": 23,
+    "bytes[9]": 255,
+    "bytes[10]": 232,
+    "bytes[11]": 134,
+    "bytes[12]": 255,
+    "bytes[13]": 133,
+    "bytes[14]": 77,
+    "bytes[15]": 2
+  },
+  "m_ClassName": "AppStoreSettings",
+  "m_Namespace": "UnityEngine.UDP",
+  "m_AssemblyName": "UDP.dll"
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "ColorSchemeManager",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 83,
+    "bytes[1]": 179,
+    "bytes[2]": 109,
+    "bytes[3]": 13,
+    "bytes[4]": 153,
+    "bytes[5]": 32,
+    "bytes[6]": 36,
+    "bytes[7]": 220,
+    "bytes[8]": 211,
+    "bytes[9]": 55,
+    "bytes[10]": 172,
+    "bytes[11]": 8,
+    "bytes[12]": 10,
+    "bytes[13]": 53,
+    "bytes[14]": 19,
+    "bytes[15]": 50
+  },
+  "m_ClassName": "ColorSchemeManager",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

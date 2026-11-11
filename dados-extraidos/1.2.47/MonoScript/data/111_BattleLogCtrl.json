@@ -1,0 +1,25 @@
+{
+  "m_Name": "BattleLogCtrl",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 117,
+    "bytes[1]": 176,
+    "bytes[2]": 32,
+    "bytes[3]": 85,
+    "bytes[4]": 34,
+    "bytes[5]": 14,
+    "bytes[6]": 79,
+    "bytes[7]": 252,
+    "bytes[8]": 136,
+    "bytes[9]": 226,
+    "bytes[10]": 26,
+    "bytes[11]": 159,
+    "bytes[12]": 89,
+    "bytes[13]": 216,
+    "bytes[14]": 161,
+    "bytes[15]": 19
+  },
+  "m_ClassName": "BattleLogCtrl",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

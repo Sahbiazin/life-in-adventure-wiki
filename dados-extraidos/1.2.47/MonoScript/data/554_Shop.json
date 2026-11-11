@@ -1,0 +1,25 @@
+{
+  "m_Name": "Shop",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 244,
+    "bytes[1]": 240,
+    "bytes[2]": 123,
+    "bytes[3]": 250,
+    "bytes[4]": 63,
+    "bytes[5]": 55,
+    "bytes[6]": 213,
+    "bytes[7]": 224,
+    "bytes[8]": 109,
+    "bytes[9]": 205,
+    "bytes[10]": 12,
+    "bytes[11]": 108,
+    "bytes[12]": 192,
+    "bytes[13]": 186,
+    "bytes[14]": 67,
+    "bytes[15]": 185
+  },
+  "m_ClassName": "Shop",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

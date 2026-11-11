@@ -1,0 +1,158 @@
+{
+ "list" : [
+  {
+    "id" : 0,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Aspirando a diventare un grande avventuriero>\n\n Al suono di una magnifica tromba, un individuo dall'aspetto forte è stato scortato su una piattaforma. L'individuo si inginocchiò lentamente davanti al re. \n\n \"Tutti nel regno ricorderanno la tua avventura. Osservatelo, gente! Questo avventuriero qui è l'eroe del nostro paese!\"|drawing_prize|Con il decreto del re, la folla esultò. Da quando hai assistito all'evento con i tuoi occhi, hai sognato di diventare un avventuriero d'onore, invece di ereditare la fattoria di tuo padre. Sono passati anni e quel sogno ancora permane nel tuo cuore. Alla fine ti ha motivato a iniziare la tua avventura.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Inizia l'avventura!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_0_0|0_4_10|5_215_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 1,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Un apprendista esiliato>\n |drawing_exile|Sei stato esiliato dalla Torre della Magia, accusato ingiustamente di aver tentato di rubare il Tomo Proibito. Eri l'unico a sapere chi fosse il vero colpevole, ma nessuno ti credeva. Questo perché quella che hai affermato di essere il colpevole era uno dei migliori studenti nella storia della Torre Magica. Sapevi che l'unico modo per ottenere la tua vendetta era diventare un mago ancora migliore di lei. Così, hai iniziato un'avventura per diventare il più grande mago di tutti i tempi.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Inizia l'avventura!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_1_0|0_4_10|5_216_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 2,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Un bibliotecario che cerca di salvare la principessa>\n\n  Eri il bibliotecario reale dell'Impero Zaipent.  Un giorno, una donna dall'aura scintillante entrò in biblioteca.  |drawing_princess|  Si è presentata come la principessa 'Esit' e ti ha fatto una domanda.  \n\n \"Potreste gentilmente... consigliarmi un libro?\"\n\n  Sono passati pochi anni da allora. La principessa visitava regolarmente la biblioteca per leggere libri;  conversare con la principessa di letteratura era diventato parte della tua vita quotidiana.  In un giorno come gli altri, un'ombra gigante apparve fuori dalla finestra.  Presto seguì un tremore che fece scuotere l'intero castello, come se ci fosse un terremoto.  Quando hai guardato fuori, hai visto un gigantesco drago grigio volare via con la principessa.  Non conoscevi nulla del mondo esterno, eppure ti sei precipitato fuori dal castello.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Inizia l'avventura!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_2_0|0_4_10|5_153_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 3,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Un ciclo di debiti>\n\n Il giorno in cui i tuoi genitori sono morti, un uomo con i capelli lunghi è venuto a trovarti. Era accompagnato da due scagnozzi, e con voce calma, guardandoti dall'alto, ha parlato. \n\n \"Vedi questo? Questo è un certificato che prova il debito dei tuoi genitori.\"\n\n Ha ordinato ai suoi scagnozzi di portare tua sorella 'Fiana'. Poi, esaminando il suo viso, ha detto, |drawing_hostage| \n\n \"La terrò come garanzia finché non ripaghi questo debito. Se la vuoi indietro, meglio che guadagni velocemente un po' di oro. Vai... magari uccidi un drago o qualcosa del genere. Provaci almeno.\"\n\n Con queste parole, ti sei svegliato da un sogno. Avresti voluto che fosse solo un incubo, ma era già una realtà. Mentre l'alba si avvicinava e un vento freddo soffiava, ti sei spolverato e ti sei alzato.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Inizia l'avventura!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_3_0|0_4_10|5_242_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 4,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Tocco del demone>\n\n Tenendoti stretta la vita tra le fiamme divampanti, cercavi disperatamente vendetta. In quel momento, hai sentito la voce di qualcuno nel tuo orecchio. |drawing_demon| \n\n \"Vendetta? Interessante. Io ti darò parte del mio potere. In cambio, uccidi i tuoi nemici e dedicami la loro anima.\"\n\n Ti ha porso la mano gentilmente, seducentemente, e tu l'hai stretta con forza. Per la tua cara moglie con una grave malattia. Per tuo figlio di sette anni bruciato a morte senza sapere nulla. Per vendicare la tua famiglia bruciata al rogo perché 'adoratrice di demoni' dai fanatici di Teretian.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Inizia l'avventura!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_4_0|0_4_10|5_432_1|0_5_1|0_6_1|0_13_1|0_3_-50"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 5,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<La scomparsa del Professor Naverr>\n\n Sei un apprendista del Professor Naverr dell'Università di Brikkalua, meditando sul tuo saggio. Poi, il Preside ti si avvicina, dicendo che l'università non ha notizie di Naverr da giorni. |drawing_searchnaverr| \n\n \"Chissà cosa sta combinando questa volta... Ti chiedo di andare a cercarlo.\"\n\n Secondo lui, l'ultima lettera di Naverr è stata inviata da qualche parte vicino a Darval. Rispondi immediatamente con un 'Sì, signore', alzandoti dalla tua sedia.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Inizia l'avventura!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_5_0|0_4_10|5_699_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 6,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Il Coroncino sulle Ceneri> |drawing_ashenCoronet| Tuo padre non ti ha lasciato un glorioso lascito, ma un cumulo di ceneri. La proprietà e il controllo della contea di Briovich che hai ereditato sembravano più una maledizione che una benedizione. I granai vuoti stridono mentre il vento vi soffia attraverso. Le terre coltivate, ormai appassite, da tempo senza raccolto. I tuoi sudditi e contadini riescono a malapena a sopravvivere, sopraffatti dalla disperazione e dalla fame. Il nome della tua Casata ora è un guinzaglio che trascina giù il tuo onore. Ma ti rifiutasti di voltare lo sguardo. Accettando con grazia le grida della tua dimora in rovina, ti promettesti di cambiare il corso di questa tragedia.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Inizia l'avventura!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_6_0|0_4_50|5_976_1"
+       }
+       ]
+     }]
+  }
+ ]
+}

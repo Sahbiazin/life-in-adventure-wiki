@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIDragObject",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 193,
+    "bytes[1]": 119,
+    "bytes[2]": 237,
+    "bytes[3]": 186,
+    "bytes[4]": 222,
+    "bytes[5]": 228,
+    "bytes[6]": 202,
+    "bytes[7]": 50,
+    "bytes[8]": 20,
+    "bytes[9]": 64,
+    "bytes[10]": 170,
+    "bytes[11]": 0,
+    "bytes[12]": 18,
+    "bytes[13]": 250,
+    "bytes[14]": 13,
+    "bytes[15]": 130
+  },
+  "m_ClassName": "UIDragObject",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

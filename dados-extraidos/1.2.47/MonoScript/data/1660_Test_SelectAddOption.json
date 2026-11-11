@@ -1,0 +1,25 @@
+{
+  "m_Name": "Test_SelectAddOption",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 61,
+    "bytes[1]": 139,
+    "bytes[2]": 51,
+    "bytes[3]": 29,
+    "bytes[4]": 69,
+    "bytes[5]": 83,
+    "bytes[6]": 170,
+    "bytes[7]": 66,
+    "bytes[8]": 20,
+    "bytes[9]": 143,
+    "bytes[10]": 147,
+    "bytes[11]": 48,
+    "bytes[12]": 35,
+    "bytes[13]": 84,
+    "bytes[14]": 221,
+    "bytes[15]": 242
+  },
+  "m_ClassName": "Test_SelectAddOption",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

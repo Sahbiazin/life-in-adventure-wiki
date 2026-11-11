@@ -1,0 +1,25 @@
+{
+  "m_Name": "UICanvasAspectResize",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 81,
+    "bytes[1]": 231,
+    "bytes[2]": 160,
+    "bytes[3]": 28,
+    "bytes[4]": 8,
+    "bytes[5]": 88,
+    "bytes[6]": 23,
+    "bytes[7]": 209,
+    "bytes[8]": 52,
+    "bytes[9]": 217,
+    "bytes[10]": 230,
+    "bytes[11]": 137,
+    "bytes[12]": 219,
+    "bytes[13]": 54,
+    "bytes[14]": 90,
+    "bytes[15]": 125
+  },
+  "m_ClassName": "UICanvasAspectResize",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

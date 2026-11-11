@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIPlayAudio",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 15,
+    "bytes[1]": 190,
+    "bytes[2]": 75,
+    "bytes[3]": 27,
+    "bytes[4]": 52,
+    "bytes[5]": 75,
+    "bytes[6]": 10,
+    "bytes[7]": 174,
+    "bytes[8]": 64,
+    "bytes[9]": 79,
+    "bytes[10]": 250,
+    "bytes[11]": 86,
+    "bytes[12]": 206,
+    "bytes[13]": 38,
+    "bytes[14]": 206,
+    "bytes[15]": 212
+  },
+  "m_ClassName": "UIPlayAudio",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

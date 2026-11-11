@@ -1,0 +1,25 @@
+{
+  "m_Name": "UICanvasAnchorToCamera",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 240,
+    "bytes[1]": 225,
+    "bytes[2]": 152,
+    "bytes[3]": 159,
+    "bytes[4]": 149,
+    "bytes[5]": 213,
+    "bytes[6]": 72,
+    "bytes[7]": 69,
+    "bytes[8]": 248,
+    "bytes[9]": 28,
+    "bytes[10]": 31,
+    "bytes[11]": 183,
+    "bytes[12]": 53,
+    "bytes[13]": 247,
+    "bytes[14]": 166,
+    "bytes[15]": 237
+  },
+  "m_ClassName": "UICanvasAnchorToCamera",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

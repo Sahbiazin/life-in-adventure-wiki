@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIItemDatabase",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 255,
+    "bytes[1]": 12,
+    "bytes[2]": 191,
+    "bytes[3]": 47,
+    "bytes[4]": 10,
+    "bytes[5]": 1,
+    "bytes[6]": 126,
+    "bytes[7]": 82,
+    "bytes[8]": 196,
+    "bytes[9]": 86,
+    "bytes[10]": 131,
+    "bytes[11]": 243,
+    "bytes[12]": 148,
+    "bytes[13]": 9,
+    "bytes[14]": 244,
+    "bytes[15]": 16
+  },
+  "m_ClassName": "UIItemDatabase",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

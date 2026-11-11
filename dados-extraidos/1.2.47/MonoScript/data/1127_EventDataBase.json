@@ -1,0 +1,25 @@
+{
+  "m_Name": "EventDataBase",
+  "m_ExecutionOrder": -2,
+  "m_PropertiesHash": {
+    "bytes[0]": 191,
+    "bytes[1]": 253,
+    "bytes[2]": 14,
+    "bytes[3]": 12,
+    "bytes[4]": 201,
+    "bytes[5]": 75,
+    "bytes[6]": 103,
+    "bytes[7]": 206,
+    "bytes[8]": 207,
+    "bytes[9]": 44,
+    "bytes[10]": 62,
+    "bytes[11]": 186,
+    "bytes[12]": 196,
+    "bytes[13]": 185,
+    "bytes[14]": 43,
+    "bytes[15]": 27
+  },
+  "m_ClassName": "EventDataBase",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

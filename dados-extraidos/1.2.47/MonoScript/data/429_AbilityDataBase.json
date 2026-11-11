@@ -1,0 +1,25 @@
+{
+  "m_Name": "AbilityDataBase",
+  "m_ExecutionOrder": -4,
+  "m_PropertiesHash": {
+    "bytes[0]": 212,
+    "bytes[1]": 42,
+    "bytes[2]": 163,
+    "bytes[3]": 248,
+    "bytes[4]": 251,
+    "bytes[5]": 134,
+    "bytes[6]": 80,
+    "bytes[7]": 149,
+    "bytes[8]": 104,
+    "bytes[9]": 28,
+    "bytes[10]": 109,
+    "bytes[11]": 36,
+    "bytes[12]": 89,
+    "bytes[13]": 67,
+    "bytes[14]": 110,
+    "bytes[15]": 223
+  },
+  "m_ClassName": "AbilityDataBase",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

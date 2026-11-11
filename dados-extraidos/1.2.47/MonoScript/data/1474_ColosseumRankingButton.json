@@ -1,0 +1,25 @@
+{
+  "m_Name": "ColosseumRankingButton",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 209,
+    "bytes[1]": 67,
+    "bytes[2]": 48,
+    "bytes[3]": 181,
+    "bytes[4]": 132,
+    "bytes[5]": 100,
+    "bytes[6]": 15,
+    "bytes[7]": 241,
+    "bytes[8]": 170,
+    "bytes[9]": 122,
+    "bytes[10]": 170,
+    "bytes[11]": 55,
+    "bytes[12]": 32,
+    "bytes[13]": 109,
+    "bytes[14]": 96,
+    "bytes[15]": 252
+  },
+  "m_ClassName": "ColosseumRankingButton",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

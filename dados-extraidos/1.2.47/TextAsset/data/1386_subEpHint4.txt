@@ -1,0 +1,664 @@
+{
+ "list" : [
+  {
+    "index" : 0,
+    "text" : "Salve Majet, embarque na busca da Mulher Aranha juntos, deixe Johnny e a Mulher Aranha se amarem, depois convença Anna a desistir de Johnny."
+  } , 
+  {
+    "index" : 1,
+    "text" : "Salve Majet, embarque na busca da Mulher-Aranha juntos, respeite a decisão de Johnny ou perca para a Aranea após tentar levá-lo à força."
+  } , 
+  {
+    "index" : 2,
+    "text" : "Salve Majet, embarque na missão da Mulher-Aranha juntos e mate a Aranha Aranea."
+  } , 
+  {
+    "index" : 3,
+    "text" : "Salve Majet, embarque na missão da Mulher-Aranha juntos e derrotem Aranea em batalha. Em seguida, perca para a Aranha Aranea e traga Johnny com você."
+  } , 
+  {
+    "index" : 4,
+    "text" : "Salve Majet, embarque na missão da Mulher-Aranha juntos e derrotem Aranea em batalha. Em seguida, perca para Aranea-Aranha e deixe Johnny na floresta."
+  } , 
+  {
+    "index" : 1000,
+    "text" : "Requerido: Sua Inteligência é 9 ou superior.\n Pergunte aos espectros o que os está incomodando, falhe em dizer a eles que a guerra acabou, então derrote a Legião dos Espectros em batalha. Ou, encontre o colar de Harda para ele."
+  } , 
+  {
+    "index" : 1001,
+    "text" : "Ameace com sucesso Harda. Ou, ou mate Harda ou recuse-se a encontrar seu colar, então encontre o corretor de imóveis e o convença ou pague a taxa você mesmo."
+  } , 
+  {
+    "index" : 1002,
+    "text" : "Conheça o corretor de imóveis, então convença-o ou pague a taxa você mesmo."
+  } , 
+  {
+    "index" : 1003,
+    "text" : "Ou falhe tanto em persuadir o corretor de imóveis e ameaçar Harda, ou falhe na missão sem procurar o colar de Harda."
+  } , 
+  {
+    "index" : 1004,
+    "text" : "Derrote os seguranças do corretor de imóveis em batalha."
+  } , 
+  {
+    "index" : 1005,
+    "text" : "Requerido: Sua Inteligência é 9 ou superior.\n Após perguntar a Martin sobre a mansão, pergunte aos espectros o que os está incomodando, diga a eles que a guerra acabou, e então derrote o Cavaleiro da Morte em batalha."
+  } , 
+  {
+    "index" : 5,
+    "text" : "Requerido: Você não tem amante.\n Complete a missão da Senhora Aranha junto com Majet, então torne-se seu amante. Depois, salve Majet de seus sequestradores ou vença a competição de pesca contra ela, então peça algo além do casamento."
+  } , 
+  {
+    "index" : 6,
+    "text" : "Requerido: Você não tem amante.\n Complete a missão da Senhora Aranha junto com Majet, então se torne seu amante. Depois, salve Majet de seus sequestradores ou vença a competição de pesca contra ela, então seja rejeitado por Majet. Ou, simplesmente recuse participar da competição de pesca."
+  } , 
+  {
+    "index" : 2000,
+    "text" : "No Túmulo do Luto Ardente, abandone o Volga, então sacrifique Enad à porta."
+  } , 
+  {
+    "index" : 2001,
+    "text" : "No Túmulo do Luto Ardente, abandone Volga e depois sacrifique Nisil à porta."
+  } , 
+  {
+    "index" : 2002,
+    "text" : "No Túmulo do Luto Ardente, abandone o Volga, entre sozinho pela porta e pegue todos os tesouros para si."
+  } , 
+  {
+    "index" : 2003,
+    "text" : "No Túmulo da Tristeza Ardente, salve Volga e divida os tesouros igualmente. Em seguida, aceite a oferta de Volga e derrote o Dragão Branco."
+  } , 
+  {
+    "index" : 2004,
+    "text" : "Requerido: Sua Sabedoria é 10 ou superior.\n No Túmulo da Tristeza Ardente, divida os tesouros igualmente. Em seguida, convença o Gigante de Gelo e derrote o Dragão Branco em batalha."
+  } , 
+  {
+    "index" : 2005,
+    "text" : "No Túmulo do Luto Ardente, abandone Volga, depois divida os tesouros com Enad. Em seguida, ataque a caravana de Cecil, traia Enad, perca para ele e depois derrote os guardas da caravana em batalha."
+  } , 
+  {
+    "index" : 2006,
+    "text" : "No Túmulo do Luto Ardente, abandone Volga, depois divida os tesouros com Enad. Em seguida, ataque a caravana de Cecil, traia Enad e o derrote."
+  } , 
+  {
+    "index" : 2007,
+    "text" : "No Túmulo do Luto Ardente, abandone Volga, depois divida os tesouros com Enad. Em seguida, ataque a caravana de Cecil, perca para Enad e os guardas da caravana. Depois, derrote o assassino e poupe Enad."
+  } , 
+  {
+    "index" : 2008,
+    "text" : "No Túmulo do Luto Ardente, abandone Volga, depois divida os tesouros com Enad. Em seguida, recuse-se a saquear a caravana de Cecil, ou perca uma batalha durante o saqueio."
+  } , 
+  {
+    "index" : 2009,
+    "text" : "Encontre o Túmulo do Lamento Ardente por si mesmo, e obtenha seus tesouros."
+  } , 
+  {
+    "index" : 2010,
+    "text" : "No Túmulo da Tristeza Ardente, divida os tesouros igualmente. Em seguida, recuse a oferta de Volga para caçar o Dragão Branco com ele."
+  } , 
+  {
+    "index" : 2011,
+    "text" : "No Túmulo da Tristeza Ardente, divida os tesouros igualmente. Em seguida, recuse a oferta de Volga para caçar o Dragão Branco com ele e depois perca para o Gigante de Gelo."
+  } , 
+  {
+    "index" : 2012,
+    "text" : "No Túmulo do Luto Ardente, abandone o Volga, derrote o enxame de morcegos vampiros e divida os tesouros igualmente. Em seguida, saqueie com sucesso a caravana de Cecil."
+  } , 
+  {
+    "index" : 2013,
+    "text" : "Junte-se aos viajantes em sua aventura na Tumba do Luto Ardente, salve Volga, derrote o enxame de morcegos vampiros e divida o tesouro igualmente. Em seguida, prometa ajudar Volga em sua caçada ao Dragão Branco, e então perca para o Dragão Branco."
+  } , 
+  {
+    "index" : 7,
+    "text" : "Requerido: Você não tem amante.\n Complete a missão da Senhora Aranha junto com Majet, então torne-se seu amante. Em seguida, salve Majet de seus sequestradores ou vença a competição de pesca contra ela, então peça Majet em casamento."
+  } , 
+  {
+    "index" : 3001,
+    "text" : "Não consiga salvar o bebê da vila em chamas e não sugira a Galgano que ore."
+  } , 
+  {
+    "index" : 3002,
+    "text" : "Não consegui salvar o bebê da vila em chamas. Em seguida, sugira a Galgano que ele ore, depois, crie um buraco no teto da catedral. Em seguida, retire a espada de Galgano do chão."
+  } , 
+  {
+    "index" : 3003,
+    "text" : "Não consegui salvar o bebê da vila em chamas. Em seguida, sugira a Galgano que ele ore, então, crie um buraco no teto da catedral. Em seguida, não consiga retirar a espada de Galgano do chão."
+  } , 
+  {
+    "index" : 3004,
+    "text" : "Derrote os templários na vila em chamas. Depois, não salve a velha em Arhen."
+  } , 
+  {
+    "index" : 3005,
+    "text" : "Derrote os templários na vila em chamas. Em seguida, salve a velha mulher em Arhen."
+  } , 
+  {
+    "index" : 3006,
+    "text" : "Derrote os templários na vila em chamas. Em seguida, em Arhen, não chame os aldeões para a igreja, então convença-os com sucesso a deixar a velha mulher viver."
+  } , 
+  {
+    "index" : 3007,
+    "text" : "Requerido: Sua inteligência é 9 ou superior.\n Convença Galgano na vila em chamas. Em seguida, no Orfanato Delua, deixe a criança se divertir ou ensine-a a lutar."
+  } , 
+  {
+    "index" : 3008,
+    "text" : "Requerido: Sua Inteligência é 9 ou superior.\n Convença Galgano na vila em chamas. Em seguida, no Orfanato Delua, conte a verdade para a criança e depois diga a Galgano que você também contou a verdade para a criança."
+  } , 
+  {
+    "index" : 4000,
+    "text" : "Salve os refugiados da matilha do Lobo de Inverno e recuse levar a Flor de Gelo. Em seguida, ajude os refugiados mais uma vez, ajudando-os a derrotar os Lobos de Inverno e os espectros."
+  } , 
+  {
+    "index" : 4001,
+    "text" : "Salve os refugiados da matilha do Lobo do Inverno e recuse levar a Flor de Gelo. Em seguida, ajude os refugiados mais uma vez, mas falhe em derrotar os Lobos do Inverno e os espectros."
+  } , 
+  {
+    "index" : 4002,
+    "text" : "Salve os refugiados da matilha do Lobo de Inverno e pegue a Flor de Gelo. Em seguida, derrote os refugiados mortos-vivos e a Rainha de Gelo, e depois destrua a gema vermelha."
+  } , 
+  {
+    "index" : 4003,
+    "text" : "Salve os refugiados da matilha do Lobo de Inverno e pegue a Flor de Gelo. Em seguida, ou perca para a Rainha do Gelo, ou derrote-a e jogue fora a gema vermelha."
+  } , 
+  {
+    "index" : 4004,
+    "text" : "Requerido: Sua Inteligência é 11 ou superior. Seu Conjuro é 1 ou superior.\n Salve os refugiados da matilha de Lobos do Inverno e pegue a Flor de Gelo. Depois, derrote a Rainha do Gelo, a prenda no urso de pelúcia e entregue para Delin."
+  } , 
+  {
+    "index" : 4005,
+    "text" : "Salve os refugiados da matilha do Lobo de Inverno e pegue a Flor de Gelo. Em seguida, entregue a Flor de Gelo para a Rainha de Gelo."
+  } , 
+  {
+    "index" : 4006,
+    "text" : "Requerido: Sua Inteligência é 11 ou superior. Sua Habilidade de Conjuração é 1 ou superior.\n Salve os refugiados da matilha de Lobos do Inverno e pegue a Flor de Gelo. Depois, derrote a Rainha do Gelo, a prenda no urso de pelúcia e não a entregue para Delin."
+  } , 
+  {
+    "index" : 4007,
+    "text" : "Requerido: Sua Inteligência é 11 ou superior. Seu Conjurar Feitiços é 1 ou superior.\n Salve os refugiados da matilha de Lobos do Inverno e pegue a Flor de Gelo. Depois, derrote a Rainha do Gelo, a prenda no urso de pelúcia e conte o que aconteceu com Bruges."
+  } , 
+  {
+    "index" : 5000,
+    "text" : "Salve Cira e passe a noite com ela no pub. Em seguida, na sede do Culto, convença o Diabo Cira, e depois resista à sua sedução."
+  } , 
+  {
+    "index" : 5001,
+    "text" : "Salve Cira e passe a noite com ela no pub. Em seguida, na sede do Culto, ou perca para o Diabo Cira, ou a derrote mas saia sem matá-la."
+  } , 
+  {
+    "index" : 5002,
+    "text" : "Salve Cira, então falhe em convencer o Diabo Cira, ou simplesmente fuja. Ou, falhe em purificá-la."
+  } , 
+  {
+    "index" : 5003,
+    "text" : "Ou mate o Diabo Cira, não conte nada sobre Cira para Rohan, ou não vá para a sede da Culto."
+  } , 
+  {
+    "index" : 5004,
+    "text" : "Ou não conte nada sobre Cira para Rohan, não vá para a sede do Culto, ou lute com Rohan contra o Diabo Cira, mas perca."
+  } , 
+  {
+    "index" : 6000,
+    "text" : "Capture os tritões, recuse a oferta de deixá-los ir, e então suporte a tempestade."
+  } , 
+  {
+    "index" : 6001,
+    "text" : "Requerido: Ou sua Sabedoria é 14 ou superior, ou você tem a Flauta do Chamador de Tempestades. Capture os tritões, recuse a oferta de deixá-los ir, então ou toque a Flauta do Chamador de Tempestades ou mate os tritões de olhos azuis."
+  } , 
+  {
+    "index" : 6002,
+    "text" : "Capture os tritões, depois aceite a oferta de deixá-los ir. Em seguida, viaje para Ikene e derrote o Kraken."
+  } , 
+  {
+    "index" : 6003,
+    "text" : "Capture os tritões, depois aceite a oferta de deixá-los ir. Em seguida, viaje para Ikene e falhe em derrotar o Kraken."
+  } , 
+  {
+    "index" : 6004,
+    "text" : "Requerido: Sua Aliança é Maligna. Capture os tritões, depois aceite a oferta de deixá-los ir. Em seguida, viaje para Ikene e torne-se subordinado do Kraken. Depois, derrote os guardas do corpo de Madellin."
+  } , 
+  {
+    "index" : 6005,
+    "text" : "Aceite a oferta dos tritões para se juntar à campanha deles contra o Kraken. Derrote o Kraken, então ou falhe em convencer Parrie, ou apoie a opinião dele e retorne sozinho para a terra."
+  } , 
+  {
+    "index" : 6006,
+    "text" : "Aceite a oferta dos tritões para se juntar à campanha deles contra o Kraken. Derrote o Kraken, depois convença Parrie, junte-se à tripulação e depois perca para Parrie."
+  } , 
+  {
+    "index" : 6007,
+    "text" : "Aceite a oferta dos tritões para se juntar à campanha deles contra o Kraken. Derrote o Kraken, depois convença Parrie, junte-se à tripulação e derrote Parrie."
+  } , 
+  {
+    "index" : 6008,
+    "text" : "Requerido: Ou sua Magia é 4 ou superior, ou seu Voo é 1 ou superior. Sua Aliança está entre Moral e Bom.\n Aceite a oferta dos tritões e derrote o Kraken. Então, escolha ajudar o capitão no conflito com as sereias e resgatar a tripulação ao retornar para a terra."
+  } , 
+  {
+    "index" : 6009,
+    "text" : "Requerido: Sua Aliança é Maligna.\n Aceite a oferta dos tritões, junte-se à campanha deles contra o Kraken, torne-se subordinado do Kraken (deve ser Maligno) e perca para os guarda-costas de Madellin."
+  } , 
+  {
+    "index" : 7000,
+    "text" : "Requerido: Seu personagem é uma mulher. Sua Sabedoria é 14 ou superior.\n Junte-se a Benjamin em seu caminho para a vingança e mate Van Goyle, arriscando sua própria vida. Em seguida, derrote Attna na casa de Benjamin."
+  } , 
+  {
+    "index" : 7001,
+    "text" : "Ajude Atléon o Cavaleiro, auxilie na vingança de Benjamin depois que ele se torna um escudeiro, e então o impeça de matar Van Goyle."
+  } , 
+  {
+    "index" : 7002,
+    "text" : "Não ajude Benjamin com sua vingança, e perca para ele depois que ele se tornar um bandido."
+  } , 
+  {
+    "index" : 7003,
+    "text" : "Não ajude Benjamin com sua vingança e convença-o a voltar para sua cidade natal depois que ele se tornar um bandido."
+  } , 
+  {
+    "index" : 7004,
+    "text" : "Junte-se a Benjamin em seu caminho para a vingança e mate Van Goyle. Então, na casa de Benjamin, ou perca para Attna ou caia em seu plano."
+  } , 
+  {
+    "index" : 7005,
+    "text" : "Junte-se a Benjamin em seu caminho para a vingança e mate Van Goyle, arriscando sua própria vida. Em seguida, pare Attna na casa de Benjamin."
+  } , 
+  {
+    "index" : 7006,
+    "text" : "Junte-se a Benjamin em seu caminho para vingança, e então perca para Van Goyle."
+  } , 
+  {
+    "index" : 7007,
+    "text" : "Não ajude Benjamin com sua vingança e o mate depois que ele se tornar um bandido."
+  } , 
+  {
+    "index" : 7008,
+    "text" : "Ajude Atléon o Cavaleiro, auxilie na vingança de Benjamin depois que ele se torna um escudeiro, e então o impeça de matar Van Goyle. Em seguida, encontre e derrote Van Goyle em seu esconderijo."
+  } , 
+  {
+    "index" : 7009,
+    "text" : "Requerido: Seu personagem é uma mulher. Sua Sabedoria é 14 ou superior. Você não tem amante.\n Treine Benjamin pessoalmente na estalagem, depois acompanhe-o em sua missão de vingança, preparado para morrer, e mate Van Goyle. Após isso, domine Attna na casa de Benjamin e aceite sua proposta."
+  } , 
+  {
+    "index" : 7010,
+    "text" : "Ajude Atléon o Cavaleiro, envie Benjamin para a cidadela sozinho depois que ele se tornar um escudeiro, então receba a carta de Atléon e vá para sua propriedade."
+  } , 
+  {
+    "index" : 7011,
+    "text" : "Junte-se a Benjamin em seu caminho para vingança e mate Van Goyle, mas falhe em salvar Benjamin."
+  } , 
+  {
+    "index" : 7012,
+    "text" : "Ensine Benjamin a lutar, acompanhe-o até a cidadela e impeça-o de matar Van Goyle."
+  } , 
+  {
+    "index" : 5005,
+    "text" : "Salve Cira e passe a noite com ela no pub. Em seguida, na sede do Culto, convença o Diabo Cira e ceda à sua sedução."
+  } , 
+  {
+    "index" : 5006,
+    "text" : "Requerido: Você não tem outros amantes. Sua Santidade é 2 ou superior. Sua Magia é 1 ou superior. Seu histórico não deve ser O Toque do Demônio.\n Salve Cira, batalhe sozinho contra os cultistas na Sede do Culto, derrote o Diabo Cira em batalha e depois a purifique com sucesso. Então, em Mariposa, ou não a procure, ou falhe em seu teste."
+  } , 
+  {
+    "index" : 5007,
+    "text" : "Requerido: Você não tem outros amantes. Sua Santidade é 2 ou superior. Sua Magia é 1 ou superior. Seu histórico não deve ser O Toque do Demônio.\n Salve Cira, batalhe sozinho contra os cultistas na Sede do Culto, derrote o Diabo Cira em batalha e então a purifique com sucesso. Depois, em Mariposa, procure por ela e passe em seu teste."
+  } , 
+  {
+    "index" : 5008,
+    "text" : "Requerido: Você não tem outros amantes. Sua Santidade é 2 ou superior. Sua Conjuração de Feitiços é 1 ou superior. Seu histórico não deve ser O Toque do Demônio.\n Salve Cira, recuse beber com ela, então pare e purifique o Diabo Cira em Mariposa. Em seguida, convença-a com sucesso a fugir com você."
+  } , 
+  {
+    "index" : 5009,
+    "text" : "Requerido: Você não tem outros amantes. Sua Santidade é 2 ou superior. Sua Conjuração de Feitiços é 1 ou superior. Seu histórico não deve ser O Toque do Demônio.\n Salve Cira, recuse-se a beber com ela, então pare e purifique o Diabo Cira em Mariposa. Então, ou falhe em convencê-la a fugir com você, ou diga a ela para seguir o desejo do seu coração."
+  } , 
+  {
+    "index" : 8000,
+    "text" : "Requerido: Sua Sabedoria é 15 ou superior.\n Encontre Amakar, desista da Joia da Vida, escolha um lado e vença a batalha em Tomant. Em seguida, ofereça uma negociação e sugira um compromisso."
+  } , 
+  {
+    "index" : 8001,
+    "text" : "Conheça Amakar, desista da Joia da Vida, escolha um lado e vença a batalha em Tomant. Em seguida, falhe em oferecer uma negociação, inicie uma guerra, na qual os druidas perdem. Depois, encontre o garoto druida e falhe em preparar um funeral."
+  } , 
+  {
+    "index" : 8002,
+    "text" : "Conheça Amakar, desista da Joia da Vida, escolha um lado e vença a batalha em Tomant. Em seguida, não ofereça uma negociação, então, enquanto o Druida Ancião ou os escoteiros não forem derrotados, perca para as tropas levemente armadas."
+  } , 
+  {
+    "index" : 8003,
+    "text" : "Conheça Amakar, desista da Joia da Vida, escolha um lado e vença a batalha em Tomant. Em seguida, ou ofereça uma negociação, ou não ofereça uma negociação e ajude Amakar a vencer a batalha."
+  } , 
+  {
+    "index" : 8004,
+    "text" : "Conheça Amakar, entregue a Jóia da Vida, lute com Syannathel e recuse o pedido de ajuda de Amakar. Depois, na cabana pequena, ignore Syannathel ou peça desculpas a ela."
+  } , 
+  {
+    "index" : 8005,
+    "text" : "Conheça Amakar, desista da Joia da Vida, escolha um lado e vença a batalha em Tomant. Em seguida, não ofereça uma negociação e inicie uma guerra na qual ou Amakar é morto ou Tomant perde."
+  } , 
+  {
+    "index" : 8006,
+    "text" : "Não conseguir recuperar a Joia da Vida de Amakar, depois ajudar os druidas a recuperar a joia. Em seguida, perder para o exército de Tomant, e falhar em derrotar o Troll Dire em Trollium."
+  } , 
+  {
+    "index" : 8007,
+    "text" : "Requerido: Ou sua habilidade de conjuração é 4 ou superior, ou você está carregando o Cesto de Fósforos Feridos ou Sinistros.\n Falhe em recuperar a Joia da Vida de Amakar, então ajude os druidas a recuperar a joia. Em seguida, perca para o exército de Tomant, e então derrote o Troll Dire no Trollium."
+  } , 
+  {
+    "index" : 8008,
+    "text" : "Conheça Amakar, desista da Joia da Vida, junte-se a Amakar e defenda com sucesso Tomant. Em seguida, ofereça uma negociação, não busque um compromisso, então ou falhe em apagar o fogo da tenda ou falhe na perseguição."
+  } , 
+  {
+    "index" : 8009,
+    "text" : "Conheça Amakar, entregue a Jóia da Vida, lute contra Syannathel, recuse o pedido de ajuda de Amakar e depois reze em Tomant."
+  } , 
+  {
+    "index" : 8010,
+    "text" : "Requerido: Sua Sabedoria é 12 ou superior, ou sua Inteligência é 10 ou superior.\n Encontre Amakar, entregue a Joia da Vida, junte-se aos druidas e vença a batalha em Tomant. Em seguida, ofereça com sucesso uma trégua a Lophenbach na floresta."
+  } , 
+  {
+    "index" : 8011,
+    "text" : "Conheça Amakar, desista da Joia da Vida, junte-se a Amakar e defenda com sucesso Tomant. Em seguida, falhe na negociação, e então falhe em apagar o fogo da tenda ou falhe na perseguição."
+  } , 
+  {
+    "index" : 8012,
+    "text" : "Conheça Amakar, desista da Joia da Vida, junte-se aos druidas e vença a batalha em Tomant. Em seguida, falhe na negociação e perca a batalha subsequente. Depois, encontre o garoto druida e prepare um funeral."
+  } , 
+  {
+    "index" : 8013,
+    "text" : "Requerido: Sua Sabedoria é 12 ou mais. Sua Inteligência é 10 ou mais.\n Encontre Amakar, entregue a Joia da Vida, junte-se aos druidas e defenda com sucesso Tomant. Em seguida, batalhe contra o exército de Tomant na floresta e derrote-o."
+  } , 
+  {
+    "index" : 8014,
+    "text" : "Conheça Amakar, desista da Joia da Vida e faça Syannathel ir embora. Recuse o pedido de ajuda de Amakar e depois mate Syannathel."
+  } , 
+  {
+    "index" : 8015,
+    "text" : "Conheça Amakar, desista da Joia da Vida, junte-se aos druidas e vença a batalha em Tomant. Em seguida, falhe na negociação, encontre o garoto druida e prepare um funeral."
+  } , 
+  {
+    "index" : 9000,
+    "text" : "No covil de Ternach, escolha Ternach em vez de Sartha. Em seguida, resolva o quebra-cabeça de Amunak sem libertar Sartha, depois derrote a legião dos anões, force os anões a pagar resgate ou ameace-os para irem embora."
+  } , 
+  {
+    "index" : 9001,
+    "text" : "De qualquer maneira, devolva Sartha para Radania."
+  } , 
+  {
+    "index" : 9002,
+    "text" : "Requerido: Você não tem outros amantes. Seu personagem é uma mulher.\n No covil de Ternach, escolha Ternach em vez de Sartha. Em seguida, resolva o quebra-cabeça de Amunak sem libertar Sartha, e aceite o anel de Ternach."
+  } , 
+  {
+    "index" : 9003,
+    "text" : "Na toca de Ternach, escolha Ternach em vez de Sartha. Em seguida, resolva o quebra-cabeça de Amunak sem libertar Sartha, então ou perca para a legião anã ou fuja."
+  } , 
+  {
+    "index" : 9004,
+    "text" : "Requerido: Você não tem outros amantes. Seu personagem é um homem.\n Na toca de Ternach, escolha Ternach em vez de Sartha. Em seguida, resolva o quebra-cabeça de Amunak sem libertar Sartha, e depois aceite o anel de Ternach."
+  } , 
+  {
+    "index" : 9005,
+    "text" : "Faça Sartha retornar a Radania, então rejeite a oferta de casamento ou a de ouro."
+  } , 
+  {
+    "index" : 9006,
+    "text" : "Requerido: Você não tem amante.\n Faça Sartha retornar a Radania e aceitar a oferta de casamento."
+  } , 
+  {
+    "index" : 9007,
+    "text" : "Requerido: Sua Aliança está entre Neutra e Má.\n Em Antitikarr, ameace o comerciante, resgate Sartha, então pegue emprestado camelos de Mansa ou perca para ele em batalha. Depois, vá para Ushuf com Tess, então sugira uma opção que não seja a de negociar."
+  } , 
+  {
+    "index" : 9008,
+    "text" : "Requerido: Sua Aliança está entre Neutro e Mal.\n Em Antitikarr, ameace o comerciante, resgate Sartha, faça uma pausa no caminho, e então ou pegue emprestado camelos de Mansa ou perca para ele em batalha. Depois, vá para Ushuf com Tess com Dowd como guia, e então sugira confiar em Dowd."
+  } , 
+  {
+    "index" : 9009,
+    "text" : "No covil de Ternach, escolha Ternach em vez de Sartha. Em seguida, resolva o quebra-cabeça de Amunak sem libertar Sartha, coopere com os anões e depois derrote a legião anã com Ternach."
+  } , 
+  {
+    "index" : 9010,
+    "text" : "No covil de Ternach, escolha Ternach em vez de Sartha. Em seguida, resolva o quebra-cabeça de Amunak sem libertar Sartha, finja cooperar com os anões, derrote a legião anã com Ternach e depois liberte Sartha."
+  } , 
+  {
+    "index" : 9011,
+    "text" : "No covil de Ternach, escolha Ternach em vez de Sartha. Em seguida, resolva o quebra-cabeça de Amunak sem libertar Sartha, coopere com os anões e depois rejeite o anel de Ternach."
+  } , 
+  {
+    "index" : 9012,
+    "text" : "Requerido: Sua Aliança está entre Neutro e Mal.\n Em Antitikarr, ameace o comerciante, resgate Sartha, faça uma pausa no caminho, e então ou pegue emprestado camelos de Mansa ou perca para ele em batalha. Depois, falhe em alcançar Ushuf com Tess."
+  } , 
+  {
+    "index" : 9013,
+    "text" : "Requerido: Sua Aliança está entre Neutro e Mal.\n Em Antitikarr, ameace o comerciante, resgate Sartha, faça uma pausa no caminho, e então ou pegue emprestado camelos de Mansa ou perca para ele em batalha. Depois, vá para Ushuf com Tess, e sugira pegar os direitos de mineração em vez do ouro."
+  } , 
+  {
+    "index" : 9014,
+    "text" : "No covil de Ternach, escolha Ternach em vez de Sartha. Em seguida, resolva o quebra-cabeça de Amunak sem libertar Sartha, depois perca ou fuja da legião dos anões."
+  } , 
+  {
+    "index" : 8,
+    "text" : "Encontre o seu fim enquanto Majet é o seu amante."
+  } , 
+  {
+    "index" : 5010,
+    "text" : "Encontre o seu fim enquanto Cira Limpa é sua amante."
+  } , 
+  {
+    "index" : 5011,
+    "text" : "Encontre seu fim enquanto Devil Cira é sua amante."
+  } , 
+  {
+    "index" : 7013,
+    "text" : "Encontre o seu fim enquanto Benjamin é seu amante."
+  } , 
+  {
+    "index" : 9015,
+    "text" : "Encontre o seu fim enquanto Ternach é seu amante."
+  } , 
+  {
+    "index" : 9016,
+    "text" : "Encontre o seu fim enquanto Sartha é o seu amante."
+  } , 
+  {
+    "index" : 10000,
+    "text" : "Explore as ruínas com Edenheart, complete o Elixir e depois avise Fheren de sua morte."
+  } , 
+  {
+    "index" : 10001,
+    "text" : "Explore as ruínas com Edenheart, em seguida, recuse o pedido de Edenheart para completar o Elixir."
+  } , 
+  {
+    "index" : 10002,
+    "text" : "Ou falhe em explorar as ruínas com Edenheart, ou explore as ruínas sozinho e entregue a ela o Extrator de Almas. Em seguida, entregue a pesquisa de Edenheart para Osborne, ou recuse ajudar Edenheart depois que sua pesquisa for roubada."
+  } , 
+  {
+    "index" : 10003,
+    "text" : "Explore as ruínas com Edenheart e complete o Elixir. Em seguida, não notifique Fheren sobre a morte de Edenheart, derrote o assassino, vá atrás de Fheren e então o deixe ir."
+  } , 
+  {
+    "index" : 10004,
+    "text" : "Explore as ruínas com Edenheart, então aceite a oferta de Osborne ou fuja. Em seguida, ignore os rumores de um espectro, ou perca para o Fantasma de Edenheart."
+  } , 
+  {
+    "index" : 10005,
+    "text" : "Explore as ruínas com Edenheart, então aceite a oferta de Osborne ou fuja. Em seguida, se livre do Fantasma de Edenheart, ou diga a ele que Fheren foi curado."
+  } , 
+  {
+    "index" : 10006,
+    "text" : "Explore as ruínas com Edenheart, então aceite a oferta de Osborne ou fuja. Em seguida, falhe em lidar com o problema do espectro, ou perca para os homens de Osborne depois de sugerir que os trabalhadores deixem as ruínas."
+  } , 
+  {
+    "index" : 10007,
+    "text" : "Explore as ruínas com Edenheart, então aceite a oferta de Osborne ou fuja. Em seguida, derrote os homens de Osborne após sugerir que os trabalhadores deixem as ruínas, então mate Osborne."
+  } , 
+  {
+    "index" : 10008,
+    "text" : "Ou falhe em explorar as ruínas com Edenheart, ou explore as ruínas sozinho e não entregue a ela o Extrator de Almas. Em seguida, ajude Edenheart enquanto ela está discutindo com a guilda dos mercadores, e depois falhe em completar o Elixir."
+  } , 
+  {
+    "index" : 10009,
+    "text" : "Ou falhe em explorar as ruínas com Edenheart, ou explore as ruínas sozinho e entregue a ela o Extrator de Almas. Em seguida, entregue a pesquisa de Edenheart para Osborne, ou recuse ajudar Edenheart depois que sua pesquisa for roubada."
+  } , 
+  {
+    "index" : 10010,
+    "text" : "Não conseguir completar o Elixir ou salvar Fheren."
+  } , 
+  {
+    "index" : 10011,
+    "text" : "Não consiga explorar as ruínas com Edenheart. Em seguida, ajude Edenheart enquanto ela está discutindo com a guilda dos mercadores, depois complete o Elixir. Então, diga a Fheren que Edenheart foi para o extremo leste."
+  } , 
+  {
+    "index" : 10012,
+    "text" : "Requerido: Sua Aliança está entre Neutra e Má.\n Explore as ruínas com Edenheart, complete o Elixir e não notifique Fheren da morte de Edenheart. Em seguida, derrote o assassino, vá atrás de Fheren e então o mate."
+  } , 
+  {
+    "index" : 10013,
+    "text" : "Ou falhe em explorar as ruínas com Edenheart, ou explore as ruínas sozinho e entregue a ela o Extrator de Almas. Em seguida, ajude Edenheart a recuperar suas anotações de pesquisa."
+  } , 
+  {
+    "index" : 10014,
+    "text" : "Explore as ruínas com Edenheart e complete o Elixir. Em seguida, não notifique Fheren sobre a morte de Edenheart e perca para seus assassinos."
+  } , 
+  {
+    "index" : 11000,
+    "text" : "A morte de Lei por você ou Shao."
+  } , 
+  {
+    "index" : 11001,
+    "text" : "Shao e Lei não se reconciliaram nem cooperaram, então nem Lei nem Shao venceram a competição Batra."
+  } , 
+  {
+    "index" : 11002,
+    "text" : "Tendo rejeitado a confissão de Lei, Shao não é morto nem incapacitado."
+  } , 
+  {
+    "index" : 11003,
+    "text" : "Rei venceu o torneio Batra após se reconciliar com Shao."
+  } , 
+  {
+    "index" : 11004,
+    "text" : "Condição: Nenhum outro amante.\n Confirme o segredo de Lei, não mate Shao, aceite a confissão de Lei."
+  } , 
+  {
+    "index" : 11005,
+    "text" : "Shao venceu a competição Batra após se reconciliar com Lei."
+  } , 
+  {
+    "index" : 11006,
+    "text" : "Shao derrota Lei com sucesso de acordo com seu plano, e Shao vence o torneio Batra."
+  } , 
+  {
+    "index" : 11007,
+    "text" : "Após a luta entre Lei e Shao, o núcleo de energia de Shao foi destruído."
+  } , 
+  {
+    "index" : 11008,
+    "text" : "Rei vence, Shao ainda está vivo, eles retornam para sua cidade natal sem se reconciliarem."
+  } , 
+  {
+    "index" : 11009,
+    "text" : "Shao e Lei morrem."
+  } , 
+  {
+    "index" : 11010,
+    "text" : "Shao matou Lei sem vencer a competição."
+  } , 
+  {
+    "index" : 11011,
+    "text" : "Alcance o final onde você morre como amante com Rei."
+  } , 
+  {
+    "index" : 11012,
+    "text" : "Não vai para a Montanha Tragia. Mais tarde, encontra Lei novamente na caverna costeira, mas não ajuda no treinamento. Subjuga Shao durante o ataque do Dragão Vermelho e, em seguida, aconselha Lei a fugir."
+  } , 
+  {
+    "index" : 11013,
+    "text" : "Shao e Lei não se reconciliaram, e Lei foi eliminado da competição. Depois disso, persuadir Lei a não voltar para sua cidade natal."
+  } , 
+  {
+    "index" : 11014,
+    "text" : "Condição: Nenhum outro amante.\n Após ouvir os sentimentos de Shao, decidiu ir para o leste de acordo com sua sugestão."
+  } , 
+  {
+    "index" : 11015,
+    "text" : "Condição: Nenhum outro amante.\n Chegou ao fim de morrer após decidir viajar para o leste de acordo com a sugestão de Shao."
+  } , 
+  {
+    "index" : 11016,
+    "text" : "Lei e Shao não se reconciliaram, rejeitando a proposta de Shao de ir para o leste."
+  } , 
+  {
+    "index" : 11017,
+    "text" : "Shao morreu ou o dantian foi destruído. Lei retorna à sua cidade natal."
+  } , 
+  {
+    "index" : 11018,
+    "text" : "Condição: Nenhum outro amante.\n Após ouvir os sentimentos de Shao, decidiu ir para o leste de acordo com sua sugestão."
+  } , 
+  {
+    "index" : 11019,
+    "text" : "Shao venceu a competição, você expõe o plano para assassinar Shao, e ela volta para casa viva."
+  } , 
+  {
+    "index" : 12000,
+    "text" : "Lukas escapa com vida, enquanto o enfraquecido Edward está se escondendo com Lupin—traia Lupin e Edward, e elimine-os."
+  } , 
+  {
+    "index" : 12001,
+    "text" : "Leve Edward ao Conde Ronan e à Lady Irema."
+  } , 
+  {
+    "index" : 12002,
+    "text" : "No local onde Edward estava preso, cartas de Lukas e Hazel são descobertas. Seus erros são expostos, e Milorad é ajudado."
+  } , 
+  {
+    "index" : 12003,
+    "text" : "No local onde Edward estava preso, cartas de Lukas e Hazel são descobertas, mas Milorad não é ajudado."
+  } , 
+  {
+    "index" : 12004,
+    "text" : "Edward está enfraquecido e escondido com Lupin. Com a partida de Lukas, Milorad e Hazel iniciam uma rebelião no domínio do Conde Ronan, capturando o Conde Ronan e toda a sua família."
+  } , 
+  {
+    "index" : 12005,
+    "text" : "Edward está enfraquecido e escondido com Lupin. Lukas, Milorad e Hazel lançam uma rebelião no domínio do Conde Ronan e conseguem capturar a família do Conde Ronan."
+  } , 
+  {
+    "index" : 12006,
+    "text" : "O plano de Hazel e Lukas é exposto, mas Edward não é resgatado."
+  } , 
+  {
+    "index" : 12007,
+    "text" : "O plano de Hazel e Lukas permanece não descoberto."
+  } , 
+  {
+    "index" : 12008,
+    "text" : "Edward é resgatado junto com Erina, e ela é levada para o castelo do Conde Ronan."
+  } , 
+  {
+    "index" : 12009,
+    "text" : "Lukas leva Edward para as catacumbas e coloca uma maldição nele, a maldição não pode ser removida."
+  } , 
+  {
+    "index" : 12010,
+    "text" : "Não conseguem descobrir a relação entre Hazel e Lukas, resgatam Edward, mas não conseguem salvá-lo enquanto ele enfraquece gradualmente."
+  } , 
+  {
+    "index" : 12011,
+    "text" : "Após o relacionamento de Hazel e Lukas ser exposto, fique do lado de Milorad contra Lukas; ambos morrem nas catacumbas."
+  } , 
+  {
+    "index" : 12012,
+    "text" : "Lukas leva Edward às catacumbas, e uma tentativa de resgatar Edward com Lupin termina em fracasso."
+  } , 
+  {
+    "index" : 3000,
+    "text" : "Ignorou Galgano na taverna e seguiu em frente."
+  } , 
+  {
+    "index" : 5012,
+    "text" : "Condições: sem outros amantes, sexo masculino, Conde Briovich. \n\n Purificar Sira e conseguir pedir em casamento."
+  } , 
+  {
+    "index" : 9017,
+    "text" : "Condições: sem outro amante, gênero masculino, conde Briovich. \n\n Resgate Sartha e prometa se casar com ela."
+  }
+ ]
+}

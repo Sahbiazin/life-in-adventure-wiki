@@ -1,0 +1,25 @@
+{
+  "m_Name": "SingleEffectCtl",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 182,
+    "bytes[1]": 176,
+    "bytes[2]": 24,
+    "bytes[3]": 71,
+    "bytes[4]": 131,
+    "bytes[5]": 248,
+    "bytes[6]": 24,
+    "bytes[7]": 170,
+    "bytes[8]": 197,
+    "bytes[9]": 154,
+    "bytes[10]": 111,
+    "bytes[11]": 130,
+    "bytes[12]": 88,
+    "bytes[13]": 45,
+    "bytes[14]": 27,
+    "bytes[15]": 181
+  },
+  "m_ClassName": "SingleEffectCtl",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

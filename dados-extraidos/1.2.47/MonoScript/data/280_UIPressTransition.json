@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIPressTransition",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 13,
+    "bytes[1]": 209,
+    "bytes[2]": 10,
+    "bytes[3]": 198,
+    "bytes[4]": 105,
+    "bytes[5]": 165,
+    "bytes[6]": 14,
+    "bytes[7]": 153,
+    "bytes[8]": 134,
+    "bytes[9]": 4,
+    "bytes[10]": 172,
+    "bytes[11]": 162,
+    "bytes[12]": 92,
+    "bytes[13]": 31,
+    "bytes[14]": 107,
+    "bytes[15]": 84
+  },
+  "m_ClassName": "UIPressTransition",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

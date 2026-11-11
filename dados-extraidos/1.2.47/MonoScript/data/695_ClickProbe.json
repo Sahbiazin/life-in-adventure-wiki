@@ -1,0 +1,25 @@
+{
+  "m_Name": "ClickProbe",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 104,
+    "bytes[1]": 79,
+    "bytes[2]": 34,
+    "bytes[3]": 78,
+    "bytes[4]": 7,
+    "bytes[5]": 17,
+    "bytes[6]": 98,
+    "bytes[7]": 97,
+    "bytes[8]": 122,
+    "bytes[9]": 215,
+    "bytes[10]": 37,
+    "bytes[11]": 173,
+    "bytes[12]": 123,
+    "bytes[13]": 29,
+    "bytes[14]": 237,
+    "bytes[15]": 85
+  },
+  "m_ClassName": "ClickProbe",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

@@ -1,0 +1,158 @@
+{
+ "list" : [
+  {
+    "id" : 0,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Impian Menjadi Petualang Hebat>\n\n  Dengan iringan suara terompet yang megah, sesosok tangguh dikawal naik ke atas panggung. Perlahan ia berlutut di hadapan sang raja. \n\n \"Rakyat akan mengingat petualanganmu. Saksikanlah, wahai rakyatku! Inilah pahlawan kita!\"|drawing_prize|Demikian titah sang raja, yang kemudian disambut sorak-sorai meriah. Sejak menyaksikan peristiwa tersebut, kamu pun mulai bermimpi agar menjadi seorang petualang terhormat daripada mengurus peternakan milik ayahmu. Setelah beberapa tahun berlalu, impian tersebut masih tertanam di dalam hatimu hingga saat ini. Akhirnya tibalah saatnya untukmu memulai petualangan.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Mulai petualanganmu!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_0_0|0_4_10|5_215_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 1,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Murid Terasing> |drawing_exile|Kamu diasingkan dari Menara Sihir akibat difitnah telah mencoba mengambil Kitab Terlarang. Kamulah satu-satunya yang mengetahui pelaku yang sebenarnya, namun tidak ada yang memercayaimu. Karena murid yang kamu tuding adalah salah satu murid terbaik dalam sejarah Menara Sihir.  Kamu paham bahwa satu-satunya caramu melampiaskan dendam adalah dengan menjadi penyihir yang lebih baik darinya. Demikianlah bermulanya petualanganmu untuk menjadi penyihir terhebat yang pernah ada.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Mulai petualanganmu!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_1_0|0_4_10|5_216_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 2,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Penyelamatan Sang Putri>\n\n Kamu adalah pustakawan kekaisaran di Kekaisaran Zaipent. Suatu hari, seorang nona dengan aura memikat memasuki perpustakaan. |drawing_princess| Beliau memperkenalkan diri beliau sebagai Putri Esit, kemudian beliau bertanya padamu. \n\n \"Bolehkah Anda... menyarankan suatu buku untuk saya?\"\n\n Beberapa tahun pun berlalu. Sang Putri rutin mengunjungi perpustakaan untuk membaca buku, dan bercakap-cakap dengan beliau tentang literatur sudah menjadi bagian dari keseharianmu. Namun pada suatu hari, muncul bayangan raksasa di luar jendela. Kemudian seluruh istana bergetar hebat, seolah terjadi gempa. Saat kamu melihat keluar, ada seekor naga abu-abu besar terbang membawa sang Putri. Kamu tidak tahu apa-apa tentang dunia di luar sana, namun kamu tetap nekat berlari ke luar istana.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Mulai petualanganmu!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_2_0|0_4_10|5_153_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 3,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Lingkaran Utang>\n\n Pada hari wafatnya kedua orang tuamu, seorang pria berambut panjang datang mengunjungi rumahmu. Ia datang bersama dua bawahannya, dan dengan suara tenang, sambil menatapmu, ia berkata, \n\n \"Kamu lihat? Sertifikat ini bukti bahwa orang tuamu punya utang dengan saya.\"\n\n Ia memerintahkan bawahannya membawa adikmu, Fiana. Sambil menelusuri wajah Fiana, ia berkata, |drawing_hostage| \n\n \"Akan kupegang dia sebagai jaminan sampai utangmu lunas. Kalau kamu ingin dia kembali, sebaiknya kamu cepat-cepat cari emas. Coba kamu... bunuh naga atau apalah. Terserah.\"\n\n Kata-kata tersebut membangunkanmu dari mimpimu. Kamu berharap semua itu hanyalah mimpi burukmu, namun memang kenyataannya demikian. Seiring berhembusnya angin fajar, kamu membersihkan debu di pakaianmu dan bangkit dari tempat tidurmu.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Mulai petualanganmu!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_3_0|0_4_10|5_242_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 4,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Sentuhan Iblis>\n\n Berpegang teguh pada nyawamu yang semakin menipis di tengah kobaran api, kamu sungguh menginginkan balas dendam. Tiba-tiba, terdengar suara seseorang di telingamu. |drawing_demon| \n\n \"Balas dendam? Sempurna. Akan kuanugerahi sebagian kekuatanku kepadamu. Sebagai balasannya, habisi musuhmu dan persembahkan roh mereka kepadaku.\"\n\n Ia mengulurkan tangannya dengan lemah lembut, penuh godaan, dan kamu menggenggamnya erat-erat. Demi pasanganmu yang merawatmu saat sedang sakit parah. Demi putramu yang baru berusia 7 tahun yang dibakar padahal tidak tahu apa-apa. Demi membalas dendam atas keluargamu yang dibakar bagaikan 'pemuja iblis' oleh para fanatik Teretian.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Mulai petualanganmu!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_4_0|0_4_10|5_432_1|0_5_1|0_6_1|0_13_1|0_3_-50"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 5,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Menghilangnya Profesor Naverr>\n\n Kamu anak magang Profesor Naverr di Universitas Brikkalua. Kamu sedang merenungkan esaimu, ketika sang Rektor datang menghampiri. Beliau menyampaikan bahwa universitas tidak mendapat kabar dari Naverr selama beberapa hari. |drawing_searchnaverr| \n\n \"Saya penasaran apa gerangan yang dilakukannya sekarang... Saya minta tolong Anda menjemputnya.\"\n\n Menurut Bapak Rektor, surat terakhir dari Naverr berasal dari sekitar Darval. Kamu langsung menjawab, 'Baik, Pak', dan bangkit berdiri.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Mulai petualanganmu!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_5_0|0_4_10|5_699_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 6,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Mahkota di Atas Abu> |drawing_ashenCoronet| Ayahmu tidak meninggalkan warisan yang gemilang, melainkan tumpukan abu. Kepemilikan dan kendali atas kadipaten Briovich yang kau warisi terasa lebih seperti kutukan daripada berkah. Lumbung kosong meraung saat angin menerobosnya. Ladang-ladang yang layu, sudah lama sejak panen terakhirnya. Rakyat dan para petanimu nyaris bertahan hidup, dikuasai keputusasaan dan kelaparan. Nama Rumahmu kini menjadi belenggu, menurunkan kehormatanmu. Namun kau menolak memalingkan wajah. Dengan anggun menerima teriakan dari tanah pusakamu yang runtuh, kau bersumpah pada dirimu untuk mengubah arah tragedi ini.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Mulai petualanganmu!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_6_0|0_4_50|5_976_1"
+       }
+       ]
+     }]
+  }
+ ]
+}

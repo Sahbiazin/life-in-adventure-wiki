@@ -1,0 +1,47 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android)
+SHA1-Digest-Manifest: L9u+fjVycC+Kd9LtH+0A7mOsxao=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA1-Digest: T/d5smihzkd8Ua8uaW5EkpjQ8oQ=
+
+Name: lib/arm64-v8a/libFirebaseCppAnalytics.so
+SHA1-Digest: NpS7fC+9SNhWBwuYPnpbc18icrM=
+
+Name: lib/arm64-v8a/libFirebaseCppApp-13_13_0.so
+SHA1-Digest: KCNynbErORUCPwP/PoyZrRlT0Ig=
+
+Name: lib/arm64-v8a/libFirebaseCppAppCheck.so
+SHA1-Digest: l3jVYN2DLq6/KZFDsSRQr7Pf0UY=
+
+Name: lib/arm64-v8a/libFirebaseCppAuth.so
+SHA1-Digest: WSrU3mcfM2njmUGRhFGZ6/9gxVc=
+
+Name: lib/arm64-v8a/libFirebaseCppFirestore.so
+SHA1-Digest: GMr3t37qYAyHLw2rzg46XcrcLcM=
+
+Name: lib/arm64-v8a/lib_burst_generated.so
+SHA1-Digest: tBLAMX3Y+qcKMlV9P5VrH2+nGbw=
+
+Name: lib/arm64-v8a/libapplovin-native-crash-reporter.so
+SHA1-Digest: wBvCicnlGklIXjXx1f6abGIoxsc=
+
+Name: lib/arm64-v8a/libdatastore_shared_counter.so
+SHA1-Digest: 2QroeYLrBWw5bbYB9vLjZMnYZKg=
+
+Name: lib/arm64-v8a/libil2cpp.so
+SHA1-Digest: FktgbjB/qYV3kC9SYiT8LVvXufU=
+
+Name: lib/arm64-v8a/libmain.so
+SHA1-Digest: 6lzLSaU8+IefZ0xBZw8Kh6+YGJE=
+
+Name: lib/arm64-v8a/libpairipcore.so
+SHA1-Digest: Ov9BgmBx/Hr1K9fa3Bt38WXlaYI=
+
+Name: lib/arm64-v8a/libunity.so
+SHA1-Digest: CcS2uV4EsmWzkiGHLGBfbqn9nmc=
+
+Name: stamp-cert-sha256
+SHA1-Digest: Bs40BvDZ1xrbgQrPTD2x5w/NfHQ=
+

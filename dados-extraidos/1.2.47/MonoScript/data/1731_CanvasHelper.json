@@ -1,0 +1,25 @@
+{
+  "m_Name": "CanvasHelper",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 22,
+    "bytes[1]": 68,
+    "bytes[2]": 91,
+    "bytes[3]": 111,
+    "bytes[4]": 70,
+    "bytes[5]": 58,
+    "bytes[6]": 85,
+    "bytes[7]": 91,
+    "bytes[8]": 228,
+    "bytes[9]": 64,
+    "bytes[10]": 24,
+    "bytes[11]": 210,
+    "bytes[12]": 100,
+    "bytes[13]": 39,
+    "bytes[14]": 3,
+    "bytes[15]": 136
+  },
+  "m_ClassName": "CanvasHelper",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

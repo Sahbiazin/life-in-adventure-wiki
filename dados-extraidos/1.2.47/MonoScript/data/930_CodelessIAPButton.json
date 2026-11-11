@@ -1,0 +1,25 @@
+{
+  "m_Name": "CodelessIAPButton",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 246,
+    "bytes[1]": 54,
+    "bytes[2]": 62,
+    "bytes[3]": 177,
+    "bytes[4]": 248,
+    "bytes[5]": 66,
+    "bytes[6]": 121,
+    "bytes[7]": 20,
+    "bytes[8]": 3,
+    "bytes[9]": 154,
+    "bytes[10]": 39,
+    "bytes[11]": 224,
+    "bytes[12]": 171,
+    "bytes[13]": 140,
+    "bytes[14]": 156,
+    "bytes[15]": 75
+  },
+  "m_ClassName": "CodelessIAPButton",
+  "m_Namespace": "UnityEngine.Purchasing",
+  "m_AssemblyName": "Unity.Purchasing.Codeless"
+}

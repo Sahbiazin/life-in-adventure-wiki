@@ -1,0 +1,25 @@
+{
+  "m_Name": "Demo_XPTooltip",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 131,
+    "bytes[1]": 38,
+    "bytes[2]": 217,
+    "bytes[3]": 2,
+    "bytes[4]": 4,
+    "bytes[5]": 45,
+    "bytes[6]": 137,
+    "bytes[7]": 211,
+    "bytes[8]": 141,
+    "bytes[9]": 94,
+    "bytes[10]": 145,
+    "bytes[11]": 153,
+    "bytes[12]": 72,
+    "bytes[13]": 241,
+    "bytes[14]": 86,
+    "bytes[15]": 59
+  },
+  "m_ClassName": "Demo_XPTooltip",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

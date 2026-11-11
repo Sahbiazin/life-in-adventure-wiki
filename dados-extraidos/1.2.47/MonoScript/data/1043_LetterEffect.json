@@ -1,0 +1,25 @@
+{
+  "m_Name": "LetterEffect",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 223,
+    "bytes[1]": 200,
+    "bytes[2]": 58,
+    "bytes[3]": 205,
+    "bytes[4]": 199,
+    "bytes[5]": 115,
+    "bytes[6]": 186,
+    "bytes[7]": 46,
+    "bytes[8]": 130,
+    "bytes[9]": 170,
+    "bytes[10]": 241,
+    "bytes[11]": 207,
+    "bytes[12]": 108,
+    "bytes[13]": 230,
+    "bytes[14]": 131,
+    "bytes[15]": 117
+  },
+  "m_ClassName": "LetterEffect",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

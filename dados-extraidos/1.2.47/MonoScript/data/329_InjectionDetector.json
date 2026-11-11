@@ -1,0 +1,25 @@
+{
+  "m_Name": "InjectionDetector",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 68,
+    "bytes[1]": 218,
+    "bytes[2]": 219,
+    "bytes[3]": 106,
+    "bytes[4]": 72,
+    "bytes[5]": 195,
+    "bytes[6]": 212,
+    "bytes[7]": 46,
+    "bytes[8]": 100,
+    "bytes[9]": 7,
+    "bytes[10]": 2,
+    "bytes[11]": 52,
+    "bytes[12]": 32,
+    "bytes[13]": 162,
+    "bytes[14]": 13,
+    "bytes[15]": 231
+  },
+  "m_ClassName": "InjectionDetector",
+  "m_Namespace": "CodeStage.AntiCheat.Detectors",
+  "m_AssemblyName": "ACTk.Runtime"
+}

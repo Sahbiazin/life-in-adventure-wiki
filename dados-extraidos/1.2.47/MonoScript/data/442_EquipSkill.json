@@ -1,0 +1,25 @@
+{
+  "m_Name": "EquipSkill",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 67,
+    "bytes[1]": 149,
+    "bytes[2]": 114,
+    "bytes[3]": 103,
+    "bytes[4]": 108,
+    "bytes[5]": 246,
+    "bytes[6]": 136,
+    "bytes[7]": 202,
+    "bytes[8]": 153,
+    "bytes[9]": 56,
+    "bytes[10]": 5,
+    "bytes[11]": 190,
+    "bytes[12]": 233,
+    "bytes[13]": 29,
+    "bytes[14]": 203,
+    "bytes[15]": 70
+  },
+  "m_ClassName": "EquipSkill",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

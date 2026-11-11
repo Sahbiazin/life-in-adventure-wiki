@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIToggleWindowAndTab",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 36,
+    "bytes[1]": 232,
+    "bytes[2]": 175,
+    "bytes[3]": 64,
+    "bytes[4]": 35,
+    "bytes[5]": 236,
+    "bytes[6]": 199,
+    "bytes[7]": 168,
+    "bytes[8]": 2,
+    "bytes[9]": 55,
+    "bytes[10]": 14,
+    "bytes[11]": 1,
+    "bytes[12]": 172,
+    "bytes[13]": 35,
+    "bytes[14]": 41,
+    "bytes[15]": 154
+  },
+  "m_ClassName": "UIToggleWindowAndTab",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

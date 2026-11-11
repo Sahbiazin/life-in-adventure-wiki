@@ -1,0 +1,25 @@
+{
+  "m_Name": "FrameCheck",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 37,
+    "bytes[1]": 107,
+    "bytes[2]": 132,
+    "bytes[3]": 100,
+    "bytes[4]": 170,
+    "bytes[5]": 24,
+    "bytes[6]": 67,
+    "bytes[7]": 75,
+    "bytes[8]": 250,
+    "bytes[9]": 54,
+    "bytes[10]": 56,
+    "bytes[11]": 22,
+    "bytes[12]": 70,
+    "bytes[13]": 61,
+    "bytes[14]": 241,
+    "bytes[15]": 201
+  },
+  "m_ClassName": "FrameCheck",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

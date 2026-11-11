@@ -1,0 +1,25 @@
+{
+  "m_Name": "PlayGamesHelperObject",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 111,
+    "bytes[1]": 36,
+    "bytes[2]": 128,
+    "bytes[3]": 40,
+    "bytes[4]": 179,
+    "bytes[5]": 73,
+    "bytes[6]": 116,
+    "bytes[7]": 96,
+    "bytes[8]": 178,
+    "bytes[9]": 80,
+    "bytes[10]": 68,
+    "bytes[11]": 83,
+    "bytes[12]": 141,
+    "bytes[13]": 222,
+    "bytes[14]": 36,
+    "bytes[15]": 202
+  },
+  "m_ClassName": "PlayGamesHelperObject",
+  "m_Namespace": "GooglePlayGames.OurUtils",
+  "m_AssemblyName": "Google.Play.Games"
+}

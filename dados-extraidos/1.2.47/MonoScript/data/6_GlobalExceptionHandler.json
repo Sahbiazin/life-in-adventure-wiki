@@ -1,0 +1,25 @@
+{
+  "m_Name": "GlobalExceptionHandler",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 199,
+    "bytes[1]": 82,
+    "bytes[2]": 96,
+    "bytes[3]": 154,
+    "bytes[4]": 70,
+    "bytes[5]": 218,
+    "bytes[6]": 89,
+    "bytes[7]": 23,
+    "bytes[8]": 243,
+    "bytes[9]": 238,
+    "bytes[10]": 139,
+    "bytes[11]": 52,
+    "bytes[12]": 87,
+    "bytes[13]": 163,
+    "bytes[14]": 55,
+    "bytes[15]": 212
+  },
+  "m_ClassName": "GlobalExceptionHandler",
+  "m_Namespace": "GoogleMobileAds.Common",
+  "m_AssemblyName": "GoogleMobileAds.Common.dll"
+}

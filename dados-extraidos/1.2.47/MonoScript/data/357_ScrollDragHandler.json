@@ -1,0 +1,25 @@
+{
+  "m_Name": "ScrollDragHandler",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 217,
+    "bytes[1]": 203,
+    "bytes[2]": 61,
+    "bytes[3]": 107,
+    "bytes[4]": 140,
+    "bytes[5]": 144,
+    "bytes[6]": 41,
+    "bytes[7]": 92,
+    "bytes[8]": 120,
+    "bytes[9]": 235,
+    "bytes[10]": 78,
+    "bytes[11]": 192,
+    "bytes[12]": 142,
+    "bytes[13]": 105,
+    "bytes[14]": 108,
+    "bytes[15]": 76
+  },
+  "m_ClassName": "ScrollDragHandler",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

@@ -1,0 +1,158 @@
+{
+ "list" : [
+  {
+    "id" : 0,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Aspiring To Be A Great Adventurer>\n\n With the sound of a magnificent trumpet, a strong-looking individual was escorted to a platform. The individual slowly knelt before the king. \n\n \"Everyone in the kingdom will remember your adventure. Gaze upon this one, people! This adventurer here is our country's hero!\"|drawing_prize|With the king's decree, the crowd went wild. Ever since you witnessed the event with your own eyes, you dreamt of becoming an honorable adventurer instead of inheriting your father's farm. Years have passed, and that dream still remains in your heart to this day. It finally motivated you to start your own adventure.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Start Adventure!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_0_0|0_4_10|5_215_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 1,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<An Exiled Apprentice> |drawing_exile|You were exiled from the Tower of Magic, falsely accused of attempting to steal the Forbidden Tome. You were the only one that knew who the real culprit was, but no one believed you. That was because the one you claimed to be the culprit was one of the best students in the history of the Magic Tower.  You knew that the only way to get your revenge was to become an even better mage than her. Thus, you began an adventure to become the greatest mage ever.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Start Adventure!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_1_0|0_4_10|5_216_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 2,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Rescue The Princess>\n\n You were the royal librarian of Zaipent Empire. One day, a lady with a glistening aura entered the library. |drawing_princess| She introduced herself as the princess 'Esit', and asked you a question. \n\n \"Would you kindly... recommend me a book?\"\n\n Few years have passed since. The princess regularly visited the library to read books, and conversing with the princess about literature had become a part of your daily life. On one ordinary day, a giant shadow appeared outside the window. Soon followed a shaking of the entire castle, as if an earthquake had occurred. When you looked outside, you saw a giant grey dragon flying away with the princess. You knew nothing about the outer world, but you recklessly ran outside the castle.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Start Adventure!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_2_0|0_4_10|5_153_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 3,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<A Cycle Of Debt>\n\n The day your parents passed away, a man with long hair came to see you. He was accompanied by two henchmen, and with a calm voice, looking down at you, he spoke, \n\n \"See this? This is a certificate proving your parents' debt.\"\n\n He ordered his henchmen to bring your sister, Fiana. While examining her face, he said, |drawing_hostage| \n\n \"I'll keep her as collateral until you repay this debt. If you want her back, you better earn some gold quickly. Go... maybe slay a dragon or something. Just try.\"\n\n With those words, you woke up from a dream. You wished it was all just a nightmare, but it was already a reality. As dawn approached and a cold wind blew in, you dusted yourself off and got up.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Start Adventure!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_3_0|0_4_10|5_242_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 4,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<The Demon's Touch>\n\n Holding on to your dying life in the burning flames, you desperately wanted revenge. At that moment, you heard someone's voice in your ear. |drawing_demon| \n\n \"Revenge? How nice. I shall give you part of my power. In return, kill your enemies and dedicate their souls to me.\"\n\n He held out his hand gently, seductively, and you held it tightly. For your spouse who cared for you with a deep illness. For your seven-year-old son who burned to death without knowing anything. To avenge your family who were burned at the stake as 'demon worshippers' by the fanatics of Teretian.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Start Adventure!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_4_0|0_4_10|5_432_1|0_5_1|0_6_1|0_13_1|0_3_-50"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 5,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<The Disappearance of Professor Naverr>\n\n You are an apprentice of Professor Naverr of the University of Brikkalua, pondering about on your essay. Then, the Headmaster approaches you, saying that the university hasn't heard from Naverr for days. |drawing_searchnaverr| \n\n \"I wonder what he's up to this time... I must ask you to fetch him.\"\n\n According to him, the last letter from Naverr was sent from somewhere near Darval. You immediately respond with a 'Yes, sir', standing up from your seat.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Start Adventure!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_5_0|0_4_10|5_699_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 6,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<The Coronet Upon the Ashes> |drawing_ashenCoronet| Your father left you not a glorious legacy, but a pile of ashes. The ownership and control of the county of Briovich that you inherited felt more like a curse than a blessing. Empty granaries screeched as wind blew through them. The withered farmlands, long since its last harvest. Your subjects and peasants barely manage to stay alive, overwhelmed with despondence and starvation. The name of your House now a leash, dragging down your honor. But you refused to look the other way. Gracefully accepting the screams of your crumbling estate, you vowed to yourself to change the course of this tragedy.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "Start Adventure!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_6_0|0_4_50|5_976_1"
+       }
+       ]
+     }]
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "SkillDataBase",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 213,
+    "bytes[1]": 160,
+    "bytes[2]": 181,
+    "bytes[3]": 44,
+    "bytes[4]": 159,
+    "bytes[5]": 139,
+    "bytes[6]": 20,
+    "bytes[7]": 91,
+    "bytes[8]": 196,
+    "bytes[9]": 145,
+    "bytes[10]": 21,
+    "bytes[11]": 171,
+    "bytes[12]": 26,
+    "bytes[13]": 118,
+    "bytes[14]": 236,
+    "bytes[15]": 142
+  },
+  "m_ClassName": "SkillDataBase",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

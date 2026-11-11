@@ -1,0 +1,25 @@
+{
+  "m_Name": "TraitDataBase",
+  "m_ExecutionOrder": -5,
+  "m_PropertiesHash": {
+    "bytes[0]": 106,
+    "bytes[1]": 44,
+    "bytes[2]": 69,
+    "bytes[3]": 65,
+    "bytes[4]": 112,
+    "bytes[5]": 163,
+    "bytes[6]": 206,
+    "bytes[7]": 98,
+    "bytes[8]": 89,
+    "bytes[9]": 219,
+    "bytes[10]": 47,
+    "bytes[11]": 139,
+    "bytes[12]": 223,
+    "bytes[13]": 17,
+    "bytes[14]": 56,
+    "bytes[15]": 139
+  },
+  "m_ClassName": "TraitDataBase",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

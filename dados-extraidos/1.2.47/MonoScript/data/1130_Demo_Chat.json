@@ -1,0 +1,25 @@
+{
+  "m_Name": "Demo_Chat",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 155,
+    "bytes[1]": 209,
+    "bytes[2]": 175,
+    "bytes[3]": 16,
+    "bytes[4]": 121,
+    "bytes[5]": 193,
+    "bytes[6]": 19,
+    "bytes[7]": 53,
+    "bytes[8]": 151,
+    "bytes[9]": 23,
+    "bytes[10]": 94,
+    "bytes[11]": 125,
+    "bytes[12]": 47,
+    "bytes[13]": 239,
+    "bytes[14]": 100,
+    "bytes[15]": 133
+  },
+  "m_ClassName": "Demo_Chat",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

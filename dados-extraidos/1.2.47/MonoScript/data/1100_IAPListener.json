@@ -1,0 +1,25 @@
+{
+  "m_Name": "IAPListener",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 237,
+    "bytes[1]": 34,
+    "bytes[2]": 92,
+    "bytes[3]": 57,
+    "bytes[4]": 28,
+    "bytes[5]": 115,
+    "bytes[6]": 121,
+    "bytes[7]": 228,
+    "bytes[8]": 159,
+    "bytes[9]": 38,
+    "bytes[10]": 102,
+    "bytes[11]": 215,
+    "bytes[12]": 9,
+    "bytes[13]": 111,
+    "bytes[14]": 186,
+    "bytes[15]": 82
+  },
+  "m_ClassName": "IAPListener",
+  "m_Namespace": "UnityEngine.Purchasing",
+  "m_AssemblyName": "Unity.Purchasing.Codeless"
+}

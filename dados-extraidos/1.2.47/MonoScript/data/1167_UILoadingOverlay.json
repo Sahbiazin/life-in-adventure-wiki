@@ -1,0 +1,25 @@
+{
+  "m_Name": "UILoadingOverlay",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 116,
+    "bytes[1]": 75,
+    "bytes[2]": 17,
+    "bytes[3]": 25,
+    "bytes[4]": 115,
+    "bytes[5]": 79,
+    "bytes[6]": 39,
+    "bytes[7]": 241,
+    "bytes[8]": 149,
+    "bytes[9]": 22,
+    "bytes[10]": 128,
+    "bytes[11]": 238,
+    "bytes[12]": 113,
+    "bytes[13]": 142,
+    "bytes[14]": 235,
+    "bytes[15]": 155
+  },
+  "m_ClassName": "UILoadingOverlay",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

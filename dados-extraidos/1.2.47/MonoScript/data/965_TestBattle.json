@@ -1,0 +1,25 @@
+{
+  "m_Name": "TestBattle",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 38,
+    "bytes[1]": 120,
+    "bytes[2]": 235,
+    "bytes[3]": 9,
+    "bytes[4]": 141,
+    "bytes[5]": 233,
+    "bytes[6]": 35,
+    "bytes[7]": 45,
+    "bytes[8]": 41,
+    "bytes[9]": 41,
+    "bytes[10]": 71,
+    "bytes[11]": 45,
+    "bytes[12]": 146,
+    "bytes[13]": 94,
+    "bytes[14]": 44,
+    "bytes[15]": 167
+  },
+  "m_ClassName": "TestBattle",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

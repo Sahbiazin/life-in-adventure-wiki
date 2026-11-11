@@ -1,0 +1,25 @@
+{
+  "m_Name": "SoundMgr",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 13,
+    "bytes[1]": 40,
+    "bytes[2]": 143,
+    "bytes[3]": 14,
+    "bytes[4]": 247,
+    "bytes[5]": 229,
+    "bytes[6]": 183,
+    "bytes[7]": 251,
+    "bytes[8]": 129,
+    "bytes[9]": 103,
+    "bytes[10]": 193,
+    "bytes[11]": 226,
+    "bytes[12]": 54,
+    "bytes[13]": 2,
+    "bytes[14]": 145,
+    "bytes[15]": 225
+  },
+  "m_ClassName": "SoundMgr",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

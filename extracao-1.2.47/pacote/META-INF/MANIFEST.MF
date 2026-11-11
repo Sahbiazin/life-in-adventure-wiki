@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Created-By: 21.0.12 (N/A)
+
+Name: split_config.armeabi_v7a.apk
+SHA1-Digest: dDcunDnrjDjSqG8Lq92EEgNzKtg=
+
+Name: icon.png
+SHA1-Digest: Kuu8yHaESbRyNNNVy5pKBoQt6WQ=
+
+Name: APKM_installer.url
+SHA1-Digest: WXG2Fx7AAOCZOW45becgkaGPhgg=
+
+Name: split_config.arm64_v8a.apk
+SHA1-Digest: yLye33PlWiMAExcb2FbnFxrmOpc=
+
+Name: info.json
+SHA1-Digest: shCDU8BTGcj7p2frv1tz2Sa0wtU=
+
+Name: base.apk
+SHA1-Digest: xEaZ6LV1/O+aq9q/ZHv9YnYWWJM=
+

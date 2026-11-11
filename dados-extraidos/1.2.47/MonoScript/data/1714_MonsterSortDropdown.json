@@ -1,0 +1,25 @@
+{
+  "m_Name": "MonsterSortDropdown",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 118,
+    "bytes[1]": 164,
+    "bytes[2]": 184,
+    "bytes[3]": 51,
+    "bytes[4]": 54,
+    "bytes[5]": 165,
+    "bytes[6]": 86,
+    "bytes[7]": 107,
+    "bytes[8]": 201,
+    "bytes[9]": 137,
+    "bytes[10]": 132,
+    "bytes[11]": 15,
+    "bytes[12]": 163,
+    "bytes[13]": 55,
+    "bytes[14]": 193,
+    "bytes[15]": 190
+  },
+  "m_ClassName": "MonsterSortDropdown",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

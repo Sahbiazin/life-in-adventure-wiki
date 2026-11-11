@@ -1,0 +1,25 @@
+{
+  "m_Name": "AutoSwitchLayout",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 96,
+    "bytes[1]": 20,
+    "bytes[2]": 103,
+    "bytes[3]": 148,
+    "bytes[4]": 190,
+    "bytes[5]": 107,
+    "bytes[6]": 4,
+    "bytes[7]": 156,
+    "bytes[8]": 103,
+    "bytes[9]": 224,
+    "bytes[10]": 183,
+    "bytes[11]": 128,
+    "bytes[12]": 9,
+    "bytes[13]": 139,
+    "bytes[14]": 202,
+    "bytes[15]": 231
+  },
+  "m_ClassName": "AutoSwitchLayout",
+  "m_Namespace": "Unity.Advertisement.IosSupport.Samples",
+  "m_AssemblyName": "Assembly-CSharp"
+}

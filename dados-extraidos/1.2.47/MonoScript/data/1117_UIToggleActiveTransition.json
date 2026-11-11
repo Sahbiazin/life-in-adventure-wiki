@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIToggleActiveTransition",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 77,
+    "bytes[1]": 128,
+    "bytes[2]": 94,
+    "bytes[3]": 12,
+    "bytes[4]": 218,
+    "bytes[5]": 140,
+    "bytes[6]": 4,
+    "bytes[7]": 117,
+    "bytes[8]": 230,
+    "bytes[9]": 59,
+    "bytes[10]": 140,
+    "bytes[11]": 165,
+    "bytes[12]": 135,
+    "bytes[13]": 189,
+    "bytes[14]": 226,
+    "bytes[15]": 85
+  },
+  "m_ClassName": "UIToggleActiveTransition",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

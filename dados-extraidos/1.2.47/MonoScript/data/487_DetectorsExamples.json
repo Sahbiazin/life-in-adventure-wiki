@@ -1,0 +1,25 @@
+{
+  "m_Name": "DetectorsExamples",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 38,
+    "bytes[1]": 119,
+    "bytes[2]": 62,
+    "bytes[3]": 43,
+    "bytes[4]": 195,
+    "bytes[5]": 218,
+    "bytes[6]": 72,
+    "bytes[7]": 84,
+    "bytes[8]": 180,
+    "bytes[9]": 251,
+    "bytes[10]": 73,
+    "bytes[11]": 15,
+    "bytes[12]": 132,
+    "bytes[13]": 170,
+    "bytes[14]": 117,
+    "bytes[15]": 151
+  },
+  "m_ClassName": "DetectorsExamples",
+  "m_Namespace": "CodeStage.AntiCheat.Examples",
+  "m_AssemblyName": "ACTk.Examples.Runtime"
+}

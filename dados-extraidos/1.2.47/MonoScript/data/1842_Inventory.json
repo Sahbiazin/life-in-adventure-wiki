@@ -1,0 +1,25 @@
+{
+  "m_Name": "Inventory",
+  "m_ExecutionOrder": 200,
+  "m_PropertiesHash": {
+    "bytes[0]": 148,
+    "bytes[1]": 250,
+    "bytes[2]": 168,
+    "bytes[3]": 224,
+    "bytes[4]": 80,
+    "bytes[5]": 35,
+    "bytes[6]": 175,
+    "bytes[7]": 53,
+    "bytes[8]": 147,
+    "bytes[9]": 149,
+    "bytes[10]": 73,
+    "bytes[11]": 211,
+    "bytes[12]": 100,
+    "bytes[13]": 201,
+    "bytes[14]": 54,
+    "bytes[15]": 80
+  },
+  "m_ClassName": "Inventory",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

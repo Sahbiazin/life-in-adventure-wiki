@@ -1,0 +1,25 @@
+{
+  "m_Name": "UITooltipShow",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 255,
+    "bytes[1]": 230,
+    "bytes[2]": 72,
+    "bytes[3]": 15,
+    "bytes[4]": 189,
+    "bytes[5]": 211,
+    "bytes[6]": 202,
+    "bytes[7]": 193,
+    "bytes[8]": 253,
+    "bytes[9]": 117,
+    "bytes[10]": 149,
+    "bytes[11]": 175,
+    "bytes[12]": 105,
+    "bytes[13]": 236,
+    "bytes[14]": 110,
+    "bytes[15]": 222
+  },
+  "m_ClassName": "UITooltipShow",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

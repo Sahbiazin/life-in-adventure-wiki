@@ -1,0 +1,25 @@
+{
+  "m_Name": "UdpGameManager",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 163,
+    "bytes[1]": 123,
+    "bytes[2]": 248,
+    "bytes[3]": 237,
+    "bytes[4]": 67,
+    "bytes[5]": 49,
+    "bytes[6]": 63,
+    "bytes[7]": 194,
+    "bytes[8]": 42,
+    "bytes[9]": 241,
+    "bytes[10]": 192,
+    "bytes[11]": 27,
+    "bytes[12]": 111,
+    "bytes[13]": 90,
+    "bytes[14]": 240,
+    "bytes[15]": 242
+  },
+  "m_ClassName": "UdpGameManager",
+  "m_Namespace": "UnityEngine.UDP",
+  "m_AssemblyName": "UDP.dll"
+}

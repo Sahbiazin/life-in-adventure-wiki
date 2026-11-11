@@ -1,0 +1,25 @@
+{
+  "m_Name": "WaitingPopup",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 245,
+    "bytes[1]": 143,
+    "bytes[2]": 77,
+    "bytes[3]": 123,
+    "bytes[4]": 107,
+    "bytes[5]": 106,
+    "bytes[6]": 131,
+    "bytes[7]": 225,
+    "bytes[8]": 6,
+    "bytes[9]": 182,
+    "bytes[10]": 172,
+    "bytes[11]": 229,
+    "bytes[12]": 20,
+    "bytes[13]": 26,
+    "bytes[14]": 238,
+    "bytes[15]": 43
+  },
+  "m_ClassName": "WaitingPopup",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

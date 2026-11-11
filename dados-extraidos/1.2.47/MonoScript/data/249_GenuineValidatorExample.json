@@ -1,0 +1,25 @@
+{
+  "m_Name": "GenuineValidatorExample",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 144,
+    "bytes[1]": 181,
+    "bytes[2]": 145,
+    "bytes[3]": 250,
+    "bytes[4]": 42,
+    "bytes[5]": 135,
+    "bytes[6]": 37,
+    "bytes[7]": 68,
+    "bytes[8]": 168,
+    "bytes[9]": 186,
+    "bytes[10]": 207,
+    "bytes[11]": 55,
+    "bytes[12]": 208,
+    "bytes[13]": 163,
+    "bytes[14]": 218,
+    "bytes[15]": 125
+  },
+  "m_ClassName": "GenuineValidatorExample",
+  "m_Namespace": "CodeStage.AntiCheat.Examples.Genuine",
+  "m_AssemblyName": "ACTk.Examples.Genuine.Runtime"
+}

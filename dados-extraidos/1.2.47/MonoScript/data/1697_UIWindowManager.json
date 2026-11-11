@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIWindowManager",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 211,
+    "bytes[1]": 242,
+    "bytes[2]": 212,
+    "bytes[3]": 128,
+    "bytes[4]": 124,
+    "bytes[5]": 110,
+    "bytes[6]": 225,
+    "bytes[7]": 200,
+    "bytes[8]": 222,
+    "bytes[9]": 115,
+    "bytes[10]": 16,
+    "bytes[11]": 215,
+    "bytes[12]": 91,
+    "bytes[13]": 5,
+    "bytes[14]": 74,
+    "bytes[15]": 122
+  },
+  "m_ClassName": "UIWindowManager",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

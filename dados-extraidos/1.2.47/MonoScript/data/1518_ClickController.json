@@ -1,0 +1,25 @@
+{
+  "m_Name": "ClickController",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 98,
+    "bytes[1]": 32,
+    "bytes[2]": 198,
+    "bytes[3]": 193,
+    "bytes[4]": 223,
+    "bytes[5]": 64,
+    "bytes[6]": 181,
+    "bytes[7]": 70,
+    "bytes[8]": 156,
+    "bytes[9]": 86,
+    "bytes[10]": 229,
+    "bytes[11]": 110,
+    "bytes[12]": 18,
+    "bytes[13]": 196,
+    "bytes[14]": 133,
+    "bytes[15]": 132
+  },
+  "m_ClassName": "ClickController",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

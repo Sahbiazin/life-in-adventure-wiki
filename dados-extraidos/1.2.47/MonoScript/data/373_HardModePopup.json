@@ -1,0 +1,25 @@
+{
+  "m_Name": "HardModePopup",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 187,
+    "bytes[1]": 102,
+    "bytes[2]": 130,
+    "bytes[3]": 65,
+    "bytes[4]": 40,
+    "bytes[5]": 175,
+    "bytes[6]": 3,
+    "bytes[7]": 120,
+    "bytes[8]": 0,
+    "bytes[9]": 73,
+    "bytes[10]": 163,
+    "bytes[11]": 13,
+    "bytes[12]": 165,
+    "bytes[13]": 114,
+    "bytes[14]": 19,
+    "bytes[15]": 206
+  },
+  "m_ClassName": "HardModePopup",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

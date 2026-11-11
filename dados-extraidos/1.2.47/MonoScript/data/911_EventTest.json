@@ -1,0 +1,25 @@
+{
+  "m_Name": "EventTest",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 159,
+    "bytes[1]": 134,
+    "bytes[2]": 161,
+    "bytes[3]": 213,
+    "bytes[4]": 178,
+    "bytes[5]": 141,
+    "bytes[6]": 69,
+    "bytes[7]": 43,
+    "bytes[8]": 226,
+    "bytes[9]": 209,
+    "bytes[10]": 138,
+    "bytes[11]": 108,
+    "bytes[12]": 82,
+    "bytes[13]": 180,
+    "bytes[14]": 135,
+    "bytes[15]": 39
+  },
+  "m_ClassName": "EventTest",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

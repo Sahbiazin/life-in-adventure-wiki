@@ -1,0 +1,25 @@
+{
+  "m_Name": "ContextScreenView",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 208,
+    "bytes[1]": 243,
+    "bytes[2]": 16,
+    "bytes[3]": 170,
+    "bytes[4]": 15,
+    "bytes[5]": 171,
+    "bytes[6]": 87,
+    "bytes[7]": 42,
+    "bytes[8]": 177,
+    "bytes[9]": 115,
+    "bytes[10]": 225,
+    "bytes[11]": 88,
+    "bytes[12]": 189,
+    "bytes[13]": 187,
+    "bytes[14]": 55,
+    "bytes[15]": 36
+  },
+  "m_ClassName": "ContextScreenView",
+  "m_Namespace": "Unity.Advertisement.IosSupport.Components",
+  "m_AssemblyName": "Assembly-CSharp"
+}

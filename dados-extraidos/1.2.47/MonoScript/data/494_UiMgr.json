@@ -1,0 +1,25 @@
+{
+  "m_Name": "UiMgr",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 89,
+    "bytes[1]": 116,
+    "bytes[2]": 13,
+    "bytes[3]": 221,
+    "bytes[4]": 32,
+    "bytes[5]": 170,
+    "bytes[6]": 253,
+    "bytes[7]": 216,
+    "bytes[8]": 124,
+    "bytes[9]": 201,
+    "bytes[10]": 221,
+    "bytes[11]": 206,
+    "bytes[12]": 217,
+    "bytes[13]": 9,
+    "bytes[14]": 200,
+    "bytes[15]": 141
+  },
+  "m_ClassName": "UiMgr",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

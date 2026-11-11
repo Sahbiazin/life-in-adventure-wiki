@@ -1,0 +1,25 @@
+{
+  "m_Name": "InventorySkill",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 226,
+    "bytes[1]": 61,
+    "bytes[2]": 153,
+    "bytes[3]": 6,
+    "bytes[4]": 210,
+    "bytes[5]": 123,
+    "bytes[6]": 14,
+    "bytes[7]": 119,
+    "bytes[8]": 146,
+    "bytes[9]": 100,
+    "bytes[10]": 211,
+    "bytes[11]": 99,
+    "bytes[12]": 90,
+    "bytes[13]": 161,
+    "bytes[14]": 66,
+    "bytes[15]": 27
+  },
+  "m_ClassName": "InventorySkill",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

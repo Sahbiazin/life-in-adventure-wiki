@@ -1,0 +1,3785 @@
+[
+  {
+    "raw": {
+      "id": "0",
+      "name": [
+        "평범한",
+        "Normal",
+        "Normal",
+        "Normale",
+        "Normal",
+        "普通",
+        "普通",
+        "ノーマル",
+        "Normal",
+        "عادي"
+      ],
+      "desc": [
+        "아무 효과 없음",
+        "No effect",
+        "Sin efecto",
+        "Nessun effetto",
+        "Sem nenhum efeito. Não é selecionado quando o traço está definido para 'aleatório'.",
+        "无效果",
+        "無效果",
+        "特性なし",
+        "TIdak ada efek",
+        "لا تأثير"
+      ],
+      "grade": "0",
+      "shopId": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "평범한",
+        "en": "Normal",
+        "es": "Normal",
+        "it": "Normale",
+        "pt": "Normal",
+        "zh-Hans": "普通",
+        "zh-Hant": "普通",
+        "ja": "ノーマル",
+        "id": "Normal",
+        "ar": "عادي"
+      },
+      "desc": {
+        "ko": "아무 효과 없음",
+        "en": "No effect",
+        "es": "Sin efecto",
+        "it": "Nessun effetto",
+        "pt": "Sem nenhum efeito. Não é selecionado quando o traço está definido para 'aleatório'.",
+        "zh-Hans": "无效果",
+        "zh-Hant": "無效果",
+        "ja": "特性なし",
+        "id": "TIdak ada efek",
+        "ar": "لا تأثير"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "1",
+      "name": [
+        "금붙이",
+        "Gold",
+        "Avaricioso",
+        "Oro",
+        "Ganancioso(a) -",
+        "金闪闪",
+        "金閃閃",
+        "欲張り",
+        "Emas",
+        "ذهب"
+      ],
+      "desc": [
+        "획득하는 골드의 양이 15% 증가",
+        "Increases amount of gold earned by 15%",
+        "Aumento del 15% en la cantidad de oro obtenido",
+        "Aumenta la quantità di oro guadagnato del 15%",
+        "Aumenta o ganho de ouro em 15%",
+        "增加15%金币收入",
+        "增加15%金幣收入",
+        "Goldの獲得量が15%増える。",
+        "Meningkatkan jumlah emas yang didapat sebanyak 15%",
+        "زيادة عدد الذهب المكتسب بنسبة 15%"
+      ],
+      "grade": "0",
+      "effect": "골드 획득량 15% 추가",
+      "jewel": "20",
+      "shopId": "1"
+    },
+    "localized": {
+      "name": {
+        "ko": "금붙이",
+        "en": "Gold",
+        "es": "Avaricioso",
+        "it": "Oro",
+        "pt": "Ganancioso(a) -",
+        "zh-Hans": "金闪闪",
+        "zh-Hant": "金閃閃",
+        "ja": "欲張り",
+        "id": "Emas",
+        "ar": "ذهب"
+      },
+      "desc": {
+        "ko": "획득하는 골드의 양이 15% 증가",
+        "en": "Increases amount of gold earned by 15%",
+        "es": "Aumento del 15% en la cantidad de oro obtenido",
+        "it": "Aumenta la quantità di oro guadagnato del 15%",
+        "pt": "Aumenta o ganho de ouro em 15%",
+        "zh-Hans": "增加15%金币收入",
+        "zh-Hant": "增加15%金幣收入",
+        "ja": "Goldの獲得量が15%増える。",
+        "id": "Meningkatkan jumlah emas yang didapat sebanyak 15%",
+        "ar": "زيادة عدد الذهب المكتسب بنسبة 15%"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "2",
+      "name": [
+        "통뼈",
+        "Strong Bone",
+        "Hueso Duro",
+        "Robusto",
+        "Musculoso(a) -",
+        "壮硕",
+        "壯碩",
+        "強い骨",
+        "Si Kuat",
+        "عظم قوي"
+      ],
+      "desc": [
+        "힘 +4",
+        "STR +4",
+        "STR +4",
+        "FOR +4",
+        "Aumenta a sua força base. FOR +4",
+        "力量+4",
+        "力量+4",
+        "STR+4",
+        "STR +4",
+        "قوة +4"
+      ],
+      "grade": "0",
+      "jewel": "20",
+      "shopId": "2"
+    },
+    "localized": {
+      "name": {
+        "ko": "통뼈",
+        "en": "Strong Bone",
+        "es": "Hueso Duro",
+        "it": "Robusto",
+        "pt": "Musculoso(a) -",
+        "zh-Hans": "壮硕",
+        "zh-Hant": "壯碩",
+        "ja": "強い骨",
+        "id": "Si Kuat",
+        "ar": "عظم قوي"
+      },
+      "desc": {
+        "ko": "힘 +4",
+        "en": "STR +4",
+        "es": "STR +4",
+        "it": "FOR +4",
+        "pt": "Aumenta a sua força base. FOR +4",
+        "zh-Hans": "力量+4",
+        "zh-Hant": "力量+4",
+        "ja": "STR+4",
+        "id": "STR +4",
+        "ar": "قوة +4"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "3",
+      "name": [
+        "재빠른",
+        "Quick",
+        "Ágil",
+        "Veloce",
+        "Ligeiro(a) -",
+        "迅疾",
+        "迅疾",
+        "敏捷",
+        "Si Cepat",
+        "سريع"
+      ],
+      "desc": [
+        "민첩 +4",
+        "DEX +4",
+        "DEX +4",
+        "DES +4",
+        "Aumenta a sua destreza base. DES +4",
+        "敏捷+4",
+        "敏捷+4",
+        "DEX+4",
+        "DEX +4",
+        "رشاقة +4"
+      ],
+      "grade": "0",
+      "jewel": "20",
+      "shopId": "3"
+    },
+    "localized": {
+      "name": {
+        "ko": "재빠른",
+        "en": "Quick",
+        "es": "Ágil",
+        "it": "Veloce",
+        "pt": "Ligeiro(a) -",
+        "zh-Hans": "迅疾",
+        "zh-Hant": "迅疾",
+        "ja": "敏捷",
+        "id": "Si Cepat",
+        "ar": "سريع"
+      },
+      "desc": {
+        "ko": "민첩 +4",
+        "en": "DEX +4",
+        "es": "DEX +4",
+        "it": "DES +4",
+        "pt": "Aumenta a sua destreza base. DES +4",
+        "zh-Hans": "敏捷+4",
+        "zh-Hant": "敏捷+4",
+        "ja": "DEX+4",
+        "id": "DEX +4",
+        "ar": "رشاقة +4"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "4",
+      "name": [
+        "똑똑한",
+        "Intelligent",
+        "Inteligente",
+        "Intelligente",
+        "Inteligente -",
+        "聪慧",
+        "聰慧",
+        "知性",
+        "Kecerdasan",
+        "ذكي"
+      ],
+      "desc": [
+        "지능 +4",
+        "INT +4",
+        "INT +4",
+        "INT +4",
+        "Aumenta a sua inteligência base. INT +4",
+        "智慧+4",
+        "智慧+4",
+        "INT+4",
+        "INT +4",
+        "ذكاء +4"
+      ],
+      "grade": "0",
+      "jewel": "20",
+      "shopId": "4"
+    },
+    "localized": {
+      "name": {
+        "ko": "똑똑한",
+        "en": "Intelligent",
+        "es": "Inteligente",
+        "it": "Intelligente",
+        "pt": "Inteligente -",
+        "zh-Hans": "聪慧",
+        "zh-Hant": "聰慧",
+        "ja": "知性",
+        "id": "Kecerdasan",
+        "ar": "ذكي"
+      },
+      "desc": {
+        "ko": "지능 +4",
+        "en": "INT +4",
+        "es": "INT +4",
+        "it": "INT +4",
+        "pt": "Aumenta a sua inteligência base. INT +4",
+        "zh-Hans": "智慧+4",
+        "zh-Hant": "智慧+4",
+        "ja": "INT+4",
+        "id": "INT +4",
+        "ar": "ذكاء +4"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "5",
+      "name": [
+        "매력있는",
+        "Charming",
+        "Atractivo",
+        "Affascinante",
+        "Charmoso(a) -",
+        "迷人",
+        "迷人",
+        "愛嬌",
+        "Berkarisma",
+        "جذاب"
+      ],
+      "desc": [
+        "카리스마 +4",
+        "CHA +4",
+        "CHA +4",
+        "CAR +4",
+        "Aumenta o seu carisma base. CAR +4",
+        "魅力+4",
+        "魅力+4",
+        "CHA+4",
+        "CHA +4",
+        "كاريزما +4"
+      ],
+      "grade": "0",
+      "jewel": "20",
+      "shopId": "5"
+    },
+    "localized": {
+      "name": {
+        "ko": "매력있는",
+        "en": "Charming",
+        "es": "Atractivo",
+        "it": "Affascinante",
+        "pt": "Charmoso(a) -",
+        "zh-Hans": "迷人",
+        "zh-Hant": "迷人",
+        "ja": "愛嬌",
+        "id": "Berkarisma",
+        "ar": "جذاب"
+      },
+      "desc": {
+        "ko": "카리스마 +4",
+        "en": "CHA +4",
+        "es": "CHA +4",
+        "it": "CAR +4",
+        "pt": "Aumenta o seu carisma base. CAR +4",
+        "zh-Hans": "魅力+4",
+        "zh-Hant": "魅力+4",
+        "ja": "CHA+4",
+        "id": "CHA +4",
+        "ar": "كاريزما +4"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "6",
+      "name": [
+        "생기있는",
+        "Energetic",
+        "Saludable",
+        "Energico",
+        "Vigoroso(a) -",
+        "活力",
+        "活力",
+        "精力",
+        "Energik",
+        "حيوي "
+      ],
+      "desc": [
+        "건강 +4",
+        "CON +4",
+        "CON +4",
+        "COS +4",
+        "Aumenta o seu condicionamento base. CON +4",
+        "体质+4",
+        "體質+4",
+        "CON+4",
+        "CON +4",
+        "البِنية +4"
+      ],
+      "grade": "0",
+      "jewel": "20",
+      "shopId": "6"
+    },
+    "localized": {
+      "name": {
+        "ko": "생기있는",
+        "en": "Energetic",
+        "es": "Saludable",
+        "it": "Energico",
+        "pt": "Vigoroso(a) -",
+        "zh-Hans": "活力",
+        "zh-Hant": "活力",
+        "ja": "精力",
+        "id": "Energik",
+        "ar": "حيوي "
+      },
+      "desc": {
+        "ko": "건강 +4",
+        "en": "CON +4",
+        "es": "CON +4",
+        "it": "COS +4",
+        "pt": "Aumenta o seu condicionamento base. CON +4",
+        "zh-Hans": "体质+4",
+        "zh-Hant": "體質+4",
+        "ja": "CON+4",
+        "id": "CON +4",
+        "ar": "البِنية +4"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "7",
+      "name": [
+        "현명한",
+        "Wise",
+        "Sabio",
+        "Saggio",
+        "Sábio(a) -",
+        "明智",
+        "明智",
+        "賢人",
+        "Si Bijak",
+        "حكيم"
+      ],
+      "desc": [
+        "지혜 +4",
+        "WIS +4",
+        "WIS +4",
+        "SAG +4",
+        "Aumenta a sua sabedoria base. SAB +4",
+        "感知+4",
+        "感知+4",
+        "WIS+4",
+        "WIS +4",
+        "الحكمة +4"
+      ],
+      "grade": "0",
+      "jewel": "20",
+      "shopId": "7"
+    },
+    "localized": {
+      "name": {
+        "ko": "현명한",
+        "en": "Wise",
+        "es": "Sabio",
+        "it": "Saggio",
+        "pt": "Sábio(a) -",
+        "zh-Hans": "明智",
+        "zh-Hant": "明智",
+        "ja": "賢人",
+        "id": "Si Bijak",
+        "ar": "حكيم"
+      },
+      "desc": {
+        "ko": "지혜 +4",
+        "en": "WIS +4",
+        "es": "WIS +4",
+        "it": "SAG +4",
+        "pt": "Aumenta a sua sabedoria base. SAB +4",
+        "zh-Hans": "感知+4",
+        "zh-Hant": "感知+4",
+        "ja": "WIS+4",
+        "id": "WIS +4",
+        "ar": "الحكمة +4"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "8",
+      "name": [
+        "역전의",
+        "Turnabout",
+        "Valiente",
+        "Coraggioso",
+        "Valente -",
+        "以弱胜强",
+        "以弱勝強",
+        "大物殺し",
+        "Veteran",
+        "الإنقلاب"
+      ],
+      "desc": [
+        "자신보다 강한 몬스터 (승률 33% 이하) 와 전투 시 주는 피해 + 10%",
+        "Damage bonus +10% when fighting against a strong opponent (Win rate 33% or lower).",
+        "Aumento del 10% en el daño al enfrentarte a oponentes más fuertes (con una probabilidad de éxito del 33% o menor)",
+        "Bonus danni +10% quando si combatte contro un avversario forte (Tasso di vittoria del 33% o inferiore).",
+        "Dano bônus de 10% ao lutar contra um oponente mais forte (Taxa de vitória de 33% ou menos)",
+        "战斗处于劣势（获胜几率33%或以下）则造成伤害+10%。",
+        "戰鬥處於劣勢（獲勝機率33%或以下）則造成傷害+10%。",
+        "強敵（勝率33%以下）との戦闘時に\n 与えるダメージを+10%にする。",
+        "Bonus damage +10% ketika melawan musuh yang kuat (peluang menang 33% atau lebih rendah)",
+        "زيادة قوة القتال بنسبة 10% عند مواجهة خصم قوي (نسبة الفوز 33% أو أقل)"
+      ],
+      "grade": "0",
+      "jewel": "20",
+      "shopId": "8"
+    },
+    "localized": {
+      "name": {
+        "ko": "역전의",
+        "en": "Turnabout",
+        "es": "Valiente",
+        "it": "Coraggioso",
+        "pt": "Valente -",
+        "zh-Hans": "以弱胜强",
+        "zh-Hant": "以弱勝強",
+        "ja": "大物殺し",
+        "id": "Veteran",
+        "ar": "الإنقلاب"
+      },
+      "desc": {
+        "ko": "자신보다 강한 몬스터 (승률 33% 이하) 와 전투 시 주는 피해 + 10%",
+        "en": "Damage bonus +10% when fighting against a strong opponent (Win rate 33% or lower).",
+        "es": "Aumento del 10% en el daño al enfrentarte a oponentes más fuertes (con una probabilidad de éxito del 33% o menor)",
+        "it": "Bonus danni +10% quando si combatte contro un avversario forte (Tasso di vittoria del 33% o inferiore).",
+        "pt": "Dano bônus de 10% ao lutar contra um oponente mais forte (Taxa de vitória de 33% ou menos)",
+        "zh-Hans": "战斗处于劣势（获胜几率33%或以下）则造成伤害+10%。",
+        "zh-Hant": "戰鬥處於劣勢（獲勝機率33%或以下）則造成傷害+10%。",
+        "ja": "強敵（勝率33%以下）との戦闘時に\n 与えるダメージを+10%にする。",
+        "id": "Bonus damage +10% ketika melawan musuh yang kuat (peluang menang 33% atau lebih rendah)",
+        "ar": "زيادة قوة القتال بنسبة 10% عند مواجهة خصم قوي (نسبة الفوز 33% أو أقل)"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "9",
+      "name": [
+        "약자 사냥꾼",
+        "Preys-on-the-weak",
+        "Cazador de Débiles",
+        "Approfittatore",
+        "Opressor(a) -",
+        "恃强凌弱",
+        "恃強凌弱",
+        "弱肉強食",
+        "Memburu yang Lemah",
+        "أفتراس الضعيف"
+      ],
+      "desc": [
+        "자신보다 약한 몬스터 (승률 66% 이상) 와 전투 시 주는 피해 + 10%",
+        "Damage bonus +10% when fighting against a weak opponent (Win rate 66% or higher).",
+        "Aumento del 10% en el daño al enfrentarte a oponentes más débiles (con una probabilidad de éxito del 66% o mayor)",
+        "Bonus danni +10% quando si combatte contro un avversario debole (Tasso di vittoria del 66% o superiore).",
+        "Dano bônus de 10% ao lutar contra um oponente mais fraco (taxa de vitória de 66% ou mais)",
+        "战斗处于优势（获胜几率66%或以上）则造成伤害+10%。",
+        "戰鬥處於優勢（獲勝機率66%或以上）則造成傷害+10%。",
+        "弱者（勝率66％以上）との戦闘時に\n 与えるダメージを+10%にする。",
+        "Bonus damage +10% ketika melawan musuh yang lemah (peluang menang 66% atau lebih tinggi)",
+        "زيادة قوة القتال بنسبة 10% عند مواجهة خصم ضعيف (نسبة الفوز 66% أو أعلى)"
+      ],
+      "grade": "0",
+      "jewel": "20",
+      "shopId": "9"
+    },
+    "localized": {
+      "name": {
+        "ko": "약자 사냥꾼",
+        "en": "Preys-on-the-weak",
+        "es": "Cazador de Débiles",
+        "it": "Approfittatore",
+        "pt": "Opressor(a) -",
+        "zh-Hans": "恃强凌弱",
+        "zh-Hant": "恃強凌弱",
+        "ja": "弱肉強食",
+        "id": "Memburu yang Lemah",
+        "ar": "أفتراس الضعيف"
+      },
+      "desc": {
+        "ko": "자신보다 약한 몬스터 (승률 66% 이상) 와 전투 시 주는 피해 + 10%",
+        "en": "Damage bonus +10% when fighting against a weak opponent (Win rate 66% or higher).",
+        "es": "Aumento del 10% en el daño al enfrentarte a oponentes más débiles (con una probabilidad de éxito del 66% o mayor)",
+        "it": "Bonus danni +10% quando si combatte contro un avversario debole (Tasso di vittoria del 66% o superiore).",
+        "pt": "Dano bônus de 10% ao lutar contra um oponente mais fraco (taxa de vitória de 66% ou mais)",
+        "zh-Hans": "战斗处于优势（获胜几率66%或以上）则造成伤害+10%。",
+        "zh-Hant": "戰鬥處於優勢（獲勝機率66%或以上）則造成傷害+10%。",
+        "ja": "弱者（勝率66％以上）との戦闘時に\n 与えるダメージを+10%にする。",
+        "id": "Bonus damage +10% ketika melawan musuh yang lemah (peluang menang 66% atau lebih tinggi)",
+        "ar": "زيادة قوة القتال بنسبة 10% عند مواجهة خصم ضعيف (نسبة الفوز 66% أو أعلى)"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "10",
+      "name": [
+        "악한 본성",
+        "Innately Evil",
+        "Innatamente Malvado",
+        "Innatamente malvagio",
+        "Perverso(a) -",
+        "天生邪恶",
+        "天生邪惡",
+        "生来の悪",
+        "Jahat",
+        "شرير بالفطرة"
+      ],
+      "desc": [
+        "감추기 힘든 악한 본성. 성향 -20, 위협 +1",
+        "Uncoverable evil nature. Alignment -20, Intimidating +1",
+        "Naturaleza maliciosa difícil de ocultar. Alineamiento -20, Intimidante +1",
+        "Natura malvagia incelabile. Allineamento -20, Intimidazione +1",
+        "Malcriado desde o berço. Alinhamento -20, Intimidação +1",
+        "无法掩盖的邪恶天性。善恶值-20，威慑+1",
+        "無法掩蓋的邪惡天性。善惡值-20，威懾+1",
+        "隠しきれない悪の本性。アライメント -20、威圧 +1",
+        "Sifat jahat yang sulit disembunyikan Karma -20. Menakutkan +1",
+        "طبيعة شريرة لا يمكن تغييرها. الميل -20، الترهيب +1"
+      ],
+      "grade": "0",
+      "effect": "addStat_3_-20|addAb_1_1",
+      "jewel": "20",
+      "shopId": "10"
+    },
+    "localized": {
+      "name": {
+        "ko": "악한 본성",
+        "en": "Innately Evil",
+        "es": "Innatamente Malvado",
+        "it": "Innatamente malvagio",
+        "pt": "Perverso(a) -",
+        "zh-Hans": "天生邪恶",
+        "zh-Hant": "天生邪惡",
+        "ja": "生来の悪",
+        "id": "Jahat",
+        "ar": "شرير بالفطرة"
+      },
+      "desc": {
+        "ko": "감추기 힘든 악한 본성. 성향 -20, 위협 +1",
+        "en": "Uncoverable evil nature. Alignment -20, Intimidating +1",
+        "es": "Naturaleza maliciosa difícil de ocultar. Alineamiento -20, Intimidante +1",
+        "it": "Natura malvagia incelabile. Allineamento -20, Intimidazione +1",
+        "pt": "Malcriado desde o berço. Alinhamento -20, Intimidação +1",
+        "zh-Hans": "无法掩盖的邪恶天性。善恶值-20，威慑+1",
+        "zh-Hant": "無法掩蓋的邪惡天性。善惡值-20，威懾+1",
+        "ja": "隠しきれない悪の本性。アライメント -20、威圧 +1",
+        "id": "Sifat jahat yang sulit disembunyikan Karma -20. Menakutkan +1",
+        "ar": "طبيعة شريرة لا يمكن تغييرها. الميل -20، الترهيب +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "11",
+      "name": [
+        "선한 본성",
+        "Innately Kind",
+        "Innatamente Amable",
+        "Innatamente gentile",
+        "Iluminado(a) -",
+        "天生善良",
+        "天生善良",
+        "生来の善",
+        "Baik",
+        "طيب بالفطرة"
+      ],
+      "desc": [
+        "은은히 드러나는 선한 본성. 성향 +20, 안정감 +1",
+        "Delicate good nature. Alignment +20, Stability +1",
+        "Naturaleza bondadosa que se manifiesta sutilmente. Alineamiento +20, Estabilidad +1",
+        "Natura gentile e delicata. Allineamento +20, Stabilità +1",
+        "Bondoso por natureza. Alinhamento +20, Intimidação -1",
+        "纤细柔和的善良天性。善恶值+20，稳定+1",
+        "纖細柔和的善良天性。善惡值+20，穩定+1",
+        "見え隠れする善良さ。アライメント +20、安定 +1",
+        "Sifat baik yang tersembunyi. Karma +20. Tenang +1",
+        "طبيعة طيبة رقيقة. الميل +20، التوازن +1"
+      ],
+      "grade": "0",
+      "effect": "addStat_3_20|addAb_2_1",
+      "jewel": "20",
+      "shopId": "11"
+    },
+    "localized": {
+      "name": {
+        "ko": "선한 본성",
+        "en": "Innately Kind",
+        "es": "Innatamente Amable",
+        "it": "Innatamente gentile",
+        "pt": "Iluminado(a) -",
+        "zh-Hans": "天生善良",
+        "zh-Hant": "天生善良",
+        "ja": "生来の善",
+        "id": "Baik",
+        "ar": "طيب بالفطرة"
+      },
+      "desc": {
+        "ko": "은은히 드러나는 선한 본성. 성향 +20, 안정감 +1",
+        "en": "Delicate good nature. Alignment +20, Stability +1",
+        "es": "Naturaleza bondadosa que se manifiesta sutilmente. Alineamiento +20, Estabilidad +1",
+        "it": "Natura gentile e delicata. Allineamento +20, Stabilità +1",
+        "pt": "Bondoso por natureza. Alinhamento +20, Intimidação -1",
+        "zh-Hans": "纤细柔和的善良天性。善恶值+20，稳定+1",
+        "zh-Hant": "纖細柔和的善良天性。善惡值+20，穩定+1",
+        "ja": "見え隠れする善良さ。アライメント +20、安定 +1",
+        "id": "Sifat baik yang tersembunyi. Karma +20. Tenang +1",
+        "ar": "طبيعة طيبة رقيقة. الميل +20، التوازن +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "12",
+      "name": [
+        "마법의",
+        "Magical",
+        "Graduado en Magia",
+        "Magico",
+        "Mágico(a) -",
+        "魔力",
+        "魔力",
+        "魔力",
+        "Penyihir",
+        "سحري"
+      ],
+      "desc": [
+        "맨손으로도 마법을 시전할 수 있음. 마법시전 +1, 마법 저항 +1",
+        "Use magic without equipment. Spellcasting +1, Spell Resistance +1",
+        "Usa magia sin objetos mágicos. Conjuros +1, Resistencia a Conjuros +1",
+        "In grado di usare la magia senza equipaggiamento. Incantamento +1, Resistenza alla magia +1",
+        "Capaz de usar magia sem equipamentos. Feitiçaria +1, Resistência Mágica +1",
+        "能徒手施展魔法。施法+1，魔法抗性+1",
+        "能徒手施展魔法。施法+1，魔法抗性+1",
+        "素手でも魔法を扱える。詠唱 +1、魔法耐性+1",
+        "Dapat menggunakan sihir tanpa perlengkapan apapun. Rapal Mantra +1, Tahan Sihir +1",
+        "استخدام السحر بدون معدات. إلقاء التعاويذ +1، مقاومة التعاويذ +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_0_1|addAb_7_1",
+      "jewel": "20",
+      "shopId": "12"
+    },
+    "localized": {
+      "name": {
+        "ko": "마법의",
+        "en": "Magical",
+        "es": "Graduado en Magia",
+        "it": "Magico",
+        "pt": "Mágico(a) -",
+        "zh-Hans": "魔力",
+        "zh-Hant": "魔力",
+        "ja": "魔力",
+        "id": "Penyihir",
+        "ar": "سحري"
+      },
+      "desc": {
+        "ko": "맨손으로도 마법을 시전할 수 있음. 마법시전 +1, 마법 저항 +1",
+        "en": "Use magic without equipment. Spellcasting +1, Spell Resistance +1",
+        "es": "Usa magia sin objetos mágicos. Conjuros +1, Resistencia a Conjuros +1",
+        "it": "In grado di usare la magia senza equipaggiamento. Incantamento +1, Resistenza alla magia +1",
+        "pt": "Capaz de usar magia sem equipamentos. Feitiçaria +1, Resistência Mágica +1",
+        "zh-Hans": "能徒手施展魔法。施法+1，魔法抗性+1",
+        "zh-Hant": "能徒手施展魔法。施法+1，魔法抗性+1",
+        "ja": "素手でも魔法を扱える。詠唱 +1、魔法耐性+1",
+        "id": "Dapat menggunakan sihir tanpa perlengkapan apapun. Rapal Mantra +1, Tahan Sihir +1",
+        "ar": "استخدام السحر بدون معدات. إلقاء التعاويذ +1، مقاومة التعاويذ +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "13",
+      "name": [
+        "야생의",
+        "Wild",
+        "Salvaje",
+        "Selvaggio",
+        "Selvagem -",
+        "野性",
+        "野性",
+        "野性的",
+        "Liar",
+        "بري"
+      ],
+      "desc": [
+        "거칠고 본능적임. 기품 -2, 은밀함 +2, 등반 +1",
+        "Rough and instinctive.Grace -2, Stealthy +2, Climbing +1",
+        "Rudo e instintivo. Gracia -2, Sigilo +2, Trepar +1",
+        "Indelicato e istintivo. Grazia -2, Furtivo +2, Arrampicarsi +1",
+        "Bruto e instintivo. Graciosidade -2, Furtividade +2, Escalada +1",
+        "万事跟着直觉走的野蛮家伙。风度-2，隐匿+2，攀爬+1",
+        "萬事跟著直覺走的野蠻傢伙。風度-2，隱匿+2，攀爬+1",
+        "荒々しく本能に従う。気品 -2、隠密+2、登攀+1",
+        "Kasar dan peka. Anggun -2, Sembunyi +2, Memanjat +1",
+        "خشن وغريزي. النعمة -2، التخفي +2، التسلق +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_4_-2|addAb_5_2|addAb_32_1",
+      "jewel": "20",
+      "shopId": "13"
+    },
+    "localized": {
+      "name": {
+        "ko": "야생의",
+        "en": "Wild",
+        "es": "Salvaje",
+        "it": "Selvaggio",
+        "pt": "Selvagem -",
+        "zh-Hans": "野性",
+        "zh-Hant": "野性",
+        "ja": "野性的",
+        "id": "Liar",
+        "ar": "بري"
+      },
+      "desc": {
+        "ko": "거칠고 본능적임. 기품 -2, 은밀함 +2, 등반 +1",
+        "en": "Rough and instinctive.Grace -2, Stealthy +2, Climbing +1",
+        "es": "Rudo e instintivo. Gracia -2, Sigilo +2, Trepar +1",
+        "it": "Indelicato e istintivo. Grazia -2, Furtivo +2, Arrampicarsi +1",
+        "pt": "Bruto e instintivo. Graciosidade -2, Furtividade +2, Escalada +1",
+        "zh-Hans": "万事跟着直觉走的野蛮家伙。风度-2，隐匿+2，攀爬+1",
+        "zh-Hant": "萬事跟著直覺走的野蠻傢伙。風度-2，隱匿+2，攀爬+1",
+        "ja": "荒々しく本能に従う。気品 -2、隠密+2、登攀+1",
+        "id": "Kasar dan peka. Anggun -2, Sembunyi +2, Memanjat +1",
+        "ar": "خشن وغريزي. النعمة -2، التخفي +2، التسلق +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "14",
+      "name": [
+        "화려한",
+        "Fancy",
+        "Elegante",
+        "Raffinato",
+        "Glamuroso(a) -",
+        "花俏",
+        "花俏",
+        "派手",
+        "Mewah",
+        "بارع"
+      ],
+      "desc": [
+        "우아하며, 눈에 띔. 기품 +2, 은밀함 -2, 눈부심 +1",
+        "Elegant, conspicuous. Grace +2, Stealthy -2, Glare +1",
+        "Elegante y llamativo. Gracia +2, Sigilo -2, Deslumbramiento +1",
+        "Elegante e appariscente. Grazia +2, Furtivo -2, Bagliore +1",
+        "Elegante, notável. Graciosidade +2, Furtividade -2, Brilho +1",
+        "风流清秀，万众瞩目。风度+2，隐匿-2，眩光+1",
+        "風流清秀，萬眾矚目。風度+2，隱匿-2，眩光+1",
+        "優雅で目を惹く振る舞い。気品 +2、隠密 -2、きらめき +1",
+        "Elegan, mencolok. Anggun +2, Sembunyi -2, Kilau +1",
+        "أنيق وملفت للنظر. النعمة +2، التخفي -2، التوهج +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_4_2|addAb_5_-2|addAb_35_1",
+      "jewel": "20",
+      "shopId": "14"
+    },
+    "localized": {
+      "name": {
+        "ko": "화려한",
+        "en": "Fancy",
+        "es": "Elegante",
+        "it": "Raffinato",
+        "pt": "Glamuroso(a) -",
+        "zh-Hans": "花俏",
+        "zh-Hant": "花俏",
+        "ja": "派手",
+        "id": "Mewah",
+        "ar": "بارع"
+      },
+      "desc": {
+        "ko": "우아하며, 눈에 띔. 기품 +2, 은밀함 -2, 눈부심 +1",
+        "en": "Elegant, conspicuous. Grace +2, Stealthy -2, Glare +1",
+        "es": "Elegante y llamativo. Gracia +2, Sigilo -2, Deslumbramiento +1",
+        "it": "Elegante e appariscente. Grazia +2, Furtivo -2, Bagliore +1",
+        "pt": "Elegante, notável. Graciosidade +2, Furtividade -2, Brilho +1",
+        "zh-Hans": "风流清秀，万众瞩目。风度+2，隐匿-2，眩光+1",
+        "zh-Hant": "風流清秀，萬眾矚目。風度+2，隱匿-2，眩光+1",
+        "ja": "優雅で目を惹く振る舞い。気品 +2、隠密 -2、きらめき +1",
+        "id": "Elegan, mencolok. Anggun +2, Sembunyi -2, Kilau +1",
+        "ar": "أنيق وملفت للنظر. النعمة +2، التخفي -2، التوهج +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "15",
+      "name": [
+        "단단한",
+        "Well Built",
+        "Fornido",
+        "Ben piazzato",
+        "Casca-Grossa -",
+        "强健",
+        "強健",
+        "頑健",
+        "Badan Kuat",
+        "مبني جيدًا"
+      ],
+      "desc": [
+        "방패가 없어도 막기를 할 수 있음. 막기 +1, 물리 저항 +1",
+        "You can block without a shield. Block +1, Physical Resistance +1",
+        "Puedes bloquear sin escudo. Bloqueo +1, Resistencia física +1",
+        "Puoi bloccare senza uno scudo. Parata +1, Resistenza fisica +1",
+        "Você pode bloquear sem um escudo. Bloqueio +1, Resistência Física +1",
+        "谁说格挡需要盾牌？反正你不需要。格挡+1，物理抗性+1",
+        "誰說格擋需要盾牌？反正你不需要。格擋+1，物理抗性+1",
+        "盾を持たずとも防御ができる。防御 +1、物理耐性 +1",
+        "Kamu bisa memblokir serangan tanpa memakai perisai. Blokir +1, Tahan Fisik +1",
+        "يمكنك التصدي بدون درع. التصدي +1، المقاومة البدنية +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_9_1|addAb_11_1",
+      "jewel": "20",
+      "shopId": "15"
+    },
+    "localized": {
+      "name": {
+        "ko": "단단한",
+        "en": "Well Built",
+        "es": "Fornido",
+        "it": "Ben piazzato",
+        "pt": "Casca-Grossa -",
+        "zh-Hans": "强健",
+        "zh-Hant": "強健",
+        "ja": "頑健",
+        "id": "Badan Kuat",
+        "ar": "مبني جيدًا"
+      },
+      "desc": {
+        "ko": "방패가 없어도 막기를 할 수 있음. 막기 +1, 물리 저항 +1",
+        "en": "You can block without a shield. Block +1, Physical Resistance +1",
+        "es": "Puedes bloquear sin escudo. Bloqueo +1, Resistencia física +1",
+        "it": "Puoi bloccare senza uno scudo. Parata +1, Resistenza fisica +1",
+        "pt": "Você pode bloquear sem um escudo. Bloqueio +1, Resistência Física +1",
+        "zh-Hans": "谁说格挡需要盾牌？反正你不需要。格挡+1，物理抗性+1",
+        "zh-Hant": "誰說格擋需要盾牌？反正你不需要。格擋+1，物理抗性+1",
+        "ja": "盾を持たずとも防御ができる。防御 +1、物理耐性 +1",
+        "id": "Kamu bisa memblokir serangan tanpa memakai perisai. Blokir +1, Tahan Fisik +1",
+        "ar": "يمكنك التصدي بدون درع. التصدي +1، المقاومة البدنية +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "16",
+      "name": [
+        "대기만성",
+        "Late Bloomer",
+        "Desarrollo Tardío",
+        "Fioritura tardiva",
+        "Promissor -",
+        "晚成者",
+        "晚成者",
+        "大器晩成",
+        "Lambat Berkembang",
+        "تفتح متأخر"
+      ],
+      "desc": [
+        "5회의 레벨이 오를 때 2 포인트를 받고, 그 이후에 레벨이 오를 때 5포인트를 받음",
+        "The first five times Adventurer's grade goes up, you get bonus 2 points. Next time Adventurer's grade goes up, you get 5 bonus points.",
+        "Las primeras cinco veces que el Aventurero suba de rango, obtienes 2 puntos de estadísticas. La próximas veces que el Aventurero suba de rango, obtendrá 5 puntos de estadísticas.",
+        "Le prime cinque volte che il grado dell'Avventuriero aumenta, ottieni un bonus di 2 punti. La prossima volta che il grado dell'Avventuriero aumenta, ottieni 5 punti bonus.",
+        "Nas primeiras cinco vezes que o Grau do Aventureiro aumentar, você recebe apenas 2 pontos bônus. Mas, na próxima vez que o Grau do Aventureiro aumentar, você recebe 5 pontos bônus.",
+        "冒险中首五次升级获得2个属性点数。此后升级获得5个属性点数。",
+        "冒險中首五次升級獲得2個屬性點數。此後升級獲得5個屬性點數。",
+        "冒険者が5回レベルアップするとき、2ポイントを獲得する。\nその次のレベルアップで5ポイントを獲得する。",
+        "Lima kali pertama level Petualang naik, kamu mendapatkan 2 poin. Seterusnya, kamu mendapatkan 5 poin.",
+        "في المرات الخمس الأولى التي ترتفع فيها درجة المغامر تحصل على نقطتين إضافيتين. في المرة التالية التي ترتفع فيها درجة المغامر تحصل على 5 نقاط إضافية."
+      ],
+      "grade": "0",
+      "jewel": "20",
+      "shopId": "16"
+    },
+    "localized": {
+      "name": {
+        "ko": "대기만성",
+        "en": "Late Bloomer",
+        "es": "Desarrollo Tardío",
+        "it": "Fioritura tardiva",
+        "pt": "Promissor -",
+        "zh-Hans": "晚成者",
+        "zh-Hant": "晚成者",
+        "ja": "大器晩成",
+        "id": "Lambat Berkembang",
+        "ar": "تفتح متأخر"
+      },
+      "desc": {
+        "ko": "5회의 레벨이 오를 때 2 포인트를 받고, 그 이후에 레벨이 오를 때 5포인트를 받음",
+        "en": "The first five times Adventurer's grade goes up, you get bonus 2 points. Next time Adventurer's grade goes up, you get 5 bonus points.",
+        "es": "Las primeras cinco veces que el Aventurero suba de rango, obtienes 2 puntos de estadísticas. La próximas veces que el Aventurero suba de rango, obtendrá 5 puntos de estadísticas.",
+        "it": "Le prime cinque volte che il grado dell'Avventuriero aumenta, ottieni un bonus di 2 punti. La prossima volta che il grado dell'Avventuriero aumenta, ottieni 5 punti bonus.",
+        "pt": "Nas primeiras cinco vezes que o Grau do Aventureiro aumentar, você recebe apenas 2 pontos bônus. Mas, na próxima vez que o Grau do Aventureiro aumentar, você recebe 5 pontos bônus.",
+        "zh-Hans": "冒险中首五次升级获得2个属性点数。此后升级获得5个属性点数。",
+        "zh-Hant": "冒險中首五次升級獲得2個屬性點數。此後升級獲得5個屬性點數。",
+        "ja": "冒険者が5回レベルアップするとき、2ポイントを獲得する。\nその次のレベルアップで5ポイントを獲得する。",
+        "id": "Lima kali pertama level Petualang naik, kamu mendapatkan 2 poin. Seterusnya, kamu mendapatkan 5 poin.",
+        "ar": "في المرات الخمس الأولى التي ترتفع فيها درجة المغامر تحصل على نقطتين إضافيتين. في المرة التالية التي ترتفع فيها درجة المغامر تحصل على 5 نقاط إضافية."
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "17",
+      "name": [
+        "일찍 피는",
+        "Early Bloomer",
+        "Desarrollo Precoz",
+        "Fioritura precoce",
+        "Prodígio -",
+        "早成者",
+        "早成者",
+        "早熟",
+        "Cepat Berkembang",
+        "تفتح مبكر"
+      ],
+      "desc": [
+        "처음으로 레벨이 오를 때 15 포인트를 받고, 다음부터 레벨이 오를 때 2포인트를 받음.",
+        "The first time Adventurer's grade goes up, you get 15 bonus points. Next time Adventurer's grade goes up, you get 2 bonus points.",
+        "La primera vez que el Aventurero suba de rango, obtienes 15 puntos de estadísticas. Las próximas veces que el Aventurero suba de rango, obtendrá 2 puntos de estadísticas.",
+        "La prima volta che il grado dell'Avventuriero aumenta, ottieni 15 punti bonus. La prossima volta che il grado dell'Avventuriero aumenta, ottieni 2 punti bonus.",
+        "A primeira vez que o Grau do Aventureiro aumentar, você ganhará 15 pontos bônus. Mas, nas próximas vezes que o Grau do Aventureiro aumentar, você ganhará apenas 2 pontos bônus.",
+        "冒险中首次升级获得15个属性点数。此后升级获得2个属性点数。",
+        "冒險中首次升級獲得15個屬性點數。此後升級獲得2個屬性點數。",
+        "初めてのレベルアップ時に、15ポイントのボーナスを獲得する。\n次以降のレベルアップで2ポイントを獲得する。",
+        "Pertama kali level Petualang naik, kamu mendapatkan 15 poin. Seterusnya, kamu mendapatkan 2 poin.",
+        "في المرة الأولى التي ترتفع فيها درجة المغامر تحصل على 15 نقطة إضافية. في المرة التالية التي ترتفع فيها درجة المغامر تحصل على نقطتين إضافيتين."
+      ],
+      "grade": "0",
+      "jewel": "20",
+      "shopId": "17"
+    },
+    "localized": {
+      "name": {
+        "ko": "일찍 피는",
+        "en": "Early Bloomer",
+        "es": "Desarrollo Precoz",
+        "it": "Fioritura precoce",
+        "pt": "Prodígio -",
+        "zh-Hans": "早成者",
+        "zh-Hant": "早成者",
+        "ja": "早熟",
+        "id": "Cepat Berkembang",
+        "ar": "تفتح مبكر"
+      },
+      "desc": {
+        "ko": "처음으로 레벨이 오를 때 15 포인트를 받고, 다음부터 레벨이 오를 때 2포인트를 받음.",
+        "en": "The first time Adventurer's grade goes up, you get 15 bonus points. Next time Adventurer's grade goes up, you get 2 bonus points.",
+        "es": "La primera vez que el Aventurero suba de rango, obtienes 15 puntos de estadísticas. Las próximas veces que el Aventurero suba de rango, obtendrá 2 puntos de estadísticas.",
+        "it": "La prima volta che il grado dell'Avventuriero aumenta, ottieni 15 punti bonus. La prossima volta che il grado dell'Avventuriero aumenta, ottieni 2 punti bonus.",
+        "pt": "A primeira vez que o Grau do Aventureiro aumentar, você ganhará 15 pontos bônus. Mas, nas próximas vezes que o Grau do Aventureiro aumentar, você ganhará apenas 2 pontos bônus.",
+        "zh-Hans": "冒险中首次升级获得15个属性点数。此后升级获得2个属性点数。",
+        "zh-Hant": "冒險中首次升級獲得15個屬性點數。此後升級獲得2個屬性點數。",
+        "ja": "初めてのレベルアップ時に、15ポイントのボーナスを獲得する。\n次以降のレベルアップで2ポイントを獲得する。",
+        "id": "Pertama kali level Petualang naik, kamu mendapatkan 15 poin. Seterusnya, kamu mendapatkan 2 poin.",
+        "ar": "في المرة الأولى التي ترتفع فيها درجة المغامر تحصل على 15 نقطة إضافية. في المرة التالية التي ترتفع فيها درجة المغامر تحصل على نقطتين إضافيتين."
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "18",
+      "name": [
+        "대범한",
+        "Gambler",
+        "Apostador",
+        "Giocatore d'azzardo",
+        "Apostador(a) -",
+        "赌徒",
+        "賭徒",
+        "ギャンブラー",
+        "Penjudi",
+        "مقامر"
+      ],
+      "desc": [
+        "주사위에서 1 또는 20의 등장 확률이 증가",
+        "Increases chance of 1 or 20 appearance on dice.",
+        "Aumenta la probabilidad de aparición de 1 o 20 en los dados.",
+        "Aumenta la possibilità che 1 o 20 appaiano sul dado",
+        "Aumenta as chances de rolar ou 1 ou 20 no dado.",
+        "提升骰子掷出1点或20点的几率。",
+        "提升骰子擲出1點或20點的機率。",
+        "ダイスの出目が１または20どちらかになる確率が上がる。",
+        "Meningkatkan peluang muncul angka 1 atau 20 pada dadu.",
+        "زيادة نسبة ظهور 1 و 20 في النرد"
+      ],
+      "grade": "0",
+      "jewel": "20",
+      "shopId": "18"
+    },
+    "localized": {
+      "name": {
+        "ko": "대범한",
+        "en": "Gambler",
+        "es": "Apostador",
+        "it": "Giocatore d'azzardo",
+        "pt": "Apostador(a) -",
+        "zh-Hans": "赌徒",
+        "zh-Hant": "賭徒",
+        "ja": "ギャンブラー",
+        "id": "Penjudi",
+        "ar": "مقامر"
+      },
+      "desc": {
+        "ko": "주사위에서 1 또는 20의 등장 확률이 증가",
+        "en": "Increases chance of 1 or 20 appearance on dice.",
+        "es": "Aumenta la probabilidad de aparición de 1 o 20 en los dados.",
+        "it": "Aumenta la possibilità che 1 o 20 appaiano sul dado",
+        "pt": "Aumenta as chances de rolar ou 1 ou 20 no dado.",
+        "zh-Hans": "提升骰子掷出1点或20点的几率。",
+        "zh-Hant": "提升骰子擲出1點或20點的機率。",
+        "ja": "ダイスの出目が１または20どちらかになる確率が上がる。",
+        "id": "Meningkatkan peluang muncul angka 1 atau 20 pada dadu.",
+        "ar": "زيادة نسبة ظهور 1 و 20 في النرد"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "19",
+      "name": [
+        "신중한",
+        "Cautious",
+        "Cauteloso",
+        "Cauto",
+        "Cauteloso(a) -",
+        "谨慎",
+        "謹慎",
+        "用心深い",
+        "Waspada",
+        "الحذِر"
+      ],
+      "desc": [
+        "주사위에서 10 이하의 숫자가 등장할 확률이 감소",
+        "Decrease the chance of a number less than 5 appearing on the dice",
+        "Disminuye la posibilidad de que aparezca un número menor a 10 en los dados ",
+        "Diminuisce la possibilità che un numero inferiore di 10 appaia sul dado",
+        "Diminui as chances de rolar qualquer número menor que 10 no dado.",
+        "降低骰子掷出少于10点的几率。",
+        "降低骰子擲出少於10點的機率。",
+        "ダイスで10以下の数字が出る確率が減少する。",
+        "Mengurangi peluang angka kurang dari 10 muncul pada dadu.",
+        "تقليل فرصة ظهور رقم أقل من 10 على النرد"
+      ],
+      "grade": "0",
+      "jewel": "20",
+      "shopId": "19"
+    },
+    "localized": {
+      "name": {
+        "ko": "신중한",
+        "en": "Cautious",
+        "es": "Cauteloso",
+        "it": "Cauto",
+        "pt": "Cauteloso(a) -",
+        "zh-Hans": "谨慎",
+        "zh-Hant": "謹慎",
+        "ja": "用心深い",
+        "id": "Waspada",
+        "ar": "الحذِر"
+      },
+      "desc": {
+        "ko": "주사위에서 10 이하의 숫자가 등장할 확률이 감소",
+        "en": "Decrease the chance of a number less than 5 appearing on the dice",
+        "es": "Disminuye la posibilidad de que aparezca un número menor a 10 en los dados ",
+        "it": "Diminuisce la possibilità che un numero inferiore di 10 appaia sul dado",
+        "pt": "Diminui as chances de rolar qualquer número menor que 10 no dado.",
+        "zh-Hans": "降低骰子掷出少于10点的几率。",
+        "zh-Hant": "降低骰子擲出少於10點的機率。",
+        "ja": "ダイスで10以下の数字が出る確率が減少する。",
+        "id": "Mengurangi peluang angka kurang dari 10 muncul pada dadu.",
+        "ar": "تقليل فرصة ظهور رقم أقل من 10 على النرد"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "20",
+      "name": [
+        "신실한",
+        "Faithful",
+        "Fiel",
+        "Fedele",
+        "Devoto(a) -",
+        "虔诚",
+        "虔誠",
+        "誠実",
+        "Pertapa",
+        "زاهد"
+      ],
+      "desc": [
+        "신앙심이 깊음. 신성 +1, 축복 +1",
+        "Deep in faith. Holiness +1 , Blessing +1",
+        "Profundo en la fe. Santidad +1, Bendición +1",
+        "Profondamente immerso nella fede. Santità +1, Benedizione +1",
+        "Sua fé é inabalável. Santidade +1, Bênção +1",
+        "忠实的羔羊。神圣+1，祝福+1",
+        "忠實的羔羊。神聖+1，祝福+1",
+        "信仰心が深い。神聖+1、祝福+1",
+        "Iman mendalam. Suci +1, Berkat +1",
+        "إيمان عميق. القداسة +1، البركة +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_3_1|addAb_37_1",
+      "jewel": "20",
+      "shopId": "20"
+    },
+    "localized": {
+      "name": {
+        "ko": "신실한",
+        "en": "Faithful",
+        "es": "Fiel",
+        "it": "Fedele",
+        "pt": "Devoto(a) -",
+        "zh-Hans": "虔诚",
+        "zh-Hant": "虔誠",
+        "ja": "誠実",
+        "id": "Pertapa",
+        "ar": "زاهد"
+      },
+      "desc": {
+        "ko": "신앙심이 깊음. 신성 +1, 축복 +1",
+        "en": "Deep in faith. Holiness +1 , Blessing +1",
+        "es": "Profundo en la fe. Santidad +1, Bendición +1",
+        "it": "Profondamente immerso nella fede. Santità +1, Benedizione +1",
+        "pt": "Sua fé é inabalável. Santidade +1, Bênção +1",
+        "zh-Hans": "忠实的羔羊。神圣+1，祝福+1",
+        "zh-Hant": "忠實的羔羊。神聖+1，祝福+1",
+        "ja": "信仰心が深い。神聖+1、祝福+1",
+        "id": "Iman mendalam. Suci +1, Berkat +1",
+        "ar": "إيمان عميق. القداسة +1، البركة +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "21",
+      "name": [
+        "소매치기",
+        "Pickpocket",
+        "Ladrón",
+        "Borseggiatore",
+        "Avarento(a) -",
+        "窃贼",
+        "竊賊",
+        "スリ",
+        "Pencopet",
+        "نشال"
+      ],
+      "desc": [
+        "골드 획득량이 15% 증가하고, 전투에서 패배하더라도 일정량의 골드를 획득할 수 있음. 소매치기 +1, 직감 +1",
+        "Increases amount of gold earned by 15%, and a certain amount of gold can be obtained even if defeated in battle. Picking Pocket +1, Foresight +1",
+        "Aumenta la cantidad de oro obtenido en un 15%, y se puede obtener una cierta cantidad de oro incluso si se es derrotado en batalla. Robo de bolsillos +1, Previsión +1",
+        "Aumenta la quantità di oro guadagnato del 15%, e una certa quantità di oro può essere ottenuta anche se sconfitti in battaglia. Borseggio +1, Previsione +1",
+        "Aumenta a quantidade de ouro obtido em 15%, e uma quantia de ouro pode ser obtida, mesmo se for derrotado em batalha. Gatuno +1, Previsão +1",
+        "增加15%金币收入，且即使战斗失败也可以获得一定数量的金币。 贼不走空+1，预警+1",
+        "增加15%金幣收入，且即使戰鬥失敗也可以獲得一定數量的金幣。 賊不走空+1，預警+1",
+        "Gold獲得量が15％増加する。戦闘で敗北しても、一定量のゴールドを獲得できる。 盗みの手+1、直感+1",
+        "Meningkatkan emas yang didapat sebanyak 15%, dan sejumlah emas akan didapatkan meski kalah dalam pertarungan. Copet +1, Ramal +1",
+        "تزيد كمية الذهب المكتسبة بنسبة 15%، ويمكن الحصول على كمية معينة من الذهب حتى عند الهزيمة في المعركة. النشل +1، البصيرة +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_75_1|addAb_25_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "소매치기",
+        "en": "Pickpocket",
+        "es": "Ladrón",
+        "it": "Borseggiatore",
+        "pt": "Avarento(a) -",
+        "zh-Hans": "窃贼",
+        "zh-Hant": "竊賊",
+        "ja": "スリ",
+        "id": "Pencopet",
+        "ar": "نشال"
+      },
+      "desc": {
+        "ko": "골드 획득량이 15% 증가하고, 전투에서 패배하더라도 일정량의 골드를 획득할 수 있음. 소매치기 +1, 직감 +1",
+        "en": "Increases amount of gold earned by 15%, and a certain amount of gold can be obtained even if defeated in battle. Picking Pocket +1, Foresight +1",
+        "es": "Aumenta la cantidad de oro obtenido en un 15%, y se puede obtener una cierta cantidad de oro incluso si se es derrotado en batalla. Robo de bolsillos +1, Previsión +1",
+        "it": "Aumenta la quantità di oro guadagnato del 15%, e una certa quantità di oro può essere ottenuta anche se sconfitti in battaglia. Borseggio +1, Previsione +1",
+        "pt": "Aumenta a quantidade de ouro obtido em 15%, e uma quantia de ouro pode ser obtida, mesmo se for derrotado em batalha. Gatuno +1, Previsão +1",
+        "zh-Hans": "增加15%金币收入，且即使战斗失败也可以获得一定数量的金币。 贼不走空+1，预警+1",
+        "zh-Hant": "增加15%金幣收入，且即使戰鬥失敗也可以獲得一定數量的金幣。 賊不走空+1，預警+1",
+        "ja": "Gold獲得量が15％増加する。戦闘で敗北しても、一定量のゴールドを獲得できる。 盗みの手+1、直感+1",
+        "id": "Meningkatkan emas yang didapat sebanyak 15%, dan sejumlah emas akan didapatkan meski kalah dalam pertarungan. Copet +1, Ramal +1",
+        "ar": "تزيد كمية الذهب المكتسبة بنسبة 15%، ويمكن الحصول على كمية معينة من الذهب حتى عند الهزيمة في المعركة. النشل +1، البصيرة +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "22",
+      "name": [
+        "장사",
+        "The Strong",
+        "El Fuerte",
+        "Possente",
+        "Poderoso(a) -",
+        "力士",
+        "力士",
+        "強靭",
+        "Si Paling Kuat",
+        "جبار"
+      ],
+      "desc": [
+        "힘이 매우 강하고 그 힘을 사용하는데 숙련됨. 힘 +4, 괴력 +1, 강타 +1",
+        "Strength is very high and skilled in using that strength. STR +4, Super Strength +1, Bash +1",
+        "La fuerza es muy alta y habilidosa en el uso de esa fuerza. STR +4, Super Fuerza +1, Bash +1",
+        "Dotato di forza bruta impareggiabile. FOR +4, Superforza +1, Colpo +1",
+        "Portador(a) de muita força e com muita habilidade para usá-la. FOR +4, Super Força +1, Batedor +1",
+        "一身蛮力不可怕，可怕的是懂得如何将其运用自如。 力量+4，怪力+1，重击+1",
+        "一身蠻力不可怕，可怕的是懂得如何運用自如。 力量+4，怪力+1，重擊+1",
+        "筋力が非常に強く、それをいつでも十分に発揮できる。 STR+4、怪力+1、強打+1",
+        "Kekuatanmu tidak terkalahkan dalam gelud tanpa senjata. STR +4, Kekuatan Super +1, Serangan Berat +1",
+        "قوة عالية جدًا ومهارة في استخدامها. قوة +4، قوة خارقة +1، ضربة قوية +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_60_1|addAb_64_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "장사",
+        "en": "The Strong",
+        "es": "El Fuerte",
+        "it": "Possente",
+        "pt": "Poderoso(a) -",
+        "zh-Hans": "力士",
+        "zh-Hant": "力士",
+        "ja": "強靭",
+        "id": "Si Paling Kuat",
+        "ar": "جبار"
+      },
+      "desc": {
+        "ko": "힘이 매우 강하고 그 힘을 사용하는데 숙련됨. 힘 +4, 괴력 +1, 강타 +1",
+        "en": "Strength is very high and skilled in using that strength. STR +4, Super Strength +1, Bash +1",
+        "es": "La fuerza es muy alta y habilidosa en el uso de esa fuerza. STR +4, Super Fuerza +1, Bash +1",
+        "it": "Dotato di forza bruta impareggiabile. FOR +4, Superforza +1, Colpo +1",
+        "pt": "Portador(a) de muita força e com muita habilidade para usá-la. FOR +4, Super Força +1, Batedor +1",
+        "zh-Hans": "一身蛮力不可怕，可怕的是懂得如何将其运用自如。 力量+4，怪力+1，重击+1",
+        "zh-Hant": "一身蠻力不可怕，可怕的是懂得如何運用自如。 力量+4，怪力+1，重擊+1",
+        "ja": "筋力が非常に強く、それをいつでも十分に発揮できる。 STR+4、怪力+1、強打+1",
+        "id": "Kekuatanmu tidak terkalahkan dalam gelud tanpa senjata. STR +4, Kekuatan Super +1, Serangan Berat +1",
+        "ar": "قوة عالية جدًا ومهارة في استخدامها. قوة +4، قوة خارقة +1، ضربة قوية +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "23",
+      "name": [
+        "귀신",
+        "Ghost",
+        "Fantasma",
+        "Fantasma",
+        "Fantasma -",
+        "幽灵",
+        "幽靈",
+        "亡霊",
+        "Sang Hantu",
+        "شبح"
+      ],
+      "desc": [
+        "은밀하고 민첩한 행동에 숙련됨. 민첩 +4, 은밀함 +1, 체술 +1",
+        "Skilled in stealthy and agile actions. DEX +4, Stealthy +1, Acrobatic +1",
+        "Experto en sigilo y ágil. DEX +4, Sigilo +1, Acrobáticias +1",
+        "Abile in azioni furtive e agili. DES +4, Furtivo +1, Acrobatico +1",
+        "Habilidoso(a), ágil e furtivo(a). DES +4, Furtividade +1, Acrobático +1",
+        "静若处子，动若脱兔。 敏捷+4，隐匿+1，杂耍+1",
+        "靜若處子，動若脫兔。 敏捷+4，隱匿+1，雜耍+1",
+        "機敏かつ隠密な行動が得意だ。 DEX+4、隠密+1、軽業+1",
+        "Kamu ahli soal kecepatan, kelincahan dan bersembunyi. DEX +4, Sembunyi +1, Akrobatik +1",
+        "ماهر في الأفعال الخفية والرشيقة. الرشاقة +4، التخفي +1، الحركات البهلوانية +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_5_1|addAb_51_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "귀신",
+        "en": "Ghost",
+        "es": "Fantasma",
+        "it": "Fantasma",
+        "pt": "Fantasma -",
+        "zh-Hans": "幽灵",
+        "zh-Hant": "幽靈",
+        "ja": "亡霊",
+        "id": "Sang Hantu",
+        "ar": "شبح"
+      },
+      "desc": {
+        "ko": "은밀하고 민첩한 행동에 숙련됨. 민첩 +4, 은밀함 +1, 체술 +1",
+        "en": "Skilled in stealthy and agile actions. DEX +4, Stealthy +1, Acrobatic +1",
+        "es": "Experto en sigilo y ágil. DEX +4, Sigilo +1, Acrobáticias +1",
+        "it": "Abile in azioni furtive e agili. DES +4, Furtivo +1, Acrobatico +1",
+        "pt": "Habilidoso(a), ágil e furtivo(a). DES +4, Furtividade +1, Acrobático +1",
+        "zh-Hans": "静若处子，动若脱兔。 敏捷+4，隐匿+1，杂耍+1",
+        "zh-Hant": "靜若處子，動若脫兔。 敏捷+4，隱匿+1，雜耍+1",
+        "ja": "機敏かつ隠密な行動が得意だ。 DEX+4、隠密+1、軽業+1",
+        "id": "Kamu ahli soal kecepatan, kelincahan dan bersembunyi. DEX +4, Sembunyi +1, Akrobatik +1",
+        "ar": "ماهر في الأفعال الخفية والرشيقة. الرشاقة +4، التخفي +1، الحركات البهلوانية +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "24",
+      "name": [
+        "학자",
+        "Scholar",
+        "Erudito",
+        "Studioso",
+        "Acadêmico(a) -",
+        "学士",
+        "學士",
+        "学者",
+        "Sarjana",
+        "عالم"
+      ],
+      "desc": [
+        "학구적이고 분석적임. 지능 +4, 분석 +1, 정교함 +1",
+        "Scholarly and analytical. INT +4, Analyze +1, Precise +1",
+        "Erudito y analítico. INT +4, Analizar +1, Preciso +1",
+        "Accademico e analitico. INT +4, Analisi +1, Precisione +1",
+        "Estudioso(a) e Analítico(a). INT +4, Analisar +1, Preciso +1",
+        "三思而后行，谋定而后动。 智慧+4，分析+1，精准+1",
+        "三思而後行，謀定後動。 智慧+4，分析+1，精準+1",
+        "知性あり、物事を的確にとらえるだろう。 INT+4、解析+1、精密+1",
+        "Kecerdasanmu sudah lebih dari anak esempe. INT +4, Analisis +1, Teliti +1",
+        "علمي وتحليلي. الذكاء +4، التحليل +1، الدقة +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_85_1|addAb_59_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "학자",
+        "en": "Scholar",
+        "es": "Erudito",
+        "it": "Studioso",
+        "pt": "Acadêmico(a) -",
+        "zh-Hans": "学士",
+        "zh-Hant": "學士",
+        "ja": "学者",
+        "id": "Sarjana",
+        "ar": "عالم"
+      },
+      "desc": {
+        "ko": "학구적이고 분석적임. 지능 +4, 분석 +1, 정교함 +1",
+        "en": "Scholarly and analytical. INT +4, Analyze +1, Precise +1",
+        "es": "Erudito y analítico. INT +4, Analizar +1, Preciso +1",
+        "it": "Accademico e analitico. INT +4, Analisi +1, Precisione +1",
+        "pt": "Estudioso(a) e Analítico(a). INT +4, Analisar +1, Preciso +1",
+        "zh-Hans": "三思而后行，谋定而后动。 智慧+4，分析+1，精准+1",
+        "zh-Hant": "三思而後行，謀定後動。 智慧+4，分析+1，精準+1",
+        "ja": "知性あり、物事を的確にとらえるだろう。 INT+4、解析+1、精密+1",
+        "id": "Kecerdasanmu sudah lebih dari anak esempe. INT +4, Analisis +1, Teliti +1",
+        "ar": "علمي وتحليلي. الذكاء +4، التحليل +1، الدقة +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "25",
+      "name": [
+        "매혹의",
+        "Alluring",
+        "Seductor",
+        "Affascinante",
+        "Encantador(a) -",
+        "妖精",
+        "妖精",
+        "魅惑",
+        "Good Looking",
+        "مغري"
+      ],
+      "desc": [
+        "매력적이고 본능적임. 카리스마 +4, 페로몬 +1, 현혹 +1",
+        "Charismatic and instinctive. CHA +4, Pheromone +1, Charm +1",
+        "Carismático e instintivo. CHA +4, Feromona +1, Encanto +1",
+        "Carismatico e istintivo. CAR +4, Feromoni +1, Fascino +1",
+        "Carismático(a) e intuitivo(a). CAR +4, Feromônio +1, Charme +1",
+        "举手投足无不在撩人心弦。 魅力+4，费洛蒙+1，魅惑+1",
+        "舉手投足無所不在撩人心弦。 魅力+4，費洛蒙+1，魅惑+1",
+        "なんと魅力的で本能的！ CHA+4、フェロモン+1、魅了+1",
+        "Semua orang melihatmu good looking. CHA +4, Feromon +1, Pesona +1",
+        "جذاب وغريزي. كاريزما +4، الفيرمون +1، الفتنة +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_33_1|addAb_47_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "매혹의",
+        "en": "Alluring",
+        "es": "Seductor",
+        "it": "Affascinante",
+        "pt": "Encantador(a) -",
+        "zh-Hans": "妖精",
+        "zh-Hant": "妖精",
+        "ja": "魅惑",
+        "id": "Good Looking",
+        "ar": "مغري"
+      },
+      "desc": {
+        "ko": "매력적이고 본능적임. 카리스마 +4, 페로몬 +1, 현혹 +1",
+        "en": "Charismatic and instinctive. CHA +4, Pheromone +1, Charm +1",
+        "es": "Carismático e instintivo. CHA +4, Feromona +1, Encanto +1",
+        "it": "Carismatico e istintivo. CAR +4, Feromoni +1, Fascino +1",
+        "pt": "Carismático(a) e intuitivo(a). CAR +4, Feromônio +1, Charme +1",
+        "zh-Hans": "举手投足无不在撩人心弦。 魅力+4，费洛蒙+1，魅惑+1",
+        "zh-Hant": "舉手投足無所不在撩人心弦。 魅力+4，費洛蒙+1，魅惑+1",
+        "ja": "なんと魅力的で本能的！ CHA+4、フェロモン+1、魅了+1",
+        "id": "Semua orang melihatmu good looking. CHA +4, Feromon +1, Pesona +1",
+        "ar": "جذاب وغريزي. كاريزما +4، الفيرمون +1، الفتنة +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "26",
+      "name": [
+        "철인",
+        "Iron Man",
+        "Hombre de Hierro",
+        "Iron Man",
+        "Feito de Ferro -",
+        "铁人",
+        "鐵人",
+        "鉄人",
+        "Manusia Baja",
+        "رجل حديدي"
+      ],
+      "desc": [
+        "강철같은 체력을 지녔음. 건강 +4, 안정감 +1, 기절 저항 +2",
+        "Possesses a steel-like stamina. CON +4, Stability +1, Stun Resistance +2",
+        "Posee una resistencia similar al acero. CON +4, Estabilidad +1, Resistencia al aturdimiento +2",
+        "Resistente come l'acciaio COS +4, Stabilità +1, Resistenza allo stordimento +2",
+        "Possui uma resistência semelhante ao aço. CON +4, Estabilidade +1, Resistência a Atordoamento +2",
+        "身体倍儿棒！ 体质+4，稳定+1，晕眩抗性+2",
+        "擁有鋼鐵般的耐力。 體質+4，穩定+1，暈眩抗性+2",
+        "鋼のような体力を持った。 CON+4、安定+1、スタン耐性+2",
+        "Stamina-mu bahkan tahan terhadap badai. CON +4, Tenang +1, Tahan Stun +2",
+        "يمتلك قدرة تحمل شبيهة بالفولاذ. البِنية +4، التوازن +1، مقاومة الصدمة +2"
+      ],
+      "grade": "0",
+      "effect": "addAb_2_1|addAb_23_2",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "철인",
+        "en": "Iron Man",
+        "es": "Hombre de Hierro",
+        "it": "Iron Man",
+        "pt": "Feito de Ferro -",
+        "zh-Hans": "铁人",
+        "zh-Hant": "鐵人",
+        "ja": "鉄人",
+        "id": "Manusia Baja",
+        "ar": "رجل حديدي"
+      },
+      "desc": {
+        "ko": "강철같은 체력을 지녔음. 건강 +4, 안정감 +1, 기절 저항 +2",
+        "en": "Possesses a steel-like stamina. CON +4, Stability +1, Stun Resistance +2",
+        "es": "Posee una resistencia similar al acero. CON +4, Estabilidad +1, Resistencia al aturdimiento +2",
+        "it": "Resistente come l'acciaio COS +4, Stabilità +1, Resistenza allo stordimento +2",
+        "pt": "Possui uma resistência semelhante ao aço. CON +4, Estabilidade +1, Resistência a Atordoamento +2",
+        "zh-Hans": "身体倍儿棒！ 体质+4，稳定+1，晕眩抗性+2",
+        "zh-Hant": "擁有鋼鐵般的耐力。 體質+4，穩定+1，暈眩抗性+2",
+        "ja": "鋼のような体力を持った。 CON+4、安定+1、スタン耐性+2",
+        "id": "Stamina-mu bahkan tahan terhadap badai. CON +4, Tenang +1, Tahan Stun +2",
+        "ar": "يمتلك قدرة تحمل شبيهة بالفولاذ. البِنية +4، التوازن +1، مقاومة الصدمة +2"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "27",
+      "name": [
+        "현자",
+        "Sage",
+        "Iluminado",
+        "Saggio",
+        "Sapiente -",
+        "贤者",
+        "賢者",
+        "賢者",
+        "Petapa",
+        "حكيم"
+      ],
+      "desc": [
+        "깨달음을 얻은 자. 지혜 +4, 정신공격 면역 +1",
+        "Enlightened One. WIS +4, Psychic Attack Immunity +1",
+        "Ha trascendido los límites del entendimiento mortal. WIS +4, Inmunidad contra ataques psíquicos+1",
+        "Illuminato. SAG +4, Immunità all'Attacco Psichico +1",
+        "Um ser Iluminado. SAB +4, Psíquico-Imunidade +1",
+        "明心见性，破迷开悟。 感知+4，精神攻击免疫+1",
+        "明心見性，破迷開悟。 感知+4，精神攻擊免疫+1",
+        "悟りを得た者。 WIS+4、精神耐性+1",
+        "Kamu mendapat pencerahan. WIS +4, Kebal Serangan Psikis +1",
+        "المستنير. الحكمة +4، المناعة ضد الهجمات النفسية +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_55_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "현자",
+        "en": "Sage",
+        "es": "Iluminado",
+        "it": "Saggio",
+        "pt": "Sapiente -",
+        "zh-Hans": "贤者",
+        "zh-Hant": "賢者",
+        "ja": "賢者",
+        "id": "Petapa",
+        "ar": "حكيم"
+      },
+      "desc": {
+        "ko": "깨달음을 얻은 자. 지혜 +4, 정신공격 면역 +1",
+        "en": "Enlightened One. WIS +4, Psychic Attack Immunity +1",
+        "es": "Ha trascendido los límites del entendimiento mortal. WIS +4, Inmunidad contra ataques psíquicos+1",
+        "it": "Illuminato. SAG +4, Immunità all'Attacco Psichico +1",
+        "pt": "Um ser Iluminado. SAB +4, Psíquico-Imunidade +1",
+        "zh-Hans": "明心见性，破迷开悟。 感知+4，精神攻击免疫+1",
+        "zh-Hant": "明心見性，破迷開悟。 感知+4，精神攻擊免疫+1",
+        "ja": "悟りを得た者。 WIS+4、精神耐性+1",
+        "id": "Kamu mendapat pencerahan. WIS +4, Kebal Serangan Psikis +1",
+        "ar": "المستنير. الحكمة +4، المناعة ضد الهجمات النفسية +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "28",
+      "name": [
+        "불굴의",
+        "Indomitable",
+        "Indomable",
+        "Indomabile",
+        "Indomável -",
+        "顽强",
+        "頑強",
+        "不屈",
+        "Gigih",
+        "لا يقهر"
+      ],
+      "desc": [
+        "역경에 굴하지 않고, 그것을 이겨낸 자. 자신보다 강한 몬스터 (승률 33% 이하) 와 전투 시 주는 피해 + 10% 불굴 +1",
+        "One who does not succumb to adversity, and overcomes it. Damage bonus +10% when fighting against a strong opponent (Win rate 33% or lower), Indomitable +1",
+        "El que no sucumbe ante la adversidad y la supera. Daño infligido +10% al enfrentarse a un oponente más fuerte (probabilidad de victoria menor al 33%), Indomable +1",
+        "Superiore alle difficoltà. Bonus danni +10% quando si combatte contro un avversario forte (Tasso di vittoria del 33% o inferiore), Indomabile +1",
+        "Aquele que não sucumbe à adversidade; pelo contrário: a supera. Dano bônus de 10% ao lutar contra um oponente mais forte (Taxa de vitória de 33% ou menos), Indomável +1",
+        "无论在何种逆境下都不会屈服，勇于面对一切难关的人。 战斗时自身处于劣势（获胜几率33%或以下）则造成伤害+10%。 不屈+1",
+        "無論在何種逆境下都不會屈服，勇於面對一切難關的人。 戰鬥時本身處於劣勢（獲勝機率33%或以下）則造成傷害+10%。 不屈+1",
+        "逆境に屈さず、勝ち抜く者。 自分より強い敵（勝率33%以下）との戦闘時、\n 与えるダメージに+10%する。 不屈+1",
+        "Tidak pernah ada kata menyerah dalam hidupmu. Bonus damage +10% ketika melawan musuh yang lebih kuat (peluang menang 33% atau lebih rendah), Gigih +1",
+        "الشخص الذي لا يستسلم للشدائد ويتغلب عليها. مكافأة الضرر +10% عند القتال ضد خصم قوي (معدل الفوز 33% أو أقل), لا يقهر +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_41_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "불굴의",
+        "en": "Indomitable",
+        "es": "Indomable",
+        "it": "Indomabile",
+        "pt": "Indomável -",
+        "zh-Hans": "顽强",
+        "zh-Hant": "頑強",
+        "ja": "不屈",
+        "id": "Gigih",
+        "ar": "لا يقهر"
+      },
+      "desc": {
+        "ko": "역경에 굴하지 않고, 그것을 이겨낸 자. 자신보다 강한 몬스터 (승률 33% 이하) 와 전투 시 주는 피해 + 10% 불굴 +1",
+        "en": "One who does not succumb to adversity, and overcomes it. Damage bonus +10% when fighting against a strong opponent (Win rate 33% or lower), Indomitable +1",
+        "es": "El que no sucumbe ante la adversidad y la supera. Daño infligido +10% al enfrentarse a un oponente más fuerte (probabilidad de victoria menor al 33%), Indomable +1",
+        "it": "Superiore alle difficoltà. Bonus danni +10% quando si combatte contro un avversario forte (Tasso di vittoria del 33% o inferiore), Indomabile +1",
+        "pt": "Aquele que não sucumbe à adversidade; pelo contrário: a supera. Dano bônus de 10% ao lutar contra um oponente mais forte (Taxa de vitória de 33% ou menos), Indomável +1",
+        "zh-Hans": "无论在何种逆境下都不会屈服，勇于面对一切难关的人。 战斗时自身处于劣势（获胜几率33%或以下）则造成伤害+10%。 不屈+1",
+        "zh-Hant": "無論在何種逆境下都不會屈服，勇於面對一切難關的人。 戰鬥時本身處於劣勢（獲勝機率33%或以下）則造成傷害+10%。 不屈+1",
+        "ja": "逆境に屈さず、勝ち抜く者。 自分より強い敵（勝率33%以下）との戦闘時、\n 与えるダメージに+10%する。 不屈+1",
+        "id": "Tidak pernah ada kata menyerah dalam hidupmu. Bonus damage +10% ketika melawan musuh yang lebih kuat (peluang menang 33% atau lebih rendah), Gigih +1",
+        "ar": "الشخص الذي لا يستسلم للشدائد ويتغلب عليها. مكافأة الضرر +10% عند القتال ضد خصم قوي (معدل الفوز 33% أو أقل), لا يقهر +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "29",
+      "name": [
+        "포식자",
+        "Predator",
+        "Depredador",
+        "Predatore",
+        "Predador -",
+        "天敌",
+        "天敵",
+        "捕食者",
+        "Sang Pemangsa",
+        "مفترس"
+      ],
+      "desc": [
+        "먹이 사슬의 정점. 공포를 일으키는 대상. 자신보다 약한 몬스터 (승률 66% 이상) 와 전투 시 주는 피해 + 10%. 포식자의 시선 +1, 심안 +1",
+        "Apex of the food chain. A creature of terror. Damage bonus +10% when fighting against a weak opponent (Win rate 66% or higher). Blindsight +1, Predator's Gaze +1",
+        "En la cúspide de la cadena alimentaria. Un ser que infunde terror. Daño infligido +10% al enfrentarse a un oponente más débil (probabilidad de victoria mayor al 66%). Visión aguda +1, Mirada de depredador +1",
+        "Predatore Alpha, all'apice della catena alimentare. Bonus danni +10% quando si combatte contro un avversario debole (Tasso di vittoria 66% o superiore). Vista acuta +1, Sguardo del predatore +1",
+        "O ápice da cadeia alimentar. Uma criatura a se temer. Dano bônus de 10% ao lutar contra um oponente mais fraco (Taxa de vitória de 66% ou mais), Visão cega +1, Olhar do Predador +1",
+        "食物链中的顶尖捕食者，烙印在弱者心中的恐惧之源。 战斗时自身处于优势（获胜几率66%或以上）则造成伤害+10%。 盲视+1，掠食者的凝视+1",
+        "食物鏈中的頂尖掠食者，烙印在弱者心中的恐懼之源。 戰鬥時本身處於優勢（獲勝機率66%或以上）則造成傷害+10%。 盲視+1，掠食者的凝視+1",
+        "食物連鎖の頂点に立つ、恐怖を引き起こす者。 自分より弱い魔物（勝率66％以上）との戦闘時、\n 与えるダメージに+10％する。 捕食者の眼差し+1、心眼+1",
+        "Predator puncak. Makhluk yang berada di puncak rantai makanan. Bonus damage +10% ketika melawan musuh yang lebih lemah (peluang menang 66% atau lebih tinggi). Melihat Tanpa Mata +1, Tatapan Predator +1",
+        "قمة السلسلة الغذائية. مخلوق مرعب. زيادة الضرر +10% عند القتال ضد خصم ضعيف (معدل الفوز 66% أو أعلى). الرؤية العمياء +1، نظرة المُفترِس +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_27_1|addAb_77_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "포식자",
+        "en": "Predator",
+        "es": "Depredador",
+        "it": "Predatore",
+        "pt": "Predador -",
+        "zh-Hans": "天敌",
+        "zh-Hant": "天敵",
+        "ja": "捕食者",
+        "id": "Sang Pemangsa",
+        "ar": "مفترس"
+      },
+      "desc": {
+        "ko": "먹이 사슬의 정점. 공포를 일으키는 대상. 자신보다 약한 몬스터 (승률 66% 이상) 와 전투 시 주는 피해 + 10%. 포식자의 시선 +1, 심안 +1",
+        "en": "Apex of the food chain. A creature of terror. Damage bonus +10% when fighting against a weak opponent (Win rate 66% or higher). Blindsight +1, Predator's Gaze +1",
+        "es": "En la cúspide de la cadena alimentaria. Un ser que infunde terror. Daño infligido +10% al enfrentarse a un oponente más débil (probabilidad de victoria mayor al 66%). Visión aguda +1, Mirada de depredador +1",
+        "it": "Predatore Alpha, all'apice della catena alimentare. Bonus danni +10% quando si combatte contro un avversario debole (Tasso di vittoria 66% o superiore). Vista acuta +1, Sguardo del predatore +1",
+        "pt": "O ápice da cadeia alimentar. Uma criatura a se temer. Dano bônus de 10% ao lutar contra um oponente mais fraco (Taxa de vitória de 66% ou mais), Visão cega +1, Olhar do Predador +1",
+        "zh-Hans": "食物链中的顶尖捕食者，烙印在弱者心中的恐惧之源。 战斗时自身处于优势（获胜几率66%或以上）则造成伤害+10%。 盲视+1，掠食者的凝视+1",
+        "zh-Hant": "食物鏈中的頂尖掠食者，烙印在弱者心中的恐懼之源。 戰鬥時本身處於優勢（獲勝機率66%或以上）則造成傷害+10%。 盲視+1，掠食者的凝視+1",
+        "ja": "食物連鎖の頂点に立つ、恐怖を引き起こす者。 自分より弱い魔物（勝率66％以上）との戦闘時、\n 与えるダメージに+10％する。 捕食者の眼差し+1、心眼+1",
+        "id": "Predator puncak. Makhluk yang berada di puncak rantai makanan. Bonus damage +10% ketika melawan musuh yang lebih lemah (peluang menang 66% atau lebih tinggi). Melihat Tanpa Mata +1, Tatapan Predator +1",
+        "ar": "قمة السلسلة الغذائية. مخلوق مرعب. زيادة الضرر +10% عند القتال ضد خصم ضعيف (معدل الفوز 66% أو أعلى). الرؤية العمياء +1، نظرة المُفترِس +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "30",
+      "name": [
+        "도살자",
+        "Butcher",
+        "Carnicero",
+        "Macellaio",
+        "Psicopata -",
+        "屠宰匠",
+        "屠宰匠",
+        "屠殺者",
+        "Sang Penjagal",
+        "جزار"
+      ],
+      "desc": [
+        "많은 '경험' 덕분에 인간형의 몬스터를 상대하는 데 숙련됨. 성향 -20, 위협 +2, 해부학 +1",
+        "Skilled in combating humanoid monsters due to extensive 'experience'. Alignment -20, Intimidating +2, Vivisection +1",
+        "Hábil contra monstruos humanoides gracias a una extensa 'experiencia'. Alineamiento -20, Intimidante +2, Vivisección +1",
+        "Esperto nel sezionare umani e creature, mostrando il vero significato della parola 'terrore'. Allineamento -20, Minaccia +2, Vivisezione +1",
+        "Habilidoso(a) em combater criaturas humanoides, usando táticas cruéis e precisas. Alinhamento -20, Intimidação +2, Vivissecção +1",
+        "由于丰富的“实践经验”，处理类人生物时手法格外娴熟。 善恶值-20，威慑+2，解剖学+1",
+        "由於豐富的“實踐經驗”，處理類人生物時手法格外嫻熟。 善惡值-20，威懾+2，解剖+1",
+        "多くの「経験」のおかげで、人系の敵相手取ることに慣れている。 アライメント-20、威圧+2、解剖学+1",
+        "Terlatih dalam memotong-motong monster berbentuk manusia lewat 'pengalaman' luas. Karma -20, Menakutkan +2, Vivisection +1",
+        "ماهر في مكافحة الوحوش الشبيهة بالبشر بسبب 'الخبرة' الواسعة. الميل -20، الترهيب +2، التشريح +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_1_1|addAb_79_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "도살자",
+        "en": "Butcher",
+        "es": "Carnicero",
+        "it": "Macellaio",
+        "pt": "Psicopata -",
+        "zh-Hans": "屠宰匠",
+        "zh-Hant": "屠宰匠",
+        "ja": "屠殺者",
+        "id": "Sang Penjagal",
+        "ar": "جزار"
+      },
+      "desc": {
+        "ko": "많은 '경험' 덕분에 인간형의 몬스터를 상대하는 데 숙련됨. 성향 -20, 위협 +2, 해부학 +1",
+        "en": "Skilled in combating humanoid monsters due to extensive 'experience'. Alignment -20, Intimidating +2, Vivisection +1",
+        "es": "Hábil contra monstruos humanoides gracias a una extensa 'experiencia'. Alineamiento -20, Intimidante +2, Vivisección +1",
+        "it": "Esperto nel sezionare umani e creature, mostrando il vero significato della parola 'terrore'. Allineamento -20, Minaccia +2, Vivisezione +1",
+        "pt": "Habilidoso(a) em combater criaturas humanoides, usando táticas cruéis e precisas. Alinhamento -20, Intimidação +2, Vivissecção +1",
+        "zh-Hans": "由于丰富的“实践经验”，处理类人生物时手法格外娴熟。 善恶值-20，威慑+2，解剖学+1",
+        "zh-Hant": "由於豐富的“實踐經驗”，處理類人生物時手法格外嫻熟。 善惡值-20，威懾+2，解剖+1",
+        "ja": "多くの「経験」のおかげで、人系の敵相手取ることに慣れている。 アライメント-20、威圧+2、解剖学+1",
+        "id": "Terlatih dalam memotong-motong monster berbentuk manusia lewat 'pengalaman' luas. Karma -20, Menakutkan +2, Vivisection +1",
+        "ar": "ماهر في مكافحة الوحوش الشبيهة بالبشر بسبب 'الخبرة' الواسعة. الميل -20، الترهيب +2، التشريح +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "31",
+      "name": [
+        "구원자",
+        "Savior",
+        "Salvador",
+        "Salvatore",
+        "O(A) Salvador(a) -",
+        "救世主",
+        "救世主",
+        "救済者",
+        "Sang Penyelamat",
+        "مُنقذ"
+      ],
+      "desc": [
+        "선량하고 약한 자들의 희망. 성향 +20, 안정감 +2, 치유 +1",
+        "A beacon of hope for the good and the weak. Alignment +20, Stability +2, Heal +1",
+        "Un faro de esperanza para los buenos y los débiles. Alineamiento +20, Estabilidad +2, Curar +1",
+        "Un faro di speranza per i buoni e i deboli. Allineamento +20, Stabilità +2, Guarisci +1",
+        "Um farol de esperança para os fracos e os perdidos. Alinhamento +20, Estabilidade +2, Cura +1",
+        "仁人义士和贫弱百姓的希望曙光。 善恶值+20，稳定+2，医疗+1",
+        "仁人義士和貧弱百姓的希望曙光。 善惡值+20，穩定+2，醫療+1",
+        "善良、無辜、弱者の希望。 アライメント+20、安定+2、応急手当+1",
+        "Suar harapan bagi kaum lemah dan tertindas. Karma +20, Tenang +2, Penyembuhan +1",
+        "منارة أمل للصالحين والضعفاء. الميل +20، التوازن +2، التعافي +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_2_1|addAb_36_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "구원자",
+        "en": "Savior",
+        "es": "Salvador",
+        "it": "Salvatore",
+        "pt": "O(A) Salvador(a) -",
+        "zh-Hans": "救世主",
+        "zh-Hant": "救世主",
+        "ja": "救済者",
+        "id": "Sang Penyelamat",
+        "ar": "مُنقذ"
+      },
+      "desc": {
+        "ko": "선량하고 약한 자들의 희망. 성향 +20, 안정감 +2, 치유 +1",
+        "en": "A beacon of hope for the good and the weak. Alignment +20, Stability +2, Heal +1",
+        "es": "Un faro de esperanza para los buenos y los débiles. Alineamiento +20, Estabilidad +2, Curar +1",
+        "it": "Un faro di speranza per i buoni e i deboli. Allineamento +20, Stabilità +2, Guarisci +1",
+        "pt": "Um farol de esperança para os fracos e os perdidos. Alinhamento +20, Estabilidade +2, Cura +1",
+        "zh-Hans": "仁人义士和贫弱百姓的希望曙光。 善恶值+20，稳定+2，医疗+1",
+        "zh-Hant": "仁人義士和貧弱百姓的希望曙光。 善惡值+20，穩定+2，醫療+1",
+        "ja": "善良、無辜、弱者の希望。 アライメント+20、安定+2、応急手当+1",
+        "id": "Suar harapan bagi kaum lemah dan tertindas. Karma +20, Tenang +2, Penyembuhan +1",
+        "ar": "منارة أمل للصالحين والضعفاء. الميل +20، التوازن +2، التعافي +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "32",
+      "name": [
+        "마도학자",
+        "Magister",
+        "Magistrado",
+        "Magister",
+        "Arquimago(a) -",
+        "奥术师",
+        "奧術師",
+        "修士",
+        "Penyihir Pro",
+        "ساحر"
+      ],
+      "desc": [
+        "마법을 연구하고 그 구조를 파악하여 능숙하게 사용함. 마법시전 +2, 마법 저항 +1",
+        "Skilled in studying magic and understanding its structure for proficient use. Spellcasting +2, Spell Resistance +1",
+        "Experto estudiando magia y comprendiendo su estructura para su uso competente. Lanzamiento de hechizos +2, Resistencia a hechizos +1",
+        "Abile nello studio della magia e nella comprensione della sua struttura per un uso competente. Incantamento +2, Resistenza agli incantesimi +1",
+        "Habilidoso(a) em estudar magia e compreender sua estrutura para uso proficiente. Feitiçaria +2, Resistência a Feitiços +1",
+        "对魔法的原理和构造都理解得十分透彻，因而施展起法术来游刃有余。 施法+2，魔法抗性+1",
+        "對魔法的原理和構造都理解得十分透徹，因而施展起法術來游刃有餘。 施法+2，魔法抗性+1",
+        "魔法の研究を重ね、構造を把握して扱う。 詠唱+2、魔法耐性+1",
+        "Terlatih dalam mempelajari dan memahami sihir baik struktur maupun kegunaannya. Rapal Mantra +2, Tahan Sihir +1",
+        "ماهر في دراسة السحر وفهم بنيته لاستخدامه بإتقان. إلقاء التعاويذ +2، مقاومة التعاويذ +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_0_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "마도학자",
+        "en": "Magister",
+        "es": "Magistrado",
+        "it": "Magister",
+        "pt": "Arquimago(a) -",
+        "zh-Hans": "奥术师",
+        "zh-Hant": "奧術師",
+        "ja": "修士",
+        "id": "Penyihir Pro",
+        "ar": "ساحر"
+      },
+      "desc": {
+        "ko": "마법을 연구하고 그 구조를 파악하여 능숙하게 사용함. 마법시전 +2, 마법 저항 +1",
+        "en": "Skilled in studying magic and understanding its structure for proficient use. Spellcasting +2, Spell Resistance +1",
+        "es": "Experto estudiando magia y comprendiendo su estructura para su uso competente. Lanzamiento de hechizos +2, Resistencia a hechizos +1",
+        "it": "Abile nello studio della magia e nella comprensione della sua struttura per un uso competente. Incantamento +2, Resistenza agli incantesimi +1",
+        "pt": "Habilidoso(a) em estudar magia e compreender sua estrutura para uso proficiente. Feitiçaria +2, Resistência a Feitiços +1",
+        "zh-Hans": "对魔法的原理和构造都理解得十分透彻，因而施展起法术来游刃有余。 施法+2，魔法抗性+1",
+        "zh-Hant": "對魔法的原理和構造都理解得十分透徹，因而施展起法術來游刃有餘。 施法+2，魔法抗性+1",
+        "ja": "魔法の研究を重ね、構造を把握して扱う。 詠唱+2、魔法耐性+1",
+        "id": "Terlatih dalam mempelajari dan memahami sihir baik struktur maupun kegunaannya. Rapal Mantra +2, Tahan Sihir +1",
+        "ar": "ماهر في دراسة السحر وفهم بنيته لاستخدامه بإتقان. إلقاء التعاويذ +2، مقاومة التعاويذ +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "33",
+      "name": [
+        "탐정",
+        "Detective",
+        "Detective",
+        "Detective",
+        "Detetive -",
+        "调查员",
+        "調查員",
+        "探偵",
+        "Detektif",
+        "محقق"
+      ],
+      "desc": [
+        "논리적인 근거로 무언가를 찾아내고, 분석하는 것에 능숙함. 지혜 +4, 냄새감지 +1, 분석 +1",
+        "Skilled in uncovering and analyzing something through logical reasoning. WIS +4, Scent detection +1, Analyze +1",
+        "Habilidad para descubrir y analizar cosas mediante razonamientos lógicos. WIS +4, Detección de olores +1, Análisis +1",
+        "Esperto nel rivelare e analizzare qualcosa attraverso il ragionamento logico. SAG +4, Rilevamento degli odori +1, Analisi +1",
+        "Habilidoso(a) em descobrir e analisar coisas, através do raciocínio lógico. SAB +4, Detecção de cheiro +1, Analisar +1",
+        "善于运用逻辑推理来分析人事物。 感知+4，嗅觉侦测+1，分析+1",
+        "善於運用邏輯推理來分析人事物。 感知+4，嗅覺偵測+1，分析+1",
+        "論理的な根拠で何かを見つけ出し、分析することに長けている。 WIS+4、嗅覚+1、解析+1",
+        "Terlatih dalam membuka kedok dan menganalisa sesuatu melalui penalaran logika. WIS +4, Penciuman tajam +1, Analisis +1.",
+        "ماهر في كشف وتحليل شيء ما من خلال التفكير المنطقي. الحكمة +4، اكتشاف الروائح +1، التحليل +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_85_1|addAb_28_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "탐정",
+        "en": "Detective",
+        "es": "Detective",
+        "it": "Detective",
+        "pt": "Detetive -",
+        "zh-Hans": "调查员",
+        "zh-Hant": "調查員",
+        "ja": "探偵",
+        "id": "Detektif",
+        "ar": "محقق"
+      },
+      "desc": {
+        "ko": "논리적인 근거로 무언가를 찾아내고, 분석하는 것에 능숙함. 지혜 +4, 냄새감지 +1, 분석 +1",
+        "en": "Skilled in uncovering and analyzing something through logical reasoning. WIS +4, Scent detection +1, Analyze +1",
+        "es": "Habilidad para descubrir y analizar cosas mediante razonamientos lógicos. WIS +4, Detección de olores +1, Análisis +1",
+        "it": "Esperto nel rivelare e analizzare qualcosa attraverso il ragionamento logico. SAG +4, Rilevamento degli odori +1, Analisi +1",
+        "pt": "Habilidoso(a) em descobrir e analisar coisas, através do raciocínio lógico. SAB +4, Detecção de cheiro +1, Analisar +1",
+        "zh-Hans": "善于运用逻辑推理来分析人事物。 感知+4，嗅觉侦测+1，分析+1",
+        "zh-Hant": "善於運用邏輯推理來分析人事物。 感知+4，嗅覺偵測+1，分析+1",
+        "ja": "論理的な根拠で何かを見つけ出し、分析することに長けている。 WIS+4、嗅覚+1、解析+1",
+        "id": "Terlatih dalam membuka kedok dan menganalisa sesuatu melalui penalaran logika. WIS +4, Penciuman tajam +1, Analisis +1.",
+        "ar": "ماهر في كشف وتحليل شيء ما من خلال التفكير المنطقي. الحكمة +4، اكتشاف الروائح +1، التحليل +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "34",
+      "name": [
+        "뿌리내린",
+        "Rooted",
+        "Arraigado",
+        "Radicato",
+        "Enraizado(a) -",
+        "根芽",
+        "根芽",
+        "切り株の住人",
+        "Rooted",
+        "متجذر"
+      ],
+      "desc": [
+        "정령의 축복을 받아 자연의 힘을 얻음. 은밀함 +2, 등반 +1, 재생 +1",
+        "Blessed by the fairy, gaining the power of nature. Stealthy +2, Climbing +1, Regeneration +1",
+        "Bendecido por los espíritus, obtienes el poder de la naturaleza. Sigilo +2, Escalada +1, Regeneración +1",
+        "Benedetto dalla fata, detentore del potere della natura. Furtivo +2, Arrampicarsi +1, Rigenerazione +1",
+        "Abençoado(a) pela fada, ganhando o poder da natureza. Furtividade +2, Escalada +1, Regeneração +1",
+        "获得仙子的祝福，被赋予了自然的力量。 隐匿+2，攀爬+1，再生+1",
+        "獲得仙子的祝福，被賦予了自然的力量。 隱匿+2，攀爬+1，再生+1",
+        "精霊の祝福を一身に受け、大自然の力を得る。 隠密+2、登攀+1、再生+1",
+        "Diberkati oleh peri, mendapat kekuatan alam. Sembunyi +2, Memanjat +1, Regenerasi +1",
+        "مبارك من الجنية، تكسبك قوة الطبيعة. التخفي +2، التسلق +1، التجديد +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_29_1|addAb_4_2",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "뿌리내린",
+        "en": "Rooted",
+        "es": "Arraigado",
+        "it": "Radicato",
+        "pt": "Enraizado(a) -",
+        "zh-Hans": "根芽",
+        "zh-Hant": "根芽",
+        "ja": "切り株の住人",
+        "id": "Rooted",
+        "ar": "متجذر"
+      },
+      "desc": {
+        "ko": "정령의 축복을 받아 자연의 힘을 얻음. 은밀함 +2, 등반 +1, 재생 +1",
+        "en": "Blessed by the fairy, gaining the power of nature. Stealthy +2, Climbing +1, Regeneration +1",
+        "es": "Bendecido por los espíritus, obtienes el poder de la naturaleza. Sigilo +2, Escalada +1, Regeneración +1",
+        "it": "Benedetto dalla fata, detentore del potere della natura. Furtivo +2, Arrampicarsi +1, Rigenerazione +1",
+        "pt": "Abençoado(a) pela fada, ganhando o poder da natureza. Furtividade +2, Escalada +1, Regeneração +1",
+        "zh-Hans": "获得仙子的祝福，被赋予了自然的力量。 隐匿+2，攀爬+1，再生+1",
+        "zh-Hant": "獲得仙子的祝福，被賦予了自然的力量。 隱匿+2，攀爬+1，再生+1",
+        "ja": "精霊の祝福を一身に受け、大自然の力を得る。 隠密+2、登攀+1、再生+1",
+        "id": "Diberkati oleh peri, mendapat kekuatan alam. Sembunyi +2, Memanjat +1, Regenerasi +1",
+        "ar": "مبارك من الجنية، تكسبك قوة الطبيعة. التخفي +2، التسلق +1، التجديد +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "35",
+      "name": [
+        "뒤틀린",
+        "Aberration",
+        "Aberración",
+        "Aberrazione",
+        "Aberração -",
+        "畸胎",
+        "畸胎",
+        "醜怪な者",
+        "Si Anomali",
+        "مسخ"
+      ],
+      "desc": [
+        "자연과 어울리지 않는 뒤틀린 존재. 위협 +2, 기품 -2, 등반 +1, 잡기 +2",
+        "An unnatural and twisted existence that doesn't harmonize with nature. Grace -2, Intimidating +2, Climbing +1, Grab +2",
+        "Una entidad retorcida que no encaja con la naturaleza. Amenaza +2, Destreza -2, Trepar +1, Agarrar +2",
+        "Un'esistenza innaturale e distorta che non si armonizza con la natura. Grazia -2, Intimidante +2, Arrampicarsi +1, Afferrare +2",
+        "Uma existência antinatural e distorcida, que não se harmoniza com a natureza. Graça -2, Intimidação +2, Escalada +1, Agarrar +2",
+        "与自然格格不入的扭曲存在。 风度-2，威慑+2，攀爬+1，抓握+2",
+        "與大自然格格不入的扭曲存在。 風度-2，威懾+2，攀爬+1，抓握+2",
+        "自然の理と相容れない、ねじれた存在。 威圧+2、気品-2、登攀+1、突進+2",
+        "Eksistensi yang bertentangan dengan alam dan sangat tidak natural. Anggun -2, Menakutkan +2, Memanjat +1, Cengkram +2",
+        "وجود غير طبيعي وملتوي لا ينسجم مع الطبيعة. النعمة -2، الترهيب +2، التسلق +1، الإمساك +2"
+      ],
+      "grade": "0",
+      "effect": "addAb_1_2|addAb_49_2|addAb_5_-2",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "뒤틀린",
+        "en": "Aberration",
+        "es": "Aberración",
+        "it": "Aberrazione",
+        "pt": "Aberração -",
+        "zh-Hans": "畸胎",
+        "zh-Hant": "畸胎",
+        "ja": "醜怪な者",
+        "id": "Si Anomali",
+        "ar": "مسخ"
+      },
+      "desc": {
+        "ko": "자연과 어울리지 않는 뒤틀린 존재. 위협 +2, 기품 -2, 등반 +1, 잡기 +2",
+        "en": "An unnatural and twisted existence that doesn't harmonize with nature. Grace -2, Intimidating +2, Climbing +1, Grab +2",
+        "es": "Una entidad retorcida que no encaja con la naturaleza. Amenaza +2, Destreza -2, Trepar +1, Agarrar +2",
+        "it": "Un'esistenza innaturale e distorta che non si armonizza con la natura. Grazia -2, Intimidante +2, Arrampicarsi +1, Afferrare +2",
+        "pt": "Uma existência antinatural e distorcida, que não se harmoniza com a natureza. Graça -2, Intimidação +2, Escalada +1, Agarrar +2",
+        "zh-Hans": "与自然格格不入的扭曲存在。 风度-2，威慑+2，攀爬+1，抓握+2",
+        "zh-Hant": "與大自然格格不入的扭曲存在。 風度-2，威懾+2，攀爬+1，抓握+2",
+        "ja": "自然の理と相容れない、ねじれた存在。 威圧+2、気品-2、登攀+1、突進+2",
+        "id": "Eksistensi yang bertentangan dengan alam dan sangat tidak natural. Anggun -2, Menakutkan +2, Memanjat +1, Cengkram +2",
+        "ar": "وجود غير طبيعي وملتوي لا ينسجم مع الطبيعة. النعمة -2، الترهيب +2، التسلق +1، الإمساك +2"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "36",
+      "name": [
+        "축성된",
+        "Blessed",
+        "Bendito",
+        "Benedetto",
+        "Abençoado(a) -",
+        "神眷者",
+        "神眷者",
+        "祝福者",
+        "Yang Terberkati",
+        "مُنعم"
+      ],
+      "desc": [
+        "신들의 시험을 통과하여 축복받은 자. 신성함 +2, 구마의식 +1, 축복 +1",
+        "One who has passed the gods' trials and received their blessings. Holiness +2 , Blessing +1, Exorcism +1",
+        "Aquel que ha superado las pruebas divinas y ha sido bendecido por los dioses Santidad +2, Bendición +1, Exorcismo +1",
+        "Prescelto dagli dèi e da loro benedetto. Santità +2, Benedizione +1, Esorcismo +1",
+        "Aquele(a) que passou pelos testes dos deuses e recebeu suas bênçãos. Santidade +2, Bênção +1, Exorcismo +1",
+        "通过了神的考验，由此获得祝福的人。 神圣+2，祝福+1，驱魔+1",
+        "通過了神的考驗，由此獲得祝福的人。 神聖+2，祝福+1，驅魔+1",
+        "神々の試練を乗り越え、祝福された者。 神聖+2、祓魔師+1、祝福+1",
+        "Kamu telah melalui ujian dari Tuhan dan memperoleh berkat-Nya. Suci +2, Berkat +1, Sempulian +1",
+        "من اجتاز اختبارات الآلهة ونال بركاتهم. القداسة +2، البركة +1، طرد الأرواح +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_3_1|addAb_78_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "축성된",
+        "en": "Blessed",
+        "es": "Bendito",
+        "it": "Benedetto",
+        "pt": "Abençoado(a) -",
+        "zh-Hans": "神眷者",
+        "zh-Hant": "神眷者",
+        "ja": "祝福者",
+        "id": "Yang Terberkati",
+        "ar": "مُنعم"
+      },
+      "desc": {
+        "ko": "신들의 시험을 통과하여 축복받은 자. 신성함 +2, 구마의식 +1, 축복 +1",
+        "en": "One who has passed the gods' trials and received their blessings. Holiness +2 , Blessing +1, Exorcism +1",
+        "es": "Aquel que ha superado las pruebas divinas y ha sido bendecido por los dioses Santidad +2, Bendición +1, Exorcismo +1",
+        "it": "Prescelto dagli dèi e da loro benedetto. Santità +2, Benedizione +1, Esorcismo +1",
+        "pt": "Aquele(a) que passou pelos testes dos deuses e recebeu suas bênçãos. Santidade +2, Bênção +1, Exorcismo +1",
+        "zh-Hans": "通过了神的考验，由此获得祝福的人。 神圣+2，祝福+1，驱魔+1",
+        "zh-Hant": "通過了神的考驗，由此獲得祝福的人。 神聖+2，祝福+1，驅魔+1",
+        "ja": "神々の試練を乗り越え、祝福された者。 神聖+2、祓魔師+1、祝福+1",
+        "id": "Kamu telah melalui ujian dari Tuhan dan memperoleh berkat-Nya. Suci +2, Berkat +1, Sempulian +1",
+        "ar": "من اجتاز اختبارات الآلهة ونال بركاتهم. القداسة +2، البركة +1، طرد الأرواح +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "37",
+      "name": [
+        "악마 숭배자",
+        "Devil worshipper",
+        "Adorador del Diablo",
+        "Satanista",
+        "Satanista -",
+        "邪教徒",
+        "邪教徒",
+        "悪魔崇拝者",
+        "Pemuja Setan",
+        "شيطاني"
+      ],
+      "desc": [
+        "악마를 숭배하는 자. 신성함 -2, 피의 저주 +1, 영혼 수확 +1",
+        "One who worships devils. Holiness -2, Curse of Blood +1, Reap Souls +1",
+        "Adorador de demonios. \n Santidad -2, Maldición de Sangre +1, Cosecha de Almas +1",
+        "Adoratore dei demoni dell'inferno. Santità -2, Maledizione del Sangue +1, Raccolta Anime +1",
+        "Aquele que adora a demônios. Santidade -2, Maldição de Sangue +1, Colheita de Almas +1",
+        "恶魔的崇拜者。 神圣-2，血之诅咒+1，灵魂收割+1",
+        "惡魔的崇拜者。 神聖-2，血之詛咒+1，靈魂收割+1",
+        "堕落した存在を崇拝する者。 神聖-2、血の呪い+1、魂食い+1",
+        "Penyembah para Iblis dari Neraka. Suci -2, Kutukan Darah +1, Panen Jiwa +1",
+        "من يعبد الشياطين. القداسة -2، لعنة من دماء +1، حصد الأرواح +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_3_-3|addAb_67_1|addAb_37_-1|addAb_74_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "악마 숭배자",
+        "en": "Devil worshipper",
+        "es": "Adorador del Diablo",
+        "it": "Satanista",
+        "pt": "Satanista -",
+        "zh-Hans": "邪教徒",
+        "zh-Hant": "邪教徒",
+        "ja": "悪魔崇拝者",
+        "id": "Pemuja Setan",
+        "ar": "شيطاني"
+      },
+      "desc": {
+        "ko": "악마를 숭배하는 자. 신성함 -2, 피의 저주 +1, 영혼 수확 +1",
+        "en": "One who worships devils. Holiness -2, Curse of Blood +1, Reap Souls +1",
+        "es": "Adorador de demonios. \n Santidad -2, Maldición de Sangre +1, Cosecha de Almas +1",
+        "it": "Adoratore dei demoni dell'inferno. Santità -2, Maledizione del Sangue +1, Raccolta Anime +1",
+        "pt": "Aquele que adora a demônios. Santidade -2, Maldição de Sangue +1, Colheita de Almas +1",
+        "zh-Hans": "恶魔的崇拜者。 神圣-2，血之诅咒+1，灵魂收割+1",
+        "zh-Hant": "惡魔的崇拜者。 神聖-2，血之詛咒+1，靈魂收割+1",
+        "ja": "堕落した存在を崇拝する者。 神聖-2、血の呪い+1、魂食い+1",
+        "id": "Penyembah para Iblis dari Neraka. Suci -2, Kutukan Darah +1, Panen Jiwa +1",
+        "ar": "من يعبد الشياطين. القداسة -2، لعنة من دماء +1، حصد الأرواح +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "38",
+      "name": [
+        "바위 거인",
+        "Rock Giant",
+        "Gigante de Roca",
+        "Roccia",
+        "Golem -",
+        "石巨人",
+        "石巨人",
+        "岩の巨人",
+        "Raksasa Batu",
+        "عملاق صخري"
+      ],
+      "desc": [
+        "방패가 없어도 막기를 할 수 있고, 물리 피해 저항과 출혈에 대한 저항이 높아짐. 막기 +2, 물리 저항 +1, 출혈 저항 +2",
+        "You can block without a shield, and have higher resistance against physical and bleeding damage. Block +2, Physical Resistance +1, Bleeding Resistance +2",
+        "Capaz de bloquear incluso sin un escudo, con mayor resistencia al daño físico y a las heridas por sangrado Bloqueo +2, Resistencia física +1, Resistencia al sangrado +2",
+        "Puoi parare senza scudo e hai una resistenza maggiore contro i danni fisici e da sanguinamento. Parata +2, Resistenza fisica +1, Resistenza al sanguinamento +2",
+        "Você se torna capaz de bloquear sem um escudo, e têm uma resistência maior contra danos físicos e contra sangramento. Bloqueio +2, Resistência Física +1, Resistência ao Sangramento +2",
+        "你能在没有盾牌的状况下进行格挡，并且对物理及流血伤害有更高的抗性。 格挡+2，物理抗性+1，流血抗性+2",
+        "你能在沒有盾牌的狀況下進行格擋，並且對物理及流血傷害有更高的抗性。 格擋+2，物理抗性+1，出血抗性+2",
+        "盾がなくとも防御ができ、物理やいくつかの状態異常に対する抵抗力が高まる。 防御+2、物理耐性+1、出血耐性+2",
+        "Kamu bisa memblokir serangan tanpa memakai perisai dan kamu lebih tahan terhadap serangan fisik dan pendarahan. Blokir +2, Tahan Fisik +1, Sukar Berdarah +2",
+        "يمكنك الصد بدون درع، ولديك مقاومة أعلى ضد الضرر البدني والنزيف. التصدي +2، المقاومة البدنية +1، مقاومة النزيف +2"
+      ],
+      "grade": "0",
+      "effect": "addAb_21_2|addAb_9_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "바위 거인",
+        "en": "Rock Giant",
+        "es": "Gigante de Roca",
+        "it": "Roccia",
+        "pt": "Golem -",
+        "zh-Hans": "石巨人",
+        "zh-Hant": "石巨人",
+        "ja": "岩の巨人",
+        "id": "Raksasa Batu",
+        "ar": "عملاق صخري"
+      },
+      "desc": {
+        "ko": "방패가 없어도 막기를 할 수 있고, 물리 피해 저항과 출혈에 대한 저항이 높아짐. 막기 +2, 물리 저항 +1, 출혈 저항 +2",
+        "en": "You can block without a shield, and have higher resistance against physical and bleeding damage. Block +2, Physical Resistance +1, Bleeding Resistance +2",
+        "es": "Capaz de bloquear incluso sin un escudo, con mayor resistencia al daño físico y a las heridas por sangrado Bloqueo +2, Resistencia física +1, Resistencia al sangrado +2",
+        "it": "Puoi parare senza scudo e hai una resistenza maggiore contro i danni fisici e da sanguinamento. Parata +2, Resistenza fisica +1, Resistenza al sanguinamento +2",
+        "pt": "Você se torna capaz de bloquear sem um escudo, e têm uma resistência maior contra danos físicos e contra sangramento. Bloqueio +2, Resistência Física +1, Resistência ao Sangramento +2",
+        "zh-Hans": "你能在没有盾牌的状况下进行格挡，并且对物理及流血伤害有更高的抗性。 格挡+2，物理抗性+1，流血抗性+2",
+        "zh-Hant": "你能在沒有盾牌的狀況下進行格擋，並且對物理及流血傷害有更高的抗性。 格擋+2，物理抗性+1，出血抗性+2",
+        "ja": "盾がなくとも防御ができ、物理やいくつかの状態異常に対する抵抗力が高まる。 防御+2、物理耐性+1、出血耐性+2",
+        "id": "Kamu bisa memblokir serangan tanpa memakai perisai dan kamu lebih tahan terhadap serangan fisik dan pendarahan. Blokir +2, Tahan Fisik +1, Sukar Berdarah +2",
+        "ar": "يمكنك الصد بدون درع، ولديك مقاومة أعلى ضد الضرر البدني والنزيف. التصدي +2، المقاومة البدنية +1، مقاومة النزيف +2"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "39",
+      "name": [
+        "걸작",
+        "Master Piece",
+        "Obra Maestra",
+        "Capolavoro",
+        "A Perfeição -",
+        "维纳斯",
+        "維納斯",
+        "最高傑作",
+        "Mahakarya",
+        "تحفة فنية"
+      ],
+      "desc": [
+        "우아하고 기품이 넘침. 기품 +4, 은밀함 -2, 눈부심 +2, 현혹 +1",
+        "Graceful and elegant overflowing. Grace +4, Stealthy -2, Glare +2, Charm +1",
+        "Elegante y lleno de dignidad. Gracia +4, Sigilo -2, Deslumbramiento +2, Encanto +1",
+        "Elegante, aggraziato, armonioso come un'opera d'arte. Grazia +4, Furtivo -2, Bagliore +2, Sguardo acuto +1",
+        "O ápice da perfeição. Transbordando graça e elegância. Graça +4, Furtividade -2, Brilho +2, Olhar penetrante +1",
+        "雍容华贵，风华四溢。 风度+4，隐匿-2，眩光+2，魅惑+1",
+        "雍容華貴，風華四溢。 風度+4，隱藏-2，眩光+2，魅惑+1",
+        "エレガントで芸術品のような気品が溢れる。 気品 +4、隠密 -2、きらめき +2、魅了 +1",
+        "Begitu anggun dan elegan layaknya sebuah karya seni. Anggun +4, Sembunyi -2, Kilau +2, Pesona +1",
+        "رشيق وأنيق بشكل لافت. النعمة +4، التخفي -2، التوهج +2، الفتنة +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_4_2|addAb_35_1|addAb_47_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "걸작",
+        "en": "Master Piece",
+        "es": "Obra Maestra",
+        "it": "Capolavoro",
+        "pt": "A Perfeição -",
+        "zh-Hans": "维纳斯",
+        "zh-Hant": "維納斯",
+        "ja": "最高傑作",
+        "id": "Mahakarya",
+        "ar": "تحفة فنية"
+      },
+      "desc": {
+        "ko": "우아하고 기품이 넘침. 기품 +4, 은밀함 -2, 눈부심 +2, 현혹 +1",
+        "en": "Graceful and elegant overflowing. Grace +4, Stealthy -2, Glare +2, Charm +1",
+        "es": "Elegante y lleno de dignidad. Gracia +4, Sigilo -2, Deslumbramiento +2, Encanto +1",
+        "it": "Elegante, aggraziato, armonioso come un'opera d'arte. Grazia +4, Furtivo -2, Bagliore +2, Sguardo acuto +1",
+        "pt": "O ápice da perfeição. Transbordando graça e elegância. Graça +4, Furtividade -2, Brilho +2, Olhar penetrante +1",
+        "zh-Hans": "雍容华贵，风华四溢。 风度+4，隐匿-2，眩光+2，魅惑+1",
+        "zh-Hant": "雍容華貴，風華四溢。 風度+4，隱藏-2，眩光+2，魅惑+1",
+        "ja": "エレガントで芸術品のような気品が溢れる。 気品 +4、隠密 -2、きらめき +2、魅了 +1",
+        "id": "Begitu anggun dan elegan layaknya sebuah karya seni. Anggun +4, Sembunyi -2, Kilau +2, Pesona +1",
+        "ar": "رشيق وأنيق بشكل لافت. النعمة +4، التخفي -2، التوهج +2، الفتنة +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "40",
+      "name": [
+        "만개한",
+        "Blossomed",
+        "Despertar Pleno",
+        "Fiorito",
+        "Florescido(a) -",
+        "怒放",
+        "怒放",
+        "遅咲き",
+        "Berkembang",
+        "مزدهرة"
+      ],
+      "desc": [
+        "5회의 레벨이 오를 때 2 포인트를 받고, 그 이후에 레벨이 오를 때 5포인트를 받음 잠재력을 폭발시킴. 오러 블레이드 +1, 포스 마법 +1",
+        "The first five times Adventurer's grade goes up, you get bonus 2 points. Next time Adventurer's grade goes up, you get 5 bonus points. Unleashes potential to the fullest. Energy Blade +1, Force Magic +1",
+        "Las primeras cinco veces que el grado del Aventurero aumenta, obtienes 2 puntos de bonificación. La próxima vez que el grado del Aventurero aumente, obtendrás 5 puntos de bonificación. Desata tu potencial. Espada de Energía +1, Magia de Fuerza +1",
+        "Le prime cinque volte che il grado dell'Avventuriero aumenta, ottieni un bonus di 2 punti. La prossima volta che il grado dell'Avventuriero aumenta, ottieni 5 punti bonus. Libera il potenziale al massimo. Lama Energetica +1, Magia della Forza +1",
+        "Nas primeiras cinco vezes que o Grau do Aventureiro aumenta, você recebe apenas 2 pontos bônus. Mas, na próxima vez que o Grau do Aventureiro aumentar, você receberá 5 pontos bônus. Libera seu potencial ao máximo. Lâmina de Energia +1, Magia de Força +1",
+        "首五次冒险者升级将获得2个属性点数。此后在冒险中再度升级将获得5个属性点数。 最大限度地释放潜力。 魔能之刃+1，力量魔法+1",
+        "首五次冒險者升級將可獲得2個屬性點數。此後在冒險中再升級將獲得5個屬性點數。 最大限度地釋放潛能。 魔能之刃+1，力量魔法+1",
+        "秘められた可能性。 レベルアップのとき、最初の5回までは2ポイントだけ得る。\nその次のレベルアップで、5ポイントを得る。 魔法の追撃+1、物理の追撃+1",
+        "Lima kali pertama level Petualang naik, kamu mendapatkan 2 poin. Seterusnya, kamu mendapatkan 5 poin. Potensimu telah terbebas sepenuhnya. Pedang Energi +1, Sihir Tenaga +1",
+        "في المرات الخمس الأولى التي ترتفع فيها درجة المغامر تحصل على نقطتين إضافيتين. في المرة التالية التي ترتفع فيها درجة المغامر تحصل على 5 نقاط إضافية. أطلق العنان لإمكاناتك إلى أقصى حد. نصل الطاقة +1، قوة السحر +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_61_1|addAb_62_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "만개한",
+        "en": "Blossomed",
+        "es": "Despertar Pleno",
+        "it": "Fiorito",
+        "pt": "Florescido(a) -",
+        "zh-Hans": "怒放",
+        "zh-Hant": "怒放",
+        "ja": "遅咲き",
+        "id": "Berkembang",
+        "ar": "مزدهرة"
+      },
+      "desc": {
+        "ko": "5회의 레벨이 오를 때 2 포인트를 받고, 그 이후에 레벨이 오를 때 5포인트를 받음 잠재력을 폭발시킴. 오러 블레이드 +1, 포스 마법 +1",
+        "en": "The first five times Adventurer's grade goes up, you get bonus 2 points. Next time Adventurer's grade goes up, you get 5 bonus points. Unleashes potential to the fullest. Energy Blade +1, Force Magic +1",
+        "es": "Las primeras cinco veces que el grado del Aventurero aumenta, obtienes 2 puntos de bonificación. La próxima vez que el grado del Aventurero aumente, obtendrás 5 puntos de bonificación. Desata tu potencial. Espada de Energía +1, Magia de Fuerza +1",
+        "it": "Le prime cinque volte che il grado dell'Avventuriero aumenta, ottieni un bonus di 2 punti. La prossima volta che il grado dell'Avventuriero aumenta, ottieni 5 punti bonus. Libera il potenziale al massimo. Lama Energetica +1, Magia della Forza +1",
+        "pt": "Nas primeiras cinco vezes que o Grau do Aventureiro aumenta, você recebe apenas 2 pontos bônus. Mas, na próxima vez que o Grau do Aventureiro aumentar, você receberá 5 pontos bônus. Libera seu potencial ao máximo. Lâmina de Energia +1, Magia de Força +1",
+        "zh-Hans": "首五次冒险者升级将获得2个属性点数。此后在冒险中再度升级将获得5个属性点数。 最大限度地释放潜力。 魔能之刃+1，力量魔法+1",
+        "zh-Hant": "首五次冒險者升級將可獲得2個屬性點數。此後在冒險中再升級將獲得5個屬性點數。 最大限度地釋放潛能。 魔能之刃+1，力量魔法+1",
+        "ja": "秘められた可能性。 レベルアップのとき、最初の5回までは2ポイントだけ得る。\nその次のレベルアップで、5ポイントを得る。 魔法の追撃+1、物理の追撃+1",
+        "id": "Lima kali pertama level Petualang naik, kamu mendapatkan 2 poin. Seterusnya, kamu mendapatkan 5 poin. Potensimu telah terbebas sepenuhnya. Pedang Energi +1, Sihir Tenaga +1",
+        "ar": "في المرات الخمس الأولى التي ترتفع فيها درجة المغامر تحصل على نقطتين إضافيتين. في المرة التالية التي ترتفع فيها درجة المغامر تحصل على 5 نقاط إضافية. أطلق العنان لإمكاناتك إلى أقصى حد. نصل الطاقة +1، قوة السحر +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "41",
+      "name": [
+        "시들지 않는",
+        "Never wilting",
+        "Inmarchitable",
+        "Sempreverde",
+        "Invencível -",
+        "不凋",
+        "不凋",
+        "枯れ知らず",
+        "Pantang Menyerah",
+        "لا يذبل أبدًا"
+      ],
+      "desc": [
+        "처음으로 레벨이 오를 때 15포인트를 받고, 다음부터 레벨이 오를 때 2포인트를 받음. 한계를 극복하고 더 발전하였음. 위기 극복+1, 카운터 +1",
+        "The first time Adventurer's grade goes up, you get 15 bonus points. Next time Adventurer's grade goes up, you get 2 bonus points. Overcomes limitations and has further developed. Narrow Escape +1, Counter Attack +1",
+        "La primera vez que el grado del Aventurero sube, obtienes 15 puntos de bonificación. La próxima vez que el grado del Aventurero sube, obtienes 2 puntos de bonificación. Supera limitaciones y se ha desarrollado aún más. Escape estrecho +1, Contraataque +1",
+        "La prima volta che il grado dell'Avventuriero aumenta, ottieni 15 punti bonus. La prossima volta che il grado dell'Avventuriero aumenta, ottieni 2 punti bonus. Supera le limitazioni e si è ulteriormente sviluppato. Fuga miracolosa +1, Contrattacco +1",
+        "Na primeira vez que o Grau do Aventureiro aumenta, você recebe 15 pontos bônus. Mas, nas próximas vezes que o Grau do Aventureiro aumentar, você recebe apenas 2 pontos de bônus. Supera limitações e se desenvolve ainda mais. Fuga Estreita +1, Contra-ataque +1",
+        "首次冒险者升级将获得15个属性点数。此后在冒险中再度升级将获得2个属性点数。 突破了极限并得到进一步的发展。 背水一战+1，反击+1",
+        "首次冒險者升級將獲得15個屬性點數。此後在冒險中再度升級將獲得2個屬性點數。 突破了極限並得到進一步的發展。 背水一戰+1，反擊+1",
+        "限界を克服し、更なる成長を。初めてのレベルアップで15ポイントを得る。\n次のレベルアップで2ポイントを得る。 奮起+1、カウンター+1",
+        "Pertama kali level Petualang naik, kamu mendapatkan 15 poin. Seterusnya, kamu mendapatkan 2 poin. Kamu berhasil menembus batasanmu dan terus berkembang. Melepaskan Diri +1, Serangan Balik +1",
+        "في المرة الأولى التي ترتفع فيها درجة المغامر تحصل على 15 نقطة إضافية. في المرة التالية التي ترتفع فيها درجة المغامر تحصل على نقطتين إضافيتين. تتغلب على القيود وتتطور أكثر. نجاة بأعجوبة +1، الهجوم المضاد +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_81_1|addAb_65_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "시들지 않는",
+        "en": "Never wilting",
+        "es": "Inmarchitable",
+        "it": "Sempreverde",
+        "pt": "Invencível -",
+        "zh-Hans": "不凋",
+        "zh-Hant": "不凋",
+        "ja": "枯れ知らず",
+        "id": "Pantang Menyerah",
+        "ar": "لا يذبل أبدًا"
+      },
+      "desc": {
+        "ko": "처음으로 레벨이 오를 때 15포인트를 받고, 다음부터 레벨이 오를 때 2포인트를 받음. 한계를 극복하고 더 발전하였음. 위기 극복+1, 카운터 +1",
+        "en": "The first time Adventurer's grade goes up, you get 15 bonus points. Next time Adventurer's grade goes up, you get 2 bonus points. Overcomes limitations and has further developed. Narrow Escape +1, Counter Attack +1",
+        "es": "La primera vez que el grado del Aventurero sube, obtienes 15 puntos de bonificación. La próxima vez que el grado del Aventurero sube, obtienes 2 puntos de bonificación. Supera limitaciones y se ha desarrollado aún más. Escape estrecho +1, Contraataque +1",
+        "it": "La prima volta che il grado dell'Avventuriero aumenta, ottieni 15 punti bonus. La prossima volta che il grado dell'Avventuriero aumenta, ottieni 2 punti bonus. Supera le limitazioni e si è ulteriormente sviluppato. Fuga miracolosa +1, Contrattacco +1",
+        "pt": "Na primeira vez que o Grau do Aventureiro aumenta, você recebe 15 pontos bônus. Mas, nas próximas vezes que o Grau do Aventureiro aumentar, você recebe apenas 2 pontos de bônus. Supera limitações e se desenvolve ainda mais. Fuga Estreita +1, Contra-ataque +1",
+        "zh-Hans": "首次冒险者升级将获得15个属性点数。此后在冒险中再度升级将获得2个属性点数。 突破了极限并得到进一步的发展。 背水一战+1，反击+1",
+        "zh-Hant": "首次冒險者升級將獲得15個屬性點數。此後在冒險中再度升級將獲得2個屬性點數。 突破了極限並得到進一步的發展。 背水一戰+1，反擊+1",
+        "ja": "限界を克服し、更なる成長を。初めてのレベルアップで15ポイントを得る。\n次のレベルアップで2ポイントを得る。 奮起+1、カウンター+1",
+        "id": "Pertama kali level Petualang naik, kamu mendapatkan 15 poin. Seterusnya, kamu mendapatkan 2 poin. Kamu berhasil menembus batasanmu dan terus berkembang. Melepaskan Diri +1, Serangan Balik +1",
+        "ar": "في المرة الأولى التي ترتفع فيها درجة المغامر تحصل على 15 نقطة إضافية. في المرة التالية التي ترتفع فيها درجة المغامر تحصل على نقطتين إضافيتين. تتغلب على القيود وتتطور أكثر. نجاة بأعجوبة +1، الهجوم المضاد +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "42",
+      "name": [
+        "승부사",
+        "Winner",
+        "Ganador",
+        "Vincitore",
+        "Campeão -",
+        "赌神",
+        "賭神",
+        "勝負師",
+        "Si Gacor",
+        "رابح"
+      ],
+      "desc": [
+        "과감하고 영리한 승부사. 주사위에서 1 또는 20의 등장 확률이 증가. 직감 +1, 속임수 +1",
+        "Daring and clever gambler. Increases chance of 1 or 20 appearance on dice. Foresight +1, Trick +1",
+        "Jugador audaz e inteligente. Aumenta la probabilidad de que aparezca un 1 o un 20 en los dados. Previsión +1, Truco +1",
+        "Giocatore audace e astuto. Aumenta la possibilità di ottenere un 1 o un 20 sui dadi. Preveggenza +1, Trucco +1",
+        "Um apostador ousado e inteligente. Aumenta a chance de rolar ou 1 ou 20 no dado. Previsão +1, Truque +1",
+        "艺高人胆大且老奸巨猾的赌徒。 提升骰子掷出1点或20点的几率。 预警+1，戏法+1",
+        "藝高人膽大且老奸巨猾的賭徒。 提升骰子擲出1點或20點的機率。 預警+1，戲法+1",
+        "果敢で小賢しいギャンブラー。 ダイスの出目が1または20になる確率が上がる。 直感+1、トリック+1",
+        "Mereka yang berani dan pandai mengambil resiko untuk memenangkan semua. Gacor kang. Meningkatkan peluang muncul angka 1 atau 20 pada dadu. Ramal +1, Tipuan +1",
+        "مقامر جريء وذكي. يزيد من فرصة ظهور 1 أو 20 على النرد. البصيرة +1، الخداع +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_25_1|addAb_87_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "승부사",
+        "en": "Winner",
+        "es": "Ganador",
+        "it": "Vincitore",
+        "pt": "Campeão -",
+        "zh-Hans": "赌神",
+        "zh-Hant": "賭神",
+        "ja": "勝負師",
+        "id": "Si Gacor",
+        "ar": "رابح"
+      },
+      "desc": {
+        "ko": "과감하고 영리한 승부사. 주사위에서 1 또는 20의 등장 확률이 증가. 직감 +1, 속임수 +1",
+        "en": "Daring and clever gambler. Increases chance of 1 or 20 appearance on dice. Foresight +1, Trick +1",
+        "es": "Jugador audaz e inteligente. Aumenta la probabilidad de que aparezca un 1 o un 20 en los dados. Previsión +1, Truco +1",
+        "it": "Giocatore audace e astuto. Aumenta la possibilità di ottenere un 1 o un 20 sui dadi. Preveggenza +1, Trucco +1",
+        "pt": "Um apostador ousado e inteligente. Aumenta a chance de rolar ou 1 ou 20 no dado. Previsão +1, Truque +1",
+        "zh-Hans": "艺高人胆大且老奸巨猾的赌徒。 提升骰子掷出1点或20点的几率。 预警+1，戏法+1",
+        "zh-Hant": "藝高人膽大且老奸巨猾的賭徒。 提升骰子擲出1點或20點的機率。 預警+1，戲法+1",
+        "ja": "果敢で小賢しいギャンブラー。 ダイスの出目が1または20になる確率が上がる。 直感+1、トリック+1",
+        "id": "Mereka yang berani dan pandai mengambil resiko untuk memenangkan semua. Gacor kang. Meningkatkan peluang muncul angka 1 atau 20 pada dadu. Ramal +1, Tipuan +1",
+        "ar": "مقامر جريء وذكي. يزيد من فرصة ظهور 1 أو 20 على النرد. البصيرة +1، الخداع +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "43",
+      "name": [
+        "전략가",
+        "Strategist",
+        "Estratega",
+        "Stratega",
+        "Estrategista -",
+        "军师",
+        "軍師",
+        "戦略家",
+        "Ahli Strategi",
+        "مخطط أستراتيجي"
+      ],
+      "desc": [
+        "신중하고 치명적인 전략가. 주사위에서 10이하의 숫자가 등장할 확률이 감소. 전략 +1, 속임수 +1",
+        " Cautious and deadly strategist. Decrease the chance of a number less than 10 appearing on the dice Strategy +1, Trick +1",
+        "Estratega cauteloso y mortal. Disminuye la probabilidad de que aparezca un número menor a 10 en el dado. Estrategia +1, Truco +1",
+        "Stratega cauto e letale. Riduce la possibilità che un numero inferiore a 10 appaia sul dado. Strategia +1, Trucco +1",
+        "Um estrategista cauteloso e mortal. Diminui as chances de rolar qualquer número menor que 10 no dado. Estratégia +1, Truque +1",
+        "谨慎而致命的谋士。 降低骰子掷出少于10点的几率。 战略+1，戏法+1",
+        "謹慎而致命的謀士。 降低骰子擲出少於10點的機率。 戰略+1，戲法+1",
+        "慎重さに命をかける策士。 サイコロから10以下の数字が登場する確率が減少する。 戦略+1、トリック+1",
+        "Pikiran yang berhati-hati menghasilkan rencana mematikan. Mengurangi peluang angka kurang dari 10 muncul pada dadu. Strategi +1, Tipuan +1",
+        "استراتيجي حذر ومميت. يقلل من فرصة ظهور رقم أقل من 10 على النرد. الاستراتيجية +1، الخداع +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_48_1|addAb_87_1",
+      "jewel": "0"
+    },
+    "localized": {
+      "name": {
+        "ko": "전략가",
+        "en": "Strategist",
+        "es": "Estratega",
+        "it": "Stratega",
+        "pt": "Estrategista -",
+        "zh-Hans": "军师",
+        "zh-Hant": "軍師",
+        "ja": "戦略家",
+        "id": "Ahli Strategi",
+        "ar": "مخطط أستراتيجي"
+      },
+      "desc": {
+        "ko": "신중하고 치명적인 전략가. 주사위에서 10이하의 숫자가 등장할 확률이 감소. 전략 +1, 속임수 +1",
+        "en": " Cautious and deadly strategist. Decrease the chance of a number less than 10 appearing on the dice Strategy +1, Trick +1",
+        "es": "Estratega cauteloso y mortal. Disminuye la probabilidad de que aparezca un número menor a 10 en el dado. Estrategia +1, Truco +1",
+        "it": "Stratega cauto e letale. Riduce la possibilità che un numero inferiore a 10 appaia sul dado. Strategia +1, Trucco +1",
+        "pt": "Um estrategista cauteloso e mortal. Diminui as chances de rolar qualquer número menor que 10 no dado. Estratégia +1, Truque +1",
+        "zh-Hans": "谨慎而致命的谋士。 降低骰子掷出少于10点的几率。 战略+1，戏法+1",
+        "zh-Hant": "謹慎而致命的謀士。 降低骰子擲出少於10點的機率。 戰略+1，戲法+1",
+        "ja": "慎重さに命をかける策士。 サイコロから10以下の数字が登場する確率が減少する。 戦略+1、トリック+1",
+        "id": "Pikiran yang berhati-hati menghasilkan rencana mematikan. Mengurangi peluang angka kurang dari 10 muncul pada dadu. Strategi +1, Tipuan +1",
+        "ar": "استراتيجي حذر ومميت. يقلل من فرصة ظهور رقم أقل من 10 على النرد. الاستراتيجية +1، الخداع +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "44",
+      "name": [
+        "불씨의",
+        "Ember",
+        "Ámbar",
+        "Ember",
+        "A brasa -",
+        "余烬",
+        "餘燼",
+        "エンバーズ",
+        "Si Bara",
+        "شرارة"
+      ],
+      "desc": [
+        "불의 기운을 품고 태어남. 화염 공격 +1, 화염 저항 +1",
+        "Born with the essence of fire. Fire Attack +1, Fire Resistance +1",
+        "Nacido con la esencia ardiente del fuego. Ataque de Fuego +1, Resistencia al Fuego +1",
+        "Nato con l’essenza del fuoco. Attacco Fuoco +1, Resistenza Fuoco +1",
+        "Nascido com a essência do fogo. Ataque Fogo +1, Resistência ao Fogo +1",
+        "生来蕴含烈焰之力。 火焰攻击+1，火焰抗性+1",
+        "生來蘊含烈焰之力。 火焰攻擊+1，火焰抗性+1",
+        "炎の気を宿して生まれた。 火炎攻撃 +1、火炎耐性 +1",
+        "Terlahir dengan esensi api. Serangan Api +1, Tahan Api +1",
+        "‏وُلِد بروح نارية. ‏هجوم ناري +1، مقاومة النار +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_14_1|addAb_13_1",
+      "jewel": "20",
+      "shopId": "21"
+    },
+    "localized": {
+      "name": {
+        "ko": "불씨의",
+        "en": "Ember",
+        "es": "Ámbar",
+        "it": "Ember",
+        "pt": "A brasa -",
+        "zh-Hans": "余烬",
+        "zh-Hant": "餘燼",
+        "ja": "エンバーズ",
+        "id": "Si Bara",
+        "ar": "شرارة"
+      },
+      "desc": {
+        "ko": "불의 기운을 품고 태어남. 화염 공격 +1, 화염 저항 +1",
+        "en": "Born with the essence of fire. Fire Attack +1, Fire Resistance +1",
+        "es": "Nacido con la esencia ardiente del fuego. Ataque de Fuego +1, Resistencia al Fuego +1",
+        "it": "Nato con l’essenza del fuoco. Attacco Fuoco +1, Resistenza Fuoco +1",
+        "pt": "Nascido com a essência do fogo. Ataque Fogo +1, Resistência ao Fogo +1",
+        "zh-Hans": "生来蕴含烈焰之力。 火焰攻击+1，火焰抗性+1",
+        "zh-Hant": "生來蘊含烈焰之力。 火焰攻擊+1，火焰抗性+1",
+        "ja": "炎の気を宿して生まれた。 火炎攻撃 +1、火炎耐性 +1",
+        "id": "Terlahir dengan esensi api. Serangan Api +1, Tahan Api +1",
+        "ar": "‏وُلِد بروح نارية. ‏هجوم ناري +1، مقاومة النار +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "45",
+      "name": [
+        "눈꽃의",
+        "Snowflake",
+        "Copo de Nieve",
+        "Fiocco di neve",
+        "A neve -",
+        "雪花",
+        "雪花",
+        "スノーフレークの",
+        "Si Salju",
+        "زهرة الثلج"
+      ],
+      "desc": [
+        "냉기의 기운을 품고 태어남. 냉기 공격 +1, 냉기 저항 +1",
+        "Born with the essence of ice. Cold Attack +1, Cold Resistance +1",
+        "Nacido con la esencia pura del hielo. Ataque de Frío +1, Resistencia al Frío +1",
+        "Nato con l’essenza del ghiaccio. Attacco Freddo +1, Resistenza al Freddo +1",
+        "Nascido com a essência do gelo. Ataque Gélido +1, Resistência Gélido +1",
+        "生来蕴含寒冰之力。 冰冻攻击+1，冰冻抗性+1",
+        "生來蘊含寒冰之力。 冰凍攻擊+1，冰凍抗性+1",
+        "冷気の気を宿して生まれた。 冷気攻撃 +1、冷気耐性 +1",
+        "Terlahir dengan esensi es. Serangan Dingin +1, Tahan Dingin +1",
+        "وُلِد بجوهر الجليد. هجوم جليدي +1، مقاومة الثلج +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_12_1|addAb_8_1",
+      "jewel": "20",
+      "shopId": "22"
+    },
+    "localized": {
+      "name": {
+        "ko": "눈꽃의",
+        "en": "Snowflake",
+        "es": "Copo de Nieve",
+        "it": "Fiocco di neve",
+        "pt": "A neve -",
+        "zh-Hans": "雪花",
+        "zh-Hant": "雪花",
+        "ja": "スノーフレークの",
+        "id": "Si Salju",
+        "ar": "زهرة الثلج"
+      },
+      "desc": {
+        "ko": "냉기의 기운을 품고 태어남. 냉기 공격 +1, 냉기 저항 +1",
+        "en": "Born with the essence of ice. Cold Attack +1, Cold Resistance +1",
+        "es": "Nacido con la esencia pura del hielo. Ataque de Frío +1, Resistencia al Frío +1",
+        "it": "Nato con l’essenza del ghiaccio. Attacco Freddo +1, Resistenza al Freddo +1",
+        "pt": "Nascido com a essência do gelo. Ataque Gélido +1, Resistência Gélido +1",
+        "zh-Hans": "生来蕴含寒冰之力。 冰冻攻击+1，冰冻抗性+1",
+        "zh-Hant": "生來蘊含寒冰之力。 冰凍攻擊+1，冰凍抗性+1",
+        "ja": "冷気の気を宿して生まれた。 冷気攻撃 +1、冷気耐性 +1",
+        "id": "Terlahir dengan esensi es. Serangan Dingin +1, Tahan Dingin +1",
+        "ar": "وُلِد بجوهر الجليد. هجوم جليدي +1، مقاومة الثلج +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "46",
+      "name": [
+        "독초의",
+        "Poisonbloom",
+        "Flor Venenosa",
+        "Fiorveneno",
+        "Peçonhento -",
+        "毒藤",
+        "毒藤",
+        "ポイズンブルームの",
+        "Si Racun",
+        "زهرة السم"
+      ],
+      "desc": [
+        "독의 기운을 품고 태어남. 독 공격 +1, 독 저항 +1",
+        "Born with the essence of poison. Poison Attack +1, Poison Resistance +1",
+        "Nacido con la esencia letal del veneno. Ataque de Veneno +1, Resistencia al Veneno +1",
+        "Nato con l’essenza del veleno. Attacco Veleno +1, Resistenza Veleno +1",
+        "Nascido com a essência do veneno. Ataque Veneno +1, Resistência a Veneno +1",
+        "生来蕴含剧毒之力。 毒素攻击+1，毒素抗性+1",
+        "生來蘊含劇毒之力。 毒素攻擊+1，毒素抗性+1",
+        "毒の気を宿して生まれた。 毒攻撃 +1、毒耐性 +1",
+        "Terlahir dengan esensi racun. Serangan Racun +1, Tahan Racun +1",
+        "وُلِد بجوهر السم. هجوم سُمّي +1، مقاومة السموم +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_15_1|addAb_16_1",
+      "jewel": "20",
+      "shopId": "23"
+    },
+    "localized": {
+      "name": {
+        "ko": "독초의",
+        "en": "Poisonbloom",
+        "es": "Flor Venenosa",
+        "it": "Fiorveneno",
+        "pt": "Peçonhento -",
+        "zh-Hans": "毒藤",
+        "zh-Hant": "毒藤",
+        "ja": "ポイズンブルームの",
+        "id": "Si Racun",
+        "ar": "زهرة السم"
+      },
+      "desc": {
+        "ko": "독의 기운을 품고 태어남. 독 공격 +1, 독 저항 +1",
+        "en": "Born with the essence of poison. Poison Attack +1, Poison Resistance +1",
+        "es": "Nacido con la esencia letal del veneno. Ataque de Veneno +1, Resistencia al Veneno +1",
+        "it": "Nato con l’essenza del veleno. Attacco Veleno +1, Resistenza Veleno +1",
+        "pt": "Nascido com a essência do veneno. Ataque Veneno +1, Resistência a Veneno +1",
+        "zh-Hans": "生来蕴含剧毒之力。 毒素攻击+1，毒素抗性+1",
+        "zh-Hant": "生來蘊含劇毒之力。 毒素攻擊+1，毒素抗性+1",
+        "ja": "毒の気を宿して生まれた。 毒攻撃 +1、毒耐性 +1",
+        "id": "Terlahir dengan esensi racun. Serangan Racun +1, Tahan Racun +1",
+        "ar": "وُلِد بجوهر السم. هجوم سُمّي +1، مقاومة السموم +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "47",
+      "name": [
+        "전기의",
+        "Spark",
+        "Chispa",
+        "Nuvola di",
+        "Chocante -",
+        "电花",
+        "電花",
+        "クラウドの",
+        "Si Percik",
+        "الراعد"
+      ],
+      "desc": [
+        "낙뢰의 기운을 품고 태어남. 전기 공격 +1, 전기 저항 +1",
+        "Born with the essence of lightning. Lightning Attack +1, Lightning Resistance +1",
+        "Nacido con la esencia indómita del rayo. Ataque de Rayo +1, Resistencia al Rayo +1",
+        "Nato con l’essenza del fulmineo. Attacco Fulmineo +1, Resistenza Fulmineo +1",
+        "Nascido com a essência do Eletricidade. Ataque Eletricidade +1, Resistência a Eletricidade +1",
+        "生来蕴含雷电之力。 闪电攻击+1，闪电抗性+1",
+        "生來蘊含雷電之力。 閃電攻擊+1，閃電抗性+1",
+        "雷の気を宿して生まれた。 雷撃攻撃 +1、雷撃耐性 +1",
+        "Terlahir dengan esensi petir. Serangan Petir +1, Tahan Petir +1",
+        "وُلِد بجوهر البرق. هجوم برقي +1، مقاومة البروق +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_17_1|addAb_18_1",
+      "jewel": "20",
+      "shopId": "24"
+    },
+    "localized": {
+      "name": {
+        "ko": "전기의",
+        "en": "Spark",
+        "es": "Chispa",
+        "it": "Nuvola di",
+        "pt": "Chocante -",
+        "zh-Hans": "电花",
+        "zh-Hant": "電花",
+        "ja": "クラウドの",
+        "id": "Si Percik",
+        "ar": "الراعد"
+      },
+      "desc": {
+        "ko": "낙뢰의 기운을 품고 태어남. 전기 공격 +1, 전기 저항 +1",
+        "en": "Born with the essence of lightning. Lightning Attack +1, Lightning Resistance +1",
+        "es": "Nacido con la esencia indómita del rayo. Ataque de Rayo +1, Resistencia al Rayo +1",
+        "it": "Nato con l’essenza del fulmineo. Attacco Fulmineo +1, Resistenza Fulmineo +1",
+        "pt": "Nascido com a essência do Eletricidade. Ataque Eletricidade +1, Resistência a Eletricidade +1",
+        "zh-Hans": "生来蕴含雷电之力。 闪电攻击+1，闪电抗性+1",
+        "zh-Hant": "生來蘊含雷電之力。 閃電攻擊+1，閃電抗性+1",
+        "ja": "雷の気を宿して生まれた。 雷撃攻撃 +1、雷撃耐性 +1",
+        "id": "Terlahir dengan esensi petir. Serangan Petir +1, Tahan Petir +1",
+        "ar": "وُلِد بجوهر البرق. هجوم برقي +1، مقاومة البروق +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "48",
+      "name": [
+        "선율의",
+        "Melody",
+        "Melodía",
+        "Di Melody",
+        "Acústico -",
+        "旋律",
+        "旋律",
+        "メロディの",
+        "melodi",
+        "لحن"
+      ],
+      "desc": [
+        "음율의 기운을 품고 태어남. 음파 공격 +1, 음파 저항 +1",
+        "Born with the essence of thunder. Thunder Attack +1, Thunder Resistance +1",
+        "Nacido con la esencia eterna del sonido. Ataque Sónico +1, Resistencia Sónica +1",
+        "Nato con l’essenza del sonico. Attacco Sonico +1, Resistenza Sonico +1",
+        "Nascido com a essência do Sônica. Ataque Sônico +1, Resistência a Sônica +1",
+        "生来蕴含音律之力。 音波攻击+1，音波抗性+1",
+        "生來蘊含音律之力。 音波攻擊+1，音波抗性+1",
+        "音律の気を宿して生まれた。 音波攻撃 +1、音波耐性 +1",
+        "Terlahir dengan esensi guntur. Serangan Sonik +1, Tahan Sonik +1",
+        "وُلِد بجوهر الرعد. هجوم صوتي +1، مقاومة الصوت +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_20_1|addAb_19_1",
+      "jewel": "20",
+      "shopId": "25"
+    },
+    "localized": {
+      "name": {
+        "ko": "선율의",
+        "en": "Melody",
+        "es": "Melodía",
+        "it": "Di Melody",
+        "pt": "Acústico -",
+        "zh-Hans": "旋律",
+        "zh-Hant": "旋律",
+        "ja": "メロディの",
+        "id": "melodi",
+        "ar": "لحن"
+      },
+      "desc": {
+        "ko": "음율의 기운을 품고 태어남. 음파 공격 +1, 음파 저항 +1",
+        "en": "Born with the essence of thunder. Thunder Attack +1, Thunder Resistance +1",
+        "es": "Nacido con la esencia eterna del sonido. Ataque Sónico +1, Resistencia Sónica +1",
+        "it": "Nato con l’essenza del sonico. Attacco Sonico +1, Resistenza Sonico +1",
+        "pt": "Nascido com a essência do Sônica. Ataque Sônico +1, Resistência a Sônica +1",
+        "zh-Hans": "生来蕴含音律之力。 音波攻击+1，音波抗性+1",
+        "zh-Hant": "生來蘊含音律之力。 音波攻擊+1，音波抗性+1",
+        "ja": "音律の気を宿して生まれた。 音波攻撃 +1、音波耐性 +1",
+        "id": "Terlahir dengan esensi guntur. Serangan Sonik +1, Tahan Sonik +1",
+        "ar": "وُلِد بجوهر الرعد. هجوم صوتي +1، مقاومة الصوت +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "49",
+      "name": [
+        "선혈의",
+        "Bloodstain",
+        "Mancha de Sangre",
+        "Macchia di sangue",
+        "Mancha Vermelha -",
+        "血迹",
+        "血跡",
+        "血痕の",
+        "Si Darah",
+        "بقع الدم"
+      ],
+      "desc": [
+        "혈액의 기운을 품고 태어남. 출혈 유발 +1, 흡혈 +1",
+        "Born with the essence of blood. Cause bleeding +1, Blood Drain +1",
+        "Nacido con la esencia vital de la sangre. Causar Sangrado +1, Drenaje de Sangre +1",
+        "Nato con l’essenza del sangue. Sanguinamento +1, Sanguisuga +1",
+        "Nascido com a essência do sangue. Inflingir Sangramento +1, Drenagem de Sangue +1",
+        "生来蕴含血液之力。 造成流血+1，吸血+1",
+        "生來蘊含血液之力。 造成流血+1，吸血+1",
+        "血の気を宿して生まれた。 出血付与 +1、吸血 +1",
+        "Terlahir dengan esensi darah. Pendarahan +1, Isap Darah +1",
+        "وُلِد بجوهر الدم. يسبب نزيف +1، تصريف الدم +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_22_1|addAb_44_1",
+      "jewel": "20",
+      "shopId": "26"
+    },
+    "localized": {
+      "name": {
+        "ko": "선혈의",
+        "en": "Bloodstain",
+        "es": "Mancha de Sangre",
+        "it": "Macchia di sangue",
+        "pt": "Mancha Vermelha -",
+        "zh-Hans": "血迹",
+        "zh-Hant": "血跡",
+        "ja": "血痕の",
+        "id": "Si Darah",
+        "ar": "بقع الدم"
+      },
+      "desc": {
+        "ko": "혈액의 기운을 품고 태어남. 출혈 유발 +1, 흡혈 +1",
+        "en": "Born with the essence of blood. Cause bleeding +1, Blood Drain +1",
+        "es": "Nacido con la esencia vital de la sangre. Causar Sangrado +1, Drenaje de Sangre +1",
+        "it": "Nato con l’essenza del sangue. Sanguinamento +1, Sanguisuga +1",
+        "pt": "Nascido com a essência do sangue. Inflingir Sangramento +1, Drenagem de Sangue +1",
+        "zh-Hans": "生来蕴含血液之力。 造成流血+1，吸血+1",
+        "zh-Hant": "生來蘊含血液之力。 造成流血+1，吸血+1",
+        "ja": "血の気を宿して生まれた。 出血付与 +1、吸血 +1",
+        "id": "Terlahir dengan esensi darah. Pendarahan +1, Isap Darah +1",
+        "ar": "وُلِد بجوهر الدم. يسبب نزيف +1، تصريف الدم +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "50",
+      "name": [
+        "망치의",
+        "Hammer",
+        "Martillo",
+        "Martello",
+        "Atordoante -",
+        "锤头",
+        "鎚頭",
+        "ハンマーの",
+        "Si Palu",
+        "مطرقة"
+      ],
+      "desc": [
+        "둔기를 다루는 재주를 품고 태어남. 둔기 숙련 +1",
+        "Born with a talent for using blunt. Blunt Mastery +1",
+        "Nacido con un talento para usar armas contundentes. Maestría con Contundentes +1",
+        "Nato con il talento per usare armi contundenti. Maestria con Contundenti +1",
+        "Nascido com talento para usar armas contundentes. Maestria em Contussão +1",
+        "使用钝器的天赋初具雏形。 钝器精通+1",
+        "使用鈍器的天賦初具雛形。 鈍器精通+1",
+        "打撃武器を扱う才能を持って生まれた。 打撃熟練 +1",
+        "Berbakat menggunakan senjata tumpul sejak lahir. Penguasaan Senjata Tumpul +1",
+        "وُلِد بموهبة في استخدام الأسلحة غير الحادة. إتقان الأسلحة الغير حادة +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_104_1",
+      "jewel": "20",
+      "shopId": "27"
+    },
+    "localized": {
+      "name": {
+        "ko": "망치의",
+        "en": "Hammer",
+        "es": "Martillo",
+        "it": "Martello",
+        "pt": "Atordoante -",
+        "zh-Hans": "锤头",
+        "zh-Hant": "鎚頭",
+        "ja": "ハンマーの",
+        "id": "Si Palu",
+        "ar": "مطرقة"
+      },
+      "desc": {
+        "ko": "둔기를 다루는 재주를 품고 태어남. 둔기 숙련 +1",
+        "en": "Born with a talent for using blunt. Blunt Mastery +1",
+        "es": "Nacido con un talento para usar armas contundentes. Maestría con Contundentes +1",
+        "it": "Nato con il talento per usare armi contundenti. Maestria con Contundenti +1",
+        "pt": "Nascido com talento para usar armas contundentes. Maestria em Contussão +1",
+        "zh-Hans": "使用钝器的天赋初具雏形。 钝器精通+1",
+        "zh-Hant": "使用鈍器的天賦初具雛形。 鈍器精通+1",
+        "ja": "打撃武器を扱う才能を持って生まれた。 打撃熟練 +1",
+        "id": "Berbakat menggunakan senjata tumpul sejak lahir. Penguasaan Senjata Tumpul +1",
+        "ar": "وُلِد بموهبة في استخدام الأسلحة غير الحادة. إتقان الأسلحة الغير حادة +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "51",
+      "name": [
+        "칼날의",
+        "Blade",
+        "Espada",
+        "Lama",
+        "Lâmina -",
+        "刀锋",
+        "刀鋒",
+        "刃の",
+        "Si Pedang",
+        "نصل"
+      ],
+      "desc": [
+        "날붙이를 다루는 재주를 품고 태어남. 날붙이 숙련 +1",
+        "Born with a talent for using blade. Blade Mastery +1",
+        "Nacido con un talento para usar espadas. Maestría con Espadas +1",
+        "Nato con il talento per usare armi contundenti. Maestria con Lame +1",
+        "Nascido com talento para usar armas de corte. Maestria em Lâminas +1",
+        "使用利器的天赋初具雏形。 利器精通+1",
+        "使用利器的天賦初具雛形。 利器精通+1",
+        "刀剣を扱う才能を持って生まれた。 刀剣熟練 +1",
+        "Berbakat menggunakan senjata tajam sejak lahir. Penguasaan Senjata Tajam +1",
+        "وُلِد بموهبة في استخدام النصل. إتقان استخدام النصل +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_69_1",
+      "jewel": "20",
+      "shopId": "28"
+    },
+    "localized": {
+      "name": {
+        "ko": "칼날의",
+        "en": "Blade",
+        "es": "Espada",
+        "it": "Lama",
+        "pt": "Lâmina -",
+        "zh-Hans": "刀锋",
+        "zh-Hant": "刀鋒",
+        "ja": "刃の",
+        "id": "Si Pedang",
+        "ar": "نصل"
+      },
+      "desc": {
+        "ko": "날붙이를 다루는 재주를 품고 태어남. 날붙이 숙련 +1",
+        "en": "Born with a talent for using blade. Blade Mastery +1",
+        "es": "Nacido con un talento para usar espadas. Maestría con Espadas +1",
+        "it": "Nato con il talento per usare armi contundenti. Maestria con Lame +1",
+        "pt": "Nascido com talento para usar armas de corte. Maestria em Lâminas +1",
+        "zh-Hans": "使用利器的天赋初具雏形。 利器精通+1",
+        "zh-Hant": "使用利器的天賦初具雛形。 利器精通+1",
+        "ja": "刀剣を扱う才能を持って生まれた。 刀剣熟練 +1",
+        "id": "Berbakat menggunakan senjata tajam sejak lahir. Penguasaan Senjata Tajam +1",
+        "ar": "وُلِد بموهبة في استخدام النصل. إتقان استخدام النصل +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "52",
+      "name": [
+        "활잡이",
+        "Arrow",
+        "Flecha",
+        "Freccia",
+        "Flecha -",
+        "弓手",
+        "弓手",
+        "弓使い",
+        "Si Panah",
+        "سهم"
+      ],
+      "desc": [
+        "원거리 무기를 다루는 재주를 품고 태어남. 원거리 숙련 +1",
+        "Born with a talent for using ranged weapon. Ranged Mastery +1",
+        "Nacido con un talento para usar armas a distancia. Maestría a Distancia +1",
+        "Nato con il talento per usare armi a distanza. Maestria a Distanza +1",
+        "Nascido com talento para usar armas de longo alcance. Maestria em Longo Alcance +1",
+        "使用远程武器的天赋初具雏形。 远程精通+1",
+        "使用遠程武器的天賦初具雛形。 遠程精通+1",
+        "遠隔武器を扱う才能を持って生まれた。 遠隔熟練 +1",
+        "Berbakat menggunakan senjata jarak jauh sejak lahir. Penguasaan Senjata Jarak Jauh +1",
+        "وُلِد بموهبة في استخدام الأسلحة بعيدة المدى. إتقان التصويب بعيد المدى +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_68_1",
+      "jewel": "20",
+      "shopId": "29"
+    },
+    "localized": {
+      "name": {
+        "ko": "활잡이",
+        "en": "Arrow",
+        "es": "Flecha",
+        "it": "Freccia",
+        "pt": "Flecha -",
+        "zh-Hans": "弓手",
+        "zh-Hant": "弓手",
+        "ja": "弓使い",
+        "id": "Si Panah",
+        "ar": "سهم"
+      },
+      "desc": {
+        "ko": "원거리 무기를 다루는 재주를 품고 태어남. 원거리 숙련 +1",
+        "en": "Born with a talent for using ranged weapon. Ranged Mastery +1",
+        "es": "Nacido con un talento para usar armas a distancia. Maestría a Distancia +1",
+        "it": "Nato con il talento per usare armi a distanza. Maestria a Distanza +1",
+        "pt": "Nascido com talento para usar armas de longo alcance. Maestria em Longo Alcance +1",
+        "zh-Hans": "使用远程武器的天赋初具雏形。 远程精通+1",
+        "zh-Hant": "使用遠程武器的天賦初具雛形。 遠程精通+1",
+        "ja": "遠隔武器を扱う才能を持って生まれた。 遠隔熟練 +1",
+        "id": "Berbakat menggunakan senjata jarak jauh sejak lahir. Penguasaan Senjata Jarak Jauh +1",
+        "ar": "وُلِد بموهبة في استخدام الأسلحة بعيدة المدى. إتقان التصويب بعيد المدى +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "53",
+      "name": [
+        "화산",
+        "Volcano",
+        "Volcán",
+        "Vulcano",
+        "Vulcão -",
+        "火山",
+        "火山",
+        "火山",
+        "Si Gunung Berapi",
+        "القوة الآمنة"
+      ],
+      "desc": [
+        "불의 기운이 완전히 발현됨. 화염 공격 +2, 화염 저항 +2",
+        "The essence of fire has fully awakened. Fire Attack +2, Fire Resistance +2",
+        "El fuego estalla en un rugido que consume todo. Ataque de Fuego +2, Resistencia al Fuego +2",
+        "L’essenza del fuoco si è completamente risvegliata. Attacco Fuoco +2, Resistenza Fuoco +2",
+        "A essência do fogo despertou totalmente. Ataque de Fogo +2, Resistência ao Fogo +2",
+        "烈焰之力完全觉醒。 火焰攻击+2，火焰抗性+2",
+        "烈焰之力完全覺醒。 火焰攻擊+2，火焰抗性+2",
+        "炎の気が完全に発現した。 火炎攻撃 +2、火炎耐性 +2",
+        "Esensi api telah sepenuhnya terbangun. Serangan Api +2, Tahan Api +2",
+        "استيقظ جوهر النار بالكامل. هجوم ناري +2، مقاومة النار +2"
+      ],
+      "grade": "0",
+      "effect": "addAb_14_1|addAb_13_1"
+    },
+    "localized": {
+      "name": {
+        "ko": "화산",
+        "en": "Volcano",
+        "es": "Volcán",
+        "it": "Vulcano",
+        "pt": "Vulcão -",
+        "zh-Hans": "火山",
+        "zh-Hant": "火山",
+        "ja": "火山",
+        "id": "Si Gunung Berapi",
+        "ar": "القوة الآمنة"
+      },
+      "desc": {
+        "ko": "불의 기운이 완전히 발현됨. 화염 공격 +2, 화염 저항 +2",
+        "en": "The essence of fire has fully awakened. Fire Attack +2, Fire Resistance +2",
+        "es": "El fuego estalla en un rugido que consume todo. Ataque de Fuego +2, Resistencia al Fuego +2",
+        "it": "L’essenza del fuoco si è completamente risvegliata. Attacco Fuoco +2, Resistenza Fuoco +2",
+        "pt": "A essência do fogo despertou totalmente. Ataque de Fogo +2, Resistência ao Fogo +2",
+        "zh-Hans": "烈焰之力完全觉醒。 火焰攻击+2，火焰抗性+2",
+        "zh-Hant": "烈焰之力完全覺醒。 火焰攻擊+2，火焰抗性+2",
+        "ja": "炎の気が完全に発現した。 火炎攻撃 +2、火炎耐性 +2",
+        "id": "Esensi api telah sepenuhnya terbangun. Serangan Api +2, Tahan Api +2",
+        "ar": "استيقظ جوهر النار بالكامل. هجوم ناري +2، مقاومة النار +2"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "54",
+      "name": [
+        "설산",
+        "Icy Peak",
+        "Cima Helada",
+        "Vetta ghiacciata",
+        "Pico Gélido -",
+        "冰峰",
+        "冰峰",
+        "氷の峰",
+        "Si Puncak Bersalju",
+        "بركان"
+      ],
+      "desc": [
+        "냉기의 기운이 완전히 발현됨. 냉기 공격 +2, 냉기 저항 +2",
+        "The essence of ice has fully awakened. Cold Attack +2, Cold Resistance +2",
+        "El invierno eterno desciende sobre el mundo. Ataque de Frío +2, Resistencia al Frío +2",
+        "L’essenza del ghiaccio si è completamente risvegliata. Attacco Freddo +2, Resistenza al Freddo +2",
+        "A essência do gelo despertou totalmente. Ataque Gélido +2, Resistência Gélido +2",
+        "寒冰之力完全觉醒。 冰冻攻击+2，冰冻抗性+2",
+        "寒冰之力完全覺醒。 冰凍攻擊+2，冰凍抗性+2",
+        "冷気の気が完全に発現した。 冷気攻撃 +2、冷気耐性 +2",
+        "Esensi es telah sepenuhnya terbangun. Serangan Dingin +2, Ketahanan Dingin +2",
+        "استيقظ جوهر الجليد بالكامل. هجوم جليدي +2، مقاومة الثلج +2"
+      ],
+      "grade": "0",
+      "effect": "addAb_12_1|addAb_8_1"
+    },
+    "localized": {
+      "name": {
+        "ko": "설산",
+        "en": "Icy Peak",
+        "es": "Cima Helada",
+        "it": "Vetta ghiacciata",
+        "pt": "Pico Gélido -",
+        "zh-Hans": "冰峰",
+        "zh-Hant": "冰峰",
+        "ja": "氷の峰",
+        "id": "Si Puncak Bersalju",
+        "ar": "بركان"
+      },
+      "desc": {
+        "ko": "냉기의 기운이 완전히 발현됨. 냉기 공격 +2, 냉기 저항 +2",
+        "en": "The essence of ice has fully awakened. Cold Attack +2, Cold Resistance +2",
+        "es": "El invierno eterno desciende sobre el mundo. Ataque de Frío +2, Resistencia al Frío +2",
+        "it": "L’essenza del ghiaccio si è completamente risvegliata. Attacco Freddo +2, Resistenza al Freddo +2",
+        "pt": "A essência do gelo despertou totalmente. Ataque Gélido +2, Resistência Gélido +2",
+        "zh-Hans": "寒冰之力完全觉醒。 冰冻攻击+2，冰冻抗性+2",
+        "zh-Hant": "寒冰之力完全覺醒。 冰凍攻擊+2，冰凍抗性+2",
+        "ja": "冷気の気が完全に発現した。 冷気攻撃 +2、冷気耐性 +2",
+        "id": "Esensi es telah sepenuhnya terbangun. Serangan Dingin +2, Ketahanan Dingin +2",
+        "ar": "استيقظ جوهر الجليد بالكامل. هجوم جليدي +2، مقاومة الثلج +2"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "55",
+      "name": [
+        "늪지",
+        "Swamp",
+        "Pantano",
+        "Palude",
+        "Pântano -",
+        "毒沼",
+        "毒沼",
+        "沼地",
+        "Rawa",
+        "قمة الجليد"
+      ],
+      "desc": [
+        "독의 기운이 완전히 발현됨. 독 공격 +2, 독 저항 +2",
+        "The essence of poison has fully awakened. Poison Attack +2, Poison Resistance +2",
+        "El veneno se expande como una plaga sin fin. Ataque de Veneno +2, Resistencia al Veneno +2",
+        "L’essenza del veleno si è completamente risvegliata. Attacco Veleno +2, Resistenza Veleno +2",
+        "A essência do veneno despertou totalmente. Ataque Veneno +2, Resistência a Veneno +2",
+        "剧毒之力完全觉醒。 毒素攻击+2，毒素抗性+2",
+        "劇毒之力完全覺醒。 毒素攻擊+2，毒素抗性+2",
+        "毒の気が完全に発現した。 毒攻撃 +2、毒耐性 +2",
+        "Esensi racun telah sepenuhnya terbangun. Serangan Racun +2, Tahan Racun +2",
+        "استيقظ جوهر السم بالكامل. هجوم سُمّي +2، مقاومة السموم +2"
+      ],
+      "grade": "0",
+      "effect": "addAb_15_1|addAb_16_1"
+    },
+    "localized": {
+      "name": {
+        "ko": "늪지",
+        "en": "Swamp",
+        "es": "Pantano",
+        "it": "Palude",
+        "pt": "Pântano -",
+        "zh-Hans": "毒沼",
+        "zh-Hant": "毒沼",
+        "ja": "沼地",
+        "id": "Rawa",
+        "ar": "قمة الجليد"
+      },
+      "desc": {
+        "ko": "독의 기운이 완전히 발현됨. 독 공격 +2, 독 저항 +2",
+        "en": "The essence of poison has fully awakened. Poison Attack +2, Poison Resistance +2",
+        "es": "El veneno se expande como una plaga sin fin. Ataque de Veneno +2, Resistencia al Veneno +2",
+        "it": "L’essenza del veleno si è completamente risvegliata. Attacco Veleno +2, Resistenza Veleno +2",
+        "pt": "A essência do veneno despertou totalmente. Ataque Veneno +2, Resistência a Veneno +2",
+        "zh-Hans": "剧毒之力完全觉醒。 毒素攻击+2，毒素抗性+2",
+        "zh-Hant": "劇毒之力完全覺醒。 毒素攻擊+2，毒素抗性+2",
+        "ja": "毒の気が完全に発現した。 毒攻撃 +2、毒耐性 +2",
+        "id": "Esensi racun telah sepenuhnya terbangun. Serangan Racun +2, Tahan Racun +2",
+        "ar": "استيقظ جوهر السم بالكامل. هجوم سُمّي +2، مقاومة السموم +2"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "56",
+      "name": [
+        "낙뢰",
+        "Lightning strike",
+        "Rayo",
+        "Fulmine",
+        "Relâmpago -",
+        "雷霆",
+        "雷霆",
+        "雷鳴",
+        "Si Halilintar",
+        "المستنقع"
+      ],
+      "desc": [
+        "낙뢰의 기운이 완전히 발현됨. 전기 공격 +2, 전기 저항 +2",
+        "The essence of lightning has fully awakened. Lightning Attack +2, Lightning Resistance +2",
+        "Los cielos desatan su furia eléctrica. Ataque de Rayo +2, Resistencia al Rayo +2",
+        "L’essenza del fulmineo si è completamente risvegliata. Attacco Fulmineo +2, Resistenza Fulmineo +2",
+        "A essência do eletricidade despertou totalmente. Ataque Eletricidade +2, Resistência a Eletricidade +2",
+        "雷电之力完全觉醒。 闪电攻击+2，闪电抗性+2",
+        "雷電之力完全覺醒。 閃電攻擊+2，閃電抗性+2",
+        "雷の気が完全に発現した。 雷撃攻撃 +2、雷撃耐性 +2",
+        "Esensi petir telah sepenuhnya bangkit. Serangan Petir +2, Tahan Petir +2",
+        "استيقظ جوهر البرق بالكامل. هجوم برقي +2، مقاومة البروق +2"
+      ],
+      "grade": "0",
+      "effect": "addAb_17_1|addAb_18_1"
+    },
+    "localized": {
+      "name": {
+        "ko": "낙뢰",
+        "en": "Lightning strike",
+        "es": "Rayo",
+        "it": "Fulmine",
+        "pt": "Relâmpago -",
+        "zh-Hans": "雷霆",
+        "zh-Hant": "雷霆",
+        "ja": "雷鳴",
+        "id": "Si Halilintar",
+        "ar": "المستنقع"
+      },
+      "desc": {
+        "ko": "낙뢰의 기운이 완전히 발현됨. 전기 공격 +2, 전기 저항 +2",
+        "en": "The essence of lightning has fully awakened. Lightning Attack +2, Lightning Resistance +2",
+        "es": "Los cielos desatan su furia eléctrica. Ataque de Rayo +2, Resistencia al Rayo +2",
+        "it": "L’essenza del fulmineo si è completamente risvegliata. Attacco Fulmineo +2, Resistenza Fulmineo +2",
+        "pt": "A essência do eletricidade despertou totalmente. Ataque Eletricidade +2, Resistência a Eletricidade +2",
+        "zh-Hans": "雷电之力完全觉醒。 闪电攻击+2，闪电抗性+2",
+        "zh-Hant": "雷電之力完全覺醒。 閃電攻擊+2，閃電抗性+2",
+        "ja": "雷の気が完全に発現した。 雷撃攻撃 +2、雷撃耐性 +2",
+        "id": "Esensi petir telah sepenuhnya bangkit. Serangan Petir +2, Tahan Petir +2",
+        "ar": "استيقظ جوهر البرق بالكامل. هجوم برقي +2، مقاومة البروق +2"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "57",
+      "name": [
+        "아리아",
+        "Aria",
+        "Aria",
+        "Aria",
+        "Musicista -",
+        "咏叹调",
+        "詠嘆調",
+        "爆発",
+        "Aria",
+        "ضربة البرق"
+      ],
+      "desc": [
+        "음율의 기운이 완전히 발현됨. 음파 공격 +2, 음파 저항 +2",
+        "The essence of thunder has fully awakened. Thunder Attack +2, Thunder Resistance +2",
+        "Una sinfonía sublime que sacude cielo y tierra. Ataque Sónico +2, Resistencia Sónica +2",
+        "L’essenza del sonico si è completamente risvegliata. Attacco Sonico +2, Resistenza Sonico +2",
+        "A essência sônica despertou totalmente. Ataque Sônica +2, Resistência a Sônica +2",
+        "音律之力完全觉醒。 音波攻击+2，音波抗性+2",
+        "音律之力完全覺醒。 音波攻擊+2，音波抗性+2",
+        "音律の気が完全に発現した。 音波攻撃 +2、音波耐性 +2",
+        "Esensi petir telah sepenuhnya terbangun. Serangan Sonik +2, Tahan Sonik +2",
+        "استيقظ جوهر الرعد بالكامل. هجوم صوتي +2، مقاومة الصوت +2"
+      ],
+      "grade": "0",
+      "effect": "addAb_20_1|addAb_19_1"
+    },
+    "localized": {
+      "name": {
+        "ko": "아리아",
+        "en": "Aria",
+        "es": "Aria",
+        "it": "Aria",
+        "pt": "Musicista -",
+        "zh-Hans": "咏叹调",
+        "zh-Hant": "詠嘆調",
+        "ja": "爆発",
+        "id": "Aria",
+        "ar": "ضربة البرق"
+      },
+      "desc": {
+        "ko": "음율의 기운이 완전히 발현됨. 음파 공격 +2, 음파 저항 +2",
+        "en": "The essence of thunder has fully awakened. Thunder Attack +2, Thunder Resistance +2",
+        "es": "Una sinfonía sublime que sacude cielo y tierra. Ataque Sónico +2, Resistencia Sónica +2",
+        "it": "L’essenza del sonico si è completamente risvegliata. Attacco Sonico +2, Resistenza Sonico +2",
+        "pt": "A essência sônica despertou totalmente. Ataque Sônica +2, Resistência a Sônica +2",
+        "zh-Hans": "音律之力完全觉醒。 音波攻击+2，音波抗性+2",
+        "zh-Hant": "音律之力完全覺醒。 音波攻擊+2，音波抗性+2",
+        "ja": "音律の気が完全に発現した。 音波攻撃 +2、音波耐性 +2",
+        "id": "Esensi petir telah sepenuhnya terbangun. Serangan Sonik +2, Tahan Sonik +2",
+        "ar": "استيقظ جوهر الرعد بالكامل. هجوم صوتي +2، مقاومة الصوت +2"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "58",
+      "name": [
+        "피바다",
+        "Sea of Blood",
+        "Mar de Sangre",
+        "Mare di sangue",
+        "Mar de Sangue -",
+        "血海",
+        "血海",
+        "血の海",
+        "Laut Darah",
+        "إنفجار"
+      ],
+      "desc": [
+        "혈액의 기운이 완전히 발현됨. 출혈 유발 +2, 흡혈 +2, 피의 저주 +1",
+        "The essence of blood has fully awakened. Cause bleeding +2, Blood Drain +2, Curse of Blood +1",
+        "Un océano carmesí arrasa con todo a su paso. Causar Sangrado +2, Drenaje de Sangre +2, Maldición de Sangre +1",
+        "L’essenza del sangue si è completamente risvegliata. Sanguinamento +2, Sanguisuga +2, Maledizione del Sangue +1",
+        "A essência do sangue despertou totalmente. Inflingir Sangramento +2, Drenagem de Sangue +2, Maldição do Sangue +1",
+        "血液之力完全觉醒。 造成流血+2，吸血+2，血之诅咒+1",
+        "血液之力完全覺醒。 造成流血+2，吸血+2，血之詛咒+1",
+        "血の気が完全に発現した。 出血付与 +2、吸血 +2、血の呪い +1",
+        "Esensi darah telah sepenuhnya terbangun. Pendarahan +2, Isap Darah +2, Kutukan Darah +1",
+        "استيقظ جوهر الدم بالكامل. يسبب نزيف +2، تصريف الدم +2، لعنة من دماء +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_22_1|addAb_44_1|addAb_67_1"
+    },
+    "localized": {
+      "name": {
+        "ko": "피바다",
+        "en": "Sea of Blood",
+        "es": "Mar de Sangre",
+        "it": "Mare di sangue",
+        "pt": "Mar de Sangue -",
+        "zh-Hans": "血海",
+        "zh-Hant": "血海",
+        "ja": "血の海",
+        "id": "Laut Darah",
+        "ar": "إنفجار"
+      },
+      "desc": {
+        "ko": "혈액의 기운이 완전히 발현됨. 출혈 유발 +2, 흡혈 +2, 피의 저주 +1",
+        "en": "The essence of blood has fully awakened. Cause bleeding +2, Blood Drain +2, Curse of Blood +1",
+        "es": "Un océano carmesí arrasa con todo a su paso. Causar Sangrado +2, Drenaje de Sangre +2, Maldición de Sangre +1",
+        "it": "L’essenza del sangue si è completamente risvegliata. Sanguinamento +2, Sanguisuga +2, Maledizione del Sangue +1",
+        "pt": "A essência do sangue despertou totalmente. Inflingir Sangramento +2, Drenagem de Sangue +2, Maldição do Sangue +1",
+        "zh-Hans": "血液之力完全觉醒。 造成流血+2，吸血+2，血之诅咒+1",
+        "zh-Hant": "血液之力完全覺醒。 造成流血+2，吸血+2，血之詛咒+1",
+        "ja": "血の気が完全に発現した。 出血付与 +2、吸血 +2、血の呪い +1",
+        "id": "Esensi darah telah sepenuhnya terbangun. Pendarahan +2, Isap Darah +2, Kutukan Darah +1",
+        "ar": "استيقظ جوهر الدم بالكامل. يسبب نزيف +2، تصريف الدم +2، لعنة من دماء +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "59",
+      "name": [
+        "분쇄자",
+        "Crusher",
+        "El Aplastador",
+        "Frantumatore",
+        "O Aríete -",
+        "碾碎者",
+        "碾碎者",
+        "破城槌",
+        "Penghancur",
+        "بحر من الدماء"
+      ],
+      "desc": [
+        "둔기를 다루는 재능이 완전히 피어남. 기절 유발 +2, 강타 +1, 둔기 숙련 +1",
+        "The talent for manipulating blunt has fully blossomed. Cause Stun +2, Bash +1, Blunt Mastery +1",
+        "El talento para manejar armas contundentes ha florecido plenamente. Causar Aturdimiento +2, Golpe Castigador +1, Maestría con Contundentes +1",
+        "Il talento per maneggiare armi contundenti è sbocciato pienamente. Stordimento +2, Colpo +1, Maestria con Contundenti +1",
+        "O talento para manipular armas contundentes floresceu por completo. Ataque Atordoante +2, Batedor +1, Maestria em Contundentes +1",
+        "使用钝器的造诣已臻化境。 造成晕眩+2，重击+1，钝器精通+1",
+        "使用鈍器的造詣已臻化境。 造成暈眩+2，重擊+1，鈍器精通+1",
+        "打撃武器を扱う才能が完全に開花した。 気絶付与 +2、強打 +1、打撃熟練 +1",
+        "Bakat untuk memanipulasi senjata tumpul telah berkembang sepenuhnya. Stun +2, Serangan Berat +1, Penguasaan Senjata Tumpul +1",
+        "ازدهرت موهبة استخدام الأسلحة غير الحادة بالكامل. يسبب صدمة +2، ضربة قوية +1، إتقان الأسلحة الغير حادة +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_24_2|addAb_64_1"
+    },
+    "localized": {
+      "name": {
+        "ko": "분쇄자",
+        "en": "Crusher",
+        "es": "El Aplastador",
+        "it": "Frantumatore",
+        "pt": "O Aríete -",
+        "zh-Hans": "碾碎者",
+        "zh-Hant": "碾碎者",
+        "ja": "破城槌",
+        "id": "Penghancur",
+        "ar": "بحر من الدماء"
+      },
+      "desc": {
+        "ko": "둔기를 다루는 재능이 완전히 피어남. 기절 유발 +2, 강타 +1, 둔기 숙련 +1",
+        "en": "The talent for manipulating blunt has fully blossomed. Cause Stun +2, Bash +1, Blunt Mastery +1",
+        "es": "El talento para manejar armas contundentes ha florecido plenamente. Causar Aturdimiento +2, Golpe Castigador +1, Maestría con Contundentes +1",
+        "it": "Il talento per maneggiare armi contundenti è sbocciato pienamente. Stordimento +2, Colpo +1, Maestria con Contundenti +1",
+        "pt": "O talento para manipular armas contundentes floresceu por completo. Ataque Atordoante +2, Batedor +1, Maestria em Contundentes +1",
+        "zh-Hans": "使用钝器的造诣已臻化境。 造成晕眩+2，重击+1，钝器精通+1",
+        "zh-Hant": "使用鈍器的造詣已臻化境。 造成暈眩+2，重擊+1，鈍器精通+1",
+        "ja": "打撃武器を扱う才能が完全に開花した。 気絶付与 +2、強打 +1、打撃熟練 +1",
+        "id": "Bakat untuk memanipulasi senjata tumpul telah berkembang sepenuhnya. Stun +2, Serangan Berat +1, Penguasaan Senjata Tumpul +1",
+        "ar": "ازدهرت موهبة استخدام الأسلحة غير الحادة بالكامل. يسبب صدمة +2، ضربة قوية +1، إتقان الأسلحة الغير حادة +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "60",
+      "name": [
+        "검호",
+        "Sword Master",
+        "Maestro Espadachín",
+        "Maestro di spada",
+        "Mestre da Espada -",
+        "剑圣",
+        "劍聖",
+        "安全第一",
+        "Ahli Pedang",
+        "النطح بقوة"
+      ],
+      "desc": [
+        "날붙이를 다루는 재능이 완전히 피어남. 날붙이 숙련 +1, 신속함 +1",
+        "The talent for manipulating blade has fully blossomed. Blade Mastery +1, Swiftness +1",
+        "El talento para manejar espadas ha florecido plenamente. Maestría con Espadas +1, Rapidez +1",
+        "Il talento per maneggiare lame è sbocciato pienamente. Maestria con Lame +1, Rapidità +1",
+        "O talento para manipular lâminas floresceu por completo. Maestria em Lâminas +1, Rapidez +1",
+        "使用利器的造诣已臻化境。 利器精通+1，迅捷+1",
+        "使用利器的造詣已臻化境。 利器精通+1，迅捷+1",
+        "刀剣を扱う才能が完全に開花した。 刀剣熟練 +1、俊敏 +1",
+        "Bakat untuk memanipulasi pedang telah sepenuhnya berkembang. Penguasaan Senjata Tajam +1, Kecepatan +1",
+        "ازدهرت موهبة استخدام النصل بالكامل. إتقان استخدام النصل +1، السرعة +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_56_1"
+    },
+    "localized": {
+      "name": {
+        "ko": "검호",
+        "en": "Sword Master",
+        "es": "Maestro Espadachín",
+        "it": "Maestro di spada",
+        "pt": "Mestre da Espada -",
+        "zh-Hans": "剑圣",
+        "zh-Hant": "劍聖",
+        "ja": "安全第一",
+        "id": "Ahli Pedang",
+        "ar": "النطح بقوة"
+      },
+      "desc": {
+        "ko": "날붙이를 다루는 재능이 완전히 피어남. 날붙이 숙련 +1, 신속함 +1",
+        "en": "The talent for manipulating blade has fully blossomed. Blade Mastery +1, Swiftness +1",
+        "es": "El talento para manejar espadas ha florecido plenamente. Maestría con Espadas +1, Rapidez +1",
+        "it": "Il talento per maneggiare lame è sbocciato pienamente. Maestria con Lame +1, Rapidità +1",
+        "pt": "O talento para manipular lâminas floresceu por completo. Maestria em Lâminas +1, Rapidez +1",
+        "zh-Hans": "使用利器的造诣已臻化境。 利器精通+1，迅捷+1",
+        "zh-Hant": "使用利器的造詣已臻化境。 利器精通+1，迅捷+1",
+        "ja": "刀剣を扱う才能が完全に開花した。 刀剣熟練 +1、俊敏 +1",
+        "id": "Bakat untuk memanipulasi pedang telah sepenuhnya berkembang. Penguasaan Senjata Tajam +1, Kecepatan +1",
+        "ar": "ازدهرت موهبة استخدام النصل بالكامل. إتقان استخدام النصل +1، السرعة +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "61",
+      "name": [
+        "명사수",
+        "Sniper",
+        "Francotirador",
+        "Cecchino",
+        "Franco-atirador -",
+        "神射手",
+        "神射手",
+        "名射手",
+        "Penembak jitu",
+        "سيد السيوف"
+      ],
+      "desc": [
+        "원거리 무기를 다루는 재능이 완전히 피어남. 원거리 숙련 +1, 정교함 +1",
+        "The talent for manipulating ranged weapon has fully blossomed. Ranged Mastery +1, Precise +1",
+        "El talento para manejar armas a distancia ha florecido plenamente. Maestría a Distancia +1, Preciso +1",
+        "Il talento per maneggiare armi a distanza è sbocciato pienamente. Maestria a Distanza +1, Precisione +1",
+        "O talento para manipular armas de longo alcance floresceu por completo. Maestria em Armas de Longo Alcance +1, Precisão +1",
+        "使用远程武器的造诣已臻化境。 远程精通+1，精准+1",
+        "使用遠程武器的造詣已臻化境。 遠程精通+1，精準+1",
+        "遠隔武器を扱う才能が完全に開花した。 遠隔熟練 +1、精密 +1",
+        "Bakat untuk memanipulasi senjata jarak jauh telah sepenuhnya berkembang. Penguasaan Senjata Jarak Jauh +1, Teliti +1",
+        "ازدهرت موهبة استخدام الأسلحة بعيدة المدى بالكامل. إتقان التصويب بعيد المدى +1، الدقة +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_59_1"
+    },
+    "localized": {
+      "name": {
+        "ko": "명사수",
+        "en": "Sniper",
+        "es": "Francotirador",
+        "it": "Cecchino",
+        "pt": "Franco-atirador -",
+        "zh-Hans": "神射手",
+        "zh-Hant": "神射手",
+        "ja": "名射手",
+        "id": "Penembak jitu",
+        "ar": "سيد السيوف"
+      },
+      "desc": {
+        "ko": "원거리 무기를 다루는 재능이 완전히 피어남. 원거리 숙련 +1, 정교함 +1",
+        "en": "The talent for manipulating ranged weapon has fully blossomed. Ranged Mastery +1, Precise +1",
+        "es": "El talento para manejar armas a distancia ha florecido plenamente. Maestría a Distancia +1, Preciso +1",
+        "it": "Il talento per maneggiare armi a distanza è sbocciato pienamente. Maestria a Distanza +1, Precisione +1",
+        "pt": "O talento para manipular armas de longo alcance floresceu por completo. Maestria em Armas de Longo Alcance +1, Precisão +1",
+        "zh-Hans": "使用远程武器的造诣已臻化境。 远程精通+1，精准+1",
+        "zh-Hant": "使用遠程武器的造詣已臻化境。 遠程精通+1，精準+1",
+        "ja": "遠隔武器を扱う才能が完全に開花した。 遠隔熟練 +1、精密 +1",
+        "id": "Bakat untuk memanipulasi senjata jarak jauh telah sepenuhnya berkembang. Penguasaan Senjata Jarak Jauh +1, Teliti +1",
+        "ar": "ازدهرت موهبة استخدام الأسلحة بعيدة المدى بالكامل. إتقان التصويب بعيد المدى +1، الدقة +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "62",
+      "name": [
+        "고삐의",
+        "Tamer",
+        "El Domador",
+        "Domatore",
+        "O Domador -",
+        "驯兽师",
+        "馴獸師",
+        "手綱の",
+        "Penjinak",
+        "رامٍ ماهر"
+      ],
+      "desc": [
+        "패밀리어를 잘 길들이는 재주를 타고남. 패밀리어 숙련 +1",
+        "Born with a talent for taming familiars. Familiar Mastery +1",
+        "Nacido con un talento para domesticar familiares. Maestría en Familiares +1",
+        "Nato con il talento di addomesticare famigli. Padronanza familiare +1",
+        "Nascido com talento para domar familiares. Maestria com Familiar +1",
+        "驯服使魔的天赋初具雏形。 使魔精通+1",
+        "馴服使魔的天賦初具雛形。 使魔精通+1",
+        "使い魔を手懐ける才能を持って生まれた。 使い魔熟練 +1",
+        "Terlahir dengan bakat untuk menjinakkan familiar. Penguasaan Familiar +1",
+        "وُلِد بموهبة في ترويض الحيوانات الأليفة. إتقان تربية الحيوانات الأليفة +1"
+      ],
+      "grade": "0",
+      "effect": "addAb_103_1",
+      "jewel": "20",
+      "shopId": "30"
+    },
+    "localized": {
+      "name": {
+        "ko": "고삐의",
+        "en": "Tamer",
+        "es": "El Domador",
+        "it": "Domatore",
+        "pt": "O Domador -",
+        "zh-Hans": "驯兽师",
+        "zh-Hant": "馴獸師",
+        "ja": "手綱の",
+        "id": "Penjinak",
+        "ar": "رامٍ ماهر"
+      },
+      "desc": {
+        "ko": "패밀리어를 잘 길들이는 재주를 타고남. 패밀리어 숙련 +1",
+        "en": "Born with a talent for taming familiars. Familiar Mastery +1",
+        "es": "Nacido con un talento para domesticar familiares. Maestría en Familiares +1",
+        "it": "Nato con il talento di addomesticare famigli. Padronanza familiare +1",
+        "pt": "Nascido com talento para domar familiares. Maestria com Familiar +1",
+        "zh-Hans": "驯服使魔的天赋初具雏形。 使魔精通+1",
+        "zh-Hant": "馴服使魔的天賦初具雛形。 使魔精通+1",
+        "ja": "使い魔を手懐ける才能を持って生まれた。 使い魔熟練 +1",
+        "id": "Terlahir dengan bakat untuk menjinakkan familiar. Penguasaan Familiar +1",
+        "ar": "وُلِد بموهبة في ترويض الحيوانات الأليفة. إتقان تربية الحيوانات الأليفة +1"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": "63",
+      "name": [
+        "패밀리어 마스터",
+        "Familiar Master",
+        "Maestro de Familiares",
+        "Maestro dei famigli",
+        "O Adestrador -",
+        "使魔大师",
+        "使魔大師",
+        "使い魔の主",
+        "Penguasa Familiar",
+        "السلامة أولاً"
+      ],
+      "desc": [
+        "패밀리어와 한 몸처럼 움직일 수 있음. 패밀리어 숙련 +1, 다중 공격 +2",
+        "Can move as one with own familiar. Familiar Mastery +1, Multistrike+2",
+        "Puede moverse como uno solo con su propio familiar. Maestría en Familiares +1, Ataque Múltiple +2",
+        "Può muoversi come uno solo con il proprio famiglio. Padronanza familiare +1, Multicolpo +2",
+        "Seus familiares movem-se como se fossem um só contigo. Maestria com Familiar +1, Multiataque +2",
+        "与使魔心意相通，出手宛若同躯共鸣。 使魔精通+1，多重攻击+2",
+        "與使魔心意相通，出手宛若同軀共鳴。 使魔精通+1，多重攻擊+2",
+        "使い魔と一体のように行動できる。 使い魔熟練 +1、多重攻撃 +2",
+        "Dapat bergerak sebagai satu dengan familiar sendiri. Penguasaan Familiar +1, Serangan Bertubi-tubi +2",
+        "يمكنه التحرك بانسجام مع حيوانه الأليف. إتقان تربية الحيوانات الأليفة +1، ضربات متعددة +2"
+      ],
+      "grade": "0",
+      "effect": "addAb_52_2"
+    },
+    "localized": {
+      "name": {
+        "ko": "패밀리어 마스터",
+        "en": "Familiar Master",
+        "es": "Maestro de Familiares",
+        "it": "Maestro dei famigli",
+        "pt": "O Adestrador -",
+        "zh-Hans": "使魔大师",
+        "zh-Hant": "使魔大師",
+        "ja": "使い魔の主",
+        "id": "Penguasa Familiar",
+        "ar": "السلامة أولاً"
+      },
+      "desc": {
+        "ko": "패밀리어와 한 몸처럼 움직일 수 있음. 패밀리어 숙련 +1, 다중 공격 +2",
+        "en": "Can move as one with own familiar. Familiar Mastery +1, Multistrike+2",
+        "es": "Puede moverse como uno solo con su propio familiar. Maestría en Familiares +1, Ataque Múltiple +2",
+        "it": "Può muoversi come uno solo con il proprio famiglio. Padronanza familiare +1, Multicolpo +2",
+        "pt": "Seus familiares movem-se como se fossem um só contigo. Maestria com Familiar +1, Multiataque +2",
+        "zh-Hans": "与使魔心意相通，出手宛若同躯共鸣。 使魔精通+1，多重攻击+2",
+        "zh-Hant": "與使魔心意相通，出手宛若同軀共鳴。 使魔精通+1，多重攻擊+2",
+        "ja": "使い魔と一体のように行動できる。 使い魔熟練 +1、多重攻撃 +2",
+        "id": "Dapat bergerak sebagai satu dengan familiar sendiri. Penguasaan Familiar +1, Serangan Bertubi-tubi +2",
+        "ar": "يمكنه التحرك بانسجام مع حيوانه الأليف. إتقان تربية الحيوانات الأليفة +1، ضربات متعددة +2"
+      }
+    },
+    "status": "extracted"
+  }
+]

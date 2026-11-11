@@ -1,0 +1,25 @@
+{
+  "m_Name": "LeaderboardTest",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 102,
+    "bytes[1]": 4,
+    "bytes[2]": 64,
+    "bytes[3]": 115,
+    "bytes[4]": 170,
+    "bytes[5]": 13,
+    "bytes[6]": 238,
+    "bytes[7]": 2,
+    "bytes[8]": 22,
+    "bytes[9]": 194,
+    "bytes[10]": 134,
+    "bytes[11]": 227,
+    "bytes[12]": 181,
+    "bytes[13]": 72,
+    "bytes[14]": 202,
+    "bytes[15]": 177
+  },
+  "m_ClassName": "LeaderboardTest",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

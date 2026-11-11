@@ -1,0 +1,25 @@
+{
+  "m_Name": "UISelectField_Transition",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 107,
+    "bytes[1]": 100,
+    "bytes[2]": 147,
+    "bytes[3]": 249,
+    "bytes[4]": 89,
+    "bytes[5]": 84,
+    "bytes[6]": 77,
+    "bytes[7]": 106,
+    "bytes[8]": 60,
+    "bytes[9]": 196,
+    "bytes[10]": 48,
+    "bytes[11]": 164,
+    "bytes[12]": 211,
+    "bytes[13]": 239,
+    "bytes[14]": 61,
+    "bytes[15]": 144
+  },
+  "m_ClassName": "UISelectField_Transition",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

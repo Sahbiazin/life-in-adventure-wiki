@@ -1,0 +1,25 @@
+{
+  "m_Name": "CustomDropdownItem",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 109,
+    "bytes[1]": 170,
+    "bytes[2]": 9,
+    "bytes[3]": 85,
+    "bytes[4]": 118,
+    "bytes[5]": 130,
+    "bytes[6]": 141,
+    "bytes[7]": 249,
+    "bytes[8]": 140,
+    "bytes[9]": 3,
+    "bytes[10]": 129,
+    "bytes[11]": 230,
+    "bytes[12]": 192,
+    "bytes[13]": 59,
+    "bytes[14]": 211,
+    "bytes[15]": 91
+  },
+  "m_ClassName": "CustomDropdownItem",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

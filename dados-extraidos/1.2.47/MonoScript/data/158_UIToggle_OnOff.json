@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIToggle_OnOff",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 94,
+    "bytes[1]": 60,
+    "bytes[2]": 98,
+    "bytes[3]": 31,
+    "bytes[4]": 130,
+    "bytes[5]": 119,
+    "bytes[6]": 214,
+    "bytes[7]": 148,
+    "bytes[8]": 9,
+    "bytes[9]": 120,
+    "bytes[10]": 218,
+    "bytes[11]": 72,
+    "bytes[12]": 143,
+    "bytes[13]": 173,
+    "bytes[14]": 2,
+    "bytes[15]": 156
+  },
+  "m_ClassName": "UIToggle_OnOff",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

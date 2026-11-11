@@ -1,0 +1,37 @@
+{
+  "project_info": {
+    "project_number": "535162713711",
+    "firebase_url": "https://liveinadventure-ddfa9.firebaseio.com",
+    "project_id": "liveinadventure-ddfa9",
+    "storage_bucket": "liveinadventure-ddfa9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535162713711:ios:bf022ddb1e90c9bd3dbf9a",
+        "android_client_info": {
+          "package_name": "com.StudioWheel.Bard"
+        }
+      },
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2PKkPuQSkE7FwUAkO6eEFmobkasEp4xs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 0
+        },
+        "appinvite_service": {
+          "status": 1
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535162713711-0g2sm0ograq2islke8jfp6tuh62kmke6.apps.googleusercontent.com"
+        }
+      ]
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "ToggleSwitch",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 138,
+    "bytes[1]": 18,
+    "bytes[2]": 117,
+    "bytes[3]": 228,
+    "bytes[4]": 187,
+    "bytes[5]": 6,
+    "bytes[6]": 193,
+    "bytes[7]": 65,
+    "bytes[8]": 6,
+    "bytes[9]": 194,
+    "bytes[10]": 105,
+    "bytes[11]": 224,
+    "bytes[12]": 54,
+    "bytes[13]": 140,
+    "bytes[14]": 251,
+    "bytes[15]": 0
+  },
+  "m_ClassName": "ToggleSwitch",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

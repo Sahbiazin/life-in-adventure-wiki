@@ -1,0 +1,25 @@
+{
+  "m_Name": "Demo_CharacterSelectList_Character",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 123,
+    "bytes[1]": 90,
+    "bytes[2]": 110,
+    "bytes[3]": 113,
+    "bytes[4]": 158,
+    "bytes[5]": 203,
+    "bytes[6]": 29,
+    "bytes[7]": 63,
+    "bytes[8]": 4,
+    "bytes[9]": 168,
+    "bytes[10]": 120,
+    "bytes[11]": 229,
+    "bytes[12]": 242,
+    "bytes[13]": 186,
+    "bytes[14]": 219,
+    "bytes[15]": 161
+  },
+  "m_ClassName": "Demo_CharacterSelectList_Character",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

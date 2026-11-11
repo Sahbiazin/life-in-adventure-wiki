@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIRectangularRaycastFilter",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 68,
+    "bytes[1]": 150,
+    "bytes[2]": 107,
+    "bytes[3]": 192,
+    "bytes[4]": 173,
+    "bytes[5]": 102,
+    "bytes[6]": 193,
+    "bytes[7]": 17,
+    "bytes[8]": 168,
+    "bytes[9]": 169,
+    "bytes[10]": 22,
+    "bytes[11]": 217,
+    "bytes[12]": 217,
+    "bytes[13]": 155,
+    "bytes[14]": 36,
+    "bytes[15]": 252
+  },
+  "m_ClassName": "UIRectangularRaycastFilter",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

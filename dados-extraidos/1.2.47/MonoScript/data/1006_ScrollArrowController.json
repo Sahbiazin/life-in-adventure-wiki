@@ -1,0 +1,25 @@
+{
+  "m_Name": "ScrollArrowController",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 73,
+    "bytes[1]": 155,
+    "bytes[2]": 200,
+    "bytes[3]": 85,
+    "bytes[4]": 106,
+    "bytes[5]": 77,
+    "bytes[6]": 233,
+    "bytes[7]": 3,
+    "bytes[8]": 247,
+    "bytes[9]": 37,
+    "bytes[10]": 69,
+    "bytes[11]": 189,
+    "bytes[12]": 169,
+    "bytes[13]": 73,
+    "bytes[14]": 97,
+    "bytes[15]": 225
+  },
+  "m_ClassName": "ScrollArrowController",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

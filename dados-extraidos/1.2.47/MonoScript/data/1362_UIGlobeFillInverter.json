@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIGlobeFillInverter",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 146,
+    "bytes[1]": 44,
+    "bytes[2]": 182,
+    "bytes[3]": 156,
+    "bytes[4]": 53,
+    "bytes[5]": 176,
+    "bytes[6]": 122,
+    "bytes[7]": 232,
+    "bytes[8]": 59,
+    "bytes[9]": 108,
+    "bytes[10]": 144,
+    "bytes[11]": 226,
+    "bytes[12]": 23,
+    "bytes[13]": 243,
+    "bytes[14]": 88,
+    "bytes[15]": 111
+  },
+  "m_ClassName": "UIGlobeFillInverter",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

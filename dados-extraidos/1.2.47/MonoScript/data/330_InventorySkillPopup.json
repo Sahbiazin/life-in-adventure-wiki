@@ -1,0 +1,25 @@
+{
+  "m_Name": "InventorySkillPopup",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 70,
+    "bytes[1]": 118,
+    "bytes[2]": 216,
+    "bytes[3]": 206,
+    "bytes[4]": 94,
+    "bytes[5]": 238,
+    "bytes[6]": 178,
+    "bytes[7]": 87,
+    "bytes[8]": 227,
+    "bytes[9]": 96,
+    "bytes[10]": 47,
+    "bytes[11]": 187,
+    "bytes[12]": 232,
+    "bytes[13]": 111,
+    "bytes[14]": 82,
+    "bytes[15]": 32
+  },
+  "m_ClassName": "InventorySkillPopup",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

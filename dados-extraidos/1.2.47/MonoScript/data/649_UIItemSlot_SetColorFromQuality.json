@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIItemSlot_SetColorFromQuality",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 119,
+    "bytes[1]": 5,
+    "bytes[2]": 68,
+    "bytes[3]": 96,
+    "bytes[4]": 160,
+    "bytes[5]": 225,
+    "bytes[6]": 60,
+    "bytes[7]": 30,
+    "bytes[8]": 83,
+    "bytes[9]": 18,
+    "bytes[10]": 133,
+    "bytes[11]": 193,
+    "bytes[12]": 13,
+    "bytes[13]": 227,
+    "bytes[14]": 98,
+    "bytes[15]": 185
+  },
+  "m_ClassName": "UIItemSlot_SetColorFromQuality",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

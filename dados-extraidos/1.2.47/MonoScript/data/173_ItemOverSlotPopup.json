@@ -1,0 +1,25 @@
+{
+  "m_Name": "ItemOverSlotPopup",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 60,
+    "bytes[1]": 218,
+    "bytes[2]": 224,
+    "bytes[3]": 128,
+    "bytes[4]": 7,
+    "bytes[5]": 184,
+    "bytes[6]": 115,
+    "bytes[7]": 127,
+    "bytes[8]": 250,
+    "bytes[9]": 99,
+    "bytes[10]": 27,
+    "bytes[11]": 66,
+    "bytes[12]": 68,
+    "bytes[13]": 131,
+    "bytes[14]": 170,
+    "bytes[15]": 8
+  },
+  "m_ClassName": "ItemOverSlotPopup",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

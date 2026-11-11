@@ -1,0 +1,25 @@
+{
+  "m_Name": "BookEpData",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 236,
+    "bytes[1]": 174,
+    "bytes[2]": 23,
+    "bytes[3]": 18,
+    "bytes[4]": 16,
+    "bytes[5]": 74,
+    "bytes[6]": 151,
+    "bytes[7]": 6,
+    "bytes[8]": 197,
+    "bytes[9]": 32,
+    "bytes[10]": 41,
+    "bytes[11]": 88,
+    "bytes[12]": 21,
+    "bytes[13]": 170,
+    "bytes[14]": 198,
+    "bytes[15]": 176
+  },
+  "m_ClassName": "BookEpData",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "DragThresholdSetting",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 18,
+    "bytes[1]": 174,
+    "bytes[2]": 53,
+    "bytes[3]": 64,
+    "bytes[4]": 50,
+    "bytes[5]": 168,
+    "bytes[6]": 148,
+    "bytes[7]": 201,
+    "bytes[8]": 153,
+    "bytes[9]": 165,
+    "bytes[10]": 35,
+    "bytes[11]": 3,
+    "bytes[12]": 66,
+    "bytes[13]": 86,
+    "bytes[14]": 0,
+    "bytes[15]": 103
+  },
+  "m_ClassName": "DragThresholdSetting",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

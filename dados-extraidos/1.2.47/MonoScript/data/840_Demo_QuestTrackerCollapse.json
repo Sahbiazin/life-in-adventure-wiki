@@ -1,0 +1,25 @@
+{
+  "m_Name": "Demo_QuestTrackerCollapse",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 107,
+    "bytes[1]": 193,
+    "bytes[2]": 251,
+    "bytes[3]": 86,
+    "bytes[4]": 107,
+    "bytes[5]": 208,
+    "bytes[6]": 139,
+    "bytes[7]": 240,
+    "bytes[8]": 135,
+    "bytes[9]": 83,
+    "bytes[10]": 99,
+    "bytes[11]": 232,
+    "bytes[12]": 210,
+    "bytes[13]": 194,
+    "bytes[14]": 112,
+    "bytes[15]": 97
+  },
+  "m_ClassName": "Demo_QuestTrackerCollapse",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "LanguageSelectPopup",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 8,
+    "bytes[1]": 153,
+    "bytes[2]": 46,
+    "bytes[3]": 74,
+    "bytes[4]": 186,
+    "bytes[5]": 56,
+    "bytes[6]": 90,
+    "bytes[7]": 180,
+    "bytes[8]": 109,
+    "bytes[9]": 177,
+    "bytes[10]": 31,
+    "bytes[11]": 166,
+    "bytes[12]": 238,
+    "bytes[13]": 88,
+    "bytes[14]": 194,
+    "bytes[15]": 123
+  },
+  "m_ClassName": "LanguageSelectPopup",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

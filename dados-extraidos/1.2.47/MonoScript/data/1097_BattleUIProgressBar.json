@@ -1,0 +1,25 @@
+{
+  "m_Name": "BattleUIProgressBar",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 150,
+    "bytes[1]": 176,
+    "bytes[2]": 214,
+    "bytes[3]": 114,
+    "bytes[4]": 253,
+    "bytes[5]": 225,
+    "bytes[6]": 73,
+    "bytes[7]": 75,
+    "bytes[8]": 14,
+    "bytes[9]": 69,
+    "bytes[10]": 185,
+    "bytes[11]": 184,
+    "bytes[12]": 47,
+    "bytes[13]": 129,
+    "bytes[14]": 204,
+    "bytes[15]": 154
+  },
+  "m_ClassName": "BattleUIProgressBar",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

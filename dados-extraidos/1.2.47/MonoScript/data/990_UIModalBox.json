@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIModalBox",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 50,
+    "bytes[1]": 124,
+    "bytes[2]": 109,
+    "bytes[3]": 186,
+    "bytes[4]": 183,
+    "bytes[5]": 247,
+    "bytes[6]": 43,
+    "bytes[7]": 229,
+    "bytes[8]": 152,
+    "bytes[9]": 65,
+    "bytes[10]": 47,
+    "bytes[11]": 47,
+    "bytes[12]": 0,
+    "bytes[13]": 28,
+    "bytes[14]": 170,
+    "bytes[15]": 239
+  },
+  "m_ClassName": "UIModalBox",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

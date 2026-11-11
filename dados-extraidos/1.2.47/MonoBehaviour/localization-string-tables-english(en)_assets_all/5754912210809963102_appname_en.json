@@ -1,0 +1,35 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 1,
+    "m_PathID": -2378050947708348859
+  },
+  "m_Name": "appname_en",
+  "m_LocaleId": {
+    "m_Code": "en"
+  },
+  "m_SharedData": {
+    "m_FileID": 2,
+    "m_PathID": -1948580949202589546
+  },
+  "m_Metadata": {
+    "m_Items": []
+  },
+  "m_TableData": [
+    {
+      "m_Id": 179561291776,
+      "m_Localized": "Life in Adventure",
+      "m_Metadata": {
+        "m_Items": []
+      }
+    }
+  ],
+  "references": {
+    "version": 2,
+    "RefIds": []
+  }
+}

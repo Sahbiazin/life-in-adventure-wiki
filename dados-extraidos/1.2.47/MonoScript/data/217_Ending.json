@@ -1,0 +1,25 @@
+{
+  "m_Name": "Ending",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 86,
+    "bytes[1]": 55,
+    "bytes[2]": 68,
+    "bytes[3]": 54,
+    "bytes[4]": 106,
+    "bytes[5]": 154,
+    "bytes[6]": 52,
+    "bytes[7]": 151,
+    "bytes[8]": 223,
+    "bytes[9]": 122,
+    "bytes[10]": 245,
+    "bytes[11]": 165,
+    "bytes[12]": 52,
+    "bytes[13]": 29,
+    "bytes[14]": 86,
+    "bytes[15]": 113
+  },
+  "m_ClassName": "Ending",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

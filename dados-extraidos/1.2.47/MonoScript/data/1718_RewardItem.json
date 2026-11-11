@@ -1,0 +1,25 @@
+{
+  "m_Name": "RewardItem",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 184,
+    "bytes[1]": 168,
+    "bytes[2]": 38,
+    "bytes[3]": 51,
+    "bytes[4]": 62,
+    "bytes[5]": 28,
+    "bytes[6]": 150,
+    "bytes[7]": 216,
+    "bytes[8]": 125,
+    "bytes[9]": 214,
+    "bytes[10]": 147,
+    "bytes[11]": 138,
+    "bytes[12]": 176,
+    "bytes[13]": 18,
+    "bytes[14]": 63,
+    "bytes[15]": 104
+  },
+  "m_ClassName": "RewardItem",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

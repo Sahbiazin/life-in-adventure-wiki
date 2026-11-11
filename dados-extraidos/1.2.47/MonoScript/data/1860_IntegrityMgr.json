@@ -1,0 +1,25 @@
+{
+  "m_Name": "IntegrityMgr",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 201,
+    "bytes[1]": 95,
+    "bytes[2]": 160,
+    "bytes[3]": 219,
+    "bytes[4]": 58,
+    "bytes[5]": 185,
+    "bytes[6]": 183,
+    "bytes[7]": 7,
+    "bytes[8]": 111,
+    "bytes[9]": 132,
+    "bytes[10]": 138,
+    "bytes[11]": 38,
+    "bytes[12]": 61,
+    "bytes[13]": 240,
+    "bytes[14]": 3,
+    "bytes[15]": 229
+  },
+  "m_ClassName": "IntegrityMgr",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

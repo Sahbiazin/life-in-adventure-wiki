@@ -1,0 +1,4510 @@
+{
+ "list" : [
+  {
+    "id" : 0,
+     "grade" : 1,
+    "monster" : "1|3",
+    "required" : "2_2_30",
+    "text" : "林中一聲野獸的呼嘯打破了黑夜的寂靜。 你小心翼翼地朝聲源緩慢接近。 遙望遠處的空地，你看見一群{0}正在進食。 它們專注於眼前的餐點上，沒有發現你的存在。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "戰鬥！",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "7", 
+          "nextEvent" : 1, 
+          "type" : 1, 
+          "text" : "你緩緩接近其中一個並出擊。 但它並沒有如你預想的那樣倒下。 它的其他同伴也同時朝你衝來。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你緩緩接近其中一個並出擊。 它倒在地上，血液噴灑過四周，你的護甲和武器也無法倖免。 其他的同伴丟下食物和同伴的屍體驚惶逃跑了。", 
+          "reward" : "0_2_1|0_4_4"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "路過",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你無視它們繼續著你的旅程。", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 1,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你打敗了{0}。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你勉強脫離了被{0}分食的命運。幸運的是它們還不怎麼餓，沒有再朝你追來。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你成為了{0}的盤中餐。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你成為了{0}的盤中餐。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 2,
+     "grade" : 1,
+    "monster" : "0_1_10|1_1_10|3_1_10|7_1_10|8_0_10|22_0_10",
+    "required" : "",
+    "text" : "你正在深林中長途跋涉，耳邊忽然的響動使得你繃緊了神經。 就在你抓起武器的瞬間，它跳出了草叢——是{0}。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "準備作戰",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 3, 
+          "type" : 2, 
+          "text" : "你抓緊你的武器，退到適當的戰鬥距離。 不出所料，那{0}撲到了你數秒前所處的位置。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 3, 
+          "type" : 1, 
+          "text" : "你成功閃開了它的突襲，拔腿就跑。但它很快就追上你了。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你成功閃開了它的突襲，拔腿就跑。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_6_9", 
+          "text" : "反擊！",
+       "result" : [
+       {
+          "required" : "1_0_2", 
+          "chance" : "7", 
+          "nextEvent" : 3, 
+          "type" : 1, 
+          "text" : "你預判著{0}的攻擊並試圖反擊。 但你沒有打中，反倒又給了它一次攻擊機會。 {0}成功趁著你短暫的失衡發出猛擊。", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 1
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "7", 
+          "nextEvent" : -3, 
+          "type" : 1, 
+          "text" : "你預判著{0}的攻擊並試圖反擊。 但你沒有打中，反倒又給了它一次攻擊機會。 {0}成功趁著你短暫的失衡發出猛擊。 你因此受到重傷。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你預判著{0}的攻擊並試圖反擊。  一切都如預料中的順利。 {0}因致命傷當場斃命。", 
+          "reward" : "0_2_1|0_4_4"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 3,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你打敗了{0}。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你帶著一身傷，勉強逃離了{0}的視線。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你身受與{0}對抗造成的重傷，倒地不起。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你身受與{0}對抗造成的重傷，倒地不起。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 4,
+     "grade" : 1,
+    "monster" : "11",
+    "required" : "2_2_30",
+    "text" : "天色轉眼間由藍色轉灰，滴滴答答下起了雨。你看見不遠處有個山洞可以避雨，便走了進去。 \n\n \"嘶咿——！\"\n\n 看似空蕩的洞中忽然傳出一聲穿透耳鼓的長嘯。顯然，這裡除了你還有別的一些什麼。 你迅速抓起武器準備迎戰。 \n\n \"嘶喀———！！\"\n\n 鳴聲來自你的正上方。 你抬頭，只見一頭{0}齜著牙俯衝下來。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "準備作戰",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "7", 
+          "nextEvent" : 5, 
+          "type" : 1, 
+          "text" : "你手持武器，視線緊緊釘在{0}上。  它不斷變換方向繞著你飛了一會兒，才向你俯衝下來。", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你手持武器，視線緊緊釘在{0}上。 它不斷變換方向繞著你飛了一會兒，才向你俯衝下來。", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 5, 
+          "type" : 1, 
+          "text" : "你揮舞起你的武器。 它見勢不妙退開了一段距離。 你試圖趁著這空隙逃跑，但逃不了多遠。", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你揮舞起你的武器。  它見勢不妙退開了一段距離。  你抓住這個機會拔腿就跑。", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_1", 
+          "text" : "魔法：亮光",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "18", 
+          "nextEvent" : 5, 
+          "type" : 1, 
+          "text" : "你試圖施展照明魔法，但在慌亂之下錯讀了咒語 {0}敏銳地察覺到了你的失誤，快速地朝你飛來。", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你施展了照明的魔法，{0}倉皇地避著光源逃離了。", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你施展了照明的魔法，{0}倉皇地避著光源逃離了。", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 5,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0}倒地萎縮，一陣顫抖過後，它終究是死了。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你被{0}啃咬得體無完膚，渾身淌著血勉強脫逃了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被{0}啃咬得體無完膚，終死於大量失血和傷口感染引起的休克。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被{0}啃咬得體無完膚，終死於大量失血和傷口感染引起的休克。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 6,
+     "grade" : 1,
+    "monster" : "4",
+    "required" : "2_2_30",
+    "text" : "|drawing_desert| 你在沙漠中跋涉了好幾個小時。 沙層在烈日直射下閃爍著微光，像滾沸了一樣有隱隱的白氣蒸騰而上。 你身上可供飲用的水已所剩無幾。而就在此時，你看見遠方好像有東西在移動。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "接近",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 7, 
+          "type" : 2, 
+          "text" : "那是一個移動的巨大沙丘，它飛快向你逼近，而後{0}從地下現身。", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 7, 
+          "type" : 1, 
+          "text" : "你試著逃跑，但你的雙腿正逐漸陷入沙中。這個生物以令人恐懼的速度向你飛馳而來，並在你的附近現出身形。", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你靠著驚人的反應速度成功逃離了沙底生物。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_6_9", 
+          "text" : "等待時機",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "11", 
+          "nextEvent" : 7, 
+          "type" : 1, 
+          "text" : "你靜候時機。 待其從沙中現身，你即出手攻擊，但沒能擊中它。 {0}向你襲來，身後沙塵滾滾。", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你靜候時機。 {0}從沙中現身的同時，你給了它當頭一擊，後者即刻斃命。", 
+          "reward" : "0_2_2|0_4_9"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 7,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0}在熱沙之上死去，身形扭曲。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你不敵{0}，勉強從戰鬥中脫身，{0}做的只是看著你逃離此地。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被{0}啃咬致死。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被{0}啃咬致死。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 8,
+     "grade" : 1,
+    "monster" : "12_1_30|14_0_20",
+    "required" : "",
+    "text" : "|drawing_destroyedGrave| 你在森林中遇見了一座墳墓，土堆看起來似乎被誰挖掘了出來。 就在你仔細觀察的時候，突然一陣寒意從你背脊升起。 一個{0}不知何時出現在了你的眼前。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "戰鬥",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 9, 
+          "type" : 2, 
+          "text" : "你有些心悸，但很快便冷靜了下來，掏出武器對準敵人。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 9, 
+          "type" : 1, 
+          "text" : "你盡最快的速度逃跑，但它突然又出現在你眼前了。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你盡最快的速度逃跑了。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_1|20_3_1", 
+          "text" : "魔法：驅散不死生物",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "8", 
+          "nextEvent" : 9, 
+          "type" : 1, 
+          "text" : "你試圖施展轉生魔法，但或許是因為過於緊張的緣故失敗了。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_14_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你對{0}施展轉生魔法，把它送回了冥界。", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 9,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0}在你眼前消失了。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你不是{0}的對手。你摀著鮮血淋漓的傷口逃跑了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "不幸地，你被{0}殺了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "不幸地，你被{0}殺了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 10,
+     "grade" : 1,
+    "monster" : "0_1_20|20_0_20",
+    "required" : "5_235_0",
+    "text" : "你聽見了附近某人的尖叫聲。 你小心翼翼地穿過層層灌木叢，前往聲響的來源。 你抵達現場時，見到的便是一條{0}正在吞食草藥師的情形。 他奮力掙扎著，瞥見了你的身影，又大叫起來向你求救。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "拯救他",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 11, 
+          "type" : 2, 
+          "text" : "你猛地抓起{0}搖晃起來。它左右擺動著，終於吐出了草藥師。 它隨即轉換目標，朝你衝鋒。 草藥師匆匆向你道謝後起身逃跑了。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "離開他",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你拋下了草藥師，任他被緩慢吞食。 過了一會兒，慘叫聲逐漸停止。", 
+          "reward" : "0_3_-1|5_235_9"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 11,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你打敗了{0}。它的身形垮塌下來，不再動彈。", 
+          "reward" : "5_235_1|0_3_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你打敗不了{0}，不得已拋棄草藥師，獨自逃離了。", 
+          "reward" : "0_0_-1|0_1_-1|5_235_9"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你和草藥師一起被{0}吞食了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你和草藥師一起被{0}吞食了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 12,
+     "grade" : 1,
+    "monster" : "14",
+    "required" : "1_2_20",
+    "text" : "|drawing_deadmanCage|你看見了一隻被泥濘覆蓋的金屬籠子。 裡面是一具乾癟的屍體。 其散發出的腐爛氣味使你感到頭暈目眩。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "路過",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "8", 
+          "nextEvent" : 13, 
+          "type" : 1, 
+          "text" : "你試著無視它，但實在晚了。  一個{0}出現在你眼前。", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你盡最快的速度逃離了現場。 那令人噁心的腐臭味彷彿還殘留在鼻腔內。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "埋葬",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 13, 
+          "type" : 2, 
+          "text" : "你靠近死屍，打算埋葬它。 但這具屍體的縛靈似乎覺得你是敵人。 伴隨著令人膽寒的尖嘯，{0}向你襲來。", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }
+       ]
+     }, 
+     {
+       "required" : "8_42_1", 
+          "text" : "火葬",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "7", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你點起油燈並拋向死屍。 火勢很快就蔓延到其全身，它發出詭異而痛苦的慘叫。 你沒想到它還活著，嚇得全身顫抖。", 
+          "reward" : "0_1_-1|4_42_1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_14_1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你點起油燈並拋向死屍。 火勢很快就蔓延到其全身，它發出詭異而痛苦的慘叫。 你快速離開了現場。", 
+          "reward" : "4_42_1|0_2_1|0_3_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_1", 
+          "text" : "魔法：火球",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你想起了可以用來火化屍體的簡單法術。 一個火球在你的指尖生成，你將火球擲向死屍。 火勢很快就蔓延到其全身，它發出詭異而痛苦的慘叫，你快速離開了現場。", 
+          "reward" : "0_2_1|0_3_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 13,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你把{0}送回了冥界。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你驚恐地逃跑了。過了一會兒才發覺它沒再追上來。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被{0}奪取了性命，自己也變成了一個{0}。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被{0}奪取了性命，自己也變成了一個{0}。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 14,
+     "grade" : 1,
+    "monster" : "5|63",
+    "required" : "1_2_10|2_2_50",
+    "text" : "|drawing_pond|你在林中發現了一個小池塘。 一頭鹿正在這裡飲水。 當你接近池塘時，那頭鹿忽然抬起頭，隨後跑開。 但它被突然出現的{0}抓住了。 {0}的尖牙刺入鹿的脖頸之中，與你對視。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "戰鬥",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 15, 
+          "type" : 2, 
+          "text" : "你衝上去攻擊{0}， 它丟下這頭鹿，向你撲過來。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "退開",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你悄聲離去，以免打擾它進食。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "威脅它",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "9", 
+          "nextEvent" : 15, 
+          "type" : 1, 
+          "text" : "你怒視著{0}，意圖嚇阻它，但無濟於事。 它丟下這頭鹿，向你撲過來。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你怒視著{0}，意圖嚇阻它。 它扔下這頭鹿，逃走了。", 
+          "reward" : "0_2_1|0_4_10"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 15,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你殺了{0}。那頭鹿也恢復了知覺，看了你一會兒，躍入樹林深處。你從{0}的屍首旁經過，向別處進發。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你遠離了{0}，任其享用美味的鹿肉。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你能感受到毒素在身體裡擴散，你的呼吸逐漸停止。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你能感受到毒素在身體裡擴散，你的呼吸逐漸停止。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 16,
+     "grade" : 1,
+    "monster" : "3|88_0_20",
+    "required" : "2_2_50",
+    "text" : "一輪滿月高懸於夜空中。 你剛架起篝火，正要入睡。|drawing_wolf|一匹{0}出現在了山丘上。 它仰天嗥叫，群狼就接連從各處奔來，聚成一片。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "14", 
+          "nextEvent" : 17, 
+          "type" : 1, 
+          "text" : "你放棄營地起身逃跑，但它們很快就追上了你。", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你放棄營地逃跑了。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "爬樹",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 17, 
+          "type" : 1, 
+          "text" : "你嘗試爬到帳篷後的那棵樹上， 但是你滑下來了。 {0}們很快將你團團圍住。", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 14
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你迅速爬到帳篷後的那棵樹。 {0}們不情願地離開了。", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "戰鬥",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 17, 
+          "type" : 2, 
+          "text" : "你拿出武器，面對危機。", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "投餵",
+       "result" : [
+       {
+          "required" : "8_124_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你拿出一條魚，丟向{0}。 {0}被轉移了注意力，你趁機逃離。", 
+          "reward" : "4_124_1|0_2_1"
+       }, 
+       {
+          "required" : "8_125_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你拿出一條魚，丟向{0}。 {0}被轉移了注意力，你趁機逃離。", 
+          "reward" : "4_125_1|0_2_1"
+       }, 
+       {
+          "required" : "8_143_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你拿出一條魚，丟向{0}。 {0}被轉移了注意力，你趁機逃離。", 
+          "reward" : "4_143_1|0_2_1"
+       }, 
+       {
+          "required" : "8_144_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你拿出一條魚，丟向{0}。 {0}被轉移了注意力，你趁機逃離。", 
+          "reward" : "4_144_1|0_2_1"
+       }, 
+       {
+          "required" : "10_124_1|10_125_1|10_143_1|10_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 17, 
+          "type" : 2, 
+          "text" : "你翻遍了背包，卻找不出什麼能餵牠們的東西。 它們露出獠牙，向你撲來。", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 17,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你痛揍了{0}一頓。它倖存的同伴們爭先恐後地夾著尾巴逃跑了。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你帶著遍布全身的齒痕逃脫了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你成為了{0}的盤中餐。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你成為了{0}的盤中餐。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 18,
+     "grade" : 1,
+    "monster" : "2",
+    "required" : "2_2_40",
+    "text" : "一群{0}騎馬接近你。 他們擋住了你的去路，並向你索取一筆過路費。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "拒絕支付",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 19, 
+          "type" : 2, 
+          "text" : "你不耐煩地叫他們靠邊站。 於是他們下馬，齊齊拔出了別在腰間的劍。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "戰鬥！",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你盡力往其中一匹馬的脖子上打了一拳。 受驚的馬把背上的{0}甩落在地，驚惶下還踩了他幾腳。 其他的馬匹見狀也慌不擇路地逃走了。", 
+          "reward" : "0_2_1|0_4_3"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "7", 
+          "nextEvent" : 19, 
+          "type" : 1, 
+          "text" : "你盡力往其中一匹馬的脖子上打了一拳。 它看起來似乎很驚愕，但除此之外再無什麼別的反應。 他們一一下馬就向你接近。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "1_7_10", 
+          "text" : "和他們講理",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 19, 
+          "type" : 1, 
+          "text" : "你試圖說服他們給你讓路。 顯然沒有人聽得進去。 \n\n \"行吧，你非要這麼不識好歹的話……可別怪我們動手太粗暴。\"\n\n 他們一一下馬，並且拔出了腰間的佩劍。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你試圖說服他們給你讓路。 許是因為你好看的外表和絕妙的口才，他們被你勸服了，終於同意給你讓道。", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "17", 
+          "nextEvent" : 19, 
+          "type" : 1, 
+          "text" : "你嘗試逃跑，但始終擺脫不了這些騎著馬的傢伙。 他們咒罵著朝你衝過來。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "多虧你驚人的反應力，你成功從他們的圍追堵截中脫身了。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_4_10", 
+          "text" : "支付",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你給了{0}們過路費，得以在沒有衝突的情況下離開。", 
+          "reward" : "0_4_-10|0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 19,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你把{0}們狠狠地揍了一頓。倖存下來且尚未失去意識的少數幾個紛紛屁滾尿流地爬走了。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你被{0}打敗，勉強逃走。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "他們搶走了你的背包。你的身體在變冷，意識逐漸模糊。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "他們搶走了你的背包。你的身體在變冷，意識逐漸模糊。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 20,
+     "grade" : 1,
+    "monster" : "1|2|7",
+    "required" : "2_2_20",
+    "text" : "你看見了一輛被棄置在路邊的驛馬車。 其車身已徹底毀壞，但承載的貨物看起來仍完好無損。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "查看",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 21, 
+          "type" : 1, 
+          "text" : "你決定搜尋看看車上有沒有些可能有用的物資。 就在你靠近檢查時，一支箭矢冷不防朝你飛來。 事發突然，你閃避不及，被射了個正著。 \n\n \"嘻嘻嘻嘻…\"\n\n {0}奇怪的笑聲在你耳邊響起，隨後便從藏身的灌木叢中跳到你的眼前。", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 14
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : 21, 
+          "type" : 0, 
+          "text" : "你決定搜尋看看車上有沒有些可能有用的物資。", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }
+       ]
+     }, 
+     {
+       "required" : "1_14_12", 
+          "text" : "小心接近",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 21, 
+          "type" : 2, 
+          "text" : "你心生疑慮，認為這可能是某種陷阱。 於是你緩慢而謹慎地向驛馬車挪步。 你敏銳地察覺到了驛馬車附近的灌木叢中有些東西在移動。 不管那是什麼，它都已經發現了你的注視。 周圍的空氣愈發焦灼，直到被一支飛向你的箭矢打破僵局。 你的小心謹慎使你得以成功閃避了過去。 很快，一群{0}就從藏身的灌木叢中跳到你的眼前。", 
+          "reward" : "6_1_0", 
+          "place" : 14
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "去別處",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你離開了毀壞的驛馬車。", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 21,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你殺死了所有的{0}，隨意地甩掉了武器上被噴濺到的血跡。 驛馬車裡有各種冗贅的小物件，除此之外便只有一小堆金幣。 你把毫無價值的零碎東西都丟到角落，將金幣都佔為己有。", 
+          "reward" : "0_4_50"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你帶著傷從{0}逃跑了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被{0}送進了冥界。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被{0}送進了冥界。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 22,
+     "grade" : 1,
+    "monster" : "10",
+    "required" : "2_2_50",
+    "text" : "|drawing_plain| 你步行在乾土和礫石之上，望著頭頂逐漸逼近的陰雲，想來是旱季就快過去了。 就在這時，一隻盤旋在上空的鷹進入到了你的視線。 它讓你感到稍微不快，但沒多久它便消失了，於是你沒放心上，繼續前進。 過了一會兒，你才後知後覺那是一隻被人馴養的獵鷹。 因為你眼前的一群{0}如預知到你的動向般擋住了你的去路。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "戰鬥",
+       "result" : [
+       {
+          "required" : "8_69_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你掏出了“林中聖劍”。它們只看了一眼，便驚懼地逃跑了。", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "8_98_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你掏出了“法夫納之眼”。它散發出陰森可壓的螢光，把它們嚇跑了。", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "8_113_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你掏出了“冰霜之心”。它們只看了一眼，便驚懼地逃跑了。", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "10_98_1|10_69_1|10_113_1", 
+          "chance" : "1", 
+          "nextEvent" : 23, 
+          "type" : 2, 
+          "text" : "你決定讓它們知道挑錯了狩獵對象的後果。", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 23, 
+          "type" : 1, 
+          "text" : "你轉身逃跑。但它們很快就追上並把你團團圍了起來。", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你轉身逃跑了，它們追不上你。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_7_10", 
+          "text" : "和它們講理",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "17", 
+          "nextEvent" : 23, 
+          "type" : 1, 
+          "text" : "你試圖和它們理論，但它們顯然更崇尚使用蠻力。", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你想起了你曾在一本名為“龍語剖析與理解”的書中所讀到的內容。 {0}們也使用龍語，所以你假設能以此與它們溝通。 你用龍語對它們說話，它們立即跪倒在地向你垂首。 \n\n \"對不起！我們沒能認出你，尊貴的龍大人……！\"\n\n 也許它們把你誤認成了一條處於化形偽裝下的龍。 它們扔下手中的金幣，慌忙逃跑了。", 
+          "reward" : "0_2_1|0_4_15"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 23,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你打敗了{0}。它們倒地不起，而你繞過它們的屍體，繼續著你的旅程。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你不敵{0}，狼狽地脫逃了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}一步步走近你，給你最後一擊。 這就是你最終看見的景象了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}一步步走近你，給你最後一擊。  這就是你最終看見的景象了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 24,
+     "grade" : 1,
+    "monster" : "15",
+    "required" : "1_2_35|2_2_80",
+    "text" : "你正在林中穿行，撥開樹叢，偶然發現了一處瀑布。 你的雙腳和膝蓋都像臨近散架般酸痛不已，於是你上前坐在一塊巨石上想憩息一會兒。 然後那塊巨石猛然開始顫動，慢慢站了起來。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "戰鬥",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 25, 
+          "type" : 2, 
+          "text" : "你掏出武器，做好作戰的準備。{0}向你揮了拳頭。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你拔腿逃跑了。 {0}緊緊盯著你的背影，但並沒有追上來。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_7_10", 
+          "text" : "和它講理",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "9", 
+          "nextEvent" : 25, 
+          "type" : 1, 
+          "text" : "你試圖和{0}理論，但它的回應是一隻巨大的拳頭。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你用超凡的魅力成功說服了{0}。 它回到了沉睡之中，而你在它背脊上歇息了一會。", 
+          "reward" : "0_0_1|0_1_1|0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "1_7_10|20_0_1", 
+          "text" : "解除附魔",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 25, 
+          "type" : 1, 
+          "text" : "你試圖解除驅動著{0}的魔法，但並沒有成功。 {0}向你揮了拳頭。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你解除了驅使{0}行動的魔法。它停止運轉，並隨之瓦解。 你坐在一地{0}碎塊上閉目養神。", 
+          "reward" : "0_0_1|0_1_1|0_2_1|0_4_60"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 25,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你摧毀了{0}的核心。它不再有動作，軀體一塊接著一塊崩塌了下來。 你坐在瓦解了的{0}上閉目養神。", 
+          "reward" : "0_0_1|0_1_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你被{0}痛毆了一整個後不得不抱頭逃跑，休息也就只能​​想想了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被{0}龐大的軀體壓扁了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被{0}龐大的軀體壓扁了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 26,
+     "grade" : 1,
+    "monster" : "15|16",
+    "required" : "1_2_80",
+    "text" : "你來到了一個熱氣騰騰的間歇泉區域。 周圍的大地龜裂開來，露出紅色的光芒，不時能聽到大地傳來不祥的隆隆聲。 就在你預感可能會發生些壞事時，你面前的地面塌陷了。 一個{0}從裂縫中現身。 它低頭直視著你，不屑於掩藏眼神中的鄙視。 “哪裡涼快哪兒呆著去。”他如此說。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "戰鬥",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 27, 
+          "type" : 2, 
+          "text" : "你做好迎戰的準備。 {0}俯視著你，發出兩聲鄙視的嘲笑。", 
+          "reward" : "6_1_0", 
+          "place" : 2
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你立刻逃離了{0}的地盤。 你能隱約聽見它在你背後嗤笑的聲音。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "1_7_10", 
+          "text" : "和它講理",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "20", 
+          "nextEvent" : 27, 
+          "type" : 1, 
+          "text" : "你要求它讓你通行。 但{0}不屑地藐視著你，交織著火焰的拳頭向你襲來。", 
+          "reward" : "6_1_0", 
+          "place" : 2
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你用成功說服了{0}，表示你只要路過此地，沒有其他目的。 {0}聽後點了點頭。 \n\n \"安靜點過去，別讓我聽到你發出什麼聲音。\"\n\n", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 27,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0}現在已經不能再說什麼了。你越過它的屍體繼續前進。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你被迫按{0}說的做了。也就是說你挨了一頓揍，被踢出了洞窟。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被{0}踐踏至死，一敗塗地。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被{0}踐踏至死，一敗塗地。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 28,
+     "grade" : 1,
+    "monster" : "18|42_0_55|70",
+    "required" : "1_2_35",
+    "text" : "|drawing_blizzard|前一刻尚還晴朗的天空眨眼間暗了下來，伴隨著烏雲襲來的還有讓人看不見前路的大暴雪。 你在嚴寒中瑟瑟發抖，只得暫時停下攀越雪山的腳步環顧四周。 幸運地，你看見不遠處有個小洞窟可供你暫避風雪。 從構造來看，洞窟似乎不只這一個入口。 你往裡多走了幾步，猝不及防看見了一個正獨自沉睡著的{0}。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "安靜地休息並躲藏",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "5", 
+          "nextEvent" : 29, 
+          "type" : 1, 
+          "text" : "你決定要在此等待暴風雪消停。 你如履薄冰般邁步，以免驚醒{0}。 但不巧的是你還真踩上了一塊薄冰。 冰層碎裂的聲響在洞窟中迴盪，{0}猛然睜眼看見了你。 它立刻躍起，揮舞著拳頭向你襲來。", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你決定要在此等待暴風雪消停。 你如履薄冰般邁步，以免驚醒{0}，然後悄悄躲藏在角落的草垛裡。 你你安全地等到暴雪停止後離開了洞窟。", 
+          "reward" : "0_1_0|0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "埋伏",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 29, 
+          "type" : 1, 
+          "text" : "你決定要殺死洞窟的主人。 你如履薄冰般邁步，以免驚醒{0}。 但不巧的是你還真踩上了一塊薄冰。 冰層碎裂的聲響在洞窟中迴盪，{0}猛然睜眼看見了你。 它立刻躍起，揮舞著拳頭向你襲來。", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你決定要殺死洞窟的主人。 它尚在沉沉的睡夢之中，完全沒注意到正在緩緩接近的你。 你緊握你的武器，對它暴露的頸部位置發動最致命的攻擊。 你能從手上傳來的劇烈震動感覺到它頸椎的斷裂。 它慘叫一聲，掙扎著想爬起但卻是徒勞，重重倒地後不久便沒有了呼吸。 你安全地等到暴雪停止後離開了洞窟。", 
+          "reward" : "0_2_2|0_1_0|0_4_100"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "出去",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "16", 
+          "nextEvent" : -2, 
+          "type" : 1, 
+          "text" : "你安靜地扭頭退了出去。 寒風將你吞沒，冷意滲透進你每一寸衣物和皮膚。 行進沒多久，你身體各處都被凍傷了。", 
+          "reward" : "0_0_-1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_13_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你安靜地扭頭退了出去。 寒風將你吞沒，冷意滲透進你每一寸衣物和皮膚。 但區區暴風雪傷不了你分毫。 你忍耐著寒冷，默默舉步前進。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "喚醒它",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 29, 
+          "type" : 2, 
+          "text" : "你氣勢磅礴地大喊一聲，驚醒了{0}。 雖然驚愕，但它還是迅速躍起，吼叫著向你衝來。", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 29,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你擊殺{0}並奪走洞窟的所有權。等到暴雪停止後，你再度踏上了冒險旅程。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你擊殺{0}並奪走洞窟的所有權。等到暴雪停止後，你再度踏上了冒險旅程。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你失去知覺的冰冷軀體被{0}吞噬殆盡。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你失去知覺的冰冷軀體被{0}吞噬殆盡。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 30,
+     "grade" : 1,
+    "monster" : "77|27",
+    "required" : "2_2_50",
+    "text" : "你行走在高聳入雲的松樹林間。 你停下腳步伸展了一下四肢，抬頭看萬裡無雲的晴空。 再度放低視線時，一張屬於{0}的臉從灌木叢中冒了出來。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "戰鬥",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 31, 
+          "type" : 2, 
+          "text" : "你和它保持對視，小心翼翼地拿出了武器。 {0}露出一嘴尖銳的尖牙，低聲咆哮後向你發動衝鋒。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "16", 
+          "nextEvent" : 31, 
+          "type" : 1, 
+          "text" : "你轉身試圖逃跑，但{0}死死咬住了你的腳踝。", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你轉身逃跑。{0}在追趕你一會兒後終於放棄，往截然相反的路離開了。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "投餵",
+       "result" : [
+       {
+          "required" : "8_124_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你掏出了一條魚丟向{0}。 就在{0}為此分心的空隙，你拔腿往遠處狂奔離開。", 
+          "reward" : "4_124_1|0_2_1"
+       }, 
+       {
+          "required" : "8_125_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你掏出了一條魚丟向{0}。 就在{0}為此分心的空隙，你拔腿往遠處狂奔離開。", 
+          "reward" : "4_125_1|0_2_1"
+       }, 
+       {
+          "required" : "8_143_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你掏出了一條魚丟向{0}。 就在{0}為此分心的空隙，你拔腿往遠處狂奔離開。", 
+          "reward" : "4_143_1|0_2_1"
+       }, 
+       {
+          "required" : "8_144_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你掏出了一條魚丟向{0}。 就在{0}為此分心的空隙，你拔腿往遠處狂奔離開。", 
+          "reward" : "4_144_1|0_2_1"
+       }, 
+       {
+          "required" : "10_124_1|10_125_1|10_143_1|10_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 31, 
+          "type" : 2, 
+          "text" : "你在背包裡摸索了一陣，但沒找到什麼能餵食它的東西。 {0}齜牙咧嘴朝你衝刺過來。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "與它互動",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "13", 
+          "nextEvent" : 31, 
+          "type" : 1, 
+          "text" : "你看著{0}的眼睛，緩緩伸出手。 但它並不領情，一口就往你的手臂咬去。", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你看著{0}的眼睛，緩緩伸出手。 {0}溫順地任由你撫摸，氣息趨於平穩。 不久後，它便轉身離開了。", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 31,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0}一身毛皮被鮮血染得殷紅，在你落下最後一擊後倒地，再也沒有呼吸。 你擦了擦衣服上的血跡，繼續在森林中散步。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你被它的利爪和尖牙重傷，千鈞一髮之際成功逃跑了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}狠狠咬上你的脖子，使勁左右搖晃。你在最後一刻感受到的是劇烈的疼痛，以及從頸椎傳來的喀嚓聲。 就這樣，你的意識陷入了一片黑暗。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}狠狠咬上你的脖子，使勁左右搖晃。你在最後一刻感受到的是劇烈的疼痛，以及從頸椎傳來的喀嚓聲。  就這樣，你的意識陷入了一片黑暗。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 32,
+     "grade" : 1,
+    "monster" : "40|53_0_55",
+    "required" : "1_2_25",
+    "text" : "你正在一處平原行進，巨大的陰影陡然從你的頭頂落下。 你起初以為那是一條龍的影子，但抬頭望去，發現那其實是條{0}。 它在高空中圍繞著你盤旋飛翔，接著伸出利爪朝你俯衝下來。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "抱摔！",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "18", 
+          "nextEvent" : 33, 
+          "type" : 1, 
+          "text" : "你抓住半空中的{0}的腳，但{0}的重量和速度把你衝到了地上。", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你抓住半空中的{0}的腳，把它重重摔在了地上。 {0}被你壓制著，顫抖了一會兒後吞了氣。", 
+          "reward" : "0_2_1|0_4_30"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "閃避",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 33, 
+          "type" : 1, 
+          "text" : "{0}的速度快得你只能看見一道紅影。 你躲閃不及，它的爪子深深陷進你的血肉裡。", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : 33, 
+          "type" : 0, 
+          "text" : "你毫不費力地躲開了{0}的爪擊，耳邊傳來了它劃破空氣的聲響。 \n\n \"咕……\"\n\n {0}狼狽地著地，支起身後尖嘯著朝你衝來。", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_2|1_1_2", 
+          "text" : "魔法：屏障",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "14", 
+          "nextEvent" : 33, 
+          "type" : 1, 
+          "text" : "你試圖施展防禦魔法，但緊張感迫使你失手了。 {0}本身的重量與下落速度相加形成了巨大的力量，把你衝擊得陷進了地裡。", 
+          "reward" : "0_0_-1|6_1_0|0_1_-1", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你展開了一面屏障阻絕{0}的攻擊。 {0}的利爪與障壁間火花四濺，將它嚇得惶惶逃跑了。", 
+          "reward" : "0_2_2|0_1_-1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你展開了一面屏障阻絕{0}的攻擊。  {0}的利爪與障壁間火花四濺，將它嚇得惶惶逃跑了。", 
+          "reward" : "0_2_2|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 33,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你打敗了{0}。它的屍體漸漸染紅了身下的土地。 嗅到了血腥味的禿鷹們從四處飛來，在你頭頂上盤旋。 你扭了扭有些僵硬的脖子，繼續你的旅程。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你差點給{0}奪走了性命，奇蹟般設法逃走了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}尾巴上的尖刺穿透進了你的軀體。 它的毒液迅速從傷口擴散，直到麻痺你的肺部。 你當場窒息而亡。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}尾巴上的尖刺穿透進了你的軀體。  它的毒液迅速從傷口擴散，直到麻痺你的肺部。  你當場窒息而亡。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 34,
+     "grade" : 1,
+    "monster" : "51",
+    "required" : "1_2_80",
+    "text" : "你正在一片岩石平原上穿行，耳邊突然傳來了地面砰砰作響的聲音。 你朝遠處望去，只見地平線上出現了一個閃閃發亮的龐然大物。 那看起來是一頭鋼鐵製成的牛，正以比賽馬還要快的速度向你衝刺過來。 |drawing_rushGorgon|",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "抓住角停下它",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "25", 
+          "nextEvent" : 35, 
+          "type" : 1, 
+          "text" : "你以曲折的方式了解到了自己無法僅憑雙手製止住一頭高速衝刺的金屬生物的事實。 這頭巨獸彷彿沒有受到一點阻礙，直接把你撞得往後飛了幾公尺。 {0}轉過身，二度向你衝鋒。", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : 35, 
+          "type" : 0, 
+          "text" : "你的力量剛好足以抓住{0}的角剎住它。 你的腳陷進土裡往後退了幾米，掌心和手臂被衝擊力震得發麻，但它仍然是停下了。 {0}看起來既茫然又震驚，但很快回神，張嘴吐出了綠色的濃霧。 這團綠霧使你警鈴大作，連忙鬆開了手中的角來迴避，而{0}趁此機會再次晃起角接近你。", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "1_5_20", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "憑藉超人的力量，你不僅剎住了{0}，甚至彎曲了它對本該無堅不摧的角。 {0}受了驚嚇，害怕地逃跑了。", 
+          "reward" : "0_2_3"
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_4|1_1_2", 
+          "text" : "魔法：反重力",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "11", 
+          "nextEvent" : 35, 
+          "type" : 1, 
+          "text" : "你想起了一道比展開屏障更適合用來應對此種情況的法術，但沒有足夠的時間來完成複雜的手勢和咒語。 {0}以可怕的速度衝來，把你撞得往後飛了好幾公尺。 接著它轉過身，二度向你衝鋒。", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_14_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你想起了一道比展開屏障更適合用來應付此種情況的法術。 你成功完美地執行了複雜的手勢和咒語，在你面前鋪了一片反重力領域。 {0}剛衝進去，就被一股無形的力量升到了空中。 你趕緊離開了現場，免得這頭鐵瘋牛又再朝你追來。", 
+          "reward" : "0_2_1|0_0_-1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "2_6_14", 
+          "chance" : "14", 
+          "nextEvent" : 35, 
+          "type" : 1, 
+          "text" : "你拼了命地奔跑，但還是被{0}追上了。 它以可怕的速度從背後撞上你，讓你往前飛了幾公尺。 接著它轉過身，二度向你衝鋒。", 
+          "reward" : "6_1_0|0_0_-1", 
+          "place" : 0
+       }, 
+       {
+          "required" : "1_6_14", 
+          "chance" : "14", 
+          "nextEvent" : 35, 
+          "type" : 1, 
+          "text" : "你拼了命地奔跑，但還是被{0}追上了。 正當它要撞上你背後時，你跳了起來，有驚無險地閃開了它的角尖。 你安全落地，而{0}轉過身，二度向你衝鋒。", 
+          "reward" : "6_1_0", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "{0}尚在遠處。 你拼命狂奔出了{0}的領地，遙望它不再追來才鬆了一口氣。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_2|1_1_2", 
+          "text" : "魔法：屏障",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "26", 
+          "nextEvent" : 35, 
+          "type" : 1, 
+          "text" : "你展開了一面隱形的障壁。 但在{0}的角與其碰撞的那一刻，它就像脆弱的玻璃一樣化為了齏粉， 同時強大的衝擊力也讓你往後飛了好幾公尺。 而{0}見障礙掃除，又將目標轉向了你。", 
+          "reward" : "6_1_0|0_0_-1|0_1_-1", 
+          "place" : 0
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1|0_12_1", 
+          "nextEvent" : 35, 
+          "type" : 0, 
+          "text" : "你展開了一面隱形的障壁。 它抵擋住了一次{0}的全速角擊。 但裂隙迅速從屏障被撞擊的中心往外蔓延，化為了一地碎片。", 
+          "reward" : "6_1_0|0_1_-1", 
+          "place" : 0
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 35,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "凶狠的野獸需要的就是一頓更兇狠的毒打。 {0}癱倒在地，原本平滑耀眼的金屬軀體因為你的一記又一記重拳變得凹凸不平。 等到終於打解氣了，你才繞過它繼續上路。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0}踐踏過你的身軀。 你全身都像搌布一樣破爛，卻仍奇蹟般存活了下來。", 
+          "reward" : "0_0_-1|0_1_-1|0_2_1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}反覆踐踏過你的身軀。你最終粉身碎骨，沒有了呼吸。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}反覆踐踏過你的身軀。你最終粉身碎骨，沒有了呼吸。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 36,
+     "grade" : 1,
+    "monster" : "4_1_20|5|28_0_20",
+    "required" : "",
+    "text" : "在你眼前的是由山崩形成的土堆。 你正要繞過它行走，一隻{0}忽然從土中冒出了頭。 它以在光線下層次分明得詭異的眼睛安靜地盯著你。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "往它頭上砸",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "12", 
+          "nextEvent" : 37, 
+          "type" : 1, 
+          "text" : "你拿出你的武器，猛擊{0}的頭。 但僅僅如此的力道，要殺死它顯然還差遠了。 {0}被你激怒，蹦出了土堆。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你拿出你的武器，猛擊{0}的頭。 {0}被一擊斃命，一腦袋的黏液濺到了泥地上。 你繞過土堆，循另一條路離開了。", 
+          "reward" : "0_2_1|0_4_20"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你緩緩後退，然後用盡全力扭頭狂奔。 {0}把自己從土裡刨出來花了太多時間，沒能追上你。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "投餵",
+       "result" : [
+       {
+          "required" : "8_124_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你從背包裡拿出了一條魚，丟往{0}所在的方向。 趁著{0}忙著吃無暇搭理你，你迅速跑出了它的視野範圍。", 
+          "reward" : "4_124_1"
+       }, 
+       {
+          "required" : "8_125_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你從背包裡拿出了一條魚，丟往{0}所在的方向。  趁著{0}忙著吃無暇搭理你，你迅速跑出了它的視野範圍。", 
+          "reward" : "4_125_1"
+       }, 
+       {
+          "required" : "8_143_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你從背包裡拿出了一條魚，丟往{0}所在的方向。  趁著{0}忙著吃無暇搭理你，你迅速跑出了它的視野範圍。", 
+          "reward" : "4_143_1"
+       }, 
+       {
+          "required" : "8_144_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你從背包裡拿出了一條魚，丟往{0}所在的方向。  趁著{0}忙著吃無暇搭理你，你迅速跑出了它的視野範圍。", 
+          "reward" : "4_144_1"
+       }, 
+       {
+          "required" : "10_124_1|10_125_1|10_143_1|10_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 31, 
+          "type" : 2, 
+          "text" : "你翻遍了背包，怎麼也找不到能拿來投食的東西。 你與{0}大眼瞪小眼，它向你飛快地衝刺過來。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "爬過去",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 37, 
+          "type" : 1, 
+          "text" : "你試著爬過{0}和土堆。 但{0}顯然沒有要讓你順利離開的意思。 就在你跳起來的時候，它緊緊咬住了你的腳踝。", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你踩在{0}的頭上，輕盈得如羽毛般一躍而起，毫不費力地跨過了土堆。 優雅著陸後，你頭也不回地離開，繼續前進。", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "20_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你施展了一道簡單的法術，使自己漂浮於空中。 {0}只能咬牙切齒地望著你過去。 優雅著陸後，你頭也不回地離開，繼續前進。", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "20_10_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你讓自己懸浮於空中，輕易地飄過了土堆。", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 37,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你打敗了{0}。它倒在一地泥土上，不再有動作。 你避開了土堆，朝另一個方向走去。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0}打敗了你，你耗盡剩餘力氣才得以成功逃脫。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}把你吃了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}把你吃了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 38,
+     "grade" : 1,
+    "monster" : "39",
+    "required" : "1_2_55",
+    "text" : "你正在攀越一座鋪滿沙礫的石山，數具被長矛釘在地面的屍體忽然進入到了你的視線。 人類、矮人和侏儒的骸骨散落在四周。 你沒有多做停留，想盡快離開這個瘆人的地方，但眼前從岩石後現身的{0}並不同意。 與大多數其他巨魔不同，它穿著盔甲，揮舞著巨大的棍棒。 它盯著你，口水直流。 \n\n \"咳呃呃……人類，好吃。我，餓。\"\n\n",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "威脅",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "17", 
+          "nextEvent" : 39, 
+          "type" : 1, 
+          "text" : "尽管受到你的威胁，{0}仍毫不畏惧。它反而呼吸更加急促，开始挥动沉重的棍棒。", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "巨魔被你的氣勢所征服，轉身逃跑了。", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "14", 
+          "nextEvent" : 39, 
+          "type" : 1, 
+          "text" : "你試圖逃離，但{0}比你想像中的要迅捷很多。 在你能反應過來之前，{0}擋在了你的去路上，揮舞起了手上的巨大的棍棒。", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你以閃電般的速度逃跑了，與{0}的距離越拉越遠。 它氣喘吁籲地追著你，最後無力地放棄了。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "給它點教訓",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 39, 
+          "type" : 2, 
+          "text" : "你決定教這個飢餓的{0}一個永生難忘的教訓。", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 39,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你成功地打敗了垂涎三尺的{0}。 實際上，你的教訓有效得導致它直接死亡了。 你擦掉了武器上的{0}血液，繼續你的冒險之旅。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你勉強撐著從{0}逃跑了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你和山上其他的屍體一樣，成為了{0}的盤中餐。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你和山上其他的屍體一樣，成為了{0}的盤中餐。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 40,
+     "grade" : 1,
+    "monster" : "35",
+    "required" : "5_155_0|1_2_30",
+    "text" : "|drawing_tiredDolphin| 你沐浴在鹹鹹的海風之中，沿著海岸徒步，突然看見了一隻躺在沙灘上海豚。 海豚幾乎一動也不動，只用閃著水光的眼睛看著你，看起來非常疲憊。 就在此時，一條{0}倏地從海豚的另一側現身，水花四濺。 它轉向你，像是警告一般豎起身上的鱗片，發出詭異瘆人的尖嘯聲。 <link=shake>\n\n \"嘶嘶嘩啊啊啊啊——！\"\n\n</link>",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你無視了海豚近乎乞求的目光，轉身逃跑。 海豚的尖鳴迴盪在整個海灘上。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "攻擊",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "你拿出武器，將其對準了那個長相古怪的生物。 海豚定定看著你，彷彿在為你助威。", 
+          "reward" : "6_1_0", 
+          "place" : 8
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "投餵",
+       "result" : [
+       {
+          "required" : "8_124_1", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "你從背包裡拿出一條魚，丟給了{0}。 但僅僅一條魚不足以分散它對海豚的注意力。 {0}尖嘯著向你衝來。", 
+          "reward" : "4_124_1|6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "8_125_1", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "你從背包裡拿出一條魚，丟給了{0}。  但僅僅一條魚不足以分散它對海豚的注意力。  {0}尖嘯著向你衝來。", 
+          "reward" : "4_125_1|6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "8_143_1", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "你從背包裡拿出一條魚，丟給了{0}。  但僅僅一條魚不足以分散它對海豚的注意力。  {0}尖嘯著向你衝來。", 
+          "reward" : "4_143_1|6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "8_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "你從背包裡拿出一條魚，丟給了{0}。  但僅僅一條魚不足以分散它對海豚的注意力。  {0}尖嘯著向你衝來。", 
+          "reward" : "4_144_1|6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "10_124_1|10_125_1|10_143_1|10_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 41, 
+          "type" : 2, 
+          "text" : "你決定要餵食{0}以分散它的注意力，但在背包裡翻了好一會才意識到沒有什麼合適的東西。 {0}齜牙咧嘴地向你發動魔法攻擊。", 
+          "reward" : "6_1_0", 
+          "place" : 8
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 41,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你打敗了{0}。它的鰭顫了顫，身體無力地落在了沙上。 你推了海豚一把，讓它重回海中。 它在水面上凝望了你一會兒，才歸向遠處的海豚群去。", 
+          "reward" : "5_155_1|0_3_2"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你被{0}所傷，狼狽而逃。 海豚的尖鳴迴盪在整個海灘上。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}把你擊昏了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}把你擊昏了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 42,
+     "grade" : 1,
+    "monster" : "3|6|27_0_30",
+    "required" : "",
+    "text" : "|drawing_camp|你享受著耳邊火焰的劈啪聲，閉目養神。 感受到突然的寂靜，你睜開眼，視線直直與一隻{0}的對上。 它看起來餓極了，一點一點朝你接近。 {0}的脾氣不可捉摸，誰也說不準它會不會下一秒就衝過來。 但它目前還只是在低吼著，像是在向你討要食物一般，沒有更進一步的動作。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "凝視它",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 43, 
+          "type" : 1, 
+          "text" : "你用自認為兇惡的眼神狠狠瞪著{0}。 但它完全無視了你無聲的威脅，朝你全速衝刺。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你用兇惡的眼神狠狠瞪著{0}。 它垂頭低鳴兩聲，轉身逃跑了。", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "攻擊",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 43, 
+          "type" : 2, 
+          "text" : "你迅捷地縮短與{0}的距離，先下手為強。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "投餵",
+       "result" : [
+       {
+          "required" : "8_124_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0}伸手接住了你拋到半空中的食物。 它謹慎地看著你一步步向後退，消失在了樹叢的陰影中。", 
+          "reward" : "4_124_1|0_2_1"
+       }, 
+       {
+          "required" : "8_125_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0}伸手接住了你拋到半空中的食物。 它謹慎地看著你一步步向後退，消失在了樹叢的陰影中。", 
+          "reward" : "4_125_1|0_2_1"
+       }, 
+       {
+          "required" : "8_143_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0}伸手接住了你拋到半空中的食物。 它謹慎地看著你一步步向後退，消失在了樹叢的陰影中。", 
+          "reward" : "4_143_1|0_2_1"
+       }, 
+       {
+          "required" : "8_144_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0}伸手接住了你拋到半空中的食物。 它謹慎地看著你一步步向後退，消失在了樹叢的陰影中。", 
+          "reward" : "4_144_1|0_2_1"
+       }, 
+       {
+          "required" : "10_124_1|10_125_1|10_143_1|10_144_1", 
+          "chance" : "1", 
+          "nextEvent" : 43, 
+          "type" : 2, 
+          "text" : "你決定向{0}投食以分散其註意力，但你在包裹中一陣摸索，才驚覺身上沒有什麼可以餵食它的東西。 {0}沒有再猶豫，露出尖銳的獠牙向你直衝過來。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 43, 
+          "type" : 1, 
+          "text" : "你試圖逃跑，但{0}很快追趕上你，並發動了攻擊。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你逃跑的速度不是{0}所能及的，很快就甩開它逃走了。", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 43,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你打敗了{0}", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你被{0}狠狠咬下了一塊肉，危急中設法擺脫它逃跑了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}把你吃了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}把你吃了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 44,
+     "grade" : 1,
+    "monster" : "46|96_0_25|121_0_35",
+    "required" : "1_2_10|2_2_80",
+    "text" : "你來到了一座村莊的郊外，耳邊兀然傳來了意想不到的聲音， 那是震耳的喘息聲，夾雜著某些東西破碎的脆響。 你追隨聲音的源頭，看到了一頭憤怒的{0}左右跑動著，把四周圍欄撞得七扭八歪。 你一進入到它視線裡，它就猛哼一聲，鼻孔噴著滾燙的熱氣向你衝來。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "衝鋒",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "30", 
+          "nextEvent" : 45, 
+          "type" : 1, 
+          "text" : "你衝向了正在奔來的{0}。\n <link=shake>'砰！'</link>\n 雙方的碰撞產生了一聲沉悶的巨響，你不由自主地在地上翻滾了好幾圈。", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 4
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_2", 
+          "nextEvent" : 45, 
+          "type" : 0, 
+          "text" : "你衝向了正在奔來的{0}。\n <link=shake>'砰！'</link>\n 雙方的碰撞產生了一聲沉悶的巨響，{0}緩緩停了下來。", 
+          "reward" : "6_1_0", 
+          "place" : 4
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你衝向了正在奔來的{0}。\n  <link=shake>'砰！'</link>\n 雙方的碰撞產生了一聲沉悶的巨響，{0}踉踉蹌蹌地倒在了地上，沒有了動靜。", 
+          "reward" : "0_2_1|0_4_20"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "閃避",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "30", 
+          "nextEvent" : 45, 
+          "type" : 1, 
+          "text" : "那頭{0}快得不可思議，它在你能反應過來並閃躲前把你撞倒在地，殘餘的衝力還使你翻滾了好幾圈。", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 4
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_2", 
+          "nextEvent" : 45, 
+          "type" : 0, 
+          "text" : "你過人的矯捷身手讓你得以閃開{0}的突襲。\n “哼哼！”\n 又一團熱氣從這頭猛獸的鼻孔湧出，它直直凝視著你。", 
+          "reward" : "6_1_0", 
+          "place" : 4
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你在{0}身下貼地滑動，成功躲過了它的衝鋒，同時眼疾手快地攻擊到了其腿部。 你精準而有力的一擊直接使{0}摔倒了地上，不再動彈。", 
+          "reward" : "0_2_1|0_4_20"
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_2|1_1_2", 
+          "text" : "魔法：屏障",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "20", 
+          "nextEvent" : 45, 
+          "type" : 1, 
+          "text" : "你展開了一面屏障來應付奔來的{0}。\n <link=shake>“砰！”</link>\n 屏障隨著一聲沉悶的巨響碎裂。", 
+          "reward" : "6_1_0|0_1_-1", 
+          "place" : 4
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1|0_12_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你展開了一面屏障來應付奔來的{0}。\n <link=shake>“砰！”</link>\n 雙方的碰撞產生了一聲沉悶的巨響，{0}踉踉蹌蹌地倒在了地上，沒有了動靜。", 
+          "reward" : "0_2_1|0_4_20|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 45,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0}搖搖晃晃地倒在地上，沒有了動靜。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "那頭{0}踐踏過你的身體。 你全身都像搌布一樣破爛，卻仍奇蹟般存活了下來。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "那頭{0}反覆踐踏過你的身體。 你最終粉身碎骨，沒有了呼吸。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "那頭{0}反覆踐踏過你的身體。 你最終粉身碎骨，沒有了呼吸。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 46,
+     "grade" : 1,
+    "monster" : "8_0_10|1_1_20|4_1_20|5_0_10|22_0_10|33_1_20|63_0_10|77_1_20",
+    "required" : "",
+    "text" : "你正摸索著一側潮濕的石岩，在洞窟中緩緩前進。 無數破爛碎裂的冒險者裝備堆積在地上，你心裡隱隱有些不祥的預感。 就在你檢查四周殘留的痕跡時，一個{0}從洞窟更深處躥了出來。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "戰鬥",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 47, 
+          "type" : 2, 
+          "text" : "你緊盯著{0}的一動一息，握緊了手中的武器。", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "10", 
+          "nextEvent" : 47, 
+          "type" : 1, 
+          "text" : "你試著逃跑，但{0}的速度比你快多了。", 
+          "reward" : "6_1_0", 
+          "place" : 6
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你迅速離開了洞窟。", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 47,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0}踉蹌著倒下了，沒有了動靜。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你拖著傷痕累累的軀體勉強從飢餓的{0}視線所及之處逃走了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你支離破碎的裝備與地上其餘融為一體，毫無反抗之力地被{0}拖走了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你支離破碎的裝備與地上其餘融為一體，毫無反抗之力地被{0}拖走了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 48,
+     "grade" : 1,
+    "monster" : "1_1_15|6_1_15|7_1_15|8_0_15|22_0_15|33_1_15",
+    "required" : "2_2_50",
+    "text" : "你穿行於一片茂密的森林中，僅有稀疏幾束陽光能透過層層遮擋照耀下來。 你回想起附近的商人曾傳述說最近有{0}在這片森林裡肆虐，於是你越發謹慎。 路程走到一半，小徑邊的灌木叢中猛然冒出一個{0}，向你發動攻擊。 你立刻轉身堪堪躲避了過去。 {0}隨即接上了一連串的追擊，熟練得一點也不像只這麼做過一兩回。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "戰鬥",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 49, 
+          "type" : 2, 
+          "text" : "你拿出武器招架住了{0}的攻擊。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 49, 
+          "type" : 1, 
+          "text" : "你跳出一段距離後轉頭拔腿狂奔。 但{0}對這區域的地形瞭如指掌，輕輕鬆鬆地追上了你。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你跳出一段距離後轉頭拔腿狂奔。 幸運地，你成功甩開了{0}。", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 49,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0}被你擊中，隨著一聲慘叫便倒下了。 在確認過{0}完全沒了動靜後，你沿著步道快步離開了森林。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你被{0}傷得不輕，堪堪逃離。 估計是與你戰鬥中也受了傷的緣故，它沒有再追過來。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被{0}重傷，脫力跪倒在地。  {0}迅速固定住你，奪走了你的性命。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被{0}重傷，脫力跪倒在地。 {0}迅速固定住你，奪走了你的性命。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 50,
+     "grade" : 1,
+    "monster" : "1|2|6|7|22_0_10|33",
+    "required" : "2_2_40",
+    "text" : "你正步行於一條在左右高聳的岩石間形成的狹窄峽谷小徑上。 沿路走了一會兒，你看見一群{0}擋住了你的去路。 咆哮聲不絕於耳，你們之間的距離逐漸縮減到了危險的限度。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "攀岩",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 51, 
+          "type" : 1, 
+          "text" : "你抓住峽谷壁就開始往上爬。 但過了不久你的力氣便用完了，跌落到底下正等待著的{0}。", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你抓住峽谷壁就開始往上爬。 底下的{0}們只能張著嘴看你離它們越來越遠。 登頂後，你往下瞥了一眼嚎叫不斷的{0}們，轉身離開。", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "20_10_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你躥到半空中，迅速往上飛。 底下的{0}們只能張著嘴看你離它們越來越遠。 登頂後，你往下瞥了一眼嚎叫不斷的{0}們，轉身離開。", 
+          "reward" : "0_2_1"
+       }, 
+       {
+          "required" : "20_0_1", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你躥到半空中，迅速往上飛。  底下的{0}們只能張著嘴看你離它們越來越遠。  登頂後，你往下瞥了一眼嚎叫不斷的{0}們，轉身離開。", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "戰鬥",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 51, 
+          "type" : 2, 
+          "text" : "你衝向了擋在你路上的{0}。", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "躍過它們",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "15", 
+          "nextEvent" : 51, 
+          "type" : 1, 
+          "text" : "你試圖透過在兩壁岩石間跳躍來越過{0}們。 但你的腿被它們拉住，連帶著整個人失衡，重重摔倒在地。", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你藉由在兩壁岩石間跳躍來越過{0}們。 它們試圖拽下你，但你在半空中扭動著身軀，甩開了那隻礙事的手，它們於是相互絆倒，一個壓著一個，再沒能追上你。 你姿態優雅地成功落地，留下一地糾纏不清的{0}，走出了峽谷。", 
+          "reward" : "0_2_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 51,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "{0}不是你的對手。你踏過地面上大片四仰八叉的{0}，繼續悠閒地在峽谷間穿梭。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你被{0}重傷，狂奔一陣後勉強甩開了它們。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}們打敗了你，取走了你的性命。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}們打敗了你，取走了你的性命。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 52,
+     "grade" : 1,
+    "monster" : "17_0_70|95_0_35",
+    "required" : "1_2_35",
+    "text" : "一陣狂風從你身邊掠過。 你吐掉隨風吹進嘴裡的沙子，加快了腳步。 就在這時，有東西卡住了你的腳趾頭。 你低頭往下看，看見了某種物體被黃沙層層掩埋後形成的輪廓。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "徒手挖掘",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : 53, 
+          "type" : 0, 
+          "text" : "你用手挖起一捧又一捧沙子。 大約挖了十幾分鐘，一個緊閉的沉重箱子才冒出了頭來。 費力將老舊箱子打開的瞬間，滾燙的熱氣從裡面湧出。 你下意識後退遠離熱源，升天的火焰隨即爆發，{0}的身影浮現在烈焰之中。", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "14", 
+          "nextEvent" : -2, 
+          "type" : 1, 
+          "text" : "你用手挖起一捧又一捧沙子。 大約挖了十幾分鐘，一個緊閉的沉重箱子才冒出了頭來。 你試著打開它，但箱子紋絲不動。 迫於無奈，你只得把它拋諸腦後，向別處離去。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "8_38_1", 
+          "text" : "使用鏟子挖掘",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 53, 
+          "type" : 2, 
+          "text" : "你用鏟子挖起一堆堆的沙。 大約挖了十幾分鐘，一個緊閉的沉重箱子才冒出了頭來。 費力將老舊箱子打開的瞬間，滾燙的熱氣從裡面湧出。 你下意識後退遠離熱源，升天的火焰隨即爆發，{0}的身影浮現在烈焰之中。", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_1", 
+          "text" : "魔法：法师之手",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : 53, 
+          "type" : 0, 
+          "text" : "你用魔法挖起一堆堆的沙子。 大約挖了十幾分鐘，一個緊閉的沉重箱子才冒出了頭來。 費力將老舊箱子打開的瞬間，滾燙的熱氣從裡面湧出。 你下意識後退遠離熱源，升天的火焰隨即爆發，{0}的身影浮現在烈焰之中。", 
+          "reward" : "6_1_0", 
+          "place" : 5
+       }, 
+       {
+          "required" : "", 
+          "chance" : "14", 
+          "nextEvent" : -2, 
+          "type" : 1, 
+          "text" : "你用魔法挖起一堆堆的沙子。 大約挖了十幾分鐘，一個緊閉的沉重箱子才冒出了頭來。 你試著打開它，但箱子紋絲不動。 迫於無奈，你只得把它拋諸腦後，向別處離去。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "無視",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你忽略腳下的障礙物，甩掉沙塵繼續前進。", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 53,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "擊敗怪物後，你上前查看箱子裡的內容物。 然而箱子已然化為灰燼，什麼都不剩了。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "火焰熊熊燃燒，彷彿要將你整個人燃燒殆盡。 近乎令人窒息的危機感使你寒毛直豎，你立刻轉身逃跑了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "熾熱的火焰攀附上你的血肉，燒灼你的筋骨，整個沙漠久久迴盪著你痛苦的哀嚎聲。 你整個人被燃燒殆盡，連灰都不剩。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "熾熱的火焰攀附上你的血肉，燒灼你的筋骨，整個沙漠久久迴盪著你痛苦的哀嚎聲。 你整個人被燃燒殆盡，連灰都不剩。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 54,
+     "grade" : 1,
+    "monster" : "143_0_35|100_0_20|152_0_35",
+    "required" : "1_2_20",
+    "text" : "穿過山谷時，你感覺到岩石間的狹窄縫隙散發出令人不安的惡臭。 你加快了步伐，試著盡快離開這區域。 然而在峽谷中，{0}出現並襲擊了你。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "回擊",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 55, 
+          "type" : 2, 
+          "text" : "你迅速的回擊{0}。短暫躲避掉攻擊後， 它冷笑著再次向你襲來。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "毫無疑問，在那縫隙裡有一條與邪惡維度相連的通道。 你拼盡全力的逃離那裡。", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "", 
+          "chance" : "11", 
+          "nextEvent" : 55, 
+          "type" : 1, 
+          "text" : "毫無疑問，在那縫隙裡有一條與邪惡維度相連的通道。 你拼命想逃離開來，但{0}顯然不會讓你成功。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 55,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你擊敗了{0}並將屍體推入裂縫中。 裂縫與邪惡維度的裂縫相連。 當它的身體被吞沒後，裂縫很快就會閉合起來。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你拼盡全力奔跑，最終逃脫了{0}的追擊。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你遭受致命打擊倒下了，雙腿失去了力量。 {0}看到你的狀態後，露出鋒利的獠牙並微笑著。 它毫不猶豫地切斷你的氣管，終結了你的生命。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你遭受致命打擊倒下了，雙腿失去了力量。 {0}看到你的狀態後，露出鋒利的獠牙並微笑著。 它毫不猶豫地切斷你的氣管，終結了你的生命。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 56,
+     "grade" : 1,
+    "monster" : "15_0_50|17_0_75|43_0_75",
+    "required" : "1_2_50|5_574_0",
+    "text" : "在一望無際的開闊平原上，你意外發現一棟埋在沙堆裡的廢棄建築。 空間彷彿被切割了並被放置於此似的。 好奇心的驅使下，你進入了大樓，慢慢探索它的內部。 看起來大樓以空置了很長一段時間，家具和房間都被厚厚的灰塵覆蓋著。 當你在房裡漫步時，你發現地板上刻著一個紅色的魔法陣。",
+    "choice" : [
+     {
+       "required" : "20_0_1", 
+          "text" : "注入法力",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 57, 
+          "type" : 2, 
+          "text" : "你小心翼翼地將魔力注入魔法陣。 然後一道不祥的光芒從魔法陣中突然爆發出來，顯露出了{0}。 它尖叫了一聲後開始攻擊你。", 
+          "reward" : "6_1_0", 
+          "place" : 10
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你小心翼翼地將魔力注入魔法陣。 然後一個飽經風霜的古老箱子從魔法陣中出現。 在箱子內，有著完全損毀的捲軸和一根喇叭笛。 你拿上這兩樣物品後迅速離開了大樓。", 
+          "reward" : "3_181_1|5_574_1|0_2_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "離去",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你很快就逃離了可疑的建築物。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "5_575_0", 
+          "text" : "檢查魔法陣",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : 56, 
+          "type" : 0, 
+          "text" : "你查看了紅色的魔法陣。 魔法陣上課著的幾何符號顯示了它是用來召喚某種東西的。 然而，某些符號被抹除，導致你無法確定它到底要召喚什麼。", 
+          "reward" : "5_575_1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "13", 
+          "nextEvent" : 56, 
+          "type" : 1, 
+          "text" : "你查看了魔法陣，但以你有限的知識，根本無法解讀它的意義。", 
+          "reward" : "5_575_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 57,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你破壞了正在沖能的{0}。 隨著它的崩塌，整棟建築開始搖晃。 你迅速衝出大樓， 然後該建築消失了，彷彿從未存在過一般。", 
+          "reward" : "5_574_1"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "在受到{0}多次的打擊後，你撐著受傷的身體衝出了大樓。 魁概覽看起來對你失了興趣，回到建築內部。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "在受到{0}的多次打擊後，您失去知覺並陷入崩潰。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "在受到{0}的多次打擊後，您失去知覺並陷入崩潰。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 58,
+     "grade" : 1,
+    "monster" : "13_1_20|35_0_20|44_0_20",
+    "required" : "2_2_60",
+    "text" : "你沿著一條鮮有人蹟的僻靜海岸線走。 寧靜的海岸上唯有海浪不斷拍打的聲音。 同時，你注意到海岸線一側好像有一張廢棄的漁網。 網內的某種東西則開始緩慢移動。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "接近",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 59, 
+          "type" : 2, 
+          "text" : "你小心翼翼地接近被網子纏住的東西好看清楚是什麼。 突然，{0}從網中跳出來襲擊了你。 你趕緊拔出武器以抵禦攻擊。", 
+          "reward" : "6_1_0", 
+          "place" : 8
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "路過",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你走過網子旁，網裡傳出的沙沙聲很快就靜下來。", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 59,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你在不知情的狀況下壓制了發動攻擊的{0}。並確認它不再發出聲響。 海岸線重歸平靜，你繼續散步，感受海的氣味。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "還好怪物被網子纏住了。 你迅速逃離海邊。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你在戰鬥中敗下陣後被拖入海中。 冰冷的海水灌入你的肺中，漸漸地你失去了意識。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你在戰鬥中敗下陣後被拖入海中。 冰冷的海水灌入你的肺中，漸漸地你失去了意識。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 60,
+     "grade" : 1,
+    "monster" : "40_0_20|96_0_25",
+    "required" : "1_2_20|2_2_70",
+    "text" : "一座由木板以及繩索製成的橋樑正搖搖欲墜地懸掛在陡峭的懸崖之間。 它看起來十分危險、不穩固，並在狂風中不停地搖晃。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "過橋",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 61, 
+          "type" : 2, 
+          "text" : "你小心翼翼地走上橋，並握住一旁的繩子做支撐。 就在這時，{0}從天而降，直直奔向橋上的你。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "-1|20_10_1|20_0_1", 
+          "text" : "飛越懸崖",
+       "result" : [
+       {
+          "required" : "20_10_1", 
+          "chance" : "1", 
+          "nextEvent" : 61, 
+          "type" : 2, 
+          "text" : "你試圖飛越懸崖。 然而{0}卻從天而降，直直飛向你。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "20_0_1", 
+          "chance" : "1", 
+          "nextEvent" : 61, 
+          "type" : 2, 
+          "text" : "你試圖飛越懸崖。 然而{0}卻從天而降，直直飛向你。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "離開",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你決定不跨上那座橋。", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 61,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你安全地越過了懸崖，反觀{0}則掉入懸崖底部。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你頂住了{0}的襲擊，驚險地跨過了懸崖。 它似乎認為你已離開它的地盤，便不再追擊。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被{0}的攻擊擊中後墜入懸崖。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被{0}的攻擊擊中後墜入懸崖。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 62,
+     "grade" : 1,
+    "monster" : "61_1_20|62_0_20",
+    "required" : "",
+    "text" : "當你經過一座城市時，有人接近了你並開始於你交談。 他看似對自己的能力抱持信心。 \n\n \"嘿，冒險者。你剛好有時間的話，要跟我切磋嗎？\"\n\n",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "答應",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 63, 
+          "type" : 2, 
+          "text" : "你答應了他的請求。 他向你表達感謝之意後拔出了武器。 \n\n \"讓我們開始吧！\"\n\n", 
+          "reward" : "6_1_0", 
+          "place" : 4
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "拒絕",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你婉拒了他的請求。 他嚷嚷著真是掃興之類的話語，但也著實拿你沒辦法，只得離開前去尋找其他對手了。", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 63,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你向對方展現了能力上的差距。 比賽終了時，他喘著氣開口了。 \n\n \"哈……哈啊……世界這麼大，真是一山還有一山高啊……我還得繼續努力才行。謝謝你。\"\n\n 你和他寒暄幾句後便各自分道揚鑣了。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你最終跪倒在{0}面前。 在你粗重呼吸之際，他走近並向你說道。 \n\n \"感謝你的挑戰，再會了。\"\n\n 他向你告別後便離開了。", 
+          "reward" : ""
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 64,
+     "grade" : 1,
+    "monster" : "39_0_50|132_0_50|140_0_80",
+    "required" : "1_2_50",
+    "text" : "如雷鳴般的咆哮聲迴盪在森林中，連腳下的大地也為之顫抖。 遠遠望去便能看見{0}的巨大身影，散發著壓倒性的氣息。 彷彿感受到你的目光，它轉過頭與你四目相交。 瞬間，它發出震耳欲聾的吼叫聲，並衝向了你。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "回擊",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 65, 
+          "type" : 2, 
+          "text" : "你沒有拒絕{0}的挑戰。 反而決定勇敢面對它。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "躲起來",
+       "result" : [
+       {
+          "required" : "21_45_1|21_5_2", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你將自己的存在隱藏於森林之中。 {0}的視線並未找到你， 它只是經過，呼出了惡臭的氣息。", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "21_45_1|21_5_2", 
+          "chance" : "16", 
+          "nextEvent" : 65, 
+          "type" : 1, 
+          "text" : "你試圖將自己隱藏在森林之中。 然而，{0}發現了你並直衝向你，同時發出帶有威脅意味的嚎叫。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }, 
+       {
+          "required" : "21_45_1|20_5_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你將自己的存在隱藏於森林之中。 {0}的視線並未找到你， 它只是經過，呼出了惡臭的氣息。", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "20_45_1", 
+          "chance" : "1", 
+          "nextEvent" : 65, 
+          "type" : 2, 
+          "text" : "你試圖將自己隱藏在森林之中。 然而，{0}發現了你並直衝向你，同時發出帶有威脅意味的嚎叫。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_2|1_1_2", 
+          "text" : "魔法：植物滋長",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你施放了植物滋長術，讓森林中的植物快速生長。 生長的植物纏住了怪物的腳踝，導致它失去平衡並發出巨響後摔倒。 你趁機逃出了森林。", 
+          "reward" : "0_1_-1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "16", 
+          "nextEvent" : 65, 
+          "type" : 1, 
+          "text" : "你施放了植物滋長術，讓森林中的植物快速生長。 然而，怪物輕易的撕碎那些變大的植物。 你試圖爭取時間的方法失敗​​了，最終你被迫做好戰鬥準備。", 
+          "reward" : "6_1_0", 
+          "place" : 1
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 65,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "在戰鬥之中，體型差並非重要影響因素。 你離開了森林，經過被擊敗的巨大怪物，證明了這個事實。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "面對如此巨大的怪物，你的能力顯然有所不足。 察覺到生命受到威脅，你轉身拼命逃跑。 而它巨大的身形致使它在追趕你時遠遠落後。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "怪物的攻擊直接命中，立刻就完蛋了。 唯一值得欣慰的是死亡的快速到來，讓你並沒有太多時間感受疼痛。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "怪物的攻擊直接命中，立刻就完蛋了。 唯一值得欣慰的是死亡的快速到來，讓你並沒有太多時間感受疼痛。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 66,
+     "grade" : 1,
+    "monster" : "12_1_15|14_0_20|89_0_15",
+    "required" : "2_2_50",
+    "text" : "清晨，你漫步在海邊。 周身被濃霧包圍，難以看見周圍景物。 每邁出一步都伴隨著微弱的沙沙聲。 突然，濃霧外出現了些模糊的東西。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你逃離了潛伏在陰影中的生物。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "接近",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : 67, 
+          "type" : 0, 
+          "text" : "你接近潛伏在迷霧中的身影。 隨後，霧氣以外的{0}攻擊過來了。 你迅速躲開它的攻擊並反擊回去。", 
+          "reward" : "6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "1_0_2", 
+          "chance" : "14", 
+          "nextEvent" : 67, 
+          "type" : 1, 
+          "text" : "你接近潛伏在迷霧中的身影。 隨後，霧氣以外的{0}攻擊過來了。 你因突然的襲擊而流血， 而它立即發動攻擊，似乎想找機會殺死你。", 
+          "reward" : "0_0_-1|6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "14", 
+          "nextEvent" : -3, 
+          "type" : 1, 
+          "text" : "你接近潛伏在迷霧中的身影。 隨後，霧氣以外的{0}攻擊過來了。 你因突然的襲擊而流血， 而它立即發動攻擊，似乎想找機會殺死你。", 
+          "reward" : "0_0_-1"
+       }
+       ]
+     }, 
+     {
+       "required" : "20_0_1|5_576_0", 
+          "text" : "魔法：造風術",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_7_1", 
+          "nextEvent" : 67, 
+          "type" : 0, 
+          "text" : "你用一陣風驅散了霧氣。 結果隱藏在迷霧中，以你為目標的{0}暴露了。 你趕緊做好準備反擊。", 
+          "reward" : "6_1_0", 
+          "place" : 8
+       }, 
+       {
+          "required" : "", 
+          "chance" : "11", 
+          "nextEvent" : 66, 
+          "type" : 1, 
+          "text" : "你試著吹起一陣風來驅散霧氣，但失敗了。", 
+          "reward" : "5_576_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 67,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你成功戰勝了襲擊者。 隨著激烈戰鬥的進行，太陽升起，霧氣消散。 涼爽的海風吹乾你的汗水。你喘口氣後繼續你的旅程。", 
+          "reward" : ""
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "你躲開了突然襲擊的人，並逃走了。 幸好有濃濃的海霧遮住你的身影， 你毫髮無傷地逃脫了。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被突然的襲擊奪去生命。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "你被突然的襲擊奪去生命。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 68,
+     "grade" : 1,
+    "monster" : "15_0_55|70_0_35|150_0_20",
+    "required" : "5_577_0",
+    "text" : "你站在偶然發現的地牢入口前。 入口被一扇堅固的石門所擋住。 憑藉力量你成功打開石們，看見地牢隱藏的內部。 然而還沒開始探索，地牢內的{0}就已接近，並發出巨大的咚咚聲。",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "來呀！",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : 69, 
+          "type" : 2, 
+          "text" : "當你準備好戰鬥時，你大喊來呀 。 {0}以驚人的勢頭衝過來攻擊你。", 
+          "reward" : "6_1_0", 
+          "place" : 7
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "關上門",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_5_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你趕緊把門關上。 正在衝向你的{0}在門關上時陷入了沉默。 你邊盯著它邊慢慢退後，然後離開地牢。", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "", 
+          "chance" : "13", 
+          "nextEvent" : 69, 
+          "type" : 1, 
+          "text" : "在你關上門前，{0}便先攻了過來。 它凶狠的拳頭擦過你的臉頰。 意識到無法避免一場戰鬥，你反擊回去了。", 
+          "reward" : "6_1_0", 
+          "place" : 7
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "逃跑",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1|0_6_1", 
+          "nextEvent" : -2, 
+          "type" : 0, 
+          "text" : "你迅速地躲開了{0}的攻擊並逃走了。 驚訝的是，猛衝的怪物並沒有追向門外。 你邊盯著它邊慢慢退後，然後離開地牢。", 
+          "reward" : ""
+       }, 
+       {
+          "required" : "", 
+          "chance" : "13", 
+          "nextEvent" : 69, 
+          "type" : 1, 
+          "text" : "在你逃跑前，{0}便先攻了過來。 它凶狠的拳頭擦過你的臉頰。 意識到無法避免一場戰鬥，你反擊回去了。", 
+          "reward" : "6_1_0", 
+          "place" : 7
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 69,
+     "grade" : 1,
+    "monster" : "",
+    "required" : "",
+    "text" : "",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "伴著一股強大的力量，衝向你的{0}被粉碎了。 你跨過它的屍體，前往地牢的更深處。 不幸的是，裡面並無任何有價值的物品。 一切都舊不堪使用。 你繼續尋找，但最終還是放棄並離開了地牢。", 
+          "reward" : "5_577_1"
+       }, 
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "伴著一股強大的力量，衝向你的{0}被粉碎了。 你跨過它的屍體， 前往地牢的更深處。 然後你發現了一個裝滿金子的寶箱。你拿著它離開了地牢。", 
+          "reward" : "5_577_1|0_4_100"
+       }
+       ]
+     }, 
+     {
+       "required" : "", 
+          "text" : "",
+       "result" : [
+       {
+          "required" : "1_0_2|1_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "戰敗後，你趕緊逃到了地牢外。 驚訝的是，{0}並沒有趕走你。 你邊盯著它邊慢慢退後，然後離開地牢。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_0_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}毫不猶豫地終結了你。 你甚至沒能見到地牢裡的寶藏一眼，就成了一具屍體。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }, 
+       {
+          "required" : "2_1_2", 
+          "chance" : "1", 
+          "nextEvent" : -3, 
+          "type" : 2, 
+          "text" : "{0}毫不猶豫地終結了你。 你甚至沒能見到地牢裡的寶藏一眼，就成了一具屍體。", 
+          "reward" : "0_0_-1|0_1_-1"
+       }
+       ]
+     }]
+  }
+ ]
+}

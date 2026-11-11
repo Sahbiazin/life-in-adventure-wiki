@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIRaycastDebug",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 145,
+    "bytes[1]": 160,
+    "bytes[2]": 224,
+    "bytes[3]": 112,
+    "bytes[4]": 243,
+    "bytes[5]": 233,
+    "bytes[6]": 99,
+    "bytes[7]": 20,
+    "bytes[8]": 243,
+    "bytes[9]": 188,
+    "bytes[10]": 114,
+    "bytes[11]": 19,
+    "bytes[12]": 213,
+    "bytes[13]": 232,
+    "bytes[14]": 226,
+    "bytes[15]": 110
+  },
+  "m_ClassName": "UIRaycastDebug",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

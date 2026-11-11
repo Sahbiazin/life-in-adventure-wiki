@@ -1,0 +1,25 @@
+{
+  "m_Name": "SkillSlot",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 157,
+    "bytes[1]": 137,
+    "bytes[2]": 111,
+    "bytes[3]": 81,
+    "bytes[4]": 81,
+    "bytes[5]": 222,
+    "bytes[6]": 128,
+    "bytes[7]": 131,
+    "bytes[8]": 64,
+    "bytes[9]": 123,
+    "bytes[10]": 202,
+    "bytes[11]": 147,
+    "bytes[12]": 37,
+    "bytes[13]": 164,
+    "bytes[14]": 58,
+    "bytes[15]": 65
+  },
+  "m_ClassName": "SkillSlot",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "ZoomContent",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 96,
+    "bytes[1]": 142,
+    "bytes[2]": 39,
+    "bytes[3]": 83,
+    "bytes[4]": 44,
+    "bytes[5]": 92,
+    "bytes[6]": 102,
+    "bytes[7]": 175,
+    "bytes[8]": 229,
+    "bytes[9]": 72,
+    "bytes[10]": 234,
+    "bytes[11]": 33,
+    "bytes[12]": 157,
+    "bytes[13]": 23,
+    "bytes[14]": 66,
+    "bytes[15]": 196
+  },
+  "m_ClassName": "ZoomContent",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

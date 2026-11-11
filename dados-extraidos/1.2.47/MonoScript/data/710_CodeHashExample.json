@@ -1,0 +1,25 @@
+{
+  "m_Name": "CodeHashExample",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 153,
+    "bytes[1]": 213,
+    "bytes[2]": 200,
+    "bytes[3]": 221,
+    "bytes[4]": 103,
+    "bytes[5]": 11,
+    "bytes[6]": 98,
+    "bytes[7]": 169,
+    "bytes[8]": 190,
+    "bytes[9]": 101,
+    "bytes[10]": 184,
+    "bytes[11]": 52,
+    "bytes[12]": 228,
+    "bytes[13]": 122,
+    "bytes[14]": 55,
+    "bytes[15]": 77
+  },
+  "m_ClassName": "CodeHashExample",
+  "m_Namespace": "CodeStage.AntiCheat.Examples",
+  "m_AssemblyName": "ACTk.Examples.Runtime"
+}

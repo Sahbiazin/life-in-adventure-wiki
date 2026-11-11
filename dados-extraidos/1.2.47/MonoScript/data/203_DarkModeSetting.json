@@ -1,0 +1,25 @@
+{
+  "m_Name": "DarkModeSetting",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 69,
+    "bytes[1]": 64,
+    "bytes[2]": 247,
+    "bytes[3]": 88,
+    "bytes[4]": 92,
+    "bytes[5]": 135,
+    "bytes[6]": 151,
+    "bytes[7]": 9,
+    "bytes[8]": 28,
+    "bytes[9]": 9,
+    "bytes[10]": 128,
+    "bytes[11]": 131,
+    "bytes[12]": 46,
+    "bytes[13]": 6,
+    "bytes[14]": 125,
+    "bytes[15]": 193
+  },
+  "m_ClassName": "DarkModeSetting",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

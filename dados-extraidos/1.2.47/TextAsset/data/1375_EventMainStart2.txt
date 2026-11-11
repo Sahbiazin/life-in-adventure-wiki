@@ -1,0 +1,158 @@
+{
+ "list" : [
+  {
+    "id" : 0,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Aspirando a ser un Gran Aventurero>\n\n Con el resonar majestuoso de las trompetas, un hombre de porte imponente avanzó hacia el estrado  y se arrodilló lentamente ante el rey. \n\n \"¡Todos en el reino recordarán tus hazañas! ¡Contempladlo! Este hombre que ven ante ustedes es el héroe de nuestra nación!\"|drawing_prize|Con el decreto del rey, la multitud estalló en aplausos. Desde el momento en que presenciaste aquel evento con tus propios ojos, algo cambió en tu interior. Supiste, en ese instante, que no habías nacido para pasar tu vida arando los campos de la granja de tu padre.  Soñaste con convertirte en un aventurero honorable cuyas hazañas inspiraran a otros, como aquel héroe. Han pasado los años, pero ese sueño no se ha desvanecido; por el contrario, late con más fuerza que nunca en tu corazón. Hoy, finalmente, decides abandonar tu aldea y dar el primer paso hacia una aventura que escribirá tu nombre en la historia.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "¡Iniciar aventura!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_0_0|0_4_10|5_215_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 1,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Un Aprendiz Exiliado>\n |drawing_exile|Fuiste exiliado de la Torre de la Magia, acusado falsamente de intentar robar el Libro Prohibido. Aunque sabías quién era la verdadera culpable, nadie creyó en tus palabras.  Ella era una de las estudiantes más brillantes en la historia de la Torre, y su prestigio eclipsó la verdad.                                                                                                                          Pero, en el silencio del exilio, juraste que encontrarías la manera de redimirte.                                                           Superarías su poder, revelarías la verdad y limpiarías tu nombre de la injusticia que te había condenado. Con el orgullo herido y una determinación ardiente,  emprendiste un viaje dispuesto a desafiar los límites de la magia. No solo buscabas venganza; aspirabas a convertirte en el mago más poderoso que el mundo jamás haya conocido.  ",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "¡Iniciar aventura!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_1_0|0_4_10|5_216_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 2,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Un Bibliotecario que Intenta Rescatar a la Princesa>\n\n Eras el bibliotecario real del Imperio de Zaipent, un guardián del conocimiento atrapado en la monotonía de una tranquila rutina. Todo cambió el día en que una joven de porte noble y un aura luminosa cruzó las puertas de la biblioteca. |drawing_princess| Se presentó como la princesa Esit y, con una sonrisa tímida, te hizo una simple pregunta: \n\n \"¿Sería tan amable de... recomendarme un libro?\"\n\n Han pasado años desde aquel encuentro. Sus visitas se convirtieron en una constante en tu vida, llenando tus días de conversaciones sobre literatura.  Su presencia transformó tu mundo, dándole un propósito que iba más allá de los libros. Pero un día, esa tranquilidad se rompió con un rugido ensordecedor.  Una sombra gigantesca oscureció la luz de la biblioteca, y el castillo entero se estremeció, como si hubiera sido golpeado por un terremoto.  Al mirar por la ventana, viste un enorme dragón gris surcar los cielos, llevándose a la princesa entre sus garras. Tú no sabías nada del mundo exterior, pero contra todo miedo, corriste hacia lo desconocido, decidido a traer de vuelta a la princesa Esit.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "¡Iniciar aventura!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_2_0|0_4_10|5_153_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 3,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<Un Ciclo de Deudas>\n\n El día que tus padres fallecieron, un hombre de cabello largo y mirada fría apareció en tu puerta. Iba acompañado de dos matones y, con una voz tranquila, extendió un documento amarillento frente a ti. \n\n \"¿Ves esto? Es un certificado que prueba la deuda de tus padres.\"\n\n Sin esperar respuesta, hizo un gesto con la mano. Sus hombres arrastraron a tu hermana, Fiana, hasta él. La examinó con desprecio, como si fuera una simple mercancía. |drawing_hostage| \n\n \"La mantendré como garantía hasta que pagues esta deuda. Si quieres recuperarla, será mejor que consigas algo de oro rápidamente.  Ve, mata a un dragón o algo por el estilo. No me importa cómo lo consigas.\"\n\n El eco de sus palabras se desvaneció, y en ese momento despertaste sobresaltado, deseando que todo fuera una pesadilla. Pero la cruda realidad te golpeó al instante. Mientras el amanecer traía consigo un viento frío, sacudiste el polvo de tu ropa y te levantaste. Conseguirías el oro, sin importar el precio. Nada ni nadie podría detenerte.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "¡Iniciar aventura!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_3_0|0_4_10|5_242_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 4,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<El Toque del Demonio>\n\n Aferrándote a la vida que se apagaba entre las ardientes llamas, deseabas desesperadamente venganza.  En ese momento, una voz susurró en tu oído.  |drawing_demon| \n\n \"¿Venganza? Muy bien. Te concederé una parte de mi poder. A cambio, mata a tus enemigos y dedícame sus almas\"\n\n Él tendió su mano con una elegancia seductora y una suavidad inquietante, y tú la agarraste con determinación. Por ellos... Por tu cónyuge, que cuidó de ti durante tu grave enfermedad.  Y por tu hijo de siete años, que pereció en las llamas, ajeno a la crueldad del mundo. Vengarías a tu familia, condenada a la hoguera como ‘Adoradores del Demonio’ por los fanáticos de Teretian.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "¡Iniciar aventura!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_4_0|0_4_10|5_432_1|0_5_1|0_6_1|0_13_1|0_3_-50"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 5,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<La Desaparición del Profesor Naverr>\n\n Estudias en la prestigiosa Universidad de Brikkalua, donde tu esfuerzo y curiosidad te llevaron a convertirte en aprendiz del renombrado profesor Naverr. Mientras repasas tu ensayo en la sala de estudio, el director se acerca con el rostro serio. La universidad no ha tenido noticias de Naverr desde hace días, y su ausencia comienza a preocupar. |drawing_searchnaverr| \n\n \"Me pregunto qué estará haciendo esta vez... Debo pedirte que vayas a buscarlo.\"\n\n Según él, la última carta de Naverr fue enviada desde algún lugar cerca de Darval. Respondes inmediatamente con un 'Sí, señor', levantándote de tu asiento.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "¡Iniciar aventura!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_5_0|0_4_10|5_699_1"
+       }
+       ]
+     }]
+  }, 
+  {
+    "id" : 6,
+     "grade" : 1,
+    "place" : "",
+    "required" : "",
+    "text" : "<La Corona sobre las Cenizas> |drawing_ashenCoronet| Lo que tu padre legó no fue gloria, sino cenizas. Te convertiste en el nuevo señor del condado de Briovich; sin embargo, el peso de la sucesión se asemejaba más a una maldición que a una bendición. Los graneros yacían vacíos, y el soplo del viento resonaba en su interior como un alarido. Las tierras de cultivo se marchitaron, como si hubiesen olvidado cómo dar vida. En los ojos de tus siervos ya no brilla la esperanza; en su lugar, reptan tras sus pupilas los gusanos de la hambruna y la desesperación. El blasón de tu familia ha dejado de ser un símbolo de honor para convertirse en un pesado yugo. Aun así, no apartaste la mirada.  Abrazando el clamor de un feudo en ruinas como tu legítima herencia, has forjado la determinación de reescribir el final de esta tragedia.",
+    "choice" : [
+     {
+       "required" : "", 
+          "text" : "¡Iniciar aventura!",
+       "result" : [
+       {
+          "required" : "", 
+          "chance" : "1", 
+          "nextEvent" : -2, 
+          "type" : 2, 
+          "text" : "", 
+          "reward" : "13_6_0|0_4_50|5_976_1"
+       }
+       ]
+     }]
+  }
+ ]
+}

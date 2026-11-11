@@ -1,0 +1,25 @@
+{
+  "m_Name": "EventRewardDataBase",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 79,
+    "bytes[1]": 39,
+    "bytes[2]": 155,
+    "bytes[3]": 175,
+    "bytes[4]": 162,
+    "bytes[5]": 181,
+    "bytes[6]": 121,
+    "bytes[7]": 47,
+    "bytes[8]": 180,
+    "bytes[9]": 131,
+    "bytes[10]": 119,
+    "bytes[11]": 87,
+    "bytes[12]": 220,
+    "bytes[13]": 88,
+    "bytes[14]": 92,
+    "bytes[15]": 185
+  },
+  "m_ClassName": "EventRewardDataBase",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

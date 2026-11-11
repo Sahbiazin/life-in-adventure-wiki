@@ -1,0 +1,25 @@
+{
+  "m_Name": "NearbyHelperObject",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 191,
+    "bytes[1]": 121,
+    "bytes[2]": 72,
+    "bytes[3]": 107,
+    "bytes[4]": 74,
+    "bytes[5]": 65,
+    "bytes[6]": 142,
+    "bytes[7]": 247,
+    "bytes[8]": 118,
+    "bytes[9]": 175,
+    "bytes[10]": 15,
+    "bytes[11]": 246,
+    "bytes[12]": 84,
+    "bytes[13]": 180,
+    "bytes[14]": 2,
+    "bytes[15]": 7
+  },
+  "m_ClassName": "NearbyHelperObject",
+  "m_Namespace": "GooglePlayGames.OurUtils",
+  "m_AssemblyName": "Google.Play.Games"
+}

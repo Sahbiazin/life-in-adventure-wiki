@@ -1,0 +1,25 @@
+{
+  "m_Name": "ItemSkill",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 16,
+    "bytes[1]": 18,
+    "bytes[2]": 254,
+    "bytes[3]": 145,
+    "bytes[4]": 25,
+    "bytes[5]": 130,
+    "bytes[6]": 231,
+    "bytes[7]": 69,
+    "bytes[8]": 3,
+    "bytes[9]": 2,
+    "bytes[10]": 34,
+    "bytes[11]": 102,
+    "bytes[12]": 140,
+    "bytes[13]": 137,
+    "bytes[14]": 111,
+    "bytes[15]": 21
+  },
+  "m_ClassName": "ItemSkill",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

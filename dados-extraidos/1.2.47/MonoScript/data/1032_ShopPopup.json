@@ -1,0 +1,25 @@
+{
+  "m_Name": "ShopPopup",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 172,
+    "bytes[1]": 220,
+    "bytes[2]": 38,
+    "bytes[3]": 182,
+    "bytes[4]": 85,
+    "bytes[5]": 211,
+    "bytes[6]": 102,
+    "bytes[7]": 132,
+    "bytes[8]": 66,
+    "bytes[9]": 155,
+    "bytes[10]": 143,
+    "bytes[11]": 134,
+    "bytes[12]": 70,
+    "bytes[13]": 98,
+    "bytes[14]": 48,
+    "bytes[15]": 54
+  },
+  "m_ClassName": "ShopPopup",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

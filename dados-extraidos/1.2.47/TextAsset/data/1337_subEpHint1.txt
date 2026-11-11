@@ -1,0 +1,664 @@
+{
+ "list" : [
+  {
+    "index" : 0,
+    "text" : "Save Majet, embark on the Spider Woman quest together, let Johnny and the Spider Woman love each other, then convince Anna to give up on Johnny."
+  } , 
+  {
+    "index" : 1,
+    "text" : "Save Majet, embark on the Spider Woman quest together, either respect Johnny's decision or lose to the Aranea after trying to take him away by force."
+  } , 
+  {
+    "index" : 2,
+    "text" : "Save Majet, embark on the Spider Woman quest together, and kill Spider Aranea."
+  } , 
+  {
+    "index" : 3,
+    "text" : "Save Majet, embark on the Spider Woman quest together, and defeat Aranea in battle. Then, lose to Spider Aranea, and bring Johnny with you."
+  } , 
+  {
+    "index" : 4,
+    "text" : "Save Majet, embark on the Spider Woman quest together, and defeat Aranea in battle. Then, lose to Spider Aranea, and leave Johnny in the forest."
+  } , 
+  {
+    "index" : 1000,
+    "text" : "Required : Your Intelligence is 9 or higher.\n Ask the wraiths what's troubling them, fail to tell them that the war has ended, then defeat the Wraith Legion in battle. Or, find Harda's necklace for him."
+  } , 
+  {
+    "index" : 1001,
+    "text" : "Successfully threaten Harda. Or, either kill Harda or refuse to find him his necklace, then meet the real estate agent and either persuade him or pay the fee yourself."
+  } , 
+  {
+    "index" : 1002,
+    "text" : "Meet the real estate agent, then either persuade him or pay the fee yourself."
+  } , 
+  {
+    "index" : 1003,
+    "text" : "Either fail both in persuading the real estate agent and threatening Harda, or fail the mission without looking for Harda's necklace."
+  } , 
+  {
+    "index" : 1004,
+    "text" : "Defeat the real estate agent's bodyguards in battle."
+  } , 
+  {
+    "index" : 1005,
+    "text" : "Required : Your Intelligence is 9 or higher.\n After asking Martin about the mansion, Then ask the wraiths what's troubling them, tell them that the war has ended, then defeat the Death Knight in battle."
+  } , 
+  {
+    "index" : 5,
+    "text" : "Required : You have no lover.\n Complete the Spider Lady quest together with Majet, then become her lover. Then, either save Majet from her kidnappers or win the fishing match against her, then ask for something other than marriage."
+  } , 
+  {
+    "index" : 6,
+    "text" : "Required : You have no lover.\n Complete the Spider Lady quest together with Majet, then become her lover. Then, either save Majet from her kidnappers or win the fishing match against her, then get rejected by Majet. Or, simply refuse to take part in the fishing match."
+  } , 
+  {
+    "index" : 2000,
+    "text" : "At the Tomb of Ashen Grief, ditch Volga, then sacrifice Enard to the door."
+  } , 
+  {
+    "index" : 2001,
+    "text" : "At the Tomb of Ashen Grief, ditch Volga, then sacrifice Nisil to the door."
+  } , 
+  {
+    "index" : 2002,
+    "text" : "At the Tomb of Ashen Grief, ditch Volga, enter door alone and take all the treasures for yourself."
+  } , 
+  {
+    "index" : 2003,
+    "text" : "At the Tomb of Ashen Grief, save Volga, and split the treasures equally. Then, accept Volga's offer, and defeat the White Dragon."
+  } , 
+  {
+    "index" : 2004,
+    "text" : "Required : Your Wisdom is 10 or higher.\n At the Tomb of Ashen Grief, split the treasures equally. Then, convince the Frost Giant, then defeat the White Dragon in battle."
+  } , 
+  {
+    "index" : 2005,
+    "text" : "At the Tomb of Ashen Grief, ditch Volga, then split up the treasures with Enard. Then, raid Cecil's caravan, betray Enard, lose to him, then defeat the caravan guards in battle."
+  } , 
+  {
+    "index" : 2006,
+    "text" : "At the Tomb of Ashen Grief, ditch Volga, then split up the treasures with Enard. Then, raid Cecil's caravan, betray Enard, then defeat him."
+  } , 
+  {
+    "index" : 2007,
+    "text" : "At the Tomb of Ashen Grief, ditch Volga, then split up the treasures with Enard. Then, raid Cecil's caravan, lose to Enard and the caravan guards. Then, defeat the assassin and spare Enard."
+  } , 
+  {
+    "index" : 2008,
+    "text" : "At the Tomb of Ashen Grief, ditch Volga, then split up the treasures with Enard. Then, either refuse to raid Cecil's caravan, or lose a battle during the raid."
+  } , 
+  {
+    "index" : 2009,
+    "text" : "Find the Tomb of Ashen Grief by yourself, and obtain its treasures."
+  } , 
+  {
+    "index" : 2010,
+    "text" : "At the Tomb of Ashen Grief, split the treasures equally. Then, refuse Volga's offer to hunt down the White Dragon with him."
+  } , 
+  {
+    "index" : 2011,
+    "text" : "At the Tomb of Ashen Grief, split the treasures equally. Then, accept Volga's offer to hunt down the White Dragon with him, then lose to the Frost Giant."
+  } , 
+  {
+    "index" : 2012,
+    "text" : "At the Tomb of Ashen Grief, ditch Volga, defeat the swarm of vampire bats, and split the treasures equally. Then, successfully raid Cecil's caravan."
+  } , 
+  {
+    "index" : 2013,
+    "text" : "Join the wanderers in their adventure of the Tomb of Ashen Grief, save Volga, defeat the swarm of vampire bats, and split the treasure equally. Then, promise Volga to aid him in his hunt for the White Dragon, then lose to the White Dragon."
+  } , 
+  {
+    "index" : 7,
+    "text" : "Required : You have no lover.\n Complete the Spider Lady quest together with Majet, then become her lover. Then, either save Majet from her kidnappers or win the fishing match against her, then propose to Majet."
+  } , 
+  {
+    "index" : 3001,
+    "text" : "Fail to save the baby from the burning village, and don't suggest Galgano to pray."
+  } , 
+  {
+    "index" : 3002,
+    "text" : "Fail to save the baby from the burning village. Then, suggest Galgano that he pray, then, create a hole in the ceiling of the cathedral. Then, pull out Galgano's sword from the ground."
+  } , 
+  {
+    "index" : 3003,
+    "text" : "Fail to save the baby from the burning village. Then, suggest Galgano that he pray, then, create a hole in the ceiling of the cathedral. Then, fail to pull out Galgano's sword from the ground."
+  } , 
+  {
+    "index" : 3004,
+    "text" : "Defeat the templars in the burning village. Then, don't save the old woman in Arhen."
+  } , 
+  {
+    "index" : 3005,
+    "text" : "Defeat the templars in the burning village. Then, save the old woman in Arhen."
+  } , 
+  {
+    "index" : 3006,
+    "text" : "Defeat the templars in the burning village. Then, in Arhen, don't call the villagers to the church, then successfully convince them to let the old woman live."
+  } , 
+  {
+    "index" : 3007,
+    "text" : "Required : Your Intelligence is 9 or higher.\n Convince Galgano at the burning village. Then, at Delua Orphanage, either let the kid have his fun or teach him how to fight."
+  } , 
+  {
+    "index" : 3008,
+    "text" : "Required : Your Intelligence is 9 or higher.\n Convince Galgano at the burning village. Then, at Delua Orphanage, tell the kid the truth, then tell Galgano that you told the kid the truth as well."
+  } , 
+  {
+    "index" : 4000,
+    "text" : "Save the refugees from the Winter Wolf pack, and refuse to take the Frost Bloom. Then, aid the refugees once more, helping them defeat the Winter Wolves and the wights."
+  } , 
+  {
+    "index" : 4001,
+    "text" : "Save the refugees from the Winter Wolf pack, and refuse to take the Frost Bloom. Then, aid the refugees once more, but fail to defeat the Winter Wolves and the wights."
+  } , 
+  {
+    "index" : 4002,
+    "text" : "Save the refugees from the Winter Wolf pack, and take the Frost Bloom. Then, defeat the undead refugees and the Frost Queen, then destroy the red gem."
+  } , 
+  {
+    "index" : 4003,
+    "text" : "Save the refugees from the Winter Wolf pack, and take the Frost Bloom. Then, either lose to the Frost Queen, or defeat it then throw away the red gem."
+  } , 
+  {
+    "index" : 4004,
+    "text" : "Required : Your Intelligence is 11 or higher. Your Spellcasting is 1 or higher.\n Save the refugees from the Winter Wolf pack, and take the Frost Bloom. Then, defeat the Frost Queen, seal it in the stuffed bear, then give it to Delin."
+  } , 
+  {
+    "index" : 4005,
+    "text" : "Save the refugees from the Winter Wolf pack, and take the Frost Bloom. Then, hand over the Frost Bloom to the Frost Queen."
+  } , 
+  {
+    "index" : 4006,
+    "text" : "Required : Your Intelligence is 11 or higher. Your Spellcasting is 1 or higher.\n Save the refugees from the Winter Wolf pack, and take the Frost Bloom. Then, defeat the Frost Queen, seal it in the stuffed bear, then don't give it to Delin."
+  } , 
+  {
+    "index" : 4007,
+    "text" : "Required : Your Intelligence is 11 or higher. Your Spellcasting is 1 or higher.\n Save the refugees from the Winter Wolf pack, and take the Frost Bloom. Then, defeat the Frost Queen, seal it in the stuffed bear, and tell what happened to Bruges."
+  } , 
+  {
+    "index" : 5000,
+    "text" : "Save Cira and spend the night with her in the pub. Then, at the Cult Headquarters, convince Devil Cira, then resist her seduction."
+  } , 
+  {
+    "index" : 5001,
+    "text" : "Save Cira and spend the night with her in the pub. Then, at the Cult Headquarters, either lose to Devil Cira, or defeat her but leave without killing her."
+  } , 
+  {
+    "index" : 5002,
+    "text" : "Save Cira, then either fail to convince Devil Cira, or simply flee. Or, fail to cleanse her."
+  } , 
+  {
+    "index" : 5003,
+    "text" : "Either kill Devil Cira, don't tell Rohan anything about Cira, or don't go to the Cult Headquarters."
+  } , 
+  {
+    "index" : 5004,
+    "text" : "Either don't tell Rohan anything about Cira, don't go to the Cult Headquarters, or fight with Rohan against Devil Cira, but lose."
+  } , 
+  {
+    "index" : 6000,
+    "text" : "Capture the merfolk, refuse their offer to let them go, then endure the storm."
+  } , 
+  {
+    "index" : 6001,
+    "text" : "Required : Either your Wisdom is 14 or higher, or you have the Storm Caller Flute. Capture the merfolk, refuse their offer to let them go, then either play the Storm Caller Flute or kill the blue-eyed merfolk."
+  } , 
+  {
+    "index" : 6002,
+    "text" : "Capture the merfolk, then accept their offer to let them go. Then, travel to Ikene and defeat the Kraken."
+  } , 
+  {
+    "index" : 6003,
+    "text" : "Capture the merfolk, then accept their offer to let them go. Then, travel to Ikene and fail to defeat the Kraken."
+  } , 
+  {
+    "index" : 6004,
+    "text" : "Required : Your Alignment is Evil. Capture the merfolk, then accept their offer to let them go. Then, travel to Ikene and become Kraken's underling. Then, defeat Madellin's bodyguards."
+  } , 
+  {
+    "index" : 6005,
+    "text" : "Accept the merfolk's offer to join their campaign against the Kraken. Defeat the Kraken, then either fail to convince Parrie, or support his opinion then return to land alone."
+  } , 
+  {
+    "index" : 6006,
+    "text" : "Accept the merfolk's offer to join their campaign against the Kraken. Defeat the Kraken, then convince Parrie, side with the crew then lose to Parrie."
+  } , 
+  {
+    "index" : 6007,
+    "text" : "Accept the merfolk's offer to join their campaign against the Kraken.  Defeat the Kraken, then convince Parrie, side with the crew then defeat Parrie."
+  } , 
+  {
+    "index" : 6008,
+    "text" : "Required : Either your Spellcasting is 4 or higher, your Flight is 1 or higher. Your Alignment is between Moral and Good.\n Accept the merfolk's offer and defeat the Kraken. Then, choose to help the captain in the conflict with the mermaids and rescue the crew when returning to land."
+  } , 
+  {
+    "index" : 6009,
+    "text" : "Required : Your Alignment is Evil.\n Accept the merfolk's offer, join their campaign against the Kraken, become Kraken's underling (must be Evil) and lose to Madellin's bodyguards."
+  } , 
+  {
+    "index" : 7000,
+    "text" : "Required : Your character is a female. Your Wisdom is 14 or higher.\n Join Benjamin on his way to vengeance, and kill Van Goyle, risking your own life. Then, defeat Attna at Benjamin's house."
+  } , 
+  {
+    "index" : 7001,
+    "text" : "Help Atléon the Knight, assist Benjamin's vengeance after he becomes a squire, then stop him from killing Van Goyle."
+  } , 
+  {
+    "index" : 7002,
+    "text" : "Don't help Benjamin with his vengeance, and lose to him after he becomes a bandit."
+  } , 
+  {
+    "index" : 7003,
+    "text" : "Don't help Benjamin with his vengeance, and convince him to return to his hometown after he becomes a bandit."
+  } , 
+  {
+    "index" : 7004,
+    "text" : "Join Benjamin on his way to vengeance and kill Van Goyle. Then, at Benjamin's house, either lose to Attna or fall into her plan."
+  } , 
+  {
+    "index" : 7005,
+    "text" : "Join Benjamin on his way to vengeance, and kill Van Goyle, risking your own life. Then, stop Attna at Benjamin's house."
+  } , 
+  {
+    "index" : 7006,
+    "text" : "Join Benjamin on his way to vengeance, then lose to Van Goyle."
+  } , 
+  {
+    "index" : 7007,
+    "text" : "Don't help Benjamin with his vengeance, and kill him after he becomes a bandit."
+  } , 
+  {
+    "index" : 7008,
+    "text" : "Help Atléon the Knight, assist Benjamin's vengeance after he becomes a squire, then stop him from killing Van Goyle. Then, find and defeat Van Goyle in his hideout."
+  } , 
+  {
+    "index" : 7009,
+    "text" : "Required : Your character is a female. Your Wisdom is 14 or higher. You have no lover.\n Personally train Benjamin at the inn, then accompany him on his mission for revenge, prepared to die, and kill Van Goyle. After that, subdue Attna at Benjamin's house and accept his proposal."
+  } , 
+  {
+    "index" : 7010,
+    "text" : "Help Atléon the Knight, send Benjamin to the citadel alone after he becomes a squire, then receive Atléon's letter and head to his estate."
+  } , 
+  {
+    "index" : 7011,
+    "text" : "Join Benjamin on his way to vengeance and kill Van Goyle, but fail to save Benjamin."
+  } , 
+  {
+    "index" : 7012,
+    "text" : "Teach Benjamin how to fight, accompany him to the citadel, and stop him from killing Van Goyle."
+  } , 
+  {
+    "index" : 5005,
+    "text" : "Save Cira and spend the night with her in the pub. Then, at the Cult Headquarters, convince Devil Cira, then give in to her seduction."
+  } , 
+  {
+    "index" : 5006,
+    "text" : "Required : You have no other lovers. Your Holiness is 2 or higher. Your Spellcasting is 1 or higher. Your background must not be The Demon's Touch.\n Save Cira, battle the cultists alone at the Cult Headquarters, defeat Devil Cira in battle, then successfully cleanse her. Then, in Mariposa, either don't look for her, or fail her test."
+  } , 
+  {
+    "index" : 5007,
+    "text" : "Required : You have no other lovers. Your Holiness is 2 or higher. Your Spellcasting is 1 or higher. Your background must not be The Demon's Touch.\n Save Cira, battle the cultists alone at the Cult Headquarters, defeat Devil Cira in battle, then successfully cleanse her. Then, in Mariposa, look for her and pass her test."
+  } , 
+  {
+    "index" : 5008,
+    "text" : "Required : You have no other lovers. Your Holiness is 2 or higher. Your Spellcasting is 1 or higher. Your background must not be The Demon's Touch.\n Save Cira, refuse to drink with her, then stop and cleanse Devil Cira at Mariposa. Then, successfully convince her to run away with you."
+  } , 
+  {
+    "index" : 5009,
+    "text" : "Required : You have no other lovers. Your Holiness is 2 or higher. Your Spellcasting is 1 or higher. Your background must not be The Demon's Touch.\n Save Cira, refuse to drink with her, then stop and cleanse Devil Cira at Mariposa. Then, either fail to convince her to run away with you, or tell her to follow her heart's desire."
+  } , 
+  {
+    "index" : 8000,
+    "text" : "Required : Your Wisdom is 15 or higher.\n Meet Amakar, give up the Jewel of Life, pick a side and win the battle at Tomant. Then, offer a negotiation and suggest to compromise."
+  } , 
+  {
+    "index" : 8001,
+    "text" : "Meet Amakar, give up the Jewel of Life, pick a side and win the battle at Tomant. Then, fail to offer a negotiation, wage a war, in which the druids lose. Then, meet the druid boy and fail to prepare a funeral."
+  } , 
+  {
+    "index" : 8002,
+    "text" : "Meet Amakar, give up the Jewel of Life, pick a side and win the battle at Tomant. Then, don't offer a negotiation, then while either the Elder Druid or the scouts are not defeated, lose to the lightly-armored troops."
+  } , 
+  {
+    "index" : 8003,
+    "text" : "Meet Amakar, give up the Jewel of Life, pick a side and win the battle at Tomant. Then, either offer a negotiation, or don't offer a negotiation and help Amakar win the battle."
+  } , 
+  {
+    "index" : 8004,
+    "text" : "Meet Amakar, give up the Jewel of Life, fight with Syannathel, and refuse Amakar's request for help. Then, at the tiny hut, either ignore Syannathel or apologize to her."
+  } , 
+  {
+    "index" : 8005,
+    "text" : "Meet Amakar, give up the Jewel of Life, pick a side and win the battle at Tomant. Then, don't offer a negotiation and wage a war in which either Amakar is killed or Tomant loses."
+  } , 
+  {
+    "index" : 8006,
+    "text" : "Fail to retrieve the Jewel of Life from Amakar, then help the druids take back the jewel. Then, lose to the army of Tomant, then fail to defeat the Dire Troll at Trollium."
+  } , 
+  {
+    "index" : 8007,
+    "text" : "Required : Either your spellcasting is 4 or higher, or you are carrying either the Wound or Sinister Basket of Matches.\n Fail to retrieve the Jewel of Life from Amakar, then help the druids take back the jewel. Then, lose to the army of Tomant, then defeat the Dire Troll at Trollium."
+  } , 
+  {
+    "index" : 8008,
+    "text" : "Meet Amakar, give up the Jewel of Life, join Amakar and successfully defend Tomant. Then, offer a negotiation, don't look for a compromise, then either fail to douse the fire of the tent or fail the pursuit."
+  } , 
+  {
+    "index" : 8009,
+    "text" : "Meet Amakar, give up the Jewel of Life, fight with Syannathel, refuse Amakar's request for help, then pray at Tomant."
+  } , 
+  {
+    "index" : 8010,
+    "text" : "Required : Your Wisdom is 12 or higher, or your Intelligence is 10 or higher.\n Meet Amakar, give up the Jewel of Life, join the druids and win the battle at Tomant. Then, successfully offer a truce to Lophenbach in the forest."
+  } , 
+  {
+    "index" : 8011,
+    "text" : "Meet Amakar, give up the Jewel of Life, join Amakar and successfully defend Tomant. Then, fail the negotiation, then either fail to douse the fire of the tent or fail the pursuit."
+  } , 
+  {
+    "index" : 8012,
+    "text" : "Meet Amakar, give up the Jewel of Life, join the druids and win the battle at Tomant. Then, fail the negotiation and lose the ensuing battle. Then, meet the druid boy and prepare a funeral."
+  } , 
+  {
+    "index" : 8013,
+    "text" : "Required : Your Wisdom is 12 or higher. Your Intelligence is 10 or higher.\n Meet Amakar, give up the Jewel of Life, join the druids and successfully defend Tomant. Then, battle the army of Tomant in the forest and defeat it."
+  } , 
+  {
+    "index" : 8014,
+    "text" : "Meet Amakar, give up the Jewel of Life and make Syannathel go away. Refuse Amakar's request to help, then kill Syannathel."
+  } , 
+  {
+    "index" : 8015,
+    "text" : "Meet Amakar, give up the Jewel of Life, join the druids and win the battle at Tomant. Then, fail the negotiation, meet the druid boy and prepare a funeral."
+  } , 
+  {
+    "index" : 9000,
+    "text" : "At Ternach's lair, choose Ternach over Sartha. Then, solve Amunak's puzzle without freeing Sartha, then either defeat the dwarf legion, force the dwarves to pay ransom, or threaten them to go away. "
+  } , 
+  {
+    "index" : 9001,
+    "text" : "By any means, return Sartha to Radania."
+  } , 
+  {
+    "index" : 9002,
+    "text" : "Required : You have no other lovers. Your character is a female.\n At Ternach's lair, choose Ternach over Sartha. Then, solve Amunak's puzzle without freeing Sartha, then accept Ternach's ring."
+  } , 
+  {
+    "index" : 9003,
+    "text" : "At Ternach's lair, choose Ternach over Sartha. Then, solve Amunak's puzzle without freeing Sartha, then either lose to the dwarf legion or flee."
+  } , 
+  {
+    "index" : 9004,
+    "text" : "Required : You have no other lovers. Your character is a male.\n At Ternach's lair, choose Ternach over Sartha. Then, solve Amunak's puzzle without freeing Sartha, then accept Ternach's ring."
+  } , 
+  {
+    "index" : 9005,
+    "text" : "Have Sartha return to Radania, then either reject the offer of marriage or that of gold."
+  } , 
+  {
+    "index" : 9006,
+    "text" : "Required : You have no lover.\n Have Sartha return to Radania, and accept the offer of marriage."
+  } , 
+  {
+    "index" : 9007,
+    "text" : "Required : Your Alignment is between Neutral and Evil.\n At Antitikarr, threaten the merchant, rescue Sartha, then either borrow camels from Mansa or lose to him in battle. Then, go to Ushuf with Tess, then suggest an option other than trading."
+  } , 
+  {
+    "index" : 9008,
+    "text" : "Required : Your Alignment is between Neutral and Evil.\n At Antitikarr, threaten the merchant, rescue Sartha, take a break on the way, then either borrow camels from Mansa or lose to him in battle. Then, go to Ushuf with Tess with Dowd as the guide, then suggest to entrust Dowd."
+  } , 
+  {
+    "index" : 9009,
+    "text" : "At Ternach's lair, choose Ternach over Sartha. Then, solve Amunak's puzzle without freeing Sartha, cooperate with the dwarves, then defeat the dwarf legion with Ternach. "
+  } , 
+  {
+    "index" : 9010,
+    "text" : "At Ternach's lair, choose Ternach over Sartha. Then, solve Amunak's puzzle without freeing Sartha, pretend to cooperate with the dwarves, defeat the dwarf legion with Ternach, then free Sartha. "
+  } , 
+  {
+    "index" : 9011,
+    "text" : "At Ternach's lair, choose Ternach over Sartha. Then, solve Amunak's puzzle without freeing Sartha, cooperate with the dwarves, then reject Ternach's ring. "
+  } , 
+  {
+    "index" : 9012,
+    "text" : "Required : Your Alignment is between Neutral and Evil.\n At Antitikarr, threaten the merchant, rescue Sartha, take a break on the way, then either borrow camels from Mansa or lose to him in battle. Then, fail to reach Ushuf with Tess."
+  } , 
+  {
+    "index" : 9013,
+    "text" : "Required : Your Alignment is between Neutral and Evil.\n At Antitikarr, threaten the merchant, rescue Sartha, take a break on the way, then either borrow camels from Mansa or lose to him in battle. Then, go to Ushuf with Tess, and suggest to take the mining rights instead of the gold."
+  } , 
+  {
+    "index" : 9014,
+    "text" : "At Ternach's lair, choose Ternach over Sartha. Then, solve Amunak's puzzle without freeing Sartha, then either lose to or flee from the dwarf legion."
+  } , 
+  {
+    "index" : 8,
+    "text" : "Meet your end while Majet is your lover."
+  } , 
+  {
+    "index" : 5010,
+    "text" : "Meet your end while Cleansed Cira is your lover."
+  } , 
+  {
+    "index" : 5011,
+    "text" : "Meet your end while Devil Cira is your lover."
+  } , 
+  {
+    "index" : 7013,
+    "text" : "Meet your end while Benjamin is your lover."
+  } , 
+  {
+    "index" : 9015,
+    "text" : "Meet your end while Ternach is your lover."
+  } , 
+  {
+    "index" : 9016,
+    "text" : "Meet your end while Sartha is your lover."
+  } , 
+  {
+    "index" : 10000,
+    "text" : "Explore the ruins with Edenheart, complete the Elixir, then notify Fheren of her death."
+  } , 
+  {
+    "index" : 10001,
+    "text" : "Explore the ruins with Edenheart, then refuse Edenheart's plea to complete the Elixir."
+  } , 
+  {
+    "index" : 10002,
+    "text" : "Either fail to explore the ruins with Edenheart, or explore the ruins by yourself and hand her the Soul Extractor. Then, either hand over Edenheart's research to Osborne, or refuse to help Edenheart after her research is stolen."
+  } , 
+  {
+    "index" : 10003,
+    "text" : "Explore the ruins with Edenheart and complete the Elixir. Then, do not notify Fheren of Edenheart's death, defeat the assassin, go after Fheren, then let him go."
+  } , 
+  {
+    "index" : 10004,
+    "text" : "Explore the ruins with Edenheart, then either accept Osborne's offer or flee. Then, either ignore the rumors of a specter, or lose to Ghost of Edenheart."
+  } , 
+  {
+    "index" : 10005,
+    "text" : "Explore the ruins with Edenheart, then either accept Osborne's offer or flee. Then, either get rid of Ghost of Edenheart, or tell it that Fheren was cured."
+  } , 
+  {
+    "index" : 10006,
+    "text" : "Explore the ruins with Edenheart, then either accept Osborne's offer or flee. Then, either fail to deal with the specter problem, or lose to Osborne's men after suggesting that the laborers leave the ruins."
+  } , 
+  {
+    "index" : 10007,
+    "text" : "Explore the ruins with Edenheart, then either accept Osborne's offer or flee. Then, defeat Osborne's men after suggesting that the laborers leave the ruins, then kill Osborne."
+  } , 
+  {
+    "index" : 10008,
+    "text" : "Either fail to explore the ruins with Edenheart, or explore the ruins by yourself and don't hand her the Soul Extractor. Then, help Edenheart while she's arguing with the merchant's guild, then fail to complete the Elixir."
+  } , 
+  {
+    "index" : 10009,
+    "text" : "Either fail to explore the ruins with Edenheart, or explore the ruins by yourself and hand her the Soul Extractor. Then, either hand over Edenheart's research to Osborne, or refuse to help Edenheart after her research is stolen."
+  } , 
+  {
+    "index" : 10010,
+    "text" : "Fail to complete the Elixir or save Fheren."
+  } , 
+  {
+    "index" : 10011,
+    "text" : "Fail to explore the ruins with Edenheart. Then, help Edenheart while she's arguing with the merchant's guild, then complete the Elixir. Then, tell Fheren that Edenheart went to the far east."
+  } , 
+  {
+    "index" : 10012,
+    "text" : "Required : Your Alignment is between Neutral and Evil.\n Explore the ruins with Edenheart, complete the Elixir, and do not notify Fheren of Edenheart's death. Then, defeat the assassin, go after Fheren, then kill him."
+  } , 
+  {
+    "index" : 10013,
+    "text" : "Either fail to explore the ruins with Edenheart, or explore the ruins by yourself and hand her the Soul Extractor. Then help Edenheart take back her research notes."
+  } , 
+  {
+    "index" : 10014,
+    "text" : "Explore the ruins with Edenheart and complete the Elixir. Then, do not notify Fheren of Edenheart's death then lose to his assassins."
+  } , 
+  {
+    "index" : 11000,
+    "text" : "Lei's death by you or Shao."
+  } , 
+  {
+    "index" : 11001,
+    "text" : "Shao and Lei did not reconcile and cooperate, so neither Lei nor Shao won the Batra competition."
+  } , 
+  {
+    "index" : 11002,
+    "text" : "Having rejected Lei's confession, Shao is neither killed nor incapacitated."
+  } , 
+  {
+    "index" : 11003,
+    "text" : "Lei won the Batra tournament after reconciling with Shao."
+  } , 
+  {
+    "index" : 11004,
+    "text" : "Condition: No other lover.\n Confirm Lei's secret, do not kill Shao, accept Lei's confession."
+  } , 
+  {
+    "index" : 11005,
+    "text" : "Shao won the Batra competition after reconciling with Lei."
+  } , 
+  {
+    "index" : 11006,
+    "text" : "Shao successfully defeats Lei according to his plan, and Shao wins the Batra tournament."
+  } , 
+  {
+    "index" : 11007,
+    "text" : "After the fight between Lei and Shao, Shao's energy core was destroyed."
+  } , 
+  {
+    "index" : 11008,
+    "text" : "Lei wins, Shao is still alive, they return to their hometown without reconciling."
+  } , 
+  {
+    "index" : 11009,
+    "text" : "Shao and Lei both die."
+  } , 
+  {
+    "index" : 11010,
+    "text" : "Shao killed Lei without winning the competition."
+  } , 
+  {
+    "index" : 11011,
+    "text" : "Reach the ending where you die as a lover with Lei ."
+  } , 
+  {
+    "index" : 11012,
+    "text" : "Does not go to Tragia Mountain. Later meets Lei again at the coastal cave but does not assist with training. Subdues Shao during the Red Drake's attack and then advises Lei to flee."
+  } , 
+  {
+    "index" : 11013,
+    "text" : "Shao and Lei have not reconciled, and Lei is eliminated from the competition. After that, persuade Lei not to return to his hometown."
+  } , 
+  {
+    "index" : 11014,
+    "text" : "Condition: No other lover.\n After listening to Shao's feelings, decided to go east according to her suggestion."
+  } , 
+  {
+    "index" : 11015,
+    "text" : "Condition: No other lover.\n Reached the ending of dying after deciding to travel east according to Shao's suggestion."
+  } , 
+  {
+    "index" : 11016,
+    "text" : "Lei and Shao have not reconciled, rejecting Shao's proposal to go east."
+  } , 
+  {
+    "index" : 11017,
+    "text" : "Shao has died or the dantian has been destroyed. Lei returns to his hometown."
+  } , 
+  {
+    "index" : 11018,
+    "text" : "Condition: No other lover.\n After listening to Shao's feelings, decided to go east according to her suggestion."
+  } , 
+  {
+    "index" : 11019,
+    "text" : "Shao has won the competition, you expose the plan to assassinate Shao, and she returns home alive."
+  } , 
+  {
+    "index" : 12000,
+    "text" : "Lukas escapes alive, while the weakened Edward is hiding with Lupin—betray Lupin and Edward, and eliminate them."
+  } , 
+  {
+    "index" : 12001,
+    "text" : "Bring Edward to Count Ronan and Lady Irema."
+  } , 
+  {
+    "index" : 12002,
+    "text" : "At the place where Edward was imprisoned, letters from Lukas and Hazel are discovered. Their wrongdoing is exposed, and Milorad is helped."
+  } , 
+  {
+    "index" : 12003,
+    "text" : "At the place where Edward was imprisoned, letters from Lukas and Hazel are discovered, but Milorad is not helped."
+  } , 
+  {
+    "index" : 12004,
+    "text" : "Edward is weakened and hiding with Lupin. With Lukas was gone, Milorad and Hazel raise a rebellion in Count Ronan’s domain, capturing Count Ronan and his entire family. "
+  } , 
+  {
+    "index" : 12005,
+    "text" : "Edward is weakened and hiding with Lupin. Lukas, Milorad, and Hazel launch a rebellion in Count Ronan’s domain and succeed in capturing Count Ronan’s family."
+  } , 
+  {
+    "index" : 12006,
+    "text" : "Hazel and Lukas’s plot is exposed, but Edward is not rescued."
+  } , 
+  {
+    "index" : 12007,
+    "text" : "Hazel and Lukas’s plot remains undiscovered."
+  } , 
+  {
+    "index" : 12008,
+    "text" : "Edward is rescued together with Erina, and she is taken to Count Ronan’s castle."
+  } , 
+  {
+    "index" : 12009,
+    "text" : "Lukas takes Edward to the catacombs and places a curse on him, the curse cannot be lifted."
+  } , 
+  {
+    "index" : 12010,
+    "text" : "Fail to uncover the relationship between Hazel and Lukas, rescue Edward, but cannot save him as he gradually weakens."
+  } , 
+  {
+    "index" : 12011,
+    "text" : "After Hazel and Lukas’s relationship is exposed, side with Milorad against Lukas; both die in the catacombs."
+  } , 
+  {
+    "index" : 12012,
+    "text" : "Lukas takes Edward to the catacombs, and an attempt to rescue Edward with Lupin ends in failure."
+  } , 
+  {
+    "index" : 3000,
+    "text" : "Ignored Galgano at the tavern and walked on."
+  } , 
+  {
+    "index" : 5012,
+    "text" : "Conditions: no other lovers, male gender, Earl Briovich. \n\n Purify Sira and succeed in proposing."
+  } , 
+  {
+    "index" : 9017,
+    "text" : "Conditions: no other lover, male gender, Earl Briovich. \n\n Rescue Sartha and promise to marry her."
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIJoystick",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 237,
+    "bytes[1]": 215,
+    "bytes[2]": 251,
+    "bytes[3]": 145,
+    "bytes[4]": 212,
+    "bytes[5]": 29,
+    "bytes[6]": 86,
+    "bytes[7]": 236,
+    "bytes[8]": 53,
+    "bytes[9]": 48,
+    "bytes[10]": 173,
+    "bytes[11]": 94,
+    "bytes[12]": 148,
+    "bytes[13]": 62,
+    "bytes[14]": 125,
+    "bytes[15]": 97
+  },
+  "m_ClassName": "UIJoystick",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

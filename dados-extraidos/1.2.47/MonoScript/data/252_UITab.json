@@ -1,0 +1,25 @@
+{
+  "m_Name": "UITab",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 190,
+    "bytes[1]": 155,
+    "bytes[2]": 129,
+    "bytes[3]": 106,
+    "bytes[4]": 113,
+    "bytes[5]": 158,
+    "bytes[6]": 184,
+    "bytes[7]": 69,
+    "bytes[8]": 242,
+    "bytes[9]": 127,
+    "bytes[10]": 112,
+    "bytes[11]": 40,
+    "bytes[12]": 116,
+    "bytes[13]": 16,
+    "bytes[14]": 215,
+    "bytes[15]": 84
+  },
+  "m_ClassName": "UITab",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

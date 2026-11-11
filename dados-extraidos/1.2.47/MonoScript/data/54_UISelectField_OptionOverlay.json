@@ -1,0 +1,25 @@
+{
+  "m_Name": "UISelectField_OptionOverlay",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 101,
+    "bytes[1]": 4,
+    "bytes[2]": 78,
+    "bytes[3]": 141,
+    "bytes[4]": 63,
+    "bytes[5]": 49,
+    "bytes[6]": 133,
+    "bytes[7]": 129,
+    "bytes[8]": 80,
+    "bytes[9]": 18,
+    "bytes[10]": 195,
+    "bytes[11]": 25,
+    "bytes[12]": 67,
+    "bytes[13]": 188,
+    "bytes[14]": 220,
+    "bytes[15]": 128
+  },
+  "m_ClassName": "UISelectField_OptionOverlay",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

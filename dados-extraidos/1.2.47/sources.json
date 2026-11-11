@@ -1,0 +1,26 @@
+[
+  {
+    "file": "extracao-1.2.47\\base\\assets\\bin\\Data\\data.unity3d",
+    "sha256": "fc411d3a597b83e32152649f2feb8fe1ff55aaa7951b5c4d56e84c777c0fa694"
+  },
+  {
+    "file": "extracao-1.2.47\\base\\assets\\aa\\Android\\48c200d6b5ffeb6a8454ad8f16e9c343_monoscripts_9ff73e74ac995df14137ca59fa38d8db.bundle",
+    "sha256": "11a967bbea944d0de11c3f851373be14e2ad67ad9ea2d70b558ac1e916c30127"
+  },
+  {
+    "file": "extracao-1.2.47\\base\\assets\\aa\\Android\\localization-assets-shared_assets_all.bundle",
+    "sha256": "1eb193ad02668a7fd490a0f21ea3f72d6510a32ce968a45395b3f14eba7adc46"
+  },
+  {
+    "file": "extracao-1.2.47\\base\\assets\\aa\\Android\\localization-locales_assets_all.bundle",
+    "sha256": "e4b5087e692e9062412a64eb8db3fc69992e881c2217c052d6ed1493bb7a1460"
+  },
+  {
+    "file": "extracao-1.2.47\\base\\assets\\aa\\Android\\localization-string-tables-english(en)_assets_all.bundle",
+    "sha256": "01f269ba8b4d8c05e35b5a523883b46d9d2a860528c719e2c7339d85133e3aa4"
+  },
+  {
+    "file": "extracao-1.2.47\\base\\assets\\aa\\Android\\localization-string-tables-korean(ko)_assets_all.bundle",
+    "sha256": "0c3d295d44d0762767800ef12cfec6d7339fd8db68ce3f75403efbf76ce83a0e"
+  }
+]

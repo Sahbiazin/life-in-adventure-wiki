@@ -1,0 +1,760 @@
+{
+ "list" : [
+  {
+    "index" : 0,
+    "text" : "Muori poco dopo aver iniziato la tua avventura, mentre commetti azioni malvagie."
+  } , 
+  {
+    "index" : 1,
+    "text" : "Muori mentre sei abbastanza famoso, mentre commetti azioni malvagie."
+  } , 
+  {
+    "index" : 2,
+    "text" : "Muori mentre sei molto famoso, mentre commetti azioni malvagie."
+  } , 
+  {
+    "index" : 3,
+    "text" : "Muori poco dopo aver iniziato la tua avventura, senza avere un allineamento."
+  } , 
+  {
+    "index" : 4,
+    "text" : "Muori mentre sei abbastanza famoso, senza avere un allineamento."
+  } , 
+  {
+    "index" : 5,
+    "text" : "Morire mentre sei molto famoso, senza avere un allineamento."
+  } , 
+  {
+    "index" : 6,
+    "text" : "Muori poco dopo aver iniziato la tua avventura, facendo buone azioni."
+  } , 
+  {
+    "index" : 7,
+    "text" : "Muori mentre sei abbastanza famoso, mentre compi buone azioni."
+  } , 
+  {
+    "index" : 8,
+    "text" : "Muori mentre sei molto famoso, mentre fai buone azioni."
+  } , 
+  {
+    "index" : 1000,
+    "text" : "Schierati con i pionieri e sconfiggi gli elfi della Foresta di Atilante. Oppure, suggerisci un piano alternativo al Conte Jimradi e portalo a termine con successo."
+  } , 
+  {
+    "index" : 1001,
+    "text" : "Perdi la guerra contro gli elfi della Foresta di Atilante. Oppure, tradisci i pionieri, fallisci nell'aiutare gli elfi e scappa dalla tua esecuzione."
+  } , 
+  {
+    "index" : 1002,
+    "text" : "Vinci il duello contro Irelle e risparmialo, oppure perdi il duello, poi firma una tregua con gli elfi."
+  } , 
+  {
+    "index" : 1003,
+    "text" : "Uccidi Irelle e perdi la guerra contro gli elfi. Oppure, vieni cacciato dal campo dei pionieri, finisci coinvolto nella guerra contro gli elfi, vieni ferito, e poi scappi."
+  } , 
+  {
+    "index" : 1004,
+    "text" : "Accetta la richiesta di aiuto di Irelle e continua a essere vittorioso nella guerra."
+  } , 
+  {
+    "index" : 1005,
+    "text" : "Accetta la richiesta di aiuto di Irelle, strappa il rotolo di segnalazione in pezzi e perdi la lotta contro i pionieri. Oppure, diventa amante di Irelle e perdi la battaglia contro le pattuglie proprio prima di strappare il rotolo di segnalazione in pezzi."
+  } , 
+  {
+    "index" : 1006,
+    "text" : "Rifiuta la richiesta di aiuto di Irelle e perdi contro il boia. Oppure, suggerisci un piano alternativo al Conte Jimradi, vieni imboscato e o uccidi Jimradi o scappa. Poi, perdi la lotta contro il boia."
+  } , 
+  {
+    "index" : 1007,
+    "text" : "Rifiuta la richiesta di aiuto di Irelle e sconfiggi il boia. Oppure, suggerisci un piano alternativo al Conte Jimradi, vieni imboscato e uccidi Jimradi o scappa. Poi, sconfiggi il boia."
+  } , 
+  {
+    "index" : 9,
+    "text" : "Ignora il decreto di leva, poi sconfiggi o scappa dalle guardie che cercano di arrestarti"
+  } , 
+  {
+    "index" : 1008,
+    "text" : "Richiesto: Non hai un amante. Accetta di seguire il piano del Conte Jimradi, poi perdi contro il comandante elfico. Oppure, suggerisci un piano alternativo, perdi e scappa, chiedi al Conte Jimradi un'altra possibilità, attacca gli elfi e perdi la battaglia."
+  } , 
+  {
+    "index" : 1009,
+    "text" : "Accetta di seguire il piano del Conte Jimradi, combatti, attacca le truppe elfiche che attraversano la Valle dei Venti Neri e sconfiggile."
+  } , 
+  {
+    "index" : 1010,
+    "text" : "Accetta di seguire il piano del Conte Jimradi, rifiuta il piano riguardante la Valle dei Venti Neri, sfida il comandante elfico a un duello e perdi. Poi, scegli l'onore. Oppure, non sfidarlo a duello e perdi combattendo da solo."
+  } , 
+  {
+    "index" : 2000,
+    "text" : "Vai da solo alla Torre della Magia, e perdi contro gli studenti ipnotizzati, il golem di ghiaccio, o il Verme che Cammina. Oppure, saccheggia il cadavere, ottieni le Ali del Paradiso, provocare Halad, e perdere contro di lei."
+  } , 
+  {
+    "index" : 2001,
+    "text" : "Richiesto: La tua allineamento è tra Neutrale e Malvagio.\n Vai da solo alla Torre della Magia, saccheggia il cadavere per ottenere le Ali del Paradiso, provocare Halad, e perdere contro di lei."
+  } , 
+  {
+    "index" : 2002,
+    "text" : "Vai da solo alla Torre della Magia, libera gli studenti ipnotizzati, poi perdi contro Halad o il Preside."
+  } , 
+  {
+    "index" : 2003,
+    "text" : "Rimuovi la maledizione del Professor Flu, vai alla Torre della Magia con lui, poi perdi contro Halad."
+  } , 
+  {
+    "index" : 2004,
+    "text" : "Richiesto: La tua allineamento è tra Neutrale e Buono. La tua saggezza è 10 o superiore. Vai alla Torre della Magia senza la Strega Indaco, leggi il diario di Halad, sconfiggila in battaglia, assorbi l'energia del testo proibito senza attaccare il Preside. Poi, prendi la questione dell'espiazione di Halad nelle tue mani."
+  } , 
+  {
+    "index" : 2005,
+    "text" : "Leggi il diario di Halad, sconfiggila in battaglia e assorbi l'energia del testo proibito senza attaccare il Preside."
+  } , 
+  {
+    "index" : 2006,
+    "text" : "Andate alla Torre della Magia con il Professor Roditore, liberate gli studenti ipnotizzati, poi sconfiggete Halad e il Preside in battaglia."
+  } , 
+  {
+    "index" : 2007,
+    "text" : "Andate alla Torre della Magia con il Professor Roditore, sconfiggete gli studenti ipnotizzati, Halad, e il Preside in battaglia. Poi, contattate il testo proibito o perdete contro di esso."
+  } , 
+  {
+    "index" : 2008,
+    "text" : "Rimuovi la maledizione del Professor Flu, vai alla Torre della Magia con lui, poi perdi contro Halad. Oppure, con il Professor Roditore, libera gli studenti ipnotizzati e sconfiggi Halad in battaglia. Poi, bandisci Halad."
+  } , 
+  {
+    "index" : 2009,
+    "text" : "Andate alla Torre della Magia con il Professor Roditore, usate un potente incantesimo sul testo proibito, sconfiggete il Cervello Malvagio in battaglia e bandite Halad."
+  } , 
+  {
+    "index" : 2010,
+    "text" : "Andate alla Torre della Magia con il Professor Roditore o la Strega Indaco, e sconfiggete Halad in battaglia."
+  } , 
+  {
+    "index" : 2011,
+    "text" : "Rimuovi la maledizione del Professor Flu, vai alla Torre della Magia con lui e sconfiggi Halad in battaglia. Poi, lascia il destino di Halad nelle mani del professore."
+  } , 
+  {
+    "index" : 2012,
+    "text" : "Rimuovi la maledizione del Professor Flu, vai alla Torre della Magia con lui e sconfiggi Halad in battaglia. Poi, perdonala."
+  } , 
+  {
+    "index" : 2013,
+    "text" : "Richiesto: La tua allineamento è Buono.\n Vai alla Torre della Magia con il Professore dei Roditori, sconfiggi il Cervello Malvagio e perdona Halad."
+  } , 
+  {
+    "index" : 2014,
+    "text" : "Senza diventare l'apprendista della Strega Indaco, vai alla Torre della Magia da solo, e svela il piano di Halad senza ulteriori prove. Poi, nella grotta, fatti sconfiggere o dai fanatici o dal Colosso di Carne."
+  } , 
+  {
+    "index" : 2015,
+    "text" : "Salva gli abitanti di Wagonmountain, ottieni gli Ordini di Halad, svela il suo piano con prove alla Torre della Magia e sconfiggi i fanatici e il Colosso di Carne nella grotta."
+  } , 
+  {
+    "index" : 2016,
+    "text" : "Richiesto: La tua allineamento è tra Neutrale e Malvagio. Senza diventare l'apprendista della Strega Indaco, vai alla Torre della Magia da solo e svela il piano di Halad senza ulteriori prove. Poi, combatti il Colosso di Carne e avvicinati a Halad e uccidila."
+  } , 
+  {
+    "index" : 2017,
+    "text" : "Salva gli abitanti di Wagonmountain, ottieni gli Ordini di Halad, svela il suo piano con prove alla Torre della Magia, e sconfiggi o passa di nascosto oltre i fanatici. Poi, entra nella stanza senza aiutare Edmond, e sconfiggi il Cervello Malvagio in battaglia."
+  } , 
+  {
+    "index" : 2018,
+    "text" : "Richiesto: La tua allineamento è tra Neutrale e Buono. La tua saggezza è 10 o superiore. Vai alla Torre della Magia da solo, sconfiggi Halad e il Preside in battaglia, sconfiggi il Cervello Malvagio e trova un modo alternativo per far scontare a Halad i suoi peccati."
+  } , 
+  {
+    "index" : 2019,
+    "text" : "Porta il Professor Roditore alla Torre della Magia e incontra gli studenti lavati il cervello."
+  } , 
+  {
+    "index" : 2020,
+    "text" : "Consegna il Professor Roditore alla Strega Indaco."
+  } , 
+  {
+    "index" : 1011,
+    "text" : "Richiesto: Hai un amante. Accetta di seguire i piani del Conte Jimradi e perdere contro il comandante elfico. Oppure, suggerisci un piano alternativo, perdi e scappa, chiedi al Conte Jimradi un'altra possibilità, attacca gli elfi e perdi la battaglia."
+  } , 
+  {
+    "index" : 1012,
+    "text" : "Richiesto: Hai un amante. Accetta di seguire il piano del Conte Jimradi, rifiuta il piano riguardante la Valle dei Venti Neri, sfida il comandante elfico a un duello e perdi. Poi, scegli l'onore. Oppure, non sfidarlo a duello e perdi combattendo da solo."
+  } , 
+  {
+    "index" : 1013,
+    "text" : "Richiesto: La tua allineamento è tra Neutrale e Malvagio. Non hai altri amanti. Hai un anello d'argento e non hai passato la notte con Cirah. Quando Irelle chiede il tuo aiuto, chiedi la sua mano in matrimonio e lui dice di sì."
+  } , 
+  {
+    "index" : 1014,
+    "text" : "Ignora il decreto di leva, poi perdi contro le guardie che cercano di arrestarti"
+  } , 
+  {
+    "index" : 3000,
+    "text" : "Collabora con Egakin, sconfiggi o imprigiona Vertino, e spiega all'Imperatore che hai dovuto far fuggire di nascosto la principessa. Poi, a metà dello spettacolo, non fare come ti è stato detto e muori."
+  } , 
+  {
+    "index" : 3001,
+    "text" : "Essere ucciso da Vertino al Riposo della Capra di Montagna, o spiegare all'Imperatore che il drago è stato sconfitto, perdere contro la guardia mentre cerchi di rompere la balista e morire. Oppure, sopravvivere alla battaglia contro Vertino, mostrare all'Imperatore la testa di drago falsa mal fabbricata, o fallire nel mostrargli nulla."
+  } , 
+  {
+    "index" : 3002,
+    "text" : "Collaborare con Egakin, sconfiggere o imprigionare Vertino. Poi, dare all'Imperatore la Benedizione di Menrva come tributo."
+  } , 
+  {
+    "index" : 3003,
+    "text" : "Collabora con Egakin, o sconfiggi o imprigiona Vertino. Poi, inganna in qualche modo l'imperatore."
+  } , 
+  {
+    "index" : 3004,
+    "text" : "Richiesto: Il tuo personaggio è maschile.\n Collabora con Egakin, sconfiggi o imprigiona Vertino, ottieni il riconoscimento ufficiale dell'Imperatore e rifiuta l'anello della principessa."
+  } , 
+  {
+    "index" : 3005,
+    "text" : "Tentativo di ingannare l'imperatore ma fallito."
+  } , 
+  {
+    "index" : 3006,
+    "text" : "Richiesto: Il tuo personaggio è maschio.\n Collabora con Egakin, sconfiggi o imprigiona Vertino, ottieni il riconoscimento ufficiale dell'Imperatore e accetta l'anello della principessa."
+  } , 
+  {
+    "index" : 3007,
+    "text" : "Richiesto: La tua allineamento è tra Neutrale e Buono.\n Aiuta il vecchio pastore, e scuoti l'esca mentre cerchi di salvare una vita a Mountain Goat's Rest."
+  } , 
+  {
+    "index" : 3008,
+    "text" : "Richiesto: Il tuo personaggio è una femmina. Collabora con Egakin, sconfiggi o imprigiona Vertino, ottieni il riconoscimento ufficiale dell'Imperatore e accetta la spilla della principessa."
+  } , 
+  {
+    "index" : 3009,
+    "text" : "Fallire nel imprigionare o sconfiggere Vertino, spiegare all'Imperatore che il drago è stato sconfitto, e dare la Benedizione di Menrva all'Imperatore come tributo."
+  } , 
+  {
+    "index" : 3010,
+    "text" : "Richiesto: Il tuo personaggio è maschio.\n Aspetta pazientemente davanti alla vecchia porta in cima alla Montagna Gar, sconfiggi il Drago d'Acciaio con le forze imperiali, richiedi la principessa all'Imperatore senza uccidere il drago, poi sconfiggi Vertino in battaglia."
+  } , 
+  {
+    "index" : 3011,
+    "text" : "Richiesto: Il tuo personaggio è maschio.\n Aspetta pazientemente davanti alla vecchia porta in cima alla Montagna Gar, sconfiggi il Drago di Acciaio con le forze imperiali, richiedi la principessa all'Imperatore senza uccidere il drago, poi perdi contro Vertino in battaglia."
+  } , 
+  {
+    "index" : 3012,
+    "text" : "Aspetta pazientemente davanti alla vecchia porta in cima alla Montagna Gar, sconfiggi il Drago di Acciaio con le forze imperiali, uccidi il drago e richiedi di poter stare vicino alla principessa."
+  } , 
+  {
+    "index" : 3013,
+    "text" : "Aspetta pazientemente davanti alla vecchia porta in cima a Mountain Gar, sconfiggi il Drago d'Acciaio con le forze imperiali, uccidi il drago e esigi di poter stare vicino alla principessa. Oppure, perdi contro il Drago d'Acciaio, prendi la principessa con la forza e Vertino la prende o per tua scelta o con la forza."
+  } , 
+  {
+    "index" : 3014,
+    "text" : "Aspetta pazientemente davanti alla vecchia porta in cima alla Montagna Gar, vicino al Drago di Acciaio con le forze imperiali, prendi la principessa con la forza, e Egakin la riporta indietro sia per tua scelta che con la forza. Oppure, perdi contro il Drago di Acciaio con le forze imperiali, aiuta Vertino e perdi di nuovo contro il Drago di Acciaio."
+  } , 
+  {
+    "index" : 3015,
+    "text" : "Perdere contro il Drago d'Acciaio con le forze imperiali, prendere la principessa con la forza, e sia Vertino che Egakin la riportano indietro sia per tua scelta che con la forza."
+  } , 
+  {
+    "index" : 3016,
+    "text" : "Sconfiggi il Drago d'Acciaio con le forze imperiali, uccidi il drago, e richiedi di poter stare vicino alla principessa o sposarla, poi sconfiggi Vertino in battaglia."
+  } , 
+  {
+    "index" : 3017,
+    "text" : "Sconfiggi il Drago d'Acciaio con le forze imperiali, esigi di poter rimanere vicino alla principessa senza uccidere il drago."
+  } , 
+  {
+    "index" : 3018,
+    "text" : "Fuggi con la principessa con la forza, poi liberarla."
+  } , 
+  {
+    "index" : 4000,
+    "text" : "A Moneaskur, non attaccare Anton e morire al Cavaliere della Morte. Oppure, attacca Anton e combatti il Signore di Moneaskur."
+  } , 
+  {
+    "index" : 4001,
+    "text" : "A Moneaskur, attacca Anton e muori per lui. Oppure, non unirti ai mercenari, poi perdi contro Anton a Romb."
+  } , 
+  {
+    "index" : 4002,
+    "text" : "Unisciti ai Mercenari di Ziwa e combatti contro il Signore di Moneaskur. Oppure, combatti contro Anton e distruggilo una volta per tutte."
+  } , 
+  {
+    "index" : 4003,
+    "text" : "Richiesto: il tuo lancio di incantesimi è 3 o superiore. Rifiuta l'offerta del Signore dei Vampiri e vinci la battaglia. Poi, decidi di conservare e proteggere il cubo personalmente."
+  } , 
+  {
+    "index" : 4004,
+    "text" : "Richiesto: Non hai un amante. Accetta l'offerta del Signore dei Vampiri di farti diventare il suo sottoposto, o rifiuta l'offerta e perdere contro di lui."
+  } , 
+  {
+    "index" : 4005,
+    "text" : "Rifiuta l'offerta del Signore dei Vampiri e sconfiggilo in battaglia. Poi, consegna il cubo alle suore."
+  } , 
+  {
+    "index" : 4006,
+    "text" : "Collabora con Anton, sconfiggi il Signore dei Vampiri e consegna il cubo ad Anton."
+  } , 
+  {
+    "index" : 4007,
+    "text" : "Collabora con Anton, sconfiggi il Signore dei Vampiri, poi sconfiggi Anton in battaglia."
+  } , 
+  {
+    "index" : 4008,
+    "text" : "Collabora con Anton, sconfiggi il Signore dei Vampiri, poi perdi contro Anton."
+  } , 
+  {
+    "index" : 4009,
+    "text" : "Non unirti ai Mercenari di Ziwa, poi a Romb, libera Fiana e scappa via."
+  } , 
+  {
+    "index" : 4010,
+    "text" : "Richiesto: Non hai un amante. Unisciti ai Mercenari di Ziwa, collabora con Anton e perdi contro il Signore dei Vampiri."
+  } , 
+  {
+    "index" : 4011,
+    "text" : "Collabora con i Mercenari di Ziwa e prendi il controllo del Colosseo a Roma."
+  } , 
+  {
+    "index" : 4012,
+    "text" : "Richiesto: Non stai portando armi d'argento. Unisciti ai Mercenari di Ziwa, emancipa gli ostaggi a Romb, poi sconfiggi Anton in battaglia. Poi, nella Foresta Nera, fatti uccidere da una trappola o da Anton."
+  } , 
+  {
+    "index" : 4013,
+    "text" : "Richiesto: Non stai portando armi d'argento.\n Unisciti ai Mercenari di Ziwa, poi fallisci nel uccidere né Anton né il Signore dei Vampiri."
+  } , 
+  {
+    "index" : 4014,
+    "text" : "Unisciti ai Mercenari di Ziwa, poi vieni ucciso o dal Cavaliere della Morte o dal Signore dei Vampiri."
+  } , 
+  {
+    "index" : 4015,
+    "text" : "Collabora con i Mercenari di Ziwa e cattura Anton al Colosseo di Romb. Poi, attacca il Signore di Moneaskur."
+  } , 
+  {
+    "index" : 4016,
+    "text" : "A Romb, fatti sorprendere mentre stai scappando con Fiana, poi perdi contro i vampiri."
+  } , 
+  {
+    "index" : 4017,
+    "text" : "Non unirti ai Mercenari di Ziwa, perdere contro Anton, uccidere Fiana, rompere la gabbia e poi sconfiggere Anton."
+  } , 
+  {
+    "index" : 4018,
+    "text" : "Non unirti ai Mercenari di Ziwa e sconfiggi Anton in battaglia. Poi, quando Anton viene a casa tua, uccidilo e decidi di trovare altri modi per sistemare Fiana."
+  } , 
+  {
+    "index" : 4019,
+    "text" : "Richiesto: Non hai un amante. Unisciti ai Mercenari di Ziwa, emancipa gli ostaggi a Romb, perdi contro Anton o i suoi vampiri sottoposti, poi rifiuta l'offerta di Anton."
+  } , 
+  {
+    "index" : 4020,
+    "text" : "Dirigiti a Romb con i Mercenari di Ziwa, emancipa gli ostaggi a Romb, poi sconfiggi Anton nella Foresta Nera."
+  } , 
+  {
+    "index" : 4021,
+    "text" : "Non unirti ai Mercenari di Ziwa, perdi contro Anton o i vampiri a Romb, poi perdi contro Fiana dopo che diventa un vampiro spawn."
+  } , 
+  {
+    "index" : 5000,
+    "text" : "Rifiuta l'offerta di potere di Kior, dopo aver soddisfatto la tua vendetta."
+  } , 
+  {
+    "index" : 5001,
+    "text" : "Taglia i tuoi legami con Kior, poi perdi contro Kior o i suoi sottoposti."
+  } , 
+  {
+    "index" : 5002,
+    "text" : "Collabora con Viyork, uccidi Onil e Danica, poi fatti catturare dai paladini teretiani."
+  } , 
+  {
+    "index" : 5003,
+    "text" : "Cattura Danica, mettile una maledizione, poi fallisci mentre cerchi di attaccare Publio alla Grande Cattedrale."
+  } , 
+  {
+    "index" : 5004,
+    "text" : "Eliminate i paladini teretiani."
+  } , 
+  {
+    "index" : 5005,
+    "text" : "Accetta l'offerta di Kior, o sarai costretto a prendere i suoi poteri."
+  } , 
+  {
+    "index" : 5006,
+    "text" : "Accetta l'offerta di cooperazione di Publio, poi sconfiggi Kior in battaglia."
+  } , 
+  {
+    "index" : 5007,
+    "text" : "Viaggia negli Inferi con Valen, sconfiggi Kior lì, torna al Piano Materiale e uccidi Publio."
+  } , 
+  {
+    "index" : 5008,
+    "text" : "Andate alla Grande Cattedrale e uccidete sia Publio che Valen."
+  } , 
+  {
+    "index" : 5009,
+    "text" : "Taglia i tuoi legami con Kior. Poi, ad Arhena, viaggia negli Inferi con Valen, ma non riuscire a raggiungere Kior."
+  } , 
+  {
+    "index" : 5010,
+    "text" : "Collabora con i paladini teretiani, perdi contro Kior e torna al Piano Materiale, poi prendi la colpa da Viyork."
+  } , 
+  {
+    "index" : 5011,
+    "text" : "Sconfiggi Valen, Onil e la legione dei paladini, poi vieni bandito nella fessura dimensionale dallo spell di Esilio di Publio."
+  } , 
+  {
+    "index" : 5012,
+    "text" : "Arrenditi a Viyork, poi prometti di espiare i tuoi peccati alla Grande Cattedrale."
+  } , 
+  {
+    "index" : 5013,
+    "text" : "Fallisci nel compiere la tua vendetta e muori."
+  } , 
+  {
+    "index" : 5014,
+    "text" : "Cattura Danica, strappale il corpo e uccidi Publio."
+  } , 
+  {
+    "index" : 5015,
+    "text" : "Rapire il corpo di Danica, fallire nell'aggirare Publio, poi morire."
+  } , 
+  {
+    "index" : 5016,
+    "text" : "Saccheggia la Grande Cattedrale con i cultisti del demonio e uccidi Publio."
+  } , 
+  {
+    "index" : 5017,
+    "text" : "Collaborare con Viyork, uccidere Onil e Danica, poi perdere contro Publio o Valen alla Grande Cattedrale."
+  } , 
+  {
+    "index" : 5018,
+    "text" : "Uccidi Danica, poi uccidi anche Viyork e Onil quando attaccano il nascondiglio. Poi, a Brownville, sconfiggi la legione dei paladini e Valen, ma non riuscire a fermare Publius dalla fuga."
+  } , 
+  {
+    "index" : 5019,
+    "text" : "Taglia i tuoi legami con Kior. Poi, viaggia negli Inferi con Valen, poi muori combattendo contro i demoni."
+  } , 
+  {
+    "index" : 5020,
+    "text" : "Richiesto: la tua Saggezza è 15 o superiore. Interrompi i tuoi legami con Kior, sconfiggi Gess, poi accetta l'offerta di cooperazione di Publio. Affronta Danica, rivela la sua vera identità, poi sconfiggi Kior in battaglia."
+  } , 
+  {
+    "index" : 5021,
+    "text" : "Interrompi i tuoi legami con Kior, poi accetta l'offerta di cooperazione di Publio. Poi, mentre combatti contro Kior, Publio viene ucciso in battaglia."
+  } , 
+  {
+    "index" : 5022,
+    "text" : "Accetta l'offerta di cooperare di Viyork, sconfiggi Publio, poi o vieni sorpreso da Viyork o muori per mano sua."
+  } , 
+  {
+    "index" : 5023,
+    "text" : "Essere scoperti mentre si cerca di usare Viyork come esca. Poi, sull'Altopiano di Etere, essere traditi da Viyork mentre si sta cercando Publio, e poi morire."
+  } , 
+  {
+    "index" : 5024,
+    "text" : "A Hawa, fuggi dalla legione dei paladini, sconfiggi Viyork senza offrire tributo, accetta la sua offerta, attira Onil e inizia una lotta con lui, nella quale sia tu che Onil morite."
+  } , 
+  {
+    "index" : 5025,
+    "text" : "A Hawa, fuggi dalla legione dei paladini, sconfiggi Viyork senza offrire tributo, accetta la sua offerta, poi perdi contro Onil."
+  } , 
+  {
+    "index" : 5026,
+    "text" : "Offri un tributo in diretta, diventa più potente, sconfiggi Valen e fallo diventare il tuo burattino. Poi, non resistere all'esilio di Publio."
+  } , 
+  {
+    "index" : 5027,
+    "text" : "Mentre Valen è vivo, strappa il corpo di Danica e uccidi Publio."
+  } , 
+  {
+    "index" : 5028,
+    "text" : "Taglia i tuoi legami con Kior. Poi, ad Arhena, viaggia negli Inferi con Valen, ma perdi contro i sottoposti di Kior o Kior."
+  } , 
+  {
+    "index" : 5029,
+    "text" : "Taglia i tuoi legami con Kior. Poi, ad Arhena, viaggia negli Inferi con Valen, sconfiggi Kior, poi rimani negli Inferi o torna al Piano Materiale e rinuncia alla tua vendetta."
+  } , 
+  {
+    "index" : 5030,
+    "text" : "Mentre collabori con Viyork, i tuoi piani vengono rovinati e Viyork viene catturato."
+  } , 
+  {
+    "index" : 5031,
+    "text" : "Rapire Danica, strappare il suo corpo, poi tendere un'imboscata e uccidere Publio."
+  } , 
+  {
+    "index" : 5032,
+    "text" : "Mentre Danica è controllata da Kior, sconfiggi Kior."
+  } , 
+  {
+    "index" : 5033,
+    "text" : "Taglia i tuoi legami con Kior. Poi, collabora con Danica mentre è controllata da Kior, poi attira con successo i paladini teretiani negli Inferi."
+  } , 
+  {
+    "index" : 5034,
+    "text" : "A Hawa, fuggi dalla legione dei paladini, sconfiggi Viyork senza offrire tributo, accetta la sua offerta, attira Onil e inizia una lotta con lui, nella quale sia tu che Onil morite."
+  } , 
+  {
+    "index" : 5035,
+    "text" : "A Alonso, collabora con Viyork, poi attira e uccidi Onil e Publio. Poi, uccidi anche Viyork."
+  } , 
+  {
+    "index" : 5036,
+    "text" : "Viaggia negli Inferi con i paladini teretiani e sconfiggi Kior."
+  } , 
+  {
+    "index" : 5037,
+    "text" : "Dopo aver sconfitto Kior, tutti i paladini tranne Publio sopravvivono."
+  } , 
+  {
+    "index" : 5038,
+    "text" : "Accetta l'offerta di cooperazione di Viyork, sconfiggi Valen, poi fallisci nel rintracciare Publius all'Aether Plateau."
+  } , 
+  {
+    "index" : 5039,
+    "text" : "Vai negli Inferi e sconfiggi Kior da solo."
+  } , 
+  {
+    "index" : 5040,
+    "text" : "Interrompi i tuoi legami con Kior, sconfiggi Gess, rifiuta l'offerta di cooperazione di Publio e collabora nuovamente con Kior. Successivamente, porta a termine con successo i piani di Danica, poi perdi contro Publio o i suoi uomini."
+  } , 
+  {
+    "index" : 5041,
+    "text" : "Rapisci il corpo di Danica, tendi un'imboscata a Publio ma fallisci, poi o liberati dalle Catene di Luce o lancia con successo Dispel."
+  } , 
+  {
+    "index" : 5042,
+    "text" : "Interrompi i tuoi legami con Kior, sconfiggi Gess, poi accetta l'offerta di Publio di cooperare. Vai negli Inferi, sconfiggi Kior, poi non tornare al Piano Materiale."
+  } , 
+  {
+    "index" : 5043,
+    "text" : "A Arhena, viaggia negli Inferi con Valen. Lì, non riesci a far tornare Valen dai fantasmi. Poi, sconfiggi Kior, torna al Piano Materiale, e rinuncia alla tua vendetta."
+  } , 
+  {
+    "index" : 2021,
+    "text" : "Richiesto: Hai un amante. Vai alla Torre della Magia da solo, poi perdi contro gli studenti ipnotizzati, il Golem di Ghiaccio o il Preside."
+  } , 
+  {
+    "index" : 4022,
+    "text" : "Richiesto: Hai un amante. Unisciti ai Mercenari di Ziwa e accetta l'offerta di Anton. Poi, a Moneaskur, non attaccare Anton, sconfiggi il Cavaliere della Morte in battaglia, poi accetta o rifiuta l'offerta del Signore dei Vampiri e poi perdi contro il Signore dei Vampiri."
+  } , 
+  {
+    "index" : 6000,
+    "text" : "Gli mangiaanime mettono le mani sia sul Disco della Luna che sulla Lente dell'Ettere. Poi, o lasciali viaggiare in sicurezza verso il Piano Astrale, o inseguili ma perdere contro di loro."
+  } , 
+  {
+    "index" : 6001,
+    "text" : "Nella giungla di Andaria, perditi dalla mangiaanime Regina."
+  } , 
+  {
+    "index" : 6002,
+    "text" : "Essere controllato mentalmente dalla mangiaanime Regina, attaccare e sconfiggere Rosilpha, poi essere modificato dalla Regina."
+  } , 
+  {
+    "index" : 6003,
+    "text" : "Segui i piani di Naverr e distruggi il portale dimensionale."
+  } , 
+  {
+    "index" : 6004,
+    "text" : "Collaborare con la Regina dei mangiaanime."
+  } , 
+  {
+    "index" : 6005,
+    "text" : "Aiuta il Serpente Divino a proteggere la Giungla di Andaria, poi rifiuta la sua offerta di diventare il suo campione."
+  } , 
+  {
+    "index" : 6006,
+    "text" : "Combatti e emergi vittorioso contro i mangiaanime, sopravvivi con Naverr, poi rifiuta l'offerta del Serpente Divino di diventare il suo campione."
+  } , 
+  {
+    "index" : 6007,
+    "text" : "Aiuta il Serpente Divino a proteggere la Giungla di Andaria, poi accetta la sua offerta di diventare il suo campione."
+  } , 
+  {
+    "index" : 6008,
+    "text" : "Prendi sia il Disco della Luna che la Lente dell'Ettere nella Giungla di Andaria, poi sconfiggi l'invasione dei mangiaanime."
+  } , 
+  {
+    "index" : 6009,
+    "text" : "Perdere contro la mangiaanime Regina mentre la si combatte con Rosilpha."
+  } , 
+  {
+    "index" : 6010,
+    "text" : "Non uccidere Naverr dopo che si trasforma in un mangiaanime, lascia che Rosilpha lo metta fuori combattimento, poi sconfiggi la mangiaanime Regina."
+  } , 
+  {
+    "index" : 6011,
+    "text" : "Mentre la regina sta cercando di passare attraverso la fessura dimensionale, salta nella fessura con lei."
+  } , 
+  {
+    "index" : 6012,
+    "text" : "Sconfiggi la mangiaanime Regina dopo che Naverr è stato ucciso."
+  } , 
+  {
+    "index" : 6013,
+    "text" : "Sigilla con successo gli artefatti nella Cripta Sotterranea dell'università, poi vieni ucciso dalla mangiaanime Regina."
+  } , 
+  {
+    "index" : 6014,
+    "text" : "Sigilla con successo gli artefatti nella Cripta Sotterranea dell'università, poi sconfiggi la mangiaanime Regina."
+  } , 
+  {
+    "index" : 6015,
+    "text" : "Combatti e perdi contro la mangiaanime Regina senza aver trovato il Disco della Luna."
+  } , 
+  {
+    "index" : 6016,
+    "text" : "Sigilla con successo gli artefatti nella Cripta Sotterranea dell'università, poi respingi la mangiaanime Regina."
+  } , 
+  {
+    "index" : 6017,
+    "text" : "Dopo il bombardamento al Floating Duckweed, sconfiggi la mangiaanime Regina mentre Naverr è viva."
+  } , 
+  {
+    "index" : 6018,
+    "text" : "Nella città in rovina di Sinias, segui Naverr invece di soccorrere le persone."
+  } , 
+  {
+    "index" : 6019,
+    "text" : "Vai all'università con Rosilpha per sigillare gli artefatti, poi vai alla volta e sigilla gli artefatti tu stesso."
+  } , 
+  {
+    "index" : 6020,
+    "text" : "Non riuscire a ottenere il Disco della Luna, dirigiti all'università, quindi sigilla via la Lente dell'Ettere."
+  } , 
+  {
+    "index" : 6021,
+    "text" : "Non riesco a salvare Naverr."
+  } , 
+  {
+    "index" : 6022,
+    "text" : "Nella giungla di Andaria, collabora con il Serpente Divino, sconfiggi la mangiaanime Regina e accetta l'offerta del Serpente Divino."
+  } , 
+  {
+    "index" : 6023,
+    "text" : "Fuggi dalla lotta contro la mangiaanime Regina nella Giungla di Andaria."
+  } , 
+  {
+    "index" : 6024,
+    "text" : "Dopo il bombardamento al Floating Duckweed, perdere contro la mangiaanime Regina."
+  } , 
+  {
+    "index" : 6025,
+    "text" : "Andare all'università per sigillare gli artefatti, poi perdere contro la legione mangiaanime."
+  } , 
+  {
+    "index" : 7000,
+    "text" : "Infiltrate il castello di Greymoor, aiutate Katrin a sconfiggere Kalman e poi venite traditi da Katrin e uccisi."
+  } , 
+  {
+    "index" : 7001,
+    "text" : "Non cooperano con Kalman e vengono uccisi da lui quando interviene durante la guerra contro Greymoor."
+  } , 
+  {
+    "index" : 7002,
+    "text" : "Perdi la guerra contro Greymoor e arrenditi."
+  } , 
+  {
+    "index" : 7003,
+    "text" : "Vai nella capitale reale per il processo, dopo il quale Katrin viene sconfitta nel duello giudiziario."
+  } , 
+  {
+    "index" : 7004,
+    "text" : "Vai nella capitale reale per il processo, poi perdi il processo per duello. Oppure provochi un disturbo durante il processo e vieni arrestato."
+  } , 
+  {
+    "index" : 7005,
+    "text" : "Risolvete il problema dei non-morti, il problema degli orchi e il problema di Greymoor, e inoltre sconfiggete Kalman."
+  } , 
+  {
+    "index" : 7006,
+    "text" : "Guerra contro Greymoor senza cooperare con Kalman. Katrin fugge, e dopo Kalman la uccide."
+  } , 
+  {
+    "index" : 7007,
+    "text" : "Katrin muore durante la guerra contro Greymoor."
+  } , 
+  {
+    "index" : 7008,
+    "text" : "Risolvi il problema degli orchi e quello dei non-morti, e sconfiggi Kalman. Dopo aver vinto la guerra contro Greymoor, dimostra che è stata lei a istigare gli orchi, quindi arrestala e consegnala al re."
+  } , 
+  {
+    "index" : 7009,
+    "text" : "Vinci la guerra contro Greymoor e manda Katrin al monastero."
+  } , 
+  {
+    "index" : 7010,
+    "text" : "Condizione: Allineamento neutrale o inferiore Vinci la guerra contro Greymoor e uccidi segretamente Katrin."
+  } , 
+  {
+    "index" : 7011,
+    "text" : "Perdi la guerra contro la nobile alleanza e firma un trattato di resa."
+  } , 
+  {
+    "index" : 7012,
+    "text" : "Sconfiggi l'esercito della nobile alleanza e accetta le negoziazioni di pace che propongono."
+  } , 
+  {
+    "index" : 7013,
+    "text" : "Fallisci mentre ti infiltri nel Castello di Greymoor insieme a Kalman."
+  } , 
+  {
+    "index" : 7014,
+    "text" : "Dopo aver vinto la guerra contro Greymoor, decapita personalmente Katrin."
+  } , 
+  {
+    "index" : 7015,
+    "text" : "Vieni catturato mentre ti infiltravi nel Castello di Greymoor, poi dai la scusa che Kalman ti ha ingannato, paghi un riscatto a Katrin e vieni rilasciato."
+  } , 
+  {
+    "index" : 7016,
+    "text" : "Muori in un duello contro il capo degli orchi."
+  } , 
+  {
+    "index" : 7017,
+    "text" : "Vengono uccisi da un assassino prima del processo contro Katrin."
+  } , 
+  {
+    "index" : 7018,
+    "text" : "Vengono scoperti e uccisi dopo essersi infiltrati in Greymoor con Kalman."
+  } , 
+  {
+    "index" : 7019,
+    "text" : "Non sono riusciti a purificare i non morti. Scoppia la guerra con la coalizione nobiliare: dopo che le mura esterne vengono violate e una feroce battaglia, riescono a malapena a vincere."
+  } , 
+  {
+    "index" : 7020,
+    "text" : "Non purificare i non morti. Kalman viene eliminato e vinci la guerra contro l'esercito dell'alleanza nobile senza giustiziare i prigionieri."
+  } , 
+  {
+    "index" : 7021,
+    "text" : "Richiesto: non hai un amante, il tuo personaggio è maschio. La famiglia Greymoor e la famiglia Briovich diventano una sola."
+  } , 
+  {
+    "index" : 7022,
+    "text" : "Dopo aver collaborato con Kalman per aiutarlo a reclamare il corpo di Katrin, vieni sconfitto mentre ritorni a Briovich."
+  } , 
+  {
+    "index" : 7023,
+    "text" : "Infiltrate il Castello di Greymoor insieme a Kalman e uccidete Katrin."
+  } , 
+  {
+    "index" : 7024,
+    "text" : "Dopo aver collaborato con Kalman per aiutarlo a reclamare il corpo di Katrin, vieni sconfitto mentre ritorni a Briovich."
+  } , 
+  {
+    "index" : 7025,
+    "text" : "Collabora con Kalman per infiltrarti nel Castello di Greymoor, poi schierati con Katrin e uccidi Kalman. Successivamente, pretendi un compenso da Katrin quando lei cercherà di assassinare il protagonista."
+  } , 
+  {
+    "index" : 7026,
+    "text" : "Dopo aver giustiziato i prigionieri nella guerra contro la nobile alleanza, vieni sconfitto e ucciso."
+  } , 
+  {
+    "index" : 7027,
+    "text" : "Aiuta Katrin a riconquistare il suo corpo e a stabilire una stretta cooperazione con il dominio di Greymoor."
+  } , 
+  {
+    "index" : 7028,
+    "text" : "Collabora con Kalman per infiltrare il Castello di Greymoor, poi schierati con Katrin e sconfiggi Kalman. Successivamente, uccidi Katrin quando cerca di assassinare il protagonista."
+  } , 
+  {
+    "index" : 7029,
+    "text" : "Collaborare con Kalman per infiltrarsi nel Castello di Greymoor, poi tradire Kalman ed essere uccisi da lui."
+  }
+ ]
+}

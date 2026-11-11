@@ -1,0 +1,25 @@
+{
+  "m_Name": "Test_CompassTester",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 254,
+    "bytes[1]": 74,
+    "bytes[2]": 13,
+    "bytes[3]": 124,
+    "bytes[4]": 83,
+    "bytes[5]": 151,
+    "bytes[6]": 81,
+    "bytes[7]": 150,
+    "bytes[8]": 95,
+    "bytes[9]": 184,
+    "bytes[10]": 101,
+    "bytes[11]": 214,
+    "bytes[12]": 126,
+    "bytes[13]": 197,
+    "bytes[14]": 146,
+    "bytes[15]": 124
+  },
+  "m_ClassName": "Test_CompassTester",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

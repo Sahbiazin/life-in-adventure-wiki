@@ -1,0 +1,664 @@
+{
+ "list" : [
+  {
+    "index" : 0,
+    "text" : "Selamatkan Majet, lakukan quest Wanita Laba-Laba bersama-sama, biarkan Johnny dan Wanita Laba-Laba saling mencintai, kemudian yakinkan Anna untuk move on dari Johnny."
+  } , 
+  {
+    "index" : 1,
+    "text" : "Selamatkan Majet, jalani misi Wanita Laba-laba bersama, hormati keputusan Johnny atau kalah oleh Aranea setelah mencoba membawa dia pergi dengan paksa."
+  } , 
+  {
+    "index" : 2,
+    "text" : "Selamatkan Majet, jalani misi Wanita Laba-laba bersama, dan bunuh Spider Aranea."
+  } , 
+  {
+    "index" : 3,
+    "text" : "Selamatkan Majet, jalani misi Wanita Laba-laba bersama, dan kalahkan Aranea dalam pertarungan. Kemudian, kalah oleh Spider Aranea, dan bawa Johnny bersamamu."
+  } , 
+  {
+    "index" : 4,
+    "text" : "Selamatkan Majet, jalani misi Wanita Laba-laba bersama, dan kalahkan Aranea dalam pertempuran. Kemudian, kalah dari Laba-laba Aranea, dan tinggalkan Johnny di hutan."
+  } , 
+  {
+    "index" : 1000,
+    "text" : "Syarat: Kecerdasan Anda 9 atau lebih tinggi.\n Tanyakan kepada para wraith apa yang mengganggu mereka, jangan memberi tahu mereka bahwa perang telah berakhir, lalu kalahkan Legion Wraith dalam pertempuran. Atau temukan kalung Harda untuknya."
+  } , 
+  {
+    "index" : 1001,
+    "text" : "Berhasil mengancam Harda. Atau, bunuh Harda atau tolak mencari kalungnya untuknya, lalu temui agen properti dan bujuk dia atau bayar biayanya sendiri."
+  } , 
+  {
+    "index" : 1002,
+    "text" : "Temui agen properti, lalu bujuk dia atau bayar biayanya sendiri."
+  } , 
+  {
+    "index" : 1003,
+    "text" : "Entah gagal dalam kedua hal—meyakinkan agen real estate dan mengancam Harda—atau gagal dalam misi tanpa mencari kalung Harda."
+  } , 
+  {
+    "index" : 1004,
+    "text" : "Kalahkan pengawal agen properti dalam pertempuran."
+  } , 
+  {
+    "index" : 1005,
+    "text" : "Syarat: Kecerdasan Anda 9 atau lebih tinggi.\n Setelah menanyakan kepada Martin tentang mansion, tanyakan kepada para wraith apa yang mengganggu mereka, katakan bahwa perang telah berakhir, lalu kalahkan Death Knight dalam pertarungan."
+  } , 
+  {
+    "index" : 5,
+    "text" : "Syarat: Kamu tidak memiliki kekasih.\n Selesaikan misi Spider Lady bersama Majet, lalu jadilah kekasihnya. Kemudian, entah selamatkan Majet dari penculiknya atau menangkan pertandingan memancing melawannya, lalu minta sesuatu selain pernikahan."
+  } , 
+  {
+    "index" : 6,
+    "text" : "Syarat: Anda tidak punya kekasih.\n Selesaikan misi Lady Laba-laba bersama Majet, lalu jadilah kekasihnya. Kemudian, entah selamatkan Majet dari penculiknya atau menangkan pertandingan memancing melawannya, lalu ditolak oleh Majet. Atau, cukup menolak untuk ikut pertandingan memancing."
+  } , 
+  {
+    "index" : 2000,
+    "text" : "Di Makam Hampa nan Kelam, tinggalkan Volga, kemudian korbankan Enard di pintu menuju ruang makam."
+  } , 
+  {
+    "index" : 2001,
+    "text" : "Di Makam Hampa nan Kelam, tinggalkan Volga, kemudian korbankan Nisil di pintu menuju ruang makam."
+  } , 
+  {
+    "index" : 2002,
+    "text" : "Di Makam Hampa nan Kelam, tinggalkan Volga, kemudian masuk ke ruang makam sendirian dan kabur dengan seluruh harta karun di sana."
+  } , 
+  {
+    "index" : 2003,
+    "text" : "Di Makam Hampa nan Kelam, selamatkan Volga, kemudian bagikan harta karun di makam sama rata. Kemudian, terima tawaran Volga, dan kalahkan Naga Putih."
+  } , 
+  {
+    "index" : 2004,
+    "text" : "Syarat: Kebijaksanaan Anda 10 atau lebih.\n Di Makam Duka Berabu, bagi harta karun secara merata. Kemudian yakinkan Raksasa Es, lalu kalahkan Naga Putih dalam pertempuran."
+  } , 
+  {
+    "index" : 2005,
+    "text" : "Di Makam Duka Abu-abu, tinggalkan Volga, lalu bagi harta dengan Enard. Kemudian, serbu kafilah Cecil, khianati Enard, kalah darinya, lalu kalahkan para penjaga kafilah dalam pertempuran."
+  } , 
+  {
+    "index" : 2006,
+    "text" : "Di Makam Ashen Grief, tinggalkan Volga, lalu bagi harta dengan Enard. Kemudian, serbu kafilah Cecil, khianati Enard, lalu kalahkan dia."
+  } , 
+  {
+    "index" : 2007,
+    "text" : "Di Makam Duka Berabu, tinggalkan Volga, lalu bagi harta karun dengan Enard. Kemudian, serang kafilah Cecil, kalah dari Enard dan para penjaga kafilah. Lalu, kalahkan sang pembunuh dan maafkan Enard."
+  } , 
+  {
+    "index" : 2008,
+    "text" : "Di Makam Ratap Abu, tinggalkan Volga, lalu bagi harta bersama Enard. Setelah itu, entah tolak merampok kafilah Cecil, atau kalah dalam pertempuran saat perampokan."
+  } , 
+  {
+    "index" : 2009,
+    "text" : "Temukan Makam Ashen Grief sendiri, dan dapatkan harta karunnya."
+  } , 
+  {
+    "index" : 2010,
+    "text" : "Di Makam Duka Berabu, bagi harta-harta itu sama rata. Lalu, tolak tawaran Volga untuk berburu Naga Putih bersamanya."
+  } , 
+  {
+    "index" : 2011,
+    "text" : "Di Makam Duka Kelabu, bagi harta secara merata. Lalu, terima tawaran Volga untuk memburu Naga Putih bersamanya, kemudian kalah dari Raksasa Es."
+  } , 
+  {
+    "index" : 2012,
+    "text" : "Di Makam Duka Berabu, tinggalkan Volga, kalahkan kawanan kelelawar vampir, dan bagi harta secara merata. Lalu, berhasil menyerbu kafilah Cecil."
+  } , 
+  {
+    "index" : 2013,
+    "text" : "Bergabunglah dengan para pengembara dalam petualangan mereka di Makam Duka Abu, selamatkan Volga, kalahkan kawanan kelelawar vampir, dan bagi harta itu secara adil. Kemudian, berjanji kepada Volga untuk membantunya dalam perburuan Naga Putih, lalu kalah dari Naga Putih."
+  } , 
+  {
+    "index" : 7,
+    "text" : "Syarat: Anda tidak memiliki kekasih.\n Selesaikan misi Spider Lady bersama Majet, lalu menjadi kekasihnya. Kemudian, entah selamatkan Majet dari penculiknya atau menangkan pertandingan memancing melawan dia, lalu lamar Majet."
+  } , 
+  {
+    "index" : 3001,
+    "text" : "Gagal menyelamatkan bayi dari desa yang terbakar, dan jangan menyarankan Galgano untuk berdoa."
+  } , 
+  {
+    "index" : 3002,
+    "text" : "Gagal menyelamatkan bayi dari desa yang terbakar. Lalu sarankan kepada Galgano agar ia berdoa, kemudian buat lubang di langit-langit katedral. Kemudian keluarkan pedang Galgano dari tanah."
+  } , 
+  {
+    "index" : 3003,
+    "text" : "Gagal menyelamatkan bayi dari desa yang terbakar. Lalu, sarankan kepada Galgano agar ia berdoa, lalu buat lubang di langit-langit katedral. Lalu, gagal menarik pedang Galgano dari tanah."
+  } , 
+  {
+    "index" : 3004,
+    "text" : "Kalahkan para templar di desa yang terbakar. Lalu, jangan selamatkan wanita tua di Arhen."
+  } , 
+  {
+    "index" : 3005,
+    "text" : "Kalahkan para Templar di desa yang terbakar. Setelah itu, selamatkan wanita tua di Arhen."
+  } , 
+  {
+    "index" : 3006,
+    "text" : "Kalahkan para Templar di desa yang terbakar. Lalu, di Arhen, jangan panggil penduduk desa ke gereja, lalu berhasil meyakinkan mereka untuk membiarkan wanita tua itu hidup."
+  } , 
+  {
+    "index" : 3007,
+    "text" : "Syarat: Kecerdasan Anda 9 atau lebih.\n Yakinkan Galgano di desa yang terbakar. Kemudian, di Panti Asuhan Delua, biarkan anak itu bersenang-senang atau ajari dia cara bertarung."
+  } , 
+  {
+    "index" : 3008,
+    "text" : "Syarat: Kecerdasanmu 9 atau lebih tinggi.\n Yakinkan Galgano di desa yang terbakar. Kemudian, di Panti Asuhan Delua, beri tahu anak itu kebenarannya, lalu katakan kepada Galgano bahwa kamu juga sudah memberitahunya."
+  } , 
+  {
+    "index" : 4000,
+    "text" : "Selamatkan para pengungsi dari kawanan Serigala Musim Dingin, dan tolak mengambil Bunga Es. Kemudian, bantu para pengungsi sekali lagi, membantu mereka mengalahkan Serigala Musim Dingin dan para mayat hidup."
+  } , 
+  {
+    "index" : 4001,
+    "text" : "Selamatkan para pengungsi dari kawanan Serigala Musim Dingin, dan tolak untuk mengambil Bunga Embun Beku. Kemudian, bantu para pengungsi sekali lagi, tetapi gagal mengalahkan Serigala Musim Dingin dan makhluk mayat hidup."
+  } , 
+  {
+    "index" : 4002,
+    "text" : "Selamatkan para pengungsi dari kawanan Serigala Musim Dingin, dan ambil Frost Bloom. Kemudian, kalahkan para pengungsi yang menjadi mayat hidup dan Frost Queen, lalu hancurkan permata merah itu."
+  } , 
+  {
+    "index" : 4003,
+    "text" : "Selamatkan para pengungsi dari kawanan Serigala Musim Dingin, dan ambil Bunga Beku. Kemudian, entah kalah dari Ratu Es, atau kalahkan dia lalu buang permata merah itu."
+  } , 
+  {
+    "index" : 4004,
+    "text" : "Syarat: Intelijen Anda 11 atau lebih. Kemampuan sihir Anda 1 atau lebih.\n Selamatkan para pengungsi dari kawanan Serigala Musim Dingin, dan ambil Bunga Beku. Kemudian, kalahkan Ratu Es, segel dia dalam boneka beruang, lalu berikan kepada Delin."
+  } , 
+  {
+    "index" : 4005,
+    "text" : "Selamatkan para pengungsi dari kawanan Serigala Musim Dingin, dan ambil Bunga Es. Kemudian, serahkan Bunga Es kepada Ratu Es."
+  } , 
+  {
+    "index" : 4006,
+    "text" : "Syarat: Kecerdasanmu 11 atau lebih. Keahlian sihirmu 1 atau lebih.\n Selamatkan para pengungsi dari kawanan Serigala Musim Dingin, dan ambil Bunga Beku. Lalu, kalahkan Ratu Beku, segel dia di dalam boneka beruang, lalu jangan memberikannya kepada Delin."
+  } , 
+  {
+    "index" : 4007,
+    "text" : "Syarat: Intelijensimu minimal 11. Kemampuan sihirmu minimal 1.\n Selamatkan pengungsi dari kawanan Serigala Musim Dingin, dan ambil Bunga Beku. Kemudian, kalahkan Ratu Es, segel dia di dalam boneka beruang, dan ceritakan apa yang terjadi pada Bruges."
+  } , 
+  {
+    "index" : 5000,
+    "text" : "Selamatkan Cira dan habiskan malam bersamanya di pub. Kemudian, di Markas Kultus, yakinkan Cira Iblis, lalu tahan godaannya."
+  } , 
+  {
+    "index" : 5001,
+    "text" : "Selamatkan Cira dan habiskan malam bersamanya di pub. Kemudian, di Markas Kultus, entah kalah dari Cira Iblis, atau kalahkan dia tetapi pergi tanpa membunuhnya."
+  } , 
+  {
+    "index" : 5002,
+    "text" : "Selamatkan Cira, lalu entah gagal meyakinkan Devil Cira, atau sekadar melarikan diri. Atau, gagal membersihkannya."
+  } , 
+  {
+    "index" : 5003,
+    "text" : "Entah bunuh Iblis Cira, jangan beri tahu Rohan apa pun tentang Cira, atau jangan pergi ke Markas Kultus."
+  } , 
+  {
+    "index" : 5004,
+    "text" : "Entah jangan memberi tahu Rohan apa pun tentang Cira, jangan pergi ke Markas Kultus, atau bertarung bersama Rohan melawan Cira Iblis, tetapi kalah."
+  } , 
+  {
+    "index" : 6000,
+    "text" : "Tangkap makhluk duyung, tolak tawaran mereka untuk membiarkan mereka pergi, lalu hadapi badai."
+  } , 
+  {
+    "index" : 6001,
+    "text" : "Syarat: Kebijaksanaan Anda 14 atau lebih, atau Anda memiliki Seruling Pemanggil Badai. Tangkap makhluk duyung itu, tolak tawaran mereka untuk membiarkan mereka pergi, lalu mainkan Seruling Pemanggil Badai atau bunuh makhluk duyung bermata biru."
+  } , 
+  {
+    "index" : 6002,
+    "text" : "Tangkap para makhluk duyung, lalu terima tawaran mereka untuk membiarkan mereka pergi. Kemudian, pergilah ke Ikene dan kalahkan Kraken."
+  } , 
+  {
+    "index" : 6003,
+    "text" : "Tangkap para merfolk, lalu terima tawaran mereka untuk membiarkan mereka pergi. Kemudian, pergilah ke Ikene dan gagal mengalahkan Kraken."
+  } , 
+  {
+    "index" : 6004,
+    "text" : "Syarat: Keselarasan Anda Jahat. Tangkap makhluk duyung, lalu terima tawaran mereka untuk membebaskan mereka. Kemudian, pergilah ke Ikene dan jadilah bawahan Kraken. Lalu, kalahkan pengawal Madellin."
+  } , 
+  {
+    "index" : 6005,
+    "text" : "Terima tawaran makhluk laut untuk bergabung dengan kampanye mereka melawan Kraken. Kalahkan Kraken, lalu entah gagal meyakinkan Parrie, atau mendukung pendapatnya kemudian kembali ke darat sendirian."
+  } , 
+  {
+    "index" : 6006,
+    "text" : "Terima tawaran makhluk laut untuk bergabung dalam kampanye mereka melawan Kraken. Kalahkan Kraken, lalu yakinkan Parrie, berpihak pada kru lalu kalah dari Parrie."
+  } , 
+  {
+    "index" : 6007,
+    "text" : "Terima tawaran makhluk laut (merfolk) untuk bergabung dalam kampanye mereka melawan Kraken. Kalahkan Kraken, lalu yakinkan Parrie, berpihaklah pada kru, kemudian kalahkan Parrie."
+  } , 
+  {
+    "index" : 6008,
+    "text" : "Syarat: Keahlian Sihir Anda 4 atau lebih, atau Terbang Anda 1 atau lebih. Keselarasan Anda antara Moral dan Baik.\n Terima tawaran manusia laut dan kalahkan Kraken. Kemudian, pilih untuk membantu kapten dalam konflik dengan para duyung dan menyelamatkan kru saat kembali ke darat."
+  } , 
+  {
+    "index" : 6009,
+    "text" : "Syarat: Keselarasanmu Jahat.\n Terima tawaran kaum duyung, bergabung dengan kampanye mereka melawan Kraken, menjadi bawahan Kraken (harus Jahat) dan kalah dari pengawal Madellin."
+  } , 
+  {
+    "index" : 7000,
+    "text" : "Syarat : Karakter Anda adalah seorang wanita. Kebijaksanaan Anda 14 atau lebih.\n Bergabunglah dengan Benjamin dalam perjalanannya menuju balas dendam, dan bunuh Van Goyle, mempertaruhkan nyawamu sendiri. Kemudian, kalahkan Attna di rumah Benjamin."
+  } , 
+  {
+    "index" : 7001,
+    "text" : "Bantu Atléon sang Kesatria, bantu Benjamin membalas dendam setelah ia menjadi seorang pembantu kesatria, lalu cegah dia membunuh Van Goyle."
+  } , 
+  {
+    "index" : 7002,
+    "text" : "Jangan membantu Benjamin dalam balas dendamnya, dan kalah darinya setelah dia menjadi perampok."
+  } , 
+  {
+    "index" : 7003,
+    "text" : "Jangan membantu Benjamin dalam balas dendamnya, dan yakinkan dia agar kembali ke kampung halamannya setelah dia menjadi bandit."
+  } , 
+  {
+    "index" : 7004,
+    "text" : "Bergabunglah dengan Benjamin dalam perjalanannya menuju balas dendam dan bunuh Van Goyle. Kemudian, di rumah Benjamin, kalahkanlah oleh Attna atau jatuh ke dalam rencananya."
+  } , 
+  {
+    "index" : 7005,
+    "text" : "Bergabunglah dengan Benjamin dalam perjalanannya membalas dendam, dan bunuh Van Goyle, dengan mempertaruhkan nyawamu sendiri. Kemudian, hentikan Attna di rumah Benjamin."
+  } , 
+  {
+    "index" : 7006,
+    "text" : "Bergabunglah dengan Benjamin dalam perjalanannya menuju pembalasan, lalu kalah dari Van Goyle."
+  } , 
+  {
+    "index" : 7007,
+    "text" : "Jangan membantu Benjamin membalas dendam, dan bunuh dia setelah dia menjadi bandit."
+  } , 
+  {
+    "index" : 7008,
+    "text" : "Bantu Atléon si Kesatria, bantu pembalasan Benjamin setelah ia menjadi pembantu ksatria, lalu cegah dia membunuh Van Goyle. Kemudian, temukan dan kalahkan Van Goyle di tempat persembunyiannya."
+  } , 
+  {
+    "index" : 7009,
+    "text" : "Syarat: Karaktermu adalah perempuan. Kebijaksanaanmu 14 atau lebih tinggi. Kamu tidak memiliki kekasih.\n Latih Benjamin secara pribadi di penginapan, lalu temani dia dalam misinya untuk balas dendam, siap mati, dan bunuh Van Goyle. Setelah itu, tundukkan Attna di rumah Benjamin dan terima lamarannya."
+  } , 
+  {
+    "index" : 7010,
+    "text" : "Bantu Atléon sang Kesatria, kirim Benjamin ke benteng sendirian setelah dia menjadi murid kesatria, lalu terima surat Atléon dan pergilah ke kediamannya."
+  } , 
+  {
+    "index" : 7011,
+    "text" : "Bergabunglah dengan Benjamin dalam perjalanannya menuju pembalasan dan bunuh Van Goyle, tetapi gagal menyelamatkan Benjamin."
+  } , 
+  {
+    "index" : 7012,
+    "text" : "Ajari Benjamin cara bertarung, temani dia ke benteng, dan cegah dia membunuh Van Goyle."
+  } , 
+  {
+    "index" : 5005,
+    "text" : "Selamatkan Cira dan habiskan malam bersamanya di pub. Kemudian, di Markas Kultus, yakinkan Iblis Cira, lalu menyerah pada rayuannya."
+  } , 
+  {
+    "index" : 5006,
+    "text" : "Syarat: Anda tidak memiliki kekasih lain. Holiness Anda 2 atau lebih. Spellcasting Anda 1 atau lebih. Latar belakang Anda tidak boleh The Demon's Touch.\n Selamatkan Cira, lawan para kultis sendirian di Markas Kultus, kalahkan Devil Cira dalam pertempuran, lalu sucikan dia dengan sukses. Kemudian, di Mariposa, joko jangan mencarinya, atau gagal pada ujiannya."
+  } , 
+  {
+    "index" : 5007,
+    "text" : "Syarat: Anda tidak memiliki kekasih lain. Kekudusan Anda minimal 2. Kemampuan Sihir Anda minimal 1. Latar belakang Anda tidak boleh The Demon's Touch.\n Selamatkan Cira, lawan para kultis sendirian di Markas Kultus, kalahkan Devil Cira dalam pertempuran, lalu sucikan dia dengan berhasil. Kemudian, di Mariposa, cari dia dan lulus ujiannya."
+  } , 
+  {
+    "index" : 5008,
+    "text" : "Syarat: Anda tidak boleh memiliki kekasih lain. Kekudusan Anda minimal 2. Kemampuan Mantra Anda minimal 1. Latar belakang Anda tidak boleh The Demon's Touch.\n Selamatkan Cira, tolak untuk minum bersamanya, lalu hentikan dan sucikan Cira Iblis di Mariposa. Kemudian, berhasil meyakinkannya untuk melarikan diri bersama Anda."
+  } , 
+  {
+    "index" : 5009,
+    "text" : "Syarat: Anda tidak boleh memiliki kekasih lain. Kesucian Anda 2 atau lebih. Kemampuan Sihir Anda 1 atau lebih. Latar belakang Anda tidak boleh Sentuhan Iblis.\n Selamatkan Cira, tolak untuk minum bersamanya, lalu hentikan dan sucikan Cira Iblis di Mariposa. Kemudian, entah gagal meyakinkannya untuk melarikan diri bersama Anda, atau katakan padanya untuk mengikuti keinginan hatinya."
+  } , 
+  {
+    "index" : 8000,
+    "text" : "Syarat: Kebijaksanaan Anda 15 atau lebih.\n Temui Amakar, serahkan Permata Kehidupan, pilih salah satu pihak dan menangkan pertempuran di Tomant. Lalu ajukan negosiasi dan sarankan untuk berkompromi."
+  } , 
+  {
+    "index" : 8001,
+    "text" : "Temui Amakar, serahkan Permata Kehidupan, pilih satu pihak dan menangkan pertempuran di Tomant. Lalu, gagal menawarkan negosiasi, lancarkan perang di mana para druid kalah. Kemudian, temui bocah druid dan gagal mempersiapkan pemakaman."
+  } , 
+  {
+    "index" : 8002,
+    "text" : "Temui Amakar, serahkan Permata Kehidupan, pilih satu pihak dan menangkan pertempuran di Tomant. Kemudian, jangan menawarkan negosiasi, lalu sementara baik Druid Tua maupun para pengintai belum dikalahkan, kalah dari pasukan berzirah ringan."
+  } , 
+  {
+    "index" : 8003,
+    "text" : "Temui Amakar, serahkan Permata Kehidupan, pilih pihak dan menangkan pertempuran di Tomant. Kemudian, tawarkan negosiasi, atau jangan tawarkan negosiasi dan bantu Amakar memenangkan pertempuran."
+  } , 
+  {
+    "index" : 8004,
+    "text" : "Temui Amakar, serahkan Permata Kehidupan, bertarung dengan Syannathel, dan tolak permintaan Amakar untuk bantuan. Kemudian, di pondok kecil, entah abaikan Syannathel atau minta maaf padanya."
+  } , 
+  {
+    "index" : 8005,
+    "text" : "Temui Amakar, serahkan Permata Kehidupan, pilih pihak, dan menangkan pertempuran di Tomant. Kemudian, jangan buka negosiasi dan lancarkan perang yang berujung pada terbunuhnya Amakar atau kekalahan Tomant."
+  } , 
+  {
+    "index" : 8006,
+    "text" : "Gagal mengambil Permata Kehidupan dari Amakar, lalu membantu para druid merebut kembali permata itu. Kemudian, kalah dari pasukan Tomant, lalu gagal mengalahkan Troll Dahsyat di Trollium."
+  } , 
+  {
+    "index" : 8007,
+    "text" : "Syarat: Kemampuan sihirmu 4 atau lebih, atau kamu membawa Wound atau Sinister Basket of Matches.\nGagal mengambil Permata Kehidupan dari Amakar, lalu bantu para druid merebut kembali permata itu. Kemudian, kalah dari pasukan Tomant, lalu kalahkan Dire Troll di Trollium."
+  } , 
+  {
+    "index" : 8008,
+    "text" : "Temui Amakar, serahkan Permata Kehidupan, bergabung dengan Amakar dan berhasil mempertahankan Tomant. Lalu, tawarkan negosiasi, jangan mencari kompromi, lalu entah gagal memadamkan api tenda atau gagal mengejar."
+  } , 
+  {
+    "index" : 8009,
+    "text" : "Temui Amakar, lepaskan Permata Kehidupan, bertarung dengan Syannathel, tolak permintaan bantuan Amakar, lalu berdoa di Tomant."
+  } , 
+  {
+    "index" : 8010,
+    "text" : "Syarat: Kebijaksanaan Anda 12 atau lebih, atau Kecerdasan Anda 10 atau lebih.\n Temui Amakar, serahkan Permata Kehidupan, bergabung dengan para druid dan menangkan pertempuran di Tomant. Kemudian, berhasil menawarkan gencatan senjata kepada Lophenbach di hutan."
+  } , 
+  {
+    "index" : 8011,
+    "text" : "Temui Amakar, serahkan Permata Kehidupan, bergabung dengan Amakar dan berhasil mempertahankan Tomant. Kemudian, gagal bernegosiasi, lalu entah gagal memadamkan api di tenda atau gagal mengejar."
+  } , 
+  {
+    "index" : 8012,
+    "text" : "Temui Amakar, serahkan Permata Kehidupan, bergabung dengan para druid dan menangkan pertempuran di Tomant. Kemudian, gagal dalam negosiasi dan kalah dalam pertempuran berikutnya. Lalu, temui bocah druid dan siapkan pemakaman."
+  } , 
+  {
+    "index" : 8013,
+    "text" : "Syarat: Kebijaksanaan Anda 12 atau lebih. Kecerdasan Anda 10 atau lebih.\n Temui Amakar, serahkan Permata Kehidupan, bergabung dengan para druid dan berhasil mempertahankan Tomant. Kemudian, bertempur melawan tentara Tomant di hutan dan kalahkan mereka."
+  } , 
+  {
+    "index" : 8014,
+    "text" : "Temui Amakar, serahkan Permata Kehidupan dan usir Syannathel. Tolak permintaan Amakar untuk membantu, lalu bunuh Syannathel."
+  } , 
+  {
+    "index" : 8015,
+    "text" : "Temui Amakar, serahkan Permata Kehidupan, bergabung dengan para druid dan menangkan pertarungan di Tomant. Lalu, gagalkan negosiasi, temui anak druid dan siapkan pemakaman."
+  } , 
+  {
+    "index" : 9000,
+    "text" : "Di sarang Ternach, pilih Ternach alih-alih Sartha. Kemudian selesaikan teka-teki Amunak tanpa membebaskan Sartha, lalu pilih salah satu: kalahkan legiun kurcaci, paksa para kurcaci membayar tebusan, atau ancam mereka agar pergi."
+  } , 
+  {
+    "index" : 9001,
+    "text" : "Dengan segala cara, kembalikan Sartha ke Radania."
+  } , 
+  {
+    "index" : 9002,
+    "text" : "Syarat: Anda tidak punya kekasih lain. Karakter Anda adalah perempuan.\n Di sarang Ternach, pilih Ternach daripada Sartha. Kemudian, selesaikan teka-teki Amunak tanpa membebaskan Sartha, lalu terima cincin Ternach."
+  } , 
+  {
+    "index" : 9003,
+    "text" : "Di sarang Ternach, pilih Ternach daripada Sartha. Kemudian, selesaikan teka-teki Amunak tanpa membebaskan Sartha, lalu kalah dari legiun kurcaci atau melarikan diri."
+  } , 
+  {
+    "index" : 9004,
+    "text" : "Syarat: Anda tidak memiliki kekasih lain. Karakter Anda adalah laki-laki.\n Di sarang Ternach, pilih Ternach daripada Sartha. Kemudian selesaikan teka-teki Amunak tanpa membebaskan Sartha, lalu terima cincin Ternach."
+  } , 
+  {
+    "index" : 9005,
+    "text" : "Buat Sartha kembali ke Radania, lalu tolak tawaran pernikahan atau tawaran emas."
+  } , 
+  {
+    "index" : 9006,
+    "text" : "Syarat: Anda tidak memiliki kekasih.\n Suruh Sartha kembali ke Radania dan terima tawaran pernikahan."
+  } , 
+  {
+    "index" : 9007,
+    "text" : "Syarat: Keselarasan Anda antara Netral dan Jahat.\n Di Antitikarr, ancam pedagang, selamatkan Sartha, lalu pinjam unta dari Mansa atau kalah darinya dalam pertempuran. Kemudian, pergilah ke Ushuf bersama Tess, lalu sarankan pilihan selain berdagang."
+  } , 
+  {
+    "index" : 9008,
+    "text" : "Syarat: Keselarasanmu antara Netral dan Jahat.\n Di Antitikarr, ancam pedagang, selamatkan Sartha, istirahat di jalan, lalu pinjam unta dari Mansa atau kalah melawannya dalam pertempuran. Kemudian, pergi ke Ushuf bersama Tess dengan Dowd sebagai pemandu, lalu sarankan untuk mempercayakan Dowd."
+  } , 
+  {
+    "index" : 9009,
+    "text" : "Di sarang Ternach, pilih Ternach daripada Sartha. Kemudian, selesaikan teka-teki Amunak tanpa membebaskan Sartha, bekerjasama dengan para kurcaci, lalu kalahkan legiun kurcaci bersama Ternach."
+  } , 
+  {
+    "index" : 9010,
+    "text" : "Di sarang Ternach, pilih Ternach daripada Sartha. Kemudian, selesaikan teka-teki Amunak tanpa membebaskan Sartha, pura-pura bekerja sama dengan para kurcaci, kalahkan legiun kurcaci bersama Ternach, lalu bebaskan Sartha."
+  } , 
+  {
+    "index" : 9011,
+    "text" : "Di sarang Ternach, pilih Ternach daripada Sartha. Kemudian, selesaikan teka-teki Amunak tanpa membebaskan Sartha, bekerja sama dengan para kurcaci, lalu tolak cincin Ternach."
+  } , 
+  {
+    "index" : 9012,
+    "text" : "Syarat: Keselarasanmu berada antara Netral dan Jahat.\n Di Antitikarr, ancam pedagang, selamatkan Sartha, beristirahat di jalan, lalu entah pinjam unta dari Mansa atau kalah darinya dalam pertempuran. Kemudian, gagal mencapai Ushuf bersama Tess."
+  } , 
+  {
+    "index" : 9013,
+    "text" : "Syarat: Alignment Anda antara Netral dan Jahat.\n Di Antitikarr, ancam pedagang, selamatkan Sartha, beristirahat di perjalanan, lalu pinjam unta dari Mansa atau kalah darinya dalam pertempuran. Kemudian, pergilah ke Ushuf bersama Tess, dan sarankan untuk mengambil hak penambangan daripada emas."
+  } , 
+  {
+    "index" : 9014,
+    "text" : "Di sarang Ternach, pilih Ternach bukan Sartha. Kemudian, selesaikan teka-teki Amunak tanpa membebaskan Sartha, lalu kalah melawan atau melarikan diri dari legiun kurcaci."
+  } , 
+  {
+    "index" : 8,
+    "text" : "Temui ajalmu saat Majet menjadi kekasihmu."
+  } , 
+  {
+    "index" : 5010,
+    "text" : "Temui akhirmu sementara Cleansed Cira adalah kekasihmu."
+  } , 
+  {
+    "index" : 5011,
+    "text" : "Temui ajalmu saat Devil Cira menjadi kekasihmu."
+  } , 
+  {
+    "index" : 7013,
+    "text" : "Temuilah ajalmu selagi Benjamin adalah kekasihmu."
+  } , 
+  {
+    "index" : 9015,
+    "text" : "Temui ajalmu sementara Ternach adalah kekasihmu."
+  } , 
+  {
+    "index" : 9016,
+    "text" : "Temui ajalmu sementara Sartha adalah kekasihmu."
+  } , 
+  {
+    "index" : 10000,
+    "text" : "Jelajahi reruntuhan bersama Edenheart, selesaikan Elixir, lalu beri tahu Fheren tentang kematiannya."
+  } , 
+  {
+    "index" : 10001,
+    "text" : "Jelajahi reruntuhan bersama Edenheart, lalu tolak permohonan Edenheart untuk menyelesaikan Eliksir."
+  } , 
+  {
+    "index" : 10002,
+    "text" : "Entah gagal menjelajahi reruntuhan bersama Edenheart, atau menjelajahi reruntuhan sendiri dan memberinya Ekstraktor Jiwa. Kemudian, entah menyerahkan penelitian Edenheart kepada Osborne, atau menolak membantu Edenheart setelah penelitiannya dicuri."
+  } , 
+  {
+    "index" : 10003,
+    "text" : "Jelajahi reruntuhan bersama Edenheart dan selesaikan Elixir. Lalu, jangan beri tahu Fheren tentang kematian Edenheart, kalahkan pembunuh itu, kejar Fheren, lalu biarkan dia pergi."
+  } , 
+  {
+    "index" : 10004,
+    "text" : "Jelajahi reruntuhan bersama Edenheart, lalu pilih untuk menerima tawaran Osborne atau melarikan diri. Kemudian, abaikan kabar tentang penampakan, atau kalah dari Hantu Edenheart."
+  } , 
+  {
+    "index" : 10005,
+    "text" : "Jelajahi reruntuhan bersama Edenheart, lalu terima tawaran Osborne atau melarikan diri. Kemudian, entah singkirkan Hantu Edenheart, atau katakan padanya bahwa Fheren telah disembuhkan."
+  } , 
+  {
+    "index" : 10006,
+    "text" : "Jelajahi reruntuhan bersama Edenheart, lalu pilih menerima tawaran Osborne atau melarikan diri. Lalu, pilih gagal menangani masalah spekter, atau kalah dari anak buah Osborne setelah menyarankan agar para pekerja meninggalkan reruntuhan."
+  } , 
+  {
+    "index" : 10007,
+    "text" : "Jelajahi reruntuhan bersama Edenheart, lalu terima tawaran Osborne atau melarikan diri. Kemudian, kalahkan anak buah Osborne setelah menyarankan para pekerja meninggalkan reruntuhan, lalu bunuh Osborne."
+  } , 
+  {
+    "index" : 10008,
+    "text" : "Entah gagal menjelajahi reruntuhan bersama Edenheart, atau menjelajahi reruntuhan sendirian dan jangan berikan Soul Extractor kepadanya. Kemudian bantu Edenheart saat dia berdebat dengan serikat pedagang, lalu gagal menyelesaikan Elixir."
+  } , 
+  {
+    "index" : 10009,
+    "text" : "Entah gagal menjelajahi reruntuhan bersama Edenheart, atau menjelajahi reruntuhan sendiri dan menyerahkan Soul Extractor kepadanya. Kemudian, entah menyerahkan penelitian Edenheart kepada Osborne, atau menolak membantu Edenheart setelah penelitiannya dicuri."
+  } , 
+  {
+    "index" : 10010,
+    "text" : "Gagal menyelesaikan Elixir atau menyelamatkan Fheren."
+  } , 
+  {
+    "index" : 10011,
+    "text" : "Gagal menjelajahi reruntuhan bersama Edenheart. Kemudian, bantu Edenheart saat dia sedang berdebat dengan serikat pedagang, lalu selesaikan Eliksir. Kemudian, beri tahu Fheren bahwa Edenheart pergi ke timur jauh."
+  } , 
+  {
+    "index" : 10012,
+    "text" : "Syarat: Kecenderungan Anda antara Netral dan Jahat.\n Jelajahi reruntuhan bersama Edenheart, selesaikan Eliksir, dan jangan beri tahu Fheren tentang kematian Edenheart. Kemudian, kalahkan sang pembunuh, kejar Fheren, lalu bunuh dia."
+  } , 
+  {
+    "index" : 10013,
+    "text" : "Gagal menjelajahi reruntuhan bersama Edenheart, atau jelajahi reruntuhan sendiri dan serahkan Soul Extractor kepadanya. Lalu bantu Edenheart mengambil kembali catatan penelitiannya."
+  } , 
+  {
+    "index" : 10014,
+    "text" : "Jelajahi reruntuhan bersama Edenheart dan selesaikan Elixir itu. Kemudian, jangan memberitahu Fheren tentang kematian Edenheart lalu kalah dari para pembunuhnya."
+  } , 
+  {
+    "index" : 11000,
+    "text" : "Kematian Lei olehmu atau Shao."
+  } , 
+  {
+    "index" : 11001,
+    "text" : "Shao dan Lei tidak berdamai dan tidak bekerja sama, jadi baik Lei maupun Shao tidak memenangkan kompetisi Batra."
+  } , 
+  {
+    "index" : 11002,
+    "text" : "Setelah menolak pengakuan Lei, Shao tidak dibunuh maupun dilumpuhkan."
+  } , 
+  {
+    "index" : 11003,
+    "text" : "Lei memenangkan turnamen Batra setelah berdamai dengan Shao."
+  } , 
+  {
+    "index" : 11004,
+    "text" : "Syarat: Tidak ada kekasih lain.\n Konfirmasi rahasia Lei, jangan bunuh Shao, terima pengakuan Lei."
+  } , 
+  {
+    "index" : 11005,
+    "text" : "Shao memenangkan kompetisi Batra setelah berdamai dengan Lei."
+  } , 
+  {
+    "index" : 11006,
+    "text" : "Shao berhasil mengalahkan Lei sesuai rencananya, dan Shao memenangkan turnamen Batra."
+  } , 
+  {
+    "index" : 11007,
+    "text" : "Setelah pertarungan antara Lei dan Shao, inti energi Shao hancur."
+  } , 
+  {
+    "index" : 11008,
+    "text" : "Lei menang, Shao masih hidup, mereka kembali ke kampung halaman tanpa berdamai."
+  } , 
+  {
+    "index" : 11009,
+    "text" : "Shao dan Lei keduanya meninggal."
+  } , 
+  {
+    "index" : 11010,
+    "text" : "Shao membunuh Lei tanpa memenangkan kompetisi."
+  } , 
+  {
+    "index" : 11011,
+    "text" : "Capai akhir di mana kamu mati sebagai kekasih bersama Lei."
+  } , 
+  {
+    "index" : 11012,
+    "text" : "Tidak pergi ke Gunung Tragia. Kemudian bertemu lagi dengan Lei di gua pesisir tetapi tidak membantu latihan. Melumpuhkan Shao saat serangan Red Drake dan kemudian menyarankan Lei untuk melarikan diri."
+  } , 
+  {
+    "index" : 11013,
+    "text" : "Shao dan Lei belum berdamai, dan Lei tereliminasi dari kompetisi. Setelah itu, bujuk Lei agar tidak kembali ke kampung halamannya."
+  } , 
+  {
+    "index" : 11014,
+    "text" : "Syarat: Tidak ada kekasih lain.\n Setelah mendengarkan perasaan Shao, memutuskan untuk pergi ke timur sesuai sarannya."
+  } , 
+  {
+    "index" : 11015,
+    "text" : "Syarat: Tidak ada kekasih lain.\n Berakhir dengan kematian setelah memutuskan untuk melakukan perjalanan ke timur sesuai saran Shao."
+  } , 
+  {
+    "index" : 11016,
+    "text" : "Lei dan Shao belum berdamai, menolak usulan Shao untuk pergi ke timur."
+  } , 
+  {
+    "index" : 11017,
+    "text" : "Shao telah meninggal atau dantiannya telah hancur. Lei kembali ke kampung halamannya."
+  } , 
+  {
+    "index" : 11018,
+    "text" : "Syarat: Tidak ada kekasih lain.\n Setelah mendengarkan perasaan Shao, memutuskan untuk pergi ke timur sesuai sarannya."
+  } , 
+  {
+    "index" : 11019,
+    "text" : "Shao telah memenangkan kompetisi, kamu membongkar rencana untuk membunuh Shao, dan dia pulang ke rumah dengan selamat."
+  } , 
+  {
+    "index" : 12000,
+    "text" : "Lukas lolos hidup-hidup, sementara Edward yang melemah bersembunyi bersama Lupin—khianati Lupin dan Edward, lalu habisi mereka."
+  } , 
+  {
+    "index" : 12001,
+    "text" : "Bawa Edward kepada Graf Ronan dan Nyonya Irema."
+  } , 
+  {
+    "index" : 12002,
+    "text" : "Di tempat Edward dipenjara, ditemukan surat-surat dari Lukas dan Hazel. Kesalahan mereka terungkap, dan Milorad dibantu."
+  } , 
+  {
+    "index" : 12003,
+    "text" : "Di tempat Edward dipenjarakan, ditemukan surat dari Lukas dan Hazel, tetapi Milorad tidak dibantu."
+  } , 
+  {
+    "index" : 12004,
+    "text" : "Edward melemah dan bersembunyi bersama Lupin. Dengan Lukas pergi, Milorad dan Hazel melancarkan pemberontakan di wilayah Count Ronan, menangkap Count Ronan dan seluruh keluarganya."
+  } , 
+  {
+    "index" : 12005,
+    "text" : "Edward melemah dan bersembunyi bersama Lupin. Lukas, Milorad, dan Hazel melancarkan pemberontakan di wilayah Count Ronan dan berhasil menangkap keluarga Count Ronan."
+  } , 
+  {
+    "index" : 12006,
+    "text" : "Rencana Hazel dan Lukas terbongkar, tetapi Edward tidak diselamatkan."
+  } , 
+  {
+    "index" : 12007,
+    "text" : "Rencana Hazel dan Lukas tetap belum terungkap."
+  } , 
+  {
+    "index" : 12008,
+    "text" : "Edward diselamatkan bersama Erina, dan ia dibawa ke kastil Count Ronan."
+  } , 
+  {
+    "index" : 12009,
+    "text" : "Lukas membawa Edward ke katakombe dan mengutuknya, kutukan itu tidak bisa diangkat."
+  } , 
+  {
+    "index" : 12010,
+    "text" : "Gagal mengungkap hubungan antara Hazel dan Lukas, menyelamatkan Edward, tetapi tidak bisa menyelamatkannya karena dia semakin melemah."
+  } , 
+  {
+    "index" : 12011,
+    "text" : "Setelah hubungan Hazel dan Lukas terbongkar, berpihaklah pada Milorad melawan Lukas; keduanya tewas di katakombe."
+  } , 
+  {
+    "index" : 12012,
+    "text" : "Lukas membawa Edward ke katakombe, dan upaya menyelamatkan Edward bersama Lupin berakhir gagal."
+  } , 
+  {
+    "index" : 3000,
+    "text" : "Mengabaikan Galgano di kedai, lalu berjalan terus."
+  } , 
+  {
+    "index" : 5012,
+    "text" : "Syarat: tidak ada kekasih lain, jenis kelamin laki-laki, Earl Briovich. Sucikan Sira dan berhasil melamar."
+  } , 
+  {
+    "index" : 9017,
+    "text" : "Syarat: tidak memiliki kekasih lain, berjenis kelamin laki-laki, Earl Briovich. Selamatkan Sartha dan janjikan untuk menikahinya."
+  }
+ ]
+}

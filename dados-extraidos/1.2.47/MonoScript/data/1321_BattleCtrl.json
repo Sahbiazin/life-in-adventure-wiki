@@ -1,0 +1,25 @@
+{
+  "m_Name": "BattleCtrl",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 254,
+    "bytes[1]": 215,
+    "bytes[2]": 99,
+    "bytes[3]": 251,
+    "bytes[4]": 28,
+    "bytes[5]": 91,
+    "bytes[6]": 22,
+    "bytes[7]": 79,
+    "bytes[8]": 219,
+    "bytes[9]": 8,
+    "bytes[10]": 50,
+    "bytes[11]": 190,
+    "bytes[12]": 94,
+    "bytes[13]": 135,
+    "bytes[14]": 51,
+    "bytes[15]": 15
+  },
+  "m_ClassName": "BattleCtrl",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

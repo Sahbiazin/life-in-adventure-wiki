@@ -1,0 +1,25 @@
+{
+  "m_Name": "FlexibleWidthGridLayout",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 35,
+    "bytes[1]": 99,
+    "bytes[2]": 68,
+    "bytes[3]": 247,
+    "bytes[4]": 39,
+    "bytes[5]": 184,
+    "bytes[6]": 172,
+    "bytes[7]": 73,
+    "bytes[8]": 156,
+    "bytes[9]": 22,
+    "bytes[10]": 170,
+    "bytes[11]": 132,
+    "bytes[12]": 255,
+    "bytes[13]": 29,
+    "bytes[14]": 92,
+    "bytes[15]": 199
+  },
+  "m_ClassName": "FlexibleWidthGridLayout",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "Test_UISlotBase_Assign",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 102,
+    "bytes[1]": 167,
+    "bytes[2]": 32,
+    "bytes[3]": 112,
+    "bytes[4]": 4,
+    "bytes[5]": 52,
+    "bytes[6]": 128,
+    "bytes[7]": 18,
+    "bytes[8]": 8,
+    "bytes[9]": 24,
+    "bytes[10]": 171,
+    "bytes[11]": 103,
+    "bytes[12]": 250,
+    "bytes[13]": 127,
+    "bytes[14]": 188,
+    "bytes[15]": 171
+  },
+  "m_ClassName": "Test_UISlotBase_Assign",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

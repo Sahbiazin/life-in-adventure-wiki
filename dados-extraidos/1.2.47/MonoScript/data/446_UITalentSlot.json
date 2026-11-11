@@ -1,0 +1,25 @@
+{
+  "m_Name": "UITalentSlot",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 244,
+    "bytes[1]": 8,
+    "bytes[2]": 123,
+    "bytes[3]": 239,
+    "bytes[4]": 35,
+    "bytes[5]": 154,
+    "bytes[6]": 45,
+    "bytes[7]": 148,
+    "bytes[8]": 204,
+    "bytes[9]": 171,
+    "bytes[10]": 164,
+    "bytes[11]": 198,
+    "bytes[12]": 125,
+    "bytes[13]": 10,
+    "bytes[14]": 20,
+    "bytes[15]": 160
+  },
+  "m_ClassName": "UITalentSlot",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "Slot",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 206,
+    "bytes[1]": 106,
+    "bytes[2]": 129,
+    "bytes[3]": 238,
+    "bytes[4]": 44,
+    "bytes[5]": 252,
+    "bytes[6]": 228,
+    "bytes[7]": 225,
+    "bytes[8]": 73,
+    "bytes[9]": 148,
+    "bytes[10]": 33,
+    "bytes[11]": 41,
+    "bytes[12]": 6,
+    "bytes[13]": 95,
+    "bytes[14]": 219,
+    "bytes[15]": 110
+  },
+  "m_ClassName": "Slot",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

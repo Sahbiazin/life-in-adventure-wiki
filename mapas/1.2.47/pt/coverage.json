@@ -1,0 +1,28 @@
+{
+  "version": "1.2.47",
+  "language": "pt",
+  "events": 3683,
+  "choices": 8043,
+  "results": 12196,
+  "destinations": {
+    "same_table_reference": 7074,
+    "special": 5122
+  },
+  "special_destinations": {
+    "-2": 3186,
+    "-3": 1318,
+    "-1": 618
+  },
+  "blank_choice_labels": 1619,
+  "groups": {
+    "EventBattle": 70,
+    "EventTreasure": 522,
+    "EventMain": 1340,
+    "EventNormal": 649,
+    "EventSub": 1095,
+    "EventMainStart": 7
+  },
+  "state_dependency_entries": 2285,
+  "source_sha256": "c0de910a0583717672d1f87b710e7d226d80569a3f2390eb2e42275abcef56e1",
+  "scope": "all Portuguese event nodes in the supplied APK, not a claim of runtime reachability or all server content"
+}

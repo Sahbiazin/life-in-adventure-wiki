@@ -1,0 +1,25 @@
+{
+  "m_Name": "MapTileObject",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 109,
+    "bytes[1]": 73,
+    "bytes[2]": 13,
+    "bytes[3]": 171,
+    "bytes[4]": 254,
+    "bytes[5]": 24,
+    "bytes[6]": 91,
+    "bytes[7]": 237,
+    "bytes[8]": 234,
+    "bytes[9]": 44,
+    "bytes[10]": 83,
+    "bytes[11]": 93,
+    "bytes[12]": 152,
+    "bytes[13]": 143,
+    "bytes[14]": 213,
+    "bytes[15]": 184
+  },
+  "m_ClassName": "MapTileObject",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

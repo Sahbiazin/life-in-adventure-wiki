@@ -1,0 +1,25 @@
+{
+  "m_Name": "BattleHpBar",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 68,
+    "bytes[1]": 144,
+    "bytes[2]": 58,
+    "bytes[3]": 54,
+    "bytes[4]": 40,
+    "bytes[5]": 194,
+    "bytes[6]": 181,
+    "bytes[7]": 188,
+    "bytes[8]": 252,
+    "bytes[9]": 10,
+    "bytes[10]": 156,
+    "bytes[11]": 219,
+    "bytes[12]": 207,
+    "bytes[13]": 206,
+    "bytes[14]": 189,
+    "bytes[15]": 205
+  },
+  "m_ClassName": "BattleHpBar",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

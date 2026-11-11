@@ -1,0 +1,25 @@
+{
+  "m_Name": "StartPopup",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 40,
+    "bytes[1]": 194,
+    "bytes[2]": 18,
+    "bytes[3]": 194,
+    "bytes[4]": 195,
+    "bytes[5]": 187,
+    "bytes[6]": 233,
+    "bytes[7]": 95,
+    "bytes[8]": 42,
+    "bytes[9]": 128,
+    "bytes[10]": 69,
+    "bytes[11]": 5,
+    "bytes[12]": 181,
+    "bytes[13]": 200,
+    "bytes[14]": 220,
+    "bytes[15]": 99
+  },
+  "m_ClassName": "StartPopup",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

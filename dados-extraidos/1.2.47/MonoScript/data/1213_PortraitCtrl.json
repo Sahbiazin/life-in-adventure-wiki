@@ -1,0 +1,25 @@
+{
+  "m_Name": "PortraitCtrl",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 209,
+    "bytes[1]": 63,
+    "bytes[2]": 162,
+    "bytes[3]": 151,
+    "bytes[4]": 89,
+    "bytes[5]": 186,
+    "bytes[6]": 12,
+    "bytes[7]": 196,
+    "bytes[8]": 67,
+    "bytes[9]": 195,
+    "bytes[10]": 20,
+    "bytes[11]": 103,
+    "bytes[12]": 193,
+    "bytes[13]": 213,
+    "bytes[14]": 115,
+    "bytes[15]": 205
+  },
+  "m_ClassName": "PortraitCtrl",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

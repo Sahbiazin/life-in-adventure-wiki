@@ -1,0 +1,25 @@
+{
+  "m_Name": "Test_UISpellSlot_AssignAll",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 182,
+    "bytes[1]": 114,
+    "bytes[2]": 37,
+    "bytes[3]": 13,
+    "bytes[4]": 20,
+    "bytes[5]": 88,
+    "bytes[6]": 132,
+    "bytes[7]": 122,
+    "bytes[8]": 125,
+    "bytes[9]": 160,
+    "bytes[10]": 108,
+    "bytes[11]": 96,
+    "bytes[12]": 7,
+    "bytes[13]": 227,
+    "bytes[14]": 59,
+    "bytes[15]": 238
+  },
+  "m_ClassName": "Test_UISpellSlot_AssignAll",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

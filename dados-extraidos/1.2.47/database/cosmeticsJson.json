@@ -1,0 +1,2824 @@
+[
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 0,
+      "sex": 0,
+      "name": [
+        "신참 전사",
+        "Novice Warrior",
+        "Guerrero Novato",
+        "Apprendista Guerriero",
+        "Guerreiro Novato",
+        "新手战士",
+        "新手戰士",
+        "新米戦士",
+        "Prajurit Pemula",
+        "محارب مبتدئ"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "신참 전사",
+        "en": "Novice Warrior",
+        "es": "Guerrero Novato",
+        "it": "Apprendista Guerriero",
+        "pt": "Guerreiro Novato",
+        "zh-Hans": "新手战士",
+        "zh-Hant": "新手戰士",
+        "ja": "新米戦士",
+        "id": "Prajurit Pemula",
+        "ar": "محارب مبتدئ"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 1,
+      "sex": 1,
+      "name": [
+        "신참 전사",
+        "Novice Warrior",
+        "Guerrero Novato",
+        "Apprendista Guerriera",
+        "Guerreira Novata",
+        "新手战士",
+        "新手戰士",
+        "新米戦士",
+        "Prajurit Pemula",
+        "محارب مبتدئ"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "신참 전사",
+        "en": "Novice Warrior",
+        "es": "Guerrero Novato",
+        "it": "Apprendista Guerriera",
+        "pt": "Guerreira Novata",
+        "zh-Hans": "新手战士",
+        "zh-Hant": "新手戰士",
+        "ja": "新米戦士",
+        "id": "Prajurit Pemula",
+        "ar": "محارب مبتدئ"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 2,
+      "sex": 0,
+      "name": [
+        "신참 마법사",
+        "Novice Mage",
+        "Mago Novato",
+        "Apprendista Mago",
+        "Mago Novato",
+        "新手法师",
+        "新手法師",
+        "新米魔術師",
+        "Penyihir Pemula",
+        "ساحر مبتدئ"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "신참 마법사",
+        "en": "Novice Mage",
+        "es": "Mago Novato",
+        "it": "Apprendista Mago",
+        "pt": "Mago Novato",
+        "zh-Hans": "新手法师",
+        "zh-Hant": "新手法師",
+        "ja": "新米魔術師",
+        "id": "Penyihir Pemula",
+        "ar": "ساحر مبتدئ"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 3,
+      "sex": 1,
+      "name": [
+        "신참 마법사",
+        "Novice Mage",
+        "Mago Novato",
+        "Apprendista Maga",
+        "Maga Novata",
+        "新手法师",
+        "新手法師",
+        "新米魔術師",
+        "Penyihir Pemula",
+        "ساحر مبتدئ"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "신참 마법사",
+        "en": "Novice Mage",
+        "es": "Mago Novato",
+        "it": "Apprendista Maga",
+        "pt": "Maga Novata",
+        "zh-Hans": "新手法师",
+        "zh-Hant": "新手法師",
+        "ja": "新米魔術師",
+        "id": "Penyihir Pemula",
+        "ar": "ساحر مبتدئ"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 4,
+      "sex": 0,
+      "name": [
+        "신참 궁수",
+        "Novice Archer",
+        "Arquero Novato",
+        "Apprendista Arciere",
+        "Arqueiro Novato",
+        "新手弓箭手",
+        "新手弓箭手",
+        "新米アーチャー",
+        "Pemanah Pemula",
+        "رامي مبتدئ"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "신참 궁수",
+        "en": "Novice Archer",
+        "es": "Arquero Novato",
+        "it": "Apprendista Arciere",
+        "pt": "Arqueiro Novato",
+        "zh-Hans": "新手弓箭手",
+        "zh-Hant": "新手弓箭手",
+        "ja": "新米アーチャー",
+        "id": "Pemanah Pemula",
+        "ar": "رامي مبتدئ"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 5,
+      "sex": 1,
+      "name": [
+        "신참 궁수",
+        "Novice Archer",
+        "Arquero Novato",
+        "Apprendista Arciere",
+        "Arqueira Novata",
+        "新手弓箭手",
+        "新手弓箭手",
+        "新米アーチャー",
+        "Pemanah Pemula",
+        "رامي مبتدئ"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "신참 궁수",
+        "en": "Novice Archer",
+        "es": "Arquero Novato",
+        "it": "Apprendista Arciere",
+        "pt": "Arqueira Novata",
+        "zh-Hans": "新手弓箭手",
+        "zh-Hant": "新手弓箭手",
+        "ja": "新米アーチャー",
+        "id": "Pemanah Pemula",
+        "ar": "رامي مبتدئ"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 6,
+      "sex": 0,
+      "name": [
+        "신참 도적",
+        "Novice Rogue",
+        "Pícaro Novato",
+        "Apprendista Ladro",
+        "Ladino Novato",
+        "新手侠盗",
+        "新手俠盜",
+        "新米ローグ",
+        "Rogue Pemula",
+        "لص مبتدئ"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "신참 도적",
+        "en": "Novice Rogue",
+        "es": "Pícaro Novato",
+        "it": "Apprendista Ladro",
+        "pt": "Ladino Novato",
+        "zh-Hans": "新手侠盗",
+        "zh-Hant": "新手俠盜",
+        "ja": "新米ローグ",
+        "id": "Rogue Pemula",
+        "ar": "لص مبتدئ"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 7,
+      "sex": 1,
+      "name": [
+        "신참 도적",
+        "Novice Rogue",
+        "Pícaro Novato",
+        "Apprendista Ladra",
+        "Ladina Novata",
+        "新手侠盗",
+        "新手俠盜",
+        "新米ローグ",
+        "Rogue Pemula",
+        "لص مبتدئ"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "신참 도적",
+        "en": "Novice Rogue",
+        "es": "Pícaro Novato",
+        "it": "Apprendista Ladra",
+        "pt": "Ladina Novata",
+        "zh-Hans": "新手侠盗",
+        "zh-Hant": "新手俠盜",
+        "ja": "新米ローグ",
+        "id": "Rogue Pemula",
+        "ar": "لص مبتدئ"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "frame",
+      "id": 1,
+      "sex": "",
+      "name": [
+        "양피지",
+        "Parchment",
+        "Pergamino",
+        "Pergamena",
+        "Pergaminho",
+        "羊皮纸",
+        "羊皮紙",
+        "羊皮紙",
+        "Perkamen",
+        "رق"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "양피지",
+        "en": "Parchment",
+        "es": "Pergamino",
+        "it": "Pergamena",
+        "pt": "Pergaminho",
+        "zh-Hans": "羊皮纸",
+        "zh-Hant": "羊皮紙",
+        "ja": "羊皮紙",
+        "id": "Perkamen",
+        "ar": "رق"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "nameplate",
+      "id": 1,
+      "sex": "",
+      "name": [
+        "양피지",
+        "Parchment",
+        "Pergamino",
+        "Pergamena",
+        "Pergaminho",
+        "羊皮纸",
+        "羊皮紙",
+        "羊皮紙",
+        "Perkamen",
+        "رق"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "양피지",
+        "en": "Parchment",
+        "es": "Pergamino",
+        "it": "Pergamena",
+        "pt": "Pergaminho",
+        "zh-Hans": "羊皮纸",
+        "zh-Hant": "羊皮紙",
+        "ja": "羊皮紙",
+        "id": "Perkamen",
+        "ar": "رق"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "hpBar",
+      "id": 1,
+      "sex": "",
+      "name": [
+        "양피지",
+        "Parchment",
+        "Pergamino",
+        "Pergamena",
+        "Pergaminho",
+        "羊皮纸",
+        "羊皮紙",
+        "羊皮紙",
+        "Perkamen",
+        "رق"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "양피지",
+        "en": "Parchment",
+        "es": "Pergamino",
+        "it": "Pergamena",
+        "pt": "Pergaminho",
+        "zh-Hans": "羊皮纸",
+        "zh-Hant": "羊皮紙",
+        "ja": "羊皮紙",
+        "id": "Perkamen",
+        "ar": "رق"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "frame",
+      "id": 2,
+      "sex": "",
+      "name": [
+        "브론즈",
+        "Bronze",
+        "Bronce",
+        "Bronzo",
+        "Bronze",
+        "青铜",
+        "青銅",
+        "ブロンズ",
+        "Perunggu",
+        "برونز"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "브론즈",
+        "en": "Bronze",
+        "es": "Bronce",
+        "it": "Bronzo",
+        "pt": "Bronze",
+        "zh-Hans": "青铜",
+        "zh-Hant": "青銅",
+        "ja": "ブロンズ",
+        "id": "Perunggu",
+        "ar": "برونز"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "nameplate",
+      "id": 2,
+      "sex": "",
+      "name": [
+        "브론즈",
+        "Bronze",
+        "Bronce",
+        "Bronzo",
+        "Bronze",
+        "青铜",
+        "青銅",
+        "ブロンズ",
+        "Perunggu",
+        "برونز"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "브론즈",
+        "en": "Bronze",
+        "es": "Bronce",
+        "it": "Bronzo",
+        "pt": "Bronze",
+        "zh-Hans": "青铜",
+        "zh-Hant": "青銅",
+        "ja": "ブロンズ",
+        "id": "Perunggu",
+        "ar": "برونز"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "hpBar",
+      "id": 2,
+      "sex": "",
+      "name": [
+        "브론즈",
+        "Bronze",
+        "Bronce",
+        "Bronzo",
+        "Bronze",
+        "青铜",
+        "青銅",
+        "ブロンズ",
+        "Perunggu",
+        "برونز"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "브론즈",
+        "en": "Bronze",
+        "es": "Bronce",
+        "it": "Bronzo",
+        "pt": "Bronze",
+        "zh-Hans": "青铜",
+        "zh-Hant": "青銅",
+        "ja": "ブロンズ",
+        "id": "Perunggu",
+        "ar": "برونز"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "bgm",
+      "id": 1,
+      "sex": "",
+      "name": [
+        "신참 모험가",
+        "Novice Adventurer",
+        "Aventurero Novato",
+        "Apprendista Avventuriero",
+        "Aventureiro Novato",
+        "新手冒险者",
+        "新手冒險者",
+        "新米冒険者",
+        "Petualang Pemula",
+        "مغامر مبتدئ"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "신참 모험가",
+        "en": "Novice Adventurer",
+        "es": "Aventurero Novato",
+        "it": "Apprendista Avventuriero",
+        "pt": "Aventureiro Novato",
+        "zh-Hans": "新手冒险者",
+        "zh-Hant": "新手冒險者",
+        "ja": "新米冒険者",
+        "id": "Petualang Pemula",
+        "ar": "مغامر مبتدئ"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 8,
+      "sex": 1,
+      "name": [
+        "마젯",
+        "Majet",
+        "Majet",
+        "Majet",
+        "Majet",
+        "玛洁特",
+        "瑪潔特",
+        "マジェット",
+        "Majet",
+        "ماجيت"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "마젯",
+        "en": "Majet",
+        "es": "Majet",
+        "it": "Majet",
+        "pt": "Majet",
+        "zh-Hans": "玛洁特",
+        "zh-Hant": "瑪潔特",
+        "ja": "マジェット",
+        "id": "Majet",
+        "ar": "ماجيت"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 9,
+      "sex": 0,
+      "name": [
+        "사냥꾼",
+        "Hunter",
+        "Cazador",
+        "Cacciatore",
+        "Caçador",
+        "猎人",
+        "獵人",
+        "ハンター",
+        "Pemburu",
+        "صياد"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "사냥꾼",
+        "en": "Hunter",
+        "es": "Cazador",
+        "it": "Cacciatore",
+        "pt": "Caçador",
+        "zh-Hans": "猎人",
+        "zh-Hant": "獵人",
+        "ja": "ハンター",
+        "id": "Pemburu",
+        "ar": "صياد"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 10,
+      "sex": 1,
+      "name": [
+        "사냥꾼",
+        "Hunter",
+        "Cazador",
+        "Cacciatore",
+        "Caçadora",
+        "猎人",
+        "獵人",
+        "ハンター",
+        "Pemburu",
+        "صياد"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "사냥꾼",
+        "en": "Hunter",
+        "es": "Cazador",
+        "it": "Cacciatore",
+        "pt": "Caçadora",
+        "zh-Hans": "猎人",
+        "zh-Hant": "獵人",
+        "ja": "ハンター",
+        "id": "Pemburu",
+        "ar": "صياد"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 11,
+      "sex": 0,
+      "name": [
+        "이파리",
+        "Leaf",
+        "Hoja",
+        "Foglia",
+        "Folha",
+        "绿叶",
+        "綠葉",
+        "葉",
+        "Daun",
+        "ورقة"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "이파리",
+        "en": "Leaf",
+        "es": "Hoja",
+        "it": "Foglia",
+        "pt": "Folha",
+        "zh-Hans": "绿叶",
+        "zh-Hant": "綠葉",
+        "ja": "葉",
+        "id": "Daun",
+        "ar": "ورقة"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 12,
+      "sex": 1,
+      "name": [
+        "이파리",
+        "Leaf",
+        "Hoja",
+        "Foglia",
+        "Folha",
+        "绿叶",
+        "綠葉",
+        "葉",
+        "Daun",
+        "ورقة"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "이파리",
+        "en": "Leaf",
+        "es": "Hoja",
+        "it": "Foglia",
+        "pt": "Folha",
+        "zh-Hans": "绿叶",
+        "zh-Hant": "綠葉",
+        "ja": "葉",
+        "id": "Daun",
+        "ar": "ورقة"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 13,
+      "sex": 0,
+      "name": [
+        "뿌리",
+        "Root",
+        "Raíz",
+        "Radice",
+        "Raiz",
+        "根须",
+        "根鬚",
+        "根",
+        "Akar",
+        "جذر"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "뿌리",
+        "en": "Root",
+        "es": "Raíz",
+        "it": "Radice",
+        "pt": "Raiz",
+        "zh-Hans": "根须",
+        "zh-Hant": "根鬚",
+        "ja": "根",
+        "id": "Akar",
+        "ar": "جذر"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 14,
+      "sex": 1,
+      "name": [
+        "뿌리",
+        "Root",
+        "Raíz",
+        "Radice",
+        "Raiz",
+        "根须",
+        "根鬚",
+        "根",
+        "Akar",
+        "جذر"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "뿌리",
+        "en": "Root",
+        "es": "Raíz",
+        "it": "Radice",
+        "pt": "Raiz",
+        "zh-Hans": "根须",
+        "zh-Hant": "根鬚",
+        "ja": "根",
+        "id": "Akar",
+        "ar": "جذر"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 15,
+      "sex": 0,
+      "name": [
+        "이렐르",
+        "Irelle",
+        "Irelle",
+        "Irelle",
+        "Irelle",
+        "伊勒",
+        "伊勒",
+        "イレル",
+        "Irelle",
+        "إيريل"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "이렐르",
+        "en": "Irelle",
+        "es": "Irelle",
+        "it": "Irelle",
+        "pt": "Irelle",
+        "zh-Hans": "伊勒",
+        "zh-Hant": "伊勒",
+        "ja": "イレル",
+        "id": "Irelle",
+        "ar": "إيريل"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "frame",
+      "id": 3,
+      "sex": "",
+      "name": [
+        "나무",
+        "Tree",
+        "Madera",
+        "Albero",
+        "Madeira",
+        "树木",
+        "樹木",
+        "木材",
+        "Pohon",
+        "شجرة"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "나무",
+        "en": "Tree",
+        "es": "Madera",
+        "it": "Albero",
+        "pt": "Madeira",
+        "zh-Hans": "树木",
+        "zh-Hant": "樹木",
+        "ja": "木材",
+        "id": "Pohon",
+        "ar": "شجرة"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "nameplate",
+      "id": 3,
+      "sex": "",
+      "name": [
+        "나무",
+        "Tree",
+        "Madera",
+        "Albero",
+        "Madeira",
+        "树木",
+        "樹木",
+        "木材",
+        "Pohon",
+        "شجرة"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "나무",
+        "en": "Tree",
+        "es": "Madera",
+        "it": "Albero",
+        "pt": "Madeira",
+        "zh-Hans": "树木",
+        "zh-Hant": "樹木",
+        "ja": "木材",
+        "id": "Pohon",
+        "ar": "شجرة"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "hpBar",
+      "id": 3,
+      "sex": "",
+      "name": [
+        "나무",
+        "Tree",
+        "Madera",
+        "Albero",
+        "Madeira",
+        "树木",
+        "樹木",
+        "木材",
+        "Pohon",
+        "شجرة"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "나무",
+        "en": "Tree",
+        "es": "Madera",
+        "it": "Albero",
+        "pt": "Madeira",
+        "zh-Hans": "树木",
+        "zh-Hant": "樹木",
+        "ja": "木材",
+        "id": "Pohon",
+        "ar": "شجرة"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "frame",
+      "id": 4,
+      "sex": "",
+      "name": [
+        "엘븐",
+        "Elven",
+        "Élfico",
+        "Elfico",
+        "Élfico",
+        "精灵",
+        "精靈",
+        "エルフ",
+        "Elf",
+        "إلفي"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "엘븐",
+        "en": "Elven",
+        "es": "Élfico",
+        "it": "Elfico",
+        "pt": "Élfico",
+        "zh-Hans": "精灵",
+        "zh-Hant": "精靈",
+        "ja": "エルフ",
+        "id": "Elf",
+        "ar": "إلفي"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "nameplate",
+      "id": 4,
+      "sex": "",
+      "name": [
+        "엘븐",
+        "Elven",
+        "Élfico",
+        "Elfico",
+        "Élfico",
+        "精灵",
+        "精靈",
+        "エルフ",
+        "Elf",
+        "إلفي"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "엘븐",
+        "en": "Elven",
+        "es": "Élfico",
+        "it": "Elfico",
+        "pt": "Élfico",
+        "zh-Hans": "精灵",
+        "zh-Hant": "精靈",
+        "ja": "エルフ",
+        "id": "Elf",
+        "ar": "إلفي"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "hpBar",
+      "id": 4,
+      "sex": "",
+      "name": [
+        "엘븐",
+        "Elven",
+        "Élfico",
+        "Elfico",
+        "Élfico",
+        "精灵",
+        "精靈",
+        "エルフ",
+        "Elf",
+        "إلفي"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "엘븐",
+        "en": "Elven",
+        "es": "Élfico",
+        "it": "Elfico",
+        "pt": "Élfico",
+        "zh-Hans": "精灵",
+        "zh-Hant": "精靈",
+        "ja": "エルフ",
+        "id": "Elf",
+        "ar": "إلفي"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "bgm",
+      "id": 2,
+      "sex": "",
+      "name": [
+        "숲의 초대",
+        "Forest’s Invitation",
+        "Invitación del Bosque",
+        "Invito della Foresta",
+        "Convite da Floresta",
+        "森林的邀请",
+        "森林的邀請",
+        "森の招待状",
+        "Ajakan Hutan",
+        "دعوة الغابة"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "숲의 초대",
+        "en": "Forest’s Invitation",
+        "es": "Invitación del Bosque",
+        "it": "Invito della Foresta",
+        "pt": "Convite da Floresta",
+        "zh-Hans": "森林的邀请",
+        "zh-Hant": "森林的邀請",
+        "ja": "森の招待状",
+        "id": "Ajakan Hutan",
+        "ar": "دعوة الغابة"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "dice",
+      "id": 1,
+      "sex": "",
+      "name": [
+        "에메랄드",
+        "Emerald",
+        "Esmeralda",
+        "Smeraldo",
+        "Esmeralda",
+        "祖母绿",
+        "祖母綠",
+        "エメラルド",
+        "Zamrud",
+        "زمرد"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "에메랄드",
+        "en": "Emerald",
+        "es": "Esmeralda",
+        "it": "Smeraldo",
+        "pt": "Esmeralda",
+        "zh-Hans": "祖母绿",
+        "zh-Hant": "祖母綠",
+        "ja": "エメラルド",
+        "id": "Zamrud",
+        "ar": "زمرد"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "startBg",
+      "id": 1,
+      "sex": "",
+      "name": [
+        "숲의 초대",
+        "Forest’s Invitation",
+        "Invitación del Bosque",
+        "Invito della Foresta",
+        "Convite da Floresta",
+        "森林的邀请",
+        "森林的邀請",
+        "森の招待状",
+        "Ajakan Hutan",
+        "دعوة الغابة"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "숲의 초대",
+        "en": "Forest’s Invitation",
+        "es": "Invitación del Bosque",
+        "it": "Invito della Foresta",
+        "pt": "Convite da Floresta",
+        "zh-Hans": "森林的邀请",
+        "zh-Hant": "森林的邀請",
+        "ja": "森の招待状",
+        "id": "Ajakan Hutan",
+        "ar": "دعوة الغابة"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "frame",
+      "id": 0,
+      "sex": "",
+      "name": [
+        "기본",
+        "Default",
+        "Por defecto",
+        "Predefinito",
+        "Padrão",
+        "预设",
+        "預設",
+        "デフォルト",
+        "Bawaan",
+        "افتراضي"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "기본",
+        "en": "Default",
+        "es": "Por defecto",
+        "it": "Predefinito",
+        "pt": "Padrão",
+        "zh-Hans": "预设",
+        "zh-Hant": "預設",
+        "ja": "デフォルト",
+        "id": "Bawaan",
+        "ar": "افتراضي"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "nameplate",
+      "id": 0,
+      "sex": "",
+      "name": [
+        "기본",
+        "Default",
+        "Por defecto",
+        "Predefinito",
+        "Padrão",
+        "预设",
+        "預設",
+        "デフォルト",
+        "Bawaan",
+        "افتراضي"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "기본",
+        "en": "Default",
+        "es": "Por defecto",
+        "it": "Predefinito",
+        "pt": "Padrão",
+        "zh-Hans": "预设",
+        "zh-Hant": "預設",
+        "ja": "デフォルト",
+        "id": "Bawaan",
+        "ar": "افتراضي"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "hpBar",
+      "id": 0,
+      "sex": "",
+      "name": [
+        "기본",
+        "Default",
+        "Por defecto",
+        "Predefinito",
+        "Padrão",
+        "预设",
+        "預設",
+        "デフォルト",
+        "Bawaan",
+        "افتراضي"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "기본",
+        "en": "Default",
+        "es": "Por defecto",
+        "it": "Predefinito",
+        "pt": "Padrão",
+        "zh-Hans": "预设",
+        "zh-Hant": "預設",
+        "ja": "デフォルト",
+        "id": "Bawaan",
+        "ar": "افتراضي"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "dice",
+      "id": 0,
+      "sex": "",
+      "name": [
+        "기본",
+        "Default",
+        "Por defecto",
+        "Predefinito",
+        "Padrão",
+        "预设",
+        "預設",
+        "デフォルト",
+        "Bawaan",
+        "افتراضي"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "기본",
+        "en": "Default",
+        "es": "Por defecto",
+        "it": "Predefinito",
+        "pt": "Padrão",
+        "zh-Hans": "预设",
+        "zh-Hant": "預設",
+        "ja": "デフォルト",
+        "id": "Bawaan",
+        "ar": "افتراضي"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "bgm",
+      "id": 0,
+      "sex": "",
+      "name": [
+        "기본",
+        "Default",
+        "Por defecto",
+        "Predefinito",
+        "Padrão",
+        "预设",
+        "預設",
+        "デフォルト",
+        "Bawaan",
+        "افتراضي"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "기본",
+        "en": "Default",
+        "es": "Por defecto",
+        "it": "Predefinito",
+        "pt": "Padrão",
+        "zh-Hans": "预设",
+        "zh-Hant": "預設",
+        "ja": "デフォルト",
+        "id": "Bawaan",
+        "ar": "افتراضي"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "startBg",
+      "id": 0,
+      "sex": "",
+      "name": [
+        "기본",
+        "Default",
+        "Por defecto",
+        "Predefinito",
+        "Padrão",
+        "预设",
+        "預設",
+        "デフォルト",
+        "Bawaan",
+        "افتراضي"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "기본",
+        "en": "Default",
+        "es": "Por defecto",
+        "it": "Predefinito",
+        "pt": "Padrão",
+        "zh-Hans": "预设",
+        "zh-Hant": "預設",
+        "ja": "デフォルト",
+        "id": "Bawaan",
+        "ar": "افتراضي"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 16,
+      "sex": 1,
+      "name": [
+        "시라",
+        "Cira",
+        "Cira",
+        "Cira",
+        "Cira",
+        "希瑞雅",
+        "希瑞雅",
+        "シーラ",
+        "Cira",
+        "سيرا"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "시라",
+        "en": "Cira",
+        "es": "Cira",
+        "it": "Cira",
+        "pt": "Cira",
+        "zh-Hans": "希瑞雅",
+        "zh-Hant": "希瑞雅",
+        "ja": "シーラ",
+        "id": "Cira",
+        "ar": "سيرا"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 17,
+      "sex": 1,
+      "name": [
+        "악마 시라",
+        "Devil Cira",
+        "Cira Diabólica",
+        "Demone Cira",
+        "Cira Demoníaca",
+        "恶魔希瑞雅",
+        "惡魔希瑞雅",
+        "悪魔・シーラ",
+        "Iblis Cira",
+        "سيرا الشيطانية"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "악마 시라",
+        "en": "Devil Cira",
+        "es": "Cira Diabólica",
+        "it": "Demone Cira",
+        "pt": "Cira Demoníaca",
+        "zh-Hans": "恶魔希瑞雅",
+        "zh-Hant": "惡魔希瑞雅",
+        "ja": "悪魔・シーラ",
+        "id": "Iblis Cira",
+        "ar": "سيرا الشيطانية"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 18,
+      "sex": 0,
+      "name": [
+        "악마 남작",
+        "Demon Baron",
+        "Barón Demonio",
+        "Barone Demone",
+        "Barão Demônio",
+        "恶魔男爵",
+        "惡魔男爵",
+        "悪魔男爵",
+        "Baron Iblis",
+        "بارون الشياطين"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "악마 남작",
+        "en": "Demon Baron",
+        "es": "Barón Demonio",
+        "it": "Barone Demone",
+        "pt": "Barão Demônio",
+        "zh-Hans": "恶魔男爵",
+        "zh-Hant": "惡魔男爵",
+        "ja": "悪魔男爵",
+        "id": "Baron Iblis",
+        "ar": "بارون الشياطين"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 19,
+      "sex": 1,
+      "name": [
+        "악마 남작",
+        "Demon Baron",
+        "Barón Demonio",
+        "Barone Demone",
+        "Barã Demônia",
+        "恶魔男爵",
+        "惡魔男爵",
+        "悪魔男爵",
+        "Baron Iblis",
+        "بارون الشياطين"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "악마 남작",
+        "en": "Demon Baron",
+        "es": "Barón Demonio",
+        "it": "Barone Demone",
+        "pt": "Barã Demônia",
+        "zh-Hans": "恶魔男爵",
+        "zh-Hant": "惡魔男爵",
+        "ja": "悪魔男爵",
+        "id": "Baron Iblis",
+        "ar": "بارون الشياطين"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 20,
+      "sex": 0,
+      "name": [
+        "악마 백작",
+        "Demon Count",
+        "Conde Demonio",
+        "Conte Demone",
+        "Conde Demônio",
+        "恶魔伯爵",
+        "惡魔伯爵",
+        "悪魔伯爵",
+        "Count Iblis",
+        "كونت الشياطين"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "악마 백작",
+        "en": "Demon Count",
+        "es": "Conde Demonio",
+        "it": "Conte Demone",
+        "pt": "Conde Demônio",
+        "zh-Hans": "恶魔伯爵",
+        "zh-Hant": "惡魔伯爵",
+        "ja": "悪魔伯爵",
+        "id": "Count Iblis",
+        "ar": "كونت الشياطين"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 21,
+      "sex": 1,
+      "name": [
+        "악마 백작",
+        "Demon Count",
+        "Conde Demonio",
+        "Conte Demone",
+        "Conde Demônia",
+        "恶魔伯爵",
+        "惡魔伯爵",
+        "悪魔伯爵",
+        "Count Iblis",
+        "كونت الشياطين"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "악마 백작",
+        "en": "Demon Count",
+        "es": "Conde Demonio",
+        "it": "Conte Demone",
+        "pt": "Conde Demônia",
+        "zh-Hans": "恶魔伯爵",
+        "zh-Hant": "惡魔伯爵",
+        "ja": "悪魔伯爵",
+        "id": "Count Iblis",
+        "ar": "كونت الشياطين"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 22,
+      "sex": 0,
+      "name": [
+        "키오르",
+        "Kior",
+        "Kior",
+        "Kior",
+        "Kior",
+        "基奥",
+        "基奧",
+        "キオール",
+        "Kior",
+        "كيور"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "키오르",
+        "en": "Kior",
+        "es": "Kior",
+        "it": "Kior",
+        "pt": "Kior",
+        "zh-Hans": "基奥",
+        "zh-Hant": "基奧",
+        "ja": "キオール",
+        "id": "Kior",
+        "ar": "كيور"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 23,
+      "sex": 2,
+      "name": [
+        "악마 대공",
+        "Demon Grand Duke",
+        "Gran Duque Demonio",
+        "Gran Duca Demone",
+        "Grão-Duque Demônio",
+        "恶魔大公",
+        "惡魔大公",
+        "悪魔大公",
+        "Adipati Agung Iblis",
+        "الدوق الأعظم للشياطين"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "악마 대공",
+        "en": "Demon Grand Duke",
+        "es": "Gran Duque Demonio",
+        "it": "Gran Duca Demone",
+        "pt": "Grão-Duque Demônio",
+        "zh-Hans": "恶魔大公",
+        "zh-Hant": "惡魔大公",
+        "ja": "悪魔大公",
+        "id": "Adipati Agung Iblis",
+        "ar": "الدوق الأعظم للشياطين"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "frame",
+      "id": 5,
+      "sex": "",
+      "name": [
+        "다크 스톤",
+        "Dark Stone",
+        "Piedra Oscura",
+        "Pietra Oscura",
+        "Pedra Sombria",
+        "黑暗之石",
+        "黑暗之石",
+        "闇の石",
+        "Batu Kelam",
+        "حجر مظلم"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "다크 스톤",
+        "en": "Dark Stone",
+        "es": "Piedra Oscura",
+        "it": "Pietra Oscura",
+        "pt": "Pedra Sombria",
+        "zh-Hans": "黑暗之石",
+        "zh-Hant": "黑暗之石",
+        "ja": "闇の石",
+        "id": "Batu Kelam",
+        "ar": "حجر مظلم"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "nameplate",
+      "id": 5,
+      "sex": "",
+      "name": [
+        "다크 스톤",
+        "Dark Stone",
+        "Piedra Oscura",
+        "Pietra Oscura",
+        "Pedra Sombria",
+        "黑暗之石",
+        "黑暗之石",
+        "闇の石",
+        "Batu Kelam",
+        "حجر مظلم"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "다크 스톤",
+        "en": "Dark Stone",
+        "es": "Piedra Oscura",
+        "it": "Pietra Oscura",
+        "pt": "Pedra Sombria",
+        "zh-Hans": "黑暗之石",
+        "zh-Hant": "黑暗之石",
+        "ja": "闇の石",
+        "id": "Batu Kelam",
+        "ar": "حجر مظلم"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "hpBar",
+      "id": 5,
+      "sex": "",
+      "name": [
+        "다크 스톤",
+        "Dark Stone",
+        "Piedra Oscura",
+        "Pietra Oscura",
+        "Pedra Sombria",
+        "黑暗之石",
+        "黑暗之石",
+        "闇の石",
+        "Batu Kelam",
+        "حجر مظلم"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "다크 스톤",
+        "en": "Dark Stone",
+        "es": "Piedra Oscura",
+        "it": "Pietra Oscura",
+        "pt": "Pedra Sombria",
+        "zh-Hans": "黑暗之石",
+        "zh-Hant": "黑暗之石",
+        "ja": "闇の石",
+        "id": "Batu Kelam",
+        "ar": "حجر مظلم"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "frame",
+      "id": 6,
+      "sex": "",
+      "name": [
+        "죽음의 숨결",
+        "Death’s Breath",
+        "Aliento de la Muerte",
+        "Respiro della Morte",
+        "Sopro da Morte",
+        "死亡之息",
+        "死亡之息",
+        "死の息吹",
+        "Napas Maut",
+        "نَفَس الموت"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "죽음의 숨결",
+        "en": "Death’s Breath",
+        "es": "Aliento de la Muerte",
+        "it": "Respiro della Morte",
+        "pt": "Sopro da Morte",
+        "zh-Hans": "死亡之息",
+        "zh-Hant": "死亡之息",
+        "ja": "死の息吹",
+        "id": "Napas Maut",
+        "ar": "نَفَس الموت"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "nameplate",
+      "id": 6,
+      "sex": "",
+      "name": [
+        "죽음의 숨결",
+        "Death’s Breath",
+        "Aliento de la Muerte",
+        "Respiro della Morte",
+        "Sopro da Morte",
+        "死亡之息",
+        "死亡之息",
+        "死の息吹",
+        "Napas Maut",
+        "نَفَس الموت"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "죽음의 숨결",
+        "en": "Death’s Breath",
+        "es": "Aliento de la Muerte",
+        "it": "Respiro della Morte",
+        "pt": "Sopro da Morte",
+        "zh-Hans": "死亡之息",
+        "zh-Hant": "死亡之息",
+        "ja": "死の息吹",
+        "id": "Napas Maut",
+        "ar": "نَفَس الموت"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "hpBar",
+      "id": 6,
+      "sex": "",
+      "name": [
+        "죽음의 숨결",
+        "Death’s Breath",
+        "Aliento de la Muerte",
+        "Respiro della Morte",
+        "Sopro da Morte",
+        "死亡之息",
+        "死亡之息",
+        "死の息吹",
+        "Napas Maut",
+        "نَفَس الموت"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "죽음의 숨결",
+        "en": "Death’s Breath",
+        "es": "Aliento de la Muerte",
+        "it": "Respiro della Morte",
+        "pt": "Sopro da Morte",
+        "zh-Hans": "死亡之息",
+        "zh-Hant": "死亡之息",
+        "ja": "死の息吹",
+        "id": "Napas Maut",
+        "ar": "نَفَس الموت"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "frame",
+      "id": 7,
+      "sex": "",
+      "name": [
+        "악마 대공",
+        "Demon Grand Duke",
+        "Gran Duque Demonio",
+        "Gran Duca Demone",
+        "Grão-Duque Demônio",
+        "恶魔大公",
+        "惡魔大公",
+        "悪魔大公",
+        "Adipati Agung Iblis",
+        "الدوق الأعظم للشياطين"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "악마 대공",
+        "en": "Demon Grand Duke",
+        "es": "Gran Duque Demonio",
+        "it": "Gran Duca Demone",
+        "pt": "Grão-Duque Demônio",
+        "zh-Hans": "恶魔大公",
+        "zh-Hant": "惡魔大公",
+        "ja": "悪魔大公",
+        "id": "Adipati Agung Iblis",
+        "ar": "الدوق الأعظم للشياطين"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "nameplate",
+      "id": 7,
+      "sex": "",
+      "name": [
+        "악마 대공",
+        "Demon Grand Duke",
+        "Gran Duque Demonio",
+        "Gran Duca Demone",
+        "Grão-Duque Demônio",
+        "恶魔大公",
+        "惡魔大公",
+        "悪魔大公",
+        "Adipati Agung Iblis",
+        "الدوق الأعظم للشياطين"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "악마 대공",
+        "en": "Demon Grand Duke",
+        "es": "Gran Duque Demonio",
+        "it": "Gran Duca Demone",
+        "pt": "Grão-Duque Demônio",
+        "zh-Hans": "恶魔大公",
+        "zh-Hant": "惡魔大公",
+        "ja": "悪魔大公",
+        "id": "Adipati Agung Iblis",
+        "ar": "الدوق الأعظم للشياطين"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "hpBar",
+      "id": 7,
+      "sex": "",
+      "name": [
+        "악마 대공",
+        "Demon Grand Duke",
+        "Gran Duque Demonio",
+        "Gran Duca Demone",
+        "Grão-Duque Demônio",
+        "恶魔大公",
+        "惡魔大公",
+        "悪魔大公",
+        "Adipati Agung Iblis",
+        "الدوق الأعظم للشياطين"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "악마 대공",
+        "en": "Demon Grand Duke",
+        "es": "Gran Duque Demonio",
+        "it": "Gran Duca Demone",
+        "pt": "Grão-Duque Demônio",
+        "zh-Hans": "恶魔大公",
+        "zh-Hant": "惡魔大公",
+        "ja": "悪魔大公",
+        "id": "Adipati Agung Iblis",
+        "ar": "الدوق الأعظم للشياطين"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "startBg",
+      "id": 2,
+      "sex": "",
+      "name": [
+        "악마와 함께 춤을",
+        "Dance with the Demon",
+        "Baila con el Demonio",
+        "Danza con il Demone",
+        "Dance com o Demônio",
+        "与恶魔共舞",
+        "與惡魔共舞",
+        "悪魔と踊る",
+        "Menari Bersama Iblis",
+        "الرقص مع الشيطان "
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "악마와 함께 춤을",
+        "en": "Dance with the Demon",
+        "es": "Baila con el Demonio",
+        "it": "Danza con il Demone",
+        "pt": "Dance com o Demônio",
+        "zh-Hans": "与恶魔共舞",
+        "zh-Hant": "與惡魔共舞",
+        "ja": "悪魔と踊る",
+        "id": "Menari Bersama Iblis",
+        "ar": "الرقص مع الشيطان "
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "frame",
+      "id": 8,
+      "sex": "",
+      "name": [
+        "설산",
+        "Snow Mountain",
+        "Montaña Nevada",
+        "Montagna Nevosa",
+        "Montanha Nevada",
+        "雪山",
+        "雪山",
+        "雪山",
+        "Gunung Bersalju",
+        "الجبل الثلجي"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "설산",
+        "en": "Snow Mountain",
+        "es": "Montaña Nevada",
+        "it": "Montagna Nevosa",
+        "pt": "Montanha Nevada",
+        "zh-Hans": "雪山",
+        "zh-Hant": "雪山",
+        "ja": "雪山",
+        "id": "Gunung Bersalju",
+        "ar": "الجبل الثلجي"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "nameplate",
+      "id": 8,
+      "sex": "",
+      "name": [
+        "설산",
+        "Snow Mountain",
+        "Montaña Nevada",
+        "Montagna Nevosa",
+        "Montanha Nevada",
+        "雪山",
+        "雪山",
+        "雪山",
+        "Gunung Bersalju",
+        "الجبل الثلجي"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "설산",
+        "en": "Snow Mountain",
+        "es": "Montaña Nevada",
+        "it": "Montagna Nevosa",
+        "pt": "Montanha Nevada",
+        "zh-Hans": "雪山",
+        "zh-Hant": "雪山",
+        "ja": "雪山",
+        "id": "Gunung Bersalju",
+        "ar": "الجبل الثلجي"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "hpBar",
+      "id": 8,
+      "sex": "",
+      "name": [
+        "설산",
+        "Snow Mountain",
+        "Montaña Nevada",
+        "Montagna Nevosa",
+        "Montanha Nevada",
+        "雪山",
+        "雪山",
+        "雪山",
+        "Gunung Bersalju",
+        "الجبل الثلجي"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "설산",
+        "en": "Snow Mountain",
+        "es": "Montaña Nevada",
+        "it": "Montagna Nevosa",
+        "pt": "Montanha Nevada",
+        "zh-Hans": "雪山",
+        "zh-Hant": "雪山",
+        "ja": "雪山",
+        "id": "Gunung Bersalju",
+        "ar": "الجبل الثلجي"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "bgm",
+      "id": 3,
+      "sex": "",
+      "name": [
+        "악마와 함께 춤을",
+        "Dance with the Demon",
+        "Baila con el Demonio",
+        "Danza con il Demone",
+        "Dança com o Demônio",
+        "与恶魔共舞",
+        "與惡魔共舞",
+        "悪魔と踊る",
+        "Menari Bersama Iblis",
+        "الرقص مع الشيطان "
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "악마와 함께 춤을",
+        "en": "Dance with the Demon",
+        "es": "Baila con el Demonio",
+        "it": "Danza con il Demone",
+        "pt": "Dança com o Demônio",
+        "zh-Hans": "与恶魔共舞",
+        "zh-Hant": "與惡魔共舞",
+        "ja": "悪魔と踊る",
+        "id": "Menari Bersama Iblis",
+        "ar": "الرقص مع الشيطان "
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 24,
+      "sex": 1,
+      "name": [
+        "테리아",
+        "Terria",
+        "Terria",
+        "Terria",
+        "Terria",
+        "泰莱雅",
+        "泰萊雅",
+        "テリア",
+        "Terria",
+        "تيريا"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "테리아",
+        "en": "Terria",
+        "es": "Terria",
+        "it": "Terria",
+        "pt": "Terria",
+        "zh-Hans": "泰莱雅",
+        "zh-Hant": "泰萊雅",
+        "ja": "テリア",
+        "id": "Terria",
+        "ar": "تيريا"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 25,
+      "sex": 0,
+      "name": [
+        "소서러",
+        "Sorcerer",
+        "Hechicero",
+        "Stregone",
+        "Feiticeiro",
+        "术士",
+        "術士",
+        "ソーサラー",
+        "Penyihir",
+        "ساحر"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "소서러",
+        "en": "Sorcerer",
+        "es": "Hechicero",
+        "it": "Stregone",
+        "pt": "Feiticeiro",
+        "zh-Hans": "术士",
+        "zh-Hant": "術士",
+        "ja": "ソーサラー",
+        "id": "Penyihir",
+        "ar": "ساحر"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 26,
+      "sex": 1,
+      "name": [
+        "소서리스",
+        "Sorceress",
+        "Hechicera",
+        "Strega",
+        "Feiticeira",
+        "女术士",
+        "女術士",
+        "ソーサレス",
+        "Penyihir wanita",
+        "ساحرة"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "소서리스",
+        "en": "Sorceress",
+        "es": "Hechicera",
+        "it": "Strega",
+        "pt": "Feiticeira",
+        "zh-Hans": "女术士",
+        "zh-Hant": "女術士",
+        "ja": "ソーサレス",
+        "id": "Penyihir wanita",
+        "ar": "ساحرة"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 27,
+      "sex": 0,
+      "name": [
+        "마법학도",
+        "Mage Scholar",
+        "Erudito en magia",
+        "Studioso di magia",
+        "Estudioso de magia",
+        "魔法学者",
+        "魔法學者",
+        "魔法学者",
+        "Cendekiawan sihir",
+        "باحث سحري"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "마법학도",
+        "en": "Mage Scholar",
+        "es": "Erudito en magia",
+        "it": "Studioso di magia",
+        "pt": "Estudioso de magia",
+        "zh-Hans": "魔法学者",
+        "zh-Hant": "魔法學者",
+        "ja": "魔法学者",
+        "id": "Cendekiawan sihir",
+        "ar": "باحث سحري"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 28,
+      "sex": 1,
+      "name": [
+        "마법학도",
+        "Mage Scholar",
+        "Erudito en magia",
+        "Studioso di magia",
+        "Estudioso de magia",
+        "魔法学者",
+        "魔法學者",
+        "魔法学者",
+        "Cendekiawan sihir",
+        "باحث سحري"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "마법학도",
+        "en": "Mage Scholar",
+        "es": "Erudito en magia",
+        "it": "Studioso di magia",
+        "pt": "Estudioso de magia",
+        "zh-Hans": "魔法学者",
+        "zh-Hant": "魔法學者",
+        "ja": "魔法学者",
+        "id": "Cendekiawan sihir",
+        "ar": "باحث سحري"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 29,
+      "sex": 0,
+      "name": [
+        "데일리킴",
+        "Daily Kim",
+        "Dailykim",
+        "Daily Kim ",
+        "Daily Kim",
+        "金代理",
+        "金代理",
+        "デイリー・キム",
+        "Daily Kim",
+        "ديلي كيم"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "데일리킴",
+        "en": "Daily Kim",
+        "es": "Dailykim",
+        "it": "Daily Kim ",
+        "pt": "Daily Kim",
+        "zh-Hans": "金代理",
+        "zh-Hant": "金代理",
+        "ja": "デイリー・キム",
+        "id": "Daily Kim",
+        "ar": "ديلي كيم"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 30,
+      "sex": 2,
+      "name": [
+        "YES",
+        "YES",
+        "YES",
+        "YES",
+        "YES",
+        "YES",
+        "YES",
+        "YES",
+        "YES",
+        "نعم"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "YES",
+        "en": "YES",
+        "es": "YES",
+        "it": "YES",
+        "pt": "YES",
+        "zh-Hans": "YES",
+        "zh-Hant": "YES",
+        "ja": "YES",
+        "id": "YES",
+        "ar": "نعم"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "portrait",
+      "id": 31,
+      "sex": 1,
+      "name": [
+        "하라드",
+        "Halad",
+        "Halad",
+        "Halad",
+        "Halad",
+        "哈拉德",
+        "哈拉德",
+        "ハラド",
+        "Halad",
+        "هالاد"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "하라드",
+        "en": "Halad",
+        "es": "Halad",
+        "it": "Halad",
+        "pt": "Halad",
+        "zh-Hans": "哈拉德",
+        "zh-Hant": "哈拉德",
+        "ja": "ハラド",
+        "id": "Halad",
+        "ar": "هالاد"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "frame",
+      "id": 9,
+      "sex": "",
+      "name": [
+        "원소",
+        "Elemental",
+        "Elemental",
+        "Elementale",
+        "Elemental",
+        "元素",
+        "元素",
+        "エレメンタル",
+        "Elemental",
+        "عنصري"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "원소",
+        "en": "Elemental",
+        "es": "Elemental",
+        "it": "Elementale",
+        "pt": "Elemental",
+        "zh-Hans": "元素",
+        "zh-Hant": "元素",
+        "ja": "エレメンタル",
+        "id": "Elemental",
+        "ar": "عنصري"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "nameplate",
+      "id": 9,
+      "sex": "",
+      "name": [
+        "원소",
+        "Elemental",
+        "Elemental",
+        "Elementale",
+        "Elemental",
+        "元素",
+        "元素",
+        "エレメンタル",
+        "Elemental",
+        "عنصري"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "원소",
+        "en": "Elemental",
+        "es": "Elemental",
+        "it": "Elementale",
+        "pt": "Elemental",
+        "zh-Hans": "元素",
+        "zh-Hant": "元素",
+        "ja": "エレメンタル",
+        "id": "Elemental",
+        "ar": "عنصري"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "hpBar",
+      "id": 9,
+      "sex": "",
+      "name": [
+        "원소",
+        "Elemental",
+        "Elemental",
+        "Elementale",
+        "Elemental",
+        "元素",
+        "元素",
+        "エレメンタル",
+        "Elemental",
+        "عنصري"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "원소",
+        "en": "Elemental",
+        "es": "Elemental",
+        "it": "Elementale",
+        "pt": "Elemental",
+        "zh-Hans": "元素",
+        "zh-Hant": "元素",
+        "ja": "エレメンタル",
+        "id": "Elemental",
+        "ar": "عنصري"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "frame",
+      "id": 10,
+      "sex": "",
+      "name": [
+        "마법거울",
+        "Magic Mirror",
+        "Espejo mágico",
+        "Specchio magico",
+        "Espelho mágico",
+        "魔镜",
+        "魔鏡",
+        "魔法の鏡",
+        "Cermin ajaib",
+        "مرآة سحرية"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "마법거울",
+        "en": "Magic Mirror",
+        "es": "Espejo mágico",
+        "it": "Specchio magico",
+        "pt": "Espelho mágico",
+        "zh-Hans": "魔镜",
+        "zh-Hant": "魔鏡",
+        "ja": "魔法の鏡",
+        "id": "Cermin ajaib",
+        "ar": "مرآة سحرية"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "nameplate",
+      "id": 10,
+      "sex": "",
+      "name": [
+        "마법거울",
+        "Magic Mirror",
+        "Espejo mágico",
+        "Specchio magico",
+        "Espelho mágico",
+        "魔镜",
+        "魔鏡",
+        "魔法の鏡",
+        "Cermin ajaib",
+        "مرآة سحرية"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "마법거울",
+        "en": "Magic Mirror",
+        "es": "Espejo mágico",
+        "it": "Specchio magico",
+        "pt": "Espelho mágico",
+        "zh-Hans": "魔镜",
+        "zh-Hant": "魔鏡",
+        "ja": "魔法の鏡",
+        "id": "Cermin ajaib",
+        "ar": "مرآة سحرية"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "hpBar",
+      "id": 10,
+      "sex": "",
+      "name": [
+        "마법거울",
+        "Magic Mirror",
+        "Espejo mágico",
+        "Specchio magico",
+        "Espelho mágico",
+        "魔镜",
+        "魔鏡",
+        "魔法の鏡",
+        "Cermin ajaib",
+        "مرآة سحرية"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "마법거울",
+        "en": "Magic Mirror",
+        "es": "Espejo mágico",
+        "it": "Specchio magico",
+        "pt": "Espelho mágico",
+        "zh-Hans": "魔镜",
+        "zh-Hant": "魔鏡",
+        "ja": "魔法の鏡",
+        "id": "Cermin ajaib",
+        "ar": "مرآة سحرية"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "frame",
+      "id": 11,
+      "sex": "",
+      "name": [
+        "별",
+        "Star",
+        "Estrella",
+        "Stella",
+        "Estrela",
+        "星",
+        "星",
+        "星",
+        "Bintang",
+        "نجم"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "별",
+        "en": "Star",
+        "es": "Estrella",
+        "it": "Stella",
+        "pt": "Estrela",
+        "zh-Hans": "星",
+        "zh-Hant": "星",
+        "ja": "星",
+        "id": "Bintang",
+        "ar": "نجم"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "nameplate",
+      "id": 11,
+      "sex": "",
+      "name": [
+        "별",
+        "Star",
+        "Estrella",
+        "Stella",
+        "Estrela",
+        "星",
+        "星",
+        "星",
+        "Bintang",
+        "نجم"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "별",
+        "en": "Star",
+        "es": "Estrella",
+        "it": "Stella",
+        "pt": "Estrela",
+        "zh-Hans": "星",
+        "zh-Hant": "星",
+        "ja": "星",
+        "id": "Bintang",
+        "ar": "نجم"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "hpBar",
+      "id": 11,
+      "sex": "",
+      "name": [
+        "별",
+        "Star",
+        "Estrella",
+        "Stella",
+        "Estrela",
+        "星",
+        "星",
+        "星",
+        "Bintang",
+        "نجم"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "별",
+        "en": "Star",
+        "es": "Estrella",
+        "it": "Stella",
+        "pt": "Estrela",
+        "zh-Hans": "星",
+        "zh-Hant": "星",
+        "ja": "星",
+        "id": "Bintang",
+        "ar": "نجم"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "frame",
+      "id": 12,
+      "sex": "",
+      "name": [
+        "고대의 신비",
+        "Ancient Arcane",
+        "Arcano ancestral",
+        "Arcano ancestrale",
+        "Arcano ancestral",
+        "远古奥术",
+        "遠古奧術",
+        "古代の秘術",
+        "Arkane purba",
+        "سحر قديم"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "고대의 신비",
+        "en": "Ancient Arcane",
+        "es": "Arcano ancestral",
+        "it": "Arcano ancestrale",
+        "pt": "Arcano ancestral",
+        "zh-Hans": "远古奥术",
+        "zh-Hant": "遠古奧術",
+        "ja": "古代の秘術",
+        "id": "Arkane purba",
+        "ar": "سحر قديم"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "nameplate",
+      "id": 12,
+      "sex": "",
+      "name": [
+        "고대의 신비",
+        "Ancient Arcane",
+        "Arcano ancestral",
+        "Arcano ancestrale",
+        "Arcano ancestral",
+        "远古奥术",
+        "遠古奧術",
+        "古代の秘術",
+        "Arkane purba",
+        "سحر قديم"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "고대의 신비",
+        "en": "Ancient Arcane",
+        "es": "Arcano ancestral",
+        "it": "Arcano ancestrale",
+        "pt": "Arcano ancestral",
+        "zh-Hans": "远古奥术",
+        "zh-Hant": "遠古奧術",
+        "ja": "古代の秘術",
+        "id": "Arkane purba",
+        "ar": "سحر قديم"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "hpBar",
+      "id": 12,
+      "sex": "",
+      "name": [
+        "고대의 신비",
+        "Ancient Arcane",
+        "Arcano ancestral",
+        "Arcano ancestrale",
+        "Arcano ancestral",
+        "远古奥术",
+        "遠古奧術",
+        "古代の秘術",
+        "Arkane purba",
+        "سحر قديم"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "고대의 신비",
+        "en": "Ancient Arcane",
+        "es": "Arcano ancestral",
+        "it": "Arcano ancestrale",
+        "pt": "Arcano ancestral",
+        "zh-Hans": "远古奥术",
+        "zh-Hant": "遠古奧術",
+        "ja": "古代の秘術",
+        "id": "Arkane purba",
+        "ar": "سحر قديم"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "dice",
+      "id": 2,
+      "sex": "",
+      "name": [
+        "마법 ",
+        "Magic",
+        "Mágia",
+        "Magia",
+        "Magia",
+        "魔法",
+        "魔法",
+        "魔法",
+        "Sihir",
+        "سحر"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "마법 ",
+        "en": "Magic",
+        "es": "Mágia",
+        "it": "Magia",
+        "pt": "Magia",
+        "zh-Hans": "魔法",
+        "zh-Hant": "魔法",
+        "ja": "魔法",
+        "id": "Sihir",
+        "ar": "سحر"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "bgm",
+      "id": 4,
+      "sex": "",
+      "name": [
+        "마법의형상",
+        "Shape of Magic",
+        "Esencia de la Magia",
+        "Essenza della Magia",
+        "Essência da Magia",
+        "魔法的形态",
+        "魔法的形態",
+        "魔法の形",
+        "Esensi Sihir",
+        "شكل السحر"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "마법의형상",
+        "en": "Shape of Magic",
+        "es": "Esencia de la Magia",
+        "it": "Essenza della Magia",
+        "pt": "Essência da Magia",
+        "zh-Hans": "魔法的形态",
+        "zh-Hant": "魔法的形態",
+        "ja": "魔法の形",
+        "id": "Esensi Sihir",
+        "ar": "شكل السحر"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "type": "startBg",
+      "id": 3,
+      "sex": "",
+      "name": [
+        "마법의형상",
+        "Shape of Magic",
+        "Esencia de la Magia",
+        "Essenza della Magia",
+        "Essência da Magia",
+        "魔法的形态",
+        "魔法的形態",
+        "魔法の形",
+        "Esensi Sihir",
+        "شكل السحر"
+      ]
+    },
+    "localized": {
+      "name": {
+        "ko": "마법의형상",
+        "en": "Shape of Magic",
+        "es": "Esencia de la Magia",
+        "it": "Essenza della Magia",
+        "pt": "Essência da Magia",
+        "zh-Hans": "魔法的形态",
+        "zh-Hant": "魔法的形態",
+        "ja": "魔法の形",
+        "id": "Esensi Sihir",
+        "ar": "شكل السحر"
+      }
+    },
+    "status": "extracted"
+  }
+]

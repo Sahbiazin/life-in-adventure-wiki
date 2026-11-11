@@ -1,0 +1,25 @@
+{
+  "m_Name": "MonoBehaviorUtil",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 207,
+    "bytes[1]": 123,
+    "bytes[2]": 185,
+    "bytes[3]": 48,
+    "bytes[4]": 79,
+    "bytes[5]": 137,
+    "bytes[6]": 58,
+    "bytes[7]": 20,
+    "bytes[8]": 183,
+    "bytes[9]": 64,
+    "bytes[10]": 46,
+    "bytes[11]": 47,
+    "bytes[12]": 171,
+    "bytes[13]": 110,
+    "bytes[14]": 135,
+    "bytes[15]": 66
+  },
+  "m_ClassName": "MonoBehaviourUtil",
+  "m_Namespace": "Purchasing.Utilities",
+  "m_AssemblyName": "Unity.Purchasing.Utilities"
+}

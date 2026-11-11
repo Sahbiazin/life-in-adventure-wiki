@@ -1,0 +1,25 @@
+{
+  "m_Name": "InfiniteRotator",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 189,
+    "bytes[1]": 69,
+    "bytes[2]": 95,
+    "bytes[3]": 98,
+    "bytes[4]": 191,
+    "bytes[5]": 252,
+    "bytes[6]": 190,
+    "bytes[7]": 48,
+    "bytes[8]": 100,
+    "bytes[9]": 119,
+    "bytes[10]": 255,
+    "bytes[11]": 118,
+    "bytes[12]": 109,
+    "bytes[13]": 240,
+    "bytes[14]": 167,
+    "bytes[15]": 92
+  },
+  "m_ClassName": "InfiniteRotator",
+  "m_Namespace": "CodeStage.AntiCheat.Examples",
+  "m_AssemblyName": "ACTk.Examples.Runtime"
+}

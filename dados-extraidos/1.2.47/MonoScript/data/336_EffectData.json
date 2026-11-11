@@ -1,0 +1,25 @@
+{
+  "m_Name": "EffectData",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 158,
+    "bytes[1]": 250,
+    "bytes[2]": 71,
+    "bytes[3]": 237,
+    "bytes[4]": 107,
+    "bytes[5]": 240,
+    "bytes[6]": 143,
+    "bytes[7]": 196,
+    "bytes[8]": 68,
+    "bytes[9]": 134,
+    "bytes[10]": 16,
+    "bytes[11]": 27,
+    "bytes[12]": 226,
+    "bytes[13]": 145,
+    "bytes[14]": 12,
+    "bytes[15]": 114
+  },
+  "m_ClassName": "EffectData",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

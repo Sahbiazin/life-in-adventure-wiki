@@ -1,0 +1,25 @@
+{
+  "m_Name": "InsightsEmitter",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 82,
+    "bytes[1]": 187,
+    "bytes[2]": 170,
+    "bytes[3]": 210,
+    "bytes[4]": 70,
+    "bytes[5]": 108,
+    "bytes[6]": 110,
+    "bytes[7]": 118,
+    "bytes[8]": 197,
+    "bytes[9]": 71,
+    "bytes[10]": 68,
+    "bytes[11]": 58,
+    "bytes[12]": 228,
+    "bytes[13]": 92,
+    "bytes[14]": 122,
+    "bytes[15]": 9
+  },
+  "m_ClassName": "InsightsEmitter",
+  "m_Namespace": "GoogleMobileAds.Common",
+  "m_AssemblyName": "GoogleMobileAds.Common.dll"
+}

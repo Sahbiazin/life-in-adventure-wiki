@@ -1,0 +1,25 @@
+{
+  "m_Name": "CameraCtrl",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 52,
+    "bytes[1]": 242,
+    "bytes[2]": 110,
+    "bytes[3]": 206,
+    "bytes[4]": 16,
+    "bytes[5]": 227,
+    "bytes[6]": 226,
+    "bytes[7]": 123,
+    "bytes[8]": 182,
+    "bytes[9]": 231,
+    "bytes[10]": 65,
+    "bytes[11]": 163,
+    "bytes[12]": 72,
+    "bytes[13]": 143,
+    "bytes[14]": 238,
+    "bytes[15]": 86
+  },
+  "m_ClassName": "CameraCtrl",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

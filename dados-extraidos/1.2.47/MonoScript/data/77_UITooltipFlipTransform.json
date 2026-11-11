@@ -1,0 +1,25 @@
+{
+  "m_Name": "UITooltipFlipTransform",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 244,
+    "bytes[1]": 184,
+    "bytes[2]": 193,
+    "bytes[3]": 185,
+    "bytes[4]": 113,
+    "bytes[5]": 117,
+    "bytes[6]": 219,
+    "bytes[7]": 95,
+    "bytes[8]": 176,
+    "bytes[9]": 162,
+    "bytes[10]": 251,
+    "bytes[11]": 34,
+    "bytes[12]": 100,
+    "bytes[13]": 205,
+    "bytes[14]": 44,
+    "bytes[15]": 225
+  },
+  "m_ClassName": "UITooltipFlipTransform",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

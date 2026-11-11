@@ -1,0 +1,25 @@
+{
+  "m_Name": "UISwitchSelect",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 149,
+    "bytes[1]": 227,
+    "bytes[2]": 123,
+    "bytes[3]": 148,
+    "bytes[4]": 217,
+    "bytes[5]": 143,
+    "bytes[6]": 236,
+    "bytes[7]": 238,
+    "bytes[8]": 104,
+    "bytes[9]": 118,
+    "bytes[10]": 150,
+    "bytes[11]": 154,
+    "bytes[12]": 168,
+    "bytes[13]": 10,
+    "bytes[14]": 62,
+    "bytes[15]": 254
+  },
+  "m_ClassName": "UISwitchSelect",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

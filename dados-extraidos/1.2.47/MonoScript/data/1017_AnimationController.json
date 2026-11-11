@@ -1,0 +1,25 @@
+{
+  "m_Name": "AnimationController",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 37,
+    "bytes[1]": 25,
+    "bytes[2]": 24,
+    "bytes[3]": 70,
+    "bytes[4]": 128,
+    "bytes[5]": 174,
+    "bytes[6]": 232,
+    "bytes[7]": 243,
+    "bytes[8]": 131,
+    "bytes[9]": 9,
+    "bytes[10]": 41,
+    "bytes[11]": 77,
+    "bytes[12]": 72,
+    "bytes[13]": 246,
+    "bytes[14]": 221,
+    "bytes[15]": 123
+  },
+  "m_ClassName": "AnimationController",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "EndingOld",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 224,
+    "bytes[1]": 239,
+    "bytes[2]": 142,
+    "bytes[3]": 163,
+    "bytes[4]": 49,
+    "bytes[5]": 196,
+    "bytes[6]": 23,
+    "bytes[7]": 209,
+    "bytes[8]": 221,
+    "bytes[9]": 122,
+    "bytes[10]": 185,
+    "bytes[11]": 52,
+    "bytes[12]": 20,
+    "bytes[13]": 218,
+    "bytes[14]": 75,
+    "bytes[15]": 60
+  },
+  "m_ClassName": "EndingOld",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

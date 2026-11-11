@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIProgressBar",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 228,
+    "bytes[1]": 104,
+    "bytes[2]": 43,
+    "bytes[3]": 102,
+    "bytes[4]": 73,
+    "bytes[5]": 43,
+    "bytes[6]": 90,
+    "bytes[7]": 105,
+    "bytes[8]": 112,
+    "bytes[9]": 152,
+    "bytes[10]": 16,
+    "bytes[11]": 74,
+    "bytes[12]": 94,
+    "bytes[13]": 205,
+    "bytes[14]": 25,
+    "bytes[15]": 134
+  },
+  "m_ClassName": "UIProgressBar",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

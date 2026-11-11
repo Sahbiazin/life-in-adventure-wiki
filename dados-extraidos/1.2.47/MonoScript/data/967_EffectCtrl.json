@@ -1,0 +1,25 @@
+{
+  "m_Name": "EffectCtrl",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 185,
+    "bytes[1]": 21,
+    "bytes[2]": 45,
+    "bytes[3]": 208,
+    "bytes[4]": 64,
+    "bytes[5]": 116,
+    "bytes[6]": 183,
+    "bytes[7]": 148,
+    "bytes[8]": 56,
+    "bytes[9]": 137,
+    "bytes[10]": 117,
+    "bytes[11]": 247,
+    "bytes[12]": 170,
+    "bytes[13]": 141,
+    "bytes[14]": 7,
+    "bytes[15]": 249
+  },
+  "m_ClassName": "EffectCtrl",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

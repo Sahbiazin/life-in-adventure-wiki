@@ -1,0 +1,25 @@
+{
+  "m_Name": "MonsterDataBase",
+  "m_ExecutionOrder": -6,
+  "m_PropertiesHash": {
+    "bytes[0]": 121,
+    "bytes[1]": 91,
+    "bytes[2]": 210,
+    "bytes[3]": 144,
+    "bytes[4]": 252,
+    "bytes[5]": 210,
+    "bytes[6]": 128,
+    "bytes[7]": 206,
+    "bytes[8]": 187,
+    "bytes[9]": 154,
+    "bytes[10]": 246,
+    "bytes[11]": 172,
+    "bytes[12]": 25,
+    "bytes[13]": 44,
+    "bytes[14]": 222,
+    "bytes[15]": 240
+  },
+  "m_ClassName": "MonsterDataBase",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

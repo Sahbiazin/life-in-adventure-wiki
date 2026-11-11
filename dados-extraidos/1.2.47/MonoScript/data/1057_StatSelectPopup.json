@@ -1,0 +1,25 @@
+{
+  "m_Name": "StatSelectPopup",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 194,
+    "bytes[1]": 187,
+    "bytes[2]": 93,
+    "bytes[3]": 124,
+    "bytes[4]": 135,
+    "bytes[5]": 218,
+    "bytes[6]": 182,
+    "bytes[7]": 157,
+    "bytes[8]": 216,
+    "bytes[9]": 5,
+    "bytes[10]": 205,
+    "bytes[11]": 78,
+    "bytes[12]": 81,
+    "bytes[13]": 247,
+    "bytes[14]": 156,
+    "bytes[15]": 105
+  },
+  "m_ClassName": "StatSelectPopup",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

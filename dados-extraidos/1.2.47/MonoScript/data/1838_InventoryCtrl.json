@@ -1,0 +1,25 @@
+{
+  "m_Name": "InventoryCtrl",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 174,
+    "bytes[1]": 28,
+    "bytes[2]": 153,
+    "bytes[3]": 157,
+    "bytes[4]": 190,
+    "bytes[5]": 254,
+    "bytes[6]": 88,
+    "bytes[7]": 140,
+    "bytes[8]": 210,
+    "bytes[9]": 84,
+    "bytes[10]": 122,
+    "bytes[11]": 169,
+    "bytes[12]": 25,
+    "bytes[13]": 203,
+    "bytes[14]": 127,
+    "bytes[15]": 242
+  },
+  "m_ClassName": "InventoryCtrl",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

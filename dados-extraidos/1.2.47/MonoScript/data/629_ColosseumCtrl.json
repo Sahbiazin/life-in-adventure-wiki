@@ -1,0 +1,25 @@
+{
+  "m_Name": "ColosseumCtrl",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 146,
+    "bytes[1]": 76,
+    "bytes[2]": 215,
+    "bytes[3]": 128,
+    "bytes[4]": 113,
+    "bytes[5]": 26,
+    "bytes[6]": 139,
+    "bytes[7]": 219,
+    "bytes[8]": 242,
+    "bytes[9]": 151,
+    "bytes[10]": 195,
+    "bytes[11]": 204,
+    "bytes[12]": 41,
+    "bytes[13]": 240,
+    "bytes[14]": 60,
+    "bytes[15]": 140
+  },
+  "m_ClassName": "ColosseumCtrl",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

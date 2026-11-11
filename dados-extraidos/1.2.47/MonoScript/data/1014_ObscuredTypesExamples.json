@@ -1,0 +1,25 @@
+{
+  "m_Name": "ObscuredTypesExamples",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 57,
+    "bytes[1]": 202,
+    "bytes[2]": 90,
+    "bytes[3]": 48,
+    "bytes[4]": 204,
+    "bytes[5]": 250,
+    "bytes[6]": 117,
+    "bytes[7]": 242,
+    "bytes[8]": 236,
+    "bytes[9]": 215,
+    "bytes[10]": 166,
+    "bytes[11]": 141,
+    "bytes[12]": 5,
+    "bytes[13]": 51,
+    "bytes[14]": 66,
+    "bytes[15]": 82
+  },
+  "m_ClassName": "ObscuredTypesExamples",
+  "m_Namespace": "CodeStage.AntiCheat.Examples",
+  "m_AssemblyName": "ACTk.Examples.Runtime"
+}

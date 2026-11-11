@@ -1,0 +1,25 @@
+{
+  "m_Name": "AbilityCtrl",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 149,
+    "bytes[1]": 103,
+    "bytes[2]": 210,
+    "bytes[3]": 14,
+    "bytes[4]": 11,
+    "bytes[5]": 242,
+    "bytes[6]": 76,
+    "bytes[7]": 124,
+    "bytes[8]": 60,
+    "bytes[9]": 40,
+    "bytes[10]": 38,
+    "bytes[11]": 39,
+    "bytes[12]": 88,
+    "bytes[13]": 19,
+    "bytes[14]": 107,
+    "bytes[15]": 7
+  },
+  "m_ClassName": "AbilityCtrl",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

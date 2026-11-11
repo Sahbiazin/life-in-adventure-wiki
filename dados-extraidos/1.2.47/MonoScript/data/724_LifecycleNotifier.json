@@ -1,0 +1,25 @@
+{
+  "m_Name": "LifecycleNotifier",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 11,
+    "bytes[1]": 250,
+    "bytes[2]": 53,
+    "bytes[3]": 164,
+    "bytes[4]": 183,
+    "bytes[5]": 246,
+    "bytes[6]": 98,
+    "bytes[7]": 112,
+    "bytes[8]": 241,
+    "bytes[9]": 211,
+    "bytes[10]": 71,
+    "bytes[11]": 181,
+    "bytes[12]": 38,
+    "bytes[13]": 184,
+    "bytes[14]": 218,
+    "bytes[15]": 80
+  },
+  "m_ClassName": "LifecycleNotifier",
+  "m_Namespace": "UnityEngine.Purchasing",
+  "m_AssemblyName": "Unity.Purchasing.Stores"
+}

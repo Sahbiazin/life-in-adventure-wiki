@@ -1,0 +1,25 @@
+{
+  "m_Name": "CodeHashGenerator",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 254,
+    "bytes[1]": 40,
+    "bytes[2]": 71,
+    "bytes[3]": 154,
+    "bytes[4]": 29,
+    "bytes[5]": 31,
+    "bytes[6]": 49,
+    "bytes[7]": 86,
+    "bytes[8]": 121,
+    "bytes[9]": 143,
+    "bytes[10]": 161,
+    "bytes[11]": 61,
+    "bytes[12]": 231,
+    "bytes[13]": 225,
+    "bytes[14]": 1,
+    "bytes[15]": 61
+  },
+  "m_ClassName": "CodeHashGenerator",
+  "m_Namespace": "CodeStage.AntiCheat.Genuine.CodeHash",
+  "m_AssemblyName": "ACTk.Runtime"
+}

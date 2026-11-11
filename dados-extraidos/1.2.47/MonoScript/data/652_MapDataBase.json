@@ -1,0 +1,25 @@
+{
+  "m_Name": "MapDataBase",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 45,
+    "bytes[1]": 77,
+    "bytes[2]": 134,
+    "bytes[3]": 36,
+    "bytes[4]": 92,
+    "bytes[5]": 187,
+    "bytes[6]": 191,
+    "bytes[7]": 37,
+    "bytes[8]": 163,
+    "bytes[9]": 146,
+    "bytes[10]": 47,
+    "bytes[11]": 9,
+    "bytes[12]": 208,
+    "bytes[13]": 127,
+    "bytes[14]": 125,
+    "bytes[15]": 109
+  },
+  "m_ClassName": "MapDataBase",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

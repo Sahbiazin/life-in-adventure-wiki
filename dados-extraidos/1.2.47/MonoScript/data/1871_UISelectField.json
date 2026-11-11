@@ -1,0 +1,25 @@
+{
+  "m_Name": "UISelectField",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 216,
+    "bytes[1]": 243,
+    "bytes[2]": 248,
+    "bytes[3]": 243,
+    "bytes[4]": 142,
+    "bytes[5]": 155,
+    "bytes[6]": 8,
+    "bytes[7]": 52,
+    "bytes[8]": 46,
+    "bytes[9]": 125,
+    "bytes[10]": 250,
+    "bytes[11]": 9,
+    "bytes[12]": 13,
+    "bytes[13]": 53,
+    "bytes[14]": 5,
+    "bytes[15]": 103
+  },
+  "m_ClassName": "UISelectField",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

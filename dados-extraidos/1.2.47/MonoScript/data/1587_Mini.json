@@ -1,0 +1,25 @@
+{
+  "m_Name": "Mini",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 244,
+    "bytes[1]": 211,
+    "bytes[2]": 210,
+    "bytes[3]": 48,
+    "bytes[4]": 168,
+    "bytes[5]": 143,
+    "bytes[6]": 180,
+    "bytes[7]": 173,
+    "bytes[8]": 23,
+    "bytes[9]": 221,
+    "bytes[10]": 197,
+    "bytes[11]": 65,
+    "bytes[12]": 95,
+    "bytes[13]": 169,
+    "bytes[14]": 98,
+    "bytes[15]": 136
+  },
+  "m_ClassName": "Mini",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

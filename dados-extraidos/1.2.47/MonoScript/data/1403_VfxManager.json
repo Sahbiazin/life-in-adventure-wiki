@@ -1,0 +1,25 @@
+{
+  "m_Name": "VfxManager",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 82,
+    "bytes[1]": 31,
+    "bytes[2]": 98,
+    "bytes[3]": 216,
+    "bytes[4]": 200,
+    "bytes[5]": 196,
+    "bytes[6]": 234,
+    "bytes[7]": 232,
+    "bytes[8]": 173,
+    "bytes[9]": 78,
+    "bytes[10]": 147,
+    "bytes[11]": 189,
+    "bytes[12]": 4,
+    "bytes[13]": 110,
+    "bytes[14]": 51,
+    "bytes[15]": 139
+  },
+  "m_ClassName": "VfxManager",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

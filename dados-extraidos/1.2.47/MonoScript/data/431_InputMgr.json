@@ -1,0 +1,25 @@
+{
+  "m_Name": "InputMgr",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 143,
+    "bytes[1]": 116,
+    "bytes[2]": 19,
+    "bytes[3]": 141,
+    "bytes[4]": 108,
+    "bytes[5]": 66,
+    "bytes[6]": 210,
+    "bytes[7]": 30,
+    "bytes[8]": 252,
+    "bytes[9]": 63,
+    "bytes[10]": 31,
+    "bytes[11]": 218,
+    "bytes[12]": 247,
+    "bytes[13]": 72,
+    "bytes[14]": 25,
+    "bytes[15]": 204
+  },
+  "m_ClassName": "InputMgr",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "SpriteData",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 205,
+    "bytes[1]": 112,
+    "bytes[2]": 18,
+    "bytes[3]": 154,
+    "bytes[4]": 224,
+    "bytes[5]": 64,
+    "bytes[6]": 137,
+    "bytes[7]": 146,
+    "bytes[8]": 170,
+    "bytes[9]": 185,
+    "bytes[10]": 128,
+    "bytes[11]": 191,
+    "bytes[12]": 76,
+    "bytes[13]": 4,
+    "bytes[14]": 197,
+    "bytes[15]": 147
+  },
+  "m_ClassName": "SpriteData",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

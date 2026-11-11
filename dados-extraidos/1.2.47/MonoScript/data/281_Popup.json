@@ -1,0 +1,25 @@
+{
+  "m_Name": "Popup",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 85,
+    "bytes[1]": 17,
+    "bytes[2]": 111,
+    "bytes[3]": 211,
+    "bytes[4]": 43,
+    "bytes[5]": 178,
+    "bytes[6]": 153,
+    "bytes[7]": 253,
+    "bytes[8]": 149,
+    "bytes[9]": 200,
+    "bytes[10]": 46,
+    "bytes[11]": 208,
+    "bytes[12]": 165,
+    "bytes[13]": 204,
+    "bytes[14]": 118,
+    "bytes[15]": 254
+  },
+  "m_ClassName": "Popup",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

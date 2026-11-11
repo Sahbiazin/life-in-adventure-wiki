@@ -1,0 +1,25 @@
+{
+  "m_Name": "UILoadScene",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 108,
+    "bytes[1]": 130,
+    "bytes[2]": 241,
+    "bytes[3]": 28,
+    "bytes[4]": 4,
+    "bytes[5]": 110,
+    "bytes[6]": 250,
+    "bytes[7]": 114,
+    "bytes[8]": 246,
+    "bytes[9]": 21,
+    "bytes[10]": 77,
+    "bytes[11]": 155,
+    "bytes[12]": 140,
+    "bytes[13]": 226,
+    "bytes[14]": 45,
+    "bytes[15]": 24
+  },
+  "m_ClassName": "UILoadScene",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

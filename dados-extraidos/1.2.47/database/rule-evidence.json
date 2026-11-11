@@ -1,0 +1,26 @@
+{
+  "version": "1.2.47",
+  "build": 366,
+  "metadata_version": 31,
+  "runtime_validated": false,
+  "input_hashes": {
+    "extracao-1.2.47\\arm64\\lib\\arm64-v8a\\libil2cpp.so": "0e6d4d06293685f2516b3896f02841b8a6ee4e7326d7e153e968022f4c773f25",
+    "extracao-1.2.47\\base\\assets\\bin\\Data\\Managed\\Metadata\\global-metadata.dat": "58210e37ffa032b2263fd0884e3f8f7b1c5239dded27a80bec07249818803391"
+  },
+  "functions": {
+    "EventCtrl.GetFormatData": "0x1A9004C",
+    "FormatData..ctor": "0x1AAE79C",
+    "EventCtrl.CheckRequire": "0x1A95244",
+    "EventCtrl.GetTotalChance": "0x1A99D04",
+    "EventCtrl.GetResultIndex": "0x1A992C0",
+    "EventCtrl.GiveRewardAndSetRewardText": "0x1A91980",
+    "DataMgr.GetUserData": "0x1AF7748",
+    "DataMgr.ChangeUserData": "0x1AF7A54",
+    "Str..cctor": "0x1A41DC8",
+    "EventCtrl.ClickEventButton": "0x1A8D2F0"
+  },
+  "documentation": [
+    "docs/regras-confirmadas.md",
+    "docs/evento-taverna-veterano.md"
+  ]
+}

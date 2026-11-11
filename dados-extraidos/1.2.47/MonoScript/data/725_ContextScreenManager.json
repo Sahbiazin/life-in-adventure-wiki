@@ -1,0 +1,25 @@
+{
+  "m_Name": "ContextScreenManager",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 170,
+    "bytes[1]": 105,
+    "bytes[2]": 250,
+    "bytes[3]": 207,
+    "bytes[4]": 31,
+    "bytes[5]": 141,
+    "bytes[6]": 66,
+    "bytes[7]": 54,
+    "bytes[8]": 165,
+    "bytes[9]": 158,
+    "bytes[10]": 141,
+    "bytes[11]": 203,
+    "bytes[12]": 0,
+    "bytes[13]": 174,
+    "bytes[14]": 135,
+    "bytes[15]": 159
+  },
+  "m_ClassName": "ContextScreenManager",
+  "m_Namespace": "Unity.Advertisement.IosSupport.Samples",
+  "m_AssemblyName": "Assembly-CSharp"
+}

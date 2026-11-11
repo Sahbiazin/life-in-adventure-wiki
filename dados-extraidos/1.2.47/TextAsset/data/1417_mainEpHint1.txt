@@ -1,0 +1,760 @@
+{
+ "list" : [
+  {
+    "index" : 0,
+    "text" : "Die soon after beginning your adventure, while committing evil deeds."
+  } , 
+  {
+    "index" : 1,
+    "text" : "Die while you're somewhat famous, while committing evil deeds."
+  } , 
+  {
+    "index" : 2,
+    "text" : "Die while you're very famous, while committing evil deeds."
+  } , 
+  {
+    "index" : 3,
+    "text" : "Die soon after beginning your adventure, without having an alignment."
+  } , 
+  {
+    "index" : 4,
+    "text" : "Die while you're somewhat famous, without having an alignment."
+  } , 
+  {
+    "index" : 5,
+    "text" : "Die while you're very famous, without having an alignment."
+  } , 
+  {
+    "index" : 6,
+    "text" : "Die soon after beginning your adventure, while doing good deeds."
+  } , 
+  {
+    "index" : 7,
+    "text" : "Die while you're somewhat famous, while doing good deeds."
+  } , 
+  {
+    "index" : 8,
+    "text" : "Die while you're very famous, while doing good deeds."
+  } , 
+  {
+    "index" : 1000,
+    "text" : "Side with the pioneers and defeat the elves of Atilante Forest. Or, suggest an alternative plan to Count Jimradi and carry it out successfully."
+  } , 
+  {
+    "index" : 1001,
+    "text" : "Lose the war against the elves of Atilante Forest. Or, betray the pioneers, fail in aiding the elves and escape from your execution."
+  } , 
+  {
+    "index" : 1002,
+    "text" : "Win the duel against Irelle and spare him, or lose the duel, then sign a truce with the elves."
+  } , 
+  {
+    "index" : 1003,
+    "text" : "Kill Irelle and lose the war against the elves. Or, get kicked out from the pioneers camp, get caught in the war against the elves, get wounded, then run away."
+  } , 
+  {
+    "index" : 1004,
+    "text" : "Accept Irelle's request for help and continue to be victorious in the war."
+  } , 
+  {
+    "index" : 1005,
+    "text" : "Accept Irelle's request for help, tear the flare scroll to pieces, and lose the fight against the pioneers. Or, become lovers with Irelle, and lose the battle against the patrols right before you tear the flare scroll to pieces."
+  } , 
+  {
+    "index" : 1006,
+    "text" : "Refuse Irelle's request for help, and lose against the executioner. Or, suggest an alternative plan to Count Jimradi, get ambushed, and either murder Jimradi or run away. Then, lose the fight against the executioner."
+  } , 
+  {
+    "index" : 1007,
+    "text" : "Refuse Irelle's request for help, and defeat the executioner. Or, suggest an alternative plan to Count Jimradi, get ambushed, and either murder Jimradi or run away. Then, defeat the executioner."
+  } , 
+  {
+    "index" : 9,
+    "text" : "Ignore the conscription decree, then either defeat or escape from the guards that try to arrest you"
+  } , 
+  {
+    "index" : 1008,
+    "text" : "Required : You have no lover.\n Agree to go along with Count Jimradi's plan, then lose against the elvish commander. Or, suggest an alternative plan, lose and run away, ask Count Jimradi for one more chance, attack the elves and lose the fight."
+  } , 
+  {
+    "index" : 1009,
+    "text" : "Agree to go along with Count Jimradi's plan, fight, attack the elven troops crossing the Valley of Black Winds and defeat them."
+  } , 
+  {
+    "index" : 1010,
+    "text" : "Agree to go along with Count Jimradi's plan, refuse the plan about Valley of Black Winds, challenge the elvish commander to a duel and lose. Then, choose honor. Or, don't challenge him to a duel, and lose fighting alone."
+  } , 
+  {
+    "index" : 2000,
+    "text" : "Go alone to the Tower of Magic, and lose to the brainwashed students, the ice golem, or Worm that Walks. Or, loot the dead body, obtain the Wings of Heaven, taunt Halad, and lose to her."
+  } , 
+  {
+    "index" : 2001,
+    "text" : "Required : Your alignment is between Neutral and Evil.\n Go alone to the Tower of Magic, loot the dead body to obtain the Wings of Heaven, taunt Halad, and lose to her."
+  } , 
+  {
+    "index" : 2002,
+    "text" : "Go alone to the Tower of Magic, free the brainwashed students, then lose against Halad or the Headmaster."
+  } , 
+  {
+    "index" : 2003,
+    "text" : "Remove Professor Flu's curse, go to the Tower of Magic with him, then lose against Halad."
+  } , 
+  {
+    "index" : 2004,
+    "text" : "Required : Your alignment is between Neutral and Good. Your wisdom is 10 or higher.\n Go to the Tower of Magic without the Indigo Witch, read Halad's diary, defeat her in battle, and absorb the forbidden text's energy without attacking the Headmaster. Then, take the matter of Halad's atonemnet into your own hands."
+  } , 
+  {
+    "index" : 2005,
+    "text" : "Read Halad's diary, defeat her in battle, and absorb the forbidden text's energy without attacking the Headmaster."
+  } , 
+  {
+    "index" : 2006,
+    "text" : "Go to the Tower of Magic with the Rat Professor, free the brainwashed students, then defeat Halad and the Headmaster in battle."
+  } , 
+  {
+    "index" : 2007,
+    "text" : "Go to the Tower of Magic with the Rat Professor, defeat the brainwashed students, Halad, and the Headmaster in battle. Then, either contact the forbidden text or lose to it."
+  } , 
+  {
+    "index" : 2008,
+    "text" : "Remove Professor Flu's curse, go to the Tower of Magic with him, then lose against Halad. Or, with the Rat Professor, free the brainwashed students and defeat Halad in battle. Then, banish Halad."
+  } , 
+  {
+    "index" : 2009,
+    "text" : "Go to the Tower of Magic with the Rat Professor, use a powerful spell at the forbidden text, defeat the Evil Brain in battle and banish Halad."
+  } , 
+  {
+    "index" : 2010,
+    "text" : "Go to the Tower of Magic with either the Rat Professor or the Indigo Witch, and defeat Halad in battle."
+  } , 
+  {
+    "index" : 2011,
+    "text" : "Remove Professor Flu's curse, go to the Tower of Magic with him and defeat Halad in battle. Then, leave Halad's fate to the professor's hands."
+  } , 
+  {
+    "index" : 2012,
+    "text" : "Remove Professor Flu's curse, go to the Tower of Magic with him and defeat Halad in battle. Then, forgive her."
+  } , 
+  {
+    "index" : 2013,
+    "text" : "Required : Your alignment is Good.\n Go to the Tower of Magic with the Rat Professor, defeat the Evil Brain and forgive Halad."
+  } , 
+  {
+    "index" : 2014,
+    "text" : "Without becoming the apprentice of the Indigo Witch, go to the Tower of Magic alone, and expose Halad's plan without further evidence. Then, in the cave, get defeated by either the zealots or the Flesh Colossus."
+  } , 
+  {
+    "index" : 2015,
+    "text" : "Save the townspeople of Wagonmountain, obtain Halad's Orders, expose her plan with evidence at the Tower of Magic, and defeat the zealots and the Flesh Colossus in the cave."
+  } , 
+  {
+    "index" : 2016,
+    "text" : "Required : Your alignment is between Neutral and Evil.\n Without becoming the apprentice of the Indigo Witch, go to the Tower of Magic alone, and expose Halad's plan without further evidence. Then, fight the Flesh Colossus, and approach Halad and murder her."
+  } , 
+  {
+    "index" : 2017,
+    "text" : "Save the townspeople of Wagonmountain, obtain Halad's Orders, expose her plan with evidence at the Tower of Magic, and either defeat or sneak past the zealots. Then, enter the room without helping Edmond, and defeat the Evil Brain in battle."
+  } , 
+  {
+    "index" : 2018,
+    "text" : "Required : Your alignment is between Neutral and Good. Your wisdom is 10 or higher.\n Go to the Tower of Magic alone, defeat Halad and the Headmaster in battle, defeat the Evil Brain, and find an alternative way to make Halad atone for her sins."
+  } , 
+  {
+    "index" : 2019,
+    "text" : "Take the Rat Professor to the Tower of Magic and meet the brainwashed students."
+  } , 
+  {
+    "index" : 2020,
+    "text" : "Hand over the Rat Professor to the Indigo Witch."
+  } , 
+  {
+    "index" : 1011,
+    "text" : "Required : You have a lover.\n Agree to go along with Count Jimradi's plans, and lose against the elvish commander. Or, suggest an alternative plan, lose and run away, ask Count Jimradi for one more chance, attack the elves and lose the fight."
+  } , 
+  {
+    "index" : 1012,
+    "text" : "Required : You have a lover.\n Agree to go along with Count Jimradi's plan, refuse the plan about Valley of Black Winds, challenge the elvish commander to a duel and lose. Then, choose honor. Or, don't challenge him to a duel, and lose fighting alone."
+  } , 
+  {
+    "index" : 1013,
+    "text" : "Required : Your alignment is between Neutral and Good. You have no other lovers. You have a silver ring and you did not spend the night with Cirah.\n When Irelle requests your help, you ask for his hand in marriage and he says yes."
+  } , 
+  {
+    "index" : 1014,
+    "text" : "Ignore the conscription decree, then lose to the guards that try to arrest you"
+  } , 
+  {
+    "index" : 3000,
+    "text" : "Cooperate with Egakin, either defeat or imprison Vertino, and explain to the Emperor that you had to sneak the princess out. Then, in the middle of the play, do not do as you were told to and die."
+  } , 
+  {
+    "index" : 3001,
+    "text" : "Get killed by Vertino at Mountain Goat's Rest, or explain to the Emperor that the dragon is defeated, lose against the guard as you're trying to break the ballista, and die. Or, survive the battle against Vertino, show the Emperor the poorly-fabricated fake dragon head, or fail to show him anything at all."
+  } , 
+  {
+    "index" : 3002,
+    "text" : "Cooperate with Egakin, either defeat or imprison Vertino. Then, give the Emperor the Blessing of Menrva as tribute."
+  } , 
+  {
+    "index" : 3003,
+    "text" : "Cooperate with Egakin, either defeat or imprison Vertino. Then, deceived the emperor in some way."
+  } , 
+  {
+    "index" : 3004,
+    "text" : "Required : Your character is a male.\n Cooperate with Egakin, either defeat or imprison Vertino, get officially recognized by the Emperor, and reject the princess's ring."
+  } , 
+  {
+    "index" : 3005,
+    "text" : "Attempted to deceive the emperor but failed."
+  } , 
+  {
+    "index" : 3006,
+    "text" : "Required : Your character is a male.\n Cooperate with Egakin, either defeat or imprison Vertino, get officially recognized by the Emperor, and accept the princess's ring."
+  } , 
+  {
+    "index" : 3007,
+    "text" : "Required : Your alignment is between Neutral and Good.\n Help the old shepherd, and shake the lure as you're trying to save a life at Mountain Goat's Rest."
+  } , 
+  {
+    "index" : 3008,
+    "text" : "Required : Your character is a female.\n Cooperate with Egakin, either defeat or imprison Vertino, get officially recognized by the Emperor, and accept the princess's brooch."
+  } , 
+  {
+    "index" : 3009,
+    "text" : "Fail to imprison or defeat Vertino, explain to the Emperor that the dragon is defeated, and give the Blessing of Menrva to the Emperor as tribute. "
+  } , 
+  {
+    "index" : 3010,
+    "text" : "Required : Your character is a male.\n Wait patiently in front of the old door at the top of Mountain Gar, defeat the Steel Dragon with the imperial forces, demand the princess from the Emperor without killing the dragon, then defeat Vertino in battle."
+  } , 
+  {
+    "index" : 3011,
+    "text" : "Required : Your character is a male.\n Wait patiently in front of the old door at the top of Mountain Gar, defeat the Steel Dragon with the imperial forces, demand the princess from the Emperor without killing the dragon, then lose to Vertino in battle."
+  } , 
+  {
+    "index" : 3012,
+    "text" : "Wait patiently in front of the old door at the top of Mountain Gar, defeat the Steel Dragon with the imperial forces, kill the dragon, and demand that you be able to stay close to the princess."
+  } , 
+  {
+    "index" : 3013,
+    "text" : "Wait patiently in front of the old door at the top of Mountain Gar, defeat the Steel Dragon with the imperial forces, kill the dragon, and demand that you be able to stay close to the princess. Or, lose to the Steel Dragon, take the princess by force, and Vertino takes her either by your choice or by force."
+  } , 
+  {
+    "index" : 3014,
+    "text" : "Wait patiently in front of the old door at the top of Mountain Gar, lose to the Steel Dragon with the imperial forces, take the princess by force, and Egakin takes her back either by your choice or by force. Or, lose to the Steel Dragon with the imperial forces, help Vertino and lose to the Steel Dragon again."
+  } , 
+  {
+    "index" : 3015,
+    "text" : "Lose to the Steel Dragon with the imperial forces, take the princess by force, and either Vertino or Egakin takes her back either by your choice or by force. "
+  } , 
+  {
+    "index" : 3016,
+    "text" : "Defeat the Steel Dragon with the imperial forces, kill the dragon, and demand either that you be able to stay close to the princess or marry her, then defeat Vertino in battle."
+  } , 
+  {
+    "index" : 3017,
+    "text" : "Defeat the Steel Dragon with the imperial forces, demand that you be able to stay close to the princess without killing the dragon."
+  } , 
+  {
+    "index" : 3018,
+    "text" : "Run away with the princess by force, then set her free."
+  } , 
+  {
+    "index" : 4000,
+    "text" : "At Moneaskur, don't attack Anton and die to the Death Knight. Or, attack Anton and fight the Lord of Moneaskur."
+  } , 
+  {
+    "index" : 4001,
+    "text" : "At Moneaskur, attack Anton and die to him. Or, don't join the mercenaries, then lose to Anton at Romb."
+  } , 
+  {
+    "index" : 4002,
+    "text" : "Join Ziwa Mercenaries and fight against the Lord of Moneaskur. Or, fight Anton and destroy him for good."
+  } , 
+  {
+    "index" : 4003,
+    "text" : "Required : Your Spellcasting is 3 or higher.\n Refuse the Vampire Lord's offer, and win the fight. Then, decide to store and secure the cube personally."
+  } , 
+  {
+    "index" : 4004,
+    "text" : "Required : You have no lover.\n Accept the Vampire Lord's offer to make you his minion, or reject the offer and lose to him."
+  } , 
+  {
+    "index" : 4005,
+    "text" : "Refuse the Vampire Lord's offer and defeat him in battle. Then, hand the cube to the nuns."
+  } , 
+  {
+    "index" : 4006,
+    "text" : "Cooperate with Anton, defeat the Vampire Lord, and hand the cube to Anton."
+  } , 
+  {
+    "index" : 4007,
+    "text" : "Cooperate with Anton, defeat the Vampire Lord, then defeat Anton in battle."
+  } , 
+  {
+    "index" : 4008,
+    "text" : "Cooperate with Anton, defeat the Vampire Lord, then lose to Anton."
+  } , 
+  {
+    "index" : 4009,
+    "text" : "Don't join Ziwa Mercenaries, then at Romb, break Fiana free and run away."
+  } , 
+  {
+    "index" : 4010,
+    "text" : "Required : You have no lover.\n Join the Ziwa Mercenaries, cooperate with Anton and lose to the Vampire Lord."
+  } , 
+  {
+    "index" : 4011,
+    "text" : "Cooperate with Ziwa Mercenaries and take control of the Colosseum in Romb."
+  } , 
+  {
+    "index" : 4012,
+    "text" : "Required : You are not carrying silver weapons.\n Join Ziwa Mercenaries, emancipate the hostages at Romb, then defeat Anton in battle. Then, in the Black Forest, get killed by either a trap or Anton."
+  } , 
+  {
+    "index" : 4013,
+    "text" : "Required : You are not carrying silver weapons.\n Join Ziwa Mercenaries, then fail to kill either Anton or the Vampire Lord."
+  } , 
+  {
+    "index" : 4014,
+    "text" : "Join Ziwa Mercenaries, then get killed by either the Death Knight or the Vampire Lord."
+  } , 
+  {
+    "index" : 4015,
+    "text" : "Cooperate with Ziwa Mercenaries and capture Anton at the Colosseum in Romb. Then, attack the Lord of Moneaskur."
+  } , 
+  {
+    "index" : 4016,
+    "text" : "At Romb, get caught while you're running away with Fiana, then lose to the vampires."
+  } , 
+  {
+    "index" : 4017,
+    "text" : "Don't join Ziwa Mercenaries, lose to Anton, kill Fiana, break the cage then defeat Anton."
+  } , 
+  {
+    "index" : 4018,
+    "text" : "Don't join Ziwa Mercenaries and defeat Anton in battle. Then, when Anton comes to your house, kill him and decide to find other ways to fix Fiana."
+  } , 
+  {
+    "index" : 4019,
+    "text" : "Required : You have no lover.\n Join Ziwa Mercenaries, emancipate the hostages at Romb, lose to either Anton or his underling vampires, then refuse Anton's offer."
+  } , 
+  {
+    "index" : 4020,
+    "text" : "Head to Romb with Ziwa Mercenaries, emancipate the hostages at Romb, then defeat Anton in the Black Forest."
+  } , 
+  {
+    "index" : 4021,
+    "text" : "Don't join Ziwa Mercenaries, lose to either Anton or the vampires at Romb, then lose to Fiana after she becomes a vampire spawn."
+  } , 
+  {
+    "index" : 5000,
+    "text" : "Reject Kior's offer of power, after you have fulfilled your vengeance."
+  } , 
+  {
+    "index" : 5001,
+    "text" : "Sever your ties with Kior, then lose to either Kior or his underlings."
+  } , 
+  {
+    "index" : 5002,
+    "text" : "Cooperate Viyork, kill Onil and Danica, then get captured by Teretian paladins."
+  } , 
+  {
+    "index" : 5003,
+    "text" : "Capture Danica, put a curse on her, then fail while you're trying to attack Publius at the Grand Cathedral."
+  } , 
+  {
+    "index" : 5004,
+    "text" : "Eliminate the Teretian paladins."
+  } , 
+  {
+    "index" : 5005,
+    "text" : "Either accept Kior's offer, or be forced to take his powers."
+  } , 
+  {
+    "index" : 5006,
+    "text" : "Accept Publius's offer to cooperate, then defeat Kior in battle."
+  } , 
+  {
+    "index" : 5007,
+    "text" : "Travel to the Hells with Valen, defeat Kior there, return to the Material Plane and kill Publius."
+  } , 
+  {
+    "index" : 5008,
+    "text" : "Go to the Grand Cathedral, and kill both Publius and Valen."
+  } , 
+  {
+    "index" : 5009,
+    "text" : "Sever your ties with Kior. Then, at Arhena, travel to the Hells with Valen, but fail to catch up with Kior."
+  } , 
+  {
+    "index" : 5010,
+    "text" : "Cooperate with the Teretian paladins, lose to Kior and return to the Material Plane, then take the blame from Viyork."
+  } , 
+  {
+    "index" : 5011,
+    "text" : "Defeat Valen, Onil, and the paladin legion, then get banished to the dimensional rift by Publius's Banishment spell."
+  } , 
+  {
+    "index" : 5012,
+    "text" : "Surrender to Viyork, then promise to atone for your sins at the Grand Cathedral."
+  } , 
+  {
+    "index" : 5013,
+    "text" : "Fail to fulfill your vengeance and die."
+  } , 
+  {
+    "index" : 5014,
+    "text" : "Capture Danica, snatch her body and kill Publius."
+  } , 
+  {
+    "index" : 5015,
+    "text" : "Snatch Danica's body, fail to ambush Publius, then die."
+  } , 
+  {
+    "index" : 5016,
+    "text" : "Raid the Grand Cathedral with the demon worshippers and kill Publius."
+  } , 
+  {
+    "index" : 5017,
+    "text" : "Cooperate with Viyork, kill Onil and Danica, then lose to either Publius or Valen at the Grand Cathedral."
+  } , 
+  {
+    "index" : 5018,
+    "text" : "Kill Danica, then kill Viyork and Onil as well when they're attacking the hideout. Then, at Brownville, defeat the paladin legion and Valen, but fail to stop Publius from getting away."
+  } , 
+  {
+    "index" : 5019,
+    "text" : "Sever your ties with Kior. Then, travel to the Hells with Valen, then die while fighting against the demons."
+  } , 
+  {
+    "index" : 5020,
+    "text" : "Required : Your Wisdom is 15 or higher.\n Sever your ties with Kior, defeat Gess, then accept Publius's offer to cooperate. Confront Danica, reveal her true identity, then defeat Kior in battle."
+  } , 
+  {
+    "index" : 5021,
+    "text" : "Sever your ties with Kior, then accept Publius's offer to cooperate. Then, while fighting against Kior, Publius is killed in battle."
+  } , 
+  {
+    "index" : 5022,
+    "text" : "Accept Viyork's offer to cooperate, defeat Publius, then either get ambushed by Viyork or die to him."
+  } , 
+  {
+    "index" : 5023,
+    "text" : "Get caught while trying to use Viyork as bait. Then, at Aether Plateau, get betrayed by Viyork while you're going after Publius, then die."
+  } , 
+  {
+    "index" : 5024,
+    "text" : "At Hawa, flee from the paladin legion, defeat Viyork without offering tribute, accept his offer, lure in Onil and begin a fight with him, in which both you and Onil die."
+  } , 
+  {
+    "index" : 5025,
+    "text" : "At Hawa, flee from the paladin legion, defeat Viyork without offering tribute, accept his offer, then lose to Onil."
+  } , 
+  {
+    "index" : 5026,
+    "text" : "Offer a live tribute, become more powerful, defeat Valen and make her your puppet. Then, fail to resist Publius's Banishment."
+  } , 
+  {
+    "index" : 5027,
+    "text" : "While Valen is alive, snatch Danica's body and kill Publius."
+  } , 
+  {
+    "index" : 5028,
+    "text" : "Sever your ties with Kior. Then, at Arhena, travel to the Hells with Valen, but lose to either Kior's underlings or Kior."
+  } , 
+  {
+    "index" : 5029,
+    "text" : "Sever your ties with Kior. Then, at Arhena, travel to the Hells with Valen, defeat Kior, then either stay in the Hells or return to Material Plane and give up on your vengeance."
+  } , 
+  {
+    "index" : 5030,
+    "text" : "While cooperating with Viyork, your plans are foiled, and Viyork is captured."
+  } , 
+  {
+    "index" : 5031,
+    "text" : "Kidnap Danica, snatch her body, then ambush and kill Publius."
+  } , 
+  {
+    "index" : 5032,
+    "text" : "While Danica is being controlled by Kior, defeat Kior."
+  } , 
+  {
+    "index" : 5033,
+    "text" : "Sever your ties with Kior. Then, cooperate with Danica while she's being controlled by Kior, then successfully lure the Teretian paladins to the Hells."
+  } , 
+  {
+    "index" : 5034,
+    "text" : "At Hawa, flee from the paladin legion, defeat Viyork without offering tribute, accept his offer, lure in Onil and begin a fight with him, in which both you and Onil die."
+  } , 
+  {
+    "index" : 5035,
+    "text" : "At Alonso, cooperate with Viyork, then lure and kill Onil and Publius. Then, kill Viyork as well."
+  } , 
+  {
+    "index" : 5036,
+    "text" : "Travel to the Hells with the Teretian paladins and defeat Kior."
+  } , 
+  {
+    "index" : 5037,
+    "text" : "After defeating Kior, all of the paladins except Publius survives."
+  } , 
+  {
+    "index" : 5038,
+    "text" : "Accept Viyork's offer to cooperate, defeat Valen, then fail to track down Publius at Aether Plateau."
+  } , 
+  {
+    "index" : 5039,
+    "text" : "Go to the Hells and defeat Kior by yourself."
+  } , 
+  {
+    "index" : 5040,
+    "text" : "Sever your ties with Kior, defeat Gess, reject Publius's offer to cooperate and cooperate with Kior once again. Then, successfully carry out Danica's plans, then lose to either Publius or his men."
+  } , 
+  {
+    "index" : 5041,
+    "text" : "Snatch Danica's body, ambush Publius but fail, then either break free from the Chains of Light or successfully cast Dispel."
+  } , 
+  {
+    "index" : 5042,
+    "text" : "Sever your ties with Kior, defeat Gess, then accept Publius's offer to cooperate. Go to the Hells, defeat Kior, then do not return to the Material Plane."
+  } , 
+  {
+    "index" : 5043,
+    "text" : "At Arhena, travel to the Hells with Valen. There, fail to snap Valen out from the wraiths. Then, defeat Kior, return to the Material Plane, and give up on your revenge."
+  } , 
+  {
+    "index" : 2021,
+    "text" : "Required : You have a lover.\n Go to the Tower of Magic alone, then lose to either the brainwashed students, the Ice Golem or the Headmaster."
+  } , 
+  {
+    "index" : 4022,
+    "text" : "Required : You have a lover.\n Join Ziwa Mercenaries and accept Anton's offer. Then, at Moneaskur, don't attack Anton, defeat the Death Knight in battle, then either accept the Vampire Lord's offer or refuse it then lose to the Vampire Lord."
+  } , 
+  {
+    "index" : 6000,
+    "text" : "The souleaters get their hands on both the Disc of the Moon and the Ether Lens. Then, either let them travel safely to the Astral Plane, or go after them but lose to them."
+  } , 
+  {
+    "index" : 6001,
+    "text" : "At Andaria Jungle, lose to the Queen."
+  } , 
+  {
+    "index" : 6002,
+    "text" : "Get mindcontrolled by the Queen, attack and defeat Rosilpha, then get modified by the Queen."
+  } , 
+  {
+    "index" : 6003,
+    "text" : "Follow Naverr's plans and destroy the dimensional portal."
+  } , 
+  {
+    "index" : 6004,
+    "text" : "Cooperate with the Queen of the souleaters."
+  } , 
+  {
+    "index" : 6005,
+    "text" : "Help the Divine Serpent protect Andaria Jungle, then refuse its offer to become its champion."
+  } , 
+  {
+    "index" : 6006,
+    "text" : "Fight and emerge victorious against the souleaters, survive with Naverr, then refuse the Divine Serpent's offer to become it champion."
+  } , 
+  {
+    "index" : 6007,
+    "text" : "Help the Divine Serpent protect Andaria Jungle, then accept its offer to become its champion."
+  } , 
+  {
+    "index" : 6008,
+    "text" : "Take both the Disc of the Moon and the Ether Lens to Andaria Jungle, then defeat the souleater invasion."
+  } , 
+  {
+    "index" : 6009,
+    "text" : "Lose to the Queen while fighting it with Rosilpha."
+  } , 
+  {
+    "index" : 6010,
+    "text" : "Do not kill Naverr after he transform into a souleater, let Rosilpha knock him unconscious, then defeat the Queen."
+  } , 
+  {
+    "index" : 6011,
+    "text" : "While the Queen is trying to squeeze through the dimensional rift, jump into the rift with it."
+  } , 
+  {
+    "index" : 6012,
+    "text" : "Defeat the Queen after Naverr is killed."
+  } , 
+  {
+    "index" : 6013,
+    "text" : "Successfully seal away the artifacts in the university's Underground Vault, then get killed by the Queen."
+  } , 
+  {
+    "index" : 6014,
+    "text" : "Successfully seal away the artifacts in the university's Underground Vault, then defeat the Queen."
+  } , 
+  {
+    "index" : 6015,
+    "text" : "Fight and lose to the Queen without having found the Disc of the Moon."
+  } , 
+  {
+    "index" : 6016,
+    "text" : "Successfully seal away the artifacts in the university's Underground Vault, then fend off the Queen."
+  } , 
+  {
+    "index" : 6017,
+    "text" : "After the bombardment at the Floating Duckweed, defeat the Queen while Naverr is alive."
+  } , 
+  {
+    "index" : 6018,
+    "text" : "At the ruined city of Sinias, follow Naverr instead of rescuing people."
+  } , 
+  {
+    "index" : 6019,
+    "text" : "Head to the university with Rosilpha to seal way the artifacts, then go to the vault and seal the artifacts yourself."
+  } , 
+  {
+    "index" : 6020,
+    "text" : "Fail to obtain the Disc of the Moon, head to the university, then seal away the Ether Lens."
+  } , 
+  {
+    "index" : 6021,
+    "text" : "Fail to save Naverr."
+  } , 
+  {
+    "index" : 6022,
+    "text" : "At Andaria Jungle, cooperate with the Divine Serpent, defeat the Queen, and accept the Divine Serpent's offer."
+  } , 
+  {
+    "index" : 6023,
+    "text" : "Flee from the fight against the Queen in Andaria Jungle."
+  } , 
+  {
+    "index" : 6024,
+    "text" : "After the bombardment at the Floating Duckweed, lose to the Queen."
+  } , 
+  {
+    "index" : 6025,
+    "text" : "Go to the university to seal away the artifacts, then lose to the souleater legion."
+  } , 
+  {
+    "index" : 7000,
+    "text" : "Infiltrate Greymoor Castle, help Katrin defeat Kalman, and are later betrayed by Katrin and killed."
+  } , 
+  {
+    "index" : 7001,
+    "text" : "Do not cooperate with Kalman, and are killed by Kalman when he intervenes during the war against Greymoor."
+  } , 
+  {
+    "index" : 7002,
+    "text" : "Lose the war against Greymoor and surrender."
+  } , 
+  {
+    "index" : 7003,
+    "text" : "Go to the royal capital for trial, after which Katrin is defeated in the trial by combat."
+  } , 
+  {
+    "index" : 7004,
+    "text" : "Go to the royal capital for trial, then lose the trial by combat. Or cause a disturbance during the trial and are arrested."
+  } , 
+  {
+    "index" : 7005,
+    "text" : "Resolve the undead problem, the orc problem, and the Greymoor problem, and also defeat Kalman."
+  } , 
+  {
+    "index" : 7006,
+    "text" : "War against Greymoor without cooperating with Kalman. Katrin flees, and afterward Kalman kills Katrin."
+  } , 
+  {
+    "index" : 7007,
+    "text" : "Katrin dies during the war against Greymoor."
+  } , 
+  {
+    "index" : 7008,
+    "text" : "Resolve the orc problem and the undead problem, and defeat Kalman. After winning the war against Greymoor, prove that she instigated the orcs, then arrest her and hand her over to the king."
+  } , 
+  {
+    "index" : 7009,
+    "text" : "Win the war against Greymoor and send Katrin to the monastery."
+  } , 
+  {
+    "index" : 7010,
+    "text" : "Condition: Alignment neutral or lower\n Win the war against Greymoor and secretly kill Katrin."
+  } , 
+  {
+    "index" : 7011,
+    "text" : "Lose the war against the noble alliance and sign a surrender treaty."
+  } , 
+  {
+    "index" : 7012,
+    "text" : "Defeat the noble alliance army and accept the peace negotiations they propose."
+  } , 
+  {
+    "index" : 7013,
+    "text" : "Fail while infiltrating Greymoor Castle in cooperation with Kalman."
+  } , 
+  {
+    "index" : 7014,
+    "text" : "After winning the war against Greymoor, personally behead Katrin."
+  } , 
+  {
+    "index" : 7015,
+    "text" : "Are captured while infiltrating Greymoor Castle, then make the excuse that Kalman deceived you, pay a ransom to Katrin, and are released."
+  } , 
+  {
+    "index" : 7016,
+    "text" : "Die in a duel against the orc chieftain."
+  } , 
+  {
+    "index" : 7017,
+    "text" : "Are killed by an assassin before the trial against Katrin."
+  } , 
+  {
+    "index" : 7018,
+    "text" : "Are discovered and killed after infiltrating Greymoor with Kalman."
+  } , 
+  {
+    "index" : 7019,
+    "text" : "Failed to cleanse the undead. War breaks out with the noble coalition, after the outer walls are breached and a fierce battle, they barely win."
+  } , 
+  {
+    "index" : 7020,
+    "text" : "Fail to purify the undead. Kalman is eliminated, and you win the war against the noble alliance army without executing the prisoners."
+  } , 
+  {
+    "index" : 7021,
+    "text" : "Required : You have no lover, Your character is a male.\n The Greymoor family and the Briovich family become one."
+  } , 
+  {
+    "index" : 7022,
+    "text" : "After cooperating with Kalman to help him reclaim Katrin’s body, you are defeated while returning to Briovich."
+  } , 
+  {
+    "index" : 7023,
+    "text" : "Infiltrate Greymoor Castle together with Kalman and kill Katrin."
+  } , 
+  {
+    "index" : 7024,
+    "text" : "After cooperating with Kalman to help him reclaim Katrin’s body, you are defeated while returning to Briovich."
+  } , 
+  {
+    "index" : 7025,
+    "text" : "Cooperate with Kalman to infiltrate Greymoor Castle, then side with Katrin and kill Kalman. Afterward, demand compensation from Katrin when she tries to assassinate the protagonist."
+  } , 
+  {
+    "index" : 7026,
+    "text" : "After executing the prisoners in the war against the noble alliance, you are defeated and killed."
+  } , 
+  {
+    "index" : 7027,
+    "text" : "Help Katrin reclaim her body, and establish close cooperation with the Greymoor domain."
+  } , 
+  {
+    "index" : 7028,
+    "text" : "Cooperate with Kalman to infiltrate Greymoor Castle, then side with Katrin and defeat Kalman. Afterward, kill Katrin when she tries to assassinate the protagonist."
+  } , 
+  {
+    "index" : 7029,
+    "text" : "Cooperate with Kalman to infiltrate Greymoor Castle, then betray Kalman and are killed by him."
+  }
+ ]
+}

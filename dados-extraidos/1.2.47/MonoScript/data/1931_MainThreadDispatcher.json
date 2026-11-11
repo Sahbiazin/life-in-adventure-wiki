@@ -1,0 +1,25 @@
+{
+  "m_Name": "MainThreadDispatcher",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 205,
+    "bytes[1]": 30,
+    "bytes[2]": 53,
+    "bytes[3]": 32,
+    "bytes[4]": 116,
+    "bytes[5]": 6,
+    "bytes[6]": 8,
+    "bytes[7]": 239,
+    "bytes[8]": 179,
+    "bytes[9]": 198,
+    "bytes[10]": 200,
+    "bytes[11]": 40,
+    "bytes[12]": 35,
+    "bytes[13]": 110,
+    "bytes[14]": 192,
+    "bytes[15]": 245
+  },
+  "m_ClassName": "MainThreadDispatcher",
+  "m_Namespace": "UnityEngine.UDP",
+  "m_AssemblyName": "UDP.dll"
+}

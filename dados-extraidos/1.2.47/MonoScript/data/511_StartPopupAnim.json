@@ -1,0 +1,25 @@
+{
+  "m_Name": "StartPopupAnim",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 163,
+    "bytes[1]": 27,
+    "bytes[2]": 41,
+    "bytes[3]": 236,
+    "bytes[4]": 75,
+    "bytes[5]": 35,
+    "bytes[6]": 192,
+    "bytes[7]": 36,
+    "bytes[8]": 68,
+    "bytes[9]": 231,
+    "bytes[10]": 87,
+    "bytes[11]": 153,
+    "bytes[12]": 14,
+    "bytes[13]": 3,
+    "bytes[14]": 6,
+    "bytes[15]": 58
+  },
+  "m_ClassName": "StartPopupAnim",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

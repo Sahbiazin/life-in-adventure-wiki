@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIStepBar",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 2,
+    "bytes[1]": 126,
+    "bytes[2]": 24,
+    "bytes[3]": 13,
+    "bytes[4]": 220,
+    "bytes[5]": 37,
+    "bytes[6]": 130,
+    "bytes[7]": 45,
+    "bytes[8]": 222,
+    "bytes[9]": 129,
+    "bytes[10]": 170,
+    "bytes[11]": 77,
+    "bytes[12]": 160,
+    "bytes[13]": 52,
+    "bytes[14]": 178,
+    "bytes[15]": 60
+  },
+  "m_ClassName": "UIStepBar",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

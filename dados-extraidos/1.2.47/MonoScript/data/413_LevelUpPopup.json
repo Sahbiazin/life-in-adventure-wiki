@@ -1,0 +1,25 @@
+{
+  "m_Name": "LevelUpPopup",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 195,
+    "bytes[1]": 233,
+    "bytes[2]": 138,
+    "bytes[3]": 149,
+    "bytes[4]": 143,
+    "bytes[5]": 105,
+    "bytes[6]": 89,
+    "bytes[7]": 104,
+    "bytes[8]": 209,
+    "bytes[9]": 21,
+    "bytes[10]": 80,
+    "bytes[11]": 254,
+    "bytes[12]": 50,
+    "bytes[13]": 22,
+    "bytes[14]": 244,
+    "bytes[15]": 124
+  },
+  "m_ClassName": "LevelUpPopup",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

@@ -1,0 +1,25 @@
+{
+  "m_Name": "CashshopMgr",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 153,
+    "bytes[1]": 164,
+    "bytes[2]": 225,
+    "bytes[3]": 195,
+    "bytes[4]": 183,
+    "bytes[5]": 62,
+    "bytes[6]": 100,
+    "bytes[7]": 97,
+    "bytes[8]": 119,
+    "bytes[9]": 111,
+    "bytes[10]": 71,
+    "bytes[11]": 154,
+    "bytes[12]": 154,
+    "bytes[13]": 145,
+    "bytes[14]": 168,
+    "bytes[15]": 222
+  },
+  "m_ClassName": "CashshopMgr",
+  "m_Namespace": "",
+  "m_AssemblyName": "Assembly-CSharp"
+}

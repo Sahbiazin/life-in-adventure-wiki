@@ -1,0 +1,25 @@
+{
+  "m_Name": "UIBlackOverlay",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 202,
+    "bytes[1]": 230,
+    "bytes[2]": 90,
+    "bytes[3]": 14,
+    "bytes[4]": 102,
+    "bytes[5]": 143,
+    "bytes[6]": 7,
+    "bytes[7]": 226,
+    "bytes[8]": 237,
+    "bytes[9]": 46,
+    "bytes[10]": 234,
+    "bytes[11]": 11,
+    "bytes[12]": 138,
+    "bytes[13]": 145,
+    "bytes[14]": 154,
+    "bytes[15]": 97
+  },
+  "m_ClassName": "UIBlackOverlay",
+  "m_Namespace": "DuloGames.UI",
+  "m_AssemblyName": "Assembly-CSharp"
+}

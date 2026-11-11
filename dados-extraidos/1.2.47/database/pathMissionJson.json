@@ -1,0 +1,1328 @@
+[
+  {
+    "raw": {
+      "id": 0,
+      "exp": 10,
+      "repeatable": true,
+      "desc": [
+        "메인 에필로그 보기",
+        "View Main Epilogue",
+        "Ver epílogo principal",
+        "Visualizza epilogo principale",
+        "Visualize o epílogo principal.",
+        "查看主线结局",
+        "查看主線結局",
+        "メインエピローグを見る",
+        "Saksikan Epilog Utama",
+        "عرض الخاتمة الرئيسية"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "메인 에필로그 보기",
+        "en": "View Main Epilogue",
+        "es": "Ver epílogo principal",
+        "it": "Visualizza epilogo principale",
+        "pt": "Visualize o epílogo principal.",
+        "zh-Hans": "查看主线结局",
+        "zh-Hant": "查看主線結局",
+        "ja": "メインエピローグを見る",
+        "id": "Saksikan Epilog Utama",
+        "ar": "عرض الخاتمة الرئيسية"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 1,
+      "exp": 3,
+      "repeatable": true,
+      "desc": [
+        "서브 에필로그 보기",
+        "View Sub Epilogue",
+        "Ver epílogo secundario",
+        "Visualizza epilogo secondario",
+        "Visualize o epílogo secundário.",
+        "查看支线结局",
+        "查看支線結局",
+        "サブエピローグを見る",
+        "Saksikan Epilog Sampingan",
+        "عرض الخاتمة الفرعية"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "서브 에필로그 보기",
+        "en": "View Sub Epilogue",
+        "es": "Ver epílogo secundario",
+        "it": "Visualizza epilogo secondario",
+        "pt": "Visualize o epílogo secundário.",
+        "zh-Hans": "查看支线结局",
+        "zh-Hant": "查看支線結局",
+        "ja": "サブエピローグを見る",
+        "id": "Saksikan Epilog Sampingan",
+        "ar": "عرض الخاتمة الفرعية"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 2,
+      "exp": 2,
+      "repeatable": true,
+      "desc": [
+        "유물 구매하기",
+        "Purchase an Relic",
+        "Comprar un Reliquia",
+        "Acquista un Reliquia",
+        "Compre um Artefato.",
+        "购买遗物",
+        "購買遺物",
+        "遺物を購入する",
+        "Beli Relik",
+        "شراء أثر"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "유물 구매하기",
+        "en": "Purchase an Relic",
+        "es": "Comprar un Reliquia",
+        "it": "Acquista un Reliquia",
+        "pt": "Compre um Artefato.",
+        "zh-Hans": "购买遗物",
+        "zh-Hant": "購買遺物",
+        "ja": "遺物を購入する",
+        "id": "Beli Relik",
+        "ar": "شراء أثر"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 3,
+      "exp": 3,
+      "repeatable": true,
+      "desc": [
+        "특성 강화하기",
+        "Enhance a Trait",
+        "Mejorar un rasgo",
+        "Potenzia un tratto",
+        "Aprimore um traço.",
+        "强化特质",
+        "強化特質",
+        "特性を強化する",
+        "Tingkatkan sifat",
+        "تعزيز سمة"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "특성 강화하기",
+        "en": "Enhance a Trait",
+        "es": "Mejorar un rasgo",
+        "it": "Potenzia un tratto",
+        "pt": "Aprimore um traço.",
+        "zh-Hans": "强化特质",
+        "zh-Hant": "強化特質",
+        "ja": "特性を強化する",
+        "id": "Tingkatkan sifat",
+        "ar": "تعزيز سمة"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 4,
+      "exp": 2,
+      "repeatable": true,
+      "desc": [
+        "17등급 이상의 몬스터와 전투하여 승리",
+        "Defeat a Tier 17 or Higher Monster",
+        "Derrotar a un monstruo de grado 17 o superior",
+        "Sconfiggi un mostro di grado 17 o superiore",
+        "Derrote uma criatura de grau 17 ou superior.",
+        "击败等阶17或以上怪物",
+        "擊敗等階17或以上怪物",
+        "レベル17以上のモンスターを倒す",
+        "Kalahkan monster tingkat 17 atau lebih tinggi",
+        "اهزم وحشًا من المستوى 17 أو أعلى"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "17등급 이상의 몬스터와 전투하여 승리",
+        "en": "Defeat a Tier 17 or Higher Monster",
+        "es": "Derrotar a un monstruo de grado 17 o superior",
+        "it": "Sconfiggi un mostro di grado 17 o superiore",
+        "pt": "Derrote uma criatura de grau 17 ou superior.",
+        "zh-Hans": "击败等阶17或以上怪物",
+        "zh-Hant": "擊敗等階17或以上怪物",
+        "ja": "レベル17以上のモンスターを倒す",
+        "id": "Kalahkan monster tingkat 17 atau lebih tinggi",
+        "ar": "اهزم وحشًا من المستوى 17 أو أعلى"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 5,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "하단의 책 아이콘 눌러 도감 확인해보기",
+        "Tap the Bottom Book Icon to View the Collection",
+        "Toca el icono de libro en la parte inferior para ver la colección",
+        "Tocca l'icona del libro in basso per visualizzare la collezione",
+        "Toque no ícone de livro na parte inferior para ver a coleção.",
+        "点击底部的书本图标查看收藏",
+        "點擊底部的書本圖示查看收藏",
+        "下部の本のアイコンをタップしてコレクションを表示する",
+        "Ketuk ikon buku di bawah untuk melihat koleksi",
+        "اضغط على أيقونة الكتاب السفلية لعرض المجموعة"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "하단의 책 아이콘 눌러 도감 확인해보기",
+        "en": "Tap the Bottom Book Icon to View the Collection",
+        "es": "Toca el icono de libro en la parte inferior para ver la colección",
+        "it": "Tocca l'icona del libro in basso per visualizzare la collezione",
+        "pt": "Toque no ícone de livro na parte inferior para ver a coleção.",
+        "zh-Hans": "点击底部的书本图标查看收藏",
+        "zh-Hant": "點擊底部的書本圖示查看收藏",
+        "ja": "下部の本のアイコンをタップしてコレクションを表示する",
+        "id": "Ketuk ikon buku di bawah untuk melihat koleksi",
+        "ar": "اضغط على أيقونة الكتاب السفلية لعرض المجموعة"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 6,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "하단의 트로피 아이콘 눌러 랭킹 확인해보기",
+        "Tap the Bottom Trophy Icon to View Rankings",
+        "Toca el icono de trofeo en la parte inferior para ver los ranking",
+        "Tocca l'icona del trofeo in basso per visualizzare le classifiche",
+        "Toque no ícone de troféu na parte inferior para ver o ranking.",
+        "点击底部的奖杯图标查看排名",
+        "點擊底部的獎盃圖示查看排名",
+        "下部のトロフィーアイコンをタップしてランキングを表示する",
+        "Ketuk ikon piala di bawah untuk melihat peringkat",
+        "اضغط على أيقونة الكأس السفلية لعرض التصنيفات"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "하단의 트로피 아이콘 눌러 랭킹 확인해보기",
+        "en": "Tap the Bottom Trophy Icon to View Rankings",
+        "es": "Toca el icono de trofeo en la parte inferior para ver los ranking",
+        "it": "Tocca l'icona del trofeo in basso per visualizzare le classifiche",
+        "pt": "Toque no ícone de troféu na parte inferior para ver o ranking.",
+        "zh-Hans": "点击底部的奖杯图标查看排名",
+        "zh-Hant": "點擊底部的獎盃圖示查看排名",
+        "ja": "下部のトロフィーアイコンをタップしてランキングを表示する",
+        "id": "Ketuk ikon piala di bawah untuk melihat peringkat",
+        "ar": "اضغط على أيقونة الكأس السفلية لعرض التصنيفات"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 7,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "하단의 허수아비 아이콘을 눌러 전투 연습해보기",
+        "Tap the Bottom Scarecrow Icon to Practice Combat",
+        "Toca el icono de espantapájaros en la parte inferior para practicar combate",
+        "Tocca lo spaventapasseri in basso per esercitarti al combattimento",
+        "Toque no ícone de espantalho na parte inferior para praticar combate.",
+        "点击底部的假人图标模拟战斗",
+        "點擊底部的假人圖標模擬戰鬥",
+        "下部のかかしアイコンをタップして戦闘練習をする",
+        "Ketuk ikon orang-orangan sawah di bawah untuk berlatih bertarung",
+        "اضغط على أيقونة الفزاعة السفلية للتدرب على القتال"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "하단의 허수아비 아이콘을 눌러 전투 연습해보기",
+        "en": "Tap the Bottom Scarecrow Icon to Practice Combat",
+        "es": "Toca el icono de espantapájaros en la parte inferior para practicar combate",
+        "it": "Tocca lo spaventapasseri in basso per esercitarti al combattimento",
+        "pt": "Toque no ícone de espantalho na parte inferior para praticar combate.",
+        "zh-Hans": "点击底部的假人图标模拟战斗",
+        "zh-Hant": "點擊底部的假人圖標模擬戰鬥",
+        "ja": "下部のかかしアイコンをタップして戦闘練習をする",
+        "id": "Ketuk ikon orang-orangan sawah di bawah untuk berlatih bertarung",
+        "ar": "اضغط على أيقونة الفزاعة السفلية للتدرب على القتال"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 8,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "상단의 능력치 표기 눌러서 설명 읽어보기",
+        "Tap the Top Stat Display to Read the Description",
+        "Toca la pantalla de estadísticas en la parte superior para leer la descripción",
+        "Tocca il display delle statistiche in alto per leggere la descrizione",
+        "Toque na exibição de status na parte superior para ler a descrição.",
+        "点击顶部的属性面板阅读说明",
+        "點擊頂部的屬性面板閱讀說明",
+        "上部のステータス表示をタップして説明を読む",
+        "Ketuk tampilan stat di atas untuk membaca penjelasannya",
+        "اضغط على عرض الإحصائيات في الأعلى لقراءة الوصف"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "상단의 능력치 표기 눌러서 설명 읽어보기",
+        "en": "Tap the Top Stat Display to Read the Description",
+        "es": "Toca la pantalla de estadísticas en la parte superior para leer la descripción",
+        "it": "Tocca il display delle statistiche in alto per leggere la descrizione",
+        "pt": "Toque na exibição de status na parte superior para ler a descrição.",
+        "zh-Hans": "点击顶部的属性面板阅读说明",
+        "zh-Hant": "點擊頂部的屬性面板閱讀說明",
+        "ja": "上部のステータス表示をタップして説明を読む",
+        "id": "Ketuk tampilan stat di atas untuk membaca penjelasannya",
+        "ar": "اضغط على عرض الإحصائيات في الأعلى لقراءة الوصف"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 9,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "상단의 경험치 바 눌러서 설명 읽어보기",
+        "Tap the Top Experience Bar to Read the Description",
+        "Toca la barra de experiencia en la parte superior para leer la descripción",
+        "Tocca la barra dell'esperienza in alto per leggere la descrizione",
+        "Toque na barra de experiência na parte superior para ler a descrição.",
+        "点击顶部的经验条阅读说明",
+        "點擊頂部的經驗條閱讀說明",
+        "上部の経験値バーをタップして説明を読む",
+        "Ketuk bilah pengalaman di atas untuk membaca penjelasannya",
+        "اضغط على شريط الخبرة في الأعلى لقراءة الوصف"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "상단의 경험치 바 눌러서 설명 읽어보기",
+        "en": "Tap the Top Experience Bar to Read the Description",
+        "es": "Toca la barra de experiencia en la parte superior para leer la descripción",
+        "it": "Tocca la barra dell'esperienza in alto per leggere la descrizione",
+        "pt": "Toque na barra de experiência na parte superior para ler a descrição.",
+        "zh-Hans": "点击顶部的经验条阅读说明",
+        "zh-Hant": "點擊頂部的經驗條閱讀說明",
+        "ja": "上部の経験値バーをタップして説明を読む",
+        "id": "Ketuk bilah pengalaman di atas untuk membaca penjelasannya",
+        "ar": "اضغط على شريط الخبرة في الأعلى لقراءة الوصف"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 10,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "하단의 보석상자 아이콘 눌러 상점 둘러보기",
+        "Tap the Bottom Gem Chest Icon to Browse the Shop",
+        "Toca el icono de cofre de gemas en la parte inferior para explorar la tienda",
+        "Tocca l'icona del forziere di gemme in basso per esplorare il negozio",
+        "Toque no ícone de baú de gemas na parte inferior para navegar na loja.",
+        "点击底部的宝石箱图标浏览商店",
+        "點擊底部的寶石箱圖示瀏覽商店",
+        "下部の宝石箱アイコンをタップしてショップを閲覧する",
+        "Ketuk ikon peti permata di bawah untuk menelusuri toko",
+        "اضغط على أيقونة صندوق الجواهر السفلية لتصفح المتجر"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "하단의 보석상자 아이콘 눌러 상점 둘러보기",
+        "en": "Tap the Bottom Gem Chest Icon to Browse the Shop",
+        "es": "Toca el icono de cofre de gemas en la parte inferior para explorar la tienda",
+        "it": "Tocca l'icona del forziere di gemme in basso per esplorare il negozio",
+        "pt": "Toque no ícone de baú de gemas na parte inferior para navegar na loja.",
+        "zh-Hans": "点击底部的宝石箱图标浏览商店",
+        "zh-Hant": "點擊底部的寶石箱圖示瀏覽商店",
+        "ja": "下部の宝石箱アイコンをタップしてショップを閲覧する",
+        "id": "Ketuk ikon peti permata di bawah untuk menelusuri toko",
+        "ar": "اضغط على أيقونة صندوق الجواهر السفلية لتصفح المتجر"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 11,
+      "exp": 2,
+      "repeatable": true,
+      "desc": [
+        "건강 25 이상 달성하기",
+        "Reach 25 CON",
+        "Alcanza 25 de CON",
+        "Raggiungi 25 CON",
+        "Alcance CON 25.",
+        "达到25点体质",
+        "達到25點體質",
+        "CONを25にする",
+        "Tingkatkan CON sampai 25",
+        "صل إلى 25 البِنية"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "건강 25 이상 달성하기",
+        "en": "Reach 25 CON",
+        "es": "Alcanza 25 de CON",
+        "it": "Raggiungi 25 CON",
+        "pt": "Alcance CON 25.",
+        "zh-Hans": "达到25点体质",
+        "zh-Hant": "達到25點體質",
+        "ja": "CONを25にする",
+        "id": "Tingkatkan CON sampai 25",
+        "ar": "صل إلى 25 البِنية"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 12,
+      "exp": 2,
+      "repeatable": true,
+      "desc": [
+        "지혜 25 이상 달성하기",
+        "Reach 25 WIS",
+        "Alcanza 25 WIS",
+        "Raggiungi 25 WIS",
+        "Alcance SAB 25.",
+        "达到25点感知",
+        "達到25點感知",
+        "WISを25にする",
+        "Tingkatkan WIS sampai 25",
+        "صل إلى 25 الحكمة"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "지혜 25 이상 달성하기",
+        "en": "Reach 25 WIS",
+        "es": "Alcanza 25 WIS",
+        "it": "Raggiungi 25 WIS",
+        "pt": "Alcance SAB 25.",
+        "zh-Hans": "达到25点感知",
+        "zh-Hant": "達到25點感知",
+        "ja": "WISを25にする",
+        "id": "Tingkatkan WIS sampai 25",
+        "ar": "صل إلى 25 الحكمة"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 13,
+      "exp": 2,
+      "repeatable": true,
+      "desc": [
+        "엘프와 활 솜씨 내기에서 승리",
+        "Win an Archery Challenge Against an Elf",
+        "Gana un desafío de tiro con arco contra un elfo",
+        "Vinci una sfida di tiro con l’arco contro un elfo",
+        "Vença um desafio de arco e flecha contra um elfo.",
+        "在与精灵的射箭比试中获胜",
+        "在與精靈的射箭比試中獲勝",
+        "エルフとの弓術対決に勝利する",
+        "Menang dalam tantangan memanah melawan elf",
+        "افز في تحدي الرماية ضد إلف"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "엘프와 활 솜씨 내기에서 승리",
+        "en": "Win an Archery Challenge Against an Elf",
+        "es": "Gana un desafío de tiro con arco contra un elfo",
+        "it": "Vinci una sfida di tiro con l’arco contro un elfo",
+        "pt": "Vença um desafio de arco e flecha contra um elfo.",
+        "zh-Hans": "在与精灵的射箭比试中获胜",
+        "zh-Hant": "在與精靈的射箭比試中獲勝",
+        "ja": "エルフとの弓術対決に勝利する",
+        "id": "Menang dalam tantangan memanah melawan elf",
+        "ar": "افز في تحدي الرماية ضد إلف"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 14,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "아이템 '생명의 보옥' 획득하기",
+        "Obtain the “The Jewel of Life”",
+        "Obtén la ‘La Gema de la Vida’",
+        "Ottieni la “Il Gioiello della Vita”",
+        "Obtenha a A Joia da Vida.",
+        "获得“生命之宝”",
+        "獲得“生命之寶”",
+        "アイテム「生命の宝玉」を獲得する",
+        "Dapatkan Permata Kehidupan",
+        "احصل على 'جوهرة الحياة'"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "아이템 '생명의 보옥' 획득하기",
+        "en": "Obtain the “The Jewel of Life”",
+        "es": "Obtén la ‘La Gema de la Vida’",
+        "it": "Ottieni la “Il Gioiello della Vita”",
+        "pt": "Obtenha a A Joia da Vida.",
+        "zh-Hans": "获得“生命之宝”",
+        "zh-Hant": "獲得“生命之寶”",
+        "ja": "アイテム「生命の宝玉」を獲得する",
+        "id": "Dapatkan Permata Kehidupan",
+        "ar": "احصل على 'جوهرة الحياة'"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 15,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "아이템 '이른 봄' 획득하기",
+        "Obtain the “Early Flowering”",
+        "Obtén la ‘Joven Primavera’",
+        "Ottieni la “Fioritura Precoce”",
+        "Obtenha a Floração Primitiva.",
+        "获得“早春”",
+        "獲得“早春”",
+        "アイテム「早咲きの枝」を獲得する",
+        "Dapatkan Kembang Mula",
+        "احصل على 'الإزهار المبكر'"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "아이템 '이른 봄' 획득하기",
+        "en": "Obtain the “Early Flowering”",
+        "es": "Obtén la ‘Joven Primavera’",
+        "it": "Ottieni la “Fioritura Precoce”",
+        "pt": "Obtenha a Floração Primitiva.",
+        "zh-Hans": "获得“早春”",
+        "zh-Hant": "獲得“早春”",
+        "ja": "アイテム「早咲きの枝」を獲得する",
+        "id": "Dapatkan Kembang Mula",
+        "ar": "احصل على 'الإزهار المبكر'"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 16,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "아이템 '고목의 생명력' 획득하기",
+        "Obtain the “Vitality of the Old Tree”",
+        "Obtén la ‘Vitalidad del Viejo Árbol’",
+        "Ottieni la “Vitalità del Vecchio Albero”",
+        "Obtenha a Vitalidade da Velha Árvore.",
+        "获得“老树之晖”",
+        "獲得“老樹之暉”",
+        "アイテム「古樹の生命力」を獲得する",
+        "Dapatkan Inti Pohon Tua",
+        "احصل على 'حيوية الشجرة العتيقة'"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "아이템 '고목의 생명력' 획득하기",
+        "en": "Obtain the “Vitality of the Old Tree”",
+        "es": "Obtén la ‘Vitalidad del Viejo Árbol’",
+        "it": "Ottieni la “Vitalità del Vecchio Albero”",
+        "pt": "Obtenha a Vitalidade da Velha Árvore.",
+        "zh-Hans": "获得“老树之晖”",
+        "zh-Hant": "獲得“老樹之暉”",
+        "ja": "アイテム「古樹の生命力」を獲得する",
+        "id": "Dapatkan Inti Pohon Tua",
+        "ar": "احصل على 'حيوية الشجرة العتيقة'"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 17,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "아이템 '세계수 목걸이' 획득하기",
+        "Obtain the “World Tree Necklace”",
+        "Obtén el ‘Collar del Árbol del Mundo’",
+        "Ottieni la “Collana dell'Albero del Mondo”",
+        "Obtenha o Colar do Árvore do Mundo.",
+        "获得“世界树项链”",
+        "獲得“世界樹項鍊”",
+        "アイテム「世界樹のネックレス」を獲得する",
+        "Dapatkan Kalung Pohon Dunia",
+        "احصل على 'قلادة شجرة العالم'"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "아이템 '세계수 목걸이' 획득하기",
+        "en": "Obtain the “World Tree Necklace”",
+        "es": "Obtén el ‘Collar del Árbol del Mundo’",
+        "it": "Ottieni la “Collana dell'Albero del Mondo”",
+        "pt": "Obtenha o Colar do Árvore do Mundo.",
+        "zh-Hans": "获得“世界树项链”",
+        "zh-Hant": "獲得“世界樹項鍊”",
+        "ja": "アイテム「世界樹のネックレス」を獲得する",
+        "id": "Dapatkan Kalung Pohon Dunia",
+        "ar": "احصل على 'قلادة شجرة العالم'"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 18,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "아이템 '이그드라실 아머' 획득하기",
+        "Obtain the “Yggdrasil Armor”",
+        "Obtén la ‘Armadura de Yggdrasil’",
+        "Ottieni l’“Armatura di Yggdrasil”",
+        "Obtenha a Armadura de Yggdrasil.",
+        "获得“世界树之甲”",
+        "獲得“世界樹之甲”",
+        "アイテム「ユグドラシルアーマー」を獲得する",
+        "Dapatkan Zirah Yggdrasil",
+        "احصل على 'درع يغدارسيل'"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "아이템 '이그드라실 아머' 획득하기",
+        "en": "Obtain the “Yggdrasil Armor”",
+        "es": "Obtén la ‘Armadura de Yggdrasil’",
+        "it": "Ottieni l’“Armatura di Yggdrasil”",
+        "pt": "Obtenha a Armadura de Yggdrasil.",
+        "zh-Hans": "获得“世界树之甲”",
+        "zh-Hant": "獲得“世界樹之甲”",
+        "ja": "アイテム「ユグドラシルアーマー」を獲得する",
+        "id": "Dapatkan Zirah Yggdrasil",
+        "ar": "احصل على 'درع يغدارسيل'"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 19,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "아이템 '엘프의 팬던트' 획득하기",
+        "Obtain the “Elven Pendant”",
+        "Obtén el ‘Colgante Élfico’",
+        "Ottieni la “Ciondolo elfico”",
+        "Obtenha o Pingente Élfico.",
+        "获得“精灵垂饰”",
+        "獲得“精靈垂飾”",
+        "アイテム「エルフのペンダント」を獲得する",
+        "Dapatkan Liontin Elf",
+        "احصل على 'قلادة الإلف'"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "아이템 '엘프의 팬던트' 획득하기",
+        "en": "Obtain the “Elven Pendant”",
+        "es": "Obtén el ‘Colgante Élfico’",
+        "it": "Ottieni la “Ciondolo elfico”",
+        "pt": "Obtenha o Pingente Élfico.",
+        "zh-Hans": "获得“精灵垂饰”",
+        "zh-Hant": "獲得“精靈垂飾”",
+        "ja": "アイテム「エルフのペンダント」を獲得する",
+        "id": "Dapatkan Liontin Elf",
+        "ar": "احصل على 'قلادة الإلف'"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 20,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "아이템 '비자야' 획득하기",
+        "Obtain the “Vijaya”",
+        "Obtén la ‘Vijaya’",
+        "Ottieni la “Vijaya”",
+        "Obtenha o Vijaya.",
+        "获得“维贾亚”",
+        "獲得“維賈亞”",
+        "アイテム「ヴィジャヤの弓」を獲得する",
+        "Dapatkan Wijaya",
+        "احصل على 'فيجايا'"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "아이템 '비자야' 획득하기",
+        "en": "Obtain the “Vijaya”",
+        "es": "Obtén la ‘Vijaya’",
+        "it": "Ottieni la “Vijaya”",
+        "pt": "Obtenha o Vijaya.",
+        "zh-Hans": "获得“维贾亚”",
+        "zh-Hant": "獲得“維賈亞”",
+        "ja": "アイテム「ヴィジャヤの弓」を獲得する",
+        "id": "Dapatkan Wijaya",
+        "ar": "احصل على 'فيجايا'"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 21,
+      "exp": 2,
+      "repeatable": true,
+      "desc": [
+        "카리스마 25 이상 달성하기",
+        "Reach 25 CHA",
+        "Alcanza 25 de CHA",
+        "Raggiungi 25 CAR",
+        "Alcance CAR 25.",
+        "达到25点魅力",
+        "達到25點魅力",
+        "CHAを25にする",
+        "Tingkatkan CHA sampai 25",
+        "صل إلى 25 كاريزما"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "카리스마 25 이상 달성하기",
+        "en": "Reach 25 CHA",
+        "es": "Alcanza 25 de CHA",
+        "it": "Raggiungi 25 CAR",
+        "pt": "Alcance CAR 25.",
+        "zh-Hans": "达到25点魅力",
+        "zh-Hant": "達到25點魅力",
+        "ja": "CHAを25にする",
+        "id": "Tingkatkan CHA sampai 25",
+        "ar": "صل إلى 25 كاريزما"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 22,
+      "exp": 2,
+      "repeatable": true,
+      "desc": [
+        "지능 25 이상 달성하기",
+        "Reach 25 INT",
+        "Alcanza 25 de INT",
+        "Raggiungi 25 INT",
+        "Alcance INT 25.",
+        "达到25点智慧",
+        "達到25點智慧",
+        "INTを25にする",
+        "Tingkatkan INT sampai 25",
+        "صل إلى 25 الذكاء"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "지능 25 이상 달성하기",
+        "en": "Reach 25 INT",
+        "es": "Alcanza 25 de INT",
+        "it": "Raggiungi 25 INT",
+        "pt": "Alcance INT 25.",
+        "zh-Hans": "达到25点智慧",
+        "zh-Hant": "達到25點智慧",
+        "ja": "INTを25にする",
+        "id": "Tingkatkan INT sampai 25",
+        "ar": "صل إلى 25 الذكاء"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 23,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "아이템 '장난스런 악마의 뿔' 획득하기",
+        "Obtain the “The Horn of a Mischeivous Devil”",
+        "Obtén la ‘El Cuerno de una Diabla Traviesa’",
+        "Ottieni la “Il corno di un diavolo malizioso”",
+        "Obtenha o Chifre de um Demônio Travesso.",
+        "获得“淘气恶魔的角”",
+        "獲得“淘氣惡魔的角”",
+        "アイテム「いたずらな悪魔の角」を獲得する",
+        "Dapatkan Tanduk Iblis yang Jahat",
+        "احصل على 'قرن الشيطان الخبيث'"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "아이템 '장난스런 악마의 뿔' 획득하기",
+        "en": "Obtain the “The Horn of a Mischeivous Devil”",
+        "es": "Obtén la ‘El Cuerno de una Diabla Traviesa’",
+        "it": "Ottieni la “Il corno di un diavolo malizioso”",
+        "pt": "Obtenha o Chifre de um Demônio Travesso.",
+        "zh-Hans": "获得“淘气恶魔的角”",
+        "zh-Hant": "獲得“淘氣惡魔的角”",
+        "ja": "アイテム「いたずらな悪魔の角」を獲得する",
+        "id": "Dapatkan Tanduk Iblis yang Jahat",
+        "ar": "احصل على 'قرن الشيطان الخبيث'"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 24,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "아이템 '악마의 팔찌' 획득하기",
+        "Obtain the “Devil's Bracelet”",
+        "Obtén la ‘Brazalete Demoníaco’",
+        "Ottieni la “Bracciale del Diavolo”",
+        "Obtenha o Bracelete Diabólico.",
+        "获得“恶魔手镯”",
+        "獲得“惡魔手鐲”",
+        "アイテム「悪魔のブレスレット」を獲得する",
+        "Dapatkan Gelang Setan",
+        "احصل على 'سوار الشيطان'"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "아이템 '악마의 팔찌' 획득하기",
+        "en": "Obtain the “Devil's Bracelet”",
+        "es": "Obtén la ‘Brazalete Demoníaco’",
+        "it": "Ottieni la “Bracciale del Diavolo”",
+        "pt": "Obtenha o Bracelete Diabólico.",
+        "zh-Hans": "获得“恶魔手镯”",
+        "zh-Hant": "獲得“惡魔手鐲”",
+        "ja": "アイテム「悪魔のブレスレット」を獲得する",
+        "id": "Dapatkan Gelang Setan",
+        "ar": "احصل على 'سوار الشيطان'"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 25,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "발렌과 싸워 승리",
+        "Defeat Valen",
+        "Derrotar a Valen",
+        "Sconfiggere Valen",
+        "Derrote Valen",
+        "击败瓦伦",
+        "擊敗瓦倫",
+        "バレンを倒す",
+        "Kalahkan Valen",
+        "اهزم فالين"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "발렌과 싸워 승리",
+        "en": "Defeat Valen",
+        "es": "Derrotar a Valen",
+        "it": "Sconfiggere Valen",
+        "pt": "Derrote Valen",
+        "zh-Hans": "击败瓦伦",
+        "zh-Hant": "擊敗瓦倫",
+        "ja": "バレンを倒す",
+        "id": "Kalahkan Valen",
+        "ar": "اهزم فالين"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 26,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "푸블리우스와 싸워 승리",
+        "Defeat Publius",
+        "Derrotar a Publius",
+        "Sconfiggere Publius",
+        "Derrote Publius",
+        "击败普布利乌斯",
+        "擊敗普布利烏斯",
+        "パブリウスを倒す",
+        "Kalahkan Publius",
+        "اهزم بوبليوس"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "푸블리우스와 싸워 승리",
+        "en": "Defeat Publius",
+        "es": "Derrotar a Publius",
+        "it": "Sconfiggere Publius",
+        "pt": "Derrote Publius",
+        "zh-Hans": "击败普布利乌斯",
+        "zh-Hant": "擊敗普布利烏斯",
+        "ja": "パブリウスを倒す",
+        "id": "Kalahkan Publius",
+        "ar": "اهزم بوبليوس"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 27,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "시라와 결혼하기",
+        "Marry Cira",
+        "Casarse con Cira",
+        "Sposare Cira",
+        "Case-se com Cira",
+        "与希瑞雅结婚",
+        "與希瑞雅結婚",
+        "シーラと結婚する",
+        "Nikahi Cira",
+        "تزوج سيرا"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "시라와 결혼하기",
+        "en": "Marry Cira",
+        "es": "Casarse con Cira",
+        "it": "Sposare Cira",
+        "pt": "Case-se com Cira",
+        "zh-Hans": "与希瑞雅结婚",
+        "zh-Hant": "與希瑞雅結婚",
+        "ja": "シーラと結婚する",
+        "id": "Nikahi Cira",
+        "ar": "تزوج سيرا"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 28,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "키오르를 처치하고 새로운 대공되기",
+        "Defeat Kior and Become the New Grand Duke",
+        "Derrotar a Kior y Convertirse en el Nuevo Gran Duque",
+        "Sconfiggere Kior e Diventare il Nuovo Gran Duca",
+        "Derrotar Kior e Tornar-se o Novo Grão-Duque",
+        "击败基奥，成为新大公",
+        "擊敗基奧，成為新大公",
+        "キオルを倒し、新たな大公となる",
+        "Kalahkan Kior dan menjadi Adipati Agung yang baru",
+        "اهزم كيور وكن الدوق الأعظم الجديد"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "키오르를 처치하고 새로운 대공되기",
+        "en": "Defeat Kior and Become the New Grand Duke",
+        "es": "Derrotar a Kior y Convertirse en el Nuevo Gran Duque",
+        "it": "Sconfiggere Kior e Diventare il Nuovo Gran Duca",
+        "pt": "Derrotar Kior e Tornar-se o Novo Grão-Duque",
+        "zh-Hans": "击败基奥，成为新大公",
+        "zh-Hant": "擊敗基奧，成為新大公",
+        "ja": "キオルを倒し、新たな大公となる",
+        "id": "Kalahkan Kior dan menjadi Adipati Agung yang baru",
+        "ar": "اهزم كيور وكن الدوق الأعظم الجديد"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 29,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "아이템 '시라의 갑주' 획득하기",
+        "Obtain the “Cira's Armor”",
+        "Obtén la ‘Armadura de Cira’",
+        "Ottieni la “Armatura di Cira”",
+        "Obtenha a Armadura da Cira.",
+        "获得“希瑞雅的护甲”",
+        "獲得“希瑞雅的護甲”",
+        "アイテム「シーラの紅鎧」を獲得する",
+        "Dapatkan Baju Zirah Cira",
+        "احصل على 'درع سيرا'"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "아이템 '시라의 갑주' 획득하기",
+        "en": "Obtain the “Cira's Armor”",
+        "es": "Obtén la ‘Armadura de Cira’",
+        "it": "Ottieni la “Armatura di Cira”",
+        "pt": "Obtenha a Armadura da Cira.",
+        "zh-Hans": "获得“希瑞雅的护甲”",
+        "zh-Hant": "獲得“希瑞雅的護甲”",
+        "ja": "アイテム「シーラの紅鎧」を獲得する",
+        "id": "Dapatkan Baju Zirah Cira",
+        "ar": "احصل على 'درع سيرا'"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 30,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "키오르의 힘을 받아들이기",
+        "Embrace Kior’s Power",
+        "Aceptar el Poder de Kior",
+        "Accettare il Potere di Kior",
+        "Aceitar o Poder de Kior",
+        "接受基奥的力量",
+        "接受基奧的力量",
+        "キオルの力を受け入れる",
+        "Terima kekuatan Kior",
+        "تقبل قوة كيور"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "키오르의 힘을 받아들이기",
+        "en": "Embrace Kior’s Power",
+        "es": "Aceptar el Poder de Kior",
+        "it": "Accettare il Potere di Kior",
+        "pt": "Aceitar o Poder de Kior",
+        "zh-Hans": "接受基奥的力量",
+        "zh-Hant": "接受基奧的力量",
+        "ja": "キオルの力を受け入れる",
+        "id": "Terima kekuatan Kior",
+        "ar": "تقبل قوة كيور"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 31,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "아이템 '데일리킴의 혀' 획득하기",
+        "Obtain the “Daily Kim's Tongue”",
+        "Obtén la ‘Lengua de Dailykim’",
+        "Ottieni la “Lingua di Daily Kim”",
+        "Obtenha o Língua de Daily Kim",
+        "获得“金代理的舌头”",
+        "獲得“金代理的舌頭”",
+        "アイテム「デイリー・キムの舌」を獲得する",
+        "Dapatkan Lidah Daily Kim",
+        "احصل على 'لسان ديلي كيم'"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "아이템 '데일리킴의 혀' 획득하기",
+        "en": "Obtain the “Daily Kim's Tongue”",
+        "es": "Obtén la ‘Lengua de Dailykim’",
+        "it": "Ottieni la “Lingua di Daily Kim”",
+        "pt": "Obtenha o Língua de Daily Kim",
+        "zh-Hans": "获得“金代理的舌头”",
+        "zh-Hant": "獲得“金代理的舌頭”",
+        "ja": "アイテム「デイリー・キムの舌」を獲得する",
+        "id": "Dapatkan Lidah Daily Kim",
+        "ar": "احصل على 'لسان ديلي كيم'"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 32,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "아이템 '에드몬드의 양피지' 획득하기",
+        "Obtain the “Scroll of Edmond”",
+        "Obtén la ‘Pergamino de Edmond’",
+        "Ottieni la “Pergamena di Edmond”",
+        "Obtenha o Pergaminho de Edmond",
+        "获得“埃德蒙的羊皮卷轴”",
+        "獲得“埃德蒙的羊皮捲軸”",
+        "アイテム「エドモンドのスクロール」を獲得する",
+        "Dapatkan Gulungan Edmond",
+        "احصل على 'لفيفة إيدموند'"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "아이템 '에드몬드의 양피지' 획득하기",
+        "en": "Obtain the “Scroll of Edmond”",
+        "es": "Obtén la ‘Pergamino de Edmond’",
+        "it": "Ottieni la “Pergamena di Edmond”",
+        "pt": "Obtenha o Pergaminho de Edmond",
+        "zh-Hans": "获得“埃德蒙的羊皮卷轴”",
+        "zh-Hant": "獲得“埃德蒙的羊皮捲軸”",
+        "ja": "アイテム「エドモンドのスクロール」を獲得する",
+        "id": "Dapatkan Gulungan Edmond",
+        "ar": "احصل على 'لفيفة إيدموند'"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 33,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "쥐교수를 원래대로 되돌리기",
+        "Restore the Rat Professor",
+        "Restaurar al Profesor Rata",
+        "Ripristinare il Professor Topo",
+        "Restaurar o Professor Rato",
+        "将小白鼠教授恢复原状",
+        "將小白鼠教授恢復原狀",
+        "ネズミ教授を元に戻す",
+        "Mengembalikan Profesor Tikus ke wujud semula",
+        "أعد الأستاذ الجرذ"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "쥐교수를 원래대로 되돌리기",
+        "en": "Restore the Rat Professor",
+        "es": "Restaurar al Profesor Rata",
+        "it": "Ripristinare il Professor Topo",
+        "pt": "Restaurar o Professor Rato",
+        "zh-Hans": "将小白鼠教授恢复原状",
+        "zh-Hant": "將小白鼠教授恢復原狀",
+        "ja": "ネズミ教授を元に戻す",
+        "id": "Mengembalikan Profesor Tikus ke wujud semula",
+        "ar": "أعد الأستاذ الجرذ"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 34,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "플레시 콜로서스를 처치하기",
+        "Defeat Flesh Colossus",
+        "Derrotar a Coloso de Carne",
+        "Sconfiggere Colosso di carne",
+        "Derrote Colosso de Carne",
+        "击败血肉魔像",
+        "擊敗血肉魔像",
+        "肉人形を倒す",
+        "Kalahkan Kolossus Daging",
+        "اهزم العملاق اللحمي"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "플레시 콜로서스를 처치하기",
+        "en": "Defeat Flesh Colossus",
+        "es": "Derrotar a Coloso de Carne",
+        "it": "Sconfiggere Colosso di carne",
+        "pt": "Derrote Colosso de Carne",
+        "zh-Hans": "击败血肉魔像",
+        "zh-Hant": "擊敗血肉魔像",
+        "ja": "肉人形を倒す",
+        "id": "Kalahkan Kolossus Daging",
+        "ar": "اهزم العملاق اللحمي"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 35,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "쪽빛 마녀의 제자되기",
+        "Become the Indigo Witch’s Apprentice",
+        "Convertirse en aprendiz de la Bruja Índigo",
+        "Diventare apprendista della Strega Indaco",
+        "Tornar-se aprendiz da Bruxa Índigo",
+        "成为靛蓝女巫的学徒",
+        "成為靛藍女巫的學徒",
+        "インディゴの魔女の弟子になる",
+        "Menjadi murid Penyihir Indigo",
+        "كن تلميذ ساحرة النيلي"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "쪽빛 마녀의 제자되기",
+        "en": "Become the Indigo Witch’s Apprentice",
+        "es": "Convertirse en aprendiz de la Bruja Índigo",
+        "it": "Diventare apprendista della Strega Indaco",
+        "pt": "Tornar-se aprendiz da Bruxa Índigo",
+        "zh-Hans": "成为靛蓝女巫的学徒",
+        "zh-Hant": "成為靛藍女巫的學徒",
+        "ja": "インディゴの魔女の弟子になる",
+        "id": "Menjadi murid Penyihir Indigo",
+        "ar": "كن تلميذ ساحرة النيلي"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 36,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "아이템 '별의 장막' 획득하기",
+        "Obtain the “Curtain of Stars”",
+        "Obtén la ‘Cortina de Estrellas’",
+        "Ottieni la “Manto di Stelle”",
+        "Obtenha o Cortina Estelar",
+        "获得“星之幕”",
+        "獲得“星之幕”",
+        "アイテム「星のカーテン」を獲得する",
+        "Dapatkan Tirai Bintang",
+        "احصل على 'ثوب النجوم'"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "아이템 '별의 장막' 획득하기",
+        "en": "Obtain the “Curtain of Stars”",
+        "es": "Obtén la ‘Cortina de Estrellas’",
+        "it": "Ottieni la “Manto di Stelle”",
+        "pt": "Obtenha o Cortina Estelar",
+        "zh-Hans": "获得“星之幕”",
+        "zh-Hant": "獲得“星之幕”",
+        "ja": "アイテム「星のカーテン」を獲得する",
+        "id": "Dapatkan Tirai Bintang",
+        "ar": "احصل على 'ثوب النجوم'"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 37,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "금서의 기원을 흡수해 데미갓 되기",
+        "Become a Demigod by Absorbing the Forbidden Text’s Energy",
+        "Convertirse en un semidiós absorbiendo la energía del texto prohibido",
+        "Diventare un semidio assorbendo l’energia del testo proibito",
+        "Tornar-se um semideus absorvendo a energia do texto proibido",
+        "通过吸收禁书的能量成为半神",
+        "透過吸收禁書的能量成為半神",
+        "禁書のエネルギーを吸収して半神になる",
+        "Menjadi demigod dengan menyerap energi dari teks terlarang",
+        "كن نصف إله عبر امتصاص طاقة النص المحظور"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "금서의 기원을 흡수해 데미갓 되기",
+        "en": "Become a Demigod by Absorbing the Forbidden Text’s Energy",
+        "es": "Convertirse en un semidiós absorbiendo la energía del texto prohibido",
+        "it": "Diventare un semidio assorbendo l’energia del testo proibito",
+        "pt": "Tornar-se um semideus absorvendo a energia do texto proibido",
+        "zh-Hans": "通过吸收禁书的能量成为半神",
+        "zh-Hant": "透過吸收禁書的能量成為半神",
+        "ja": "禁書のエネルギーを吸収して半神になる",
+        "id": "Menjadi demigod dengan menyerap energi dari teks terlarang",
+        "ar": "كن نصف إله عبر امتصاص طاقة النص المحظور"
+      }
+    },
+    "status": "extracted"
+  },
+  {
+    "raw": {
+      "id": 38,
+      "exp": 5,
+      "repeatable": false,
+      "desc": [
+        "아이템 '젠카의 보석' 획득하기",
+        "Obtain the “Zenka's Jewel”",
+        "Obtén la ‘Joya de Zenka’",
+        "Ottieni la “Il Gioiello di Zenka”",
+        "Obtenha o Jóia de Zenka",
+        "获得“詹卡的宝石”",
+        "獲得“詹卡的寶石”",
+        "アイテム「ジェンカの宝石」を獲得する",
+        "Dapatkan Permata Zenka",
+        "احصل على 'جوهرة زينكا'"
+      ]
+    },
+    "localized": {
+      "desc": {
+        "ko": "아이템 '젠카의 보석' 획득하기",
+        "en": "Obtain the “Zenka's Jewel”",
+        "es": "Obtén la ‘Joya de Zenka’",
+        "it": "Ottieni la “Il Gioiello di Zenka”",
+        "pt": "Obtenha o Jóia de Zenka",
+        "zh-Hans": "获得“詹卡的宝石”",
+        "zh-Hant": "獲得“詹卡的寶石”",
+        "ja": "アイテム「ジェンカの宝石」を獲得する",
+        "id": "Dapatkan Permata Zenka",
+        "ar": "احصل على 'جوهرة زينكا'"
+      }
+    },
+    "status": "extracted"
+  }
+]

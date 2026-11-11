@@ -1,0 +1,25 @@
+{
+  "m_Name": "TimeCheatingDetector",
+  "m_ExecutionOrder": 0,
+  "m_PropertiesHash": {
+    "bytes[0]": 3,
+    "bytes[1]": 125,
+    "bytes[2]": 31,
+    "bytes[3]": 168,
+    "bytes[4]": 14,
+    "bytes[5]": 165,
+    "bytes[6]": 55,
+    "bytes[7]": 16,
+    "bytes[8]": 209,
+    "bytes[9]": 209,
+    "bytes[10]": 230,
+    "bytes[11]": 0,
+    "bytes[12]": 149,
+    "bytes[13]": 249,
+    "bytes[14]": 36,
+    "bytes[15]": 110
+  },
+  "m_ClassName": "TimeCheatingDetector",
+  "m_Namespace": "CodeStage.AntiCheat.Detectors",
+  "m_AssemblyName": "ACTk.Runtime"
+}
