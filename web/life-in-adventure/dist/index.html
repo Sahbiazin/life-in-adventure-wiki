@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#152f2a">
+  <meta name="description" content="Explore todos os eventos, escolhas e resultados extraídos de Life in Adventure em português.">
+  <title>Life in Adventure · Atlas de eventos</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="events-data.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Life in Adventure, início"><span class="brand-mark">✦</span><span>LIFE IN ADVENTURE<small>O ATLAS DO AVENTUREIRO</small></span></a>
+    <nav aria-label="Navegação principal"><button class="nav-active" aria-current="page">Eventos</button><button disabled title="Em breve">Itens</button><button disabled title="Em breve">Monstros</button><button disabled title="Em breve">NPCs</button><button disabled title="Em breve">Locais</button></nav>
+    <button class="settings" disabled title="Em breve" aria-label="Configurações">⚙ <span>Configurações</span></button>
+  </header>
+  <div class="workspace">
+    <aside class="sidebar" aria-label="Filtros de eventos">
+      <div class="side-heading"><span class="eyebrow">EXPLORAR O ATLAS</span><span class="compass">✧</span></div>
+      <h2>Um mundo de<br>possibilidades.</h2>
+      <p class="side-intro">Encontre um encontro.<br>Descubra cada caminho.</p>
+      <div class="filter-label">TIPO DE EVENTO</div><div id="categories" class="categories"></div>
+      <div class="filter-label tags-heading">FILTRAR POR TAGS <span id="activeCount"></span></div>
+      <p class="filter-hint">Combine tags para refinar a busca.</p><div id="tagFilters" class="tag-filters"></div>
+      <button id="clearFilters" class="clear-filters" hidden>Limpar todos os filtros ↺</button>
+      <div class="side-footer"><span class="status-dot"></span>Arquivo da versão 1.2.47<br><small>Textos originais em português</small></div>
+    </aside>
+    <main>
+      <div class="breadcrumb">WIKI DO AVENTUREIRO <span>/</span> EVENTOS</div>
+      <section class="page-heading"><div><div class="eyebrow green">CADA DECISÃO, UM NOVO CAMINHO</div><h1>Atlas de eventos<span>.</span></h1><p>Explore os encontros e todas as possibilidades da sua aventura.</p></div><div class="edition"><span>ARQUIVO DE CAMPO</span><strong>01 <i>/</i> EVENTOS</strong></div></section>
+      <section class="stats" aria-label="Resumo do arquivo"><div><span class="stat-icon">◇</span><div><strong id="statEvents">3.683</strong><span>eventos mapeados</span></div></div><div><span class="stat-icon">⑂</span><div><strong id="statChoices">8.043</strong><span>escolhas registradas</span></div></div><div><span class="stat-icon">✧</span><div><strong id="statResults">12.196</strong><span>resultados possíveis</span></div></div><span class="archive-label">UMA AVENTURA.<br>INÚMEROS CAMINHOS.</span></section>
+      <section class="catalog" aria-labelledby="catalogTitle">
+        <div class="catalog-top"><div><h2 id="catalogTitle">Todos os eventos <span id="resultCount">Carregando…</span></h2><p>Selecione um evento para consultar os detalhes e o mapa de escolhas.</p></div><label class="sort-control">Ordenar <select id="sort" aria-label="Ordenar eventos"><option value="default">Tipo e número</option><option value="title">Texto: A–Z</option><option value="choices">Mais escolhas</option><option value="results">Mais resultados</option></select></label></div>
+        <div class="search-row"><label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg><input id="search" type="search" placeholder="Buscar evento, personagem, escolha ou consequência…" aria-label="Pesquisar eventos"><kbd>/</kbd></label><span class="search-tip">Busque também por ID</span></div>
+        <div id="appliedFilters" class="applied-filters" aria-label="Filtros ativos"></div>
+        <div class="table-wrap"><table><thead><tr><th class="id-col">REGISTRO</th><th>EVENTO</th><th class="tag-col">TAGS</th><th class="numeric">ESCOLHAS</th><th class="numeric">RESULTADOS</th><th><span class="sr-only">Abrir evento</span></th></tr></thead><tbody id="eventsBody"></tbody></table></div>
+        <div id="emptyState" class="empty-state" hidden><span>⌕</span><h3>Nenhum caminho encontrado</h3><p>Tente outro termo ou remova alguns filtros.</p><button id="emptyReset" class="primary">Limpar busca e filtros</button></div>
+        <footer class="pagination"><span id="pageInfo" aria-live="polite"></span><div><label>Por página <select id="pageSize"><option>25</option><option>50</option><option>100</option></select></label><button id="prevPage" aria-label="Página anterior">←</button><span id="pageNumber"></span><button id="nextPage" aria-label="Próxima página">→</button></div></footer>
+      </section>
+      <footer class="page-footer"><span>✦ LIFE IN ADVENTURE <i>·</i> ATLAS DE EVENTOS</span><span>Mapeamento dos arquivos do jogo · Disponibilidade depende da run.</span></footer>
+    </main>
+  </div>
+  <dialog id="eventDialog" aria-labelledby="detailTitle"><div class="dialog-shell"><header class="dialog-header"><div><span class="eyebrow green" id="detailCategory"></span><h2 id="detailTitle"></h2></div><button id="closeDialog" class="icon-button" aria-label="Fechar detalhes">✕</button></header><div class="detail-toolbar"><button id="detailBack" class="back-button" hidden>← Evento anterior</button><span id="detailId"></span><div class="detail-tabs" role="tablist" aria-label="Visualização do evento"><button id="overviewTab" role="tab" aria-selected="true" aria-controls="overviewPanel">Detalhes do evento</button><button id="mapTab" role="tab" aria-selected="false" aria-controls="mapPanel" tabindex="-1">⑂ Mapa de escolhas</button></div></div><div class="dialog-content"><section id="overviewPanel" role="tabpanel" aria-labelledby="overviewTab"></section><section id="mapPanel" role="tabpanel" aria-labelledby="mapTab" hidden><div class="map-heading"><div><h3>Cada escolha, cada resultado</h3><p>Clique em um destino para explorar o próximo evento.</p></div><div class="zoom"><button id="zoomOut" aria-label="Diminuir mapa">−</button><button id="zoomReset" aria-label="Redefinir zoom">100%</button><button id="zoomIn" aria-label="Ampliar mapa">+</button></div></div><div id="mapViewport" class="map-viewport"><div id="choiceMap"></div></div><p class="map-note">As conexões mostram os destinos registrados. Requisitos, sorteios e combates podem condicionar a continuação.</p><div id="mapTargets" class="map-targets"></div></section></div><footer class="dialog-footer"><span><span class="status-dot"></span> Versão 1.2.47 · Português</span><span>Sem classificação de escolhas</span></footer></div></dialog>
+  <noscript>Ative o JavaScript para pesquisar os eventos e abrir os mapas de escolhas.</noscript>
+</body></html>

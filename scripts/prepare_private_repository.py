@@ -30,6 +30,17 @@ def main():
     # Explicit file paths include the app's sources rather than embedding its separate Sites repository.
     for offset in range(0, len(files), 100):
         run('add', '--', *(p.relative_to(ROOT).as_posix() for p in files[offset:offset+100]))
+    tracked = set(run('ls-files', '-z').stdout.split('\0'))
+    # Git silently omits paths inside a nested checkout. Add those as ordinary blobs,
+    # keeping its separate .git metadata untouched and out of this repository.
+    for p in files:
+        relative = p.relative_to(ROOT).as_posix()
+        if relative not in tracked:
+            oid = run('hash-object', '-w', f'--path={relative}', '--', relative).stdout.strip()
+            run('update-index', '--add', '--cacheinfo', '100644', oid, relative)
+    tracked = set(run('ls-files', '-z').stdout.split('\0'))
+    if any(p.relative_to(ROOT).as_posix() not in tracked for p in files):
+        raise RuntimeError('Some expected project files are missing from the index.')
     index = run('ls-files', '--stage').stdout
     if any(line.startswith('160000 ') for line in index.splitlines()):
         raise RuntimeError('Embedded repository detected; source must be tracked as normal files.')
