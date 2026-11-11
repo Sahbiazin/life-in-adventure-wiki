@@ -46,6 +46,8 @@ O teste abre seu próprio servidor em uma porta disponível e o encerra ao termi
 
 ## Publicação no GitHub Pages
 
+Site publicado: [Life in Adventure · Atlas de eventos](https://sahbiazin.github.io/life-in-adventure-wiki/).
+
 O workflow `.github/workflows/pages.yml` publica somente os quatro arquivos da pasta `dist`, sem incluir o APK ou os arquivos de extração no site. Ele usa o bundle já versionado; depois de alterar a geração dos dados, atualize o bundle antes do envio.
 
 Para a primeira publicação, o repositório precisa ter o GitHub Pages ativado com **Settings → Pages → Build and deployment → Source → GitHub Actions**. Em uma conta gratuita, mantenha o repositório público. A publicação é executada nos envios para `master` que alteram o aplicativo ou o workflow; também pode ser iniciada em **Actions → Publicar atlas no GitHub Pages → Run workflow**.

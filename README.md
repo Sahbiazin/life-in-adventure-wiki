@@ -4,7 +4,7 @@ Extração local da versão **1.2.47 (build 366)**, a partir do APKM fornecido p
 
 ## Aplicativo web
 
-Versão privada publicada: [Life in Adventure · Atlas de eventos](https://life-in-adventure-atlas.wildsnow5.chatgpt.site).
+Site público no GitHub Pages: [Life in Adventure · Atlas de eventos](https://sahbiazin.github.io/life-in-adventure-wiki/).
 
 Abra [o aplicativo HTML](web/life-in-adventure/dist/index.html) no navegador. Ele inclui regras legíveis com dados originais disponíveis, catálogos de itens, monstros, habilidades e traços conectados aos eventos, caminhos de chegada, links diretos, favoritos e histórico local. A tabela pesquisável, os filtros, a paginação e o mapa SVG continuam disponíveis. Funciona também localmente, sem servidor. [Instruções do aplicativo](web/life-in-adventure/README.md).
 
