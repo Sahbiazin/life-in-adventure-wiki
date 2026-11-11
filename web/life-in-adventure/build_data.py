@@ -1,12 +1,161 @@
-"""Package the complete local Portuguese event set for the static app."""
+"""Package the source records and conservative, traceable wiki annotations."""
 import json
+import re
+import sys
+import unicodedata
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-source = ROOT / 'dados-extraidos/1.2.47/database/events.pt.json'
-events = json.loads(source.read_text(encoding='utf-8'))
-data = [{'id': e['id'], 'group': e['group'], 'source': e['source_asset'], **{'data': e['raw']}} for e in events]
-payload = json.dumps({'version': '1.2.47', 'events': data}, ensure_ascii=False, separators=(',', ':'))
-(HERE / 'dist/events-data.js').write_text('window.ATLAS_DATA=' + payload + ';\n', encoding='utf-8')
-print(f'Packaged {len(events)} events, {sum(len(e["data"].get("choice", [])) for e in data)} choices')
+sys.path.insert(0, str(ROOT / 'scripts'))
+from decode_rules import STAT, decode_required, decode_reward, exact_neutral_probabilities
+
+CATALOGS = {'item': 'itemJson', 'monster': 'monsterJson', 'ability': 'abilityJson', 'trait': 'traitJson'}
+
+
+def plain(text):
+    return re.sub(r'\s+', ' ', re.sub(r'<[^>]*>|\|[^|]*\|', '', str(text))).strip()
+
+
+def normalized(text):
+    return ''.join(c for c in unicodedata.normalize('NFD', plain(text).lower()) if not unicodedata.combining(c))
+
+
+def catalogs_from(database):
+    catalogs = []
+    for kind, name in CATALOGS.items():
+        rows = json.loads((database / f'{name}.json').read_text(encoding='utf-8'))
+        names = {str(r['raw']['id']): r['localized']['name'].get('pt') for r in rows
+                 if kind == 'ability' and r['localized']['name'].get('pt')}
+        for row in rows:
+            raw, localized = row['raw'], row['localized']
+            ident = str(raw['index'] if kind == 'item' else raw['id'])
+            variant = str(raw['number']) if kind == 'ability' else None
+            key = f'{kind}:{ident}' + (f':{variant}' if variant is not None else '')
+            title = localized['name'].get('pt') or names.get(ident) or f'Registro #{ident}'
+            description = '\n\n'.join(localized[k]['pt'] for k in ['desc', 'desc0', 'desc1', 'desc2']
+                                      if localized.get(k, {}).get('pt'))
+            catalogs.append({'key': key, 'kind': kind, 'id': ident, 'variant': variant,
+                             'title': title, 'description': description, 'raw': raw})
+    assert len({c['key'] for c in catalogs}) == len(catalogs), 'Duplicate catalog keys'
+    return catalogs
+
+
+def amount(value):
+    return f'{value:g}'
+
+
+def rule_view(raw, reward=False):
+    if not raw:
+        return None
+    decoded = decode_reward(raw) if reward else decode_required(raw)
+    tokens = []
+    for part in decoded['effects' if reward else 'conditions']:
+        token = {'raw': part['raw'], 'known': part['decoded']}
+        if not part['decoded']:
+            token['text'] = 'Efeito ainda não interpretado' if reward else 'Condição ainda não interpretada'
+        else:
+            idx, qty = part['index'], amount(part['quantity'])
+            op = part.get('operation')
+            if reward and op in ('add_item', 'remove_item'):
+                token.update(text=('Receber item' if op == 'add_item' else 'Remover item') + f' · quantidade {qty}',
+                             ref=f'item:{idx}', relation='Concede item' if op == 'add_item' else 'Remove item')
+            elif reward and op == 'change_user_data':
+                label = STAT.get(idx, f'Atributo de índice {idx} (nome não identificado)')
+                token['text'] = f'{label}: {"+" if part["quantity"] >= 0 else ""}{qty}'
+            elif not reward and part['domain'] == 'userData_effective':
+                label = STAT.get(idx, f'Atributo de índice {idx} (nome não identificado)')
+                token['text'] = f'{label}: {"pelo menos" if part["comparison"] == ">=" else "menos de"} {qty}'
+            elif not reward and part['domain'] == 'inventory':
+                token.update(text=f'Possuir {"pelo menos" if part["comparison"] == ">=" else "menos de"} {qty} unidade(s) do item',
+                             ref=f'item:{idx}', relation='Exige item' if part['comparison'] == '>=' else 'Exige quantidade inferior de item')
+            else:
+                main = op == 'set_main_state' if reward else part['domain'] == 'mainEventList'
+                state = f'Estado de {"história principal" if main else "cadeia de eventos"} #{idx}'
+                token['text'] = f'Definir {state.lower()} como {qty}' if reward else f'{state} deve ser {qty}'
+        tokens.append(token)
+    return {'operator': decoded.get('operator', 'AND'), 'tokens': tokens}
+
+
+def annotate(event, by_key, mentions):
+    raw = event['raw']
+    refs = []
+
+    def track(view, scope):
+        if view:
+            for token in view['tokens']:
+                if token.get('ref') in by_key:
+                    refs.append({'key': token['ref'], 'relation': token['relation'], 'scope': scope, 'raw': token['raw']})
+        return view
+
+    rules = {'required': track(rule_view(raw.get('required', '')), 'Entrada'), 'choices': []}
+    for ci, choice in enumerate(raw.get('choice', [])):
+        view = {'required': track(rule_view(choice.get('required', '')), f'Escolha {ci+1}'), 'results': []}
+        probabilities = exact_neutral_probabilities(choice.get('result', []))
+        for ri, result in enumerate(choice.get('result', [])):
+            scope = f'Escolha {ci+1} · resultado {ri+1}'
+            view['results'].append({'required': track(rule_view(result.get('required', '')), scope),
+                                    'reward': track(rule_view(result.get('reward', ''), True), scope),
+                                    'probability': probabilities[ri] if probabilities else None})
+        rules['choices'].append(view)
+    for token in str(raw.get('monster', '')).split('|'):
+        ident = token.split('_')[0]
+        key = f'monster:{ident}'
+        if key in by_key:
+            refs.append({'key': key, 'relation': 'Monstro listado no encontro', 'scope': 'Encontro', 'raw': token})
+    # A textual mention is searchable evidence, never an inferred reward or requirement.
+    texts = [raw.get('text', '')]
+    for choice in raw.get('choice', []):
+        texts.append(choice.get('text', ''))
+        texts.extend(r.get('text', '') for r in choice.get('result', []))
+    text = normalized(' '.join(texts))
+    explicit = {r['key'] for r in refs}
+    pattern, keys = mentions
+    for match in pattern.finditer(text):
+        key = keys[match.group()]
+        if key not in explicit:
+            refs.append({'key': key, 'relation': 'Menção no texto', 'scope': 'Texto do evento'})
+            explicit.add(key)
+    return rules, refs
+
+
+def build(database, output):
+    originals = json.loads((database / 'events.pt.json').read_text(encoding='utf-8'))
+    catalogs = catalogs_from(database)
+    by_key = {c['key']: c for c in catalogs}
+    names = {}
+    for c in catalogs:
+        if c['kind'] != 'ability' or c['variant'] == '0':
+            names.setdefault(normalized(c['title']), []).append(c['key'])
+    mention_keys = {name: keys[0] for name, keys in names.items()
+                    if len(keys) == 1 and len(name) >= 4 and name != 'normal'}
+    # Longest names first: a mention of a named sword should not also match a
+    # shorter item's name inside it. Compile once rather than rescan per name.
+    pattern = re.compile(r'(?<!\w)(?:' + '|'.join(re.escape(name) for name in sorted(mention_keys, key=len, reverse=True)) + r')(?!\w)')
+    mentions = (pattern, mention_keys)
+    data = []
+    for event in originals:
+        rules, refs = annotate(event, by_key, mentions)
+        data.append({'id': event['id'], 'group': event['group'], 'source': event['source_asset'],
+                     'data': event['raw'], 'rules': rules, 'references': refs})
+    for c in catalogs:
+        links = []
+        for field in ('Ab', 'fixAbility', 'choiceAbility'):
+            for token in str(c['raw'].get(field, '')).split('|'):
+                parts = token.split('_')
+                if len(parts) != 2:
+                    continue
+                key = f'ability:{parts[0]}:0'
+                if key in by_key:
+                    links.append({'key': key, 'relation': f'Habilidade no campo {field}', 'raw': token})
+        c['references'] = links
+    payload = {'version': '1.2.47', 'events': data, 'catalogs': catalogs,
+               'rulesStatus': 'Análise estática parcial do build 366; sem validação em jogo.'}
+    temporary = output.with_suffix('.js.tmp')
+    temporary.write_text('window.ATLAS_DATA=' + json.dumps(payload, ensure_ascii=False, separators=(',', ':')) + ';\n', encoding='utf-8')
+    temporary.replace(output)
+    print(f'Packaged {len(data)} events, {len(catalogs)} catalog records, {sum(len(e["references"]) for e in data)} links')
+
+
+if __name__ == '__main__':
+    build(ROOT / 'dados-extraidos/1.2.47/database', HERE / 'dist/events-data.js')

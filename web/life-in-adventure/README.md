@@ -1,23 +1,53 @@
-# Atlas de eventos — aplicativo HTML
+# Atlas de eventos — wiki HTML
 
-Abra `dist/index.html` no navegador. A busca, os filtros e os detalhes também funcionam sem servidor e sem conexão: o conjunto de dados é carregado como um script local, sem `fetch` ou bibliotecas externas.
+Abra `dist/index.html` no navegador ou sirva a pasta `dist`. O aplicativo usa apenas arquivos locais, sem `fetch`, bibliotecas externas ou conta de usuário.
 
-O aplicativo contém os 3.683 nós em português, 8.043 escolhas e 12.196 resultados da versão 1.2.47. A busca ignora acentos e consulta texto do evento, escolhas, resultados e códigos. `#346` encontra o ID exato em todas as tabelas. As tags selecionadas são combinadas com E; a categoria pode ser combinada com busca e tags.
+## Conteúdo e navegação
 
-As tags derivam da estrutura dos arquivos: tipo de evento, presença de requisitos/recompensas, múltiplos resultados, continuação, destino especial e ausência de texto inicial. Não são classificações de qualidade das escolhas.
+- **Eventos:** 3.683 nós em português, 8.043 escolhas e 12.196 resultados da versão 1.2.47, build 366.
+- **Catálogos:** 390 itens, 206 monstros, 174 registros de habilidades (incluindo variantes) e 64 traços. Cada registro mantém os campos originais, além do nome e da descrição em português. Variantes de habilidade usam a chave `ability:id:number`, pois o ID sozinho não é único.
+- **Regras legíveis:** requisitos de atributos, estados de história, posse/ausência de itens e consequências conhecidas aparecem em português. Códigos desconhecidos continuam sinalizados. O registro original completo, os requisitos das escolhas e os resultados podem ser expandidos para comparação. Alterações de atributos podem envolver limites e outros efeitos do jogo.
+- **Conexões:** requisitos, concessões e remoções de itens apontam para o catálogo; cada item lista as ocorrências inversas com evento, escolha e resultado. Monstros listados no encontro e habilidades nos campos dos catálogos também são navegáveis. Menções textuais são identificadas separadamente e não comprovam uma recompensa ou requisito. Nomes ambíguos são omitidos das menções automáticas; entre nomes sobrepostos prevalece o mais longo.
+- **Caminhos de chegada:** o terceiro separador do evento mostra os resultados que apontam para ele, com requisitos de entrada, escolha e resultado na origem. As referências ficam na mesma tabela; IDs iguais em tabelas diferentes não são unidos. Isso não representa todas as regras que iniciam encontros.
+- **Links diretos:** “Copiar link” abre exatamente o registro selecionado, preservando o ID e a tabela. Exemplo de fragmento de evento: `#evento=EventTreasure%3A346`; de item: `#catalogo=item&registro=item%3A181`. Links antigos de eventos continuam funcionando. Os botões Voltar/Avançar do navegador acompanham as consultas. Se o navegador impedir a cópia automática, o endereço aparece em um campo selecionável.
+- **Caderno local:** estrelas guardam eventos e registros nos favoritos. O histórico mantém as últimas 100 consultas, sem repetições, da mais recente à mais antiga; pode ser limpo na própria seção. Ambos usam `localStorage`, na chave `life-in-adventure:notebook:v1`, apenas neste navegador e origem. Se o armazenamento estiver bloqueado, continuam funcionando na memória durante a visita, com aviso. Não há sincronização entre dispositivos.
 
-Cada linha abre um diálogo com todos os resultados e um mapa SVG navegável. IDs positivos levam à referência na mesma tabela; valores negativos ficam como destinos especiais. Os textos são inseridos com escaping HTML e as marcações de apresentação do jogo são removidas apenas da exibição. Os dados originais permanecem disponíveis nos detalhes.
+A busca ignora acentos. Nos eventos, consulta o texto, as escolhas, os resultados, os códigos e as regras legíveis; nos catálogos, nome, descrição e campos originais. `#346` procura o ID exato. As tags de eventos são combinadas com E, junto à categoria e à busca. Ordenação e paginação também estão disponíveis nos catálogos e no caderno.
 
-Itens, Monstros, NPCs, Locais e Configurações são botões desativados, reservados para futuras etapas.
+As descrições podem conter marcadores como `{0}` e fórmulas que dependem da aventura. Esses valores não são preenchidos por estimativa. As probabilidades estáticas só aparecem no subconjunto neutro documentado em `docs/regras-confirmadas.md`; peso bruto não é probabilidade final. O rodapé e os detalhes identificam a versão e a análise estática parcial, sem validação em jogo.
 
-Para atualizar os dados a partir da extração local:
+## Gerar e executar
 
-```powershell
-python build_data.py
+Na raiz do repositório, com os dados extraídos em `dados-extraidos/1.2.47/database`:
+
+```sh
+.venv/bin/python web/life-in-adventure/build_data.py
+.venv/bin/python -m http.server 8765 --directory web/life-in-adventure/dist --bind 127.0.0.1
 ```
 
-Para servir via HTTP local:
+No Windows, use o Python do seu ambiente virtual. A geração usa apenas a biblioteca padrão, o decodificador do repositório e os JSONs originais; não depende de `events.pt.decoded.json`. Anotações e conexões são acrescentadas ao bundle sem modificar os registros fonte. O bundle é substituído apenas depois de a geração terminar.
 
-```powershell
-python -m http.server 8765 --directory dist --bind 127.0.0.1
+## Validação
+
+Na raiz:
+
+```sh
+.venv/bin/python -X utf8 -m unittest discover -s tests -v
+node --check web/life-in-adventure/dist/app.js
 ```
+
+Para o teste funcional de navegador, use um Python com Playwright e um Chromium instalado (não é uma dependência da aplicação):
+
+```sh
+python web/life-in-adventure/tests/browser_smoke.py
+```
+
+O teste abre seu próprio servidor em uma porta disponível e o encerra ao terminar. `CHROMIUM_PATH` permite indicar outro executável (padrão `/usr/bin/chromium`). A suíte verifica catálogos e variantes, regras e dados originais, conexões nos dois sentidos, caminhos de chegada, links diretos e navegação, favoritos e histórico persistentes, armazenamento bloqueado, tela móvel e os arquivos locais servidos por interceptação com rede desativada. Esta última estratégia permite testar o aplicativo offline mesmo quando uma política do Chromium bloqueia URLs `file://`.
+
+## Publicação no GitHub Pages
+
+O workflow `.github/workflows/pages.yml` publica somente os quatro arquivos da pasta `dist`, sem incluir o APK ou os arquivos de extração no site. Ele usa o bundle já versionado; depois de alterar a geração dos dados, atualize o bundle antes do envio.
+
+Para a primeira publicação, o repositório precisa ter o GitHub Pages ativado com **Settings → Pages → Build and deployment → Source → GitHub Actions**. Em uma conta gratuita, mantenha o repositório público. A publicação é executada nos envios para `master` que alteram o aplicativo ou o workflow; também pode ser iniciada em **Actions → Publicar atlas no GitHub Pages → Run workflow**.
+
+Tornar o repositório público permite visualizar e copiar seu conteúdo, mas não dá permissão de escrita a visitantes. Somente o proprietário e pessoas/equipes com permissão de escrita podem enviar alterações. Pull requests de terceiros não publicam o site: o workflow não é acionado por pull requests.

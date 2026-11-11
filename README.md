@@ -6,7 +6,9 @@ Extração local da versão **1.2.47 (build 366)**, a partir do APKM fornecido p
 
 Versão privada publicada: [Life in Adventure · Atlas de eventos](https://life-in-adventure-atlas.wildsnow5.chatgpt.site).
 
-Abra [o aplicativo HTML](web/life-in-adventure/dist/index.html) no navegador. Ele inclui tabela pesquisável, filtros combináveis por tipo e tags, paginação, detalhes de todos os resultados e mapa SVG com navegação entre eventos. Funciona também localmente, sem servidor. [Instruções do aplicativo](web/life-in-adventure/README.md).
+Abra [o aplicativo HTML](web/life-in-adventure/dist/index.html) no navegador. Ele inclui regras legíveis com dados originais disponíveis, catálogos de itens, monstros, habilidades e traços conectados aos eventos, caminhos de chegada, links diretos, favoritos e histórico local. A tabela pesquisável, os filtros, a paginação e o mapa SVG continuam disponíveis. Funciona também localmente, sem servidor. [Instruções do aplicativo](web/life-in-adventure/README.md).
+
+A publicação pelo GitHub Pages está preparada em [`.github/workflows/pages.yml`](.github/workflows/pages.yml), com [instruções de ativação](web/life-in-adventure/README.md#publicação-no-github-pages). O workflow envia somente o aplicativo estático.
 
 ## Foco atual: mapear todos os eventos e escolhas
 

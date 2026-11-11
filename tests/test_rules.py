@@ -19,9 +19,23 @@ class RulesTests(unittest.TestCase):
         self.assertEqual(rule['conditions'][0]['comparison'], '<')
 
     def test_unknown_is_not_guessed(self):
-        self.assertFalse(decode_required('8_43_1')['fully_decoded'])
+        self.assertFalse(decode_required('31_43_1')['fully_decoded'])
         self.assertFalse(decode_reward('6_0_42')['fully_decoded'])
         self.assertFalse(decode_required('21_43')['fully_decoded'])
+
+    def test_item_requirements_and_transfers_have_separate_semantics(self):
+        have = decode_required('8_42_1')['conditions'][0]
+        lack = decode_required('10_42_1')['conditions'][0]
+        self.assertEqual((have['domain'], have['index'], have['comparison']), ('inventory', 42, '>='))
+        self.assertEqual(lack['comparison'], '<')
+        effects = decode_reward('3_181_1|4_42_1')['effects']
+        self.assertEqual([e['operation'] for e in effects], ['add_item', 'remove_item'])
+        self.assertEqual([e['index'] for e in effects], [181, 42])
+
+    def test_item_counts_use_convert_to_int32_and_nonpositive_transfers_do_nothing(self):
+        self.assertEqual(decode_required('8_42_1.5')['conditions'][0]['quantity'], 2)
+        self.assertEqual(decode_reward('3_42_2.5')['effects'][0]['quantity'], 2)
+        self.assertEqual(decode_reward('4_42_-1')['effects'][0]['quantity'], 0)
 
     def test_weight_not_percent(self):
         self.assertEqual(base_weight('13')['constant'], 13)

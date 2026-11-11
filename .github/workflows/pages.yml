@@ -1,0 +1,58 @@
+name: Publicar atlas no GitHub Pages
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - web/life-in-adventure/dist/**
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Obter apenas o aplicativo estático
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: web/life-in-adventure/dist
+      - name: Verificar o pacote publicado
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('web/life-in-adventure/dist')
+          expected = {'index.html', 'app.js', 'styles.css', 'events-data.js'}
+          assert {p.name for p in root.iterdir() if p.is_file()} == expected
+          data = (root / 'events-data.js').read_text(encoding='utf-8')
+          payload = json.loads(data.removeprefix('window.ATLAS_DATA=').strip().removesuffix(';'))
+          assert len(payload['events']) == 3683
+          assert len(payload['catalogs']) == 834
+          print('Pacote verificado: 3683 eventos e 834 registros de catálogo.')
+          PY
+          node --check web/life-in-adventure/dist/app.js
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+      - name: Enviar os arquivos do site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/life-in-adventure/dist
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4

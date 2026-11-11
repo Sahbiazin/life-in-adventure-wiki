@@ -41,12 +41,14 @@ def decode_required(raw):
         part = parse_token(token)
         op = part.get('type')
         part['decoded'] = False
-        if part['length'] == 3 and op in (1, 2, 5, 13):
+        if part['length'] == 3 and op in (1, 2, 5, 8, 10, 13):
             target = int(part['target'])
             part.update(decoded=True, index=target,
-                        domain='userData_effective' if op in (1, 2) else 'chainEventList' if op == 5 else 'mainEventList',
-                        comparison='>=' if op == 1 else '<' if op == 2 else '==')
+                        domain='userData_effective' if op in (1, 2) else 'inventory' if op in (8, 10) else 'chainEventList' if op == 5 else 'mainEventList',
+                        comparison='>=' if op in (1, 8) else '<' if op in (2, 10) else '==')
             part['label'] = STAT.get(target, f'userData[{target}]') if op in (1, 2) else f'{part["domain"]}[{target}]'
+            if op in (8, 10):
+                part['quantity'] = round(part['quantity'])
             if op in (5, 13):
                 part['quantity'] = math.trunc(part['quantity'])
         conditions.append(part)
@@ -60,15 +62,18 @@ def decode_reward(raw):
         part = parse_token(token)
         op = part.get('type')
         part['decoded'] = False
-        if part['length'] == 3 and op in (0, 5, 13):
+        if part['length'] == 3 and op in (0, 3, 4, 5, 13):
             target = int(part['target'])
             part.update(decoded=True, index=target,
-                        operation='change_user_data' if op == 0 else 'set_chain_state' if op == 5 else 'set_main_state')
+                        operation={0: 'change_user_data', 3: 'add_item', 4: 'remove_item',
+                                   5: 'set_chain_state', 13: 'set_main_state'}[op])
             if op == 0:
                 part['label'] = STAT.get(target, f'userData[{target}]')
                 part['note'] = 'Delta passed to ChangeUserData; caps and side effects depend on the index/state.'
-            else:
+            elif op in (5, 13):
                 part['quantity'] = math.trunc(part['quantity'])
+            elif op in (3, 4):
+                part['quantity'] = max(0, round(part['quantity']))
         parts.append(part)
     return {'raw': raw, 'effects': parts, 'fully_decoded': all(p['decoded'] for p in parts)}
 
