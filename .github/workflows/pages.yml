@@ -43,8 +43,8 @@ jobs:
           data = (root / 'events-data.js').read_text(encoding='utf-8')
           payload = json.loads(data.removeprefix('window.ATLAS_DATA=').strip().removesuffix(';'))
           assert len(payload['events']) == 3683
-          assert len(payload['catalogs']) == 834
-          print('Pacote verificado: 3683 eventos e 834 registros de catálogo.')
+          assert len(payload['catalogs']) == 1188
+          print('Pacote verificado: 3683 eventos e 1188 registros de catálogo.')
           PY
           node --check web/life-in-adventure/dist/app.js
       - name: Configurar Pages

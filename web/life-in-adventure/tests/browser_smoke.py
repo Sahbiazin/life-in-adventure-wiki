@@ -68,7 +68,7 @@ class WikiBrowserTests(unittest.TestCase):
         expect(self.page.locator('#choiceMap svg')).to_be_visible()
 
     def test_catalogs_variants_and_search(self):
-        counts = {'item': 390, 'monster': 206, 'ability': 174, 'trait': 64}
+        counts = {'item': 390, 'monster': 206, 'ability': 174, 'trait': 64, 'ending': 354}
         for kind, count in counts.items():
             with self.subTest(kind=kind):
                 self.goto('#catalogo=' + kind)
@@ -185,6 +185,22 @@ class WikiBrowserTests(unittest.TestCase):
         self.page.locator('#incomingTab').focus()
         self.page.keyboard.press('Home')
         expect(self.page.locator('#overviewTab')).to_be_focused()
+
+    def test_epilogues_and_state_dependencies_are_traceable(self):
+        self.goto('#evento=EventMain%3A27')
+        self.page.locator('.linked-records a[data-record="ending:main:1004"]').first.click()
+        expect(self.page.locator('#detailId')).to_contain_text('História principal #1 · epílogo #4')
+        expect(self.page.locator('#relatedRecords')).to_contain_text('Registra epílogo')
+        self.goto('#evento=EventTreasure%3A346')
+        expect(self.page.locator('.state-dependencies')).to_contain_text('Cadeia de eventos #612')
+        self.page.locator('.state-card > summary').first.click()
+        self.page.locator('.state-card > details > summary').first.click()
+        self.assertGreater(self.page.locator('.state-card a[data-record]').count(), 0)
+        expect(self.page.locator('.state-dependencies')).to_contain_text('não garante desbloqueio')
+        self.page.locator('#closeDialog').click()
+        self.page.locator('#ruleCoverage > summary').click()
+        expect(self.page.locator('#ruleCoverage')).to_contain_text('Interpretação estática')
+        expect(self.page.locator('#ruleCoverage')).to_contain_text('Requisitos interpretados')
 
     def test_unknown_route_and_history_limit(self):
         self.goto('#evento=EventBattle%3A999999')

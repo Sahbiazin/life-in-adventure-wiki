@@ -1,0 +1,327 @@
+{
+  "version": "1.2.47",
+  "build": 366,
+  "runtime_validated": false,
+  "simulation_ready": false,
+  "events": 3683,
+  "choices": 8043,
+  "results": 12196,
+  "events_with_unknown_commands": 1189,
+  "static_probability_choices": 5481,
+  "static_probability_results": 5570,
+  "coverage": {
+    "required": {
+      "fields": 7240,
+      "decoded_fields": 6838,
+      "commands": 9513,
+      "decoded_commands": 9102,
+      "unknown": {
+        "0": {
+          "count": 2,
+          "examples": [
+            {
+              "event": "EventNormal:236",
+              "scope": "Entrada",
+              "raw": "0_3_-1"
+            },
+            {
+              "event": "EventNormal:236",
+              "scope": "Entrada",
+              "raw": "0_2_1"
+            }
+          ]
+        },
+        "14": {
+          "count": 4,
+          "examples": [
+            {
+              "event": "EventNormal:193",
+              "scope": "Escolha 1",
+              "raw": "14_2_4"
+            },
+            {
+              "event": "EventNormal:193",
+              "scope": "Escolha 1",
+              "raw": "14_2_3"
+            },
+            {
+              "event": "EventNormal:218",
+              "scope": "Escolha 1",
+              "raw": "14_2_4"
+            }
+          ]
+        },
+        "17": {
+          "count": 7,
+          "examples": [
+            {
+              "event": "EventTreasure:120",
+              "scope": "Escolha 3",
+              "raw": "17_0_2"
+            },
+            {
+              "event": "EventMain:155",
+              "scope": "Escolha 3",
+              "raw": "17_0_5"
+            },
+            {
+              "event": "EventNormal:30",
+              "scope": "Escolha 1",
+              "raw": "17_0_1"
+            }
+          ]
+        },
+        "19": {
+          "count": 1,
+          "examples": [
+            {
+              "event": "EventNormal:86",
+              "scope": "Entrada",
+              "raw": "19_0_0"
+            }
+          ]
+        },
+        "23": {
+          "count": 188,
+          "examples": [
+            {
+              "event": "EventTreasure:86",
+              "scope": "Escolha 1 · resultado 2",
+              "raw": "23_3_1"
+            },
+            {
+              "event": "EventTreasure:131",
+              "scope": "Escolha 2",
+              "raw": "23_3_1"
+            },
+            {
+              "event": "EventTreasure:137",
+              "scope": "Escolha 1 · resultado 2",
+              "raw": "23_3_1"
+            }
+          ]
+        },
+        "24": {
+          "count": 178,
+          "examples": [
+            {
+              "event": "EventTreasure:86",
+              "scope": "Escolha 1 · resultado 3",
+              "raw": "24_3_1"
+            },
+            {
+              "event": "EventTreasure:137",
+              "scope": "Escolha 1 · resultado 1",
+              "raw": "24_3_1"
+            },
+            {
+              "event": "EventTreasure:164",
+              "scope": "Escolha 1 · resultado 1",
+              "raw": "24_2_1"
+            }
+          ]
+        },
+        "35": {
+          "count": 3,
+          "examples": [
+            {
+              "event": "EventNormal:614",
+              "scope": "Entrada",
+              "raw": "35_0_0"
+            },
+            {
+              "event": "EventNormal:618",
+              "scope": "Entrada",
+              "raw": "35_0_0"
+            },
+            {
+              "event": "EventNormal:620",
+              "scope": "Entrada",
+              "raw": "35_0_0"
+            }
+          ]
+        },
+        "invalid": {
+          "count": 28,
+          "examples": [
+            {
+              "event": "EventMain:1169",
+              "scope": "Escolha 1 · resultado 1",
+              "raw": "21_43"
+            },
+            {
+              "event": "EventMain:1169",
+              "scope": "Escolha 1 · resultado 2",
+              "raw": "21_43"
+            },
+            {
+              "event": "EventMain:1169",
+              "scope": "Escolha 1 · resultado 3",
+              "raw": "20_43"
+            }
+          ]
+        }
+      }
+    },
+    "reward": {
+      "fields": 9277,
+      "decoded_fields": 6977,
+      "commands": 17188,
+      "decoded_commands": 14871,
+      "unknown": {
+        "1": {
+          "count": 10,
+          "examples": [
+            {
+              "event": "EventNormal:245",
+              "scope": "Escolha 2 · resultado 1",
+              "raw": "1_4_-10"
+            },
+            {
+              "event": "EventNormal:245",
+              "scope": "Escolha 3 · resultado 1",
+              "raw": "1_4_-10"
+            },
+            {
+              "event": "EventNormal:245",
+              "scope": "Escolha 4 · resultado 1",
+              "raw": "1_4_-10"
+            }
+          ]
+        },
+        "16": {
+          "count": 12,
+          "examples": [
+            {
+              "event": "EventTreasure:412",
+              "scope": "Escolha 1 · resultado 1",
+              "raw": "16_370_1"
+            },
+            {
+              "event": "EventTreasure:483",
+              "scope": "Escolha 1 · resultado 1",
+              "raw": "16_10_1"
+            },
+            {
+              "event": "EventTreasure:483",
+              "scope": "Escolha 1 · resultado 2",
+              "raw": "16_10_1"
+            }
+          ]
+        },
+        "19": {
+          "count": 1,
+          "examples": [
+            {
+              "event": "EventNormal:86",
+              "scope": "Escolha 1 · resultado 1",
+              "raw": "19_0_1"
+            }
+          ]
+        },
+        "22": {
+          "count": 15,
+          "examples": [
+            {
+              "event": "EventNormal:616",
+              "scope": "Escolha 1 · resultado 1",
+              "raw": "22_107_1"
+            },
+            {
+              "event": "EventNormal:617",
+              "scope": "Escolha 1 · resultado 1",
+              "raw": "22_107_1"
+            },
+            {
+              "event": "EventNormal:618",
+              "scope": "Escolha 1 · resultado 1",
+              "raw": "22_107_1"
+            }
+          ]
+        },
+        "25": {
+          "count": 220,
+          "examples": [
+            {
+              "event": "EventTreasure:266",
+              "scope": "Escolha 2 · resultado 1",
+              "raw": "25_6_1"
+            },
+            {
+              "event": "EventTreasure:347",
+              "scope": "Escolha 2 · resultado 1",
+              "raw": "25_6_1"
+            },
+            {
+              "event": "EventTreasure:353",
+              "scope": "Escolha 2 · resultado 1",
+              "raw": "25_6_1"
+            }
+          ]
+        },
+        "27": {
+          "count": 52,
+          "examples": [
+            {
+              "event": "EventTreasure:177",
+              "scope": "Escolha 1 · resultado 1",
+              "raw": "27_29_1"
+            },
+            {
+              "event": "EventTreasure:180",
+              "scope": "Escolha 2 · resultado 1",
+              "raw": "27_34_1"
+            },
+            {
+              "event": "EventTreasure:181",
+              "scope": "Escolha 2 · resultado 1",
+              "raw": "27_34_1"
+            }
+          ]
+        },
+        "6": {
+          "count": 2005,
+          "examples": [
+            {
+              "event": "EventBattle:0",
+              "scope": "Escolha 1 · resultado 1",
+              "raw": "6_1_0"
+            },
+            {
+              "event": "EventBattle:2",
+              "scope": "Escolha 1 · resultado 1",
+              "raw": "6_1_0"
+            },
+            {
+              "event": "EventBattle:2",
+              "scope": "Escolha 2 · resultado 1",
+              "raw": "6_1_0"
+            }
+          ]
+        },
+        "8": {
+          "count": 2,
+          "examples": [
+            {
+              "event": "EventMain:480",
+              "scope": "Escolha 1 · resultado 1",
+              "raw": "8_249_1"
+            },
+            {
+              "event": "EventMain:480",
+              "scope": "Escolha 1 · resultado 2",
+              "raw": "8_249_1"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Combates, sorteios modificados e seleção aleatória de encontros ainda não modelados.",
+    "Alterações de atributos podem envolver limites, equipamentos e efeitos indiretos.",
+    "Conquistas e registro permanente no catálogo têm regras externas aos campos reward.",
+    "Pontuação normal e difícil exigem modelos distintos; a fórmula completa ainda não foi validada.",
+    "Uma dependência de estado não garante que um encontro será sorteado ou desbloqueado."
+  ]
+}

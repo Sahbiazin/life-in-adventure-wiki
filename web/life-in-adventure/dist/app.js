@@ -20,6 +20,7 @@
     monster:{title:'Monstros', label:'Monstros', icon:'⚔', description:'Conheça as criaturas e encontre os encontros em que são listadas.'},
     ability:{title:'Habilidades', label:'Habilidades', icon:'✦', description:'Descrições em português e variantes preservadas dos arquivos do jogo.'},
     trait:{title:'Traços', label:'Traços', icon:'❖', description:'Consulte os traços, suas descrições e menções nos eventos.'},
+    ending:{title:'Epílogos', label:'Epílogos', icon:'☷', description:'Finais registrados das histórias principais e dos contos, com seus eventos de origem.'},
     favorites:{title:'Seus favoritos', label:'Favoritos', icon:'☆', description:'Eventos e registros guardados neste navegador para consultar depois.'},
     history:{title:'Histórico de consultas', label:'Histórico', icon:'↶', description:'As últimas 100 consultas neste navegador, da mais recente à mais antiga.'}
   };
@@ -84,7 +85,7 @@
   const badge = e => `<span class="badge category-tag" data-group="${e.group}">${esc(types[e.group].label)}</span>`;
   const tagBadge = tag => `<span class="badge">${esc(tag)}</span>`;
   const kindLabel = e => e.kind === 'event' ? types[e.group].label : sections[e.kind].label;
-  const recordLabel = e => `${kindLabel(e)} #${e.id}${e.variant !== null && e.variant !== undefined ? ` · variante ${e.variant}` : ''}`;
+  const recordLabel = e => e.kind === 'ending' ? `${e.ending_group === 'main' ? 'História principal' : 'Conto'} #${e.story} · epílogo #${Number(e.id)%1000}` : `${kindLabel(e)} #${e.id}${e.variant !== null && e.variant !== undefined ? ` · variante ${e.variant}` : ''}`;
   const favoriteButton = e => `<button class="star-button ${favorites.has(e.key)?'saved':''}" data-favorite="${e.key}" aria-pressed="${favorites.has(e.key)}" aria-label="${favorites.has(e.key)?'Remover dos favoritos':'Salvar nos favoritos'}: ${esc(short(e.title,80))}">${favorites.has(e.key)?'★':'☆'}</button>`;
 
   function routeURL(key=null, view=state.view) {
@@ -258,9 +259,26 @@
     for(const ref of refs){if(!byKey.has(ref.key))continue;if(!grouped.has(ref.key))grouped.set(ref.key,[]);grouped.get(ref.key).push(ref);}
     return `<section class="linked-records"><h3>Conexões com o catálogo</h3><p>Menções no texto não comprovam requisitos ou recompensas.</p>${[...grouped].map(([key,rows])=>`<div class="reference-row">${recordLink(key,`${byKey.get(key).title} ↗`)}<small>${esc([...new Set(rows.map(r=>`${r.relation}${r.scope?' · '+r.scope:''}`))].join('; '))}</small></div>`).join('')}</section>`;
   }
+  function stateSection(e) {
+    const keys=new Set();
+    const collect=view=>{for(const t of view?.tokens||[])if(t.state)keys.add(t.state);};
+    collect(e.rules?.required);
+    for(const choice of e.rules?.choices||[]){collect(choice.required);for(const r of choice.results){collect(r.required);collect(r.reward);}}
+    if(!keys.size)return '';
+    const labels={chainEventList:'Cadeia de eventos',mainEventList:'História principal',subEventList:'Conto'};
+    const rows=(list,writer)=>list.map(row=>`<div class="reference-row">${recordLink(row.event,`${recordLabel(byKey.get(row.event))} — ${short(byKey.get(row.event).title,90)}`)}<small>${esc(row.scope)} · ${writer?'Define':esc(row.comparison)} ${esc(row.value)}${row.context_requirements?.length?' · também depende da ativação e seleção do conto':''} · <code>${esc(row.raw)}</code></small></div>`).join('');
+    return `<section class="linked-records state-dependencies"><h3>Estados e dependências</h3><p>Estes eventos consultam ou alteram a mesma variável de história. A ligação não garante desbloqueio: outros requisitos e a seleção de encontros também interferem.</p>${[...keys].map(key=>{
+      const entry=source.stateIndex?.[key];if(!entry)return '';
+      return `<details class="state-card"><summary>${esc(labels[entry.domain])} #${entry.index} · ${entry.readers.length} consultas, ${entry.writers.length} alterações</summary><details><summary>Resultados que alteram o estado</summary>${rows(entry.writers,true) || '<p>Nenhuma alteração identificada.</p>'}</details><details><summary>Eventos que consultam o estado</summary>${rows(entry.readers,false) || '<p>Nenhuma consulta identificada.</p>'}</details></details>`;
+    }).join('')}</section>`;
+  }
+  function renderAudit() {
+    const audit=source.audit;if(!audit)return;
+    $('ruleCoverage').innerHTML=`<summary>Cobertura das regras · versão ${esc(audit.version)}</summary><p>Interpretação estática dos campos não vazios. Estes números não representam uma simulação completa ou validação em jogo.</p><div class="result-fields">${['required','reward'].map(kind=>{const row=audit.coverage[kind];return field(kind==='required'?'Requisitos interpretados':'Recompensas interpretadas',`${fmt(row.decoded_fields)} / ${fmt(row.fields)} (${(100*row.decoded_fields/row.fields).toLocaleString('pt-BR',{maximumFractionDigits:1})}%)`);}).join('')}</div><p>${fmt(audit.events_with_unknown_commands)} eventos ainda possuem comandos sem interpretação completa.</p><ul>${audit.limitations.map(text=>`<li>${esc(text)}</li>`).join('')}</ul>`;
+  }
   function renderOverview(e) {
     const raw=e.data;
-    $('overviewPanel').innerHTML=`<div class="event-meta">${badge(e)}${e.tags.map(tagBadge).join('')}</div><p class="evidence-note">Versão ${esc(source.version)} · ${esc(source.rulesStatus)} Regras desconhecidas continuam identificadas pelo código. Alterações de atributos podem ter limites e efeitos adicionais.</p><div class="section-label">O ENCONTRO</div><div class="narrative">${esc(plainNarrative(raw.text)) || 'Este nó não possui texto inicial no arquivo. Consulte os resultados do evento anterior e as escolhas abaixo.'}</div>${ruleBlock('Para entrar no evento',e.rules?.required)}${rawBlock(raw,'Ver registro original completo')}${referenceSection(e)}<div class="choices-heading"><h3>${e.choices} ${e.choices===1?'escolha registrada':'escolhas registradas'}</h3><button id="expandChoices" class="text-button">Expandir tudo</button></div>${(raw.choice||[]).map((choice,ci)=>{
+    $('overviewPanel').innerHTML=`<div class="event-meta">${badge(e)}${e.tags.map(tagBadge).join('')}</div><p class="evidence-note">Versão ${esc(source.version)} · ${esc(source.rulesStatus)} Regras desconhecidas continuam identificadas pelo código. Alterações de atributos podem ter limites e efeitos adicionais.</p><div class="section-label">O ENCONTRO</div><div class="narrative">${esc(plainNarrative(raw.text)) || 'Este nó não possui texto inicial no arquivo. Consulte os resultados do evento anterior e as escolhas abaixo.'}</div>${ruleBlock('Para entrar no evento',e.rules?.required)}${rawBlock(raw,'Ver registro original completo')}${referenceSection(e)}${stateSection(e)}<div class="choices-heading"><h3>${e.choices} ${e.choices===1?'escolha registrada':'escolhas registradas'}</h3><button id="expandChoices" class="text-button">Expandir tudo</button></div>${(raw.choice||[]).map((choice,ci)=>{
       const cv=e.rules?.choices[ci];
       return `<details class="choice-card" ${ci===0?'open':''}><summary><span class="choice-number">${String(ci+1).padStart(2,'0')}</span>${esc(plain(choice.text)) || 'Escolha sem texto no arquivo'}</summary><div class="choice-content">${ruleBlock('Para escolher',cv?.required)}${rawBlock(choice.required||'','Ver requisito original da escolha')}${(choice.result||[]).map((r,ri)=>{
         const rv=cv?.results[ri];
@@ -281,7 +299,7 @@
     const labels={price:'Preço registrado',rarity:'Raridade (código)',category:'Categoria (código)',hp:'Saúde (valor base)',dmg:'Dano (valor ou fórmula original)',atkSpeed:'Velocidade de ataque registrada',grade:'Grau (código)',jewel:'Joias registradas',challenge:'Desafio (código)'};
     const fields=Object.entries(labels).filter(([k])=>raw[k]!==undefined).map(([k,label])=>field(label,raw[k])).join('');
     const variants=e.kind==='ability'?catalogs.filter(c=>c.kind==='ability' && c.id===e.id && c.key!==e.key):[];
-    $('overviewPanel').innerHTML=`<span class="badge">${esc(recordLabel(e))}</span><p class="evidence-note">Versão ${esc(source.version)} · Descrição extraída do jogo. Fórmulas, códigos e marcadores como {0} são preservados; os valores finais dependem da aventura.</p><div class="narrative">${esc(plainNarrative(e.description)) || 'Sem descrição em português na fonte.'}</div><div class="result-fields catalog-fields">${fields}</div>${variants.length?`<section class="linked-records"><h3>Outras variantes desta habilidade</h3>${variants.map(c=>recordLink(c.key,`Variante ${c.variant}`,'variant-link')).join('')}</section>`:''}${referenceSection(e)}<section class="linked-records"><h3>Onde aparece</h3><p>Concessões e remoções são comandos registrados. Menções são apenas referências no texto.</p><div id="relatedRecords"></div><button id="moreRelated" class="text-button" hidden>Mostrar mais conexões</button></section>${rawBlock(raw,'Ver registro original completo')}`;
+    $('overviewPanel').innerHTML=`<span class="badge">${esc(recordLabel(e))}</span><p class="evidence-note">Versão ${esc(source.version)} · Descrição extraída do jogo. Fórmulas, códigos e marcadores como {0} são preservados; os valores finais dependem da aventura.</p><div class="narrative">${esc(plainNarrative(e.description)) || 'Sem descrição em português na fonte.'}</div><div class="result-fields catalog-fields">${fields}</div>${variants.length?`<section class="linked-records"><h3>Outras variantes desta habilidade</h3>${variants.map(c=>recordLink(c.key,`Variante ${c.variant}`,'variant-link')).join('')}</section>`:''}${referenceSection(e)}<section class="linked-records"><h3>Onde aparece</h3><p>Concessões e remoções são comandos registrados. Menções são apenas referências no texto. Epílogos registrados na aventura não comprovam o desbloqueio permanente do catálogo.</p><div id="relatedRecords"></div><button id="moreRelated" class="text-button" hidden>Mostrar mais conexões</button></section>${rawBlock(raw,'Ver registro original completo')}`;
     const grouped=new Map();
     for(const row of referencedBy.get(e.key)||[]){if(!grouped.has(row.record.key))grouped.set(row.record.key,{record:row.record,rows:[]});grouped.get(row.record.key).rows.push(row);}
     const related=[...grouped.values()];let count=0;
@@ -397,5 +415,6 @@
   $('statEvents').textContent=fmt(events.length);
   $('statChoices').textContent=fmt(events.reduce((n,e)=>n+e.choices,0));
   $('statResults').textContent=fmt(events.reduce((n,e)=>n+e.results,0));
+  renderAudit();
   syncRoute();
 })();

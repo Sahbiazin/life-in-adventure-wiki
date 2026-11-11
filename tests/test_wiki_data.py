@@ -19,10 +19,10 @@ class WikiDataTests(unittest.TestCase):
         cls.events = {f'{e["group"]}:{e["id"]}': e for e in cls.payload['events']}
 
     def test_partial_rules_preserve_unknown_tokens_and_or_operator(self):
-        view = wiki.rule_view('-1|1_4_50|31_43_1')
+        view = wiki.rule_view('-1|1_4_50|35_43_1')
         self.assertEqual(view['operator'], 'OR')
         self.assertEqual(view['tokens'][0]['text'], 'Ouro: pelo menos 50')
-        self.assertEqual(view['tokens'][1], {'raw': '31_43_1', 'known': False, 'text': 'Condição ainda não interpretada'})
+        self.assertEqual(view['tokens'][1], {'raw': '35_43_1', 'known': False, 'text': 'Condição ainda não interpretada'})
         self.assertIsNone(wiki.rule_view(''))
         self.assertFalse(wiki.rule_view('0_0_1', reward=False)['tokens'][0]['known'])
 
@@ -33,7 +33,7 @@ class WikiDataTests(unittest.TestCase):
             self.assertEqual((token['ref'], token['relation'], token['raw']), ('item:42', relation, raw))
 
     def test_all_catalog_records_preserve_raw_fields_and_variant_identity(self):
-        self.assertEqual(Counter(c['kind'] for c in self.catalogs.values()), {'item': 390, 'monster': 206, 'ability': 174, 'trait': 64})
+        self.assertEqual(Counter(c['kind'] for c in self.catalogs.values()), {'item': 390, 'monster': 206, 'ability': 174, 'trait': 64, 'ending': 354})
         db = ROOT / 'dados-extraidos/1.2.47/database'
         for kind, name in wiki.CATALOGS.items():
             rows = json.loads((db / f'{name}.json').read_text(encoding='utf-8'))
@@ -45,6 +45,27 @@ class WikiDataTests(unittest.TestCase):
                 self.assertEqual(self.catalogs[key]['raw'], raw)
                 self.assertTrue(self.catalogs[key]['title'])
         self.assertNotEqual(self.catalogs['ability:3:0']['description'], self.catalogs['ability:3:2']['description'])
+
+    def test_endings_preserve_every_portuguese_source_and_resolve_rewards(self):
+        tables = json.loads((ROOT / 'dados-extraidos/1.2.47/database/other_tables.json').read_text())
+        for group, table in [('main', 'mainEp4'), ('sub', 'subEp4')]:
+            for ident, text in zip(tables[table]['index'], tables[table]['text']):
+                self.assertEqual(self.catalogs[f'ending:{group}:{ident}']['raw'], {'index': ident, 'text': text, 'source_table': table})
+        token = wiki.rule_view('15_1_4', True)['tokens'][0]
+        self.assertEqual(token['ref'], 'ending:main:1004')
+        self.assertEqual(token['relation'], 'Registra epílogo')
+        self.assertTrue(self.catalogs[token['ref']]['title'])
+
+    def test_embedded_audit_matches_source_and_state_references_resolve(self):
+        sources = json.loads((ROOT / 'dados-extraidos/1.2.47/database/events.pt.json').read_text())
+        report, states = wiki.audit(sources)
+        self.assertEqual(self.payload['audit'], report)
+        self.assertEqual(self.payload['stateIndex'], states)
+        self.assertEqual(report, json.loads((ROOT / 'docs/atlas-readiness.json').read_text()))
+        for entry in states.values():
+            for row in entry['readers'] + entry['writers']:
+                self.assertIn(row['event'], self.events)
+        self.assertFalse(report['simulation_ready'])
 
     def test_bundle_links_resolve_and_keep_evidence_for_reverse_links(self):
         relations = Counter()

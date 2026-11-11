@@ -1,0 +1,36 @@
+{
+  "version": "1.2.47",
+  "build": 366,
+  "binary_sha256": "0e6d4d06293685f2516b3896f02841b8a6ee4e7326d7e153e968022f4c773f25",
+  "runtime_validated": false,
+  "required_dispatch": {
+    "11": "0x1a9618c",
+    "12": "0x1a96334",
+    "18": "0x1a9660c",
+    "20": "0x1a96028",
+    "21": "0x1a961c4",
+    "26": "0x1a963a4",
+    "28": "0x1a963cc",
+    "31": "0x1a966d8",
+    "32": "0x1a966b0",
+    "33": "0x1a95fd4",
+    "34": "0x1a96148"
+  },
+  "reward_dispatch": {
+    "12": "0x1a91ec4",
+    "14": "0x1a9269c",
+    "15": "0x1a926bc",
+    "29": "0x1a91d28"
+  },
+  "reward_30_guard": "0x1a9299c",
+  "stat_pt_store_instructions": {
+    "5": "0x1a524b8",
+    "6": "0x1a5266c",
+    "7": "0x1a5280c",
+    "8": "0x1a529b0",
+    "9": "0x1a52b40",
+    "13": "0x1a531bc",
+    "14": "0x1a53374"
+  },
+  "scope": "Dispatch and source identity verified; branch semantics documented by instruction inspection, not runtime execution."
+}

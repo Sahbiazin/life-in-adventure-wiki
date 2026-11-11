@@ -19,7 +19,7 @@ class RulesTests(unittest.TestCase):
         self.assertEqual(rule['conditions'][0]['comparison'], '<')
 
     def test_unknown_is_not_guessed(self):
-        self.assertFalse(decode_required('31_43_1')['fully_decoded'])
+        self.assertFalse(decode_required('35_43_1')['fully_decoded'])
         self.assertFalse(decode_reward('6_0_42')['fully_decoded'])
         self.assertFalse(decode_required('21_43')['fully_decoded'])
 

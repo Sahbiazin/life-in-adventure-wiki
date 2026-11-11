@@ -11,7 +11,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#" aria-label="Life in Adventure, início"><span class="brand-mark">✦</span><span>LIFE IN ADVENTURE<small>O ATLAS DO AVENTUREIRO</small></span></a>
-    <nav aria-label="Navegação principal"><button data-view="events" class="nav-active" aria-current="page">Eventos</button><button data-view="item">Itens</button><button data-view="monster">Monstros</button><button data-view="ability">Habilidades</button><button data-view="trait">Traços</button></nav>
+    <nav aria-label="Navegação principal"><button data-view="events" class="nav-active" aria-current="page">Eventos</button><button data-view="item">Itens</button><button data-view="monster">Monstros</button><button data-view="ability">Habilidades</button><button data-view="trait">Traços</button><button data-view="ending">Epílogos</button></nav>
     <button class="settings" data-view="favorites">☆ <span>Favoritos</span></button>
   </header>
   <div class="workspace">
@@ -29,7 +29,7 @@
       <div class="breadcrumb">WIKI DO AVENTUREIRO <span>/</span> <b id="breadcrumbSection">EVENTOS</b></div>
       <section class="page-heading"><div><div class="eyebrow green">CADA DECISÃO, UM NOVO CAMINHO</div><h1><span id="pageTitle">Atlas de eventos</span><span>.</span></h1><p id="pageDescription">Explore os encontros e todas as possibilidades da sua aventura.</p></div><div class="edition"><span>ARQUIVO DE CAMPO</span><strong id="editionLabel">01 / EVENTOS</strong></div></section>
       <section id="eventStats" class="stats" aria-label="Resumo do arquivo"><div><span class="stat-icon">◇</span><div><strong id="statEvents">3.683</strong><span>eventos mapeados</span></div></div><div><span class="stat-icon">⑂</span><div><strong id="statChoices">8.043</strong><span>escolhas registradas</span></div></div><div><span class="stat-icon">✧</span><div><strong id="statResults">12.196</strong><span>resultados possíveis</span></div></div><span class="archive-label">UMA AVENTURA.<br>INÚMEROS CAMINHOS.</span></section>
-      <section class="catalog" aria-labelledby="catalogTitle">
+      <details id="ruleCoverage" class="evidence-note audit-panel"></details><section class="catalog" aria-labelledby="catalogTitle">
         <div class="catalog-top"><div><h2 id="catalogTitle">Todos os eventos <span id="resultCount">Carregando…</span></h2><p id="catalogDescription">Selecione um evento para consultar os detalhes e o mapa de escolhas.</p></div><label class="sort-control">Ordenar <select id="sort" aria-label="Ordenar eventos"><option value="default">Tipo e número</option><option value="title">Texto: A–Z</option><option value="choices">Mais escolhas</option><option value="results">Mais resultados</option></select></label></div>
         <div class="search-row"><label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg><input id="search" type="search" placeholder="Buscar evento, personagem, escolha ou consequência…" aria-label="Pesquisar eventos"><kbd>/</kbd></label><span class="search-tip">Busque também por ID</span></div>
         <div id="appliedFilters" class="applied-filters" aria-label="Filtros ativos"></div>

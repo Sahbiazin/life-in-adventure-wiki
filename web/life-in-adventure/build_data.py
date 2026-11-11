@@ -9,6 +9,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from decode_rules import STAT, decode_required, decode_reward, exact_neutral_probabilities
+from audit_rules import audit
 
 CATALOGS = {'item': 'itemJson', 'monster': 'monsterJson', 'ability': 'abilityJson', 'trait': 'traitJson'}
 
@@ -37,6 +38,18 @@ def catalogs_from(database):
                                       if localized.get(k, {}).get('pt'))
             catalogs.append({'key': key, 'kind': kind, 'id': ident, 'variant': variant,
                              'title': title, 'description': description, 'raw': raw})
+    tables = json.loads((database / 'other_tables.json').read_text(encoding='utf-8'))
+    for group, table in [('main', 'mainEp4'), ('sub', 'subEp4')]:
+        source = tables[table]
+        if len(source['index']) != len(source['text']):
+            raise ValueError(f'Mismatched ending arrays: {table}')
+        for ident, text in zip(source['index'], source['text']):
+            heading = re.match(r'^\s*<([^>]+)>', text)
+            title = heading[1] if heading else f'Epílogo #{ident}'
+            catalogs.append({'key': f'ending:{group}:{ident}', 'kind': 'ending', 'id': str(ident),
+                             'variant': None, 'ending_group': group, 'story': ident // 1000,
+                             'title': title, 'description': text[heading.end():].lstrip() if heading else text,
+                             'raw': {'index': ident, 'text': text, 'source_table': table}})
     assert len({c['key'] for c in catalogs}) == len(catalogs), 'Duplicate catalog keys'
     return catalogs
 
@@ -55,11 +68,27 @@ def rule_view(raw, reward=False):
         if not part['decoded']:
             token['text'] = 'Efeito ainda não interpretado' if reward else 'Condição ainda não interpretada'
         else:
-            idx, qty = part['index'], amount(part['quantity'])
+            idx, qty = part['index'], amount(part['quantity']) if part['quantity'] is not None else ''
             op = part.get('operation')
             if reward and op in ('add_item', 'remove_item'):
                 token.update(text=('Receber item' if op == 'add_item' else 'Remover item') + f' · quantidade {qty}',
                              ref=f'item:{idx}', relation='Concede item' if op == 'add_item' else 'Remove item')
+            elif reward and op in ('record_main_ending', 'record_sub_ending', 'remove_main_ending', 'remove_sub_ending'):
+                group = 'main' if 'main' in op else 'sub'
+                token.update(text=('Remover registro de epílogo' if op.startswith('remove') else 'Registrar epílogo nesta aventura') + f' · história #{idx}, final #{qty}',
+                             ref=f'ending:{group}:{part["ending_id"]}', relation='Remove epílogo' if op.startswith('remove') else 'Registra epílogo')
+            elif not reward and part['domain'] == 'ability_effective':
+                token.update(text=f'Habilidade efetiva: {"pelo menos" if part["comparison"] == ">=" else "menos de"} {qty}',
+                             ref=f'ability:{idx}:0', relation='Requisito de habilidade')
+            elif not reward and part['domain'] == 'traitList':
+                token.update(text='Possuir o traço' if part['comparison'] == 'contains' else 'Não possuir o traço',
+                             ref=f'trait:{idx}', relation='Exige traço' if part['comparison'] == 'contains' else 'Exige ausência de traço')
+            elif not reward and part['domain'] in ('mainEpList', 'subEpList'):
+                group = 'main' if part['domain'] == 'mainEpList' else 'sub'
+                token.update(text=('Ter' if part['comparison'] == 'contains' else 'Não ter') + f' o registro do epílogo · história #{idx}, final #{qty}',
+                             ref=f'ending:{group}:{idx * 1000 + part["quantity"]}', relation='Consulta registro de epílogo')
+            elif not reward and part['domain'] == 'sex':
+                token['text'] = f'Sexo do personagem deve corresponder ao código {qty}'
             elif reward and op == 'change_user_data':
                 label = STAT.get(idx, f'Atributo de índice {idx} (nome não identificado)')
                 token['text'] = f'{label}: {"+" if part["quantity"] >= 0 else ""}{qty}'
@@ -70,9 +99,13 @@ def rule_view(raw, reward=False):
                 token.update(text=f'Possuir {"pelo menos" if part["comparison"] == ">=" else "menos de"} {qty} unidade(s) do item',
                              ref=f'item:{idx}', relation='Exige item' if part['comparison'] == '>=' else 'Exige quantidade inferior de item')
             else:
-                main = op == 'set_main_state' if reward else part['domain'] == 'mainEventList'
-                state = f'Estado de {"história principal" if main else "cadeia de eventos"} #{idx}'
-                token['text'] = f'Definir {state.lower()} como {qty}' if reward else f'{state} deve ser {qty}'
+                domain = {'set_main_state': 'mainEventList', 'set_sub_state': 'subEventList', 'set_chain_state': 'chainEventList'}.get(op) if reward else part['domain']
+                label = {'mainEventList': 'história principal', 'subEventList': 'conto', 'chainEventList': 'cadeia de eventos'}[domain]
+                state = f'Estado de {label} #{idx}'
+                token['state'] = f'{domain}:{idx}'
+                token['text'] = f'Definir {state.lower()} como {qty}' if reward else f'{state} {"deve ser diferente de" if part["comparison"] == "!=" else "deve ser"} {qty}'
+        if part.get('context_requirements'):
+            token['text'] += '; exige conto habilitado e compatibilidade com o conto atual quando informado pelo jogo'
         tokens.append(token)
     return {'operator': decoded.get('operator', 'AND'), 'tokens': tokens}
 
@@ -125,7 +158,7 @@ def build(database, output):
     by_key = {c['key']: c for c in catalogs}
     names = {}
     for c in catalogs:
-        if c['kind'] != 'ability' or c['variant'] == '0':
+        if c['kind'] != 'ending' and (c['kind'] != 'ability' or c['variant'] == '0'):
             names.setdefault(normalized(c['title']), []).append(c['key'])
     mention_keys = {name: keys[0] for name, keys in names.items()
                     if len(keys) == 1 and len(name) >= 4 and name != 'normal'}
@@ -149,7 +182,8 @@ def build(database, output):
                 if key in by_key:
                     links.append({'key': key, 'relation': f'Habilidade no campo {field}', 'raw': token})
         c['references'] = links
-    payload = {'version': '1.2.47', 'events': data, 'catalogs': catalogs,
+    report, states = audit(originals)
+    payload = {'audit': report, 'stateIndex': states, 'version': '1.2.47', 'events': data, 'catalogs': catalogs,
                'rulesStatus': 'Análise estática parcial do build 366; sem validação em jogo.'}
     temporary = output.with_suffix('.js.tmp')
     temporary.write_text('window.ATLAS_DATA=' + json.dumps(payload, ensure_ascii=False, separators=(',', ':')) + ';\n', encoding='utf-8')

@@ -5,7 +5,7 @@ Abra `dist/index.html` no navegador ou sirva a pasta `dist`. O aplicativo usa ap
 ## Conteúdo e navegação
 
 - **Eventos:** 3.683 nós em português, 8.043 escolhas e 12.196 resultados da versão 1.2.47, build 366.
-- **Catálogos:** 390 itens, 206 monstros, 174 registros de habilidades (incluindo variantes) e 64 traços. Cada registro mantém os campos originais, além do nome e da descrição em português. Variantes de habilidade usam a chave `ability:id:number`, pois o ID sozinho não é único.
+- **Catálogos:** 390 itens, 206 monstros, 174 registros de habilidades (incluindo variantes) e 64 traços, além de 189 epílogos principais e 165 epílogos de contos. Cada registro mantém os campos originais, além do nome e da descrição em português. Variantes de habilidade usam a chave `ability:id:number`, pois o ID sozinho não é único.
 - **Regras legíveis:** requisitos de atributos, estados de história, posse/ausência de itens e consequências conhecidas aparecem em português. Códigos desconhecidos continuam sinalizados. O registro original completo, os requisitos das escolhas e os resultados podem ser expandidos para comparação. Alterações de atributos podem envolver limites e outros efeitos do jogo.
 - **Conexões:** requisitos, concessões e remoções de itens apontam para o catálogo; cada item lista as ocorrências inversas com evento, escolha e resultado. Monstros listados no encontro e habilidades nos campos dos catálogos também são navegáveis. Menções textuais são identificadas separadamente e não comprovam uma recompensa ou requisito. Nomes ambíguos são omitidos das menções automáticas; entre nomes sobrepostos prevalece o mais longo.
 - **Caminhos de chegada:** o terceiro separador do evento mostra os resultados que apontam para ele, com requisitos de entrada, escolha e resultado na origem. As referências ficam na mesma tabela; IDs iguais em tabelas diferentes não são unidos. Isso não representa todas as regras que iniciam encontros.
@@ -53,3 +53,9 @@ O workflow `.github/workflows/pages.yml` publica somente os quatro arquivos da p
 Para a primeira publicação, o repositório precisa ter o GitHub Pages ativado com **Settings → Pages → Build and deployment → Source → GitHub Actions**. Em uma conta gratuita, mantenha o repositório público. A publicação é executada nos envios para `master` que alteram o aplicativo ou o workflow; também pode ser iniciada em **Actions → Publicar atlas no GitHub Pages → Run workflow**.
 
 Tornar o repositório público permite visualizar e copiar seu conteúdo, mas não dá permissão de escrita a visitantes. Somente o proprietário e pessoas/equipes com permissão de escrita podem enviar alterações. Pull requests de terceiros não publicam o site: o workflow não é acionado por pull requests.
+
+## Auditoria e preparação do Modo de Jogo
+
+O painel “Cobertura das regras” informa a cobertura estática dos campos não vazios e os limites atuais. Nos eventos, “Estados e dependências” permite consultar leituras e alterações do mesmo estado, separadas das transições diretas e sem garantir desbloqueio. Os epílogos são navegáveis por suas referências nos eventos, com identificação separada entre histórias principais e contos. O registro de um epílogo na aventura não comprova seu desbloqueio permanente no catálogo.
+
+Execute `.venv/bin/python scripts/audit_rules.py` antes de gerar os dados quando atualizar regras; isso mantém `docs/atlas-readiness.json` sincronizado com o bundle. A geração do bundle calcula a mesma auditoria automaticamente. Consulte `docs/preparacao-modo-jogo.md` e `docs/regras-confirmadas.md` para o que ainda impede uma simulação completa. Nenhuma recomendação automática ou funcionalidade de run foi incluída nesta etapa.

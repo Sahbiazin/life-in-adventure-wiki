@@ -69,7 +69,7 @@ A instrução de alteração de atributo é conhecida, mas o valor final pode en
 | 4 | Ouro |
 | 12 | Carisma |
 
-Os demais índices permanecem com nomes técnicos no decodificador até documentarmos sua correspondência.
+Os índices adicionais confirmados estão no complemento de auditoria abaixo; os nomes ainda não identificados continuam técnicos no decodificador.
 
 ## Sorteio de resultados
 
@@ -94,3 +94,61 @@ As seis tabelas em português foram verificadas: em todas, o `id` de cada regist
 ## Limites atuais
 
 Não há validação dinâmica no emulador. Há outros tipos de requisito e recompensa ainda desconhecidos. As correspondências acima cobrem posse e transferências diretas de itens; outras operações de inventário, combates, finais e modificadores completos de chance continuam pendentes. A análise também encontrou lógica de conquistas fora de `reward`, na função `CheckAchievement`: recomendações devem declarar seu objetivo e não presumir que esse campo descreve todos os efeitos do jogo.
+
+## Complemento de auditoria para o Modo de Jogo
+
+As correspondências abaixo ampliam a **interpretação estática**. Elas não constituem um motor de execução nem uma garantia de melhor escolha. A identificação do binário e as tabelas de saltos podem ser verificadas com `python scripts/verify_native_rules.py`; o relatório está em `docs/native-rules-evidence.json`.
+
+### Atributos visíveis
+
+O trecho de `Str..cctor` que constrói `stat` começa em `0x1A51C54`. As dimensões são 18 × 10, em `0xA145C0`. As atribuições da coluna portuguesa confirmam:
+
+| Índice | Rótulo | Instrução que grava o texto português |
+|---|---|---|
+| 5 | FOR / Força | `0x1A524B8` |
+| 6 | DES / Destreza | `0x1A5266C` |
+| 7 | INT / Inteligência | `0x1A5280C` |
+| 8 | Saúde máxima | `0x1A529B0` |
+| 9 | Sanidade máxima | `0x1A52B40` |
+| 13 | CON / Constituição | `0x1A531BC` |
+| 14 | SAB / Sabedoria | `0x1A53374` |
+
+O índice 3 tem apenas o texto `d`; 10, 11, 15, 16 e 17 têm nomes vazios nesta tabela. Eles continuam com identificação técnica. O Atlas não lhes atribui um nome com base apenas no texto de uma recompensa.
+
+### Novos requisitos
+
+| Código | Interpretação | Entrada no ramo padrão de `CheckRequire` |
+|---|---|---|
+| 11 | Sexo do personagem (`DataMgr.sex`, offset `0x60`) igual à quantidade truncada; alvo ignorado | `0x1A9618C` |
+| 12 | Estado `subEventList[alvo] == trunc(quantidade)`, condicionado à ativação do conto e ao argumento `curSubEvent` quando informado | `0x1A96334` |
+| 18 | `chainEventList[alvo] != trunc(quantidade)` | `0x1A9660C` |
+| 20 | `Equipment.GetAbilityValue(alvo, items=null) >= quantidade` | `0x1A96028` |
+| 21 | Mesmo valor de habilidade `< quantidade` | `0x1A961C4` |
+| 26 | `traitList` contém o alvo; quantidade ignorada | `0x1A963A4` |
+| 28 | `traitList` não contém o alvo; quantidade ignorada | `0x1A963CC` |
+| 31 / 33 | `subEpList` contém / não contém `alvo*1000 + Convert.ToInt32(quantidade)` | `0x1A966D8` / `0x1A95FD4` |
+| 32 / 34 | Mesmo teste para `mainEpList` | `0x1A966B0` / `0x1A96148` |
+
+No código 12, o caminho entre `0x1A96364` e `0x1A96878` consulta `BaseSubEventActive` para contos básicos ou a compra e a ativação para os demais; também exige compatibilidade com `curSubEvent` se ele não for `-1`. A comparação do estado, isolada, **não é suficiente**. O decodificador preserva essas condições em `context_requirements`.
+
+Os predicados de traço `b__6` e `b__7`, em `0x1AB1618` e `0x1AB16B8`, comparam cada elemento ao alvo convertido. Os predicados `b__8` a `b__11`, em `0x1AB1758–0x1AB1AE4`, constroem o identificador de epílogo multiplicando o alvo por 1000 e somando a quantidade convertida. Os testes de habilidade terminam em `0x1A96110–0x1A96118` e `0x1A962AC–0x1A962B4`; o valor vem da função de habilidade, não do número de variante do catálogo.
+
+### Estados de contos e epílogos
+
+| Recompensa | Operação | Evidência |
+|---|---|---|
+| 12 | Define `subEventList[alvo] = trunc(quantidade)` | `0x1A91EC4`, atribuição comum em `0x1A9221C–0x1A92280` |
+| 14 | Acrescenta `alvo*1000 + Convert.ToInt32(quantidade)` em `subEpList` | `0x1A9269C`, construção em `0x1A9273C–0x1A92748` |
+| 15 | Mesma operação em `mainEpList` | `0x1A926BC` |
+| 29 | Remove uma ocorrência do identificador composto em `subEpList` | `0x1A91D28`, bloco comum em `0x1A929C0–0x1A92A20` |
+| 30 | Mesma remoção em `mainEpList` | guarda `0x1A9299C`; bloco `0x1A929A4–0x1A92A20` |
+
+As listas de epílogos desta aventura (`mainEpList`, `subEpList`) são diferentes dos registros permanentes `bookMainEp`, `bookSubEp`, `bookItem`, `bookMonster` e `bookAchievement`. Um comando de epílogo não comprova, sozinho, o registro permanente nem uma vitória. A tabela portuguesa `mainEp4` contém 189 registros, e `subEp4`, 165; os IDs são os valores do array `index`, e não as posições no array.
+
+### O que continua sem interpretação completa
+
+`docs/atlas-readiness.json` é a auditoria reproduzível dos dados usados pelo aplicativo. Comandos desconhecidos aparecem com contagens e exemplos, incluindo evento, escolha/resultado e texto original. O atributo `simulation_ready` permanece `false`.
+
+Os códigos 6 de `reward`, por exemplo, não devem ser classificados como “sem efeito” só por passarem pelo ramo padrão de `GiveRewardAndSetRewardText`: comandos também são tratados por outros controladores. Os requisitos 23/24 dependem de `CheckHaveList`, e o 35 consulta uma condição adicional sobre atributo e evento. Esses casos continuam preservados.
+
+A pontuação foi localizada em `ScorePopup.Init` (`0x197AF88`) e, para o modo difícil, em `HardModeMgr.GetCurrentScore` (`0x196113C`) e `CheckHardModeScore` (`0x195E240`). As rotinas têm entradas e modificadores distintos. Não foi implementada uma fórmula única nem um otimizador de pontuação. Também continuam pendentes os resultados de combate, pesos finais modificados, efeitos indiretos de atributos/equipamentos, seleção de encontros e confirmação dinâmica em um ambiente capaz de executar a versão ARM do jogo.

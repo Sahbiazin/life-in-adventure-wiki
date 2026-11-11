@@ -96,3 +96,7 @@ O inventário registra 20.993 erros de leitura de objetos `MonoBehaviour`, princ
 ## Execução no emulador
 
 O pacote fornecido contém bibliotecas `arm64-v8a` e `armeabi-v7a`. A instalação na imagem AOSP x86_64 usada inicialmente falhou com `INSTALL_FAILED_NO_MATCHING_ABIS`. A extração estática acima independe da instalação. A compatibilidade de um novo ambiente para executar o jogo ainda precisa ser validada.
+
+## Preparação para o Modo de Jogo
+
+O Atlas inclui uma [auditoria das regras e pendências](docs/preparacao-modo-jogo.md), com novos requisitos interpretados, epílogos e dependências de estado. O Modo de Jogo ainda não foi implementado. A cobertura mede interpretação estática, não prontidão de um simulador.
