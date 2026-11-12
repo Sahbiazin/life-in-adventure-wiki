@@ -9,6 +9,8 @@
     "18": "0x1a9660c",
     "20": "0x1a96028",
     "21": "0x1a961c4",
+    "23": "0x1a9611c",
+    "24": "0x1a95ffc",
     "26": "0x1a963a4",
     "28": "0x1a963cc",
     "31": "0x1a966d8",
@@ -57,6 +59,53 @@
       "0x1a8e00c": "41890094",
       "0x1a8e01c": "086c00b9",
       "0x1a8e024": "68820739"
+    }
+  },
+  "fire_resources": {
+    "group": 3,
+    "items_in_priority": [
+      40,
+      42,
+      47
+    ],
+    "requirement_function": "0x1a96958",
+    "consumption_function": "0x1a3e758"
+  },
+  "item_scaling": {
+    "types_function": "0x1af8e44",
+    "popup_function": "0x1990880",
+    "formula_fields": {
+      "dmg": "0x70",
+      "hp": "0x78"
+    },
+    "order": "descending_float32_coefficient_stable_ties",
+    "stat_indices": [
+      5,
+      6,
+      7,
+      12,
+      13,
+      14
+    ],
+    "verified_instructions": {
+      "0x1af9720": "0008211e",
+      "0x1af9724": "0829201e",
+      "0x198042c": "202040bd",
+      "0x1980430": "c0035fd6",
+      "0x1af90ac": "738d0a94",
+      "0x1af9118": "1f0d0071",
+      "0x1af91e8": "41250051",
+      "0x1af9248": "41150051",
+      "0x19915d4": "813f40f9",
+      "0x19915dc": "1a9e0594",
+      "0x1991870": "813b40f9",
+      "0x1991878": "739d0594",
+      "0x1a977cc": "01058052",
+      "0x1a97810": "41058052",
+      "0x1a97854": "e1058052",
+      "0x1af9464": "b9f8ff97",
+      "0x1af9480": "0008211e",
+      "0x1af9484": "0829201e"
     }
   },
   "alignment": {

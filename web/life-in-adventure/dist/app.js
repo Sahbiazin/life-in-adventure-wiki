@@ -67,7 +67,7 @@
     return {...e, kind:'event', key:`${e.group}:${e.id}`, index, title, tags, choices:choices.length, results:results.length,
       search:normalize(`${e.id} ${e.group} ${e.source} ${types[e.group].label} ${JSON.stringify(e.data)} ${JSON.stringify(e.rules)}`)};
   });
-  const catalogs = (source.catalogs || []).map((c,index) => ({...c, index, search:normalize(`${c.id} ${c.title} ${c.description} ${JSON.stringify(c.raw)}`)}));
+  const catalogs = (source.catalogs || []).map((c,index) => ({...c, index, search:normalize(`${c.id} ${c.title} ${c.description} ${JSON.stringify(c.raw)} ${JSON.stringify(c.scaling||[])}`)}));
   const byKey = new Map([...events, ...catalogs].map(e => [e.key,e]));
   // The table belongs to the key: matching numeric IDs in other tables never merge.
   const incoming = new Map(), referencedBy = new Map();
@@ -232,7 +232,7 @@
     const effects={key:'effect',label:'Habilidade / efeito relacionado',options:facetOptions('ability')};
     const linked={key:'linked',label:'Relação com eventos',options:[['yes','Com referências em eventos'],['no','Sem referências em eventos']]};
     if(view==='events')return [attribute,{key:'test',label:'Teste de atributo',options:attributeOptions.filter(([k])=>['5','6','7','12','13','14'].includes(k))},{key:'reward',label:'Consequência / recompensa',options:rewardOptions},{key:'item',label:'Item relacionado',options:facetOptions('item')},{key:'monster',label:'Monstro relacionado',options:facetOptions('monster')},{key:'trait',label:'Traço relacionado',options:facetOptions('trait')},{key:'effect',label:'Habilidade relacionada',options:facetOptions('ability')},{key:'person',label:'NPC / personagem (texto)',type:'search',placeholder:'Ex.: Cira, chefe da vila…'}];
-    if(view==='item')return [attribute,effects,effectText,{key:'category',label:'Categoria (código do jogo)',options:codedOptions('item','category','Categoria')},{key:'rarity',label:'Raridade (código do jogo)',options:codedOptions('item','rarity','Raridade')},{key:'priceMin',label:'Preço mínimo registrado',type:'number'},{key:'priceMax',label:'Preço máximo registrado',type:'number'},linked];
+    if(view==='item')return [{key:'scalingAttribute',label:'Atributo do item (escala)',options:[...attributeOptions.filter(([key])=>['5','6','7','12','13','14'].includes(key)),['none','Sem atributo de escala registrado']]},{key:'scalingCount',label:'Quantidade de atributos de escala',options:[['1','Um atributo'],['2','Dois atributos']]},attribute,effects,effectText,{key:'category',label:'Categoria (código do jogo)',options:codedOptions('item','category','Categoria')},{key:'rarity',label:'Raridade (código do jogo)',options:codedOptions('item','rarity','Raridade')},{key:'priceMin',label:'Preço mínimo registrado',type:'number'},{key:'priceMax',label:'Preço máximo registrado',type:'number'},linked];
     if(view==='monster')return [effects,effectText,{key:'challenge',label:'Desafio (código do jogo)',options:codedOptions('monster','challenge','Desafio')},{key:'monsterType',label:'Tipo (código do jogo)',options:codedOptions('monster','type','Tipo')},linked];
     if(view==='ability')return [attribute,effectText,{key:'variant',label:'Variante',options:codedOptions('ability','number','Variante')},linked];
     if(view==='trait')return [attribute,effectText,{key:'jewels',label:'Preço em joias',options:[['known','Com preço registrado'],['unknown','Sem preço registrado']]},linked];
@@ -242,8 +242,12 @@
   }
   function matchesFacets(e) {
     const chosen=facetState(),f=recordFacets(e);
+    const scalingAttributes=[...new Set((e.scaling||[]).filter(s=>s.fully_decoded).flatMap(s=>s.attributes.map(a=>String(a.index))))];
+
     for(const [key,value] of Object.entries(chosen))if(value!=='') {
       if(key==='attribute'&&!f.attributes.has(value))return false;
+      if(key==='scalingAttribute'&&(value==='none'?(e.scaling||[]).some(s=>!s.fully_decoded||s.attributes.length>0):!scalingAttributes.includes(value)))return false;
+      if(key==='scalingCount'&&scalingAttributes.length!==Number(value))return false;
       if(key==='test'&&!f.tests.has(value))return false;
       if(key==='reward'&&!f.rewards.has(value))return false;
       if(['item','monster','trait'].includes(key)&&!f.refs.has(value))return false;
@@ -333,7 +337,7 @@
       renderFilters();
     } else {
       $('appliedFilters').innerHTML='';
-      $('recordGrid').innerHTML=slice.map(e=>`<article class="catalog-card"><div class="catalog-card-meta"><span class="badge">${esc(recordLabel(e))}</span>${favoriteButton(e)}</div><h3>${recordLink(e.key,short(e.title,120))}</h3><p>${esc(short(plain(e.description || e.data?.choice?.map(c=>c.text).join(' · ') || 'Abra para consultar os detalhes.'),180))}</p><footer>${e.kind==='event'?`${e.choices} escolhas · ${e.results} resultados`:`${e.kind==='item'?`Preço registrado: ${e.raw.price===undefined||e.raw.price===''?'não informado':fmt(e.raw.price)} · `:''}${fmt((referencedBy.get(e.key)||[]).filter(r=>r.record.kind==='event').length)} referências em eventos`}</footer></article>`).join('');
+      $('recordGrid').innerHTML=slice.map(e=>`<article class="catalog-card"><div class="catalog-card-meta"><span class="badge">${esc(recordLabel(e))}</span>${favoriteButton(e)}</div><h3>${recordLink(e.key,short(e.title,120))}</h3>${itemScalingBadges(e)}<p>${esc(short(plain(e.description || e.data?.choice?.map(c=>c.text).join(' · ') || 'Abra para consultar os detalhes.'),180))}</p><footer>${e.kind==='event'?`${e.choices} escolhas · ${e.results} resultados`:`${e.kind==='item'?`Preço registrado: ${e.raw.price===undefined||e.raw.price===''?'não informado':fmt(e.raw.price)} · `:''}${fmt((referencedBy.get(e.key)||[]).filter(r=>r.record.kind==='event').length)} referências em eventos`}</footer></article>`).join('');
     }
     renderCatalogFacets();
     $('emptyState').hidden=filtered.length!==0;
@@ -458,12 +462,21 @@
     const rows=incoming.get(e.key)||[];
     $('incomingPanel').innerHTML=`<h3>Caminhos de chegada · ${fmt(rows.length)}</h3><p class="evidence-note">Cada conexão abaixo aponta para este evento na mesma tabela. Requisitos e sorteios ainda podem impedir a passagem. Ausência de conexões não comprova que o evento esteja inacessível.</p>${rows.length?rows.map(row=>`<article class="incoming-card">${recordLink(row.event.key,`${recordLabel(row.event)} — ${short(row.event.title,100)}`)}<p>Escolha ${row.choice+1}: ${esc(plain(row.event.data.choice[row.choice].text)||'Sem texto na fonte')} · resultado ${row.result+1}</p><p>${esc(short(plain(row.data.text),220))}</p>${ruleBlock('Requisito de entrada na origem',row.event.rules?.required)}${ruleBlock('Requisito da escolha na origem',row.event.rules?.choices[row.choice]?.required)}${ruleBlock('Requisito do resultado na origem',row.event.rules?.choices[row.choice]?.results[row.result]?.required)}${rawBlock(row.data,'Ver resultado original da conexão')}</article>`).join(''):'<p>Nenhum resultado anterior aponta diretamente para este nó. O jogo também pode iniciar encontros por outras regras.</p>'}`;
   }
+  function itemScalingBadges(e) {
+    if(e.kind!=='item')return '';
+    return (e.scaling||[]).filter(s=>s.fully_decoded&&s.attributes.length).map(s=>`<div class="item-scaling-badges" data-item-scaling="${s.field}"><span>Escala de ${s.field==='dmg'?'dano':'defesa'}:</span>${s.attributes.map(a=>`<span class="item-attribute" title="${esc(a.name)} — influencia ${s.field==='dmg'?'o dano':'a defesa do equipamento'}">${esc(a.abbreviation)}</span>`).join('')}</div>`).join('');
+  }
+  function itemScalingDetail(e) {
+    if(e.kind!=='item')return '';
+    const formulas=e.scaling||[],number=n=>Number(Number(n).toPrecision(7)).toLocaleString('pt-BR',{maximumFractionDigits:6});
+    return `<section class="item-scaling-detail" data-item-scaling-detail><h3>Atributos do item</h3>${itemScalingBadges(e)}${formulas.length?formulas.map(s=>`<div><h4>${esc(s.label)}</h4>${s.fully_decoded?`<p>${s.attributes.map(a=>`<strong>${esc(a.abbreviation)} · ${esc(a.name)}</strong>`).join(' · ')||'Sem atributo de escala nesta fórmula.'}</p><p>Componente da fórmula: <strong>${number(s.base)}${s.terms.map(t=>` ${t.coefficient<0?'−':'+'} ${number(Math.abs(t.coefficient))} × ${esc(t.abbreviation)}`).join('')}</strong></p>${s.terms.length?`<ul>${s.terms.map(t=>`<li>Por ponto de ${esc(t.name)}: ${t.coefficient<0?'−':'+'}${number(Math.abs(t.coefficient))} neste componente de ${s.field==='dmg'?'dano':'defesa'}.</li>`).join('')}</ul>`:''}`:'<p>Esta fórmula ainda contém termos sem interpretação; consulte o registro original.</p>'}</div>`).join(''):'<p>Sem atributo de escala registrado nos campos de dano ou defesa deste item. Habilidades e efeitos são consultados separadamente.</p>'}${formulas.some(s=>s.attributes.length)?'<p class="item-scaling-note">Os atributos aparecem na ordem usada pelo jogo, do maior peso para o menor; pesos iguais mantêm a ordem original. Eles influenciam o valor do item conforme a ficha, sem conceder esses pontos de atributo. O valor final também pode depender de outros modificadores da run.</p>':''}</section>`;
+  }
   function renderCatalogDetail(e) {
     const raw=e.raw;
-    const labels={price:'Preço registrado',rarity:'Raridade (código)',category:'Categoria (código)',hp:'Saúde (valor base)',dmg:'Dano (valor ou fórmula original)',atkSpeed:'Velocidade de ataque registrada',grade:'Grau (código)',jewel:'Joias registradas',challenge:'Desafio (código)'};
+    const labels={price:'Preço registrado',rarity:'Raridade (código)',category:'Categoria (código)',hp:e.kind==='item'?'Defesa (valor ou fórmula original)':'Saúde (valor base)',dmg:'Dano (valor ou fórmula original)',atkSpeed:'Velocidade de ataque registrada',grade:'Grau (código)',jewel:'Joias registradas',challenge:'Desafio (código)'};
     const fields=Object.entries(labels).filter(([k])=>raw[k]!==undefined).map(([k,label])=>field(label,raw[k])).join('');
     const variants=e.kind==='ability'?catalogs.filter(c=>c.kind==='ability' && c.id===e.id && c.key!==e.key):[];
-    $('overviewPanel').innerHTML=`<span class="badge">${esc(recordLabel(e))}</span><p class="evidence-note">Versão ${esc(source.version)} · Descrição extraída do jogo. Fórmulas, códigos e marcadores como {0} são preservados; os valores finais dependem da aventura.</p><div class="narrative">${esc(plainNarrative(e.description)) || 'Sem descrição em português na fonte.'}</div><div class="result-fields catalog-fields">${fields}</div>${variants.length?`<section class="linked-records"><h3>Outras variantes desta habilidade</h3>${variants.map(c=>recordLink(c.key,`Variante ${c.variant}`,'variant-link')).join('')}</section>`:''}${referenceSection(e)}<section class="linked-records"><h3>Onde aparece</h3><p>Concessões e remoções são comandos registrados. Menções são apenas referências no texto. Epílogos registrados na aventura não comprovam o desbloqueio permanente do catálogo.</p><div id="relatedRecords"></div><button id="moreRelated" class="text-button" hidden>Mostrar mais conexões</button></section>${rawBlock(raw,'Ver registro original completo')}`;
+    $('overviewPanel').innerHTML=`<span class="badge">${esc(recordLabel(e))}</span><p class="evidence-note">Versão ${esc(source.version)} · Descrição extraída do jogo. Fórmulas, códigos e marcadores como {0} são preservados; os valores finais dependem da aventura.</p><div class="narrative">${esc(plainNarrative(e.description)) || 'Sem descrição em português na fonte.'}</div>${itemScalingDetail(e)}<div class="result-fields catalog-fields">${fields}</div>${variants.length?`<section class="linked-records"><h3>Outras variantes desta habilidade</h3>${variants.map(c=>recordLink(c.key,`Variante ${c.variant}`,'variant-link')).join('')}</section>`:''}${referenceSection(e)}<section class="linked-records"><h3>Onde aparece</h3><p>Concessões e remoções são comandos registrados. Menções são apenas referências no texto. Epílogos registrados na aventura não comprovam o desbloqueio permanente do catálogo.</p><div id="relatedRecords"></div><button id="moreRelated" class="text-button" hidden>Mostrar mais conexões</button></section>${rawBlock(raw,'Ver registro original completo')}`;
     const grouped=new Map();
     for(const row of referencedBy.get(e.key)||[]){if(!grouped.has(row.record.key))grouped.set(row.record.key,{record:row.record,rows:[]});grouped.get(row.record.key).rows.push(row);}
     const related=[...grouped.values()];let count=0;

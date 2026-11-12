@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BINARY = ROOT / 'extracao-1.2.47/arm64/lib/arm64-v8a/libil2cpp.so'
 EXPECTED_SHA256 = '0e6d4d06293685f2516b3896f02841b8a6ee4e7326d7e153e968022f4c773f25'
 REQUIRED = {11: 0x1a9618c, 12: 0x1a96334, 18: 0x1a9660c, 20: 0x1a96028,
-            21: 0x1a961c4, 26: 0x1a963a4, 28: 0x1a963cc, 31: 0x1a966d8,
+            21: 0x1a961c4, 23: 0x1a9611c, 24: 0x1a95ffc, 26: 0x1a963a4, 28: 0x1a963cc, 31: 0x1a966d8,
             32: 0x1a966b0, 33: 0x1a95fd4, 34: 0x1a96148}
 REWARD = {12: 0x1a91ec4, 14: 0x1a9269c, 15: 0x1a926bc, 29: 0x1a91d28}
 STAT_STORES = {5: 0x1a524b8, 6: 0x1a5266c, 7: 0x1a5280c, 8: 0x1a529b0,
@@ -41,6 +41,20 @@ COMBAT_INSTRUCTIONS = {
 }
 
 
+# InventoryItemPopup constructs attribute sprites from Item.hp / Item.dmg.
+# GetBattlePointTypes orders FormatData.quantity and maps the six stat indices.
+ITEM_SCALING_INSTRUCTIONS = {
+    0x1af9720: '0008211e', 0x1af9724: '0829201e',
+    0x198042c: '202040bd', 0x1980430: 'c0035fd6',
+    0x1af90ac: '738d0a94', 0x1af9118: '1f0d0071',
+    0x1af91e8: '41250051', 0x1af9248: '41150051',
+    0x19915d4: '813f40f9', 0x19915dc: '1a9e0594',
+    0x1991870: '813b40f9', 0x1991878: '739d0594',
+    0x1a977cc: '01058052', 0x1a97810: '41058052', 0x1a97854: 'e1058052',
+    0x1af9464: 'b9f8ff97', 0x1af9480: '0008211e', 0x1af9484: '0829201e'
+}
+
+
 def verify(binary=BINARY):
     digest = hashlib.sha256(binary.read_bytes()).hexdigest()
     if digest != EXPECTED_SHA256:
@@ -65,6 +79,9 @@ def verify(binary=BINARY):
         for address, expected in COMBAT_INSTRUCTIONS.items():
             if read(address, 4).hex() != expected:
                 raise ValueError(f'Unexpected combat instruction at {address:#x}')
+        for address, expected in ITEM_SCALING_INSTRUCTIONS.items():
+            if read(address, 4).hex() != expected:
+                raise ValueError(f'Unexpected item scaling instruction at {address:#x}')
         # Reward 30 is handled after the switch by a dedicated cmp w10, #0x1e.
         assert read(0x1a9299c, 4) == bytes.fromhex('5f790071')
     return {'version': '1.2.47', 'build': 366, 'binary_sha256': digest, 'runtime_validated': False,
@@ -75,6 +92,12 @@ def verify(binary=BINARY):
                        'monster_lookup': '0x1ab0510',
                        'monster_fields': {'battleMin': '0x44', 'battleMax': '0x48', 'startState': '0x6c'},
                        'verified_instructions': {hex(k): v for k, v in COMBAT_INSTRUCTIONS.items()}},
+            'fire_resources': {'group': 3, 'items_in_priority': [40, 42, 47], 'requirement_function': '0x1a96958', 'consumption_function': '0x1a3e758'},
+            'item_scaling': {'types_function': '0x1af8e44', 'popup_function': '0x1990880',
+                             'formula_fields': {'dmg': '0x70', 'hp': '0x78'},
+                             'order': 'descending_float32_coefficient_stable_ties',
+                             'stat_indices': [5, 6, 7, 12, 13, 14],
+                             'verified_instructions': {hex(k): v for k, v in ITEM_SCALING_INSTRUCTIONS.items()}},
             'alignment': {'user_data_index': 3, 'thresholds': [-24, -9, 10, 25],
                           'pt_labels': ['Maligno', 'Impuro', 'Neutro', 'Justo', 'Bondoso'],
                           'classification_function': '0x19c6af0',

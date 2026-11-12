@@ -109,7 +109,7 @@ class GameUiBrowserTests(unittest.TestCase):
         self.assertEqual(self.active()['cursor'], 2)
         self.assertEqual(self.active()['state']['stats']['4'], 180)
 
-    def test_direct_unknown_effects_stay_pending_and_do_not_unlock_the_monster_catalog(self):
+    def test_direct_fire_resource_with_incomplete_inventory_stays_pending_without_unknown_opcode(self):
         self.start()
         self.encounter(362)
         self.experience('direct')
@@ -118,16 +118,36 @@ class GameUiBrowserTests(unittest.TestCase):
         run = self.active()
         self.assertEqual(run['selectedEvent'], 'EventTreasure:364')
         self.assertEqual(run['cursor'], 1)
-        self.assertTrue(run['state']['flagsUncertain'])
-        self.assertTrue(any('25_3_1' in issue for issue in run['state']['pending']))
+        self.assertFalse(run['state']['flagsUncertain'])
+        self.assertTrue(any('qual recurso de fogo' in issue for issue in run['state']['pending']))
         self.assertIsNone(run['state']['stats']['0'])
         self.assertIsNone(run['state']['stats']['1'])
         self.assertEqual({k:v for k,v in run['state']['stats'].items() if k not in ['0','1']}, {k:v for k,v in before['stats'].items() if k not in ['0','1']})
-        self.assertEqual(run['state']['items'], before['items'])
+        self.assertEqual(run['state']['items'], {'40':None,'42':None,'47':None})
         self.assertEqual(run['state']['catalog']['monster'], [])
         self.assertEqual(self.page.locator('.game-recommended').count(), 0)
         self.page.reload(wait_until='networkidle')
         self.assertEqual(self.active()['state'], run['state'])
+
+    def test_fire_choice_recognizes_a_match_and_consumes_it_without_an_unknown_condition(self):
+        def inventory():
+            self.page.locator('#gameInventoryComplete').check()
+            self.page.locator('#gameItemPick').fill('Palito de Fósforo · #40')
+            self.page.locator('#gameItemAmount').fill('1')
+            self.page.locator('[data-game-action="add-item"]').click()
+        self.start(inventory)
+        self.encounter(362)
+        card=self.page.locator('.game-choice').nth(3)
+        expect(card).to_contain_text('Palito de Fósforo, Lampião ou Cesta de Fósforos')
+        expect(card.locator('.game-availability')).to_contain_text('Requisito da escolha atendido')
+        self.assertEqual(card.locator('.game-rule-list .game-unknown').count(),0)
+        self.experience('direct');self.quick_result(3)
+        state=self.active()['state']
+        self.assertEqual(state['items']['40'],0)
+        self.assertFalse(state['flagsUncertain'])
+        self.assertFalse(any('qual recurso de fogo' in issue for issue in state['pending']))
+        self.assertEqual(self.active()['selectedEvent'],'EventTreasure:364')
+        self.assertEqual(state['catalog']['monster'],[])
 
     def test_direct_combat_marks_health_unknown_and_waits_for_the_observed_outcome(self):
         self.start()

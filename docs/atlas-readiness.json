@@ -6,15 +6,15 @@
   "events": 3683,
   "choices": 8043,
   "results": 12196,
-  "events_with_unknown_commands": 322,
+  "events_with_unknown_commands": 299,
   "static_probability_choices": 5481,
   "static_probability_results": 5570,
   "coverage": {
     "required": {
       "fields": 7240,
-      "decoded_fields": 6838,
+      "decoded_fields": 6868,
       "commands": 9513,
-      "decoded_commands": 9102,
+      "decoded_commands": 9132,
       "unknown": {
         "0": {
           "count": 2,
@@ -82,42 +82,42 @@
           ]
         },
         "23": {
-          "count": 188,
+          "count": 162,
           "examples": [
             {
-              "event": "EventTreasure:86",
+              "event": "EventTreasure:164",
               "scope": "Escolha 1 · resultado 2",
-              "raw": "23_3_1"
+              "raw": "23_2_1"
             },
             {
-              "event": "EventTreasure:131",
+              "event": "EventTreasure:266",
               "scope": "Escolha 2",
-              "raw": "23_3_1"
+              "raw": "23_6_1"
             },
             {
-              "event": "EventTreasure:137",
-              "scope": "Escolha 1 · resultado 2",
-              "raw": "23_3_1"
+              "event": "EventTreasure:347",
+              "scope": "Escolha 2",
+              "raw": "23_6_1"
             }
           ]
         },
         "24": {
-          "count": 178,
+          "count": 174,
           "examples": [
-            {
-              "event": "EventTreasure:86",
-              "scope": "Escolha 1 · resultado 3",
-              "raw": "24_3_1"
-            },
-            {
-              "event": "EventTreasure:137",
-              "scope": "Escolha 1 · resultado 1",
-              "raw": "24_3_1"
-            },
             {
               "event": "EventTreasure:164",
               "scope": "Escolha 1 · resultado 1",
               "raw": "24_2_1"
+            },
+            {
+              "event": "EventTreasure:413",
+              "scope": "Escolha 1 · resultado 2",
+              "raw": "24_11_1"
+            },
+            {
+              "event": "EventTreasure:413",
+              "scope": "Escolha 2 · resultado 2",
+              "raw": "24_11_1"
             }
           ]
         },
@@ -165,9 +165,9 @@
     },
     "reward": {
       "fields": 9277,
-      "decoded_fields": 8970,
+      "decoded_fields": 8979,
       "commands": 17188,
-      "decoded_commands": 16876,
+      "decoded_commands": 16885,
       "unknown": {
         "1": {
           "count": 10,
@@ -240,7 +240,7 @@
           ]
         },
         "25": {
-          "count": 220,
+          "count": 211,
           "examples": [
             {
               "event": "EventTreasure:266",

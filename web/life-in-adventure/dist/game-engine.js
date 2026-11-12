@@ -183,6 +183,11 @@
         value=s.stats[m.index];
         if(String(m.index)==='3'&&!finite(value))return alignmentComparison(s.alignmentRange,m.comparison,m.quantity);
       }
+      else if(m.domain==='inventory_any') {
+        const values=m.item_ids.map(id=>own(s.items,String(id))?s.items[id]:s.inventoryComplete?0:null);
+        const has=values.some(v=>finite(v)&&v>=1)?true:values.every(v=>finite(v)&&v<1)?false:null;
+        return has===null?null:m.comparison==='not_contains_any'?!has:has;
+      }
       else if(m.domain==='inventory')value=own(s.items,String(m.index))?s.items[m.index]:s.inventoryComplete?0:null;
       else if(m.domain==='ability_effective')value=s.abilities[m.index];
       else if(FAMILIES.includes(m.domain)){
@@ -232,6 +237,14 @@
         if(!finite(next.stats[k])){issues.push(`${STATS[k]} não informado; conferir a alteração ${q}.`);continue;}
         next.stats[k]=k==='3'?Math.fround(next.stats[k]+q):Math.max(0,next.stats[k]+q);
         changes.push(`${STATS[k]}: ${q>=0?'+':''}${q}`);
+      } else if(m.operation==='remove_first_item') {
+        let resolved=false;
+        for(const id of m.item_ids){
+          const key=String(id),amount=own(next.items,key)?next.items[key]:next.inventoryComplete?0:null;
+          if(!finite(amount))break;
+          if(amount>=1){next.items[key]=amount-1;changes.push(`Consumir 1 × ${index.records.get('item:'+id)?.title||'item #'+id}`);resolved=true;break;}
+        }
+        if(!resolved){for(const id of m.item_ids)next.items[id]=null;issues.push('Confira qual recurso de fogo foi consumido: Palito de Fósforo, Lampião ou Cesta de Fósforos.');}
       } else if(m.operation==='add_item'||m.operation==='remove_item') {
         const amount=own(next.items,k)?next.items[k]:next.inventoryComplete?0:null;
         const key=`item:${k}`,label=index.records.get(key)?.title||key;
@@ -265,7 +278,7 @@
     return {value,complete};
   }
   const PLANNER_LIMITS = Object.freeze({maxDepth:64,maxTransitions:6000});
-  const rewardOperations = new Set(['change_user_data','add_item','remove_item','set_chain_state','set_sub_state','set_main_state','record_main_ending','record_sub_ending','remove_main_ending','remove_sub_ending']);
+  const rewardOperations = new Set(['change_user_data','add_item','remove_item','remove_first_item','set_chain_state','set_sub_state','set_main_state','record_main_ending','record_sub_ending','remove_main_ending','remove_sub_ending']);
   const outcomeNode = event => (event.data.choice||[]).length>0&&event.data.choice.every(c=>!plain(c.text));
   const unique = values => [...new Set(values)];
   function unmodeledReward(raw,view) {
@@ -362,6 +375,7 @@
       const next=clone(ledger);
       for(const t of view?.reward?.tokens||[]) {
         const m=t.model;if(!t.known||!m)continue;
+        if(m.operation==='remove_first_item')for(const id of m.item_ids)next.minimum[`item:${id}`]=0;
         if(m.operation==='add_item'||m.operation==='remove_item') {
           const key=`item:${m.index}`;
           next.minimum[key]=Math.max(0,(next.minimum[key]||0)+(m.operation==='add_item'?m.quantity:-m.quantity));

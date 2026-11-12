@@ -173,3 +173,10 @@ Todas as **2.005 ocorrências** do tipo 6 nesta base são interpretadas. IDs fix
 Comandos tratados fora de `GiveRewardAndSetRewardText` precisam ser rastreados no controlador responsável, como foi feito para combate. Não basta atingir o ramo padrão para concluir que um código não tem efeito. Os requisitos 23/24 dependem de `CheckHaveList`, e o 35 consulta uma condição adicional sobre atributo e evento. Os casos sem semântica confirmada continuam preservados.
 
 A pontuação foi localizada em `ScorePopup.Init` (`0x197AF88`) e, para o modo difícil, em `HardModeMgr.GetCurrentScore` (`0x196113C`) e `CheckHardModeScore` (`0x195E240`). As rotinas têm entradas e modificadores distintos. Não foi implementada uma fórmula única nem um otimizador de pontuação. Também continuam pendentes os resultados de combate, pesos finais modificados, efeitos indiretos de atributos/equipamentos, seleção de encontros e confirmação dinâmica em um ambiente capaz de executar a versão ARM do jogo.
+
+
+### Recurso de fogo em Tesouro #362
+
+`23_3_1` exige ao menos um Palito de Fósforo (#40), Lampião (#42) ou Cesta de Fósforos (#47). `EventCtrl.CheckRequire` despacha o tipo 23 em `0x1a9611c` para `CheckHaveList` (`0x1a96958`); a entrada 3 da tabela em `0xa442c8` leva a `0x1a97794`, que consulta esses três IDs com quantidade 1, por OR. O tipo 24 é a negação. O terceiro parâmetro não muda essa consulta.
+
+`25_3_1` chama `Inventory.RemoveListItem` (`0x1a3e758`) e remove uma unidade na prioridade #40 → #42 → #47. O Atlas aplica essa redução quando o inventário permite identificar qual recurso é consumido; se um candidato anterior tem quantidade desconhecida, as quantidades possíveis ficam desconhecidas e aparece uma pendência para conferir. Nenhum estado de história é invalidado permanentemente apenas por essa operação. Outros grupos de `CheckHaveList` continuam sem interpretação confirmada.

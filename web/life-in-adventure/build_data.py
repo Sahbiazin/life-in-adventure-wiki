@@ -10,6 +10,7 @@ ROOT = HERE.parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from decode_rules import STAT, base_weight, decode_required, decode_reward, exact_neutral_probabilities
 from audit_rules import audit
+from item_scaling import decode_item_scaling
 
 CATALOGS = {'item': 'itemJson', 'monster': 'monsterJson', 'ability': 'abilityJson', 'trait': 'traitJson'}
 
@@ -37,7 +38,8 @@ def catalogs_from(database):
             description = '\n\n'.join(localized[k]['pt'] for k in ['desc', 'desc0', 'desc1', 'desc2']
                                       if localized.get(k, {}).get('pt'))
             catalogs.append({'key': key, 'kind': kind, 'id': ident, 'variant': variant,
-                             'title': title, 'description': description, 'raw': raw})
+                             'title': title, 'description': description, 'raw': raw,
+                             **({'scaling': decode_item_scaling(raw)} if kind == 'item' else {})})
     tables = json.loads((database / 'other_tables.json').read_text(encoding='utf-8'))
     for group, table in [('main', 'mainEp4'), ('sub', 'subEp4')]:
         source = tables[table]
@@ -70,7 +72,10 @@ def rule_view(raw, reward=False):
         else:
             idx, qty = part['index'], amount(part['quantity']) if part['quantity'] is not None else ''
             op = part.get('operation')
-            if reward and op == 'start_combat':
+            if part.get('domain') == 'inventory_any' or op == 'remove_first_item':
+                token['text'] = ('Consumir 1 recurso para atear fogo, na prioridade: ' if reward else 'Possuir pelo menos 1 destes recursos para atear fogo: ' if part['comparison'] == 'contains_any' else 'Não possuir nenhum destes recursos para atear fogo: ') + 'Palito de Fósforo, Lampião ou Cesta de Fósforos'
+                token['related_refs'] = [{'key': f'item:{ident}', 'relation': 'Pode consumir item' if reward else 'Requisito de recurso para fogo'} for ident in part['item_ids']]
+            elif reward and op == 'start_combat':
                 token['text'] = 'Iniciar combate' + (' contra o inimigo atual do encontro' if part['enemy_source'] == 'current' else '')
                 if part['monster_id'] is not None:
                     token.update(ref=f'monster:{part["monster_id"]}', relation='Inicia combate contra')
@@ -114,7 +119,7 @@ def rule_view(raw, reward=False):
                 token['state'] = f'{domain}:{idx}'
                 token['text'] = f'Definir {state.lower()} como {qty}' if reward else f'{state} {"deve ser diferente de" if part["comparison"] == "!=" else "deve ser"} {qty}'
         if part['decoded']:
-            token['model'] = {key: part[key] for key in ('domain', 'operation', 'index', 'quantity', 'comparison', 'context_requirements', 'ending_id', 'enemy_source', 'monster_id', 'combat_power_factor', 'initial_state', 'requires_observation') if key in part}
+            token['model'] = {key: part[key] for key in ('domain', 'operation', 'index', 'quantity', 'comparison', 'context_requirements', 'ending_id', 'enemy_source', 'monster_id', 'combat_power_factor', 'initial_state', 'requires_observation', 'item_ids') if key in part}
         if part.get('context_requirements'):
             token['text'] += '; exige conto habilitado e compatibilidade com o conto atual quando informado pelo jogo'
         tokens.append(token)
@@ -128,6 +133,9 @@ def annotate(event, by_key, mentions):
     def track(view, scope):
         if view:
             for token in view['tokens']:
+                for ref in token.get('related_refs', []):
+                    if ref['key'] in by_key:
+                        refs.append({**ref, 'scope': scope, 'raw': token['raw']})
                 if token.get('ref') in by_key:
                     refs.append({'key': token['ref'], 'relation': token['relation'], 'scope': scope, 'raw': token['raw']})
         return view

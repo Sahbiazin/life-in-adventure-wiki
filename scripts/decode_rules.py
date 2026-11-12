@@ -71,6 +71,10 @@ def decode_required(raw):
                             comparison='contains' if op in (31, 32) else 'not_contains',
                             quantity=round(part['quantity']))
             part['label'] = STAT.get(part['index'], f'userData[{part["index"]}]') if part['domain'] == 'userData_effective' else f'{part["domain"]}[{part["index"]}]'
+        if (op in (23, 24) and part.get('target', '').strip() == '3'
+                and part['length'] == 3 and 'parse_status' not in part):
+            part.update(decoded=True, domain='inventory_any', index=3, quantity=1,
+                        item_ids=[40, 42, 47], comparison='contains_any' if op == 23 else 'not_contains_any')
         conditions.append(part)
     return {'raw': raw, 'operator': 'OR' if is_or else 'AND', 'conditions': conditions,
             'fully_decoded': all(p['decoded'] for p in conditions)}
@@ -116,6 +120,9 @@ def decode_reward(raw):
             elif op in (14, 15, 29, 30):
                 part['quantity'] = round(part['quantity'])
                 part['ending_id'] = target * 1000 + part['quantity']
+        if (op == 25 and part.get('target', '').strip() == '3'
+                and part['length'] == 3 and 'parse_status' not in part):
+            part.update(decoded=True, operation='remove_first_item', index=3, quantity=1, item_ids=[40, 42, 47])
         parts.append(part)
     return {'raw': raw, 'effects': parts, 'fully_decoded': all(p['decoded'] for p in parts)}
 

@@ -544,3 +544,31 @@ test('a later prerequisite is not labeled impossible when another preceding rout
   assert.equal(gate.available,true);assert.equal(f.combats.length,1);
   assert.equal(r.state.stats[5],4);
 });
+
+test('fire resources unlock Treasure 362 and are consumed in the native priority',()=>{
+  const r=run(),e=event('EventTreasure:362'),view=e.rules.choices[3].required;
+  assert.equal(E.requirement(view,r.state),false);
+  r.state.inventoryComplete=false;assert.equal(E.requirement(view,r.state),null);
+  r.state.items[42]=2;assert.equal(E.requirement(view,r.state),true);
+  r.state.inventoryComplete=true;r.state.items[40]=1;r.state.items[47]=1;
+  const p=E.previewResult(e,3,0,r.state,index);
+  assert.deepEqual(p.state.items,{'40':0,'42':2,'47':1});
+  assert.deepEqual(p.issues,[]);assert.equal(p.state.flagsUncertain,false);
+  assert.equal(p.controls[0].enemyKey,'monster:161');
+  assert.equal(r.state.items[40],1);
+  r.state.items[40]=null;
+  const uncertain=E.previewResult(e,3,0,r.state,index);
+  assert.equal(uncertain.state.items[42],null);
+  assert.ok(uncertain.issues.some(s=>s.includes('recurso de fogo')));
+  assert.equal(uncertain.state.flagsUncertain,false);
+  const absent={tokens:[{known:true,model:{domain:'inventory_any',item_ids:[40,42,47],comparison:'not_contains_any'}}]};
+  assert.equal(E.requirement(absent,r.state),false);
+});
+
+test('consuming a fire resource cannot count it as a retained item with an incomplete inventory',()=>{
+  const consume=token({operation:'remove_first_item',index:3,quantity:1,item_ids:[40,42,47]});
+  const s=scenario({start:{choices:[{effects:[add(40,1)],next:'consume'}]},consume:{choices:[{effects:[consume]}]}});
+  const r=run();r.state.inventoryComplete=false;r.goals=[goal('item','item:40')];
+  const a=E.analyze(s.root,r,s.index);
+  assert.ok(!a.rows[0].reasons.some(s=>s.includes('Pode obter')));
+});
