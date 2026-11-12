@@ -212,13 +212,18 @@
     const raw=event.data.choice?.[ci]?.result?.[ri];
     if(!raw)fail('Resultado não encontrado.');
     const view=event.rules?.choices?.[ci]?.results?.[ri];
-    const next=clone(state),issues=[],changes=[];
+    const next=clone(state),issues=[],changes=[],controls=[];
     if(raw.reward && !view?.reward?.tokens?.length)issues.push('Recompensa sem modelo disponível.');
     for(const t of view?.reward?.tokens||[]) {
       const m=t.model;
       if(!t.known||!m){issues.push(`Efeito não modelado: ${t.raw}`);next.flagsUncertain=true;continue;}
       const k=String(m.index),q=m.quantity;
-      if(m.operation==='change_user_data') {
+      if(m.operation==='start_combat') {
+        const key=m.monster_id===null?null:`monster:${m.monster_id}`;
+        const enemy=key?(index.records.get(key)?.title||`Monstro #${m.monster_id}`):'inimigo atual do encontro';
+        controls.push({type:'combat',raw:t.raw,enemyKey:key,enemy,text:t.text,model:clone(m)});
+        changes.push(`Iniciar combate contra ${enemy}`);
+      } else if(m.operation==='change_user_data') {
         if(!own(STATS,k)){issues.push(`Atributo de índice ${k}: conferir a alteração ${q}.`);continue;}
         if(k==='3'&&!finite(next.stats[3])&&next.alignmentRange){
           for(const endpoint of ['min','max'])if(next.alignmentRange[endpoint]!==null)next.alignmentRange[endpoint]=Math.fround(next.alignmentRange[endpoint]+q);
@@ -247,7 +252,7 @@
     }
     // The suggestions are estimates. The user reviews displayed values before committing.
     for(const [current,max] of [['0','8'],['1','9']])if(finite(next.stats[current])&&finite(next.stats[max]))next.stats[current]=Math.min(next.stats[current],next.stats[max]);
-    return {state:next,issues,changes,raw,view};
+    return {state:next,issues,changes,controls,raw,view};
   }
   function goalProgress(goal,s) {
     let value=null,complete=false;
@@ -344,9 +349,10 @@
         else if(summary.transitions>=config.maxTransitions&&!(isRoot&&raw.nextEvent===-2)){summary.limited=true;plan=partial('Limite de resultados analisados atingido; continuação não concluída.');}
         else {
           if(summary.transitions<config.maxTransitions)summary.transitions++;
-          const nextLedger=track(ledger,view),unknown=Boolean(raw.reward&&(!view?.reward?.tokens?.length||view.reward.tokens.some(t=>!t.known||!rewardOperations.has(t.model?.operation))));
+          const nextLedger=track(ledger,view),unknown=Boolean(raw.reward&&(!view?.reward?.tokens?.length||view.reward.tokens.some(t=>!t.known||(!rewardOperations.has(t.model?.operation)&&t.model?.operation!=='start_combat'))));
           const target=continuationKey(ev,ci,ri,index);
           if(unknown)plan=partial('Há efeitos ainda não modelados; a continuação deste ramo precisa ser conferida no jogo.');
+          else if(preview.controls.length)plan=partial('O comando inicia um combate. Vitória, derrota e alterações da ficha precisam ser observadas no jogo antes de comparar a continuação.');
           else if(raw.nextEvent===-2)plan=endpoint(preview.state,nextLedger);
           else if(!target)plan=partial('Destino especial ou não identificado; não foi tratado como encerramento garantido.');
           else if(preview.state.stats[0]===0)plan=partial('Saúde pode chegar a zero antes da próxima etapa; a continuação depende de sobrevivência ou ressurreição.');

@@ -97,7 +97,7 @@ Um encontro pode atravessar vários desses nós: `EventNormal:552 → 553 → 55
 
 ## Limites atuais
 
-Não há validação dinâmica no emulador. Há outros tipos de requisito e recompensa ainda desconhecidos. As correspondências acima cobrem posse e transferências diretas de itens; outras operações de inventário, combates, finais e modificadores completos de chance continuam pendentes. A análise também encontrou lógica de conquistas fora de `reward`, na função `CheckAchievement`: recomendações devem declarar seu objetivo e não presumir que esse campo descreve todos os efeitos do jogo.
+Não há validação dinâmica no emulador. Há outros tipos de requisito e recompensa ainda desconhecidos. As correspondências acima cobrem posse e transferências diretas de itens; outras operações de inventário, resultados de combates e modificadores completos de chance continuam pendentes. A análise também encontrou lógica de conquistas fora de `reward`, na função `CheckAchievement`: recomendações devem declarar seu objetivo e não presumir que esse campo descreve todos os efeitos do jogo.
 
 ## Complemento de auditoria para o Modo de Jogo
 
@@ -149,10 +149,27 @@ Os predicados de traço `b__6` e `b__7`, em `0x1AB1618` e `0x1AB16B8`, comparam 
 
 As listas de epílogos desta aventura (`mainEpList`, `subEpList`) são diferentes dos registros permanentes `bookMainEp`, `bookSubEp`, `bookItem`, `bookMonster` e `bookAchievement`. Um comando de epílogo não comprova, sozinho, o registro permanente nem uma vitória. A tabela portuguesa `mainEp4` contém 189 registros, e `subEp4`, 165; os IDs são os valores do array `index`, e não as posições no array.
 
+### Comandos de combate (`reward` tipo 6)
+
+`EventCtrl.ClickEventButton` (`0x1A8D2F0`) procura o tipo 6 após processar os efeitos comuns. O comando abre um combate; não é uma recompensa, uma vitória ou uma confirmação de catálogo.
+
+| Comando | Inimigo e preparação |
+|---|---|
+| `6_0_ID` | Busca o monstro fixo pelo ID |
+| `6_1_0` | Mantém o inimigo atual do encontro |
+| `6_1_2` / `6_1_3` | Mantém o inimigo atual e modifica a faixa de poder, como os modos 2 / 3 |
+| `6_2_ID` | Busca o monstro fixo; divide `battleMin` e `battleMax` por 2, com truncamento; `startState=1` |
+| `6_3_ID` | Busca o monstro fixo; multiplica esses campos por 1,5 em float32 e trunca; `startState=2` |
+| `6_4_ID` | Busca o monstro fixo; define `startState=4`; a finalidade desse estado especial permanece sem nome confirmado |
+
+A quantidade usa `Convert.ToInt32(float)`, com arredondamento de empates para o par. A busca pelo monstro (`MonsterDataBase.GetMonsterDataByIndex`, `0x1AB0510`) aparece em `0x1A8DCF0`, `0x1A8DDAC`, `0x1A8DF18` e `0x1A8E00C`. A ativação comum está em `0x1A8E020–0x1A8E024`. As alterações atingem `battleMin` / `battleMax` (`0x44` / `0x48`), não diretamente os campos `hp` / `dmg`; o Atlas não transforma esse fator em chance de vitória ou dano previsto. As instruções verificadas estão no relatório nativo reproduzível.
+
+Todas as **2.005 ocorrências** do tipo 6 nesta base são interpretadas. IDs fixos geram referências explícitas ao catálogo; `6_1_0` não significa monstro #0. Em Tesouro #80, a escolha **Intervir** contém `6_0_87`: combate contra **Anão**, seguido pelos desfechos em Tesouro #81. Ouro, EXP, alinhamento, itens e estados do ramo de vitória só são aplicados quando esse resultado é confirmado. O comando de início de combate, isolado, não gera pendência de efeito desconhecido nem invalida todos os estados da história.
+
 ### O que continua sem interpretação completa
 
 `docs/atlas-readiness.json` é a auditoria reproduzível dos dados usados pelo aplicativo. Comandos desconhecidos aparecem com contagens e exemplos, incluindo evento, escolha/resultado e texto original. O atributo `simulation_ready` permanece `false`.
 
-Os códigos 6 de `reward`, por exemplo, não devem ser classificados como “sem efeito” só por passarem pelo ramo padrão de `GiveRewardAndSetRewardText`: comandos também são tratados por outros controladores. Os requisitos 23/24 dependem de `CheckHaveList`, e o 35 consulta uma condição adicional sobre atributo e evento. Esses casos continuam preservados.
+Comandos tratados fora de `GiveRewardAndSetRewardText` precisam ser rastreados no controlador responsável, como foi feito para combate. Não basta atingir o ramo padrão para concluir que um código não tem efeito. Os requisitos 23/24 dependem de `CheckHaveList`, e o 35 consulta uma condição adicional sobre atributo e evento. Os casos sem semântica confirmada continuam preservados.
 
 A pontuação foi localizada em `ScorePopup.Init` (`0x197AF88`) e, para o modo difícil, em `HardModeMgr.GetCurrentScore` (`0x196113C`) e `CheckHardModeScore` (`0x195E240`). As rotinas têm entradas e modificadores distintos. Não foi implementada uma fórmula única nem um otimizador de pontuação. Também continuam pendentes os resultados de combate, pesos finais modificados, efeitos indiretos de atributos/equipamentos, seleção de encontros e confirmação dinâmica em um ambiente capaz de executar a versão ARM do jogo.

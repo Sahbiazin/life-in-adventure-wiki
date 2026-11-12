@@ -82,6 +82,23 @@ def decode_reward(raw):
         part = parse_token(token)
         op = part.get('type')
         part['decoded'] = False
+        if op == 6 and part['length'] == 3 and 'parse_status' not in part:
+            try:
+                mode = int(part['target'])
+            except ValueError:
+                mode = None
+            value = round(part['quantity'])
+            # ClickEventButton handles combat outside GiveRewardAndSetRewardText.
+            # Convert.ToInt32(float) uses ties-to-even, not truncation.
+            if (mode in (0, 2, 3, 4) and 0 <= value <= 2147483647
+                    or mode == 1 and value in (0, 2, 3)):
+                variant = value if mode == 1 else mode
+                part.update(decoded=True, operation='start_combat', index=mode,
+                            quantity=value, enemy_source='current' if mode == 1 else 'fixed',
+                            monster_id=None if mode == 1 else value,
+                            combat_power_factor={2: 0.5, 3: 1.5}.get(variant, 1),
+                            initial_state={2: 1, 3: 2, 4: 4}.get(variant),
+                            requires_observation=True)
         if part['length'] == 3 and op in (0, 3, 4, 5, 12, 13, 14, 15, 29, 30) and 'parse_status' not in part and part['target'].strip().lstrip('-+').isdigit() and math.isfinite(part['quantity']):
             target = int(part['target'])
             part.update(decoded=True, index=target,

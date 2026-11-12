@@ -427,3 +427,46 @@ test('range saves survive validation and inconsistent alignment intervals are re
     const s=run().state;s.alignmentRange=range;assert.throws(()=>E.cleanState(s,index),/alinhamento inválida/);
   }
 });
+
+test('all native combat commands explain the action without changing run state or catalog',()=>{
+  const r=run(),before=E.clone(r.state);let count=0;const modes=new Set();
+  for(const e of index.events.values())for(const [ci,c] of e.data.choice.entries())for(const [ri,result] of c.result.entries()) {
+    const tokens=e.rules.choices[ci].results[ri].reward?.tokens.filter(t=>t.raw.startsWith('6_'))||[];
+    if(!tokens.length)continue;
+    count+=tokens.length;
+    const isolated=E.clone(e);isolated.data.choice[ci].result[ri].reward=tokens.map(t=>t.raw).join('|');isolated.rules.choices[ci].results[ri].reward.tokens=tokens;
+    const preview=E.previewResult(isolated,ci,ri,r.state,index);
+    assert.deepEqual(preview.state,before);assert.deepEqual(preview.issues,[]);
+    assert.equal(preview.controls.length,tokens.length);
+    for(const t of tokens){
+      assert.equal(t.known,true,t.raw);assert.equal(t.model.operation,'start_combat');modes.add(t.model.index);
+      if(t.model.enemy_source==='fixed'){assert.equal(t.ref,`monster:${t.model.monster_id}`);assert.ok(index.records.has(t.ref));}
+      else {assert.equal(t.model.monster_id,null);assert.equal(t.ref,undefined);}
+    }
+  }
+  assert.equal(count,2005);assert.deepEqual([...modes].sort(),[0,1,2,3,4]);
+  assert.deepEqual(r.state,before);
+});
+
+test('Treasure 80 starts the dwarf battle and waits for the observed outcome across save and undo',()=>{
+  const r=run();r.state.stats[3]=0;r.goals=[goal('gold','',200)];r.selectedEvent='EventTreasure:80';
+  const e=event(r.selectedEvent),preview=E.previewResult(e,2,0,r.state,index);
+  assert.equal(preview.controls[0].enemy,'Anão');assert.equal(preview.controls[0].enemyKey,'monster:87');
+  assert.equal(preview.state.stats[4],100);assert.deepEqual(preview.state.catalog.monster,[]);
+  const a=E.analyze(e,r,index);
+  assert.equal(a.rows[2].complete,false);assert.ok(a.rows[2].notes.some(n=>n.includes('inicia um combate')));
+  const saved=E.commit(r,preview.state,index,{type:'result',eventKey:r.selectedEvent,choice:2,result:0});
+  const restored=E.validateRun(JSON.parse(JSON.stringify(saved)),index);
+  assert.equal(restored.selectedEvent,'EventTreasure:81');
+  const context=E.continuationContext(restored,index);
+  assert.equal(context.entry.eventKey,'EventTreasure:80');
+  const outcome=E.analyze(event(restored.selectedEvent),restored,index);
+  assert.equal(outcome.recommendation,null);
+  const won=E.previewResult(event(restored.selectedEvent),0,0,restored.state,index);
+  assert.equal(won.state.stats[4],105);assert.equal(won.state.items[157],1);assert.equal(won.state.stats[3],-1);
+  const completed=E.commit(restored,won.state,index,{type:'result',eventKey:restored.selectedEvent,choice:0,result:0});
+  assert.equal(completed.selectedEvent,null);
+  assert.equal(E.undo(completed).selectedEvent,'EventTreasure:81');
+  assert.equal(E.undo(saved).selectedEvent,'EventTreasure:80');
+  assert.equal(E.redo(E.undo(saved),index).selectedEvent,'EventTreasure:81');
+});

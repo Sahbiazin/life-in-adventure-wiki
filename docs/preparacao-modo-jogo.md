@@ -12,13 +12,14 @@ Estado do Atlas: **ainda não pronto para simulação completa**. Existe uma [pr
 - Índice de leitura/escrita dos estados com referências ao evento e à escolha/resultado. São dependências possíveis, não desbloqueios garantidos.
 - Auditoria de cobertura visível no Atlas e relatório reproduzível com comandos pendentes e exemplos reais.
 - Entradas inválidas mantidas como desconhecidas, sem quebrar a geração nem gerar probabilidades inventadas.
+- As 2.005 ocorrências de início de combate interpretadas, com inimigo fixo ou atual, modificações da faixa de poder e continuidade para registrar o desfecho. A interpretação do comando não prevê o resultado da luta.
 
 ## Pendências para uma simulação completa
 
 | Área | Falta confirmar/modelar | Critério de conclusão |
 |---|---|---|
 | Condições restantes | Grupos de inventário, condições especiais e formatos anômalos listados na auditoria | Cada comando com modelo testado ou bloqueio explícito de recomendação |
-| Efeitos e combate | Comandos tratados fora de `GiveRewardAndSetRewardText`, batalhas, mudanças de traços/habilidades, itens especiais e efeitos indiretos | Resultado observado reproduzido para cenários de referência |
+| Efeitos e combate | Resultados e dano das batalhas, demais comandos externos, mudanças de traços/habilidades, itens especiais e efeitos indiretos | Resultado observado reproduzido para cenários de referência |
 | Probabilidades | Filtragem por condições, pesos modificados por atributos, habilidades, dificuldade e estado | Comparação com sorteios e modificadores do jogo; não converter peso bruto em porcentagem |
 | Encadeamento | Sorteio/ativação dos encontros e sentinelas ainda não documentados | Separar transições diretas, dependências de estado e regras de seleção |
 | Pontuação | Fórmulas e entradas dos modos normal/difícil | Reproduzir pontuações de runs conhecidas com a mesma dificuldade |

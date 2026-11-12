@@ -70,7 +70,16 @@ def rule_view(raw, reward=False):
         else:
             idx, qty = part['index'], amount(part['quantity']) if part['quantity'] is not None else ''
             op = part.get('operation')
-            if reward and op in ('add_item', 'remove_item'):
+            if reward and op == 'start_combat':
+                token['text'] = 'Iniciar combate' + (' contra o inimigo atual do encontro' if part['enemy_source'] == 'current' else '')
+                if part['monster_id'] is not None:
+                    token.update(ref=f'monster:{part["monster_id"]}', relation='Inicia combate contra')
+                if part['combat_power_factor'] != 1:
+                    token['text'] += ' · faixa de poder de combate ' + ('reduzida à metade' if part['combat_power_factor'] == 0.5 else 'multiplicada por 1,5')
+                if part['initial_state'] == 4:
+                    token['text'] += ' · estado inicial especial (código 4)'
+                token['text'] += '; registrar o desfecho no jogo'
+            elif reward and op in ('add_item', 'remove_item'):
                 token.update(text=('Receber item' if op == 'add_item' else 'Remover item') + f' · quantidade {qty}',
                              ref=f'item:{idx}', relation='Concede item' if op == 'add_item' else 'Remove item')
             elif reward and op in ('record_main_ending', 'record_sub_ending', 'remove_main_ending', 'remove_sub_ending'):
@@ -105,7 +114,7 @@ def rule_view(raw, reward=False):
                 token['state'] = f'{domain}:{idx}'
                 token['text'] = f'Definir {state.lower()} como {qty}' if reward else f'{state} {"deve ser diferente de" if part["comparison"] == "!=" else "deve ser"} {qty}'
         if part['decoded']:
-            token['model'] = {key: part[key] for key in ('domain', 'operation', 'index', 'quantity', 'comparison', 'context_requirements', 'ending_id') if key in part}
+            token['model'] = {key: part[key] for key in ('domain', 'operation', 'index', 'quantity', 'comparison', 'context_requirements', 'ending_id', 'enemy_source', 'monster_id', 'combat_power_factor', 'initial_state', 'requires_observation') if key in part}
         if part.get('context_requirements'):
             token['text'] += '; exige conto habilitado e compatibilidade com o conto atual quando informado pelo jogo'
         tokens.append(token)

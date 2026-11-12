@@ -65,7 +65,7 @@ def audit(events):
               'events_with_unknown_commands': len(affected),
               'static_probability_choices': exact_choices, 'static_probability_results': exact_results,
               'coverage': {k: {**dict(counts[k]), 'unknown': dict(sorted(unknown[k].items()))} for k in counts},
-              'limitations': ['Combates, sorteios modificados e seleção aleatória de encontros ainda não modelados.',
+              'limitations': ['Comandos de início de combate interpretados; vitória, derrota e dano exigem observação no jogo. Sorteios modificados e seleção aleatória de encontros ainda não modelados.',
                               'Alterações de atributos podem envolver limites, equipamentos e efeitos indiretos.',
                               'Conquistas e registro permanente no catálogo têm regras externas aos campos reward.',
                               'Pontuação normal e difícil exigem modelos distintos; a fórmula completa ainda não foi validada.',

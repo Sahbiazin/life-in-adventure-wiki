@@ -53,8 +53,8 @@ class RuleReadinessTests(unittest.TestCase):
             {'required': '18_2_1', 'result': [{'required': '', 'reward': '5_2_1|6_0_42', 'type': 2, 'chance': '1'}]}]}}]
         report, states = audit(source)
         self.assertEqual(report['coverage']['required']['commands'], 2)
-        self.assertEqual(report['coverage']['reward']['decoded_commands'], 1)
-        self.assertEqual(report['coverage']['reward']['unknown']['6']['count'], 1)
+        self.assertEqual(report['coverage']['reward']['decoded_commands'], 2)
+        self.assertNotIn('6', report['coverage']['reward']['unknown'])
         self.assertFalse(report['simulation_ready'])
         self.assertFalse(report['runtime_validated'])
         self.assertEqual(states['chainEventList:2']['readers'][1]['comparison'], '!=')
@@ -71,6 +71,7 @@ class RuleReadinessTests(unittest.TestCase):
         self.assertEqual(evidence['alignment']['thresholds'], [-24, -9, 10, 25])
         self.assertEqual(evidence['alignment']['pt_labels'], ['Maligno', 'Impuro', 'Neutro', 'Justo', 'Bondoso'])
         self.assertFalse(evidence['runtime_validated'])
+        self.assertEqual(evidence['combat']['command'], 6)
         self.assertEqual(evidence, json.loads((ROOT / 'docs/native-rules-evidence.json').read_text()))
 
 

@@ -49,7 +49,7 @@ Quando alguma alternativa disponível ainda tem análise parcial, a interface de
 
 ## O que ainda é manual
 
-**Combate e pontuação:** o modo não prevê vitória, dano completo nem pontuação final. Nós que guardam desfechos de combate sem texto de escolha são apresentados como ramos para registrar o observado, sem sugerir vitória ou derrota. A pontuação pode ser anotada. Quando maximizá-la é o objetivo principal, não aparece uma escolha apresentada como ótima para pontuação.
+**Combate e pontuação:** os comandos de início de combate agora mostram o inimigo fixo, quando especificado, ou o uso do inimigo atual. Modificações da faixa de poder e o estado inicial especial também aparecem nas regras do Atlas e do modo de jogo. Ao registrar o comando, a sequência passa para a próxima etapa; a identificação do combate permanece após recarregar, desfazer e refazer. A ficha e o catálogo não recebem dano, vitória ou recompensas por apenas iniciar a luta. A análise marca esse caminho como parcial até que o jogador registre o desfecho. O modo não prevê vitória, dano completo nem pontuação final. Nós que guardam desfechos de combate sem texto de escolha são apresentados como ramos para registrar o observado, sem sugerir vitória ou derrota. A pontuação pode ser anotada. Quando maximizá-la é o objetivo principal, não aparece uma escolha apresentada como ótima para pontuação.
 
 **Histórias e contos:** o texto da história não identifica automaticamente todas as etapas. Um epílogo alvo opcional permite orientar a busca, mas a conclusão da história continua sendo confirmada pelo jogador. Sem esse alvo, um objetivo principal de história não produz uma recomendação automática.
 

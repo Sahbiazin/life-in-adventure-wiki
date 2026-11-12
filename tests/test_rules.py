@@ -20,8 +20,22 @@ class RulesTests(unittest.TestCase):
 
     def test_unknown_is_not_guessed(self):
         self.assertFalse(decode_required('35_43_1')['fully_decoded'])
-        self.assertFalse(decode_reward('6_0_42')['fully_decoded'])
+        self.assertFalse(decode_reward('6_9_42')['fully_decoded'])
         self.assertFalse(decode_required('21_43')['fully_decoded'])
+
+    def test_combat_modes_are_control_commands_not_rewards_or_automatic_wins(self):
+        for raw, monster, factor, state in [('6_0_87', 87, 1, None),
+                ('6_2_42', 42, .5, 1), ('6_3_42', 42, 1.5, 2), ('6_4_42', 42, 1, 4),
+                ('6_1_0', None, 1, None), ('6_1_2', None, .5, 1), ('6_1_3', None, 1.5, 2)]:
+            rule = decode_reward(raw)
+            self.assertTrue(rule['fully_decoded'], raw)
+            effect = rule['effects'][0]
+            self.assertEqual(effect['operation'], 'start_combat')
+            self.assertEqual((effect['monster_id'], effect['combat_power_factor'], effect['initial_state']), (monster, factor, state))
+            self.assertTrue(effect['requires_observation'])
+        self.assertEqual(decode_reward('6_0_86.5')['effects'][0]['monster_id'], 86)
+        for raw in ['6_1_4', '6_0_-1', '6_5_87', '6_x_87', '6_--1_87', '6_0_nan', '6_0_1e30']:
+            self.assertFalse(decode_reward(raw)['fully_decoded'], raw)
 
     def test_item_requirements_and_transfers_have_separate_semantics(self):
         have = decode_required('8_42_1')['conditions'][0]

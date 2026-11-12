@@ -27,6 +27,19 @@ ALIGNMENT_INSTRUCTIONS = {
     0x1a765c4: '282100f9', 0x1a7677c: '092100f9', 0x1a76930: '2a2100f9', 0x1a76af4: '2b2100f9'
 }
 
+# ClickEventButton consumes reward type 6; MonsterData's battleMin/battleMax
+# occupy +0x44/+0x48, and startState occupies +0x6c (not hp/dmg fields).
+COMBAT_INSTRUCTIONS = {
+    0x1a8db78: '7f190071', 0x1a8dc44: '1f080071',
+    0x1a8dc70: '09a90829', 0x1a8dc78: '096d00b9',
+    0x1a8dcf0: '088a0094', 0x1a8ddac: 'd9890094',
+    0x1a8ddd4: '08a40829', 0x1a8de1c: '1f0c0071',
+    0x1a8de30: '01f7030f', 0x1a8de5c: '004104fc',
+    0x1a8df18: '7e890094', 0x1a8df50: '004004fc',
+    0x1a8e00c: '41890094', 0x1a8e01c: '086c00b9',
+    0x1a8e024: '68820739'
+}
+
 
 def verify(binary=BINARY):
     digest = hashlib.sha256(binary.read_bytes()).hexdigest()
@@ -49,12 +62,19 @@ def verify(binary=BINARY):
         for address, expected in ALIGNMENT_INSTRUCTIONS.items():
             if read(address, 4).hex() != expected:
                 raise ValueError(f'Unexpected alignment instruction at {address:#x}')
+        for address, expected in COMBAT_INSTRUCTIONS.items():
+            if read(address, 4).hex() != expected:
+                raise ValueError(f'Unexpected combat instruction at {address:#x}')
         # Reward 30 is handled after the switch by a dedicated cmp w10, #0x1e.
         assert read(0x1a9299c, 4) == bytes.fromhex('5f790071')
     return {'version': '1.2.47', 'build': 366, 'binary_sha256': digest, 'runtime_validated': False,
             'required_dispatch': {str(k): hex(v) for k, v in REQUIRED.items()},
             'reward_dispatch': {str(k): hex(v) for k, v in REWARD.items()},
             'reward_30_guard': '0x1a9299c', 'stat_pt_store_instructions': {str(k): hex(v) for k, v in STAT_STORES.items()},
+            'combat': {'command': 6, 'handler': '0x1a8d2f0',
+                       'monster_lookup': '0x1ab0510',
+                       'monster_fields': {'battleMin': '0x44', 'battleMax': '0x48', 'startState': '0x6c'},
+                       'verified_instructions': {hex(k): v for k, v in COMBAT_INSTRUCTIONS.items()}},
             'alignment': {'user_data_index': 3, 'thresholds': [-24, -9, 10, 25],
                           'pt_labels': ['Maligno', 'Impuro', 'Neutro', 'Justo', 'Bondoso'],
                           'classification_function': '0x19c6af0',

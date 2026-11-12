@@ -6,7 +6,7 @@
   "events": 3683,
   "choices": 8043,
   "results": 12196,
-  "events_with_unknown_commands": 1189,
+  "events_with_unknown_commands": 322,
   "static_probability_choices": 5481,
   "static_probability_results": 5570,
   "coverage": {
@@ -165,9 +165,9 @@
     },
     "reward": {
       "fields": 9277,
-      "decoded_fields": 6977,
+      "decoded_fields": 8970,
       "commands": 17188,
-      "decoded_commands": 14871,
+      "decoded_commands": 16876,
       "unknown": {
         "1": {
           "count": 10,
@@ -279,26 +279,6 @@
             }
           ]
         },
-        "6": {
-          "count": 2005,
-          "examples": [
-            {
-              "event": "EventBattle:0",
-              "scope": "Escolha 1 · resultado 1",
-              "raw": "6_1_0"
-            },
-            {
-              "event": "EventBattle:2",
-              "scope": "Escolha 1 · resultado 1",
-              "raw": "6_1_0"
-            },
-            {
-              "event": "EventBattle:2",
-              "scope": "Escolha 2 · resultado 1",
-              "raw": "6_1_0"
-            }
-          ]
-        },
         "8": {
           "count": 2,
           "examples": [
@@ -318,7 +298,7 @@
     }
   },
   "limitations": [
-    "Combates, sorteios modificados e seleção aleatória de encontros ainda não modelados.",
+    "Comandos de início de combate interpretados; vitória, derrota e dano exigem observação no jogo. Sorteios modificados e seleção aleatória de encontros ainda não modelados.",
     "Alterações de atributos podem envolver limites, equipamentos e efeitos indiretos.",
     "Conquistas e registro permanente no catálogo têm regras externas aos campos reward.",
     "Pontuação normal e difícil exigem modelos distintos; a fórmula completa ainda não foi validada.",
