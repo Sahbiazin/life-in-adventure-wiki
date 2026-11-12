@@ -2,6 +2,8 @@
 
 Abra `dist/index.html` no navegador ou sirva a pasta `dist`. O aplicativo usa apenas arquivos locais, sem `fetch`, bibliotecas externas ou conta de usuário.
 
+O botão de sol/lua na barra superior alterna os temas claro e escuro, incluindo os mapas e o Modo de Jogo. Sem escolha salva, segue o tema do dispositivo. A preferência fica na chave `life-in-adventure:theme:v1` neste navegador; não altera os saves das runs ou o caderno. Se o armazenamento estiver indisponível, a alternância continua funcionando durante a visita.
+
 ## Conteúdo e navegação
 
 - **Eventos:** 3.683 nós em português, 8.043 escolhas e 12.196 resultados da versão 1.2.47, build 366.

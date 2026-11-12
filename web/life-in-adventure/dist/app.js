@@ -6,6 +6,29 @@
   const normalize = value => String(value).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   const fmt = n => Number(n).toLocaleString('pt-BR');
   const short = (s, n=110) => s.length > n ? `${s.slice(0,n).trim()}…` : s;
+  function initTheme() {
+    const key='life-in-adventure:theme:v1',media=window.matchMedia('(prefers-color-scheme: dark)'),button=$('themeToggle');
+    let preference=null;
+    const valid=value=>value==='light'||value==='dark'?value:null;
+    try{preference=valid(localStorage.getItem(key));}catch{}
+    const apply=()=>{
+      const dark=(preference||(media.matches?'dark':'light'))==='dark';
+      document.documentElement.dataset.theme=dark?'dark':'light';
+      const label=dark?'Ativar modo claro':'Ativar modo escuro';
+      button.setAttribute('aria-label',label);button.setAttribute('title',label);button.setAttribute('aria-pressed',String(dark));
+      document.querySelector('meta[name="theme-color"]').content=dark?'#0e1b15':'#152f2a';
+    };
+    button.addEventListener('click',()=>{
+      preference=document.documentElement.dataset.theme==='dark'?'light':'dark';apply();
+      try{localStorage.setItem(key,preference);}catch{} // Still works for this visit when storage is blocked.
+    });
+    media.addEventListener('change',()=>{if(!preference)apply();});
+    window.addEventListener('storage',event=>{
+      if(event.key===key||event.key===null){preference=valid(event.newValue);apply();}
+    });
+    apply();
+  }
+  initTheme();
   const types = {
     EventMain: {label:'Principal', title:'Eventos principais', icon:'⚑', code:'PRI'},
     EventSub: {label:'Secundário', title:'Eventos secundários', icon:'⑂', code:'SEC'},

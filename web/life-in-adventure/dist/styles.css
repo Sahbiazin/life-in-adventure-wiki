@@ -46,3 +46,75 @@
 
 /* Conditional paths considered by the run planner. */
 .game-plan{background:#f5f5eb;border:1px solid #dfe5ce;border-radius:6px;margin:14px 0;padding:10px 12px;min-width:0}.game-plan>summary{font-size:12px;font-weight:600;line-height:1.7;cursor:pointer}.game-plan-status{font-weight:600;font-size:12px}.game-plan ol{padding-left:23px}.game-plan ol>li{margin:16px 0;overflow-wrap:anywhere}.game-plan li>strong,.game-plan li>span{display:block;font-size:12px;line-height:1.7;margin-top:4px}.game-plan li>small{display:block;font-size:11px;line-height:1.8;margin-top:4px;color:#68794f}.game-root .game-plan li>button{font-size:11px;min-height:44px;padding:5px 8px}.game-plan-balance{font-size:12px;line-height:1.7;padding-left:18px}.game-plan .game-pending{font-size:12px;overflow-wrap:anywhere}.game-future-hint{border-left:2px solid #b0c492;padding:7px 10px;background:#f4f6ed;font-size:12px;line-height:1.7;overflow-wrap:anywhere}
+
+/* Theme control stays beside Favorites, including on narrow screens. */
+:root{color-scheme:light}
+.topbar-actions{display:flex;align-items:center;gap:12px;margin-left:auto;flex-shrink:0}
+.topbar-actions .settings{margin-left:0;min-height:44px;min-width:32px}
+.theme-toggle{display:grid;place-items:center;flex-shrink:0;width:44px;height:44px;padding:10px;border:1px solid #5b7163;border-radius:50%;background:#203d31;color:#eddfae}
+.theme-toggle:hover{background:#315342;border-color:#a3b493}
+.theme-toggle:focus-visible{outline:2px solid #e3d08d;outline-offset:4px}
+.theme-toggle svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.theme-sun{display:none}
+:root[data-theme=dark] .theme-sun{display:block}
+:root[data-theme=dark] .theme-moon{display:none}
+@media(max-width:650px){.topbar-actions{gap:8px}}
+
+/* Forest palette: semantic surfaces shared by the Atlas, dialogs, map and run companion. */
+:root[data-theme=dark]{color-scheme:dark;--ink:#e0e9dd;--muted:#a6b7a6;--green:#b5d4a6;--line:#3b4d3e;--cream:#131e18;--surface:#1b2a21;--surface-raised:#24372a;--surface-soft:#203025;--secondary:#b2c3ac;--accent:#c6dbae;--amber:#f0d29b}
+:root[data-theme=dark] .topbar{background:#0e1b15;border-color:var(--line)}
+:root[data-theme=dark] .topbar-actions .settings{color:#c3d2c0;opacity:1}
+:root[data-theme=dark] .sidebar{background:#17251c;border-color:var(--line)}
+:root[data-theme=dark] :is(.catalog,dialog,.choice-card,.incoming-card,.game-card,.game-outcome){background:var(--surface);border-color:var(--line)}
+:root[data-theme=dark] :is(.dialog-header,.detail-actions,#actionStatus,.dialog-footer,thead,.catalog-card,.game-choice,.game-plan){background:var(--surface-soft);border-color:var(--line)}
+:root[data-theme=dark] :is(.stats,.requirements,.evidence-note,.rule-block,.field,.raw-details pre,.game-root pre,.game-notice,.game-continuation,.game-future-hint,.map-node-list>summary){background:var(--surface-raised);border-color:#69855a}
+:root[data-theme=dark] :is(.stats,.stats>div+div,.edition,.side-footer,.library-nav,.detail-toolbar,.reference-row,.state-card,.result-card,.game-goals li,.game-root fieldset,.game-history>li,.map-node-list>div){border-color:var(--line)}
+:root[data-theme=dark] :is(thead,tbody tr,.catalog-card,.game-choice,.game-outcome,.game-plan,.dialog-footer){border-color:var(--line)}
+:root[data-theme=dark] :is(.category:hover,tbody tr:hover,tbody tr:focus-within,.star-button:hover){background:var(--surface-raised)}
+:root[data-theme=dark] :is(.category.active,.library-nav button.nav-active,.applied-filters button,.game-goal-done){background:#2e4832;color:#d6e8c7;border-color:#58714b}
+:root[data-theme=dark] :is(.side-intro,.filter-label,.filter-hint,.side-heading .eyebrow,.category,.category .count,.side-footer,.side-footer small,.library-nav p,.breadcrumb,.breadcrumb span,.page-heading p,.edition>span,.edition i,.stats div div span,.archive-label,.catalog-top p,.sort-control,.search-tip,.search-box kbd,th,.record,.record small,.event-preview,.numeric-cell,.row-arrow,.pagination,.empty-state p,.page-footer,.catalog-card p,.catalog-card footer,.detail-toolbar,.detail-tabs button,.narrative,.section-label,.requirements code,.raw-code,.choice-number,.result-heading,.result-text,.field,.raw-details,.dialog-footer,.map-heading p,.map-note,.rule-block p,.linked-records>p,.reference-row small,.incoming-card>p,.catalog-fields .field,.result-fields .field,.game-root p,.game-root .game-help,.game-goals small,.game-event-results small,.game-plan li>small){color:var(--secondary)}
+:root[data-theme=dark] :is(.green,.compass,.stat-icon,.empty-state>span){color:#b3cb9d}
+:root[data-theme=dark] :is(.event-name,.record-link,.library-nav button,.back-button,.text-button,.field b,.choice-card>summary,.rule-block h4,.rule-list,.variant-link,.audit-panel>summary,.state-card summary,.game-root label,.game-root legend,.game-details>summary,.game-choice>summary,.game-root .game-availability,.game-rule-list,.game-reasons,.game-history summary){color:var(--accent)}
+:root[data-theme=dark] .record-link{text-decoration-color:#738f65}
+:root[data-theme=dark] .category.active .count{color:#d6e8c7}
+:root[data-theme=dark] :is(select,.search-box,.game-root input:not([type=checkbox]):not([type=file]),.game-root select,.game-root textarea,#actionStatus input){background:#142219;color:var(--ink);border-color:#4b6249}
+:root[data-theme=dark] .search-box input{color:var(--ink)}
+:root[data-theme=dark] :is(input,textarea)::placeholder{color:#a3b49b;opacity:1}
+:root[data-theme=dark] .search-box svg{stroke:#b4c8a6}
+:root[data-theme=dark] .search-box kbd{border-color:var(--line)}
+:root[data-theme=dark] :is(.filter-tag,.pagination button,.zoom button,.icon-button,.detail-actions button,.detail-actions a,.target-button,.map-targets button,.variant-link,.event-symbol,.game-root button,.game-file-button,.game-stat-row span,.game-chip){background:var(--surface-raised);border-color:#4b6249;color:var(--accent)}
+:root[data-theme=dark] :is(.filter-tag span,.event-symbol){color:#c4d5b5}
+:root[data-theme=dark] :is(.filter-tag.active,.game-root .game-primary,.game-recommend-badge){background:#375f3c;border-color:#7da268;color:#f4f8ec}
+:root[data-theme=dark] :is(.game-root button:hover:not(:disabled),.game-root .game-primary:hover:not(:disabled),.detail-actions button:hover,.map-targets button:hover){background:#35513a}
+:root[data-theme=dark] .game-root .game-chip button{background:none}
+:root[data-theme=dark] .badge{background:#293c2a;color:#ccdbb8;border-color:#42593c}
+:root[data-theme=dark] .badge.category-tag{background:#293f2b;color:#c1daa9;border-color:#425d3c}
+:root[data-theme=dark] .badge[data-group=EventTreasure]{background:#38311f;color:#edcf8f;border-color:#655331}
+:root[data-theme=dark] .badge[data-group=EventBattle]{background:#3e2c26;color:#f1bca1;border-color:#6b4736}
+:root[data-theme=dark] .badge[data-group=EventMain]{background:#203d34;color:#b0dccb;border-color:#3d6657}
+:root[data-theme=dark] .badge[data-group=EventSub]{background:#352c41;color:#d4bce8;border-color:#5e4974}
+:root[data-theme=dark] :is(.attribute-test,.test-explanation){background:#38321f;color:#efdda7;border-color:#746438}
+:root[data-theme=dark] :is(.rule-list code,.game-rule-list code,.game-warning,.game-pending){background:#352c1e;color:var(--amber);border-color:#7c6440}
+:root[data-theme=dark] :is(.unknown-rule,.game-rule-list .game-unknown,.app-status,.load-error){color:var(--amber)}
+:root[data-theme=dark] :is(.star-button.saved,.detail-actions button[aria-pressed=true]){color:#f1d28f;background:#36321f;border-color:#746438}
+:root[data-theme=dark] .star-button{color:#c7d6b7}
+:root[data-theme=dark] .game-message{background:#293f28;border-color:#6e8f54;color:#d9eac7!important}
+:root[data-theme=dark] .game-recommended{border-color:#a1c57c}
+:root[data-theme=dark] .game-choice-number{border-color:#6a8658}
+:root[data-theme=dark] .game-check input{accent-color:#8cbb72}
+:root[data-theme=dark] .game-goal-done strong:before{color:#b5d98e}
+:root[data-theme=dark] .detail-tabs button[aria-selected=true]{color:#c4dfa9;border-bottom-color:#a1c57c}
+:root[data-theme=dark] .map-viewport{background-color:#142219;background-image:radial-gradient(#384f34 .8px,transparent .8px);border-color:var(--line)}
+:root[data-theme=dark] .map-edge{stroke:#91af7e}
+:root[data-theme=dark] .map-return{stroke:#d2b770}
+:root[data-theme=dark] .map-node rect{fill:#1e3023;stroke:#58704d}
+:root[data-theme=dark] .map-node text{fill:#d7e6cc}
+:root[data-theme=dark] .map-node .small{fill:#b8cfaa}
+:root[data-theme=dark] .map-node.choice rect{fill:#2b432d}
+:root[data-theme=dark] .map-node.root rect{fill:#31583b;stroke:#8dab74}
+:root[data-theme=dark] .map-node.root text{fill:#f1f6e9}
+:root[data-theme=dark] .map-node .map-test{fill:#efdda7}
+:root[data-theme=dark] .map-node.clickable:hover rect,:root[data-theme=dark] .map-node.clickable:focus rect{stroke:#c3dda5}
+:root[data-theme=dark] :focus-visible{outline-color:#c3dda5}
+:root[data-theme=dark] .catalog h2 span{background:var(--surface-raised);color:var(--secondary)}
+:root[data-theme=dark] .clear-filters{color:var(--accent)}
