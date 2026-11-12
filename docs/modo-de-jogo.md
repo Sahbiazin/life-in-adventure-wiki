@@ -17,7 +17,7 @@ Uma nova run preserva as anteriores. É possível copiar as confirmações do ca
 
 1. Busque palavras do encontro ou o ID exato, como `#346`. Use a tabela para diferenciar IDs iguais. Também há **Usar encontro na run** nos detalhes de eventos do Atlas.
 2. Confira as escolhas e todos os resultados registrados. As etiquetas **Teste de Força**, **Teste de Inteligência** etc. identificam atributos que influenciam o sorteio e os ramos de sucesso/falha. São diferentes dos requisitos para liberar a opção, que aparecem como atendidos, não atendidos ou desconhecidos. A etiqueta não informa uma dificuldade mínima nem uma porcentagem de sucesso. Se o próprio jogo mostrar uma opção diferente, informe sua disponibilidade.
-3. Uma **sugestão provisória** mostra os efeitos conhecidos que favorecem os objetivos. Ela pode faltar quando os dados não sustentam uma preferência ou quando há empate. Os dados originais continuam acessíveis.
+3. Uma **sugestão provisória** compara os efeitos acumulados e as próximas decisões até o fim registrado do encontro. Abra **Ver escolhas futuras e saldo do caminho** para consultar um cenário considerado, seus custos, recompensas e pendências. A indicação pode faltar quando há empate ou quando algum caminho não pôde ser avaliado até o fim. Os dados originais continuam acessíveis.
 4. Depois de jogar, selecione **Foi este resultado**. Revise os valores estimados e substitua-os pelos que realmente apareceram no jogo. Confirme a conferência antes de salvar. Se o resultado não corresponder às opções, registre o ocorrido manualmente, com uma observação.
 5. Ao salvar um resultado com continuação direta, o Atlas abre as **próximas escolhas do mesmo encontro**, preservando o texto de ligação e mostrando o percurso. Retornos ao mesmo nó atualizam os requisitos com o estado registrado. Só o resultado confirmado aplica efeitos; abrir a continuação não escolhe nem salva outra resposta. Sem continuação direta, volte à busca quando surgir outro encontro. Se a tela divergir, use **Escolher outro encontro** ou registre um resultado diferente.
 
@@ -27,11 +27,23 @@ No Atlas, **Mapa de escolhas** conecta os nós das etapas seguintes aos resultad
 
 ## Como as sugestões funcionam
 
-- Requisitos usam o modelo parcial das regras confirmadas. Dados ausentes não viram requisitos satisfeitos. Opções indisponíveis ficam fora da sugestão, salvo confirmação explícita do jogador de que estão disponíveis.
-- O objetivo principal recebe prioridade de peso sobre os secundários. O avanço é normalizado pela meta restante, com pequenos desempates por ouro e saúde conhecidos. Não há classificação universal das escolhas.
-- O perfil **cauteloso** compara o pior resultado conhecido. O perfil de **valor esperado** usa as probabilidades apenas quando todos os resultados possíveis têm frações estáticas conhecidas; caso contrário, também usa o pior caso. Peso bruto não vira porcentagem.
-- Itens e epílogos podem orientar a escolha por comandos de recompensa conhecidos. Caminhos de até três transições diretas a partir do próximo encontro oferecem somente uma indicação de direção. Requisitos futuros, sorteios e dependências de estados não são resolvidos por essa busca.
-- Um efeito desconhecido continua sinalizado mesmo quando há sugestão. As estimativas nunca são aplicadas só por consultar uma opção; o jogador precisa confirmar o resultado observado.
+- A busca segue as transições diretas na mesma tabela até `nextEvent = -2`, o encerramento conhecido. Não prevê os próximos encontros aleatórios da run. Um custo inicial pode valer a pena por uma recompensa posterior; uma recompensa imediata pode ser ruim se o caminho exigir pagar mais depois.
+- Cada resultado produz uma ficha estimada para a etapa seguinte. Requisitos de atributos, inventário, habilidades e estados são reavaliados nessa ficha. Opções futuras sabidamente indisponíveis são excluídas; opções de disponibilidade desconhecida não são presumidas liberadas e tornam a comparação parcial. A confirmação de disponibilidade pelo jogador vale somente para a escolha atual.
+- Em um ponto de decisão, o planejador procura a melhor próxima escolha disponível. Em um sorteio, considera os resultados possíveis, em vez de escolher o resultado favorável. A decisão futura pode mudar conforme o item ou estado obtido no resultado anterior. Nós de desfechos sem texto de escolha são tratados pelo pior caso, sem escolher vitória no combate.
+- O perfil **cauteloso** compara o pior saldo conhecido de cada caminho, com boas decisões nas etapas seguintes. O perfil de **valor esperado** combina probabilidades estáticas confirmadas em cada sorteio; onde elas faltam, usa o pior caso. Frações precisam ser válidas e somar 1; resultados de probabilidade estática zero ficam fora da comparação. Pesos brutos ou modificados por atributos não viram porcentagens.
+- O saldo é avaliado no fim do caminho, em relação à ficha atual: receber e depois perder um item não equivale a encerrar com ele. O primeiro objetivo em aberto recebe peso 100, os demais peso 10, normalizados pela meta restante. Ouro e saúde conhecidos oferecem pequenos desempates; saúde a zero tem penalidade de risco. Não há classificação universal das escolhas.
+- Itens de quantidade inicial desconhecida e objetivos de catálogo/história podem receber indicações de obtenção potencial por comandos conhecidos, sempre com aviso. Esses sinais não confirmam posse final, desbloqueio permanente, conclusão de história ou vitória.
+- O cenário mostrado no plano é uma referência entre os ramos avaliados, não uma previsão do sorteio nem uma sequência garantida. A comparação também avalia os outros resultados. O Atlas recalcula ao registrar o que aconteceu; consultar o plano não aplica recompensas, não avança etapas e não escreve a run.
+
+## Quando a comparação fica parcial
+
+Efeitos ainda não modelados interrompem a busca daquele ramo; o planejador não preenche a continuação com consequências inventadas. Destinos especiais não documentados também não são tratados como um encerramento garantido. Ausência de uma escolha futura confirmadamente disponível, sobrevivência incerta antes da próxima etapa e repetições aleatórias não resolvidas são sinalizadas.
+
+Retornos com mudança de estado são avaliados, inclusive quando desbloqueiam novas escolhas. Retornos ao mesmo nó e estado sem progresso são descartados como repetição, sem simular recompensas infinitas. Estados com ciclos dependem do percurso e não são reutilizados como se fossem independentes dele.
+
+Para manter o celular responsivo, a busca tem limites de 64 etapas no percurso e 6.000 expansões de resultados, além da conferência de encerramentos imediatos. Se um limite for atingido, o plano informa a interrupção. Os limites do desenho do mapa são independentes: recolher ou expandir o mapa não altera a profundidade da recomendação.
+
+Quando alguma alternativa disponível ainda tem análise parcial, a interface deixa de indicar uma melhor escolha para o encontro inteiro. Os caminhos conhecidos, cenários e pendências continuam acessíveis para ajudar a decidir manualmente. Probabilidades desconhecidas, isoladamente, permitem uma comparação pelo pior caso, explicitamente sinalizada.
 
 ## O que ainda é manual
 

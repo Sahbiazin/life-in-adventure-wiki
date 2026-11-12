@@ -223,3 +223,142 @@ test('every direct continuation keeps the table and special destinations do not 
     assert.equal(key,r.nextEvent>=0?`${e.group}:${r.nextEvent}`:null);
   }
 });
+
+// Small encounter graphs with explicit states/outcomes: these check decisions, not traversal order.
+function scenario(definitions) {
+  const nodes=new Map(),keys=Object.keys(definitions);
+  for(const [i,name] of keys.entries()) {
+    const choices=definitions[name].choices;
+    const ev=fixture(choices.map(c=>(c.outcomes||[c]).map(o=>o.effects||[])));
+    ev.id=900000+i;ev.data.text=definitions[name].observedOnly?'':'Um encontro de teste';
+    choices.forEach((c,ci)=>{
+      ev.data.choice[ci].text=definitions[name].observedOnly?'':c.label||'Opção '+ci;
+      ev.rules.choices[ci].required=c.required||null;
+      (c.outcomes||[c]).forEach((o,ri)=>{
+        const raw=ev.data.choice[ci].result[ri],rv=ev.rules.choices[ci].results[ri];
+        raw.reward=o.effects?.length?'fixture':'';raw.text=o.text||'Resultado observado';
+        raw.nextEvent=o.next===undefined?-2:typeof o.next==='number'?o.next:900000+keys.indexOf(o.next);
+        rv.required=o.required||null;rv.probability=o.probability===undefined?(c.outcomes?.length>1?null:'1'):o.probability;
+      });
+    });
+    nodes.set(name,ev);
+  }
+  const testIndex={...index,events:new Map([...index.events,...[...nodes.values()].map(e=>[`${e.group}:${e.id}`,e])])};
+  return {nodes,index:testIndex,root:nodes.get(keys[0])};
+}
+const reqStat=(id,n)=>view(token({domain:'userData_effective',index:id,quantity:n,comparison:'>='}));
+const reqItem=(id,n)=>view(token({domain:'inventory',index:id,quantity:n,comparison:'>='}));
+const remove=(id,n)=>token({operation:'remove_item',index:id,quantity:n});
+
+test('a future mandatory expense outweighs an attractive immediate reward',()=>{
+  const s=scenario({start:{choices:[{label:'Receber 20 agora',effects:[gold(20)],next:'bill'},{label:'Receber 10 e sair',effects:[gold(10)]}]},bill:{choices:[{label:'Pagar 100 para encerrar',effects:[gold(-100)]}]}});
+  const r=run();r.goals=[goal('gold','',200)];const before=E.clone(r);
+  const a=E.analyze(s.root,r,s.index);
+  assert.equal(a.recommendation,1);assert.equal(a.rows[0].outcomes[0].preview.state.stats[4],120);
+  assert.equal(a.rows[0].route.length,2);assert.ok(a.rows[0].reasons.some(x=>x.includes('Ouro: -80')));
+  assert.deepEqual(r,before);assert.equal(a.summary.comparisonComplete,true);
+});
+test('an upfront expense can be the best route to a later item',()=>{
+  const s=scenario({start:{choices:[{effects:[gold(-30)],next:'gift'},{effects:[gold(20)]}]},gift:{choices:[{effects:[add(0,1)]}]}});
+  const r=run();r.goals=[goal('item','item:0')];
+  assert.equal(E.analyze(s.root,r,s.index).recommendation,0);
+});
+test('future player decisions maximize the goal, while unavailable choices are excluded',()=>{
+  const s=scenario({start:{choices:[{next:'fork'},{effects:[gold(10)]}]},fork:{choices:[{effects:[gold(-100)]},{label:'Pegar a recompensa',effects:[gold(100)]}]}});
+  const r=run();r.goals=[goal('gold','',300)];
+  let a=E.analyze(s.root,r,s.index);assert.equal(a.recommendation,0);assert.equal(a.rows[0].route[1].choice,1);
+  s.nodes.get('fork').rules.choices[1].required=reqStat(4,200);
+  a=E.analyze(s.root,r,s.index);assert.equal(a.recommendation,1);assert.equal(a.rows[0].route[1].choice,0);
+});
+test('spending an item before a later requirement prevents planning that inaccessible route',()=>{
+  const s=scenario({start:{choices:[{effects:[remove(0,1)],next:'door'},{effects:[gold(10)]}]},door:{choices:[{required:reqItem(0,1),effects:[gold(100)]}]}});
+  const r=run();r.state.items[0]=1;r.goals=[goal('gold','',300)];
+  const a=E.analyze(s.root,r,s.index);assert.equal(a.recommendation,1);assert.equal(a.rows[0].feasible,false);
+});
+test('a goal reached temporarily is not mistaken for the final inventory',()=>{
+  const s=scenario({start:{choices:[{effects:[add(0,1)],next:'loss'},{effects:[add(0,1)]}]},loss:{choices:[{effects:[remove(0,1)]}]}});
+  const r=run();r.goals=[goal('item','item:0')];
+  assert.equal(E.analyze(s.root,r,s.index).recommendation,1);
+  r.state.inventoryComplete=false;
+  assert.equal(E.analyze(s.root,r,s.index).recommendation,1); // Unknown initial ownership cannot hide the later removal.
+});
+test('the future policy adapts to the item obtained from each random result',()=>{
+  const s=scenario({start:{choices:[{outcomes:[{effects:[add(0,1)],next:'keys'},{effects:[add(1,1)],next:'keys'}]},{effects:[gold(10)]}]},keys:{choices:[{label:'Usar chave 0',required:reqItem(0,1),effects:[add(2,1)]},{label:'Usar chave 1',required:reqItem(1,1),effects:[add(2,1)]}]}});
+  const r=run();r.goals=[goal('item','item:2')];const a=E.analyze(s.root,r,s.index);
+  assert.equal(a.recommendation,0);assert.equal(a.rows[0].outcomes[0].plan.route[1].choice,0);assert.equal(a.rows[0].outcomes[1].plan.route[1].choice,1);
+  assert.equal(r.state.items[2],undefined);
+});
+test('nested expected values use valid probabilities at every layer, with worst-case fallback',()=>{
+  const s=scenario({start:{choices:[{outcomes:[{next:'lottery',probability:'1/2'},{probability:'1/2'}]},{effects:[gold(10)]}]},lottery:{choices:[{outcomes:[{effects:[gold(100)],probability:'1/4'},{probability:'3/4'}]}]}});
+  const r=run({profile:'expected'});r.goals=[goal('gold','',1000)];
+  let a=E.analyze(s.root,r,s.index);assert.equal(a.recommendation,0);assert.ok(a.rows[0].expected>a.rows[1].expected);
+  r.profile='cautious';assert.equal(E.analyze(s.root,r,s.index).recommendation,1);
+  r.profile='expected';s.nodes.get('lottery').rules.choices[0].results[0].probability=null;
+  a=E.analyze(s.root,r,s.index);assert.equal(a.recommendation,1);assert.ok(a.rows[0].notes.some(x=>x.includes('pior resultado conhecido')));
+  s.nodes.get('lottery').rules.choices[0].results.forEach(rv=>rv.probability='1');
+  assert.equal(E.analyze(s.root,r,s.index).recommendation,1); // Invalid totals must not inflate the future average.
+});
+test('a known zero-probability outcome does not create an imaginary risk or stop the search',()=>{
+  const s=scenario({start:{choices:[{outcomes:[{effects:[gold(20)],probability:'1'},{effects:[{known:false,raw:'unknown'}],probability:'0'}]},{effects:[gold(10)]}]}});
+  const r=run({profile:'expected'});r.goals=[goal('gold','',300)];
+  const a=E.analyze(s.root,r,s.index);assert.equal(a.recommendation,0);assert.equal(a.summary.comparisonComplete,true);
+});
+test('an observed combat node uses all possible outcomes rather than choosing victory',()=>{
+  const s=scenario({start:{choices:[{next:'battle'},{effects:[gold(5)]}]},battle:{observedOnly:true,choices:[{effects:[gold(100)]},{effects:[gold(-20)]}]}});
+  s.nodes.get('battle').data.text='O combate terminou.';
+  const r=run({profile:'expected'});r.goals=[goal('gold','',300)];const a=E.analyze(s.root,r,s.index);
+  assert.equal(a.recommendation,1);assert.ok(a.rows[0].reasons.some(x=>x.includes('Ouro: -20')));
+  assert.ok(a.rows[0].notes.some(x=>x.includes('Desfechos de combate')));
+});
+test('state-changing returns unlock future choices without harvesting artificial infinite rewards',()=>{
+  const set=token({operation:'set_chain_state',index:9,quantity:1});
+  const s=scenario({start:{choices:[{effects:[set],next:'start'},{required:view(token({domain:'chainEventList',index:9,quantity:1,comparison:'=='})),effects:[gold(100)]},{effects:[gold(10)]}]}});
+  const r=run();r.state.states.chainEventList[9]=0;r.goals=[goal('gold','',300)];
+  const a=E.analyze(s.root,r,s.index);assert.equal(a.recommendation,0);assert.equal(a.rows[0].route[1].choice,1);assert.equal(a.summary.limited,false);
+  assert.equal(r.state.states.chainEventList[9],0);
+});
+test('unchanged loops are pruned, while profitable changing loops are explicitly unfinished',()=>{
+  const s=scenario({start:{choices:[{next:'start'},{effects:[gold(1)]}]}});
+  const r=run();r.goals=[goal('gold','',300)];
+  let a=E.analyze(s.root,r,s.index);assert.equal(a.recommendation,1);
+  s.root.rules.choices[0].results[0].reward=view(gold(1));s.root.data.choice[0].result[0].reward='fixture';
+  a=E.analyze(s.root,r,s.index,{}, {maxDepth:8,maxTransitions:100});
+  assert.equal(a.recommendation,null);assert.equal(a.summary.comparisonComplete,false);assert.equal(a.summary.limited,true);
+});
+test('a chain longer than three transitions is assessed through its final reward',()=>{
+  const definitions={start:{choices:[{next:'n1'},{effects:[gold(20)]}]}};
+  for(let i=1;i<=12;i++)definitions['n'+i]={choices:[i===12?{effects:[gold(100)]}:{next:'n'+(i+1)}]};
+  const s=scenario(definitions),r=run();r.goals=[goal('gold','',300)];
+  let a=E.analyze(s.root,r,s.index);assert.equal(a.recommendation,0);assert.equal(a.rows[0].route.length,13);
+  a=E.analyze(s.root,r,s.index,{}, {maxDepth:4,maxTransitions:100});assert.equal(a.recommendation,null);assert.equal(a.summary.limited,true);
+  a=E.analyze(s.root,r,s.index,{}, {maxTransitions:1});assert.equal(a.recommendation,null);assert.equal(a.summary.transitions,1);
+});
+test('unknown future requirements are not silently assumed available to reach the biggest reward',()=>{
+  const s=scenario({start:{choices:[{next:'uncertain'},{effects:[gold(10)]}]},uncertain:{choices:[{required:reqItem(0,1),effects:[gold(100)]},{effects:[gold(1)]}]}});
+  const r=run();r.state.inventoryComplete=false;r.goals=[goal('gold','',300)];
+  const a=E.analyze(s.root,r,s.index);assert.equal(a.recommendation,null);assert.equal(a.rows[0].route[1].choice,1);assert.equal(a.rows[0].complete,false);
+  assert.ok(a.rows[0].notes.some(x=>x.includes('requisitos desconhecidos')));
+});
+test('unmodeled effects and special destinations cannot be presented as evaluated endings',()=>{
+  const s=scenario({start:{choices:[{effects:[gold(100),{known:false,raw:'6_1_0'}],next:'gift'},{effects:[gold(10)]}]},gift:{choices:[{effects:[gold(100)]}]}});
+  const r=run();r.goals=[goal('gold','',300)];
+  let a=E.analyze(s.root,r,s.index);assert.equal(a.recommendation,null);assert.equal(a.rows[0].complete,false);assert.equal(a.rows[0].route.length,1);
+  s.root.rules.choices[0].results[0].reward=view(gold(100));s.root.data.choice[0].result[0].nextEvent=-3;
+  a=E.analyze(s.root,r,s.index);assert.equal(a.recommendation,null);assert.ok(a.rows[0].notes.some(x=>x.includes('Destino especial')));
+});
+test('memoization does not reuse an ancestor-pruned cycle as the value for another root choice',()=>{
+  const s=scenario({start:{choices:[{next:'a'},{next:'b'}]},a:{choices:[{next:'b'},{effects:[gold(20)]}]},b:{choices:[{next:'a'},{effects:[gold(10)]}]}});
+  const r=run();r.goals=[goal('gold','',300)];const a=E.analyze(s.root,r,s.index);
+  assert.equal(a.recommendation,null);assert.equal(a.rows[0].score,a.rows[1].score);
+  assert.deepEqual(a.rows[1].route.map(x=>x.eventKey),['EventNormal:900000','EventNormal:900002','EventNormal:900001']);
+});
+test('a difficult branch cannot consume the budget for displaying a direct known exit',()=>{
+  const s=scenario({start:{choices:[{effects:[gold(1)],next:'start'},{effects:[gold(10)]}]}});
+  const r=run();r.goals=[goal('gold','',300)];const a=E.analyze(s.root,r,s.index,{}, {maxTransitions:3});
+  assert.equal(a.recommendation,null);assert.equal(a.rows[1].complete,true);assert.ok(a.rows[1].reasons.some(x=>x.includes('Ouro: +10')));
+});
+test('unknown current gold cannot produce a false gold recommendation based on unrelated health',()=>{
+  const s=scenario({start:{choices:[{effects:[gold(100)]},{effects:[token({operation:'change_user_data',index:0,quantity:-1})]}]}});
+  const r=run();r.state.stats[4]=null;r.goals=[goal('gold','',300)];const a=E.analyze(s.root,r,s.index);
+  assert.equal(a.recommendation,null);assert.match(a.message,/Informe o ouro atual/);
+});

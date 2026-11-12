@@ -144,6 +144,53 @@ class GameModeBrowserTests(unittest.TestCase):
         self.assertIsNone(self.active()['selectedEvent'])
         self.assertEqual(self.active()['cursor'], 2)
 
+    def test_future_contract_reward_guides_the_current_choice_without_applying_it(self):
+        self.page.set_viewport_size({'width': 390, 'height': 844})
+        def extra():
+            self.page.locator('#gs12').fill('10')
+            self.page.locator('#gameInventoryComplete').check()
+        self.start(extra)
+        self.gold_goal()
+        self.encounter(466, 'EventNormal')
+        expect(self.page.locator('.game-recommended > summary')).to_contain_text('Sim sou eu')
+        plan = self.page.locator('.game-recommended .game-plan')
+        plan.locator('summary').first.click()
+        expect(plan).to_contain_text('Caminho avaliado até o fim')
+        expect(plan).to_contain_text('Assinar o contrato')
+        expect(plan).to_contain_text('Ouro: +80')
+        self.assertEqual(self.active()['state']['stats']['4'], 100)
+        self.assertEqual(self.active()['cursor'], 0)
+        self.assertLessEqual(self.page.evaluate('document.documentElement.scrollWidth'), 390)
+        plan.locator('[data-event="EventNormal:467"]').click()
+        expect(self.page.locator('#eventDialog')).to_be_visible()
+        expect(self.page.locator('#overviewPanel')).to_contain_text('Assinar o contrato')
+        self.assertEqual(self.active()['cursor'], 0)
+        self.page.locator('#closeDialog').click()
+        self.page.goto(self.base + '#catalogo=game', wait_until='networkidle')
+        self.result(0)
+        expect(self.page.locator('#gs4')).to_have_value('100')
+        self.save_result()
+        self.assertEqual(self.active()['selectedEvent'], 'EventNormal:467')
+        expect(self.page.locator('.game-recommended > summary')).to_contain_text('Assinar o contrato')
+        self.result(0)
+        expect(self.page.locator('#gs4')).to_have_value('180')
+        self.save_result()
+        self.assertEqual(self.active()['state']['stats']['4'], 180)
+        self.assertEqual(self.active()['cursor'], 2)
+
+    def test_unknown_future_effects_show_a_partial_plan_without_a_false_best_choice(self):
+        self.start()
+        self.gold_goal()
+        self.encounter(10, 'EventBattle')
+        expect(self.page.locator('#gamePlanningStatus')).to_contain_text('Há caminhos sem comparação completa')
+        self.assertEqual(self.page.locator('.game-recommended').count(), 0)
+        plan = self.page.locator('.game-choice .game-plan').first
+        plan.locator('summary').first.click()
+        expect(plan).to_contain_text('Análise parcial')
+        expect(plan).to_contain_text('efeitos ainda não modelados')
+        self.assertEqual(self.active()['cursor'], 0)
+        self.assertEqual(self.active()['state']['stats']['4'], 100)
+
     def test_setup_captures_real_inventory_traits_abilities_and_unknown_fields(self):
         def extra():
             self.page.locator('#gameItemPick').fill('Adaga · #0')
