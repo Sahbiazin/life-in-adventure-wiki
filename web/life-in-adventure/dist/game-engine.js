@@ -1,10 +1,10 @@
 /* Pure, conservative model for the manual run companion. No DOM or storage. */
 'use strict';
 ((root, factory) => {
-  const api = factory();
+  const api = factory(typeof module === 'object' && module.exports ? require('./combat-engine.js') : root.AtlasCombat);
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.AtlasRun = api;
-})(globalThis, () => {
+})(globalThis, C => {
   const VERSION = 1;
   const STATS = {0:'Saúde',1:'Sanidade',2:'EXP',3:'Alinhamento',4:'Ouro',5:'Força',6:'Destreza',7:'Inteligência',8:'Saúde máxima',9:'Sanidade máxima',12:'Carisma',13:'Constituição',14:'Sabedoria'};
   const FAMILIES = ['mainEventList','subEventList','chainEventList'];
@@ -97,7 +97,7 @@
   function blankState() {
     return {stats:Object.fromEntries(Object.keys(STATS).map(k=>[k,null])),alignmentRange:null,items:{},inventoryComplete:false,
       traits:[],traitsComplete:false,abilities:{},states:Object.fromEntries(FAMILIES.map(f=>[f,{}])),
-      endings:{main:[],sub:[]},catalog:{item:[],monster:[],ending:[]},completedGoals:[],score:null,pending:[],flagsUncertain:false};
+      endings:{main:[],sub:[]},catalog:{item:[],monster:[],ending:[]},completedGoals:[],score:null,pending:[],flagsUncertain:false,combat:C.blankSetup()};
   }
   function cleanState(input,index) {
     if(!input || typeof input!=='object' || Array.isArray(input))fail('Estado da run inválido.');
@@ -126,6 +126,7 @@
       return out;
     };
     s.items=counts(input.items,'item');s.abilities=counts(input.abilities,'ability');
+    s.combat=C.cleanSetup(input.combat,index);
     const list=(values,check)=>{
       if(!Array.isArray(values)||values.length>10000)fail('Lista da run inválida.');
       if(!values.every(check))fail('Registro inválido na lista da run.');
@@ -327,7 +328,19 @@
           transitions++;
           const uncertain=conditional||eligible===null,preview=previewResult(ev,choiceIndex,ri,ctx.state,index),nextKey=continuationKey(ev,choiceIndex,ri,index);
           const path=[...ctx.path,{eventKey:key,choice:choiceIndex,result:ri,label:choiceLabel,nextKey,conditional:uncertain,combat:preview.controls.length>0,test:Boolean(cv?.test),outcome:view?.testOutcome||null}];
-          for(const control of preview.controls)keep(combats,`${choiceKey}:${ri}:${control.raw}`,{...control,eventKey:key,choice:choiceIndex,result:ri,label:choiceLabel,depth:ctx.depth,conditional:uncertain,path});
+          for(const control of preview.controls){
+            const combatKey=`${choiceKey}:${ri}:${control.raw}`,prior=combats.get(combatKey),projection={state:clone(preview.state),effectsUnknown:ctx.tainted||unmodeledReward(raw,view),conditional:uncertain,path};
+            const scenarios=prior?.scenarios||[],signature=JSON.stringify([projection.state,projection.effectsUnknown]);
+            let scenariosTruncated=prior?.scenariosTruncated||false;
+            if(!scenarios.some(s=>JSON.stringify([s.state,s.effectsUnknown])===signature)){
+              if(scenarios.length<8)scenarios.push(projection);else scenariosTruncated=true;
+            }
+            const descriptor={...control,eventKey:key,choice:choiceIndex,result:ri,label:choiceLabel,depth:ctx.depth,conditional:uncertain,path,scenarios,scenariosTruncated};
+            keep(combats,combatKey,descriptor);
+            // Keep every distinct pre-combat projection even if another path
+            // supplied the preferred human-readable descriptor.
+            Object.assign(combats.get(combatKey),{scenarios,scenariosTruncated});
+          }
           const afterCombat=ctx.afterCombat||preview.controls.length>0;
           // Combat changes the visible character; preserve known story flags,
           // but don't filter aftermath by today's HP, equipment or abilities.

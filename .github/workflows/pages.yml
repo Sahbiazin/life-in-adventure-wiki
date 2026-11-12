@@ -40,7 +40,7 @@ jobs:
           import json
           from pathlib import Path
           root = Path('web/life-in-adventure/dist')
-          expected = {'index.html', 'app.js', 'styles.css', 'events-data.js', 'game-engine.js', 'game-mode.js', 'layout.js', 'event-flow.js', 'event-flow.css'}
+          expected = {'index.html', 'app.js', 'styles.css', 'events-data.js', 'game-engine.js', 'game-mode.js', 'layout.js', 'event-flow.js', 'event-flow.css', 'combat-engine.js', 'combat-calculator.js', 'combat-calculator.css'}
           assert {p.name for p in root.iterdir() if p.is_file()} == expected
           data = (root / 'events-data.js').read_text(encoding='utf-8')
           payload = json.loads(data.removeprefix('window.ATLAS_DATA=').strip().removesuffix(';'))
@@ -50,6 +50,8 @@ jobs:
           print('Pacote verificado: 3683 eventos e 1188 registros de catálogo.')
           PY
           node --check web/life-in-adventure/dist/app.js
+          node --check web/life-in-adventure/dist/combat-engine.js
+          node --check web/life-in-adventure/dist/combat-calculator.js
           node --check web/life-in-adventure/dist/game-engine.js
           node --check web/life-in-adventure/dist/game-mode.js
           node --check web/life-in-adventure/dist/layout.js

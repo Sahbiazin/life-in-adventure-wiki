@@ -39,6 +39,7 @@
   };
   const sections = {
     game:{title:'Modo de Jogo', label:'Modo de Jogo', icon:'▷', description:'Acompanhe sua run, compare escolhas e registre o que aconteceu no celular.'},
+    combat:{title:'Calculadora de combate',label:'Calculadora de combate',icon:'⚔',description:'Monte seu equipamento e compare estimativas de vitória contra os monstros.'},
     events:{title:'Atlas de eventos', label:'Eventos', icon:'◇', description:'Explore os encontros e todas as possibilidades da sua aventura.'},
     item:{title:'Itens', label:'Itens', icon:'✧', description:'Equipamentos e objetos, seus dados e os eventos relacionados.'},
     monster:{title:'Monstros', label:'Monstros', icon:'⚔', description:'Conheça as criaturas e encontre os encontros em que são listadas.'},
@@ -237,7 +238,7 @@
     if(view==='ability')return [attribute,effectText,{key:'variant',label:'Variante',options:codedOptions('ability','number','Variante')},linked];
     if(view==='trait')return [attribute,effectText,{key:'jewels',label:'Preço em joias',options:[['known','Com preço registrado'],['unknown','Sem preço registrado']]},linked];
     if(view==='ending')return [{key:'endingGroup',label:'Grupo de epílogo',options:[['main','História principal'],['sub','Conto']]},{key:'story',label:'História / conto',options:[...new Set(catalogs.filter(c=>c.kind==='ending').map(c=>c.story))].sort((a,b)=>a-b).map(v=>[String(v),`História / conto #${v}`])},effectText,linked];
-    if(view==='favorites'||view==='history')return [{key:'recordKind',label:'Tipo de registro',options:Object.entries(sections).filter(([key])=>!['game','favorites','history'].includes(key)).map(([key,c])=>[key==='events'?'event':key,c.label])},attribute,effectText];
+    if(view==='favorites'||view==='history')return [{key:'recordKind',label:'Tipo de registro',options:Object.entries(sections).filter(([key])=>!['game','combat','favorites','history'].includes(key)).map(([key,c])=>[key==='events'?'event':key,c.label])},attribute,effectText];
     return [];
   }
   function matchesFacets(e) {
@@ -290,9 +291,9 @@
 
   function render() {
     const eventView = state.view === 'events', section = sections[state.view];
-    const gameView=state.view==='game';
+    const gameView=state.view==='game',combatView=state.view==='combat';
     window.AtlasLayout?.setGameView(gameView);
-    $('gameRoot').hidden=!gameView;$('atlasCatalog').hidden=gameView;$('ruleCoverage').hidden=gameView;
+    $('gameRoot').hidden=!gameView;$('combatRoot').hidden=!combatView;$('atlasCatalog').hidden=gameView||combatView;$('ruleCoverage').hidden=gameView||combatView;
     if(!gameView)window.AtlasGame?.hide();
     $('eventFilters').hidden = !eventView; $('eventStats').hidden = !eventView;
     $('eventsTable').hidden = !eventView; $('recordGrid').hidden = eventView;
@@ -308,6 +309,7 @@
       if(selected) button.setAttribute('aria-current','page'); else button.removeAttribute('aria-current');
     }
     if(gameView){if(window.AtlasGame)window.AtlasGame.render();else $('gameRoot').textContent='Não foi possível carregar o Modo de Jogo. Recarregue a página.';renderNotebookCounts();return;}
+    if(combatView){window.AtlasCombatUI.render();renderNotebookCounts();return;}
     for(const [value,label] of [['price-asc','Preço: menor primeiro'],['price-desc','Preço: maior primeiro']]) {
       if(!$('sort').querySelector(`[value="${value}"]`))$('sort').add(new Option(label,value));
       $('sort').querySelector(`[value="${value}"]`).hidden=state.view!=='item';
@@ -389,7 +391,7 @@
   const changePage=delta=>{state.page+=delta;render();$('catalogTitle').scrollIntoView({block:'start',behavior:'smooth'});};
   $('prevPage').onclick=()=>changePage(-1);$('nextPage').onclick=()=>changePage(1);
   document.addEventListener('keydown',event=>{
-    if(event.key==='/' && !dialog.open && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)){event.preventDefault();(state.view==='game'?$('gameEventQuery'):$('search'))?.focus();}
+    if(event.key==='/' && !dialog.open && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)){event.preventDefault();(state.view==='game'?$('gameEventQuery'):state.view==='combat'?$('combatRoot').querySelector('[data-combat-query]'):$('search'))?.focus();}
   });
 
   function targetName(e,r) {
@@ -624,7 +626,8 @@
     if(dialog.open)return;
     document.body.style.overflow='';
     current=null;detailHistory=[];
-    if(lastFocus?.isConnected)lastFocus.focus();
+    // A queued close must not steal focus from a search shortcut already used.
+    if(lastFocus?.isConnected&&(document.activeElement===document.body||dialog.contains(document.activeElement)))lastFocus.focus();
   });
   window.addEventListener('storage',event=>{
     if(event.key===storageKey || event.key===null){loadNotebook();render();updateDetailActions();}
@@ -634,6 +637,7 @@
   $('statResults').textContent=fmt(events.reduce((n,e)=>n+e.results,0));
   $('useInRun').onclick=()=>{if(current?.kind==='event')window.AtlasGame?.chooseEvent(current.key);};
   window.AtlasGame?.init(target=>byKey.has(target)?navigateRecord(target):navigateView(target));
+  window.AtlasCombatUI.init(target=>byKey.has(target)?navigateRecord(target):navigateView(target),()=>window.AtlasGame.getActiveRun());
   renderAudit();
   syncRoute();
 })();

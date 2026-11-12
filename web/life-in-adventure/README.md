@@ -15,6 +15,7 @@ O botão de sol/lua na barra superior alterna os temas claro e escuro, incluindo
 - **Links diretos:** “Copiar link” abre exatamente o registro selecionado, preservando o ID e a tabela. Exemplo de fragmento de evento: `#evento=EventTreasure%3A346`; de item: `#catalogo=item&registro=item%3A181`. Links antigos de eventos continuam funcionando. Os botões Voltar/Avançar do navegador acompanham as consultas. Se o navegador impedir a cópia automática, o endereço aparece em um campo selecionável.
 - **Caderno local:** estrelas guardam eventos e registros nos favoritos. O histórico mantém as últimas 100 consultas, sem repetições, da mais recente à mais antiga; pode ser limpo na própria seção. Ambos usam `localStorage`, na chave `life-in-adventure:notebook:v1`, apenas neste navegador e origem. Se o armazenamento estiver bloqueado, continuam funcionando na memória durante a visita, com aviso. Não há sincronização entre dispositivos.
 - **Modo de Jogo:** ficha inicial com valores efetivos, inventário, traços e habilidades, objetivos ordenados, busca do encontro observado e comparação provisória das escolhas. O jogador seleciona e confere o resultado real antes de atualizar a ficha. Inclui correções, diário, desfazer/refazer, várias runs e backup JSON. Os saves usam a chave separada `life-in-adventure:runs:v1`. Veja o [guia e os limites](../../docs/modo-de-jogo.md).
+- **Calculadora de combate:** ficha de atributos, grau, traços e equipamento, índice de poder estimado e lista pesquisável de monstros com chances por simulação. A mesma configuração acompanha a run e os combates atuais/futuros nos dois modos. Efeitos sem cobertura ficam identificados; porcentagens não garantem vitória. [Fórmulas, fontes e limites](../../docs/calculadora-de-combate.md).
 - **Planejamento do encontro:** as sugestões comparam o saldo até o fim das sequências diretas, reavaliando escolhas futuras com a ficha estimada de cada etapa. Diferenciam decisões do jogador de sorteios e desfechos de combate. O plano mostra um cenário considerado e seus avisos, sem alterar a run. Regras desconhecidas ou limites de busca geram análise parcial, sem uma indicação de melhor escolha para o encontro inteiro.
 - **Alinhamento:** requisitos e recompensas identificam o atributo, incluindo deltas negativos. A ficha aceita o nome da faixa ou um valor exato; nomes mantêm intervalos, sem presumir zero. Faixas ambíguas continuam desconhecidas para os requisitos que dependem de um valor mais preciso. Saves antigos permanecem compatíveis. [Detalhes e fontes](../../docs/alinhamento.md).
 
@@ -40,6 +41,8 @@ Na raiz:
 ```sh
 .venv/bin/python -X utf8 -m unittest discover -s tests -v
 node --check web/life-in-adventure/dist/app.js
+node --check web/life-in-adventure/dist/combat-engine.js
+node --check web/life-in-adventure/dist/combat-calculator.js
 node --check web/life-in-adventure/dist/game-engine.js
 node --check web/life-in-adventure/dist/game-mode.js
 node --test web/life-in-adventure/tests/*.test.cjs
@@ -60,7 +63,7 @@ Os testes do motor verificam requisitos com dados desconhecidos, objetivos e pri
 
 Site publicado: [Life in Adventure · Atlas de eventos](https://sahbiazin.github.io/life-in-adventure-wiki/).
 
-O workflow `.github/workflows/pages.yml` publica somente os nove arquivos da pasta `dist`, sem incluir o APK ou os arquivos de extração no site. Ele verifica a estrutura do bundle, a sintaxe dos scripts e os testes do motor. Usa o bundle já versionado; depois de alterar a geração dos dados, atualize o bundle antes do envio.
+O workflow `.github/workflows/pages.yml` publica somente os doze arquivos da pasta `dist`, sem incluir o APK ou os arquivos de extração no site. Ele verifica a estrutura do bundle, a sintaxe dos scripts e os testes do motor. Usa o bundle já versionado; depois de alterar a geração dos dados, atualize o bundle antes do envio.
 
 Para a primeira publicação, o repositório precisa ter o GitHub Pages ativado com **Settings → Pages → Build and deployment → Source → GitHub Actions**. Em uma conta gratuita, mantenha o repositório público. A publicação é executada nos envios para `master` que alteram o aplicativo ou o workflow; também pode ser iniciada em **Actions → Publicar atlas no GitHub Pages → Run workflow**.
 
