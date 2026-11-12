@@ -118,3 +118,10 @@
 :root[data-theme=dark] :focus-visible{outline-color:#c3dda5}
 :root[data-theme=dark] .catalog h2 span{background:var(--surface-raised);color:var(--secondary)}
 :root[data-theme=dark] .clear-filters{color:var(--accent)}
+
+/* Risks and alternatives across all reachable branches, including partial plans. */
+.future-consequences{background:var(--surface-raised,#f5f5eb);border:1px solid var(--line,#dfe5ce);border-left:3px solid #9b733b;border-radius:6px;margin:14px 0;padding:13px 15px;font-size:12px;line-height:1.8;overflow-wrap:anywhere;min-width:0}
+.future-consequences p{font-size:12px;margin:8px 0}.future-consequences ul{padding-left:20px}.future-consequences summary{cursor:pointer;font-weight:600}.future-consequences button{max-width:100%;white-space:normal}.future-ending{margin:12px 0;padding-top:10px;border-top:1px solid var(--line,#dfe5ce)}
+.future-risk-badge{display:inline-block;padding:3px 7px;border:1px solid #ab8b4e;border-radius:4px;color:#745420;background:#f8eed5;font-size:11px;line-height:1.5;font-weight:600}
+:root[data-theme=dark] .future-risk-badge{color:var(--amber);background:#352c1e;border-color:#7c6441}
+:root[data-theme=dark] .future-consequences{border-left-color:#bd985d;color:var(--secondary)}

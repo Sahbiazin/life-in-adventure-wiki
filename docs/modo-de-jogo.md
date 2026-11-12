@@ -27,6 +27,16 @@ O diário guarda o antes/depois, evento, escolha, resultado, observações e os 
 
 No Atlas, **Mapa de escolhas** conecta os nós das etapas seguintes aos resultados de origem, incluindo ramificações, convergências e retornos. Use a rolagem e o zoom para percorrer o diagrama. Mapas grandes começam com até quatro transições e 32 nós; **Mostrar mais etapas e ramificações** amplia esses limites, e cada destino também pode ser aberto diretamente. A lista abaixo do mapa oferece os textos das escolhas e resultados para leitura sem zoom. Isso descreve as conexões registradas, sem prever encontros aleatórios ou ignorar requisitos futuros.
 
+## Consequências visíveis antes de aceitar
+
+Cada escolha agora mostra **Consequências adiante**, com inimigos que podem aparecer, testes de atributos, valores usados da ficha, requisitos de próximas opções e saídas sem combate. Os desfechos posteriores incluem seus efeitos e links para as etapas de origem. O Atlas também apresenta essas ligações na consulta normal, em **Desdobramentos desta escolha**.
+
+O resumo reúne os ramos alcançáveis, incluindo os condicionais; não depende apenas da rota de referência escolhida pelo planejador. Requisitos comprovadamente falsos e resultados com probabilidade estática zero são excluídos. Retornos são percorridos quando mudam o estado. Um requisito desconhecido mantém o ramo como possibilidade, sem certificá-lo como disponível. Depois de um combate, os valores visíveis que podem mudar ficam desconhecidos na projeção; estados de história já conhecidos são preservados. Um efeito não interpretado também torna condicionais os requisitos posteriores. Nenhuma dessas projeções escreve a run.
+
+Em **Tesouro #360 → Aceitar**, as ligações confirmadas são **#361 → #362 → #363**, com desfechos de combate em **#364** em alguns ramos. O resumo avisa sobre o **Entearvore**, o teste de Carisma para negociar e a possibilidade de desistir da negociação sem lutar. Uma negociação pode falhar; os 50/70 ouros dependem do contrato e do resultado confirmado. Enfrentar o encontro não implica escolher o combate, nem ter Força elevada garante vitória: saúde, equipamento, habilidades e regras de batalha também importam. A capacidade de vencer com a ficha ainda não é calculada.
+
+O resumo tem orçamento próprio de **64 etapas, 256 estados e 800 resultados por escolha**. Quando atinge o limite, a interface avisa que outras consequências podem existir. Destinos especiais e efeitos desconhecidos permanecem sinalizados. Mostrar seus ramos condicionais não os transforma em encerramentos garantidos nem em uma comparação numérica completa.
+
 ## Como as sugestões funcionam
 
 - A busca segue as transições diretas na mesma tabela até `nextEvent = -2`, o encerramento conhecido. Não prevê os próximos encontros aleatórios da run. Um custo inicial pode valer a pena por uma recompensa posterior; uma recompensa imediata pode ser ruim se o caminho exigir pagar mais depois.

@@ -470,3 +470,77 @@ test('Treasure 80 starts the dwarf battle and waits for the observed outcome acr
   assert.equal(E.undo(saved).selectedEvent,'EventTreasure:80');
   assert.equal(E.redo(E.undo(saved),index).selectedEvent,'EventTreasure:81');
 });
+
+const treant=()=>token({operation:'start_combat',index:0,quantity:161,monster_id:161,enemy_source:'fixed',combat_power_factor:1,initial_state:null,requires_observation:true},'Iniciar combate');
+
+test('accepting Treasure 360 exposes the treant, peaceful exit, charisma test and combat aftermath before committing',()=>{
+  const r=run();r.state.stats[5]=4;r.state.stats[12]=4;r.goals=[goal('gold','',200)];
+  const before=E.clone(r),a=E.analyze(event('EventTreasure:360'),r,index),f=a.rows[0].forecast;
+  assert.deepEqual(f.stages.map(s=>s.key),['EventTreasure:361','EventTreasure:362','EventTreasure:363','EventTreasure:364']);
+  assert.equal(f.truncated,false);assert.ok(f.combats.some(c=>c.enemyKey==='monster:161'&&c.enemy==='Entearvore'));
+  assert.ok(a.rows[0].notes.some(n=>n.includes('Entearvore')));
+  const negotiation=f.tests.find(t=>t.eventKey==='EventTreasure:363');
+  assert.equal(negotiation.test.label,'Teste de Carisma');assert.equal(negotiation.values[12],4);
+  assert.ok(f.peacefulExit);assert.equal(f.peacefulExit.afterCombat,false);
+  assert.equal(f.peacefulExit.label,'Desistir da negociação');
+  assert.ok(f.peacefulExit.path.every(s=>!s.combat&&!s.test));
+  assert.ok(f.exits.some(e=>e.afterCombat&&e.reward?.tokens.some(t=>t.model?.operation==='change_user_data'&&t.model.index===0&&t.model.quantity===-1)));
+  assert.ok(f.exits.some(e=>e.afterCombat&&e.destination===-3));
+  assert.equal(a.recommendation,null);assert.deepEqual(r,before);
+});
+
+test('future warning retains an optional enemy hidden by the policy representative or an unknown requirement',()=>{
+  const s=scenario({start:{choices:[{next:'fork'},{}]},fork:{choices:[{effects:[gold(10)]},{required:reqItem(0,1),effects:[treant()],next:'aftermath'}]},aftermath:{observedOnly:true,choices:[{effects:[gold(100)]},{}]}});
+  const r=run();r.state.inventoryComplete=false;r.goals=[goal('gold','',200)];
+  const a=E.analyze(s.root,r,s.index),f=a.rows[0].forecast;
+  assert.equal(f.combats.length,1);assert.equal(f.combats[0].conditional,true);
+  assert.ok(!a.rows[0].route.some(step=>step.eventKey===`${s.nodes.get('aftermath').group}:${s.nodes.get('aftermath').id}`));
+  assert.ok(f.peacefulExit);assert.ok(f.exits.some(e=>e.afterCombat));
+});
+
+test('future warnings exclude impossible and zero probability branches and react to a changed inventory',()=>{
+  const s=scenario({start:{choices:[{next:'fork'}]},fork:{choices:[{required:reqItem(0,1),effects:[treant()]},{outcomes:[{probability:'0',effects:[treant()]},{probability:'1'}]}]}});
+  const r=run();let f=E.forecastChoice(s.root,0,r.state,s.index);
+  assert.deepEqual(f.combats,[]);assert.ok(f.gates.some(g=>g.available===false));
+  r.state.items[0]=1;f=E.forecastChoice(s.root,0,r.state,s.index);
+  assert.equal(f.combats.length,1);assert.equal(f.combats[0].conditional,false);
+});
+
+test('the aftermath retains low-health branches without discarding a known contract flag',()=>{
+  const reqFlag=value=>view(token({domain:'chainEventList',index:9,quantity:value,comparison:'=='}));
+  const lowHealth=view(token({domain:'userData_effective',index:0,quantity:2,comparison:'<'}));
+  const s=scenario({start:{choices:[{effects:[treant()],next:'aftermath'}]},aftermath:{observedOnly:true,choices:[{outcomes:[{required:reqFlag(0),effects:[gold(50)]},{required:reqFlag(1),effects:[gold(70)]}]},{required:lowHealth,next:-3}]}});
+  const r=run();r.state.states.chainEventList[9]=0;
+  const f=E.forecastChoice(s.root,0,r.state,s.index);
+  assert.ok(f.exits.some(e=>e.destination===-3));
+  assert.ok(f.exits.some(e=>e.reward?.tokens.some(t=>t.model?.operation==='change_user_data'&&t.model.index===4&&t.model.quantity===50)));
+  assert.ok(!f.exits.some(e=>e.reward?.tokens.some(t=>t.model?.operation==='change_user_data'&&t.model.index===4&&t.model.quantity===70)));
+  assert.equal(f.peacefulExit,null);assert.ok(f.exits.every(e=>e.conditional));
+  assert.equal(r.state.stats[0],10);
+});
+
+test('state-changing returns are followed and forecast limits never imply a complete or peaceful route',()=>{
+  const flag=value=>view(token({domain:'chainEventList',index:9,quantity:value,comparison:'=='}));
+  const s=scenario({start:{choices:[{effects:[token({operation:'set_chain_state',index:9,quantity:1})],next:'start'},{required:flag(1),effects:[treant()],next:'finish'}]},finish:{choices:[{}]}});
+  const r=run();r.state.states.chainEventList[9]=0;
+  const f=E.forecastChoice(s.root,0,r.state,s.index);
+  assert.equal(f.combats.length,1);assert.equal(f.truncated,false);assert.equal(f.peacefulExit,null);
+  const limited=E.forecastChoice(s.root,0,r.state,s.index,{maxDepth:1});
+  assert.equal(limited.truncated,true);assert.equal(limited.peacefulExit,null);
+});
+
+test('an unknown command cannot certify a peaceful path or suppress a conditional future enemy',()=>{
+  const s=scenario({start:{choices:[{effects:[{known:false,raw:'unknown_command'}],next:'fork'}]},fork:{choices:[{}, {required:reqStat(5,100),effects:[treant()]}]}});
+  const r=run(),f=E.forecastChoice(s.root,0,r.state,s.index);
+  assert.equal(f.combats.length,1);assert.equal(f.combats[0].conditional,true);assert.equal(f.peacefulExit,null);
+  assert.ok(f.exits.every(e=>e.effectsUnknown));
+});
+
+test('a later prerequisite is not labeled impossible when another preceding route can satisfy it',()=>{
+  const s=scenario({start:{choices:[{next:'fork'}]},fork:{choices:[{next:'gate'},{effects:[token({operation:'change_user_data',index:5,quantity:6})],next:'gate'}]},gate:{choices:[{required:reqStat(5,10),effects:[treant()]}]}});
+  const r=run();r.state.stats[5]=4;
+  const f=E.forecastChoice(s.root,0,r.state,s.index);
+  const gate=f.gates.find(g=>g.eventKey===`${s.nodes.get('gate').group}:${s.nodes.get('gate').id}`);
+  assert.equal(gate.available,true);assert.equal(f.combats.length,1);
+  assert.equal(r.state.stats[5],4);
+});

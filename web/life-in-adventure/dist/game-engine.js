@@ -268,10 +268,79 @@
   const rewardOperations = new Set(['change_user_data','add_item','remove_item','set_chain_state','set_sub_state','set_main_state','record_main_ending','record_sub_ending','remove_main_ending','remove_sub_ending']);
   const outcomeNode = event => (event.data.choice||[]).length>0&&event.data.choice.every(c=>!plain(c.text));
   const unique = values => [...new Set(values)];
+  function unmodeledReward(raw,view) {
+    return Boolean(raw.reward&&(!view?.reward?.tokens?.length||view.reward.tokens.some(t=>!t.known||(!rewardOperations.has(t.model?.operation)&&t.model?.operation!=='start_combat'))));
+  }
   function staticProbability(value) {
     if(typeof value!=='string'||!/^\d+(?:\/\d+)?$/.test(value))return null;
     const [n,d=1]=value.split('/').map(Number),p=n/d;
     return finite(p)&&p>=0&&p<=1?p:null;
+  }
+  // Keep all reachable branches for the warning, separately from the policy's
+  // representative route. A partial numeric plan must not hide a later enemy.
+  function forecastChoice(event,ci,state,index,{available,maxDepth=64,maxStates=256,maxTransitions=800}={}) {
+    const stages=new Map(),combats=new Map(),tests=new Map(),gates=new Map(),exits=new Map(),seen=new Map();
+    const rootKey=`${event.group}:${event.id}`,queue=[{event,state:clone(state),depth:0,path:[],conditional:false,afterCombat:false,tainted:false,first:true}];
+    let transitions=0,truncated=false,unresolved=false;
+    const keep=(map,key,value)=>{const old=map.get(key);if(!old||(old.conditional&&!value.conditional))map.set(key,value);};
+    for(let cursor=0;cursor<queue.length;cursor++) {
+      const ctx=queue[cursor],ev=ctx.event,key=`${ev.group}:${ev.id}`;
+      const signature=JSON.stringify([key,ctx.state,ctx.afterCombat,ctx.tainted,ctx.first]);
+      if(seen.has(signature)&&(!seen.get(signature)||ctx.conditional))continue;
+      if(seen.size>=maxStates){truncated=true;break;}
+      seen.set(signature,ctx.conditional);
+      if(key!==rootKey)keep(stages,key,{key,depth:ctx.depth,conditional:ctx.conditional,path:ctx.path});
+      if(ctx.depth>=maxDepth){truncated=true;continue;}
+      for(const [choiceIndex,choice] of (ev.data.choice||[]).entries()) {
+        if(ctx.first&&choiceIndex!==ci)continue;
+        const cv=ev.rules?.choices?.[choiceIndex],choiceKey=`${key}:${choiceIndex}`;
+        const allowed=ctx.first&&typeof available==='boolean'?available:ctx.tainted&&cv?.required?null:requirement(cv?.required,ctx.state);
+        const choiceLabel=plain(choice.text)||'Desfecho / ramo '+(choiceIndex+1);
+        if(ctx.depth>0&&cv?.required) {
+          const gate={eventKey:key,choice:choiceIndex,label:choiceLabel,required:cv.required,available:allowed,conditional:ctx.conditional,path:ctx.path};
+          const prior=gates.get(choiceKey),rank=value=>value===true?2:value===null?1:0;
+          // A different earlier choice may satisfy this same later gate.
+          if(!prior||rank(allowed)>rank(prior.available)||(allowed===prior.available&&prior.conditional&&!gate.conditional))gates.set(choiceKey,gate);
+        }
+        if(allowed===false)continue;
+        const conditional=ctx.conditional||allowed===null;
+        if(ctx.depth>0&&cv?.test)keep(tests,choiceKey,{eventKey:key,choice:choiceIndex,label:choiceLabel,test:clone(cv.test),
+          values:Object.fromEntries(cv.test.attributes.map(a=>[a.index,ctx.tainted?null:ctx.state.stats[a.index]??null])),conditional,path:ctx.path});
+        for(const [ri,raw] of (choice.result||[]).entries()) {
+          const view=cv?.results?.[ri];
+          const eligible=ctx.tainted&&view?.required?null:requirement(view?.required,ctx.state);
+          if(eligible===false||staticProbability(view?.probability)===0)continue;
+          if(transitions>=maxTransitions){truncated=true;break;}
+          transitions++;
+          const uncertain=conditional||eligible===null,preview=previewResult(ev,choiceIndex,ri,ctx.state,index),nextKey=continuationKey(ev,choiceIndex,ri,index);
+          const path=[...ctx.path,{eventKey:key,choice:choiceIndex,result:ri,label:choiceLabel,nextKey,conditional:uncertain,combat:preview.controls.length>0,test:Boolean(cv?.test),outcome:view?.testOutcome||null}];
+          for(const control of preview.controls)keep(combats,`${choiceKey}:${ri}:${control.raw}`,{...control,eventKey:key,choice:choiceIndex,result:ri,label:choiceLabel,depth:ctx.depth,conditional:uncertain,path});
+          const afterCombat=ctx.afterCombat||preview.controls.length>0;
+          // Combat changes the visible character; preserve known story flags,
+          // but don't filter aftermath by today's HP, equipment or abilities.
+          // Truly unmodeled commands also make the story requirements uncertain.
+          const tainted=ctx.tainted||unmodeledReward(raw,view);
+          if(preview.controls.length) {
+            for(const k of Object.keys(preview.state.stats))preview.state.stats[k]=null;
+            preview.state.alignmentRange=null;preview.state.items={};preview.state.inventoryComplete=false;
+            preview.state.abilities={};preview.state.traits=[];preview.state.traitsComplete=false;
+          }
+          if(raw.nextEvent===-2||raw.nextEvent<0) {
+            keep(exits,`${choiceKey}:${ri}:${afterCombat}`,{eventKey:key,choice:choiceIndex,result:ri,label:choiceLabel,destination:raw.nextEvent,
+              text:plain(raw.text),changes:preview.changes,reward:view?.reward||null,afterCombat,effectsUnknown:tainted,conditional:uncertain||tainted||afterCombat,path});
+            if(raw.nextEvent!==-2)unresolved=true;
+          } else if(nextKey) {
+            if(queue.length<maxStates*4)queue.push({event:index.events.get(nextKey),state:preview.state,depth:ctx.depth+1,path,
+              conditional:uncertain||tainted||afterCombat,afterCombat,tainted,first:false});
+            else truncated=true;
+          } else unresolved=true;
+        }
+      }
+    }
+    const endings=[...exits.values()];
+    const peaceful=endings.filter(e=>e.destination===-2&&!e.afterCombat&&!e.effectsUnknown).sort((a,b)=>Number(a.conditional)-Number(b.conditional)||a.path.filter(s=>s.test).length-b.path.filter(s=>s.test).length||a.path.length-b.path.length)[0]||null;
+    return {stages:[...stages.values()],combats:[...combats.values()],tests:[...tests.values()],gates:[...gates.values()],exits:endings,peacefulExit:peaceful,
+      truncated,unresolved,transitions,states:seen.size};
   }
   // An expectimax/minimax search over the *state* at each step. It never writes a run.
   // Limits, unknown effects and unresolved loops are reported, not turned into endpoints.
@@ -349,7 +418,7 @@
         else if(summary.transitions>=config.maxTransitions&&!(isRoot&&raw.nextEvent===-2)){summary.limited=true;plan=partial('Limite de resultados analisados atingido; continuação não concluída.');}
         else {
           if(summary.transitions<config.maxTransitions)summary.transitions++;
-          const nextLedger=track(ledger,view),unknown=Boolean(raw.reward&&(!view?.reward?.tokens?.length||view.reward.tokens.some(t=>!t.known||(!rewardOperations.has(t.model?.operation)&&t.model?.operation!=='start_combat'))));
+          const nextLedger=track(ledger,view),unknown=unmodeledReward(raw,view);
           const target=continuationKey(ev,ci,ri,index);
           if(unknown)plan=partial('Há efeitos ainda não modelados; a continuação deste ramo precisa ser conferida no jogo.');
           else if(preview.controls.length)plan=partial('O comando inicia um combate. Vitória, derrota e alterações da ficha precisam ser observadas no jogo antes de comparar a continuação.');
@@ -397,6 +466,12 @@
       return compact;
     }
     const root=visit(event,run.state,emptyLedger(),0,new Set(),true),rows=root.rows||[];
+    for(const row of rows) {
+      row.forecast=forecastChoice(event,row.ci,run.state,index,{available:row.available});
+      const enemies=unique(row.forecast.combats.map(c=>c.enemy));
+      if(enemies.length)row.notes=unique([...row.notes,`Combate possível neste caminho: ${enemies.join(', ')}. A vitória com esta ficha não foi calculada.`]);
+      if(row.forecast.truncated)row.notes=unique([...row.notes,'O resumo das consequências futuras atingiu seu limite; outros ramos podem existir.']);
+    }
     const candidates=rows.filter(r=>r.available!==false&&r.feasible&&finite(r.score)).sort((a,b)=>b.score-a.score||a.route.length-b.route.length);
     const comparisonComplete=rows.filter(r=>r.available!==false).every(r=>r.complete);
     let recommendation=null;
@@ -454,5 +529,5 @@
     result.availability={};
     return result;
   }
-  return {VERSION,PLANNER_LIMITS,STATS,ALIGNMENT_BANDS,alignmentInfo,alignmentRangeForBand,TYPES,FAMILIES,clone,id,normalize,plain,finite,blankState,createIndex,continuationKey,sequenceGraph,continuationContext,newRun,cleanState,cleanGoals,requirement,previewResult,goalProgress,analyze,commit,undo,redo,validateRun};
+  return {VERSION,PLANNER_LIMITS,STATS,ALIGNMENT_BANDS,alignmentInfo,alignmentRangeForBand,TYPES,FAMILIES,clone,id,normalize,plain,finite,blankState,createIndex,continuationKey,sequenceGraph,continuationContext,forecastChoice,newRun,cleanState,cleanGoals,requirement,previewResult,goalProgress,analyze,commit,undo,redo,validateRun};
 });

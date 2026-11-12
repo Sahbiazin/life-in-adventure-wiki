@@ -13,6 +13,7 @@ Estado do Atlas: **ainda não pronto para simulação completa**. Existe uma [pr
 - Auditoria de cobertura visível no Atlas e relatório reproduzível com comandos pendentes e exemplos reais.
 - Entradas inválidas mantidas como desconhecidas, sem quebrar a geração nem gerar probabilidades inventadas.
 - As 2.005 ocorrências de início de combate interpretadas, com inimigo fixo ou atual, modificações da faixa de poder e continuidade para registrar o desfecho. A interpretação do comando não prevê o resultado da luta.
+- Consequências futuras exibidas por escolha, mesmo com plano numérico parcial: inimigos, testes, requisitos, saídas pacíficas e possíveis desfechos. Auditoria das 7.074 transições diretas da base sem destino ausente; sequência de Tesouro #360 a #364 testada com negociação malsucedida e saída sem combate.
 
 ## Pendências para uma simulação completa
 

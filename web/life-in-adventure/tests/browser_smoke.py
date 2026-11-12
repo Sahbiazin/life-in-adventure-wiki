@@ -74,6 +74,20 @@ class WikiBrowserTests(unittest.TestCase):
         self.page.locator('#moreMapSteps').click()
         self.assertGreater(self.page.locator('#choiceMap .root').count(), before)
 
+    def test_treant_consequences_are_linked_from_accepting_the_village_job(self):
+        self.goto('#evento=EventTreasure%3A360')
+        forecast=self.page.locator('.choice-card').first.locator('[data-atlas-forecast]')
+        expect(forecast).to_contain_text('Entearvore')
+        expect(forecast).to_contain_text('saída sem combate')
+        expect(forecast).to_contain_text('Teste de Carisma')
+        for ident in [361,362,363,364]:
+            expect(forecast.locator(f'[data-record="EventTreasure:{ident}"]')).to_be_visible()
+        forecast.locator('[data-record="monster:161"]').click()
+        expect(self.page.locator('#detailTitle')).to_contain_text('Entearvore')
+        self.goto('#evento=EventTreasure%3A360')
+        self.page.locator('#mapTab').click()
+        self.assertEqual(self.page.locator('#choiceMap .root').count(),5)
+
     def test_attribute_test_is_visible_without_fabricating_a_success_percentage(self):
         self.goto('#evento=EventNormal%3A222')
         expect(self.page.locator('.choice-card > summary').first).to_contain_text('Teste de Força')
