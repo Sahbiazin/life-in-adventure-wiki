@@ -85,7 +85,7 @@
     if (!referencedBy.has(ref.key)) referencedBy.set(ref.key, []);
     referencedBy.get(ref.key).push({record:e,...ref});
   }
-  const state = {view:'events', query:'', category:'all', tags:new Set(), sort:'default', page:1, pageSize:25};
+  const state = {view:'events', query:'', category:'all', tags:new Set(), sort:'default', page:1, pageSize:25, facets:{}};
   let filtered = events, current = null, detailHistory = [], zoom = 1, lastFocus = null, mapNeedsFit = false;
   const dialog = $('eventDialog');
   const storageKey = 'life-in-adventure:notebook:v1';
@@ -170,9 +170,124 @@
     for (const tag of state.tags) chips.push(`<button data-tag="${esc(tag)}">${esc(tag)} ×</button>`);
     $('appliedFilters').innerHTML = chips.join('');
   }
+  const facetState=()=>state.facets[state.view]||(state.facets[state.view]={});
+  const statNames=window.AtlasRun.STATS;
+  const facetCache=new Map();
+  const effectRecords=catalogs.filter(c=>c.kind==='ability'&&c.variant==='0');
+  const statWords={0:['saude','vida'],1:['sanidade'],2:['experiencia'],3:['alinhamento'],4:['ouro'],5:['forca'],6:['destreza'],7:['inteligencia'],12:['carisma'],13:['constituicao'],14:['sabedoria'],8:['saude maxima'],9:['sanidade maxima']};
+  const statCodes={0:['HP'],2:['EXP'],5:['FOR','STR'],6:['DES','DEX'],7:['INT'],12:['CAR','CHA'],13:['CON'],14:['SAB','WIS']};
+  function recordFacets(e) {
+    if(facetCache.has(e.key))return facetCache.get(e.key);
+    const f={attributes:new Set(),tests:new Set(),rewards:new Set(),refs:new Set((e.references||[]).map(r=>r.key)),effects:new Set(),person:'',effectText:''};
+    const addAttribute=index=>{if(Object.hasOwn(statNames,index))f.attributes.add(String(index));};
+    if(e.kind==='event') {
+      const inspect=(view,reward=false)=>{for(const token of view?.tokens||[]){const m=token.model;if(!token.known||!m){if(reward)f.rewards.add('unknown');continue;}
+        if(m.domain==='userData_effective'||m.operation==='change_user_data')addAttribute(m.index);
+        if(!reward)continue;
+        if(m.operation==='change_user_data') {
+          const q=m.quantity,k=String(m.index);
+          if(k==='4'&&q!==0)f.rewards.add(q>0?'gold_gain':'gold_loss');
+          if(k==='2'&&q>0)f.rewards.add('exp');
+          if(k==='0'&&q!==0)f.rewards.add(q>0?'health_gain':'health_loss');
+          if(k==='1'&&q!==0)f.rewards.add(q>0?'sanity_gain':'sanity_loss');
+          if(k==='3'&&q!==0)f.rewards.add('alignment');
+          if(['5','6','7','12','13','14'].includes(k)&&q!==0)f.rewards.add('attribute');
+        }
+        if(m.operation==='add_item')f.rewards.add('item_gain');if(m.operation==='remove_item')f.rewards.add('item_loss');
+        if(m.operation==='start_combat')f.rewards.add('combat');
+        if(m.operation?.startsWith('record_')&&m.operation.endsWith('_ending'))f.rewards.add('ending');
+        if(m.operation?.startsWith('set_'))f.rewards.add('story');
+      }};
+      inspect(e.rules?.required);
+      for(const [ci,choice] of (e.data.choice||[]).entries()) {
+        const cv=e.rules?.choices?.[ci];inspect(cv?.required);
+        for(const a of cv?.test?.attributes||[]){addAttribute(a.index);f.tests.add(String(a.index));}
+        for(const rv of cv?.results||[]){inspect(rv.required);inspect(rv.reward,true);}
+      }
+      f.person=normalize(plain([e.data.text,...(e.data.choice||[]).flatMap(c=>[c.text,...(c.result||[]).map(r=>r.text)])].join(' ')));
+    } else {
+      // These are recorded formula dependencies and textual citations, not inferred bonuses.
+      for(const value of Object.values(e.raw||{}))if(typeof value==='string')for(const term of value.split('|')) {
+        const p=term.split('_');if(p.length===3&&p[0]==='0'&&Number.isFinite(Number(p[2]))&&Number(p[2])!==0)addAttribute(p[1]);
+      }
+    }
+    for(const ref of e.references||[])if(ref.key.startsWith('ability:'))f.effects.add(ref.key.split(':').slice(0,2).join(':')+':0');
+    if(e.kind==='ability')f.effects.add(`ability:${e.id}:0`);
+    const linked=[...f.effects].map(key=>byKey.get(key)).filter(Boolean);
+    const effectOriginal=plain([e.title,e.description,...linked.flatMap(c=>[c.title,c.description])].join(' '));
+    f.effectText=normalize(effectOriginal);
+    if(e.kind!=='event')for(const [key,words] of Object.entries(statWords))if(words.some(word=>new RegExp(`\\b${word}\\b`,'i').test(f.effectText)))addAttribute(key);
+    // Preserve the source's case for stat abbreviations. Portuguese “for” is
+    // a verb in descriptions such as Cura's “Se a Defesa for inferior…”.
+    if(e.kind!=='event')for(const [key,codes] of Object.entries(statCodes))if(codes.some(code=>new RegExp(String.raw`\b${code}\b`).test(effectOriginal)))addAttribute(key);
+    facetCache.set(e.key,f);return f;
+  }
+  const facetOptions=kind=>catalogs.filter(c=>c.kind===kind&&(kind!=='ability'||c.variant==='0')).sort((a,b)=>a.title.localeCompare(b.title,'pt-BR')||Number(a.id)-Number(b.id)).map(c=>[c.key,`${c.title} · #${c.id}`]);
+  const attributeOptions=Object.entries(statNames).map(([key,label])=>[key,label]);
+  const rewardOptions=[['gold_gain','Ganhar ouro'],['gold_loss','Gastar / perder ouro'],['exp','Ganhar EXP'],['item_gain','Receber item'],['item_loss','Consumir / perder item'],['health_gain','Recuperar saúde'],['health_loss','Perder saúde'],['sanity_gain','Recuperar sanidade'],['sanity_loss','Perder sanidade'],['attribute','Alterar atributo principal'],['alignment','Alterar alinhamento'],['ending','Registrar epílogo'],['combat','Iniciar combate'],['story','Alterar estado de história'],['unknown','Com efeito ainda não interpretado']];
+  const codedOptions=(kind,key,label)=>[...new Set(catalogs.filter(c=>c.kind===kind).map(c=>c.raw?.[key]).filter(v=>v!==undefined&&v!==''))].sort((a,b)=>Number(a)-Number(b)).map(v=>[String(v),`${label} ${v}`]);
+  function facetFields(view) {
+    const attribute={key:'attribute',label:view==='events'?'Atributo relacionado':'Atributo citado / fórmula',options:attributeOptions};
+    const effectText={key:'effectText',label:'Efeito / descrição',type:'search',placeholder:'Ex.: regeneração, dano, imunidade…'};
+    const effects={key:'effect',label:'Habilidade / efeito relacionado',options:facetOptions('ability')};
+    const linked={key:'linked',label:'Relação com eventos',options:[['yes','Com referências em eventos'],['no','Sem referências em eventos']]};
+    if(view==='events')return [attribute,{key:'test',label:'Teste de atributo',options:attributeOptions.filter(([k])=>['5','6','7','12','13','14'].includes(k))},{key:'reward',label:'Consequência / recompensa',options:rewardOptions},{key:'item',label:'Item relacionado',options:facetOptions('item')},{key:'monster',label:'Monstro relacionado',options:facetOptions('monster')},{key:'trait',label:'Traço relacionado',options:facetOptions('trait')},{key:'effect',label:'Habilidade relacionada',options:facetOptions('ability')},{key:'person',label:'NPC / personagem (texto)',type:'search',placeholder:'Ex.: Cira, chefe da vila…'}];
+    if(view==='item')return [attribute,effects,effectText,{key:'category',label:'Categoria (código do jogo)',options:codedOptions('item','category','Categoria')},{key:'rarity',label:'Raridade (código do jogo)',options:codedOptions('item','rarity','Raridade')},{key:'priceMin',label:'Preço mínimo registrado',type:'number'},{key:'priceMax',label:'Preço máximo registrado',type:'number'},linked];
+    if(view==='monster')return [effects,effectText,{key:'challenge',label:'Desafio (código do jogo)',options:codedOptions('monster','challenge','Desafio')},{key:'monsterType',label:'Tipo (código do jogo)',options:codedOptions('monster','type','Tipo')},linked];
+    if(view==='ability')return [attribute,effectText,{key:'variant',label:'Variante',options:codedOptions('ability','number','Variante')},linked];
+    if(view==='trait')return [attribute,effectText,{key:'jewels',label:'Preço em joias',options:[['known','Com preço registrado'],['unknown','Sem preço registrado']]},linked];
+    if(view==='ending')return [{key:'endingGroup',label:'Grupo de epílogo',options:[['main','História principal'],['sub','Conto']]},{key:'story',label:'História / conto',options:[...new Set(catalogs.filter(c=>c.kind==='ending').map(c=>c.story))].sort((a,b)=>a-b).map(v=>[String(v),`História / conto #${v}`])},effectText,linked];
+    if(view==='favorites'||view==='history')return [{key:'recordKind',label:'Tipo de registro',options:Object.entries(sections).filter(([key])=>!['game','favorites','history'].includes(key)).map(([key,c])=>[key==='events'?'event':key,c.label])},attribute,effectText];
+    return [];
+  }
+  function matchesFacets(e) {
+    const chosen=facetState(),f=recordFacets(e);
+    for(const [key,value] of Object.entries(chosen))if(value!=='') {
+      if(key==='attribute'&&!f.attributes.has(value))return false;
+      if(key==='test'&&!f.tests.has(value))return false;
+      if(key==='reward'&&!f.rewards.has(value))return false;
+      if(['item','monster','trait'].includes(key)&&!f.refs.has(value))return false;
+      if(key==='effect'&&!f.effects.has(value)&&!f.refs.has(value))return false;
+      if(key==='person'&&!normalize(value).trim().split(/\s+/).every(w=>f.person.includes(w)))return false;
+      if(key==='effectText'&&!normalize(value).trim().split(/\s+/).every(w=>f.effectText.includes(w)))return false;
+      if(key==='category'&&String(e.raw?.category)!==value)return false;
+      if(key==='rarity'&&String(e.raw?.rarity)!==value)return false;
+      if(key==='challenge'&&String(e.raw?.challenge)!==value)return false;
+      if(key==='monsterType'&&String(e.raw?.type)!==value)return false;
+      if(key==='variant'&&String(e.variant)!==value)return false;
+      if(key==='endingGroup'&&e.ending_group!==value)return false;
+      if(key==='story'&&String(e.story)!==value)return false;
+      if(key==='recordKind'&&e.kind!==value)return false;
+      if(key==='jewels'&&((e.raw?.jewel!==undefined&&e.raw.jewel!==''&&Number.isFinite(Number(e.raw.jewel)))!==(value==='known')))return false;
+      if(key==='linked'&&((referencedBy.get(e.key)||[]).some(r=>r.record.kind==='event')!==(value==='yes')))return false;
+      if(key==='priceMin'||key==='priceMax') {
+        if(e.raw?.price===undefined||e.raw.price===''||!Number.isFinite(Number(e.raw.price)))return false;
+        if(key==='priceMin'&&Number(e.raw.price)<Number(value)||key==='priceMax'&&Number(e.raw.price)>Number(value))return false;
+      }
+    }
+    return true;
+  }
+  function renderCatalogFacets() {
+    const fields=facetFields(state.view),chosen=facetState();let host=$('catalogFilters');
+    if(!host){host=document.createElement('details');host.id='catalogFilters';host.className='catalog-filters';document.querySelector('.search-row').after(host);}
+    host.hidden=!fields.length;
+    if(host.dataset.view!==state.view) {
+      host.dataset.view=state.view;
+      host.innerHTML=`<summary>Filtros deste catálogo <span id="catalogFacetCount"></span></summary><div class="catalog-filter-grid">${fields.map(f=>`<label for="facet-${f.key}">${esc(f.label)}${f.options?`<select id="facet-${f.key}" data-catalog-facet="${f.key}"><option value="">Todos</option>${f.options.map(([key,label])=>`<option value="${esc(key)}">${esc(label)}</option>`).join('')}</select>`:`<input id="facet-${f.key}" data-catalog-facet="${f.key}" type="${f.type}" ${f.type==='number'?'min="0" step="any" inputmode="decimal"':''} placeholder="${esc(f.placeholder||'Sem limite')}">`}</label>`).join('')}</div><p class="catalog-filter-note">${state.view==='events'?'Relações incluem referências e menções registradas. Uma menção a um item ou monstro não garante recompensa ou combate. NPCs são pesquisados pelo texto, sem catálogo separado.':'Atributos relacionados vêm de fórmulas e citações nas descrições. Efeitos incluem habilidades vinculadas; valores registrados podem variar na run.'}</p><div class="catalog-filter-actions"><button type="button" data-clear-catalog-facets>Limpar filtros deste catálogo</button></div>`;
+    }
+    for(const control of host.querySelectorAll('[data-catalog-facet]'))if(control.value!==(chosen[control.dataset.catalogFacet]||''))control.value=chosen[control.dataset.catalogFacet]||'';
+    const active=fields.filter(f=>chosen[f.key]);$('catalogFacetCount').textContent=active.length?`(${active.length} ativos)`:'';
+    for(const f of active) {
+      const label=f.options?.find(([key])=>key===chosen[f.key])?.[1]||chosen[f.key];
+      $('appliedFilters').insertAdjacentHTML('beforeend',`<button class="catalog-facet-chip" data-remove-catalog-facet="${f.key}">${esc(f.label)}: ${esc(label)} ×</button>`);
+    }
+    host.querySelector('[data-clear-catalog-facets]').disabled=!active.length;
+  }
+
   function render() {
     const eventView = state.view === 'events', section = sections[state.view];
     const gameView=state.view==='game';
+    window.AtlasLayout?.setGameView(gameView);
     $('gameRoot').hidden=!gameView;$('atlasCatalog').hidden=gameView;$('ruleCoverage').hidden=gameView;
     if(!gameView)window.AtlasGame?.hide();
     $('eventFilters').hidden = !eventView; $('eventStats').hidden = !eventView;
@@ -189,6 +304,10 @@
       if(selected) button.setAttribute('aria-current','page'); else button.removeAttribute('aria-current');
     }
     if(gameView){if(window.AtlasGame)window.AtlasGame.render();else $('gameRoot').textContent='Não foi possível carregar o Modo de Jogo. Recarregue a página.';renderNotebookCounts();return;}
+    for(const [value,label] of [['price-asc','Preço: menor primeiro'],['price-desc','Preço: maior primeiro']]) {
+      if(!$('sort').querySelector(`[value="${value}"]`))$('sort').add(new Option(label,value));
+      $('sort').querySelector(`[value="${value}"]`).hidden=state.view!=='item';
+    }
     $('sort').querySelector('[value=choices]').hidden=!eventView;
     $('sort').querySelector('[value=results]').hidden=!eventView;
     $('sort').querySelector('[value=default]').textContent=state.view === 'history'?'Mais recentes':'Tipo e número';
@@ -197,8 +316,12 @@
     else if (state.view === 'favorites') pool=[...favorites].map(key=>byKey.get(key));
     else if (state.view === 'history') pool=visits.map(key=>byKey.get(key));
     else pool=catalogs.filter(e=>e.kind===state.view);
-    filtered=pool.filter(matchesQuery);
+    filtered=pool.filter(e=>matchesQuery(e)&&matchesFacets(e));
     if (state.sort === 'title') filtered.sort((a,b)=>a.title.localeCompare(b.title,'pt-BR') || a.index-b.index);
+    else if(state.view==='item'&&['price-asc','price-desc'].includes(state.sort))filtered.sort((a,b)=>{
+      const price=e=>e.raw?.price!==undefined&&e.raw.price!==''&&Number.isFinite(Number(e.raw.price))?Number(e.raw.price):null;
+      const ap=price(a),bp=price(b);return ap===null?(bp===null?a.index-b.index:1):bp===null?-1:(state.sort==='price-asc'?ap-bp:bp-ap)||a.index-b.index;
+    });
     else if (eventView) {
       const order=Object.keys(types);
       filtered.sort((a,b)=>state.sort==='choices'?b.choices-a.choices || a.index-b.index:state.sort==='results'?b.results-a.results || a.index-b.index:order.indexOf(a.group)-order.indexOf(b.group) || a.id-b.id);
@@ -210,12 +333,13 @@
       renderFilters();
     } else {
       $('appliedFilters').innerHTML='';
-      $('recordGrid').innerHTML=slice.map(e=>`<article class="catalog-card"><div class="catalog-card-meta"><span class="badge">${esc(recordLabel(e))}</span>${favoriteButton(e)}</div><h3>${recordLink(e.key,short(e.title,120))}</h3><p>${esc(short(plain(e.description || e.data?.choice?.map(c=>c.text).join(' · ') || 'Abra para consultar os detalhes.'),180))}</p><footer>${e.kind==='event'?`${e.choices} escolhas · ${e.results} resultados`:`${fmt((referencedBy.get(e.key)||[]).filter(r=>r.record.kind==='event').length)} referências em eventos`}</footer></article>`).join('');
+      $('recordGrid').innerHTML=slice.map(e=>`<article class="catalog-card"><div class="catalog-card-meta"><span class="badge">${esc(recordLabel(e))}</span>${favoriteButton(e)}</div><h3>${recordLink(e.key,short(e.title,120))}</h3><p>${esc(short(plain(e.description || e.data?.choice?.map(c=>c.text).join(' · ') || 'Abra para consultar os detalhes.'),180))}</p><footer>${e.kind==='event'?`${e.choices} escolhas · ${e.results} resultados`:`${e.kind==='item'?`Preço registrado: ${e.raw.price===undefined||e.raw.price===''?'não informado':fmt(e.raw.price)} · `:''}${fmt((referencedBy.get(e.key)||[]).filter(r=>r.record.kind==='event').length)} referências em eventos`}</footer></article>`).join('');
     }
+    renderCatalogFacets();
     $('emptyState').hidden=filtered.length!==0;
     $('emptyTitle').textContent=state.view==='favorites'?'Nenhum favorito encontrado':state.view==='history'?'Nenhuma consulta encontrada':'Nenhum registro encontrado';
     $('emptyDescription').textContent=state.view==='favorites'?'Use a estrela nos eventos ou catálogos para guardar seus favoritos.':state.view==='history'?'Abra um evento ou registro para começar seu histórico.':'Tente outro termo ou remova alguns filtros.';
-    $('emptyReset').hidden=!state.query && !eventView;
+    $('emptyReset').hidden=!state.query && !eventView && !Object.values(facetState()).some(Boolean);
     $('resultCount').textContent=`${fmt(filtered.length)} registros`;
     $('catalogTitle').firstChild.textContent=eventView?(state.category==='all'?'Todos os eventos ':`${types[state.category].title} `):`${section.label} `;
     $('pageInfo').textContent=filtered.length?`Mostrando ${fmt(start+1)}–${fmt(Math.min(start+state.pageSize,filtered.length))} de ${fmt(filtered.length)} registros`:'Nenhum registro encontrado';
@@ -223,7 +347,7 @@
     $('prevPage').disabled=state.page===1; $('nextPage').disabled=state.page>=pages;
     renderNotebookCounts();
   }
-  function resetFilters() { state.query='';state.category='all';state.tags.clear();state.page=1;$('search').value='';render(); }
+  function resetFilters() { state.facets[state.view]={};state.query='';state.category='all';state.tags.clear();state.page=1;$('search').value='';render(); }
   function toggleFavorite(key) {
     if (!byKey.has(key)) return;
     favorites.has(key)?favorites.delete(key):favorites.add(key); saveNotebook(); render();
@@ -231,6 +355,9 @@
   }
   document.addEventListener('click',event=>{
     if(event.defaultPrevented || event.button!==0) return;
+    const facet=event.target.closest('[data-remove-catalog-facet]');
+    if(facet){delete facetState()[facet.dataset.removeCatalogFacet];state.page=1;render();return;}
+    if(event.target.closest('[data-clear-catalog-facets]')){state.facets[state.view]={};state.page=1;render();return;}
     const favorite=event.target.closest('[data-favorite]');
     if(favorite){toggleFavorite(favorite.dataset.favorite);return;}
     const view=event.target.closest('[data-view]');
@@ -246,6 +373,9 @@
       event.preventDefault();navigateRecord(target.dataset.record || target.dataset.event);
     }
   });
+  let facetTimer;
+  document.addEventListener('change',event=>{const key=event.target.dataset.catalogFacet;if(!key)return;facetState()[key]=event.target.value;state.page=1;render();});
+  document.addEventListener('input',event=>{const key=event.target.dataset.catalogFacet;if(!key||event.target.tagName==='SELECT')return;clearTimeout(facetTimer);facetState()[key]=event.target.value;state.page=1;facetTimer=setTimeout(render,120);});
   let searchTimer;
   $('search').addEventListener('input',event=>{clearTimeout(searchTimer);state.query=event.target.value;state.page=1;searchTimer=setTimeout(render,120);});
   $('sort').onchange=event=>{state.sort=event.target.value;state.page=1;render();};
@@ -490,7 +620,7 @@
   $('statChoices').textContent=fmt(events.reduce((n,e)=>n+e.choices,0));
   $('statResults').textContent=fmt(events.reduce((n,e)=>n+e.results,0));
   $('useInRun').onclick=()=>{if(current?.kind==='event')window.AtlasGame?.chooseEvent(current.key);};
-  window.AtlasGame?.init(navigateView);
+  window.AtlasGame?.init(target=>byKey.has(target)?navigateRecord(target):navigateView(target));
   renderAudit();
   syncRoute();
 })();

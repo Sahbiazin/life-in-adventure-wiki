@@ -1,4 +1,4 @@
-# Modo de Jogo — primeira versão
+# Modo de Jogo
 
 [Abrir no Atlas](https://sahbiazin.github.io/life-in-adventure-wiki/#catalogo=game).
 
@@ -9,18 +9,31 @@ O modo acompanha a aventura que você joga no celular. Ele não se conecta ao jo
 1. Abra **Modo de Jogo** e preencha a ficha com os valores que o jogo mostra, incluindo os bônus atuais. Campos vazios significam **desconhecido**, não zero.
 2. Adicione itens com a quantidade total, incluindo os equipados, e os traços e habilidades efetivas. Marque as listas como completas somente depois de conferir tudo. O Atlas não calcula bônus de equipamento, traço ou habilidade.
 3. Anote a história principal, os contos e a dificuldade. Esses textos identificam a run; não ativam nem selecionam encontros automaticamente.
-4. Crie os objetivos. O primeiro ainda não concluído tem prioridade; é possível promover outro objetivo. Há metas de itens, ouro, epílogos, histórias/contos, catálogo de itens/monstros e pontuação.
+4. Crie os objetivos no painel **Ver / editar objetivos**, na barra lateral. O primeiro ainda não concluído tem prioridade; é possível promover outro objetivo. Há metas de itens, ouro, epílogos, histórias/contos, catálogo de itens/monstros e pontuação.
 
 Uma nova run preserva as anteriores. É possível copiar as confirmações do catálogo da run selecionada, sem copiar sua ficha ou seu progresso.
 
 **Alinhamento:** escolha o nome mostrado no jogo — Maligno, Impuro, Neutro, Justo ou Bondoso — ou informe um valor numérico exato, se souber. O nome mantém uma faixa de valores, sem inventar um ponto inicial. Uma decisão pode deixar a estimativa em duas faixas; confira o nome no jogo para atualizar a ficha. O planejador usa essas informações nos requisitos futuros e preserva a incerteza quando a faixa não resolve uma condição. Veja as [faixas e a evidência](alinhamento.md). Runs antigas começam com alinhamento não informado.
+
+## Navegação e modos de acompanhamento
+
+A tela principal contém o acompanhamento do celular: busca do encontro, mapa completo e escolhas. A barra lateral abre **Ficha da run**, **Ver / editar objetivos**, **Diário da run**, **Catálogo confirmado** e **Gerenciar runs**. É possível recolher a lateral para ganhar espaço. No celular ela abre como um menu, com fechamento por botão, fundo ou Escape. Exportação, importação e criação de runs ficam em Gerenciar runs.
+
+Em **Como acompanhar**, escolha:
+
+- **Modo técnico:** todos os detalhes, requisitos, regras originais e revisão da ficha antes de salvar cada resultado; é o padrão quando não há preferência anterior.
+- **Modo direto:** escolhas com efeitos resumidos, como `EXP +1`, `Ouro +10` e `Vida -1`. **Registrar resultado** aplica em um toque apenas o resultado informado, sem formulário de revisão. Resultados aleatórios continuam sendo informados pelo jogador; a interface não escolhe sucesso automaticamente.
+
+Os dois modos usam a mesma análise das próximas escolhas, o mesmo perfil e os mesmos objetivos. Trocar o modo não modifica nem reinicia a run, e a preferência fica salva neste navegador. Efeitos desconhecidos permanecem em pendências, sem ganho inventado ou desbloqueio automático de catálogo. Ao iniciar combate no modo direto, saúde e sanidade ficam desconhecidas até serem conferidas na ficha, pois o dano da luta não é calculado. A gravação continua sem uma janela de confirmação. **Desfazer último registro** e **Refazer**, na lateral, preservam a segurança dos registros em um toque.
+
+O **Fluxo completo do encontro** aparece após selecionar o evento, com todas as etapas diretamente ligadas, escolhas, resultados, testes e retornos. Não usa o limite inicial de quatro níveis do mapa de consulta do Atlas. Em Tesouro #360 são cinco etapas, 16 escolhas/ramos e 23 resultados. O fluxo acompanha a etapa atual e preserva o começo do encontro ao avançar. Zoom, visão geral, seleção de etapa e lista acessível permitem navegar; clicar num nó consulta o Atlas sem registrar nada na run.
 
 ## Durante o jogo
 
 1. Busque palavras do encontro ou o ID exato, como `#346`. Use a tabela para diferenciar IDs iguais. Também há **Usar encontro na run** nos detalhes de eventos do Atlas.
 2. Confira as escolhas e todos os resultados registrados. As etiquetas **Teste de Força**, **Teste de Inteligência** etc. identificam atributos que influenciam o sorteio e os ramos de sucesso/falha. São diferentes dos requisitos para liberar a opção, que aparecem como atendidos, não atendidos ou desconhecidos. A etiqueta não informa uma dificuldade mínima nem uma porcentagem de sucesso. Se o próprio jogo mostrar uma opção diferente, informe sua disponibilidade.
 3. Uma **sugestão provisória** compara os efeitos acumulados e as próximas decisões até o fim registrado do encontro. Abra **Ver escolhas futuras e saldo do caminho** para consultar um cenário considerado, seus custos, recompensas e pendências. A indicação pode faltar quando há empate ou quando algum caminho não pôde ser avaliado até o fim. Os dados originais continuam acessíveis.
-4. Depois de jogar, selecione **Foi este resultado**. Revise os valores estimados e substitua-os pelos que realmente apareceram no jogo. Confirme a conferência antes de salvar. Se o resultado não corresponder às opções, registre o ocorrido manualmente, com uma observação.
+4. Depois de jogar, no modo técnico selecione **Foi este resultado**, revise os valores estimados e substitua-os pelos que realmente apareceram no jogo antes de confirmar. No modo direto, use **Registrar resultado** para salvar em um toque, com opção de desfazer. Se o resultado não corresponder às opções, registre o ocorrido manualmente, com uma observação.
 5. Ao salvar um resultado com continuação direta, o Atlas abre as **próximas escolhas do mesmo encontro**, preservando o texto de ligação e mostrando o percurso. Retornos ao mesmo nó atualizam os requisitos com o estado registrado. Só o resultado confirmado aplica efeitos; abrir a continuação não escolhe nem salva outra resposta. Sem continuação direta, volte à busca quando surgir outro encontro. Se a tela divergir, use **Escolher outro encontro** ou registre um resultado diferente.
 
 O diário guarda o antes/depois, evento, escolha, resultado, observações e os objetivos usados para aquela decisão. **Conferir / corrigir ficha** registra ajustes manuais. Desfazer e refazer restauram o estado e a etapa da sequência; salvar uma nova ação depois de desfazer substitui o ramo desfeito. Runs encerradas podem ser reabertas. Os backups da primeira versão continuam compatíveis.
@@ -73,6 +86,6 @@ As [pendências da simulação completa](preparacao-modo-jogo.md) e a auditoria 
 
 As runs são salvas em `localStorage`, na chave `life-in-adventure:runs:v1`, apenas neste navegador e endereço. Não há conta nem sincronização automática com outro celular ou computador. Limpar os dados do site pode apagar as runs.
 
-Use **Exportar** para baixar um backup JSON da run selecionada. **Importar** valida o arquivo e cria uma cópia independente; não sobrescreve outra run. Para relatar uma divergência, guarde esse backup e descreva o que o jogo mostrou.
+Em **Gerenciar runs**, use **Exportar run** para baixar um backup JSON da run selecionada. **Importar** valida o arquivo e cria uma cópia independente; não sobrescreve outra run. Para relatar uma divergência, guarde esse backup e descreva o que o jogo mostrou.
 
 Se o armazenamento estiver bloqueado ou cheio, a run continua na memória durante a visita e aparece um aviso para exportar. Um save inválido é preservado e pode ser baixado para recuperação; novas ações ficam na memória. Se outra aba alterar os saves, esta aba bloqueia a gravação até você recarregar os dados, evitando sobrescrita silenciosa. Favoritos e histórico do Atlas usam outra chave e não são substituídos pelas runs.

@@ -7,10 +7,10 @@
   const GROUPS={EventMain:'Principal',EventSub:'Secundário',EventBattle:'Combate',EventTreasure:'Tesouro',EventNormal:'Normal',EventMainStart:'Início'};
   const KINDS={item:'Item',monster:'Monstro',ability:'Habilidade',trait:'Traço',ending:'Epílogo'};
   const GOALS={item:'Ter um item',ending:'Alcançar um epílogo',catalog_item:'Registrar item no catálogo',catalog_monster:'Registrar monstro no catálogo',story:'Concluir história ou conto',score:'Maximizar a pontuação',gold:'Acumular ouro'};
-  const KEY='life-in-adventure:runs:v1';
+  const KEY='life-in-adventure:runs:v1',EXPERIENCE_KEY='life-in-adventure:game-experience:v1';
   let index,host,session={version:1,runs:[],activeId:null},cachedRaw=null,recoveryRaw=null,loaded=false;
   let navigate=()=>{},isVisible=false,editor=null,review=null,newForm=false,query='',category='all',message='',warning='',conflict=false;
-  let currentAnalysis=null;
+  let currentAnalysis=null,panel='companion',experience='technical',flowController=null;
   const active=()=>session.runs.find(r=>r.id===session.activeId)||null;
   const recordName=key=>index.records.get(key)?.title||key;
   const pickerValue=c=>`${c.title} · ${c.kind==='ending'?(c.ending_group==='main'?'principal':'conto')+' / ':''}#${c.id}${c.variant!==null&&c.variant!==undefined?' / '+c.variant:''}`;
@@ -21,8 +21,10 @@
       cachedRaw=localStorage.getItem(KEY);
       if(cachedRaw)session=validateSession(JSON.parse(cachedRaw));
     } catch(error) {recoveryRaw=cachedRaw;warning='Não foi possível recuperar as runs salvas. Nenhum dado antigo foi apagado. Você pode importar um backup ou iniciar uma run nesta visita.';}
+    try{experience=localStorage.getItem(EXPERIENCE_KEY)==='direct'?'direct':'technical';}catch{}
+    const side=$('gameSideNav');if(side){side.addEventListener('click',onClick);side.addEventListener('change',onChange);}
     host.addEventListener('click',onClick);host.addEventListener('submit',onSubmit);host.addEventListener('input',onInput);host.addEventListener('change',onChange);
-    window.addEventListener('storage',event=>{if(event.key===KEY||event.key===null){conflict=true;if(isVisible)render();}});
+    window.addEventListener('storage',event=>{if(event.key===EXPERIENCE_KEY&&!editor){experience=event.newValue==='direct'?'direct':'technical';if(isVisible)render();}else if(event.key===KEY||event.key===null){conflict=true;if(isVisible)render();}});
   }
   function validateSession(raw) {
     if(!raw || raw.version!==1 || !Array.isArray(raw.runs)||raw.runs.length>100)throw new Error('Arquivo de runs incompatível.');
@@ -167,10 +169,36 @@
     if(!tokens.length)return '';
     return `<div class="game-notice" data-game-combat><strong>Combate deste encontro</strong>${ruleList({tokens},'')}<p>O comando inicia o combate; ele não concede vitória nem registra o monstro no catálogo. Confira o inimigo no celular, registre o desfecho que acontecer e ajuste saúde, sanidade e outros valores após a luta. A faixa de poder não é uma previsão de dano ou de chance de vitória.</p></div>`;
   }
+  function compactEffects(view) {
+    const tokens=(view?.tokens||[]).filter(t=>!['set_chain_state','set_sub_state','set_main_state'].includes(t.model?.operation));
+    if(!tokens.length)return '<span class="game-effect-chip">Sem alteração direta registrada</span>';
+    return tokens.map(t=>{
+      const m=t.model;let label=t.text;
+      if(m?.operation==='change_user_data')label=`${m.index===0?'Vida':E.STATS[m.index]||'Atributo'} ${m.quantity>=0?'+':''}${fmt(m.quantity)}`;
+      else if(m?.operation==='start_combat')label='Combate: '+(t.ref?recordName(t.ref):'inimigo atual');
+      else if(t.ref)label=`${t.text} · ${recordName(t.ref)}`;
+      if(!t.known)label='Efeito a conferir na ficha';
+      return `<span class="game-effect-chip ${!t.known?'game-effect-unknown':m?.operation==='change_user_data'?(m.quantity<0?'is-loss':'is-gain'):''}">${esc(label)}</span>`;
+    }).join('');
+  }
+  function directFutureEffects(forecast) {
+    const tokens=[...new Map(forecast.exits.filter(e=>e.path.length>1).flatMap(e=>e.reward?.tokens||[]).filter(t=>t.known&&['change_user_data','add_item','remove_item','record_main_ending','record_sub_ending'].includes(t.model?.operation)).map(t=>[t.raw,t])).values()];
+    if(!tokens.length)return '';
+    return `<p class="game-help">Efeitos em resultados futuros, dependendo do ramo:</p><p class="game-direct-effects">${compactEffects({tokens:tokens.slice(0,5)})}</p>${tokens.length>5?'<p class="game-help">Outros efeitos estão no fluxo completo.</p>':''}`;
+  }
+  function directEncounter(event,run,analysis,context) {
+    const observed=event.data.choice.every(c=>!E.plain(c.text));
+    const brief=analysis.recommendation!==null?'Considera as próximas decisões e os objetivos da run.':!run.goals.length?'Defina os objetivos na barra lateral para orientar a indicação.':analysis.message.includes('confirmação manual')?'Esta meta requer acompanhamento manual.':!analysis.summary.comparisonComplete?'Há consequências a conferir; nenhuma opção foi indicada como a melhor para o encontro inteiro.':analysis.message.split('. ')[0]+'.';
+    return `<section class="game-card game-encounter game-direct-encounter" id="gameEncounter"><div class="game-section-heading"><div><span class="badge">${esc(GROUPS[event.group])} #${event.id}</span><h2>${context?'Próxima etapa':'Escolha no celular'}</h2></div><button type="button" data-event="${run.selectedEvent}">Ver detalhes no Atlas</button></div>${context?`<p class="game-narrative">${esc(short(E.plain(context.text),260))}</p>`:''}${E.plain(event.data.text)?`<p>${esc(short(E.plain(event.data.text),320))}</p>`:''}<p class="game-notice">${analysis.recommendation!==null?`<strong>Indicação: ${esc(E.plain(event.data.choice[analysis.recommendation].text))}</strong><br>`:''}${observed?'Registre o desfecho que aconteceu; vitória e derrota dependem do jogo.':esc(brief)}</p><p class="game-help">${observed?'Toque no resultado observado.':'Escolha no celular e toque no resultado que aconteceu.'} O registro atualiza a run sem abrir a revisão. Você pode desfazer pela barra lateral.</p>${run.state.pending.length?`<p class="game-pending">${run.state.pending.length} efeito(s) a conferir. <button type="button" data-game-action="edit-state">Abrir ficha</button></p>`:''}<div class="game-direct-choices">${analysis.rows.map(row=>{
+      const ci=row.ci,choice=event.data.choice[ci],cv=event.rules?.choices[ci],f=row.forecast,enemies=[...new Set(f.combats.map(c=>c.enemy))];
+      return `<article class="game-direct-choice ${analysis.recommendation===ci?'game-recommended':''}" data-direct-choice="${ci}"><h3>${esc(E.plain(choice.text)||'Desfecho '+(ci+1))}${analysis.recommendation===ci?' <span class="badge">Indicação</span>':''}</h3>${cv?.test?`<span class="attribute-test">${esc(cv.test.label)}</span>`:''}${row.available===false?'<p class="game-direct-availability">A ficha não atende ao requisito. Se essa opção apareceu, confira sua ficha.</p>':''}${enemies.length||f.tests.length||f.stages.length||f.truncated?`<div class="game-direct-future"><strong>Adiante</strong>${enemies.length?`<p>Combate possível: ${esc(enemies.slice(0,3).join(', '))}. ${f.peacefulExit?'Há também uma saída sem combate.':'Confira sua preparação antes de seguir.'}</p>`:''}${f.tests.length?`<p>${esc([...new Set(f.tests.map(t=>t.test.label))].slice(0,3).join(' · '))}. Os testes podem falhar.</p>`:''}${directFutureEffects(f)}${f.truncated?'<p>O resumo atingiu seu limite; outras consequências podem existir.</p>':''}</div>`:''}<div class="game-direct-results">${row.outcomes.map(o=>`<div class="game-direct-outcome"><div><strong>${esc(o.view?.testOutcome||'Resultado '+(o.ri+1))}</strong><p class="game-direct-effects">${compactEffects(o.view?.reward)}</p>${row.outcomes.length>1?`<p class="game-help">${esc(short(E.plain(o.raw.text),160))}</p>`:''}${o.eligible===false?'<p class="game-help">Este resultado diverge da ficha informada.</p>':''}</div><button type="button" class="game-secondary" data-game-action="quick-result" data-encounter="${run.selectedEvent}" data-choice="${ci}" data-result="${o.ri}">Registrar resultado</button></div>`).join('')}</div></article>`;
+    }).join('')}</div><div class="game-actions"><button type="button" data-game-action="manual-result">O resultado foi diferente</button><button type="button" data-game-action="clear-event">Escolher outro encontro</button></div></section>`;
+  }
   function encounterPanel(run) {
     const event=index.events.get(run.selectedEvent);if(!event)return '';
     const analysis=E.analyze(event,run,index,run.availability);currentAnalysis=analysis;
     const context=E.continuationContext(run,index);
+    if(experience==='direct')return directEncounter(event,run,analysis,context);
     const source=context?index.events.get(context.entry.eventKey):null;
     const combat=source?.rules?.choices?.[context.entry.choice]?.results?.[context.entry.result]?.reward;
     return `<section class="game-card game-encounter" id="gameEncounter"><div class="game-section-heading"><div><span class="badge">${esc(GROUPS[event.group])} #${event.id}</span><h2>${context?'Continuação do encontro':'Encontro selecionado'}</h2></div><button type="button" data-event="${run.selectedEvent}">Ver no Atlas</button></div>${context?`<div class="game-continuation"><p class="game-help">Percurso: ${context.path.map(key=>esc(GROUPS[index.events.get(key).group]+' #'+index.events.get(key).id)).join(' → ')}</p><p class="game-narrative">${esc(E.plain(context.text)||'Resultado anterior sem texto na fonte.')}</p><p class="game-help">Estas são as próximas opções registradas. Se o jogo mostrar outra tela, use “Escolher outro encontro”.</p></div>`:''}${combatNotice(combat)}<p class="game-narrative">${esc(E.plain(event.data.text)||(context?'':'Este nó não possui texto inicial. Confira os resultados abaixo.'))}</p><p class="game-notice">${analysis.recommendation!==null?`<strong>Indicação provisória: ${esc(E.plain(event.data.choice[analysis.recommendation].text))}</strong><br>`:''}${esc(analysis.message)}</p><p class="game-help">Critério da run: ${run.profile==='expected'?'média dos pesos estáticos quando disponíveis; nos demais casos, pior resultado conhecido':'pior resultado conhecido'}. A comparação inclui as próximas decisões e o saldo ao fim do caminho. Atributos e inventário precisam estar conferidos. O evento foi informado por você; não estamos simulando o sorteio de encontros.</p><p id="gamePlanningStatus" class="game-help">${analysis.summary.comparisonComplete?(analysis.summary.hasFinishedRoute?'Os caminhos disponíveis foram comparados até os encerramentos registrados.':'Não há caminho disponível com encerramento avaliável.'):'Há caminhos sem comparação completa; a melhor escolha para o encontro inteiro ainda não pode ser indicada.'} Só os resultados que você confirmar alteram a run.</p>
@@ -198,15 +226,47 @@
   function historyPanel(run) {
     return `<details class="game-card game-details" id="gameRunHistory"><summary>Diário da run · ${run.cursor} registros${run.cursor<run.history.length?` · ${run.history.length-run.cursor} desfeitos`:''}</summary><p class="game-help">Guarde uma cópia com “Exportar run”. As anotações incluem os valores antes e depois de cada registro para investigar diferenças.</p><ol class="game-history">${run.history.slice(0,run.cursor).map((entry,i)=>`<li><details><summary>${i+1}. ${esc(entry.type==='result'?`Resultado ${entry.choice+1}.${entry.result+1}`:entry.type==='observation'?'Resultado diferente do Atlas':entry.type==='goal'?'Confirmação de objetivo':entry.type==='catalog'?'Catálogo conferido':'Correção da ficha')}${entry.eventKey?' — '+esc(labelEvent(index.events.get(entry.eventKey))):''}</summary><p>${esc(entry.note||'Sem anotação adicional.')}</p>${entry.context?`<p class="game-help">Objetivos no momento: ${esc(entry.context.goals.map(goalLabel).join(' · ')||'nenhum informado')}. Perfil: ${entry.context.profile==='expected'?'média conhecida':'prudente'}.</p>`:''}${entry.issues.length?`<p class="game-help">Lacunas identificadas no momento: ${esc(entry.issues.join('; '))}</p>`:''}<pre>${esc(JSON.stringify({antes:entry.before,depois:entry.after},null,2))}</pre></details></li>`).join('')||'<li>Nenhum resultado registrado ainda.</li>'}</ol></details>`;
   }
+  function closeMobileSidebar() {
+    if(window.matchMedia('(max-width: 650px)').matches)window.AtlasLayout?.setSidebarOpen(false,{persist:true,focusReturn:true});
+  }
+  function renderSideNav(run,editing) {
+    const side=$('gameSideNav');if(!side)return;
+    const locked=editing||newForm;
+    side.hidden=false;
+    side.innerHTML=`<div class="game-side-heading"><span class="eyebrow">SUA RUN</span><h2>${esc(run?.name||'Nova aventura')}</h2></div><label>Run salva<select id="gameRunSwitcher" ${locked||!run?'disabled':''}>${session.runs.length?session.runs.map(r=>`<option value="${r.id}" ${run?.id===r.id?'selected':''}>${esc(r.name)}${r.status==='ended'?' · encerrada':''}</option>`).join(''):'<option>Crie ou importe uma run</option>'}</select></label><nav class="game-side-links" aria-label="Painéis da run">${[['companion','▷','Acompanhar no celular'],['sheet','◇','Ficha da run'],['goals','◎','Ver / editar objetivos'],['history','↶','Diário da run'],['catalog','✧','Catálogo confirmado'],['runs','☷','Gerenciar runs']].map(([key,icon,label])=>`<button type="button" data-game-panel="${key}" ${locked||(!run&&!['companion','runs'].includes(key))?'disabled':''} ${panel===key?'aria-current="page"':''}>${icon} ${label}${key==='sheet'&&run?.state.pending.length?` <span>${run.state.pending.length}</span>`:''}</button>`).join('')}</nav><label>Como acompanhar<select id="gameExperience" ${locked?'disabled':''}><option value="technical" ${experience==='technical'?'selected':''}>Modo técnico</option><option value="direct" ${experience==='direct'?'selected':''}>Modo direto</option></select></label><p class="game-help">${experience==='direct'?'Resultados em um toque. A comparação mantém as escolhas futuras.':'Detalhes, revisão da ficha e confirmação de cada registro.'}</p><div class="game-side-tools"><button type="button" data-game-action="edit-state" ${locked||!run||run.status!=='active'?'disabled':''}>Conferir / corrigir ficha</button><button type="button" data-game-action="undo" ${locked||!run||!run.cursor||run.status!=='active'?'disabled':''}>Desfazer último registro</button><button type="button" data-game-action="redo" ${locked||!run||run.cursor>=run.history.length||run.status!=='active'?'disabled':''}>Refazer</button></div>`;
+  }
+  function runsPanel(run) {
+    return `<section class="game-card"><h2>Gerenciar runs</h2><div class="game-actions"><button type="button" data-game-action="new-run">Nova run</button><button type="button" data-game-action="export-run" ${!run?'disabled':''}>Exportar run</button><label class="game-file-button">Importar run<input id="gameImport" type="file" accept=".json,application/json"></label></div><p class="game-help">A run fica neste navegador e não lê seu celular. Exporte uma cópia antes de trocar de aparelho ou limpar os dados do navegador.</p></section>${run?dashboard(run):''}`;
+  }
   function render() {
     ensure();isVisible=true;
+    flowController?.destroy();flowController=null;
     if(window.ATLAS_DATA.runModelVersion!==1){host.innerHTML='<p>O pacote de dados do Modo de Jogo não está atualizado. Recarregue a página.</p>';return;}
     if(!eventSearch.size)for(const [key,e] of index.events)eventSearch.set(key,E.normalize(`${e.id} ${e.group} ${JSON.stringify(e.data)}`));
     const run=active(),editing=!!editor&&editor.mode!=='setup';
-    host.innerHTML=`<div class="game-toolbar"><span class="badge">Versão de teste · acompanhamento manual</span><div class="game-actions">${session.runs.length?`<label>Run salva<select id="gameRunSwitcher" ${editing||newForm?'disabled':''}>${session.runs.map(r=>`<option value="${r.id}" ${run?.id===r.id?'selected':''}>${esc(r.name)}${r.status==='ended'?' · encerrada':''}</option>`).join('')}</select></label>`:''}<button type="button" data-game-action="new-run" ${editing?'disabled':''}>Nova run</button><button type="button" data-game-action="export-run" ${!run?'disabled':''}>Exportar run</button><label class="game-file-button">Importar run<input id="gameImport" type="file" accept=".json,application/json" ${editing?'disabled':''}></label></div></div><p class="game-help">A run fica neste navegador e não lê seu celular. Exporte uma cópia antes de trocar de aparelho ou limpar os dados do navegador.</p><p id="gameMessage" class="game-message" role="status" aria-live="polite"></p><p id="gameWarning" class="game-warning" role="status"></p>${recoveryRaw?'<button type="button" data-game-action="export-recovery">Exportar os dados antigos para recuperação</button>':''}<div id="gameConflict" class="game-pending" hidden>Há alterações em outra aba. <button type="button" data-game-action="reload-storage">Carregar dados da outra aba</button></div>${!run||newForm?renderSetup():review?renderReview(run):editing?renderCorrection(run):`${dashboard(run)}${goalCards(run)}${run.status==='active'?searchPanel(run)+encounterPanel(run):'<p class="game-notice">Run encerrada. O diário e a exportação continuam disponíveis; reabra para registrar novos encontros.</p>'}${collectionPanel(run)}${historyPanel(run)}`}${options()}`;
+    let content;
+    if(newForm||(!run&&panel!=='runs'))content=renderSetup();
+    else if(review)content=renderReview(run);
+    else if(editing)content=renderCorrection(run);
+    else if(panel==='runs')content=runsPanel(run);
+    else if(panel==='sheet')content=dashboard(run);
+    else if(panel==='goals')content=goalCards(run);
+    else if(panel==='history')content=historyPanel(run);
+    else if(panel==='catalog')content=collectionPanel(run);
+    else if(run.status!=='active')content='<section class="game-card"><h2>Run encerrada</h2><p>O diário e o backup continuam disponíveis na barra lateral.</p><button type="button" data-game-action="toggle-status">Reabrir run</button></section>';
+    else content=searchPanel(run)+(run.selectedEvent?'<section class="game-event-flow" id="gameFlowCard"><div id="gameFlow"></div></section>':'')+encounterPanel(run);
+    renderSideNav(run,editing);
+    host.dataset.experience=experience;host.dataset.panel=panel;
+    host.innerHTML=`<div class="game-experience-heading"><strong>${esc(run?.name||'Modo de Jogo')}</strong><span class="badge">${experience==='direct'?'Modo direto':'Modo técnico'}</span></div><p id="gameMessage" class="game-message" role="status" aria-live="polite"></p><p id="gameWarning" class="game-warning" role="status"></p>${recoveryRaw?'<button type="button" data-game-action="export-recovery">Exportar os dados antigos para recuperação</button>':''}<div id="gameConflict" class="game-pending" hidden>Há alterações em outra aba. <button type="button" data-game-action="reload-storage">Carregar dados da outra aba</button></div>${run&&panel!=='companion'&&!editing&&!newForm?'<div class="game-panel-heading"><button type="button" data-game-panel="companion">← Voltar ao acompanhamento</button></div>':''}${content}${options()}`;
     renderMessages();
     if(editor)renderEditorLists();
-    if(run&&!newForm&&!editing&&!review){renderGoalFields();if(run.status==='active')renderSearchResults();}
+    if(run&&!newForm&&!editing&&!review){
+      if(panel==='goals')renderGoalFields();
+      if(panel==='companion'&&run.status==='active'){
+        renderSearchResults();
+        if(run.selectedEvent&&window.AtlasFlow){const context=E.continuationContext(run,index),root=context?.path[0]||run.selectedEvent;flowController=window.AtlasFlow.mount($('gameFlow'),index.events.get(root),index,{currentEventKey:run.selectedEvent,technical:experience==='technical',onOpenEvent:key=>navigate(key)});}
+      }
+    }
   }
   function selectEvent(key) {
     ensure();const run=active();
@@ -214,11 +274,13 @@
     if(run.status!=='active')throw new Error('Reabra a run antes de selecionar um encontro.');
     if(!index.events.has(key))throw new Error('Encontro não encontrado.');
     const next=E.clone(run);next.selectedEvent=key;next.availability={};saveRun(next);review=null;editor=null;newForm=false;
-    message='Encontro selecionado. Compare as opções e registre o resultado que aconteceu no celular.';
+    panel='companion';message='Encontro selecionado. Compare as opções e registre o resultado que aconteceu no celular.';
     navigate('game');render();$('gameEncounter')?.scrollIntoView({block:'start'});
   }
   function onClick(event) {
-    const button=event.target.closest('[data-game-action]');if(!button)return;
+    const panelButton=event.target.closest('[data-game-panel]');
+    if(panelButton){event.preventDefault();if(panelButton.disabled||editor?.mode==='review'||editor?.mode==='correction')return;panel=panelButton.dataset.gamePanel;newForm=false;editor=null;review=null;render();closeMobileSidebar();host.scrollIntoView({block:'start'});return;}
+    const button=event.target.closest('[data-game-action]');if(!button||button.disabled)return;
     event.preventDefault();const action=button.dataset.gameAction,run=active(),key=button.dataset.key;
     message='';
     try {
@@ -240,10 +302,23 @@
         renderEditorLists();return;
       }
       if(!run)throw new Error('Selecione uma run.');
-      if(action==='edit-state'){editor={mode:'correction',state:E.clone(run.state)};review=null;render();return;}
-      if(action==='undo'||action==='redo'){saveRun(action==='undo'?E.undo(run):E.redo(run,index));message=action==='undo'?'Último registro desfeito. Você pode refazê-lo ou registrar outro resultado.':'Registro refeito.';render();return;}
+      if(action==='edit-state'){panel='sheet';closeMobileSidebar();editor={mode:'correction',state:E.clone(run.state)};review=null;render();return;}
+      if(action==='undo'||action==='redo'){panel='companion';closeMobileSidebar();saveRun(action==='undo'?E.undo(run):E.redo(run,index));message=action==='undo'?'Último registro desfeito. Você pode refazê-lo ou registrar outro resultado.':'Registro refeito.';render();return;}
       if(action==='toggle-status'){const next=E.clone(run);next.status=run.status==='active'?'ended':'active';saveRun(next);message=next.status==='ended'?'Run encerrada. O histórico foi preservado.':'Run reaberta.';render();return;}
       if(action==='clear-event'){const next=E.clone(run);next.selectedEvent=null;next.availability={};saveRun(next);render();return;}
+      if(action==='quick-result'){
+        if(experience!=='direct'||run.status!=='active')throw new Error('Abra uma run ativa no modo direto.');
+        if(button.dataset.encounter!==run.selectedEvent)throw new Error('As opções mudaram. Confira a etapa atual.');
+        const event=index.events.get(run.selectedEvent),choice=Number(button.dataset.choice),result=Number(button.dataset.result);
+        const preview=E.previewResult(event,choice,result,run.state,index);
+        if(currentAnalysis?.rows[choice]?.available===false||currentAnalysis?.rows[choice]?.outcomes[result]?.eligible===false)preview.issues.push('O resultado diverge dos requisitos da ficha; confira os valores do celular.');
+        if(preview.controls.length){preview.state.stats[0]=null;preview.state.stats[1]=null;preview.issues.push('Combate iniciado: confira saúde e sanidade após a luta na ficha.');}
+        preview.state.pending=[...new Set([...preview.state.pending,...preview.issues])];
+        const next=E.commit(run,preview.state,index,{type:'result',eventKey:run.selectedEvent,choice,result,note:'Resultado informado no modo direto.',issues:preview.issues});
+        saveRun(next);panel='companion';query='';message=next.selectedEvent?'Resultado registrado. Próxima etapa aberta.':'Resultado registrado. Informe o próximo encontro quando aparecer.';
+        if(preview.issues.length)message+=' Há efeitos para conferir na ficha.';
+        render();$('gameEncounter')?.scrollIntoView({block:'start'});return;
+      }
       if(action==='review-result'||action==='manual-result'){
         if(run.status!=='active')throw new Error('Reabra a run para registrar o resultado.');
         const event=index.events.get(run.selectedEvent);if(!event)throw new Error('Selecione o encontro primeiro.');
@@ -278,7 +353,7 @@
         const state=readState();if($('gameCopyCatalog')?.checked&&run)state.catalog=E.clone(run.state.catalog);
         const next=E.newRun({name:$('gameRunName').value,difficulty:$('gameDifficulty').value,profile:$('gameProfile').value,
           mainStory:$('gameMainStory').value,tales:$('gameTales').value,state},index);
-        saveRun(next);newForm=false;editor=null;review=null;query='';message='Run criada. Defina os objetivos e depois selecione o encontro que apareceu.';render();$('gameGoalType')?.focus();return;
+        saveRun(next);newForm=false;editor=null;review=null;panel='goals';query='';message='Run criada. Defina os objetivos e depois selecione o encontro que apareceu.';render();$('gameGoalType')?.focus();return;
       }
       if(!run)throw new Error('Selecione uma run.');
       if(event.target.id==='gameGoalForm') {
@@ -297,11 +372,11 @@
           const kind=index.records.get(input.value).kind;if(input.checked){if(!s.catalog[kind].includes(input.value))s.catalog[kind].push(input.value);}else s.catalog[kind]=s.catalog[kind].filter(k=>k!==input.value);
         }
         const next=E.commit(run,s,index,{type:review.choice===null?'observation':'result',eventKey:review.eventKey,choice:review.choice,result:review.result,note,issues:review.preview.issues});
-        saveRun(next);editor=null;review=null;query='';message=next.selectedEvent?'Resultado observado salvo. As próximas escolhas deste encontro estão abaixo.':'Resultado observado salvo. Esta etapa não tem continuação direta; selecione o próximo encontro quando aparecer no jogo.';render();if(next.selectedEvent)$('gameEncounter')?.scrollIntoView({block:'start'});return;
+        saveRun(next);editor=null;review=null;panel='companion';query='';message=next.selectedEvent?'Resultado observado salvo. As próximas escolhas deste encontro estão abaixo.':'Resultado observado salvo. Esta etapa não tem continuação direta; selecione o próximo encontro quando aparecer no jogo.';render();if(next.selectedEvent)$('gameEncounter')?.scrollIntoView({block:'start'});return;
       }
       if(event.target.id==='gameCorrectionForm'){
         const s=readState();if($('gameClearPending')?.checked)s.pending=[];
-        saveRun(E.commit(run,s,index,{type:'correction',note:$('gameCorrectionNote').value.trim()}));editor=null;message='Correção salva. Você pode desfazê-la pelo histórico.';render();return;
+        saveRun(E.commit(run,s,index,{type:'correction',note:$('gameCorrectionNote').value.trim()}));editor=null;panel='sheet';message='Correção salva. Você pode desfazê-la pelo histórico.';render();return;
       }
       if(event.target.id==='gameCatalogForm'){
         const kind=$('gameCatalogKind').value,record=pick('gameCatalogTarget',kind),s=E.clone(run.state);
@@ -338,10 +413,15 @@
         if(event.target.id==='gameTraitsComplete')editor.state.traitsComplete=event.target.checked;
         if(event.target.id==='gameDifficulty'||event.target.id==='gameProfile'){editor.config||={};editor.config[event.target.id==='gameDifficulty'?'difficulty':'profile']=event.target.value;}
       }
+      if(event.target.id==='gameExperience'){
+        if(editor?.mode==='review'||editor?.mode==='correction')return;
+        experience=event.target.value==='direct'?'direct':'technical';try{localStorage.setItem(EXPERIENCE_KEY,experience);}catch{}
+        message=experience==='direct'?'Modo direto: registre o resultado em um toque. A análise das escolhas futuras continua ativa.':'Modo técnico: revisão dos dados antes de cada registro.';render();closeMobileSidebar();return;
+      }
       if(event.target.id==='gameGoalType'){renderGoalFields();return;}
       if(event.target.id==='gameEventCategory'){category=event.target.value;renderSearchResults();return;}
       if(event.target.id==='gameRunSwitcher'){
-        const next=E.clone(session);next.activeId=event.target.value;persist(next);editor=null;review=null;query='';newForm=false;message='Run carregada.';render();return;
+        const next=E.clone(session);next.activeId=event.target.value;persist(next);editor=null;review=null;panel='companion';query='';newForm=false;message='Run carregada.';render();return;
       }
       if(event.target.id==='gameCatalogKind'){$('gameCatalogTarget').value='';$('gameCatalogTarget').setAttribute('list',`game-${event.target.value}-options`);return;}
       if(event.target.matches('[data-game-available]')){
@@ -355,7 +435,7 @@
         const payload=JSON.parse(await file.text());
         if(payload.format!=='life-in-adventure-run'||payload.version!==1)throw new Error('Este arquivo não é um backup de run do Atlas.');
         const imported=E.validateRun(payload.run,index);imported.id=E.id();imported.name=short(imported.name+' (importada)',80);
-        saveRun(imported);editor=null;review=null;newForm=false;query='';message='Backup importado como uma nova run. As runs anteriores foram preservadas.';render();return;
+        saveRun(imported);editor=null;review=null;newForm=false;panel='companion';query='';message='Backup importado como uma nova run. As runs anteriores foram preservadas.';render();return;
       }
     }catch(err){error(err);}
   }
@@ -366,5 +446,5 @@
     message='Backup exportado. Guarde o arquivo para restaurar a run ou compartilhar as diferenças encontradas.';renderMessages();
   }
   function download(data,name,type){const url=URL.createObjectURL(new Blob([data],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-  window.AtlasGame={init:callback=>{navigate=callback;},render,hide:()=>{isVisible=false;},chooseEvent:key=>{try{selectEvent(key);}catch(err){navigate('game');render();error(err);}}};
+  window.AtlasGame={init:callback=>{navigate=callback;},render,hide:()=>{isVisible=false;flowController?.destroy();flowController=null;if($('gameSideNav'))$('gameSideNav').hidden=true;},chooseEvent:key=>{try{selectEvent(key);}catch(err){navigate('game');render();error(err);}}};
 })();

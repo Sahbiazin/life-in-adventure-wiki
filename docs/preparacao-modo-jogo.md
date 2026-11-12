@@ -42,8 +42,8 @@ Na raiz do projeto:
 .venv/bin/python scripts/audit_rules.py
 .venv/bin/python web/life-in-adventure/build_data.py
 .venv/bin/python -X utf8 -m unittest discover -s tests -v
-python web/life-in-adventure/tests/browser_smoke.py
-node --test web/life-in-adventure/tests/game-engine.test.cjs
+python -m unittest discover -s web/life-in-adventure/tests -p '*_smoke.py'
+node --test web/life-in-adventure/tests/*.test.cjs
 python web/life-in-adventure/tests/game_mode_smoke.py
 ```
 

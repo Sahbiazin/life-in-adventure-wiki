@@ -8,13 +8,16 @@
   <script>
     // Apply the saved theme before the first paint; fall back to the device preference.
     (()=>{let theme;try{theme=localStorage.getItem('life-in-adventure:theme:v1');}catch{}
-      document.documentElement.dataset.theme=theme==='light'||theme==='dark'?theme:window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';})();
+      document.documentElement.dataset.theme=theme==='light'||theme==='dark'?theme:window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+      let sidebar;try{sidebar=localStorage.getItem('life-in-adventure:sidebar:v1');}catch{}
+      document.documentElement.dataset.sidebar=sidebar==='open'||sidebar==='closed'?sidebar:window.matchMedia('(max-width: 650px)').matches?'closed':'open';})();
   </script>
-  <link rel="stylesheet" href="styles.css?v=future-risks1">
-  <script defer src="events-data.js?v=future-risks1"></script><script defer src="game-engine.js?v=future-risks1"></script><script defer src="game-mode.js?v=future-risks1"></script><script defer src="app.js?v=future-risks1"></script>
+  <link rel="stylesheet" href="styles.css?v=companion-ui1"><link rel="stylesheet" href="event-flow.css?v=companion-ui1">
+  <script defer src="layout.js?v=companion-ui1"></script><script defer src="events-data.js?v=companion-ui1"></script><script defer src="game-engine.js?v=companion-ui1"></script><script defer src="event-flow.js?v=companion-ui1"></script><script defer src="game-mode.js?v=companion-ui1"></script><script defer src="app.js?v=companion-ui1"></script>
 </head>
 <body>
   <header class="topbar">
+    <button id="sidebarToggle" class="sidebar-toggle" type="button" aria-controls="atlasSidebar" aria-expanded="true" aria-label="Recolher barra lateral" title="Recolher barra lateral"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
     <a class="brand" href="#" aria-label="Life in Adventure, início"><span class="brand-mark">✦</span><span>LIFE IN ADVENTURE<small>O ATLAS DO AVENTUREIRO</small></span></a>
     <nav aria-label="Navegação principal"><button data-view="game" class="game-nav-button">Modo de Jogo</button><button data-view="events" class="nav-active" aria-current="page">Eventos</button><button data-view="item">Itens</button><button data-view="monster">Monstros</button><button data-view="ability">Habilidades</button><button data-view="trait">Traços</button><button data-view="ending">Epílogos</button></nav>
     <div class="topbar-actions">
@@ -25,11 +28,14 @@
       <button class="settings" data-view="favorites">☆ <span>Favoritos</span></button>
     </div>
   </header>
+  <button id="sidebarBackdrop" class="sidebar-backdrop" type="button" aria-label="Fechar menu lateral" tabindex="-1" hidden></button>
   <div class="workspace">
-    <aside class="sidebar" aria-label="Explorar e filtrar o atlas">
+    <aside id="atlasSidebar" class="sidebar" aria-label="Explorar e filtrar o atlas">
+      <div class="sidebar-tools"><span class="eyebrow">MENU DO ATLAS</span><button id="sidebarClose" class="sidebar-close" type="button" aria-label="Fechar barra lateral" title="Fechar barra lateral">✕</button></div>
       <div class="side-heading"><span class="eyebrow">EXPLORAR O ATLAS</span><span class="compass">✧</span></div>
       <h2>Um mundo de<br>possibilidades.</h2>
       <p class="side-intro">Encontre um encontro.<br>Descubra cada caminho.</p>
+      <div id="gameSideNav" hidden></div>
       <div id="eventFilters"><div class="filter-label">TIPO DE EVENTO</div><div id="categories" class="categories"></div>
       <div class="filter-label tags-heading">FILTRAR POR TAGS <span id="activeCount"></span></div>
       <p class="filter-hint">Combine tags para refinar a busca.</p><div id="tagFilters" class="tag-filters"></div>

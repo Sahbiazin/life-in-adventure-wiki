@@ -40,6 +40,23 @@ class GameModeBrowserTests(unittest.TestCase):
             extra()
         self.page.get_by_role('button', name='Criar run e definir objetivos').click()
         expect(self.page.locator('#gameMessage')).to_contain_text('Run criada')
+        self.panel('companion')
+
+    def open_sidebar(self, page=None):
+        page = page or self.page
+        if not page.locator('#gameSideNav').is_visible():
+            page.locator('#sidebarToggle').click()
+        expect(page.locator('#gameSideNav')).to_be_visible()
+
+    def panel(self, name, page=None):
+        page = page or self.page
+        self.open_sidebar(page)
+        page.locator(f'#gameSideNav [data-game-panel="{name}"]').click()
+
+    def side_action(self, action, page=None):
+        page = page or self.page
+        self.open_sidebar(page)
+        page.locator(f'#gameSideNav [data-game-action="{action}"]').click()
 
     def saved(self):
         return json.loads(self.page.evaluate('(key) => localStorage.getItem(key)', STORAGE))
@@ -50,11 +67,17 @@ class GameModeBrowserTests(unittest.TestCase):
 
     def gold_goal(self, page=None):
         page = page or self.page
+        self.panel('goals', page)
+        details = page.locator('#gameGoals > details')
+        if details.get_attribute('open') is None:
+            details.locator('summary').first.click()
         page.locator('#gameGoalType').select_option('gold')
         page.locator('#gameGoalAmount').fill('200')
         page.get_by_role('button', name='Adicionar objetivo', exact=True).click()
+        self.panel('companion', page)
 
     def encounter(self, ident=346, category='EventTreasure'):
+        self.panel('companion')
         self.page.locator('#gameEventQuery').fill('#' + str(ident))
         self.page.locator('#gameEventCategory').select_option(category)
         self.page.locator('#gameEventResults [data-game-action="select-event"]').first.click()
@@ -96,9 +119,9 @@ class GameModeBrowserTests(unittest.TestCase):
         expect(self.page.locator('#gameEncounter .attribute-test')).to_contain_text('Teste de Carisma')
         expect(self.page.locator('.game-continuation')).to_contain_text('Normal #552 → Normal #553 → Normal #554 → Normal #555')
         self.assertLessEqual(self.page.evaluate('document.documentElement.scrollWidth'), 390)
-        self.page.get_by_role('button', name='Desfazer último registro').click()
+        self.side_action('undo')
         self.assertEqual(self.active()['selectedEvent'], 'EventNormal:554')
-        self.page.get_by_role('button', name='Refazer', exact=True).click()
+        self.side_action('redo')
         self.assertEqual(self.active()['selectedEvent'], 'EventNormal:555')
         self.assertEqual(self.active()['cursor'], 3)
 
@@ -197,6 +220,7 @@ class GameModeBrowserTests(unittest.TestCase):
             self.page.get_by_text('Valor numérico, se você souber', exact=True).click()
             self.page.locator('#gs3').fill('9')
         self.start(extra)
+        self.panel('runs')
         expect(self.page.locator('.game-stat-row')).to_contain_text('Alinhamento: Neutro (9)')
         self.encounter(80, 'EventTreasure')
         self.result(1)
@@ -206,15 +230,17 @@ class GameModeBrowserTests(unittest.TestCase):
         self.save_result()
         self.assertEqual(self.active()['state']['stats']['3'], 10)
         self.page.reload(wait_until='networkidle')
+        self.panel('runs')
         expect(self.page.locator('.game-stat-row')).to_contain_text('Justo (10)')
-        self.page.get_by_role('button', name='Desfazer último registro').click()
+        self.side_action('undo')
         self.assertEqual(self.active()['state']['stats']['3'], 9)
-        self.page.get_by_role('button', name='Refazer', exact=True).click()
+        self.side_action('redo')
         self.assertEqual(self.active()['state']['stats']['3'], 10)
-        self.page.get_by_role('button', name='Conferir / corrigir ficha').click()
+        self.side_action('edit-state')
         self.page.locator('#gs3').fill('-10')
         self.page.get_by_label('Estes são os valores que conferi no jogo', exact=True).check()
         self.page.get_by_role('button', name='Salvar correção', exact=True).click()
+        self.panel('runs')
         expect(self.page.locator('.game-stat-row')).to_contain_text('Impuro (-10)')
 
     def test_alignment_name_keeps_an_interval_and_does_not_invent_a_number(self):
@@ -231,23 +257,27 @@ class GameModeBrowserTests(unittest.TestCase):
         self.assertIsNone(self.active()['state']['stats']['3'])
         self.assertEqual(self.active()['state']['alignmentRange']['min'], -8)
         self.page.reload(wait_until='networkidle')
+        self.panel('runs')
         expect(self.page.locator('.game-stat-row')).to_contain_text('Neutro ou Justo')
-        self.page.get_by_role('button', name='Conferir / corrigir ficha').click()
+        self.side_action('edit-state')
         self.page.locator('#gameAlignmentBand').select_option('moral')
         self.page.get_by_label('Estes são os valores que conferi no jogo', exact=True).check()
         self.page.get_by_role('button', name='Salvar correção', exact=True).click()
         self.assertIsNone(self.active()['state']['stats']['3'])
         self.assertEqual(self.active()['state']['alignmentRange']['min'],10)
+        self.panel('runs')
         expect(self.page.locator('.game-stat-row')).to_contain_text('Justo · estimativa por faixa')
 
     def test_saved_runs_from_before_alignment_remain_usable_with_unknown_alignment(self):
         self.start();self.encounter();self.result(1);self.save_result()
         self.page.evaluate('''key=>{const saved=JSON.parse(localStorage.getItem(key));for(const r of saved.runs){for(const s of [r.state,...r.history.flatMap(h=>[h.before,h.after])]){delete s.stats['3'];delete s.alignmentRange;}}localStorage.setItem(key,JSON.stringify(saved));}''', STORAGE)
         self.page.reload(wait_until='networkidle')
+        self.panel('runs')
         expect(self.page.locator('.game-stat-row')).to_contain_text('Alinhamento: Não informado')
+        self.panel('runs')
         expect(self.page.locator('.game-stat-row')).to_contain_text('Ouro: 95')
         expect(self.page.locator('#gameWarning')).not_to_be_visible()
-        self.page.get_by_role('button', name='Desfazer último registro').click()
+        self.side_action('undo')
         self.assertEqual(self.active()['state']['stats']['4'], 100)
         self.assertIsNone(self.active()['state']['stats']['3'])
 
@@ -272,6 +302,7 @@ class GameModeBrowserTests(unittest.TestCase):
         self.assertTrue(state['inventoryComplete'])
         self.assertTrue(state['traitsComplete'])
         self.page.reload(wait_until='networkidle')
+        self.panel('runs')
         expect(self.page.locator('.game-dashboard h2')).to_have_text('Run de teste')
 
     def test_goal_recommendation_review_actual_values_reload_undo_redo(self):
@@ -288,14 +319,15 @@ class GameModeBrowserTests(unittest.TestCase):
         self.assertEqual(self.active()['state']['stats']['4'], 94)
         self.page.reload(wait_until='networkidle')
         self.assertEqual(self.active()['state']['stats']['4'], 94)
-        self.page.get_by_role('button', name='Desfazer último registro').click()
+        self.side_action('undo')
         self.assertEqual(self.active()['state']['stats']['4'], 100)
-        self.page.get_by_role('button', name='Refazer', exact=True).click()
+        self.side_action('redo')
         self.assertEqual(self.active()['state']['stats']['4'], 94)
         self.assertEqual(self.active()['cursor'], 1)
 
     def test_primary_score_objective_blocks_false_best_choice_even_with_gold_secondary(self):
         self.start()
+        self.panel('goals')
         self.page.locator('#gameGoalType').select_option('score')
         self.page.get_by_role('button', name='Adicionar objetivo', exact=True).click()
         self.page.locator('#gameGoals > details > summary').click()
@@ -303,7 +335,9 @@ class GameModeBrowserTests(unittest.TestCase):
         self.encounter()
         expect(self.page.locator('#gameEncounter > .game-notice')).to_contain_text('precisa de confirmação manual')
         self.assertEqual(self.page.locator('.game-recommended').count(), 0)
+        self.panel('goals')
         self.page.locator('[data-game-action="promote-goal"]').click()
+        self.panel('companion')
         expect(self.page.locator('.game-recommended > summary')).to_contain_text('Pagar apenas o meu')
 
     def test_combat_commands_are_interpreted_and_catalog_is_manual(self):
@@ -321,10 +355,10 @@ class GameModeBrowserTests(unittest.TestCase):
         self.assertEqual(state['pending'], [])
         self.assertFalse(state['flagsUncertain'])
         self.assertIn('monster:0', state['catalog']['monster'])
-        self.page.get_by_role('button', name='Desfazer último registro').click()
+        self.side_action('undo')
         self.assertEqual(self.active()['state']['stats']['0'], 10)
         self.assertEqual(self.active()['state']['catalog']['monster'], [])
-        self.page.get_by_role('button', name='Refazer', exact=True).click()
+        self.side_action('redo')
         self.assertEqual(self.active()['state']['stats']['0'], 7)
         self.assertEqual(self.active()['state']['pending'], [])
 
@@ -347,9 +381,9 @@ class GameModeBrowserTests(unittest.TestCase):
         self.assertFalse(self.active()['state']['flagsUncertain'])
         self.assertEqual(self.page.locator('.game-recommended').count(),0)
         self.assertLessEqual(self.page.evaluate('document.documentElement.scrollWidth'),390)
-        self.page.get_by_role('button',name='Desfazer último registro').click()
+        self.side_action('undo')
         expect(self.page.locator('[data-game-combat]')).to_have_count(0)
-        self.page.get_by_role('button',name='Refazer',exact=True).click()
+        self.side_action('redo')
         expect(self.page.locator('[data-game-combat]')).to_contain_text('Anão')
 
     def test_accepting_the_village_job_warns_about_the_treant_before_recording_anything(self):
@@ -402,7 +436,7 @@ class GameModeBrowserTests(unittest.TestCase):
         self.assertEqual(self.active()['state']['pending'],[])
         self.assertEqual(self.active()['state']['catalog']['monster'],[])
         self.page.reload(wait_until='networkidle')
-        self.page.get_by_role('button',name='Desfazer último registro').click()
+        self.side_action('undo')
         self.assertEqual(self.active()['selectedEvent'],'EventTreasure:363')
         self.assertEqual(self.active()['state']['states']['chainEventList']['616'],2)
 
@@ -419,6 +453,7 @@ class GameModeBrowserTests(unittest.TestCase):
         self.assertIsNone(run['history'][0]['result'])
         self.assertEqual(run['state']['stats']['4'], 100)
         self.assertEqual(run['state']['stats']['0'], 8)
+        self.panel('history')
         self.page.locator('#gameRunHistory > summary').click()
         self.page.locator('.game-history summary').first.click()
         expect(self.page.locator('.game-history')).to_contain_text(note)
@@ -432,6 +467,7 @@ class GameModeBrowserTests(unittest.TestCase):
         self.result(1)
         self.save_result()
         original = self.active()
+        self.panel('runs')
         with self.page.expect_download() as download_info:
             self.page.get_by_role('button', name='Exportar run', exact=True).click()
         with tempfile.TemporaryDirectory(prefix='lia-run-export-') as folder:
@@ -453,10 +489,12 @@ class GameModeBrowserTests(unittest.TestCase):
 
     def test_multiple_runs_can_copy_confirmed_catalog_without_overwriting_old_progress(self):
         self.start()
+        self.panel('catalog')
         self.page.locator('details').filter(has=self.page.locator('#gameCatalogForm')).locator('summary').first.click()
         self.page.locator('#gameCatalogTarget').fill('Adaga · #0')
         self.page.get_by_role('button', name='Confirmar no catálogo', exact=True).click()
         original_id = self.active()['id']
+        self.panel('runs')
         self.page.get_by_role('button', name='Nova run', exact=True).click()
         self.page.locator('#gameRunName').fill('Segunda run')
         self.page.get_by_role('button', name='Criar run e definir objetivos').click()
@@ -494,6 +532,7 @@ class GameModeBrowserTests(unittest.TestCase):
         self.encounter()
         self.result(1)
         self.save_result()
+        self.panel('runs')
         expect(self.page.locator('.game-stat-row')).to_contain_text('Ouro: 95')
         expect(self.page.get_by_role('button', name='Exportar run', exact=True)).to_be_enabled()
 
@@ -508,6 +547,7 @@ class GameModeBrowserTests(unittest.TestCase):
         self.encounter()
         self.result(1)
         self.save_result()
+        self.panel('runs')
         expect(self.page.locator('.game-stat-row')).to_contain_text('Ouro: 95')
         self.assertEqual(self.page.evaluate('(key) => localStorage.getItem(key)', STORAGE), '{broken-run')
 
@@ -516,16 +556,18 @@ class GameModeBrowserTests(unittest.TestCase):
         other = self.context.new_page()
         other.on('pageerror', lambda e: self.errors.append(str(e)))
         other.goto(self.base + '#catalogo=game', wait_until='networkidle')
-        self.page.get_by_role('button', name='Conferir / corrigir ficha').click()
+        self.side_action('edit-state')
         self.page.locator('#gs4').fill('88')
         self.page.get_by_label('Estes são os valores que conferi no jogo', exact=True).check()
         self.page.get_by_role('button', name='Salvar correção', exact=True).click()
         expect(other.locator('#gameConflict')).to_be_visible()
+        self.panel('runs', other)
         other.get_by_role('button', name='Nova run', exact=True).click()
         other.get_by_role('button', name='Criar run e definir objetivos').click()
         expect(other.locator('#gameMessage')).to_contain_text('outra aba')
         self.assertEqual(len(self.saved()['runs']), 1)
         other.get_by_role('button', name='Carregar dados da outra aba').click()
+        self.panel('runs', other)
         expect(other.locator('.game-stat-row')).to_contain_text('Ouro: 88')
         expect(other.locator('#gameConflict')).not_to_be_visible()
 
@@ -535,11 +577,13 @@ class GameModeBrowserTests(unittest.TestCase):
         self.page.locator('#favoriteToggle').click()
         self.page.locator('#closeDialog').click()
         self.page.get_by_role('navigation').get_by_role('button', name='Modo de Jogo', exact=True).click()
+        self.panel('runs')
         self.page.get_by_role('button', name='Encerrar run', exact=True).click()
         self.assertEqual(self.active()['status'], 'ended')
         expect(self.page.locator('#gameEventQuery')).not_to_be_visible()
         self.page.get_by_role('button', name='Reabrir run', exact=True).click()
         self.assertEqual(self.active()['status'], 'active')
+        self.panel('companion')
         expect(self.page.locator('#gameEventQuery')).to_be_visible()
         notebook = json.loads(self.page.evaluate("localStorage.getItem('life-in-adventure:notebook:v1')"))
         self.assertIn('EventTreasure:346', notebook['favorites'])

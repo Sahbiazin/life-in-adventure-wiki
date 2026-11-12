@@ -225,7 +225,7 @@ class WikiBrowserTests(unittest.TestCase):
             from urllib.parse import urlparse
             name = urlparse(route.request.url).path.lstrip('/') or 'index.html'
             path = DIST / name
-            if name in ('index.html', 'styles.css', 'app.js', 'events-data.js', 'game-engine.js', 'game-mode.js'):
+            if name in ('index.html', 'styles.css', 'app.js', 'events-data.js', 'game-engine.js', 'game-mode.js', 'layout.js', 'event-flow.js', 'event-flow.css'):
                 mime = 'text/html' if name.endswith('.html') else 'text/css' if name.endswith('.css') else 'application/javascript'
                 route.fulfill(body=path.read_bytes(), content_type=mime)
             else:

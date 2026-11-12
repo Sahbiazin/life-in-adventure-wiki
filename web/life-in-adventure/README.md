@@ -42,13 +42,13 @@ Na raiz:
 node --check web/life-in-adventure/dist/app.js
 node --check web/life-in-adventure/dist/game-engine.js
 node --check web/life-in-adventure/dist/game-mode.js
-node --test web/life-in-adventure/tests/game-engine.test.cjs
+node --test web/life-in-adventure/tests/*.test.cjs
 ```
 
 Para o teste funcional de navegador, use um Python com Playwright e um Chromium instalado (não é uma dependência da aplicação):
 
 ```sh
-python web/life-in-adventure/tests/browser_smoke.py
+python -m unittest discover -s web/life-in-adventure/tests -p '*_smoke.py'
 python web/life-in-adventure/tests/game_mode_smoke.py
 ```
 
@@ -60,7 +60,7 @@ Os testes do motor verificam requisitos com dados desconhecidos, objetivos e pri
 
 Site publicado: [Life in Adventure · Atlas de eventos](https://sahbiazin.github.io/life-in-adventure-wiki/).
 
-O workflow `.github/workflows/pages.yml` publica somente os seis arquivos da pasta `dist`, sem incluir o APK ou os arquivos de extração no site. Ele verifica a estrutura do bundle, a sintaxe dos scripts e os testes do motor. Usa o bundle já versionado; depois de alterar a geração dos dados, atualize o bundle antes do envio.
+O workflow `.github/workflows/pages.yml` publica somente os nove arquivos da pasta `dist`, sem incluir o APK ou os arquivos de extração no site. Ele verifica a estrutura do bundle, a sintaxe dos scripts e os testes do motor. Usa o bundle já versionado; depois de alterar a geração dos dados, atualize o bundle antes do envio.
 
 Para a primeira publicação, o repositório precisa ter o GitHub Pages ativado com **Settings → Pages → Build and deployment → Source → GitHub Actions**. Em uma conta gratuita, mantenha o repositório público. A publicação é executada nos envios para `master` que alteram o aplicativo ou o workflow; também pode ser iniciada em **Actions → Publicar atlas no GitHub Pages → Run workflow**.
 
