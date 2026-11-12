@@ -16,6 +16,18 @@ STAT_STORES = {5: 0x1a524b8, 6: 0x1a5266c, 7: 0x1a5280c, 8: 0x1a529b0,
                9: 0x1a52b40, 13: 0x1a531bc, 14: 0x1a53374}
 
 
+# StatusCtrl.ShowFameInfo classifies GetUserData(3); stores are the Portuguese
+# column of Str.alignment/alignmentList, checked against this exact ELF.
+ALIGNMENT_INSTRUCTIONS = {
+    0x1af7cd4: '0028291e', 0x1af7d34: '9f0e0071', 0x1af7d38: '40020054',
+    0x19c6bc4: '61008052', 0x19c6bcc: 'dfc20494',
+    0x19c6bd0: '0110371e', 0x19c6be0: '0150341e',
+    0x19c6bf4: '0190241e', 0x19c6c08: '0130271e',
+    0x1a7634c: '092000f9', 0x1a76480: '0a2000f9',
+    0x1a765c4: '282100f9', 0x1a7677c: '092100f9', 0x1a76930: '2a2100f9', 0x1a76af4: '2b2100f9'
+}
+
+
 def verify(binary=BINARY):
     digest = hashlib.sha256(binary.read_bytes()).hexdigest()
     if digest != EXPECTED_SHA256:
@@ -34,12 +46,20 @@ def verify(binary=BINARY):
             for opcode, target in expected.items():
                 if base+4*table[opcode-shift] != target:
                     raise ValueError(f'Unexpected dispatch for opcode {opcode}')
+        for address, expected in ALIGNMENT_INSTRUCTIONS.items():
+            if read(address, 4).hex() != expected:
+                raise ValueError(f'Unexpected alignment instruction at {address:#x}')
         # Reward 30 is handled after the switch by a dedicated cmp w10, #0x1e.
         assert read(0x1a9299c, 4) == bytes.fromhex('5f790071')
     return {'version': '1.2.47', 'build': 366, 'binary_sha256': digest, 'runtime_validated': False,
             'required_dispatch': {str(k): hex(v) for k, v in REQUIRED.items()},
             'reward_dispatch': {str(k): hex(v) for k, v in REWARD.items()},
             'reward_30_guard': '0x1a9299c', 'stat_pt_store_instructions': {str(k): hex(v) for k, v in STAT_STORES.items()},
+            'alignment': {'user_data_index': 3, 'thresholds': [-24, -9, 10, 25],
+                          'pt_labels': ['Maligno', 'Impuro', 'Neutro', 'Justo', 'Bondoso'],
+                          'classification_function': '0x19c6af0',
+                          'negative_clamp_bypass': '0x1af7d34',
+                          'verified_instructions': {hex(k): v for k, v in ALIGNMENT_INSTRUCTIONS.items()}},
             'scope': 'Dispatch and source identity verified; branch semantics documented by instruction inspection, not runtime execution.'}
 
 

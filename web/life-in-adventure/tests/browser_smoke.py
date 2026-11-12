@@ -84,6 +84,14 @@ class WikiBrowserTests(unittest.TestCase):
         self.page.locator('#mapTab').click()
         expect(self.page.locator('#choiceMap')).to_contain_text('Teste de Força')
 
+    def test_calling_guards_has_a_readable_alignment_reward(self):
+        self.goto('#evento=EventTreasure%3A80')
+        choice = self.page.locator('.choice-card').nth(1)
+        choice.locator('summary').first.click()
+        expect(choice).to_contain_text('Chamar os guardas')
+        expect(choice.locator('.rule-list')).to_contain_text('Alinhamento: +1')
+        self.assertNotIn('Atributo de índice 3', choice.inner_text())
+
     def test_readable_rules_raw_data_and_probability(self):
         self.goto('#evento=EventTreasure%3A346')
         expect(self.page.locator('#eventDialog')).to_be_visible()

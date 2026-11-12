@@ -6,7 +6,7 @@
   else root.AtlasRun = api;
 })(globalThis, () => {
   const VERSION = 1;
-  const STATS = {0:'Saúde',1:'Sanidade',2:'EXP',4:'Ouro',5:'Força',6:'Destreza',7:'Inteligência',8:'Saúde máxima',9:'Sanidade máxima',12:'Carisma',13:'Constituição',14:'Sabedoria'};
+  const STATS = {0:'Saúde',1:'Sanidade',2:'EXP',3:'Alinhamento',4:'Ouro',5:'Força',6:'Destreza',7:'Inteligência',8:'Saúde máxima',9:'Sanidade máxima',12:'Carisma',13:'Constituição',14:'Sabedoria'};
   const FAMILIES = ['mainEventList','subEventList','chainEventList'];
   const TYPES = ['item','ending','catalog_item','catalog_monster','story','score','gold'];
   const clone = value => JSON.parse(JSON.stringify(value));
@@ -18,6 +18,34 @@
   const normalize = value => String(value??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
   const plain = value => String(value??'').replace(/<[^>]*>/g,'').replace(/\|[^|]*\|/g,'').trim();
 
+  const ALIGNMENT_BANDS = [
+    {id:'evil',name:'Maligno',min:null,upper:-24},
+    {id:'impure',name:'Impuro',min:-24,upper:-9},
+    {id:'neutral',name:'Neutro',min:-9,upper:10},
+    {id:'moral',name:'Justo',min:10,upper:25},
+    {id:'good',name:'Bondoso',min:25,upper:null}
+  ];
+  function alignmentRangeForBand(id) {
+    const band=ALIGNMENT_BANDS.find(b=>b.id===id);if(!band)return null;
+    // Ranges have inclusive endpoints. Keep the last native float below an exclusive threshold.
+    let max=null;
+    if(band.upper!==null){const floats=new Float32Array([band.upper]),bits=new Uint32Array(floats.buffer);bits[0]+=band.upper>0?-1:1;max=floats[0];}
+    return {min:band.min,max};
+  }
+  function alignmentInfo(state) {
+    const value=finite(state.stats[3])?Math.fround(state.stats[3]):null,range=state.alignmentRange;
+    const bands=ALIGNMENT_BANDS.filter(b=>finite(value)?(b.min===null||value>=b.min)&&(b.upper===null||value<b.upper):range&&(range.max===null||b.min===null||range.max>=b.min)&&(range.min===null||b.upper===null||range.min<b.upper));
+    return {value:finite(value)?value:null,bands:bands.map(b=>b.id),label:bands.length?bands.map(b=>b.name).join(' ou '):'Não informado'};
+  }
+  function alignmentComparison(range,comparison,quantity) {
+    if(!range)return null;
+    if(comparison==='>=')return range.min!==null&&range.min>=quantity?true:range.max!==null&&range.max<quantity?false:null;
+    if(comparison==='<')return range.max!==null&&range.max<quantity?true:range.min!==null&&range.min>=quantity?false:null;
+    const excluded=(range.min!==null&&quantity<range.min)||(range.max!==null&&quantity>range.max);
+    if(comparison==='==')return excluded?false:range.min===quantity&&range.max===quantity?true:null;
+    if(comparison==='!=')return excluded?true:range.min===quantity&&range.max===quantity?false:null;
+    return null;
+  }
   function createIndex(data) {
     const events = new Map(data.events.map(e=>[`${e.group}:${e.id}`,e]));
     const records = new Map(data.catalogs.map(c=>[c.key,c]));
@@ -67,7 +95,7 @@
     return previous?{...previous,path}:null;
   }
   function blankState() {
-    return {stats:Object.fromEntries(Object.keys(STATS).map(k=>[k,null])),items:{},inventoryComplete:false,
+    return {stats:Object.fromEntries(Object.keys(STATS).map(k=>[k,null])),alignmentRange:null,items:{},inventoryComplete:false,
       traits:[],traitsComplete:false,abilities:{},states:Object.fromEntries(FAMILIES.map(f=>[f,{}])),
       endings:{main:[],sub:[]},catalog:{item:[],monster:[],ending:[]},completedGoals:[],score:null,pending:[],flagsUncertain:false};
   }
@@ -76,8 +104,15 @@
     const s=blankState();
     for(const k of Object.keys(STATS)) {
       const v=input.stats?.[k];
-      if(v!==undefined && v!==null && (!finite(v)||v<0||v>1e9))fail(`Valor inválido em ${STATS[k]}.`);
-      s.stats[k]=v??null;
+      if(v!==undefined && v!==null && (!finite(v)||(k!=='3'&&v<0)||Math.abs(v)>1e9))fail(`Valor inválido em ${STATS[k]}.`);
+      s.stats[k]=k==='3'&&finite(v)?Math.fround(v):v??null;
+    }
+    if(input.alignmentRange!==undefined&&input.alignmentRange!==null) {
+      const range=input.alignmentRange;
+      if(!range||typeof range!=='object'||Array.isArray(range)||!['min','max'].every(k=>range[k]===null||(finite(range[k])&&Math.abs(range[k])<=1e9)))fail('Faixa de alinhamento inválida.');
+      const min=range.min===null?null:Math.fround(range.min),max=range.max===null?null:Math.fround(range.max);
+      if((min===null&&max===null)||(min!==null&&max!==null&&min>max))fail('Faixa de alinhamento inválida.');
+      if(s.stats[3]===null)s.alignmentRange={min,max};
     }
     const counts=(object,kind)=>{
       if(object!==undefined && (!object || typeof object!=='object'||Array.isArray(object)))fail('Lista de valores inválida.');
@@ -144,7 +179,10 @@
     const values=view.tokens.map(t=>{
       const m=t.model;if(!t.known||!m)return null;
       let value=null;
-      if(m.domain==='userData_effective')value=s.stats[m.index];
+      if(m.domain==='userData_effective'){
+        value=s.stats[m.index];
+        if(String(m.index)==='3'&&!finite(value))return alignmentComparison(s.alignmentRange,m.comparison,m.quantity);
+      }
       else if(m.domain==='inventory')value=own(s.items,String(m.index))?s.items[m.index]:s.inventoryComplete?0:null;
       else if(m.domain==='ability_effective')value=s.abilities[m.index];
       else if(FAMILIES.includes(m.domain)){
@@ -182,8 +220,12 @@
       const k=String(m.index),q=m.quantity;
       if(m.operation==='change_user_data') {
         if(!own(STATS,k)){issues.push(`Atributo de índice ${k}: conferir a alteração ${q}.`);continue;}
+        if(k==='3'&&!finite(next.stats[3])&&next.alignmentRange){
+          for(const endpoint of ['min','max'])if(next.alignmentRange[endpoint]!==null)next.alignmentRange[endpoint]=Math.fround(next.alignmentRange[endpoint]+q);
+          changes.push(`Alinhamento: ${q>=0?'+':''}${q} (estimativa pela faixa informada)`);continue;
+        }
         if(!finite(next.stats[k])){issues.push(`${STATS[k]} não informado; conferir a alteração ${q}.`);continue;}
-        next.stats[k]=Math.max(0,next.stats[k]+q);
+        next.stats[k]=k==='3'?Math.fround(next.stats[k]+q):Math.max(0,next.stats[k]+q);
         changes.push(`${STATS[k]}: ${q>=0?'+':''}${q}`);
       } else if(m.operation==='add_item'||m.operation==='remove_item') {
         const amount=own(next.items,k)?next.items[k]:next.inventoryComplete?0:null;
@@ -406,5 +448,5 @@
     result.availability={};
     return result;
   }
-  return {VERSION,PLANNER_LIMITS,STATS,TYPES,FAMILIES,clone,id,normalize,plain,finite,blankState,createIndex,continuationKey,sequenceGraph,continuationContext,newRun,cleanState,cleanGoals,requirement,previewResult,goalProgress,analyze,commit,undo,redo,validateRun};
+  return {VERSION,PLANNER_LIMITS,STATS,ALIGNMENT_BANDS,alignmentInfo,alignmentRangeForBand,TYPES,FAMILIES,clone,id,normalize,plain,finite,blankState,createIndex,continuationKey,sequenceGraph,continuationContext,newRun,cleanState,cleanGoals,requirement,previewResult,goalProgress,analyze,commit,undo,redo,validateRun};
 });

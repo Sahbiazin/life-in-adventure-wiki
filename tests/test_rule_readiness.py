@@ -13,7 +13,7 @@ class RuleReadinessTests(unittest.TestCase):
     def test_named_attributes_match_native_ui_indices(self):
         self.assertEqual({k: STAT[k] for k in (5, 6, 7, 8, 9, 13, 14)},
                          {5: 'Força', 6: 'Destreza', 7: 'Inteligência', 8: 'Saúde máxima', 9: 'Sanidade máxima', 13: 'Constituição', 14: 'Sabedoria'})
-        self.assertNotIn(3, STAT)  # The localized stat table contains only "d".
+        self.assertEqual(STAT[3], 'Alinhamento')  # Confirmed by ShowFameInfo, beyond Str.stat's placeholder.
 
     def test_ability_thresholds_and_missing_traits_are_distinct_conditions(self):
         parts = decode_required('20_3_2|21_3_3|26_9_99|28_9_0')['conditions']
@@ -67,6 +67,9 @@ class RuleReadinessTests(unittest.TestCase):
             self.skipTest('Materialized ARM64 binary is required for native verification')
         evidence = verify()
         self.assertEqual(evidence['required_dispatch']['20'], '0x1a96028')
+        self.assertEqual(evidence['alignment']['user_data_index'], 3)
+        self.assertEqual(evidence['alignment']['thresholds'], [-24, -9, 10, 25])
+        self.assertEqual(evidence['alignment']['pt_labels'], ['Maligno', 'Impuro', 'Neutro', 'Justo', 'Bondoso'])
         self.assertFalse(evidence['runtime_validated'])
         self.assertEqual(evidence, json.loads((ROOT / 'docs/native-rules-evidence.json').read_text()))
 

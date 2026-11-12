@@ -32,5 +32,40 @@
     "13": "0x1a531bc",
     "14": "0x1a53374"
   },
+  "alignment": {
+    "user_data_index": 3,
+    "thresholds": [
+      -24,
+      -9,
+      10,
+      25
+    ],
+    "pt_labels": [
+      "Maligno",
+      "Impuro",
+      "Neutro",
+      "Justo",
+      "Bondoso"
+    ],
+    "classification_function": "0x19c6af0",
+    "negative_clamp_bypass": "0x1af7d34",
+    "verified_instructions": {
+      "0x1af7cd4": "0028291e",
+      "0x1af7d34": "9f0e0071",
+      "0x1af7d38": "40020054",
+      "0x19c6bc4": "61008052",
+      "0x19c6bcc": "dfc20494",
+      "0x19c6bd0": "0110371e",
+      "0x19c6be0": "0150341e",
+      "0x19c6bf4": "0190241e",
+      "0x19c6c08": "0130271e",
+      "0x1a7634c": "092000f9",
+      "0x1a76480": "0a2000f9",
+      "0x1a765c4": "282100f9",
+      "0x1a7677c": "092100f9",
+      "0x1a76930": "2a2100f9",
+      "0x1a76af4": "2b2100f9"
+    }
+  },
   "scope": "Dispatch and source identity verified; branch semantics documented by instruction inspection, not runtime execution."
 }

@@ -13,6 +13,8 @@ O modo acompanha a aventura que você joga no celular. Ele não se conecta ao jo
 
 Uma nova run preserva as anteriores. É possível copiar as confirmações do catálogo da run selecionada, sem copiar sua ficha ou seu progresso.
 
+**Alinhamento:** escolha o nome mostrado no jogo — Maligno, Impuro, Neutro, Justo ou Bondoso — ou informe um valor numérico exato, se souber. O nome mantém uma faixa de valores, sem inventar um ponto inicial. Uma decisão pode deixar a estimativa em duas faixas; confira o nome no jogo para atualizar a ficha. O planejador usa essas informações nos requisitos futuros e preserva a incerteza quando a faixa não resolve uma condição. Veja as [faixas e a evidência](alinhamento.md). Runs antigas começam com alinhamento não informado.
+
 ## Durante o jogo
 
 1. Busque palavras do encontro ou o ID exato, como `#346`. Use a tabela para diferenciar IDs iguais. Também há **Usar encontro na run** nos detalhes de eventos do Atlas.

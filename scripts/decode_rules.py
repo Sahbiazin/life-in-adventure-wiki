@@ -9,7 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DB = ROOT / 'dados-extraidos/1.2.47/database'
-STAT = {0: 'Saúde', 1: 'Sanidade', 2: 'EXP', 4: 'Ouro',
+STAT = {0: 'Saúde', 1: 'Sanidade', 2: 'EXP', 3: 'Alinhamento', 4: 'Ouro',
         5: 'Força', 6: 'Destreza', 7: 'Inteligência', 8: 'Saúde máxima',
         9: 'Sanidade máxima', 12: 'Carisma', 13: 'Constituição', 14: 'Sabedoria'}
 

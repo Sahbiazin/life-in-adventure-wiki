@@ -117,7 +117,7 @@ O trecho de `Str..cctor` que constrói `stat` começa em `0x1A51C54`. As dimens�
 | 13 | CON / Constituição | `0x1A531BC` |
 | 14 | SAB / Sabedoria | `0x1A53374` |
 
-O índice 3 tem apenas o texto `d`; 10, 11, 15, 16 e 17 têm nomes vazios nesta tabela. Eles continuam com identificação técnica. O Atlas não lhes atribui um nome com base apenas no texto de uma recompensa.
+O índice 3 tem apenas o texto `d` nesta tabela, mas foi identificado como **Alinhamento** pela classificação de `GetUserData(3)` em `StatusCtrl.ShowFameInfo` e pelas tabelas `Str.alignment` e `Str.alignmentList`. Admite valores negativos; as faixas portuguesas são Maligno, Impuro, Neutro, Justo e Bondoso. Consulte [Alinhamento](alinhamento.md) para limiares, evidência e acompanhamento por intervalo. Os índices 10, 11, 15, 16 e 17 continuam com identificação técnica, pois seus nomes estão vazios nesta tabela.
 
 ### Novos requisitos
 

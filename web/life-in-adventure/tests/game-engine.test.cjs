@@ -362,3 +362,68 @@ test('unknown current gold cannot produce a false gold recommendation based on u
   const r=run();r.state.stats[4]=null;r.goals=[goal('gold','',300)];const a=E.analyze(s.root,r,s.index);
   assert.equal(a.recommendation,null);assert.match(a.message,/Informe o ouro atual/);
 });
+
+test('alignment uses the native Portuguese names and exact category boundaries',()=>{
+  for(const [value,label] of [[-25,'Maligno'],[-24,'Impuro'],[-10,'Impuro'],[-9,'Neutro'],[0,'Neutro'],[9,'Neutro'],[10,'Justo'],[24,'Justo'],[25,'Bondoso'],[100,'Bondoso']]){
+    const s=run().state;s.stats[3]=value;assert.equal(E.alignmentInfo(s).label,label);
+    assert.equal(E.cleanState(s,index).stats[3],value);
+  }
+  assert.equal(E.alignmentInfo(run().state).label,'Não informado');
+  const rounded=run().state;rounded.stats[3]=9.9999999;assert.equal(E.alignmentInfo(rounded).label,'Justo');
+  const s=run().state;s.stats[4]=-1;assert.throws(()=>E.cleanState(s,index),/inválido/);
+});
+test('calling the guards in Treasure 80 increases alignment and can change the category',()=>{
+  let r=run();r.state.stats[3]=9;
+  const e=event('EventTreasure:80'),p=E.previewResult(e,1,0,r.state,index);
+  assert.equal(e.data.choice[1].text,'Chamar os guardas');assert.equal(p.state.stats[3],10);
+  assert.equal(E.alignmentInfo(p.state).label,'Justo');assert.ok(p.changes.includes('Alinhamento: +1'));
+  assert.equal(r.state.stats[3],9);
+  r=E.commit(r,p.state,index,{type:'result',eventKey:'EventTreasure:80',choice:1,result:0});
+  assert.equal(E.undo(r).state.stats[3],9);assert.equal(E.redo(E.undo(r),index).state.stats[3],10);
+  const negative=run().state;negative.stats[3]=0;
+  assert.equal(E.previewResult(event('EventBattle:10'),1,0,negative,index).state.stats[3],-1);
+});
+test('a named alignment represents a range, not an invented midpoint',()=>{
+  const s=run().state;s.alignmentRange=E.alignmentRangeForBand('neutral');
+  assert.equal(s.stats[3],null);assert.equal(E.alignmentInfo(s).label,'Neutro');
+  assert.equal(E.requirement(reqStat(3,-9),s),true);
+  assert.equal(E.requirement(reqStat(3,0),s),null);
+  assert.equal(E.requirement(reqStat(3,10),s),false);
+  const p=E.previewResult(event('EventTreasure:80'),1,0,s,index);
+  assert.equal(p.state.stats[3],null);assert.deepEqual(E.alignmentInfo(p.state).bands,['neutral','moral']);
+  assert.equal(E.requirement(reqStat(3,10),p.state),null);
+  assert.deepEqual(E.alignmentInfo(s).bands,['neutral']);
+});
+test('alignment range updates respect native float rounding near category boundaries',()=>{
+  const s=run().state;s.alignmentRange=E.alignmentRangeForBand('neutral');
+  const e=fixture([[[token({operation:'change_user_data',index:3,quantity:15})]]]);
+  const p=E.previewResult(e,0,0,s,index);
+  assert.equal(p.state.alignmentRange.max,25);
+  assert.ok(E.alignmentInfo(p.state).bands.includes('good'));
+  assert.equal(E.requirement(reqStat(3,25),p.state),null);
+});
+test('future alignment gates use the updated value; ambiguous ranges remain partial',()=>{
+  const s=scenario({start:{choices:[{effects:[token({operation:'change_user_data',index:3,quantity:1})],next:'reward'},{}]},reward:{choices:[{required:reqStat(3,10),effects:[add(0,1)]}]}});
+  const r=run();r.state.stats[3]=9;r.goals=[goal('item','item:0')];
+  assert.equal(E.analyze(s.root,r,s.index).recommendation,0);
+  r.state.stats[3]=null;r.state.alignmentRange=E.alignmentRangeForBand('neutral');
+  const a=E.analyze(s.root,r,s.index);assert.equal(a.recommendation,null);assert.equal(a.summary.comparisonComplete,false);
+});
+test('old v1 backups keep alignment unknown and preserve all history and other stats',()=>{
+  const r=run(),e=event('EventTreasure:346');
+  const old=E.commit(r,E.previewResult(e,1,0,r.state,index).state,index,{type:'result',eventKey:'EventTreasure:346',choice:1,result:0});
+  for(const s of [old.state,...old.history.flatMap(h=>[h.before,h.after])]){delete s.stats[3];delete s.alignmentRange;}
+  const restored=E.validateRun(old,index);
+  assert.equal(restored.state.stats[3],null);assert.equal(restored.state.alignmentRange,null);
+  assert.equal(restored.state.stats[4],95);assert.equal(restored.cursor,1);
+  assert.equal(E.undo(restored).state.stats[4],100);assert.equal(E.undo(restored).state.stats[3],null);
+  assert.equal(old.state.stats[3],undefined);
+});
+test('range saves survive validation and inconsistent alignment intervals are rejected',()=>{
+  let r=run();r.state.alignmentRange=E.alignmentRangeForBand('impure');
+  r=E.commit(r,E.previewResult(event('EventTreasure:80'),1,0,r.state,index).state,index,{type:'result',eventKey:'EventTreasure:80',choice:1,result:0});
+  assert.deepEqual(E.validateRun(JSON.parse(JSON.stringify(r)),index).state.alignmentRange,r.state.alignmentRange);
+  for(const range of [{min:10,max:0},{min:null,max:null},{min:'0',max:1},{min:0,max:Infinity},[]]){
+    const s=run().state;s.alignmentRange=range;assert.throws(()=>E.cleanState(s,index),/alinhamento inválida/);
+  }
+});

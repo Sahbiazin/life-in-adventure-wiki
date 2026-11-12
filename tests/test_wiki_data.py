@@ -78,6 +78,13 @@ class WikiDataTests(unittest.TestCase):
         for relation in ['Concede item', 'Remove item', 'Exige item', 'Menção no texto', 'Monstro listado no encontro']:
             self.assertGreater(relations[relation], 0)
 
+    def test_alignment_is_named_for_both_rewards_and_signed_requirements(self):
+        self.assertEqual(wiki.rule_view('0_3_1', True)['tokens'][0]['text'], 'Alinhamento: +1')
+        self.assertEqual(wiki.rule_view('2_3_-14')['tokens'][0]['text'], 'Alinhamento: menos de -14')
+        token = self.events['EventTreasure:80']['rules']['choices'][1]['results'][0]['reward']['tokens'][0]
+        self.assertEqual(token['text'], 'Alinhamento: +1')
+        self.assertEqual(token['model']['index'], 3)
+
     def test_real_tavern_has_only_supported_probabilities_and_signed_gold(self):
         event = self.events['EventTreasure:346']
         rules = event['rules']
