@@ -59,6 +59,36 @@
     }
     return {data,events,records,incoming};
   }
+  // Battle text receives the selected monster's name in native String.Format.
+  // An Atlas lookup has no random draw: keep all explicit encounter candidates.
+  function eventMonsters(event,index) {
+    if(event?.group!=='EventBattle'||!index)return [];
+    const found=new Map(),seen=new Set(),queue=[event];
+    for(let cursor=0;cursor<queue.length;cursor++){
+      const current=queue[cursor],key=`${current.group}:${current.id}`;
+      if(seen.has(key))continue;seen.add(key);
+      const ids=String(current.data.monster||'').split('|').map(token=>token.match(/^(\d+)(?:_|$)/)?.[1]).filter(id=>id!==undefined);
+      if(ids.length){
+        for(const id of ids){const record=index.records?.get(`monster:${id}`);if(record)found.set(record.key,record);}
+        continue;
+      }
+      // Continuation nodes retain the monster of the preceding battle stage.
+      const parents=index.incoming?.get(key)||[...index.events].filter(([,e])=>e.group===current.group&&(e.data.choice||[]).some(c=>(c.result||[]).some(r=>r.nextEvent===current.id))).map(([parent])=>parent);
+      for(const parent of parents){const prior=index.events.get(parent);if(prior?.group===event.group)queue.push(prior);}
+    }
+    return [...found.values()];
+  }
+  function eventText(event,value,index) {
+    const text=String(value??'');
+    if(event?.group!=='EventBattle'||!text.includes('{0}'))return text;
+    const names=eventMonsters(event,index).map(r=>String(r.title).trim());
+    if(names.length===1)return text.replace(/\{0\}/g,()=>names[0]);
+    const alternatives=names.length>1?`${names.slice(0,-1).join(', ')} ou ${names.at(-1)}`:'';
+    return text.replace(/\{0\}(\s*s\b)?/g,(_,plural,offset)=>{
+      const noun=plural?'monstros':'monstro',prefix=offset===0?noun[0].toUpperCase()+noun.slice(1):noun;
+      return alternatives?`${prefix} (${alternatives})`:`${prefix} do encontro`;
+    });
+  }
   // A positive nextEvent points to the next node of this encounter in the same table.
   function continuationKey(event,ci,ri,index) {
     const target=event?.data.choice?.[ci]?.result?.[ri]?.nextEvent;
@@ -336,7 +366,7 @@
         if(ctx.first&&choiceIndex!==ci)continue;
         const cv=ev.rules?.choices?.[choiceIndex],choiceKey=`${key}:${choiceIndex}`;
         const allowed=ctx.first&&typeof available==='boolean'?available:ctx.tainted&&cv?.required?null:requirement(cv?.required,ctx.state,index,{difficulty});
-        const choiceLabel=plain(choice.text)||'Desfecho / ramo '+(choiceIndex+1);
+        const choiceLabel=plain(eventText(ev,choice.text,index))||'Desfecho / ramo '+(choiceIndex+1);
         if(ctx.depth>0&&cv?.required) {
           const gate={eventKey:key,choice:choiceIndex,label:choiceLabel,required:cv.required,available:allowed,conditional:ctx.conditional,path:ctx.path};
           const prior=gates.get(choiceKey),rank=value=>value===true?2:value===null?1:0;
@@ -381,7 +411,7 @@
           }
           if(raw.nextEvent===-2||raw.nextEvent<0) {
             keep(exits,`${choiceKey}:${ri}:${afterCombat}`,{eventKey:key,choice:choiceIndex,result:ri,label:choiceLabel,destination:raw.nextEvent,
-              text:plain(raw.text),changes:preview.changes,reward:view?.reward||null,afterCombat,effectsUnknown:tainted,conditional:uncertain||tainted||afterCombat,path});
+              text:plain(eventText(ev,raw.text,index)),changes:preview.changes,reward:view?.reward||null,afterCombat,effectsUnknown:tainted,conditional:uncertain||tainted||afterCombat,path});
             if(raw.nextEvent!==-2)unresolved=true;
           } else if(nextKey) {
             if(queue.length<maxStates*4)queue.push({event:index.events.get(nextKey),state:preview.state,depth:ctx.depth+1,path,
@@ -505,7 +535,7 @@
           else if(preview.state.stats[0]===0)plan=partial('Saúde pode chegar a zero antes da próxima etapa; a continuação depende de sobrevivência ou ressurreição.');
           else plan=visit(index.events.get(target),preview.state,nextLedger,depth+1,stack);
           const internalChanges=new Set((view?.reward?.tokens||[]).filter(t=>['set_chain_state','set_sub_state','set_main_state'].includes(t.model?.operation)).map(t=>t.text));
-          const step={changes:preview.changes.filter(change=>!internalChanges.has(change)),eventKey:`${ev.group}:${ev.id}`,choice:ci,result:ri,label:plain(choice.text)||'Desfecho / ramo '+(ci+1),outcome:view?.testOutcome||`Resultado ${ri+1}`,nextKey:target};
+          const step={changes:preview.changes.filter(change=>!internalChanges.has(change)),eventKey:`${ev.group}:${ev.id}`,choice:ci,result:ri,label:plain(eventText(ev,choice.text,index))||'Desfecho / ramo '+(ci+1),outcome:view?.testOutcome||`Resultado ${ri+1}`,nextKey:target};
           if(preview.issues.length&&plan.finalScore)plan={...plan,modelPartial:true,finalScore:{...plan.finalScore,complete:false,min:null,max:null,notes:unique([...plan.finalScore.notes,...preview.issues])}};
           plan={...plan,route:[step,...plan.route],uncertain:plan.uncertain||eligible===null||preview.issues.length>0,notes:unique([...preview.issues,...plan.notes])};
         }
@@ -635,5 +665,5 @@
     result.availability={};
     return result;
   }
-  return {VERSION,PLANNER_LIMITS,cleanPolicy,STATS,ALIGNMENT_BANDS,alignmentInfo,alignmentRangeForBand,TYPES,FAMILIES,clone,id,normalize,plain,finite,blankState,createIndex,continuationKey,sequenceGraph,continuationContext,forecastChoice,newRun,cleanState,cleanGoals,requirement,previewResult,previewObservedResult,goalProgress,analyze,commit,undo,redo,validateRun};
+  return {VERSION,PLANNER_LIMITS,cleanPolicy,STATS,ALIGNMENT_BANDS,alignmentInfo,alignmentRangeForBand,TYPES,FAMILIES,clone,id,normalize,plain,finite,blankState,createIndex,eventMonsters,eventText,continuationKey,sequenceGraph,continuationContext,forecastChoice,newRun,cleanState,cleanGoals,requirement,previewResult,previewObservedResult,goalProgress,analyze,commit,undo,redo,validateRun};
 });

@@ -54,7 +54,7 @@
     }
     function choiceInfo(ev,ci) {
       const choice=ev.data.choice[ci],view=ev.rules?.choices?.[ci],requirements=ruleText(view?.required,index,technical);
-      const title=plain(choice.text)||'Desfecho / ramo '+(ci+1),lines=[title];
+      const title=plain(E.eventText(ev,choice.text,index))||'Desfecho / ramo '+(ci+1),lines=[title];
       if(view?.test)lines.push(view.test.label);
       if(requirements.text.length)lines.push(...requirements.text.slice(0,2).map(t=>'Requisito: '+t));
       if(requirements.hiddenStates)lines.push('Disponibilidade depende do percurso');
@@ -63,7 +63,7 @@
     function resultInfo(ev,ci,ri) {
       const raw=ev.data.choice[ci].result[ri],view=ev.rules?.choices?.[ci]?.results?.[ri],target=E.continuationKey(ev,ci,ri,index);
       const rewards=ruleText(view?.reward,index,technical),requirements=ruleText(view?.required,index,technical),lines=[];
-      const title=plain(raw.text)||'Sem texto de resultado na fonte';
+      const title=plain(E.eventText(ev,raw.text,index))||'Sem texto de resultado na fonte';
       lines.push(short(title,vertical?90:120));
       if(rewards.text.length)lines.push(...rewards.text.slice(0,4));
       else lines.push(rewards.hiddenStates?'Atualiza o percurso do encontro':'Sem recompensa direta registrada');
@@ -77,7 +77,7 @@
       let y=padding;
       for(const node of graph.nodes) {
         const ev=node.event,eventKey=node.key;
-        const header=card('event',eventKey,eventKey,label(ev),[plain(ev.data.text)||'Continuação do encontro',`${ev.data.choice.length} escolhas / ramos`],padding,y,cardWidth,{current:eventKey===(currentEventKey||`${event.group}:${event.id}`),title:plain(ev.data.text)});
+        const header=card('event',eventKey,eventKey,label(ev),[plain(E.eventText(ev,ev.data.text,index))||'Continuação do encontro',`${ev.data.choice.length} escolhas / ramos`],padding,y,cardWidth,{current:eventKey===(currentEventKey||`${event.group}:${event.id}`),title:plain(E.eventText(ev,ev.data.text,index))});
         positions.set(eventKey,header);y+=header.h+gap;
         for(const [ci,c] of ev.data.choice.entries()) {
           const info=choiceInfo(ev,ci),choice=card('choice',`${eventKey}:${ci}`,eventKey,`ESCOLHA ${ci+1}`,info.lines,padding+16,y,cardWidth,{title:info.title});
@@ -109,7 +109,7 @@
           for(const result of localResults)edges.push({from:choice,to:result,kind:'branch'});
           y+=gap;
         }
-        const header=card('event',eventKey,eventKey,label(ev),[short(plain(ev.data.text)||'Continuação do encontro',100),`${ev.data.choice.length} escolhas / ramos`],x,start,180,{current:eventKey===(currentEventKey||`${event.group}:${event.id}`),title:plain(ev.data.text)});
+        const header=card('event',eventKey,eventKey,label(ev),[short(plain(E.eventText(ev,ev.data.text,index))||'Continuação do encontro',100),`${ev.data.choice.length} escolhas / ramos`],x,start,180,{current:eventKey===(currentEventKey||`${event.group}:${event.id}`),title:plain(E.eventText(ev,ev.data.text,index))});
         y=Math.max(y,start+header.h+gap);header.y=start+(y-start-gap-header.h)/2;
         positions.set(eventKey,header);for(const choice of localChoices)edges.push({from:header,to:choice,kind:'branch'});
         depthY.set(node.depth,y+72);maxY=Math.max(maxY,y+72);maxX=Math.max(maxX,x+890+padding);
@@ -149,7 +149,7 @@
   }
   function listHTML(layout,index,technical) {
     const rules=view=>{const r=ruleText(view,index,technical);return r.text.length?`<ul>${r.text.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`:r.hiddenStates?'<p>Disponibilidade ou estado depende do percurso.</p>':'';};
-    return layout.graph.nodes.map(({key,event:ev})=>`<section class="ef-list-stage" data-flow-list-event="${esc(key)}"><h4><button type="button" data-ef-open="${esc(key)}">${esc(label(ev))}</button></h4>${plain(ev.data.text)?`<p>${esc(plain(ev.data.text))}</p>`:''}<ol>${ev.data.choice.map((c,ci)=>`<li><strong>${esc(plain(c.text)||'Desfecho / ramo '+(ci+1))}</strong>${ev.rules?.choices?.[ci]?.test?`<p>${esc(ev.rules.choices[ci].test.label)}</p>`:''}${rules(ev.rules?.choices?.[ci]?.required)}<ol>${(c.result||[]).map((r,ri)=>{const v=ev.rules?.choices?.[ci]?.results?.[ri],target=E.continuationKey(ev,ci,ri,index);return `<li><strong>Resultado ${ci+1}.${ri+1}${v?.testOutcome?' · '+esc(v.testOutcome):''}</strong><p>${esc(plain(r.text)||'Sem texto de resultado na fonte.')}</p>${rules(v?.required)}${rules(v?.reward)}${target?`<button type="button" data-ef-open="${esc(target)}">→ ${esc(destination(r,target,index))}</button>`:`<p>→ ${esc(destination(r,null,index))}</p>`}</li>`;}).join('')}</ol></li>`).join('')}</ol></section>`).join('');
+    return layout.graph.nodes.map(({key,event:ev})=>`<section class="ef-list-stage" data-flow-list-event="${esc(key)}"><h4><button type="button" data-ef-open="${esc(key)}">${esc(label(ev))}</button></h4>${plain(E.eventText(ev,ev.data.text,index))?`<p>${esc(plain(E.eventText(ev,ev.data.text,index)))}</p>`:''}<ol>${ev.data.choice.map((c,ci)=>`<li><strong>${esc(plain(E.eventText(ev,c.text,index))||'Desfecho / ramo '+(ci+1))}</strong>${ev.rules?.choices?.[ci]?.test?`<p>${esc(ev.rules.choices[ci].test.label)}</p>`:''}${rules(ev.rules?.choices?.[ci]?.required)}<ol>${(c.result||[]).map((r,ri)=>{const v=ev.rules?.choices?.[ci]?.results?.[ri],target=E.continuationKey(ev,ci,ri,index);return `<li><strong>Resultado ${ci+1}.${ri+1}${v?.testOutcome?' · '+esc(v.testOutcome):''}</strong><p>${esc(plain(E.eventText(ev,r.text,index))||'Sem texto de resultado na fonte.')}</p>${rules(v?.required)}${rules(v?.reward)}${target?`<button type="button" data-ef-open="${esc(target)}">→ ${esc(destination(r,target,index))}</button>`:`<p>→ ${esc(destination(r,null,index))}</p>`}</li>`;}).join('')}</ol></li>`).join('')}</ol></section>`).join('');
   }
   function mount(container,event,index,{onOpenEvent=()=>{},currentEventKey,technical=false}={}) {
     if(!container||!event)return null;

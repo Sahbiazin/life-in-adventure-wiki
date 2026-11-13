@@ -22,7 +22,7 @@ O botão de sol/lua na barra superior alterna os temas claro e escuro, incluindo
 
 A busca ignora acentos. Nos eventos, consulta o texto, as escolhas, os resultados, os códigos e as regras legíveis; nos catálogos, nome, descrição e campos originais. `#346` procura o ID exato. As tags de eventos são combinadas com E, junto à categoria e à busca. Ordenação e paginação também estão disponíveis nos catálogos e no caderno.
 
-As descrições podem conter marcadores como `{0}` e fórmulas que dependem da aventura. Esses valores não são preenchidos por estimativa. As probabilidades estáticas só aparecem no subconjunto neutro documentado em `docs/regras-confirmadas.md`; peso bruto não é probabilidade final. O rodapé e os detalhes identificam a versão e a análise estática parcial, sem validação em jogo.
+Nos eventos de combate, o marcador `{0}` é exibido com o nome do monstro, inclusive nas escolhas, resultados, mapas e continuações. Encontros com vários candidatos mostram “monstro (A ou B)” ou “monstros (A ou B)”, sem presumir qual foi sorteado. O registro original mantém os marcadores. Outras descrições podem conter marcadores e fórmulas que dependem da aventura. Esses valores não são preenchidos por estimativa. As probabilidades estáticas só aparecem no subconjunto neutro documentado em `docs/regras-confirmadas.md`; peso bruto não é probabilidade final. O rodapé e os detalhes identificam a versão e a análise estática parcial, sem validação em jogo.
 
 ## Gerar e executar
 
