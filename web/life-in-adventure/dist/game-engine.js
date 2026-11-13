@@ -539,7 +539,7 @@
           if(preview.issues.length&&plan.finalScore)plan={...plan,modelPartial:true,finalScore:{...plan.finalScore,complete:false,min:null,max:null,notes:unique([...plan.finalScore.notes,...preview.issues])}};
           plan={...plan,route:[step,...plan.route],uncertain:plan.uncertain||eligible===null||preview.issues.length>0,notes:unique([...preview.issues,...plan.notes])};
         }
-        return {ri,raw,view,eligible,preview,probability,probabilitySource:chance.ready?'native-weighted':probability!==null?'static':'unknown',success:Number(raw.type)===1&&choice.result.some(r=>Number(r.type)===0)?false:true,plan};
+        return {ri,raw,view,eligible,preview,probability,probabilityDetails:{ready:chance.ready,complete:chance.complete,missing:chance.missing||[],notes:chance.notes||[]},probabilitySource:chance.ready?'native-weighted':probability!==null?'static':'unknown',success:Number(raw.type)===1&&choice.result.some(r=>Number(r.type)===0)?false:true,plan};
       });
       const combined=combine(outcomes);
       if(chance.partial){combined.modelPartial=true;combined.notes=unique([...combined.notes,...(chance.notes||[]),...(chance.missing||[])]);}

@@ -105,7 +105,12 @@
       const computed=resultWeight(r,state,options,resolved,count);weights.push(computed.value);missing.push(...computed.missing);notes.push(...computed.notes);
     }
     const modelPartial=options.modelPartial===true||resolved.partial===true;
-    if(missing.length)return {...empty,weights,eligible,missing:unique(missing),notes:unique(notes)};
+    if(missing.length){
+      const needsAbilities=missing.some(label=>label.startsWith('nível efetivo de '));
+      const causes=needsAbilities?(resolved.missing||[]).filter(label=>['equipamento confirmado','lista completa de traços','efeitos pendentes ou desconhecidos da run','nível do modo difícil'].includes(label)):[];
+      if(missing.includes(`nível efetivo de ${ABILITY_NAMES[4]}`)&&resolved.derived?.[4]===null&&finite(state.stats?.[12])&&state.stats[12]>=27)causes.push('Alinhamento');
+      return {...empty,weights,eligible,missing:unique([...causes,...missing]),notes:unique(notes)};
+    }
     const total=weights.reduce((a,b)=>a+b,0);
     if(!validInt(total)||total<=0)return {...empty,weights,eligible,missing:['soma positiva de pesos'],notes:unique([...notes,'A urna vazia do jogo usa uma saída especial; não foi transformada em sucesso garantido.'])};
     const probabilities=weights.map(w=>w/total),hasSuccess=results.some((r,ri)=>eligible[ri]&&Number(r.type)===0);

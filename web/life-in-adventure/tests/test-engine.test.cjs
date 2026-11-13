@@ -81,3 +81,20 @@ test('partially modeled callers retain honest coverage and every eligible probab
     if(estimate.ready){close(estimate.probabilities.reduce((a,b)=>a+b,0),1);assert.ok(estimate.probabilities.every(p=>Number.isFinite(p)&&p>=0&&p<=1));}
   }
 });
+
+test('Battle 4 explains blocked derived abilities and computes both results without manual ability entries',()=>{
+  const E=require('../dist/game-engine.js'),index=E.createIndex(data),s=E.blankState(),e=event('EventBattle',4);
+  Object.assign(s.stats,{0:10,1:5,5:10,6:10,7:10,12:10,13:10,14:10});
+  s.combat.equippedKnown=true;s.combat.level=1;
+  const before=JSON.stringify(s),options={index,requirement:(v,s)=>E.requirement(v,s,index)};
+  let r=T.choice(e,0,s,options);assert.equal(r.ready,false);assert.ok(r.missing.includes('lista completa de traços'));
+  assert.deepEqual(r.probabilities,[null,null]);assert.equal(JSON.stringify(s),before);
+  const analysis=E.analyze(e,E.newRun({state:s},index),index);
+  assert.ok(analysis.rows[0].outcomes[0].probabilityDetails.missing.includes('lista completa de traços'));
+  s.traitsComplete=true;r=T.choice(e,0,s,options);assert.equal(r.ready,true);assert.deepEqual(r.probabilities,[.35,.65]);assert.deepEqual(s.abilities,{});
+  s.pending=['Conferir os efeitos do último encontro.'];r=T.choice(e,0,s,options);
+  assert.equal(r.ready,false);assert.ok(r.missing.includes('efeitos pendentes ou desconhecidos da run'));assert.deepEqual(r.probabilities,[null,null]);
+  s.pending=[];s.stats[12]=30;s.stats[3]=null;
+  r=T.choice(e,0,s,options);assert.equal(r.ready,false);assert.ok(r.missing.includes('Alinhamento'));
+  s.stats[3]=0;assert.equal(T.choice(e,0,s,options).ready,true);
+});

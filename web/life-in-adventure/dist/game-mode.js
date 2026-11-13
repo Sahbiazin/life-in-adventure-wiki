@@ -133,7 +133,16 @@
   function percent(value) {return E.finite(value)?`${(100*value).toLocaleString('pt-BR',{maximumFractionDigits:1})}%`:'A conferir';}
   function strategyLabel(analysis) {return analysis.strategy==='score'?'Pontuação esperada quando os objetivos não diferenciam os caminhos':'Objetivos da run, considerando as próximas decisões';}
   function probabilityBadge(outcome) {
-    if(outcome.probabilitySource==='unknown')return '<span class="game-help">Probabilidade final não calculada.</span>';
+    if(outcome.probabilitySource==='unknown'){
+      const missing=outcome.probabilityDetails?.missing||[],notes=outcome.probabilityDetails?.notes||[];
+      const equipment=missing.includes('equipamento confirmado'),traits=missing.includes('lista completa de traços'),pending=missing.includes('efeitos pendentes ou desconhecidos da run');
+      const causes=missing.filter(label=>!label.startsWith('nível efetivo de '));
+      const readable=causes.length?causes:missing;
+      const stat=Object.entries(E.STATS).find(([,name])=>missing.includes(name));
+      const focus=traits?'gameTraitsComplete':missing.includes('nível do modo difícil')?'gsHardLevel':missing.includes('Alinhamento')?'gameAlignmentBand':stat?'gs'+stat[0]:pending?'gameClearPending':'gameAbilityPick';
+      const hint=traits?'Na ficha da run, marque “Informei todos os meus traços” depois de conferir a lista.':equipment?'Confirme os espaços equipados, inclusive os vazios, em Equipamento e combate.':pending?'Há efeitos pendentes ou desconhecidos que impedem confirmar os níveis de habilidade usados neste teste.':'';
+      return `<div class="game-help" data-game-probability-missing><span>Probabilidade final não calculada.</span>${readable.length?`<p>Falta conferir: ${readable.map(esc).join('; ')}.</p>`:''}${hint?`<p>${esc(hint)}</p>`:''}${equipment?'<button type="button" data-game-panel="combat">Conferir equipamento</button>':''}${traits||pending||missing.some(label=>Object.values(E.STATS).includes(label)||label.startsWith('nível efetivo de ')||label==='nível do modo difícil')?`<button type="button" data-game-action="edit-state" data-game-focus="${focus}">Conferir ficha</button>`:''}${experience==='technical'&&(missing.length>readable.length||notes.length)?`<details><summary>Dados usados no cálculo</summary><ul>${[...missing,...notes].map(label=>`<li>${esc(label)}</li>`).join('')}</ul></details>`:''}</div>`;
+    }
     if(E.finite(outcome.probability)&&outcome.probabilitySource){
       const source=outcome.probabilitySource;
       const label=source==='native-weighted'?'Chance calculada com a ficha':source==='combat'?'Chance de combate estimada':source==='static'?'Probabilidade estática':'Chance calculada para este resultado';
@@ -386,7 +395,11 @@
         renderEditorLists();return;
       }
       if(!run)throw new Error('Selecione uma run.');
-      if(action==='edit-state'){panel='sheet';closeMobileSidebar();editor={mode:'correction',state:E.clone(run.state)};review=null;render();return;}
+      if(action==='edit-state'){
+        panel='sheet';closeMobileSidebar();editor={mode:'correction',state:E.clone(run.state)};review=null;render();
+        if(button.dataset.gameFocus){const target=$(button.dataset.gameFocus)||$('gameAbilityPick');if(target){for(let parent=target.parentElement;parent;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;target.scrollIntoView({block:'center'});target.focus({preventScroll:true});}}
+        return;
+      }
       if(action==='undo'||action==='redo'){panel='companion';closeMobileSidebar();saveRun(action==='undo'?E.undo(run):E.redo(run,index));message=action==='undo'?'Último registro desfeito. Você pode refazê-lo ou registrar outro resultado.':'Registro refeito.';render();return;}
       if(action==='toggle-status'){const next=E.clone(run);next.status=run.status==='active'?'ended':'active';saveRun(next);message=next.status==='ended'?'Run encerrada. O histórico foi preservado.':'Run reaberta.';render();return;}
       if(action==='clear-event'){const next=E.clone(run);next.selectedEvent=null;next.availability={};saveRun(next);render();return;}
