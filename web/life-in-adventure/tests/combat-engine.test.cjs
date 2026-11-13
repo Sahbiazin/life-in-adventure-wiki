@@ -101,3 +101,14 @@ test('all extracted monster profiles and equipment formula combinations stay fin
     const i=input();i.setup.equipment[slot]={id:String(row.id),upgrade:0};const p=C.player(i,index);assert.equal(p.ready,true,row.key);assert.ok(Number.isFinite(p.power),row.key);
   }
 });
+
+// Native GetDmgAbilities reads Item.dmgType independently of attackType.
+test('magic bonuses use dmgType even when the item attack animation is physical',()=>{
+  const i=input();i.setup.equipment.main={id:'20'};i.setup.abilities={0:0,46:0,60:0};
+  const baseline=C.player(i,index);i.setup.abilities={0:0,46:4,60:4};
+  close(C.player(i,index).attack,baseline.attack);i.setup.abilities[0]=1;close(C.player(i,index).attack,baseline.attack*1.1);
+  assert.equal(C.player(i,index).damageType,1);
+});
+test('negative Hardness reduces defense at low Constitution',()=>{
+  const i=input();i.stats[13]=1;const p=C.player(i,index);assert.equal(p.abilities[58],-2);close(p.defense,60.92);
+});

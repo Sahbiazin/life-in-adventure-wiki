@@ -174,7 +174,9 @@ class GameUiBrowserTests(unittest.TestCase):
         self.quick_result(0)
         self.assertEqual(self.active()['cursor'],2)
         self.assertIsNone(self.active()['selectedEvent'])
-        self.assertEqual(self.active()['state']['stats']['4'],105)
+        # Incomplete traits cannot exclude the native Greedy gold bonus.
+        self.assertIsNone(self.active()['state']['stats']['4'])
+        self.assertTrue(any('Ganancioso' in issue for issue in self.active()['state']['pending']))
         self.assertEqual(self.active()['state']['catalog']['monster'],[])
         self.assertEqual(self.active()['history'][1]['choice'],0)
         self.side_action('undo');self.side_action('undo')

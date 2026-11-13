@@ -87,7 +87,7 @@ test('cautious and expected profiles use bounds or known weights; they never dra
   const r=run();r.goals=[goal('gold','',1000)];
   assert.equal(E.analyze(e,r,index).recommendation,1);
   r.profile='expected';assert.equal(E.analyze(e,r,index).recommendation,0);
-  e.rules.choices[0].results.forEach(rv=>rv.probability=null);
+  e.rules.choices[0].results.forEach(rv=>rv.probability=null);e.data.choice[0].result.forEach(r=>r.chance='unknown');
   assert.equal(E.analyze(e,r,index).recommendation,1);
 });
 test('goal priority outranks a larger secondary reward',()=>{
@@ -239,6 +239,7 @@ function scenario(definitions) {
         raw.reward=o.effects?.length?'fixture':'';raw.text=o.text||'Resultado observado';
         raw.nextEvent=o.next===undefined?-2:typeof o.next==='number'?o.next:900000+keys.indexOf(o.next);
         rv.required=o.required||null;rv.probability=o.probability===undefined?(c.outcomes?.length>1?null:'1'):o.probability;
+        raw.chance=rv.probability===null?'unknown':String(10000*Number(rv.probability.split('/')[0])/Number(rv.probability.split('/')[1]||1));
       });
     });
     nodes.set(name,ev);
@@ -293,7 +294,7 @@ test('nested expected values use valid probabilities at every layer, with worst-
   const r=run({profile:'expected'});r.goals=[goal('gold','',1000)];
   let a=E.analyze(s.root,r,s.index);assert.equal(a.recommendation,0);assert.ok(a.rows[0].expected>a.rows[1].expected);
   r.profile='cautious';assert.equal(E.analyze(s.root,r,s.index).recommendation,1);
-  r.profile='expected';s.nodes.get('lottery').rules.choices[0].results[0].probability=null;
+  r.profile='expected';s.nodes.get('lottery').rules.choices[0].results[0].probability=null;s.nodes.get('lottery').data.choice[0].result[0].chance='unknown';
   a=E.analyze(s.root,r,s.index);assert.equal(a.recommendation,1);assert.ok(a.rows[0].notes.some(x=>x.includes('pior resultado conhecido')));
   s.nodes.get('lottery').rules.choices[0].results.forEach(rv=>rv.probability='1');
   assert.equal(E.analyze(s.root,r,s.index).recommendation,1); // Invalid totals must not inflate the future average.
@@ -434,7 +435,7 @@ test('all native combat commands explain the action without changing run state o
     const tokens=e.rules.choices[ci].results[ri].reward?.tokens.filter(t=>t.raw.startsWith('6_'))||[];
     if(!tokens.length)continue;
     count+=tokens.length;
-    const isolated=E.clone(e);isolated.data.choice[ci].result[ri].reward=tokens.map(t=>t.raw).join('|');isolated.rules.choices[ci].results[ri].reward.tokens=tokens;
+    const isolated=E.clone(e);isolated.data.choice[ci].result[ri].type=2;isolated.data.choice[ci].result[ri].reward=tokens.map(t=>t.raw).join('|');isolated.rules.choices[ci].results[ri].reward.tokens=tokens;
     const preview=E.previewResult(isolated,ci,ri,r.state,index);
     assert.deepEqual(preview.state,before);assert.deepEqual(preview.issues,[]);
     assert.equal(preview.controls.length,tokens.length);

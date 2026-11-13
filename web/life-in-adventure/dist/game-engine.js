@@ -1,10 +1,10 @@
 /* Pure, conservative model for the manual run companion. No DOM or storage. */
 'use strict';
 ((root, factory) => {
-  const api = factory(typeof module === 'object' && module.exports ? require('./combat-engine.js') : root.AtlasCombat);
+  const api = factory(typeof module === 'object' && module.exports ? {A:require('./ability-engine.js'),C:require('./combat-engine.js'),T:require('./test-engine.js'),S:require('./score-engine.js'),O:require('./outcome-engine.js')} : {A:root.AtlasAbilities,C:root.AtlasCombat,T:root.AtlasTests,S:root.AtlasScore,O:root.AtlasOutcomes});
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.AtlasRun = api;
-})(globalThis, C => {
+})(globalThis, ({A,C,T,S,O}) => {
   const VERSION = 1;
   const STATS = {0:'Saúde',1:'Sanidade',2:'EXP',3:'Alinhamento',4:'Ouro',5:'Força',6:'Destreza',7:'Inteligência',8:'Saúde máxima',9:'Sanidade máxima',12:'Carisma',13:'Constituição',14:'Sabedoria'};
   const FAMILIES = ['mainEventList','subEventList','chainEventList'];
@@ -97,7 +97,7 @@
   function blankState() {
     return {stats:Object.fromEntries(Object.keys(STATS).map(k=>[k,null])),alignmentRange:null,items:{},inventoryComplete:false,
       traits:[],traitsComplete:false,abilities:{},states:Object.fromEntries(FAMILIES.map(f=>[f,{}])),
-      endings:{main:[],sub:[]},catalog:{item:[],monster:[],ending:[]},completedGoals:[],score:null,pending:[],flagsUncertain:false,combat:C.blankSetup()};
+      endings:{main:[],sub:[]},catalog:{item:[],monster:[],ending:[]},completedGoals:[],score:null,pending:[],flagsUncertain:false,combat:C.blankSetup(),scoring:S.blankSetup()};
   }
   function cleanState(input,index) {
     if(!input || typeof input!=='object' || Array.isArray(input))fail('Estado da run inválido.');
@@ -126,7 +126,7 @@
       return out;
     };
     s.items=counts(input.items,'item');s.abilities=counts(input.abilities,'ability');
-    s.combat=C.cleanSetup(input.combat,index);
+    s.combat=C.cleanSetup(input.combat,index);s.scoring=S.cleanSetup(input.scoring);
     const list=(values,check)=>{
       if(!Array.isArray(values)||values.length>10000)fail('Lista da run inválida.');
       if(!values.every(check))fail('Registro inválido na lista da run.');
@@ -167,14 +167,20 @@
       return goal;
     });
   }
+  function cleanPolicy(input={}) {
+    if(!input||typeof input!=='object'||Array.isArray(input))fail('Critério da run inválido.');
+    const value=input.minSuccessProbability??.6;
+    if(!finite(value)||value<0||value>1)fail('Use uma chance mínima entre 0% e 100%.');
+    return {minSuccessProbability:value};
+  }
   function newRun(config,index) {
     return {id:id(),version:VERSION,gameVersion:index.data.version,build:366,name:text(config.name,80).trim()||'Minha aventura',
-      difficulty:config.difficulty==='hard'?'hard':'normal',profile:config.profile==='expected'?'expected':'cautious',
+      difficulty:config.difficulty==='hard'?'hard':'normal',policy:cleanPolicy(config.policy),profile:config.profile==='expected'?'expected':'cautious',
       mainStory:text(config.mainStory,150),tales:text(config.tales,400),createdAt:new Date().toISOString(),updatedAt:new Date().toISOString(),
       status:'active',state:cleanState(config.state||blankState(),index),goals:cleanGoals(config.goals||[],index),history:[],cursor:0,
       selectedEvent:null,availability:{}};
   }
-  function requirement(view,s) {
+  function requirement(view,s,index=null,options={}) {
     if(!view)return true;
     if(!view.tokens?.length)return null;
     const values=view.tokens.map(t=>{
@@ -190,7 +196,7 @@
         return has===null?null:m.comparison==='not_contains_any'?!has:has;
       }
       else if(m.domain==='inventory')value=own(s.items,String(m.index))?s.items[m.index]:s.inventoryComplete?0:null;
-      else if(m.domain==='ability_effective')value=s.abilities[m.index];
+      else if(m.domain==='ability_effective')value=index?A.derive(s,index,options).levels[m.index]:s.abilities[m.index];
       else if(FAMILIES.includes(m.domain)){
         if(s.flagsUncertain||s.pending.length||m.context_requirements?.length)return null;
         value=s.states[m.domain][m.index];
@@ -214,7 +220,7 @@
     });
     return view.operator==='OR' ? values.includes(true)?true:values.includes(null)?null:false : values.includes(false)?false:values.includes(null)?null:true;
   }
-  function previewResult(event,ci,ri,state,index) {
+  function previewResult(event,ci,ri,state,index,options={}) {
     const raw=event.data.choice?.[ci]?.result?.[ri];
     if(!raw)fail('Resultado não encontrado.');
     const view=event.rules?.choices?.[ci]?.results?.[ri];
@@ -236,8 +242,14 @@
           changes.push(`Alinhamento: ${q>=0?'+':''}${q} (estimativa pela faixa informada)`);continue;
         }
         if(!finite(next.stats[k])){issues.push(`${STATS[k]} não informado; conferir a alteração ${q}.`);continue;}
-        next.stats[k]=k==='3'?Math.fround(next.stats[k]+q):Math.max(0,next.stats[k]+q);
-        changes.push(`${STATS[k]}: ${q>=0?'+':''}${q}`);
+        let quantity=q;
+        if(k==='4'&&q>0&&options.difficulty==='hard'){
+          const present=A.derive(next,index,options).presence[111];
+          if(present===null){next.stats[4]=null;issues.push('O modificador de ouro do modo difícil exige conferir seu nível ou a habilidade Fome Insaciável.');continue;}
+          quantity=O.goldPenalty(q,present===true);
+        }
+        next.stats[k]=k==='3'?Math.fround(next.stats[k]+quantity):Math.max(0,next.stats[k]+quantity);
+        changes.push(`${STATS[k]}: ${quantity>=0?'+':''}${quantity}`);
       } else if(m.operation==='remove_first_item') {
         let resolved=false;
         for(const id of m.item_ids){
@@ -266,7 +278,22 @@
     }
     // The suggestions are estimates. The user reviews displayed values before committing.
     for(const [current,max] of [['0','8'],['1','9']])if(finite(next.stats[current])&&finite(next.stats[max]))next.stats[current]=Math.min(next.stats[current],next.stats[max]);
-    return {state:next,issues,changes,controls,raw,view};
+    const projected=S.project(next,{success:Number(raw.type)===0?true:Number(raw.type)===1?false:null,before:state},index);
+    return {state:projected.state,issues,changes,controls,raw,view};
+  }
+  function previewObservedResult(event,ci,ri,run,index){
+    const context=continuationContext(run,index);
+    if(!context||context.entry.type!=='result'||![0,1].includes(ci))return previewResult(event,ci,ri,run.state,index,{difficulty:run.difficulty});
+    const prior=index.events.get(context.entry.eventKey),previous=previewResult(prior,context.entry.choice,context.entry.result,context.entry.before,index,{difficulty:run.difficulty});
+    const control=previous.controls[0];
+    if(!control||previous.controls.length!==1||!O.classify(event,{type:'combat',targetKey:run.selectedEvent}).ready)return previewResult(event,ci,ri,run.state,index,{difficulty:run.difficulty});
+    const battle=O.battle(prior,control,run,index,run.state),victory=ci===0;
+    const tr=O.transition(run.state,battle,victory,index,{projectCatalog:false});
+    const scored=S.project(tr.state,{battleVictory:victory,monster:battle.enemies.length===1?battle.enemies[0].row:null,winProbability:battle.win.probability,winProbabilityExact:false,before:run.state},index);
+    if(tr.alternatives.length>1){for(const key of ['0','1'])scored.state.stats[key]=null;tr.issues.push('A restauração aleatória de Saúde/Sanidade deve ser conferida no celular.');}
+    const result=previewResult(event,ci,ri,scored.state,index,{difficulty:run.difficulty});
+    result.changes=[...tr.changes,...result.changes];result.issues=unique([...tr.issues,...result.issues]);
+    return result;
   }
   function goalProgress(goal,s) {
     let value=null,complete=false;
@@ -292,7 +319,7 @@
   }
   // Keep all reachable branches for the warning, separately from the policy's
   // representative route. A partial numeric plan must not hide a later enemy.
-  function forecastChoice(event,ci,state,index,{available,maxDepth=64,maxStates=256,maxTransitions=800}={}) {
+  function forecastChoice(event,ci,state,index,{available,maxDepth=64,maxStates=256,maxTransitions=800,difficulty='normal'}={}) {
     const stages=new Map(),combats=new Map(),tests=new Map(),gates=new Map(),exits=new Map(),seen=new Map();
     const rootKey=`${event.group}:${event.id}`,queue=[{event,state:clone(state),depth:0,path:[],conditional:false,afterCombat:false,tainted:false,first:true}];
     let transitions=0,truncated=false,unresolved=false;
@@ -308,7 +335,7 @@
       for(const [choiceIndex,choice] of (ev.data.choice||[]).entries()) {
         if(ctx.first&&choiceIndex!==ci)continue;
         const cv=ev.rules?.choices?.[choiceIndex],choiceKey=`${key}:${choiceIndex}`;
-        const allowed=ctx.first&&typeof available==='boolean'?available:ctx.tainted&&cv?.required?null:requirement(cv?.required,ctx.state);
+        const allowed=ctx.first&&typeof available==='boolean'?available:ctx.tainted&&cv?.required?null:requirement(cv?.required,ctx.state,index,{difficulty});
         const choiceLabel=plain(choice.text)||'Desfecho / ramo '+(choiceIndex+1);
         if(ctx.depth>0&&cv?.required) {
           const gate={eventKey:key,choice:choiceIndex,label:choiceLabel,required:cv.required,available:allowed,conditional:ctx.conditional,path:ctx.path};
@@ -318,15 +345,16 @@
         }
         if(allowed===false)continue;
         const conditional=ctx.conditional||allowed===null;
-        if(ctx.depth>0&&cv?.test)keep(tests,choiceKey,{eventKey:key,choice:choiceIndex,label:choiceLabel,test:clone(cv.test),
-          values:Object.fromEntries(cv.test.attributes.map(a=>[a.index,ctx.tainted?null:ctx.state.stats[a.index]??null])),conditional,path:ctx.path});
+        if(ctx.depth>0&&cv?.test){const chance=ctx.tainted?null:T.choice(ev,choiceIndex,ctx.state,{difficulty,requirement:(v,s)=>requirement(v,s,index,{difficulty}),index});keep(tests,choiceKey,{successProbability:chance?.ready?chance.successProbability:null,probabilityPartial:chance?.partial??true,notes:chance?.notes||[],eventKey:key,choice:choiceIndex,label:choiceLabel,test:clone(cv.test),
+          values:Object.fromEntries(cv.test.attributes.map(a=>[a.index,ctx.tainted?null:ctx.state.stats[a.index]??null])),conditional,path:ctx.path});}
         for(const [ri,raw] of (choice.result||[]).entries()) {
           const view=cv?.results?.[ri];
-          const eligible=ctx.tainted&&view?.required?null:requirement(view?.required,ctx.state);
-          if(eligible===false||staticProbability(view?.probability)===0)continue;
+          const eligible=ctx.tainted&&view?.required?null:requirement(view?.required,ctx.state,index,{difficulty});
+          const chance=T.choice(ev,choiceIndex,ctx.state,{difficulty,requirement:(v,s)=>requirement(v,s,index,{difficulty}),index});
+          if(eligible===false||(chance.ready?chance.probabilities[ri]===0:staticProbability(view?.probability)===0&&!cv?.test))continue;
           if(transitions>=maxTransitions){truncated=true;break;}
           transitions++;
-          const uncertain=conditional||eligible===null,preview=previewResult(ev,choiceIndex,ri,ctx.state,index),nextKey=continuationKey(ev,choiceIndex,ri,index);
+          const uncertain=conditional||eligible===null,preview=previewResult(ev,choiceIndex,ri,ctx.state,index,{difficulty}),nextKey=continuationKey(ev,choiceIndex,ri,index);
           const path=[...ctx.path,{eventKey:key,choice:choiceIndex,result:ri,label:choiceLabel,nextKey,conditional:uncertain,combat:preview.controls.length>0,test:Boolean(cv?.test),outcome:view?.testOutcome||null}];
           for(const control of preview.controls){
             const combatKey=`${choiceKey}:${ri}:${control.raw}`,prior=combats.get(combatKey),projection={state:clone(preview.state),effectsUnknown:ctx.tainted||unmodeledReward(raw,view),conditional:uncertain,path};
@@ -372,12 +400,12 @@
   // Limits, unknown effects and unresolved loops are reported, not turned into endpoints.
   function analyze(event,run,index,availability={},limits={}) {
     const active=run.goals.filter(g=>!goalProgress(g,run.state).complete);
-    const primary=active[0],supported=primary&&(['item','ending','gold','catalog_item','catalog_monster'].includes(primary.type)||primary.endingTarget);
+    const primary=active[0],supported=(!primary||primary.type==='score')||(primary&&(['item','ending','gold','catalog_item','catalog_monster'].includes(primary.type)||primary.endingTarget));
     const missingPrimary=primary?.type==='gold'&&!finite(run.state.stats[4]);
-    const config={...PLANNER_LIMITS,...limits},memo=new Map();
+    const config={...PLANNER_LIMITS,...limits},memo=new Map(),policy=cleanPolicy(run.policy);
     const summary={transitions:0,states:0,maxDepth:0,limited:false};
     const emptyLedger=()=>({minimum:{},items:{},monsters:{}});
-    const partial=note=>({score:null,min:null,max:null,expected:null,complete:false,feasible:true,uncertain:true,route:[],notes:[note],reasons:[],cycle:false,lethal:false});
+    const partial=note=>({goalValue:null,finalScore:null,risk:{successProbability:null,survivalProbability:null,eligible:null},score:null,min:null,max:null,expected:null,complete:false,feasible:true,uncertain:true,route:[],notes:[note],reasons:[],cycle:false,lethal:false});
     const blocked=note=>({...partial(note),score:-Infinity,complete:true,feasible:false});
     function enter(ev,ledger) {
       const next=clone(ledger);
@@ -405,11 +433,13 @@
         if(['item','gold','ending'].includes(g.type)&&finite(before.value)&&finite(after.value))progress=(after.value-before.value)/Math.max(1,g.amount-before.value);
         else if(g.type==='item'&&ledger.minimum[g.target]>0){progress=.5*Math.min(1,ledger.minimum[g.target]/g.amount);uncertain=true;reasons.push(`Pode obter ${label}; quantidade inicial desconhecida, confirme no jogo.`);}
         if(g.type==='catalog_item'&&ledger.items[g.target]){progress=.5;uncertain=true;reasons.push(`Pode ajudar a registrar ${label}; o catálogo exige confirmação manual.`);}
-        if(g.type==='catalog_monster'&&ledger.monsters[g.target]){progress=.25;uncertain=true;reasons.push(`Monstro ${label} listado no caminho; encontro não comprova vitória ou registro no catálogo.`);}
+        if(g.type==='catalog_monster'&&after.complete&&!before.complete){progress=.5;uncertain=true;reasons.push(`Pode desbloquear ${label} ao registrar o combate; confirme o catálogo no celular.`);}
+        else if(g.type==='catalog_monster'&&ledger.monsters[g.target]){progress=.25;uncertain=true;reasons.push(`Monstro ${label} listado no caminho; encontro não comprova vitória ou registro no catálogo.`);}
         if(g.type==='story'&&g.endingTarget){const [,group,id]=g.endingTarget.split(':');if(s.endings[group].includes(Number(id))){progress=.8;uncertain=true;reasons.push(`Registra o epílogo alvo de ${label}; confirme a conclusão da história.`);}}
         if(progress&&['item','gold','ending'].includes(g.type)&&finite(before.value)&&finite(after.value))reasons.push(`${progress>0?'Avança':'Afasta'} ao fim do caminho: ${label}.`);
         score+=Math.max(-1,Math.min(1,progress))*(i===0?100:10);
       });
+      const goalValue=score;
       for(const [k,scale] of [['4',1000],['0',100]]) {
         if(finite(run.state.stats[k])&&finite(s.stats[k])) {
           const delta=s.stats[k]-run.state.stats[k];score+=Math.max(-.9,Math.min(.9,delta/scale));
@@ -418,7 +448,10 @@
       }
       const lethal=finite(s.stats[0])&&s.stats[0]===0;
       if(lethal){score-=10000;reasons.push('O caminho pode levar a saúde a zero; confira sobrevivência e ressurreição.');}
-      return {score,min:score,max:score,expected:score,complete:true,feasible:true,uncertain,route:[],notes:[],reasons,cycle:false,lethal};
+      const delta=S.compare(run.state,s,index,{difficulty:run.difficulty});
+      const value=finite(delta.expected)?delta.expected:finite(delta.value)?delta.value:null;
+      const finalScore={min:delta.min??(delta.complete?value:null),max:delta.max??(delta.complete?value:null),expected:null,deltaExpected:value,complete:delta.complete,notes:delta.notes||[],isDelta:true};
+      return {goalValue,finalScore,modelPartial:!delta.complete,risk:{successProbability:1,survivalProbability:lethal?0:1,eligible:!lethal},score,min:score,max:score,expected:score,complete:true,feasible:true,uncertain,route:[],notes:[],reasons,cycle:false,lethal};
     }
     function combine(entries,combat=false) {
       const possible=entries.filter(e=>e.eligible!==false&&e.probability!==0);
@@ -426,20 +459,32 @@
       const complete=possible.every(e=>e.plan.complete),feasible=possible.every(e=>e.plan.feasible);
       const ranked=possible.filter(e=>e.plan.score!==null).sort((a,b)=>a.plan.score-b.plan.score||a.plan.route.length-b.plan.route.length);
       const representative=ranked[0]||possible[0],values=ranked.map(e=>e.plan.score);
-      const weights=!combat&&possible.every(e=>e.eligible===true&&e.probability!==null)&&Math.abs(possible.reduce((sum,e)=>sum+e.probability,0)-1)<1e-9;
+      const weights=possible.every(e=>e.eligible===true&&e.probability!==null)&&Math.abs(possible.reduce((sum,e)=>sum+e.probability,0)-1)<1e-9;
       const expected=complete&&feasible&&weights&&possible.every(e=>finite(e.plan.score))?possible.reduce((sum,e)=>sum+e.plan.score*e.probability,0):null;
       const score=run.profile==='expected'&&expected!==null?expected:values.length?Math.min(...values):null;
       const cycle=possible.some(e=>e.plan.cycle);
-      return {score,min:values.length?Math.min(...values):null,max:values.length?Math.max(...values):null,expected,
+      const weighted=fn=>weights&&possible.every(e=>finite(fn(e)))?possible.reduce((sum,e)=>sum+fn(e)*e.probability,0):null;
+      const points=possible.map(e=>e.plan.finalScore),pointKnown=points.every(p=>finite(p?.deltaExpected));
+      const pointExpected=pointKnown?weighted(e=>e.plan.finalScore.deltaExpected):null;
+      const pointMin=points.every(p=>finite(p?.min))?Math.min(...points.map(p=>p.min)):null,pointMax=points.every(p=>finite(p?.max))?Math.max(...points.map(p=>p.max)):null;
+      const success=weighted(e=>(e.success===false?0:1)*(e.plan.risk?.successProbability??NaN));
+      const survival=weighted(e=>e.plan.risk?.survivalProbability??NaN);
+      const risk={successProbability:success??(possible.every(e=>e.success!==false&&e.plan.risk?.successProbability===1)?1:null),survivalProbability:survival??(possible.every(e=>e.plan.risk?.survivalProbability===1)?1:null)};
+      risk.eligible=finite(risk.successProbability)&&finite(risk.survivalProbability)?risk.successProbability+1e-9>=policy.minSuccessProbability&&risk.survivalProbability+1e-9>=policy.minSuccessProbability:null;
+      const gv=weighted(e=>e.plan.goalValue);const goals=possible.map(e=>e.plan.goalValue).filter(finite);
+      return {goalValue:run.profile==='expected'&&gv!==null?gv:goals.length?Math.min(...goals):null,
+        finalScore:{min:pointMin,max:pointMax,expected:null,deltaExpected:pointExpected,complete:points.every(p=>p?.complete),notes:unique(points.flatMap(p=>p?.notes||[])),isDelta:true},risk,
+        modelPartial:possible.some(e=>e.plan.modelPartial),score,min:values.length?Math.min(...values):null,max:values.length?Math.max(...values):null,expected,
         complete:complete&&!(cycle&&possible.length>1),feasible,uncertain:combat||possible.some(e=>e.eligible===null||e.plan.uncertain)||(!weights&&possible.length>1),
         route:representative.plan.route,notes:unique(possible.flatMap(e=>e.plan.notes).concat(combat?['Desfechos de combate comparados pelo pior caso, sem prever vitória ou escolher o desfecho.']:[],!weights&&possible.length>1?['Probabilidades não confirmadas: usado o pior resultado conhecido nesta etapa.']:[],cycle&&possible.length>1?['Sorteios que retornam ao mesmo estado não foram resolvidos como repetições infinitas.']:[])),
         reasons:representative.plan.reasons,cycle,lethal:possible.some(e=>e.plan.lethal)};
     }
     function evaluateRow(ev,ci,s,ledger,depth,stack,isRoot) {
       const choice=ev.data.choice[ci],cv=ev.rules?.choices?.[ci];
-      const available=isRoot&&own(availability,String(ci))?availability[ci]:requirement(cv?.required,s);
+      const chance=T.choice(ev,ci,s,{difficulty:run.difficulty,requirement:(v,s)=>requirement(v,s,index,{difficulty:run.difficulty}),index});
+      const available=isRoot&&own(availability,String(ci))?availability[ci]:requirement(cv?.required,s,index,{difficulty:run.difficulty});
       const outcomes=(choice.result||[]).map((raw,ri)=>{
-        const view=cv?.results?.[ri],eligible=requirement(view?.required,s),preview=previewResult(ev,ci,ri,s,index),probability=staticProbability(view?.probability);
+        const view=cv?.results?.[ri],eligible=requirement(view?.required,s,index,{difficulty:run.difficulty}),preview=previewResult(ev,ci,ri,s,index,{difficulty:run.difficulty}),probability=chance.ready&&finite(chance.probabilities?.[ri])?chance.probabilities[ri]:(!cv?.test&&run.difficulty!=='hard'?staticProbability(view?.probability):null);
         let plan;
         if(available===false||eligible===false||probability===0)plan=blocked('Ramo excluído pelas condições ou por probabilidade estática zero.');
         else if(summary.transitions>=config.maxTransitions&&!(isRoot&&raw.nextEvent===-2)){summary.limited=true;plan=partial('Limite de resultados analisados atingido; continuação não concluída.');}
@@ -448,36 +493,63 @@
           const nextLedger=track(ledger,view),unknown=unmodeledReward(raw,view);
           const target=continuationKey(ev,ci,ri,index);
           if(unknown)plan=partial('Há efeitos ainda não modelados; a continuação deste ramo precisa ser conferida no jogo.');
-          else if(preview.controls.length)plan=partial('O comando inicia um combate. Vitória, derrota e alterações da ficha precisam ser observadas no jogo antes de comparar a continuação.');
+          else if(preview.controls.length){
+            const battle=O.battle(ev,preview.controls[0],run,index,preview.state);
+            if(preview.controls.length===1&&battle.ready&&target&&O.classify(index.events.get(target),{...battle,targetKey:target}).ready){
+              plan=visit(index.events.get(target),preview.state,nextLedger,depth+1,stack,false,battle);
+              plan={...plan,modelPartial:true,notes:unique([...plan.notes,...battle.issues])};
+            }else plan=partial('O comando inicia um combate, mas faltam dados para comparar vitória, derrota e continuação.');
+          }
           else if(raw.nextEvent===-2)plan=endpoint(preview.state,nextLedger);
           else if(!target)plan=partial('Destino especial ou não identificado; não foi tratado como encerramento garantido.');
           else if(preview.state.stats[0]===0)plan=partial('Saúde pode chegar a zero antes da próxima etapa; a continuação depende de sobrevivência ou ressurreição.');
           else plan=visit(index.events.get(target),preview.state,nextLedger,depth+1,stack);
           const internalChanges=new Set((view?.reward?.tokens||[]).filter(t=>['set_chain_state','set_sub_state','set_main_state'].includes(t.model?.operation)).map(t=>t.text));
           const step={changes:preview.changes.filter(change=>!internalChanges.has(change)),eventKey:`${ev.group}:${ev.id}`,choice:ci,result:ri,label:plain(choice.text)||'Desfecho / ramo '+(ci+1),outcome:view?.testOutcome||`Resultado ${ri+1}`,nextKey:target};
+          if(preview.issues.length&&plan.finalScore)plan={...plan,modelPartial:true,finalScore:{...plan.finalScore,complete:false,min:null,max:null,notes:unique([...plan.finalScore.notes,...preview.issues])}};
           plan={...plan,route:[step,...plan.route],uncertain:plan.uncertain||eligible===null||preview.issues.length>0,notes:unique([...preview.issues,...plan.notes])};
         }
-        return {ri,raw,view,eligible,preview,probability,plan};
+        return {ri,raw,view,eligible,preview,probability,probabilitySource:chance.ready?'native-weighted':probability!==null?'static':'unknown',success:Number(raw.type)===1&&choice.result.some(r=>Number(r.type)===0)?false:true,plan};
       });
       const combined=combine(outcomes);
+      if(chance.partial){combined.modelPartial=true;combined.notes=unique([...combined.notes,...(chance.notes||[]),...(chance.missing||[])]);}
       return {...combined,ci,available,outcomes,uncertain:combined.uncertain||available===null,reasons:combined.reasons,profile:run.profile};
     }
-    function visit(ev,s,incoming,depth,stack,isRoot=false) {
+    function rank(a,b){
+      if(primary?.type!=='score'&&finite(a.goalValue)&&finite(b.goalValue)&&Math.abs(a.goalValue-b.goalValue)>1e-6)return b.goalValue-a.goalValue;
+      const ap=a.finalScore?.deltaExpected,bp=b.finalScore?.deltaExpected;
+      if(finite(ap)&&finite(bp)&&Math.abs(ap-bp)>1e-6)return bp-ap;
+      return b.score-a.score||a.route.length-b.route.length;
+    }
+    function visit(ev,s,incoming,depth,stack,isRoot=false,battleContext=null) {
       summary.maxDepth=Math.max(summary.maxDepth,depth);
       if(depth>=config.maxDepth){summary.limited=true;return partial('Limite de etapas analisadas atingido; o fim deste caminho não foi alcançado.');}
-      const ledger=enter(ev,incoming),signature=JSON.stringify([`${ev.group}:${ev.id}`,s,ledger]),cacheKey=`${config.maxDepth-depth}:${signature}`;
+      const ledger=enter(ev,incoming),signature=JSON.stringify([`${ev.group}:${ev.id}`,s,ledger,battleContext?.eventKey||null]),cacheKey=`${config.maxDepth-depth}:${signature}`;
       if(stack.has(signature))return {...blocked('Retorno ao mesmo nó e estado sem progresso; repetição não usada como caminho para finalizar.'),cycle:true};
       if(!isRoot&&memo.has(cacheKey))return memo.get(cacheKey);
       summary.states++;
       const nextStack=new Set(stack);nextStack.add(signature);
-      const rows=(ev.data.choice||[]).map((c,ci)=>evaluateRow(ev,ci,s,ledger,depth,nextStack,isRoot));
+      const rows=battleContext?[]:(ev.data.choice||[]).map((c,ci)=>evaluateRow(ev,ci,s,ledger,depth,nextStack,isRoot));
       let result;
-      if(outcomeNode(ev)) {
-        // These are observed outcomes, not decisions the player can optimize.
+      if(battleContext){
+        const branches=[true,false].map(victory=>{
+          const tr=O.transition(s,battleContext,victory,index,{projectCatalog:true});
+          const alternatives=tr.alternatives.map(a=>({eligible:true,probability:a.probability,plan:evaluateRow(ev,victory?0:1,S.project(a.state,{battleVictory:victory,monster:battleContext.enemies.length===1?battleContext.enemies[0].row:null,winProbability:battleContext.win.probability,winProbabilityExact:false,before:s},index).state,ledger,depth,nextStack,false)}));
+          const plan=combine(alternatives);plan.modelPartial=true;plan.notes=unique([...plan.notes,...tr.issues]);
+          return {eligible:true,success:victory,probability:victory?battleContext.win.probability:finite(battleContext.win.probability)?1-battleContext.win.probability:null,plan};
+        });
+        result=combine(branches,true);
+        if(!finite(battleContext.win.probability)){
+          const bounds=[battleContext.win.min,battleContext.win.max].map(p=>combine(branches.map((b,i)=>({...b,probability:i===0?p:1-p})),true));
+          result={...result,goalValue:run.profile==='expected'&&bounds.every(b=>finite(b.goalValue))?Math.min(...bounds.map(b=>b.goalValue)):result.goalValue,score:run.profile==='expected'&&bounds.every(b=>finite(b.score))?Math.min(...bounds.map(b=>b.score)):result.score,risk:{...result.risk,successProbability:Math.min(...bounds.map(b=>b.risk.successProbability??0)),survivalProbability:Math.min(...bounds.map(b=>b.risk.survivalProbability??0))}};
+          result.risk.eligible=result.risk.successProbability>=policy.minSuccessProbability&&result.risk.survivalProbability>=policy.minSuccessProbability;
+          result.finalScore={...result.finalScore,min:bounds.every(b=>finite(b.finalScore.deltaExpected))?Math.min(...bounds.map(b=>b.finalScore.deltaExpected)):null,max:bounds.every(b=>finite(b.finalScore.deltaExpected))?Math.max(...bounds.map(b=>b.finalScore.deltaExpected)):null,deltaExpected:null};
+        }
+      }else if(outcomeNode(ev)) {
         result=combine(rows.filter(r=>r.available!==false).flatMap(r=>r.outcomes),true);
       } else {
         const known=rows.filter(r=>r.available===true),conditional=rows.some(r=>r.available===null);
-        const candidates=known.filter(r=>r.feasible&&finite(r.score)).sort((a,b)=>b.score-a.score||a.route.length-b.route.length);
+        const candidates=known.filter(r=>r.feasible&&finite(r.score)&&r.risk?.eligible!==false).sort(rank);
         if(candidates.length) {
           const best=candidates[0];
           result={...best,complete:best.complete&&known.every(r=>r.complete)&&!conditional,
@@ -494,24 +566,31 @@
     }
     const root=visit(event,run.state,emptyLedger(),0,new Set(),true),rows=root.rows||[];
     for(const row of rows) {
-      row.forecast=forecastChoice(event,row.ci,run.state,index,{available:row.available});
+      row.forecast=forecastChoice(event,row.ci,run.state,index,{available:row.available,difficulty:run.difficulty});
       const enemies=unique(row.forecast.combats.map(c=>c.enemy));
-      if(enemies.length)row.notes=unique([...row.notes,`Combate possível neste caminho: ${enemies.join(', ')}. A vitória com esta ficha não foi calculada.`]);
+      if(enemies.length)row.notes=unique([...row.notes,`Combate possível neste caminho: ${enemies.join(', ')}. As chances estimadas e seus limites constam na seção de combate.`]);
       if(row.forecast.truncated)row.notes=unique([...row.notes,'O resumo das consequências futuras atingiu seu limite; outros ramos podem existir.']);
     }
-    const candidates=rows.filter(r=>r.available!==false&&r.feasible&&finite(r.score)).sort((a,b)=>b.score-a.score||a.route.length-b.route.length);
+    const candidates=rows.filter(r=>r.available!==false&&r.feasible&&finite(r.score)&&r.risk?.eligible!==false).sort(rank);
     const comparisonComplete=rows.filter(r=>r.available!==false).every(r=>r.complete);
+    const relevant=primary?.type!=='score'&&(candidates.length===1?Math.abs(candidates[0].goalValue||0)>1e-6:candidates.some(r=>finite(r.goalValue)&&Math.abs(r.goalValue-(candidates[0]?.goalValue??0))>1e-6));
+    const strategy=relevant?'goals':'score';
+    const scoreComparable=candidates.length&&candidates.every(r=>r.finalScore?.complete&&finite(r.finalScore?.deltaExpected));
     let recommendation=null;
-    if(!outcomeNode(event)&&supported&&!missingPrimary&&comparisonComplete&&candidates.length&&(candidates.length===1||candidates[0].score-candidates[1].score>1e-6))recommendation=candidates[0].ci;
-    const message=outcomeNode(event)?'Este nó registra desfechos. Informe o resultado observado no jogo; o Atlas não escolhe vitória ou derrota.':!active.length?'Adicione um objetivo ou escolha uma nova meta para orientar a comparação.':!supported?'Este objetivo precisa de confirmação manual. Ainda não há modelo para calcular a melhor escolha para ele.':missingPrimary?'Informe o ouro atual na ficha para comparar os saldos finais deste objetivo.':!comparisonComplete?'Comparação parcial: alguns caminhos futuros não puderam ser avaliados até o fim. Confira os planos e as pendências; não há indicação de melhor escolha para o encontro inteiro.':recommendation===null?'Não há uma opção claramente melhor pelos saldos conhecidos ao fim dos caminhos. Compare as alternativas.':'Indicação baseada nos efeitos conhecidos acumulados e nas próximas decisões até o fim do encontro, conforme os objetivos desta run. Continua provisória: confira o resultado no jogo.';
-    return {rows,recommendation,provisional:recommendation!==null,summary:{...summary,comparisonComplete,hasFinishedRoute:candidates.some(r=>r.complete),limits:config},message};
+    if(!outcomeNode(event)&&supported&&!missingPrimary&&comparisonComplete&&candidates.length){
+      const best=candidates[0],second=candidates[1];
+      const distinct=strategy==='goals'?(!second||best.goalValue-second.goalValue>1e-6):scoreComparable&&(!second||best.finalScore.deltaExpected-second.finalScore.deltaExpected>1e-6);
+      if(distinct&&best.risk?.eligible===true)recommendation=best.ci;
+    }
+    const message=outcomeNode(event)?'Este nó registra desfechos. Informe o resultado observado no jogo; o Atlas não escolhe vitória ou derrota.':!supported?'Este objetivo precisa de confirmação manual. Ainda não há modelo para calcular a melhor escolha para ele.':missingPrimary?'Informe o ouro atual na ficha para comparar os saldos finais deste objetivo.':!comparisonComplete?'Comparação parcial: alguns caminhos futuros não puderam ser avaliados até o fim. Confira os planos e as pendências; não há indicação de melhor escolha para o encontro inteiro.':!candidates.length?'Nenhum caminho comparável atende ao critério de risco desta run. Confira as opções e o limite de sucesso.':strategy==='score'&&!scoreComparable?'Os objetivos não diferenciam os caminhos. Faltam dados de pontuação para usar o critério padrão; confira a ficha e os detalhes.':recommendation===null?'Não há uma opção claramente melhor pelos saldos conhecidos ao fim dos caminhos. Compare as alternativas.':strategy==='score'?'Indicação pela maior variação esperada de pontuação nos caminhos avaliados, incluindo as falhas e respeitando o limite de sucesso. Não prevê encontros aleatórios posteriores.':'Indicação baseada nos efeitos conhecidos acumulados e nas próximas decisões até o fim do encontro, conforme os objetivos desta run. Continua provisória: confira o resultado no jogo.';
+    return {rows,recommendation,strategy,provisional:recommendation!==null,summary:{...summary,comparisonComplete,hasFinishedRoute:candidates.some(r=>r.complete),limits:config},message};
   }
   function commit(run,after,index,meta={}) {
     if(run.status!=='active' && meta.type!=='resume')fail('Reabra a run para registrar alterações.');
     const next=clone(run),state=cleanState(after,index);
     const entry={id:id(),createdAt:new Date().toISOString(),type:text(meta.type,40)||'correction',
       eventKey:meta.eventKey||null,choice:meta.choice??null,result:meta.result??null,note:text(meta.note,3000),
-      issues:(meta.issues||[]).map(v=>text(v,600)),context:{goals:cleanGoals(run.goals,index),profile:run.profile,difficulty:run.difficulty,availability:clone(run.availability)},before:clone(run.state),after:state};
+      issues:(meta.issues||[]).map(v=>text(v,600)),context:{goals:cleanGoals(run.goals,index),policy:cleanPolicy(run.policy),profile:run.profile,difficulty:run.difficulty,availability:clone(run.availability)},before:clone(run.state),after:state};
     if(entry.eventKey&&!index.events.has(entry.eventKey))fail('Evento não encontrado.');
     if(entry.type==='result') {
       const result=index.events.get(entry.eventKey)?.data.choice?.[entry.choice]?.result?.[entry.result];
@@ -547,7 +626,7 @@
       if(entry.eventKey&&!index.events.has(entry.eventKey))fail('Histórico referencia um evento inexistente.');
       if(entry.type==='result' && (!Number.isInteger(entry.choice)||!Number.isInteger(entry.result)||!index.events.get(entry.eventKey)?.data.choice?.[entry.choice]?.result?.[entry.result]))fail('Resultado do histórico inválido.');
       return {id:text(entry.id,99)||id(),createdAt:text(entry.createdAt,50),type:entry.type,eventKey:entry.eventKey||null,
-        choice:entry.choice??null,result:entry.result??null,note:text(entry.note,3000),context:entry.context?{goals:cleanGoals(entry.context.goals,index),profile:entry.context.profile==='expected'?'expected':'cautious',difficulty:entry.context.difficulty==='hard'?'hard':'normal',availability:Object.fromEntries(Object.entries(entry.context.availability||{}).filter(([key,value])=>/^\d+$/.test(key)&&value===true))}:null,issues:(Array.isArray(entry.issues)?entry.issues:[]).map(v=>text(v,600)),before:cleanState(entry.before,index),after:cleanState(entry.after,index)};
+        choice:entry.choice??null,result:entry.result??null,note:text(entry.note,3000),context:entry.context?{goals:cleanGoals(entry.context.goals,index),policy:cleanPolicy(entry.context.policy),profile:entry.context.profile==='expected'?'expected':'cautious',difficulty:entry.context.difficulty==='hard'?'hard':'normal',availability:Object.fromEntries(Object.entries(entry.context.availability||{}).filter(([key,value])=>/^\d+$/.test(key)&&value===true))}:null,issues:(Array.isArray(entry.issues)?entry.issues:[]).map(v=>text(v,600)),before:cleanState(entry.before,index),after:cleanState(entry.after,index)};
     });
     for(let i=1;i<result.history.length;i++)if(JSON.stringify(result.history[i-1].after)!==JSON.stringify(result.history[i].before))fail('Histórico inconsistente: os estados não encadeiam.');
     result.cursor=raw.cursor;
@@ -556,5 +635,5 @@
     result.availability={};
     return result;
   }
-  return {VERSION,PLANNER_LIMITS,STATS,ALIGNMENT_BANDS,alignmentInfo,alignmentRangeForBand,TYPES,FAMILIES,clone,id,normalize,plain,finite,blankState,createIndex,continuationKey,sequenceGraph,continuationContext,forecastChoice,newRun,cleanState,cleanGoals,requirement,previewResult,goalProgress,analyze,commit,undo,redo,validateRun};
+  return {VERSION,PLANNER_LIMITS,cleanPolicy,STATS,ALIGNMENT_BANDS,alignmentInfo,alignmentRangeForBand,TYPES,FAMILIES,clone,id,normalize,plain,finite,blankState,createIndex,continuationKey,sequenceGraph,continuationContext,forecastChoice,newRun,cleanState,cleanGoals,requirement,previewResult,previewObservedResult,goalProgress,analyze,commit,undo,redo,validateRun};
 });

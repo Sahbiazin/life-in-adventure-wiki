@@ -89,3 +89,7 @@ As runs são salvas em `localStorage`, na chave `life-in-adventure:runs:v1`, ape
 Em **Gerenciar runs**, use **Exportar run** para baixar um backup JSON da run selecionada. **Importar** valida o arquivo e cria uma cópia independente; não sobrescreve outra run. Para relatar uma divergência, guarde esse backup e descreva o que o jogo mostrou.
 
 Se o armazenamento estiver bloqueado ou cheio, a run continua na memória durante a visita e aparece um aviso para exportar. Um save inválido é preservado e pode ser baixado para recuperação; novas ações ficam na memória. Se outra aba alterar os saves, esta aba bloqueia a gravação até você recarregar os dados, evitando sobrescrita silenciosa. Favoritos e histórico do Atlas usam outra chave e não são substituídos pelas runs.
+
+## Planejamento por pontuação e risco
+
+A comparação agora inclui as chances calculáveis dos testes de atributos e os desfechos modelados de combate. Quando os objetivos não diferenciam os caminhos, usa a variação esperada da pontuação moderna com mínimo de sucesso de 60%, configurável no painel Objetivos. Veja o [modelo atual, validação e limites](planejamento-probabilistico.md), que atualiza as limitações da primeira versão descritas acima.

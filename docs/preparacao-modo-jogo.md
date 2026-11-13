@@ -15,6 +15,10 @@ Estado do Atlas: **ainda não pronto para simulação completa**. Existe uma [pr
 - As 2.005 ocorrências de início de combate interpretadas, com inimigo fixo ou atual, modificações da faixa de poder e continuidade para registrar o desfecho. A interpretação do comando não prevê o resultado da luta.
 - Consequências futuras exibidas por escolha, mesmo com plano numérico parcial: inimigos, testes, requisitos, saídas pacíficas e possíveis desfechos. Auditoria das 7.074 transições diretas da base sem destino ausente; sequência de Tesouro #360 a #364 testada com negociação malsucedida e saída sem combate.
 
+## Atualização: pontuação, testes e planejamento
+
+O [planejador probabilístico](planejamento-probabilistico.md) implementa as regras confirmadas de pontuação moderna, tickets dos testes de atributos e roteamento vitória/derrota, com testes e cobertura parcial explícita. O dano real e habilidades especiais do combate, feitos não informados e escolhas externas ao encontro continuam limitando uma simulação completa. As pendências abaixo descrevem a base inicial; consulte os documentos de cada modelo para o estado atual.
+
 ## Pendências para uma simulação completa
 
 | Área | Falta confirmar/modelar | Critério de conclusão |

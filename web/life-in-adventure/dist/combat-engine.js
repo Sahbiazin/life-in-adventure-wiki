@@ -1,6 +1,6 @@
 /* Experimental, deterministic combat estimates; independent from the run journal. */
 'use strict';
-((root,factory)=>{const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.AtlasCombat=api;})(globalThis,()=>{
+((root,factory)=>{const api=factory(typeof module==='object'&&module.exports?require('./ability-engine.js'):root.AtlasAbilities);if(typeof module==='object'&&module.exports)module.exports=api;else root.AtlasCombat=api;})(globalThis,A=>{
   const VERSION=1,STATS={5:'Força',6:'Destreza',7:'Inteligência',12:'Carisma',13:'Constituição',14:'Sabedoria'};
   const SLOTS={main:'Mão principal',off:'Mão secundária',armor:'Armadura',accessory:'Acessório'};
   const PLACES=['Planície','Floresta','Vulcão','Ambiente aquático','Área urbana','Deserto','Caverna','Masmorra','Litoral','Campo nevado','Interior de edifício','Coliseu','Litoral à noite','Ruínas urbanas','Planície à noite','Navio devorador de almas'];
@@ -83,27 +83,24 @@
     for(const id of traits){
       const t=record(index,'trait',id);if(!t){missing.push('traço válido');continue;}
       if(input.statsMode==='base'&&boosts[id])stats[boosts[id]]+=4;
-      for(const part of String(t.raw.effect||'').split('|')){
-        const m=part.match(/^addAb_(\d+)_(-?\d+)$/);if(m)abilities[m[1]]=(abilities[m[1]]||0)+Number(m[2]);
-      }
-      if(Number(id)>=22)notes.push(`O traço ${t.title} pode ter efeitos evoluídos além dos metadados disponíveis; confira as habilidades efetivas.`);
       if([8,9,28,29].includes(Number(id)))notes.push(`O bônus condicional de ${t.title}, baseado na chance de vitória, ainda não é simulado.`);
     }
     const equipped=Object.entries(setup.equipment).filter(([,v])=>v).map(([slot,v])=>({slot,...v,record:record(index,'item',v.id)}));
     if(input.inventory){const needed={};for(const e of equipped)needed[e.id]=(needed[e.id]||0)+1;for(const [id,n] of Object.entries(needed))if(finite(input.inventory[id])&&input.inventory[id]<n||input.inventoryComplete&&!Object.hasOwn(input.inventory,id))missing.push(`quantidade equipada de ${record(index,'item',id).title}`);}
     if(missing.length)return {ready:false,missing,notes,power:null};
-    for(const e of equipped)addAbilities(abilities,e.record.raw.Ab);
-    for(const [id,n] of Object.entries(input.effectiveAbilities||{}))if(Number.isInteger(n)&&Math.abs(n)<=100&&record(index,'ability',id))abilities[id]=n;
-    for(const [id,n] of Object.entries(setup.abilities))abilities[id]=n; // Effective overrides replace, never double-count.
+    const abilityDerivation=A.derive({stats:{...input.stats,...stats},alignmentRange:input.alignmentRange,traits,traitsComplete:input.traitsComplete??true,
+      abilities:input.effectiveAbilities||{},combat:setup,pending:input.effectsPending?['efeitos a conferir']:[],flagsUncertain:input.flagsUncertain===true,
+      difficulty:input.difficulty,hardLevel:input.hardLevel},index);
+    for(const [id,n] of Object.entries(abilityDerivation.levels))abilities[id]=n===null?0:n;
+    notes.push(...abilityDerivation.notes);
+    if(abilityDerivation.unknown.length)notes.push(`Níveis efetivos a conferir: ${abilityDerivation.unknown.slice(0,8).map(id=>abilityName(index,id)).join(', ')}${abilityDerivation.unknown.length>8?` e mais ${abilityDerivation.unknown.length-8}`:''}. Essas parcelas foram omitidas da estimativa.`);
     for(const [id,n] of Object.entries(abilities)){
       if(n!==0&&!scalarSkills.has(Number(id)))unknown.push(abilityName(index,id));
       if(n>0&&partialSkills[id])notes.push(`${abilityName(index,id)}: ${partialSkills[id]} ainda não reproduzidas integralmente.`);
       if(n>=4&&[5,24,52].includes(Number(id)))notes.push(`${abilityName(index,id)}: o modelo usa a taxa básica também nos níveis evoluídos.`);
     }
-    const thresholds={0:[7,12],2:[13,14],25:[14],30:[13],46:[5,6],51:[6],58:[5,13],60:[5]};
-    for(const [id,keys] of Object.entries(thresholds))if(!Object.hasOwn(setup.abilities,id)&&!Object.hasOwn(input.effectiveAbilities||{},id)&&keys.some(k=>stats[k]>=13))notes.push(`Confira o nível efetivo de ${abilityName(index,id)}: bônus por atributos ainda não são recalculados.`);
     const L=id=>abilities[id]||0,damageBonus=(raw,base)=>{
-      const magical=String(raw.attackType||'0_0').split('_')[0]!=='0';
+      const magical=Number(raw.dmgType||0)===1;
       let value=base*(1+piece(L(magical?0:46),.1,.12));
       if(!magical)value*=1+piece(L(60),.1,.12);
       if(L(48)>0)value*=1.1;
@@ -117,7 +114,7 @@
       const term=formula(raw?.dmg||'2|0_5_0.03|0_6_0.03',stats);
       if(term===null){missing.push('fórmula de dano suportada');return;}
       const bonus=(setup.level*.2+2.5)*(Number(raw?.category)===1?2:1);
-      attacks.push({damage:damageBonus(raw||{},(term+bonus)*(e?.upgrade===1?1.1:1)),type:Number(String(raw?.attackType||'0_0').split('_')[0]),slot});
+      attacks.push({damage:damageBonus(raw||{},(term+bonus)*(e?.upgrade===1?1.1:1)),type:Number(raw?.dmgType||0),slot});
     };
     weapon('main',true);weapon('off');
     const perCycle=attacks.reduce((sum,a)=>sum+a.damage,0);
@@ -129,19 +126,19 @@
       if(!e.record.raw.hp)continue;
       hasArmor||=e.slot==='armor';let v=formula(e.record.raw.hp,stats);
       if(v===null){missing.push('fórmula de defesa suportada');continue;}
-      v=(v+setup.level*1.75+30)*(e.upgrade===1?1.1:1)*(1+Math.max(0,L(58))*.1);
+      v=(v+setup.level*1.75+30)*(e.upgrade===1?1.1:1)*(1+L(58)*.1);
       const cat=Number(e.record.raw.category),sub=Number(e.record.raw.subCategory);
       if((cat===2&&sub===0&&L(70)>0)||(cat===2&&sub===1&&L(72)>0)||(cat===3&&sub===0&&L(71)>0)||(cat===3&&sub===1&&L(89)>0)||(cat===3&&sub===2&&L(90)>0))v*=1.25;
       defense+=v;
     }
-    if(!hasArmor)defense+=(formula('40|0_13_0.4|0_14_0.4',stats)+setup.level*1.75+30)*(1+Math.max(0,L(58))*.1);
+    if(!hasArmor)defense+=(formula('40|0_13_0.4|0_14_0.4',stats)+setup.level*1.75+30)*(1+L(58)*.1);
     if(input.difficulty==='hard')notes.push('Modificadores próprios do modo difícil ainda não são reproduzidos; calibre os valores observados.');
     if(!input.traitsComplete&&input.traitsComplete!==undefined)notes.push('A lista de traços da run está incompleta.');
     if(input.effectsPending)notes.push('Há efeitos pendentes na ficha da run. Confira se os atributos e as habilidades continuam atuais.');
     if(missing.length)return {ready:false,missing,notes,power:null};
     const main=attacks[0]||{type:0};
     const unit=components({ready:true,name:'Seu personagem',attack:perCycle,defense,abilities,damageType:main.type,attacks,overrides:setup.overrides,
-      stats,traits,level:setup.level,place:setup.place,unknown:unique(unknown),notes:unique(notes),setup,kind:0,partial:unknown.length>0||notes.length>0});
+      stats,traits,level:setup.level,place:setup.place,unknown:unique(unknown),notes:unique(notes),setup,abilityDerivation,kind:0,partial:unknown.length>0||notes.length>0});
     return unit;
   }
   function monster(row,index,{variant=null,choice=null,place=0}={}){
@@ -158,7 +155,7 @@
     if(variant===4)notes.push('O estado inicial especial deste combate ainda não é reproduzido.');
     const magical=Number(raw.dmgType)===1,L=id=>abilities[id]||0;
     const attack=numeric(raw.dmg)*factor*(1+piece(L(magical?0:46),.1,.12))*(magical?1:1+piece(L(60),.1,.12))*(L(48)>0?1.1:1);
-    const defense=numeric(raw.hp)*factor*(1+Math.max(0,L(58))*.1);
+    const defense=numeric(raw.hp)*factor*(1+L(58)*.1);
     const unit=components({ready:true,name:row.title,key:row.key,attack,defense,
       abilities,damageType:Number(raw.dmgType)||0,kind:Number(raw.type),unknown:unique(unknown),notes,partial:unknown.length>0||notes.length>0,place,variant});
     if(!finite(unit.attack)||unit.attack<0||!finite(unit.defense)||unit.defense<=0)throw new Error('Valores de monstro inválidos.');
@@ -230,7 +227,7 @@
     if(results.length>1)result.notes.push('Há variações de habilidade do monstro; a faixa compara os cenários, sem presumir o peso de sorteio.');
     if(cache.size>=500)cache.clear();cache.set(signature,result);return result;
   }
-  function fromRun(run,state=run.state){return {setup:clone(state.combat||blankSetup()),stats:state.stats,traits:state.traits,traitsComplete:state.traitsComplete,statsMode:'effective',difficulty:run.difficulty,inventory:state.items,inventoryComplete:state.inventoryComplete,effectiveAbilities:state.abilities,effectsPending:state.pending?.length>0};}
+  function fromRun(run,state=run.state){return {setup:clone(state.combat||blankSetup()),stats:state.stats,alignmentRange:state.alignmentRange,traits:state.traits,traitsComplete:state.traitsComplete,statsMode:'effective',difficulty:run.difficulty,hardLevel:state.scoring?.hardLevel??run.hardLevel,inventory:state.items,inventoryComplete:state.inventoryComplete,effectiveAbilities:state.abilities,effectsPending:state.pending?.length>0,flagsUncertain:state.flagsUncertain};}
   function eventMonsters(event,control,index){
     if(control.enemyKey){const r=records(index).get(control.enemyKey);return r?[r]:[];}
     return unique(String(event.data.monster||'').split('|').map(t=>t.split('_')[0]).filter(t=>/^\d+$/.test(t))).map(id=>record(index,'monster',id)).filter(Boolean);

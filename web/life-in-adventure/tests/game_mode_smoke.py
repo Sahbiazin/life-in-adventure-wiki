@@ -325,7 +325,7 @@ class GameModeBrowserTests(unittest.TestCase):
         self.assertEqual(self.active()['state']['stats']['4'], 94)
         self.assertEqual(self.active()['cursor'], 1)
 
-    def test_primary_score_objective_blocks_false_best_choice_even_with_gold_secondary(self):
+    def test_primary_score_objective_requires_score_data_even_with_gold_secondary(self):
         self.start()
         self.panel('goals')
         self.page.locator('#gameGoalType').select_option('score')
@@ -333,7 +333,7 @@ class GameModeBrowserTests(unittest.TestCase):
         self.page.locator('#gameGoals > details > summary').click()
         self.gold_goal()
         self.encounter()
-        expect(self.page.locator('#gameEncounter > .game-notice')).to_contain_text('precisa de confirmação manual')
+        expect(self.page.locator('#gameEncounter > .game-notice')).to_contain_text('Faltam dados de pontuação')
         self.assertEqual(self.page.locator('.game-recommended').count(), 0)
         self.panel('goals')
         self.page.locator('[data-game-action="promote-goal"]').click()
